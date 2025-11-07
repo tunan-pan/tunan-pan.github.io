@@ -339,10 +339,19 @@ footer .menu-link:hover {
 home page
 -----------------------------------*/
 
-.home-top-container {
-  padding: 20% 0;
-  max-height: 100vh!important;
+main.homepage {
+  padding: 0!important;
+  margin: 0!important;
 }
+
+.home-top-container {
+  height: 90vh;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  justify-content: center; 
+}
+
 
 .home-intro-text {
   max-width: 650px;
