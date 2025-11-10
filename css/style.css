@@ -582,6 +582,7 @@ home page
 
 .home-button {
   margin-top: 20px;
+  text-decoration: none!important;
 }
 
 .home-disclaimer {
