@@ -3,6 +3,8 @@ module.exports = function(eleventyConfig) {
   eleventyConfig.addPassthroughCopy("fonts");
   eleventyConfig.addPassthroughCopy("images");
   eleventyConfig.addPassthroughCopy("js");
+  eleventyConfig.addPassthroughCopy("admin");
+
   
   // Add slug filter
   eleventyConfig.addFilter("slug", function(str) {

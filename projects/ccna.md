@@ -1,14 +1,13 @@
 ---
 layout: project-layout.njk
-title: My Test Project 2
-description: A short description of this project
-image: /images/test-thumbnail.jpg
-imageAlt: test alt text
+title: Carton Council — Increasing Carton Recycling Through Online Engagement
+description: 
+image: /images/project-thumbs/thumb-ccna.png
 categories: 
+- case study
 tags: 
-- print 
-- digital
-- web / UX
+- interactive
+- event
 ---
 
 ## Project Overview

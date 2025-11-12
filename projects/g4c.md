@@ -1,11 +1,9 @@
 ---
 layout: project-layout.njk
-title: My Test Project 1 with a longer title length to test line height because that matters
-description: A short description of this project
-image: /images/test-thumbnail.jpg
-imageAlt: test alt text
+title: Games For Change — Driving Social Impact Through Games
+description: 
+image: /images/project-thumbs/thumb-g4c.png
 categories: 
-- case study
 tags: 
 - print 
 - digital

@@ -1,14 +1,14 @@
 ---
 layout: project-layout.njk
-title: My Test Project 3
-description: A short description of this project
-image: /images/test-thumbnail.jpg
-imageAlt: test alt text
+title: Spring Fling — Exploring Instagram AR Filters
+description: 
+image: /images/project-thumbs/thumb-springfling.png
 categories: 
 - case study
 tags: 
-- interactive
-- event
+- print 
+- digital
+- web / UX
 ---
 
 ## Project Overview
