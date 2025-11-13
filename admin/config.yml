@@ -1,0 +1,44 @@
+clientId: local # replace with NEXT_PUBLIC_TINA_CLIENT_ID value
+token: 369c11a6fc44a006aa5c07fbe557f13811005275 # replace with TINA_TOKEN value
+
+build:
+  outputFolder: "admin"
+  publicFolder: "public"
+
+media:
+  tina:
+    mediaRoot: ""
+    publicFolder: "public/uploads"
+
+schema:
+  collections:
+    - name: "post"
+      label: "Posts"
+      path: "content/posts"
+      fields:
+        - type: "string"
+          name: "title"
+          label: "Title"
+          isTitle: true
+          required: true
+        - type: "rich-text"
+          name: "body"
+          label: "Body"
+          isBody: true
+
+backend:
+  name: git-gateway
+  branch: main  # branch to commit to
+
+media_folder: ""       # path inside repo
+public_folder: "public/uploads"            # path used in URLs
+
+collections:
+  - name: "post"
+    label: "Posts"
+    folder: "content/posts"          # where files are stored
+    create: true
+    slug: "{{slug}}"
+    fields:
+      - { label: "Title", name: "title", widget: "string", required: true }
+      - { label: "Body", name: "body", widget: "markdown" }
