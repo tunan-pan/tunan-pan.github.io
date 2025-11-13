@@ -1,5 +1,3 @@
-
-
 /* ----------------------------------
 COLOURS
 
@@ -13,7 +11,7 @@ pink: #F2126C
 -----------------------------------*/
 
 :root {
-  --color-orange: #E93600;
+  --color-orange: /* #E93600;*/ #000;
   --color-lightgrey: #F6F6F6;
   --color-darkgrey: #E9E9E9;
   --color-purple: #7C1D9E ;
@@ -30,7 +28,6 @@ pink: #F2126C
   }
 }
 
-
 *, :after, :before {
     box-sizing: unset!important;
 }
@@ -38,8 +35,6 @@ pink: #F2126C
 /* ----------------------------------
 fonts
 -----------------------------------*/
-
-@import url('https://fonts.googleapis.com/css2?family=Noto+Color+Emoji&family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Red+Hat+Display:ital,wght@0,300..900;1,300..900&display=swap');
 
 /* headings and nav */
 @font-face
@@ -303,19 +298,19 @@ a.logo:hover {
 }
 
 /* Individual link colors with icons */
-.main-nav a[href="/projects/"]:hover {
+.main-nav a[href="/projects/"]:hover, .main-nav a[href="/projects/"].current  {
   text-decoration-color: var(--color-purple);
 }
 
-.main-nav a[href="/about/"]:hover {
+.main-nav a[href="/about/"]:hover, .main-nav a[href="/about/"].current {
   text-decoration-color: var(--color-pink);
 }
 
-.main-nav a[href="/contact/"]:hover {
+.main-nav a[href="/contact/"]:hover, .main-nav a[href="/contact/"].current {
   text-decoration-color: var(--color-yellow);
 }
 
-/* Current page styling */
+/* Current page styling 
 .main-nav a[href="/projects/"].current {
   text-decoration: underline;
   text-decoration-color: var(--color-purple);
@@ -335,7 +330,7 @@ a.logo:hover {
   text-decoration-color: var(--color-yellow);
   text-decoration-thickness: 20%;
   text-underline-offset: 8px;
-}
+}*/
 
 /* Logo icons after links */
 .main-nav a::after {
@@ -345,15 +340,15 @@ a.logo:hover {
 }
 
 .main-nav a[href="/projects/"]::after {
-  content: url(/images/logo/logo-purple.svg);
+  content: url("../images/logo/logo-purple.svg");
 }
 
 .main-nav a[href="/about/"]::after {
-  content: url(/images/logo/logo-pink.svg);
+  content: url("../images/logo/logo-pink.svg");
 }
 
 .main-nav a[href="/contact/"]::after {
-  content: url(/images/logo/logo-yellow.svg);
+  content: url("../images/logo/logo-yellow.svg");
 }
 
 @media (prefers-reduced-motion: no-preference) {
@@ -689,13 +684,13 @@ margin-top: -70px;
 }
 
 .logo-purple {
-  background-image: url("/images/logo/logo-purple.svg");
+  background-image: url("../images/logo/logo-purple.svg");
 }
 .logo-pink {
-  background-image: url("/images/logo/logo-pink.svg");
+  background-image: url("../images/logo/logo-pink.svg");
 }
 .logo-white {
-  background-image: url("/images/logo/logo-white.svg");
+  background-image: url("../images/logo/logo-white.svg");
 }
 
 /* Core Values */
@@ -735,19 +730,19 @@ margin-top: -70px;
 }
 
 .authenticity {
-  background-image: url("/images/values/authenticity.png");
+  background-image: url("../images/values/authenticity.png");
 }
 .compassion {
-  background-image: url("/images/values/compassion.png");
+  background-image: url("../images/values/compassion.png");
 }
 .creativity {
-  background-image: url("/images/values/creativity.png");
+  background-image: url("../images/values/creativity.png");
 }
 .balance {
-  background-image: url("/images/values/balance.png");
+  background-image: url("../images/values/balance.png");
 }
 .purpose {
-  background-image: url("/images/values/purpose.png");
+  background-image: url("../images/values/purpose.png");
 }
 
 /* Tablet */
