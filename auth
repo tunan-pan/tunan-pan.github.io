@@ -1,0 +1,5 @@
+email: tunanp@gmail.com
+pass: Abcdefg1
+
+backend: npm run dev
+frontend: npm start

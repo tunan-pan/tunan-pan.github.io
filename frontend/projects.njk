@@ -1,0 +1,44 @@
+---
+layout: base.njk
+title: Projects
+---
+
+<div class="projects-intro">
+  <!-- Add any intro text you want here -->
+  <h1>My Projects</h1>
+  <p>This page is still a work in progress and being updated regularly. Case studies will be coming soon!</p>
+</div>
+  
+<div class="projects-grid">
+
+  {% for project in projects %}
+    <article class="project-item">
+
+      {% if project.image %}
+        <div class="project-image">
+          <a href="{{ project.url }}" tabindex="-1" aria-hidden="true">
+            <img src="{{ project.image }}" alt=" ">
+          </a>
+        </div>
+      {% endif %}
+
+      {% if project.category %}
+        <span class="project-categories">
+            <a href="/categories/{{ category | slug }}/">{{ category }}</a>
+        </span>
+      {% endif %}
+
+      <h2><a href="{{ project.url }}">{{ project.title }}</a></h2>
+
+      {% if project.tags %}
+        <span class="project-tags">
+          {% for tag in project.tags %}
+            <a href="/tags/{{ tag | slug }}/">{{ tag }}</a>{% if not loop.last %}, {% endif %}
+          {% endfor %}
+        </span>
+      {% endif %}
+
+    </article>
+  {% endfor %}
+
+</div>

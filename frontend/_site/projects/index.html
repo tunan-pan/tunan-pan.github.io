@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Tunan Pan - Projects</title>
+  <link rel="stylesheet" href="/css/style.css">
+  
+</head>
+<body class="projects-page">
+
+  <header class="site-header">
+    <div class="header-container">
+        <a href="/" class="logo">
+            <img src="/images/logo/Logo-icon_1080x1080.svg" alt="Tunan Pan" width="25">
+            <span>Tunan Pan</span>
+        </a>
+        
+        <button class="mobile-menu-toggle" aria-label="Toggle menu">
+            <span class="hamburger"></span>
+        </button>
+        
+        <nav class="main-nav">
+            <a href="/projects/" class="current">See My Work</a>
+            <a href="/about/" >Get To Know Me</a>
+            <a href="/contact/" >Say Hello</a>
+        </nav>
+    </div>
+</header>
+
+
+  <main>
+  
+<div class="projects-intro">
+  <!-- Add any intro text you want here -->
+  <h1>My Projects</h1>
+  <p>This page is still a work in progress and being updated regularly. Case studies will be coming soon!</p>
+</div>
+  
+<div class="projects-grid">
+
+  
+    <article class="project-item">
+
+      
+        <div class="project-image">
+          <a href="/projects/a-bug-is-becoming-a-meme-on-the-internet/" tabindex="-1" aria-hidden="true">
+            <img src="/uploads/medium_a_bug_is_becoming_a_meme_on_the_internet_e47a1053d3.jpeg" alt=" ">
+          </a>
+        </div>
+      
+
+      
+        <span class="project-categories">
+            <a href="/categories/undefined/"></a>
+        </span>
+      
+
+      <h2><a href="/projects/a-bug-is-becoming-a-meme-on-the-internet/">A bug is becoming a meme on the internet</a></h2>
+
+      
+        <span class="project-tags">
+          
+        </span>
+      
+
+    </article>
+  
+    <article class="project-item">
+
+      
+        <div class="project-image">
+          <a href="/projects/beautiful-picture/" tabindex="-1" aria-hidden="true">
+            <img src="/uploads/medium_beautiful_picture_b709909329.jpeg" alt=" ">
+          </a>
+        </div>
+      
+
+      
+        <span class="project-categories">
+            <a href="/categories/undefined/"></a>
+        </span>
+      
+
+      <h2><a href="/projects/beautiful-picture/">Beautiful picture</a></h2>
+
+      
+        <span class="project-tags">
+          
+        </span>
+      
+
+    </article>
+  
+
+</div>
+
+  </main>
+
+  <footer>
+	<div class="footer-content">
+		<div class="footer-cta">
+		<img src="/images/logo/Logo-icon_1080x1080.svg" alt="" width="23">
+		<p>Thanks for stopping by!<br>Like what you see, or just want to chat?</p>
+		<a href="/contact/" class="button">Let's connect! <span aria-hidden="true">→</span></a>
+		</div>
+		
+		<div class="footer-nav">
+		<nav aria-label="Footer navigation">
+			<ul>
+			<li><a href="/" >Home</a></li>
+			<li><a href="/projects/" class="current">Projects</a></li>
+			<li><a href="/about/" >About</a></li>
+			<li><a href="/contact/" >Contact</a></li>
+			</ul>
+		</nav>
+		</div>
+	</div>
+	
+	<div class="footer-bottom">
+		<p>© Tunan Pan 2025. If you run into any bugs or accessibility issues, please do let me know!</p>
+	</div>
+</footer>
+
+  <script src="/js/menu.js"> // for mobile hamburger menu </script>
+
+<script>
+  const header = document.querySelector('.site-header');
+  let isScrolled = false;
+  let ticking = false;
+  
+  window.addEventListener('scroll', function() {
+    if (!ticking) {
+      window.requestAnimationFrame(function() {
+        const scrollY = window.scrollY;
+        
+        if (scrollY > 60 && !isScrolled) {
+          header.classList.add('scrolled');
+          isScrolled = true;
+        } else if (scrollY < 40 && isScrolled) {
+          header.classList.remove('scrolled');
+          isScrolled = false;
+        }
+        
+        ticking = false;
+      });
+      ticking = true;
+    }
+  });
+</script>
+
+
+</body>
+</html>
