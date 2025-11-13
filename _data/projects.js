@@ -5,7 +5,11 @@ const projects = require("./projects_build.json");
 module.exports = projects;
 
 
-/*
+/* ----- 
+The below is basically now moved to scripts/fetch-strapi-data.js 
+so a script is made in package.json to fetch the data.
+-----
+
 const fetch = require("node-fetch");
 
 module.exports = async function () {
