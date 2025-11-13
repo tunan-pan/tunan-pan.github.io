@@ -11,7 +11,7 @@ title: Projects
   
 <div class="projects-grid">
 
-  {% for project in projects %}
+  {% for project in projects_build %} <!-- "projects_build is always the name of the file where the data is" -->
     <article class="project-item">
 
       {% if project.image %}
