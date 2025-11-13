@@ -1,5 +1,3 @@
-
-
 /* ----------------------------------
 COLOURS
 
@@ -30,7 +28,6 @@ pink: #F2126C
   }
 }
 
-
 *, :after, :before {
     box-sizing: unset!important;
 }
@@ -38,8 +35,6 @@ pink: #F2126C
 /* ----------------------------------
 fonts
 -----------------------------------*/
-
-@import url('https://fonts.googleapis.com/css2?family=Noto+Color+Emoji&family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Red+Hat+Display:ital,wght@0,300..900;1,300..900&display=swap');
 
 /* headings and nav */
 @font-face
