@@ -1,4 +1,11 @@
 // _data/projects.js
+
+const projects = require("./projects.json");
+
+module.exports = projects;
+
+
+/*
 const fetch = require("node-fetch");
 
 module.exports = async function () {
@@ -28,3 +35,4 @@ module.exports = async function () {
     return []
   }
 };
+*/
