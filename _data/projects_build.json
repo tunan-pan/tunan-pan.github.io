@@ -1,16 +1,12 @@
 [
   {
-    "title": "A bug is becoming a meme on the internet",
+    "title": "A test is becoming a meme on the internet",
+    "slug": "a-bug-is-becoming-a-meme-on-the-internet",
     "url": "/projects/a-bug-is-becoming-a-meme-on-the-internet/",
-    "image": "/uploads/medium_a_bug_is_becoming_a_meme_on_the_internet_e47a1053d3.jpeg",
-    "category": "tech",
-    "tags": []
-  },
-  {
-    "title": "Beautiful picture",
-    "url": "/projects/beautiful-picture/",
-    "image": "/uploads/medium_beautiful_picture_b709909329.jpeg",
-    "category": "nature",
-    "tags": []
+    "image": "../images/thumbnail_a_bug_is_becoming_a_meme_on_the_internet_e47a1053d3.jpeg",
+    "category": "Case Study",
+    "tags": [
+      "web/ux"
+    ]
   }
 ]

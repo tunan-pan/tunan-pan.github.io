@@ -1,5 +1,5 @@
 email: tunanp@gmail.com
 pass: Abcdefg1
 
-backend: npm run dev
-frontend: npm start
+backend: cd backend, npm run dev
+frontend: npm start, npm fetch data

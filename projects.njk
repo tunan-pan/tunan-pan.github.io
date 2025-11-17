@@ -4,31 +4,47 @@ title: Projects
 ---
 
 <div class="projects-intro">
-  <!-- Add any intro text you want here -->
   <h1>My Projects</h1>
   <p>This page is still a work in progress and being updated regularly. Case studies will be coming soon!</p>
 </div>
+
+<!-- DEBUG: Remove this after checking -->
+  <details>
+    <summary>Debug: Click to see project data</summary>
+    <pre style="background: #f5f5f5; padding: 1rem; overflow: auto;">
+{{ projects_build | dump(2) }}
+    </pre>
+  </details>
+</div>
+
+
   
 <div class="projects-grid">
 
-  {% for project in projects_build %} <!-- "projects_build is always the name of the file where the data is" -->
+  {% for project in projects_build %}
     <article class="project-item">
 
       {% if project.image %}
         <div class="project-image">
-          <a href="{{ project.url }}" tabindex="-1" aria-hidden="true">
-            <img src="{{ project.image }}" alt=" ">
+          <a href="/projects/{{ project.slug }}/" tabindex="-1" aria-hidden="true">
+            <img src="{{ project.image.url or project.image }}" alt="">
           </a>
         </div>
       {% endif %}
 
       {% if project.category %}
         <span class="project-categories">
-            <a href="/categories/{{ category | slug }}/">{{ category }}</a>
+          {% if project.category is iterable and project.category is not string %}
+            {% for cat in project.category %}
+              <a href="/categories/{{ cat | slug }}/">{{ cat }}</a>{% if not loop.last %}, {% endif %}
+            {% endfor %}
+          {% else %}
+            <a href="/categories/{{ project.category | slug }}/">{{ project.category }}</a>
+          {% endif %}
         </span>
       {% endif %}
 
-      <h2><a href="{{ project.url }}">{{ project.title }}</a></h2>
+      <h2><a href="/projects/{{ project.slug }}/">{{ project.title }}</a></h2>
 
       {% if project.tags %}
         <span class="project-tags">
