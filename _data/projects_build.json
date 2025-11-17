@@ -1,12 +1,164 @@
 [
   {
-    "title": "A test is becoming a meme on the internet",
-    "slug": "a-bug-is-becoming-a-meme-on-the-internet",
-    "url": "/projects/a-bug-is-becoming-a-meme-on-the-internet/",
-    "image": "../images/thumbnail_a_bug_is_becoming_a_meme_on_the_internet_e47a1053d3.jpeg",
+    "title": "Yacht Rock — Making an Accessibile Game on Board Game Arena",
+    "slug": "yacht-rock",
+    "url": "/projects/yacht-rock/",
+    "image": "../images/thumb-placeholder.png",
     "category": "Case Study",
     "tags": [
-      "web/ux"
-    ]
+      "Accessibility",
+      "Web/UX"
+    ],
+    "order": 150
+  },
+  {
+    "title": "Games For Change — Driving Social Impact Through Games",
+    "slug": "g4c",
+    "url": "/projects/g4c/",
+    "image": "../images/large_thumb_g4c_017241b4c5.png",
+    "category": "Case Study",
+    "tags": [
+      "Web/UX"
+    ],
+    "order": 140
+  },
+  {
+    "title": "Spring Fling — Exploring Instagram AR Filters",
+    "slug": "spring-fling",
+    "url": "/projects/spring-fling/",
+    "image": "../images/large_thumb_springfling_4a9d07690e.png",
+    "category": null,
+    "tags": [
+      "Interactive"
+    ],
+    "order": 130
+  },
+  {
+    "title": "Johnson & Johnson Global Public Health — Engaging Audiences With Augmented Reality",
+    "slug": "jnj",
+    "url": "/projects/jnj/",
+    "image": "../images/large_thumb_jnj_ar_3e45cad895.png",
+    "category": null,
+    "tags": [
+      "Interactive"
+    ],
+    "order": 120
+  },
+  {
+    "title": "Carton Council — Increasing Carton Recycling Through Online Engagement",
+    "slug": "ccna",
+    "url": "/projects/ccna/",
+    "image": "../images/large_thumb_ccna_cee6b095f5.png",
+    "category": null,
+    "tags": [
+      "Branding",
+      "Digital",
+      "Strategy"
+    ],
+    "order": 110
+  },
+  {
+    "title": "Battle Creek Public Schools — Kindergarten At-Home Activity Packet",
+    "slug": "bcps-kinder",
+    "url": "/projects/bcps-kinder/",
+    "image": "../images/large_thumb_bcps_kinder_d113c972fc.png",
+    "category": null,
+    "tags": [
+      "Print",
+      "Branding"
+    ],
+    "order": 100
+  },
+  {
+    "title": "Battle Creek Public Schools — Transforming Perceptions of a School District",
+    "slug": "bcps",
+    "url": "/projects/bcps/",
+    "image": "../images/large_thumb_bcps_3e4f572159.png",
+    "category": null,
+    "tags": [
+      "Digital"
+    ],
+    "order": 99
+  },
+  {
+    "title": "Hope for Haiti — Promoting a VR Experience at AWE 2023",
+    "slug": "hfh",
+    "url": "/projects/hfh/",
+    "image": "../images/large_thumb_hfh_f13c03050e.png",
+    "category": null,
+    "tags": [
+      "Event",
+      "Strategy"
+    ],
+    "order": 95
+  },
+  {
+    "title": "LACRRCC: Get Out The Vote — Promoting Early Voting in LA County",
+    "slug": "gotv",
+    "url": "/projects/gotv/",
+    "image": "../images/large_thumb_gotv_6ac6de6e97.png",
+    "category": null,
+    "tags": [
+      "Campaign",
+      "Branding"
+    ],
+    "order": 90
+  },
+  {
+    "title": "PRISM: Fenton’s Queer ERG — Logo Design",
+    "slug": "prism-erg",
+    "url": "/projects/prism-erg/",
+    "image": "../images/large_thumb_prism_744008236d.png",
+    "category": null,
+    "tags": [
+      "Branding"
+    ],
+    "order": 80
+  },
+  {
+    "title": "W.K. Kellogg Foundation — Championing Change for Children in Mississippi",
+    "slug": "wkkf",
+    "url": "/projects/wkkf/",
+    "image": "../images/thumb-placeholder.png",
+    "category": null,
+    "tags": [
+      "Interactive",
+      "Digital"
+    ],
+    "order": 70
+  },
+  {
+    "title": "Together Toward Health — Addressing Health Inequitites in California",
+    "slug": "tth",
+    "url": "/projects/tth/",
+    "image": "../images/thumb-placeholder.png",
+    "category": null,
+    "tags": [
+      "Digital"
+    ],
+    "order": 60
+  },
+  {
+    "title": "Stop AAPI Hate — Times Square Billboard",
+    "slug": "aapi",
+    "url": "/projects/aapi/",
+    "image": "../images/large_thumb_aapi_4b056f6dd9.png",
+    "category": null,
+    "tags": [
+      "OOH"
+    ],
+    "order": 50
+  },
+  {
+    "title": "Optimizely — Elevating Internal Company Events",
+    "slug": "optimizely",
+    "url": "/projects/optimizely/",
+    "image": "../images/large_thumb_optimizely_29eaeae938.png",
+    "category": null,
+    "tags": [
+      "Event",
+      "Print"
+    ],
+    "order": 30
   }
 ]

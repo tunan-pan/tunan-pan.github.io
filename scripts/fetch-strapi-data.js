@@ -8,7 +8,7 @@ async function fetchAndSave() {
     const json = await res.json();
 
     const projects = json.data.map(p => {
-      let image = p.thumbnail?.formats?.thumbnail?.url || p.cover?.url || null
+      let image = p.thumbnail?.formats?.large?.url || "../images/thumb-placeholder.png"
       if (image) {
         image = image.replace("/uploads", "../images")
       }
@@ -18,11 +18,14 @@ async function fetchAndSave() {
         url: `/projects/${p.slug}/`,
         image: image,
         category: p.category?.name || null,
-        tags: p.tags?.map(tag => tag.name) || []
+        tags: p.tags?.map(tag => tag.name) || [],
+        order: p.order
+
       };
     });
 
-    const sortedProjects = projects.sort((a, b) => a.title.localeCompare(b.title));
+    const sortedProjects = projects.sort((a, b) => b.order - a.order);
+
 
     // Save to _data/projects.json
     fs.writeFileSync(
