@@ -11,7 +11,7 @@ pink: #F2126C
 -----------------------------------*/
 
 :root {
-  --color-orange: /* #E93600;*/ #000;
+  --color-orange: #E93600;
   --color-lightgrey: #F6F6F6;
   --color-darkgrey: #E9E9E9;
   --color-purple: #7C1D9E ;
@@ -176,6 +176,10 @@ p a:hover {
     transition: 0.9s;
   }
 }
+
+
+
+
 
 .button:focus, a:focus {
   outline: 2px solid #000;
@@ -798,11 +802,12 @@ margin-top: -70px;
 /* ----------------------------------
 projects page - page-id-22
 -----------------------------------*/
-/*turn these off once links are ready
+
+/*turn these off once links are ready*/
 .projects-grid a { 
   pointer-events: none;
   cursor: default; 
-} */
+} 
 
 .projects-intro {
   text-align: center;
