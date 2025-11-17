@@ -178,10 +178,6 @@ p a:hover {
   }
 }
 
-
-
-
-
 .button:focus, a:focus {
   outline: 2px solid #000;
   outline-offset: 2px;
@@ -253,7 +249,7 @@ header nav
 .logo {
   display: flex;
   align-items: center;
-  gap: 10px;
+  gap: 15px;
   text-decoration: none;
   color: #333;
 }
