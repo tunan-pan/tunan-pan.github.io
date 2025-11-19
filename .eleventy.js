@@ -1,3 +1,5 @@
+const markdownIt = require("markdown-it");
+
 module.exports = function(eleventyConfig) {
   eleventyConfig.addPassthroughCopy("CNAME");
   eleventyConfig.addPassthroughCopy("css");
@@ -15,10 +17,19 @@ module.exports = function(eleventyConfig) {
   })
   eleventyConfig.ignores.add("backend/**");
 
+
+// Add markdown filter
+eleventyConfig.addFilter("markdown", (content) => {
+  if (!content || typeof content !== 'string') return "";
+  return md.render(content);
+});
+  
+
   return {
     dir: {
       input: ".",
-      output: "_site"
+      output: "_site",
+      data: "_data"
     }
   };
 };

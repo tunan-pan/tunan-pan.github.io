@@ -1,0 +1,1221 @@
+{
+  "data": [
+    {
+      "id": 48,
+      "documentId": "w5mc7b21uxdfv0abnchjmrtk",
+      "title": "Yacht Rock — Making an Accessibile Game on Board Game Arena",
+      "description": null,
+      "slug": "yacht-rock",
+      "createdAt": "2025-11-17T06:02:51.748Z",
+      "updatedAt": "2025-11-17T06:04:38.998Z",
+      "publishedAt": "2025-11-17T06:04:39.010Z",
+      "order": 150,
+      "thumbnail": null,
+      "category": {
+        "id": 3,
+        "documentId": "zoa3ani7va15fdjhe4fzbrfu",
+        "name": "Case Study",
+        "slug": "case-study",
+        "description": null,
+        "createdAt": "2025-11-12T09:43:50.207Z",
+        "updatedAt": "2025-11-13T09:35:06.708Z",
+        "publishedAt": "2025-11-13T09:35:06.700Z"
+      },
+      "blocks": [],
+      "tags": [
+        {
+          "id": 20,
+          "documentId": "pnbqmrj9s15pijinqt8hxl9t",
+          "slug": "accessibility",
+          "createdAt": "2025-11-17T02:43:39.725Z",
+          "updatedAt": "2025-11-17T02:43:39.725Z",
+          "publishedAt": "2025-11-17T02:43:39.732Z",
+          "name": "Accessibility"
+        },
+        {
+          "id": 4,
+          "documentId": "j3t0j00jg6mx4m0jox6ytav5",
+          "slug": "web-ux",
+          "createdAt": "2025-11-13T22:09:51.874Z",
+          "updatedAt": "2025-11-17T02:38:51.520Z",
+          "publishedAt": "2025-11-17T02:38:51.530Z",
+          "name": "Web/UX"
+        }
+      ]
+    },
+    {
+      "id": 49,
+      "documentId": "mkuutavlggh0t6pdwxg018ng",
+      "title": "Spring Fling — Exploring Instagram AR Filters",
+      "description": null,
+      "slug": "spring-fling",
+      "createdAt": "2025-11-17T02:45:07.693Z",
+      "updatedAt": "2025-11-17T06:05:16.828Z",
+      "publishedAt": "2025-11-17T06:05:16.961Z",
+      "order": 130,
+      "thumbnail": {
+        "id": 19,
+        "documentId": "fsgytyjmh9vg8h7iwjt118fh",
+        "name": "thumb-springfling.png",
+        "alternativeText": null,
+        "caption": null,
+        "width": 1200,
+        "height": 750,
+        "formats": {
+          "thumbnail": {
+            "name": "thumbnail_thumb-springfling.png",
+            "hash": "thumbnail_thumb_springfling_4a9d07690e",
+            "ext": ".png",
+            "mime": "image/png",
+            "path": null,
+            "width": 245,
+            "height": 153,
+            "size": 50.84,
+            "sizeInBytes": 50839,
+            "url": "/uploads/thumbnail_thumb_springfling_4a9d07690e.png"
+          },
+          "small": {
+            "name": "small_thumb-springfling.png",
+            "hash": "small_thumb_springfling_4a9d07690e",
+            "ext": ".png",
+            "mime": "image/png",
+            "path": null,
+            "width": 500,
+            "height": 313,
+            "size": 151.03,
+            "sizeInBytes": 151029,
+            "url": "/uploads/small_thumb_springfling_4a9d07690e.png"
+          },
+          "medium": {
+            "name": "medium_thumb-springfling.png",
+            "hash": "medium_thumb_springfling_4a9d07690e",
+            "ext": ".png",
+            "mime": "image/png",
+            "path": null,
+            "width": 750,
+            "height": 469,
+            "size": 289.63,
+            "sizeInBytes": 289626,
+            "url": "/uploads/medium_thumb_springfling_4a9d07690e.png"
+          },
+          "large": {
+            "name": "large_thumb-springfling.png",
+            "hash": "large_thumb_springfling_4a9d07690e",
+            "ext": ".png",
+            "mime": "image/png",
+            "path": null,
+            "width": 1000,
+            "height": 625,
+            "size": 463.97,
+            "sizeInBytes": 463967,
+            "url": "/uploads/large_thumb_springfling_4a9d07690e.png"
+          }
+        },
+        "hash": "thumb_springfling_4a9d07690e",
+        "ext": ".png",
+        "mime": "image/png",
+        "size": 126.64,
+        "url": "/uploads/thumb_springfling_4a9d07690e.png",
+        "previewUrl": null,
+        "provider": "local",
+        "provider_metadata": null,
+        "createdAt": "2025-11-17T02:45:37.590Z",
+        "updatedAt": "2025-11-17T02:45:37.590Z",
+        "publishedAt": "2025-11-17T02:45:37.590Z"
+      },
+      "category": null,
+      "blocks": [],
+      "tags": [
+        {
+          "id": 18,
+          "documentId": "t1wywp5sm8cat7tu64ivjyeq",
+          "slug": "interactive",
+          "createdAt": "2025-11-17T02:43:23.469Z",
+          "updatedAt": "2025-11-17T02:43:23.469Z",
+          "publishedAt": "2025-11-17T02:43:23.476Z",
+          "name": "Interactive"
+        }
+      ]
+    },
+    {
+      "id": 50,
+      "documentId": "k707njkeh2bwi2d3mnbvlws3",
+      "title": "Johnson & Johnson Global Public Health — Engaging Audiences With Augmented Reality",
+      "description": null,
+      "slug": "jnj",
+      "createdAt": "2025-11-17T05:18:00.962Z",
+      "updatedAt": "2025-11-17T06:05:24.841Z",
+      "publishedAt": "2025-11-17T06:05:24.851Z",
+      "order": 120,
+      "thumbnail": {
+        "id": 18,
+        "documentId": "vh4e99vavfodswmuyff5ezbq",
+        "name": "thumb-jnj-ar.png",
+        "alternativeText": null,
+        "caption": null,
+        "width": 1200,
+        "height": 750,
+        "formats": {
+          "thumbnail": {
+            "name": "thumbnail_thumb-jnj-ar.png",
+            "hash": "thumbnail_thumb_jnj_ar_3e45cad895",
+            "ext": ".png",
+            "mime": "image/png",
+            "path": null,
+            "width": 245,
+            "height": 153,
+            "size": 57.73,
+            "sizeInBytes": 57727,
+            "url": "/uploads/thumbnail_thumb_jnj_ar_3e45cad895.png"
+          },
+          "small": {
+            "name": "small_thumb-jnj-ar.png",
+            "hash": "small_thumb_jnj_ar_3e45cad895",
+            "ext": ".png",
+            "mime": "image/png",
+            "path": null,
+            "width": 500,
+            "height": 313,
+            "size": 197.88,
+            "sizeInBytes": 197882,
+            "url": "/uploads/small_thumb_jnj_ar_3e45cad895.png"
+          },
+          "medium": {
+            "name": "medium_thumb-jnj-ar.png",
+            "hash": "medium_thumb_jnj_ar_3e45cad895",
+            "ext": ".png",
+            "mime": "image/png",
+            "path": null,
+            "width": 750,
+            "height": 469,
+            "size": 405.4,
+            "sizeInBytes": 405395,
+            "url": "/uploads/medium_thumb_jnj_ar_3e45cad895.png"
+          },
+          "large": {
+            "name": "large_thumb-jnj-ar.png",
+            "hash": "large_thumb_jnj_ar_3e45cad895",
+            "ext": ".png",
+            "mime": "image/png",
+            "path": null,
+            "width": 1000,
+            "height": 625,
+            "size": 666.58,
+            "sizeInBytes": 666583,
+            "url": "/uploads/large_thumb_jnj_ar_3e45cad895.png"
+          }
+        },
+        "hash": "thumb_jnj_ar_3e45cad895",
+        "ext": ".png",
+        "mime": "image/png",
+        "size": 215.41,
+        "url": "/uploads/thumb_jnj_ar_3e45cad895.png",
+        "previewUrl": null,
+        "provider": "local",
+        "provider_metadata": null,
+        "createdAt": "2025-11-17T02:45:37.468Z",
+        "updatedAt": "2025-11-17T05:17:58.600Z",
+        "publishedAt": "2025-11-17T02:45:37.468Z"
+      },
+      "category": null,
+      "blocks": [],
+      "tags": [
+        {
+          "id": 18,
+          "documentId": "t1wywp5sm8cat7tu64ivjyeq",
+          "slug": "interactive",
+          "createdAt": "2025-11-17T02:43:23.469Z",
+          "updatedAt": "2025-11-17T02:43:23.469Z",
+          "publishedAt": "2025-11-17T02:43:23.476Z",
+          "name": "Interactive"
+        }
+      ]
+    },
+    {
+      "id": 51,
+      "documentId": "gq77ewiuy8q2xhkg7ntxa14k",
+      "title": "Carton Council — Increasing Carton Recycling Through Online Engagement",
+      "description": null,
+      "slug": "ccna",
+      "createdAt": "2025-11-17T05:18:46.250Z",
+      "updatedAt": "2025-11-17T06:05:30.614Z",
+      "publishedAt": "2025-11-17T06:05:30.818Z",
+      "order": 110,
+      "thumbnail": {
+        "id": 13,
+        "documentId": "ss43aenre891d9d1aonu8hcv",
+        "name": "thumb-ccna.png",
+        "alternativeText": null,
+        "caption": null,
+        "width": 1200,
+        "height": 750,
+        "formats": {
+          "thumbnail": {
+            "name": "thumbnail_thumb-ccna.png",
+            "hash": "thumbnail_thumb_ccna_cee6b095f5",
+            "ext": ".png",
+            "mime": "image/png",
+            "path": null,
+            "width": 245,
+            "height": 153,
+            "size": 27.24,
+            "sizeInBytes": 27236,
+            "url": "/uploads/thumbnail_thumb_ccna_cee6b095f5.png"
+          },
+          "medium": {
+            "name": "medium_thumb-ccna.png",
+            "hash": "medium_thumb_ccna_cee6b095f5",
+            "ext": ".png",
+            "mime": "image/png",
+            "path": null,
+            "width": 750,
+            "height": 469,
+            "size": 114.29,
+            "sizeInBytes": 114293,
+            "url": "/uploads/medium_thumb_ccna_cee6b095f5.png"
+          },
+          "small": {
+            "name": "small_thumb-ccna.png",
+            "hash": "small_thumb_ccna_cee6b095f5",
+            "ext": ".png",
+            "mime": "image/png",
+            "path": null,
+            "width": 500,
+            "height": 313,
+            "size": 66.69,
+            "sizeInBytes": 66689,
+            "url": "/uploads/small_thumb_ccna_cee6b095f5.png"
+          },
+          "large": {
+            "name": "large_thumb-ccna.png",
+            "hash": "large_thumb_ccna_cee6b095f5",
+            "ext": ".png",
+            "mime": "image/png",
+            "path": null,
+            "width": 1000,
+            "height": 625,
+            "size": 171.62,
+            "sizeInBytes": 171619,
+            "url": "/uploads/large_thumb_ccna_cee6b095f5.png"
+          }
+        },
+        "hash": "thumb_ccna_cee6b095f5",
+        "ext": ".png",
+        "mime": "image/png",
+        "size": 33.37,
+        "url": "/uploads/thumb_ccna_cee6b095f5.png",
+        "previewUrl": null,
+        "provider": "local",
+        "provider_metadata": null,
+        "createdAt": "2025-11-17T02:45:36.602Z",
+        "updatedAt": "2025-11-17T02:45:36.602Z",
+        "publishedAt": "2025-11-17T02:45:36.603Z"
+      },
+      "category": null,
+      "blocks": [],
+      "tags": [
+        {
+          "id": 6,
+          "documentId": "e2ivrqeyughcs5650sship7y",
+          "slug": "branding",
+          "createdAt": "2025-11-17T02:40:44.615Z",
+          "updatedAt": "2025-11-17T02:40:44.615Z",
+          "publishedAt": "2025-11-17T02:40:44.697Z",
+          "name": "Branding"
+        },
+        {
+          "id": 10,
+          "documentId": "pucm86ixg1l78fodsgdj2qoo",
+          "slug": "digital",
+          "createdAt": "2025-11-17T02:41:40.744Z",
+          "updatedAt": "2025-11-17T02:41:40.744Z",
+          "publishedAt": "2025-11-17T02:41:40.748Z",
+          "name": "Digital"
+        },
+        {
+          "id": 12,
+          "documentId": "agj0y9vtdl3g0h9fchoca5qa",
+          "slug": "strategy",
+          "createdAt": "2025-11-17T02:41:55.514Z",
+          "updatedAt": "2025-11-17T02:41:55.514Z",
+          "publishedAt": "2025-11-17T02:41:55.575Z",
+          "name": "Strategy"
+        }
+      ]
+    },
+    {
+      "id": 52,
+      "documentId": "uag3nc7wrxgwqd3nuuy23wg2",
+      "title": "Battle Creek Public Schools — Kindergarten At-Home Activity Packet",
+      "description": null,
+      "slug": "bcps-kinder",
+      "createdAt": "2025-11-17T05:19:21.938Z",
+      "updatedAt": "2025-11-17T06:05:36.212Z",
+      "publishedAt": "2025-11-17T06:05:36.223Z",
+      "order": 100,
+      "thumbnail": {
+        "id": 20,
+        "documentId": "b8mvn3eg64c6ae3zdu713vxe",
+        "name": "thumb-bcps-kinder.png",
+        "alternativeText": null,
+        "caption": null,
+        "width": 1200,
+        "height": 750,
+        "formats": {
+          "thumbnail": {
+            "name": "thumbnail_thumb-bcps-kinder.png",
+            "hash": "thumbnail_thumb_bcps_kinder_d113c972fc",
+            "ext": ".png",
+            "mime": "image/png",
+            "path": null,
+            "width": 245,
+            "height": 153,
+            "size": 26.6,
+            "sizeInBytes": 26601,
+            "url": "/uploads/thumbnail_thumb_bcps_kinder_d113c972fc.png"
+          },
+          "medium": {
+            "name": "medium_thumb-bcps-kinder.png",
+            "hash": "medium_thumb_bcps_kinder_d113c972fc",
+            "ext": ".png",
+            "mime": "image/png",
+            "path": null,
+            "width": 750,
+            "height": 469,
+            "size": 124.86,
+            "sizeInBytes": 124861,
+            "url": "/uploads/medium_thumb_bcps_kinder_d113c972fc.png"
+          },
+          "large": {
+            "name": "large_thumb-bcps-kinder.png",
+            "hash": "large_thumb_bcps_kinder_d113c972fc",
+            "ext": ".png",
+            "mime": "image/png",
+            "path": null,
+            "width": 1000,
+            "height": 625,
+            "size": 195.14,
+            "sizeInBytes": 195141,
+            "url": "/uploads/large_thumb_bcps_kinder_d113c972fc.png"
+          },
+          "small": {
+            "name": "small_thumb-bcps-kinder.png",
+            "hash": "small_thumb_bcps_kinder_d113c972fc",
+            "ext": ".png",
+            "mime": "image/png",
+            "path": null,
+            "width": 500,
+            "height": 313,
+            "size": 70.4,
+            "sizeInBytes": 70401,
+            "url": "/uploads/small_thumb_bcps_kinder_d113c972fc.png"
+          }
+        },
+        "hash": "thumb_bcps_kinder_d113c972fc",
+        "ext": ".png",
+        "mime": "image/png",
+        "size": 57.5,
+        "url": "/uploads/thumb_bcps_kinder_d113c972fc.png",
+        "previewUrl": null,
+        "provider": "local",
+        "provider_metadata": null,
+        "createdAt": "2025-11-17T02:45:37.901Z",
+        "updatedAt": "2025-11-17T02:45:37.901Z",
+        "publishedAt": "2025-11-17T02:45:37.901Z"
+      },
+      "category": null,
+      "blocks": [],
+      "tags": [
+        {
+          "id": 8,
+          "documentId": "kjt3qck85el17d4lhjfgg3nv",
+          "slug": "print",
+          "createdAt": "2025-11-17T02:41:27.964Z",
+          "updatedAt": "2025-11-17T02:41:27.964Z",
+          "publishedAt": "2025-11-17T02:41:28.044Z",
+          "name": "Print"
+        },
+        {
+          "id": 6,
+          "documentId": "e2ivrqeyughcs5650sship7y",
+          "slug": "branding",
+          "createdAt": "2025-11-17T02:40:44.615Z",
+          "updatedAt": "2025-11-17T02:40:44.615Z",
+          "publishedAt": "2025-11-17T02:40:44.697Z",
+          "name": "Branding"
+        }
+      ]
+    },
+    {
+      "id": 53,
+      "documentId": "nx74rvo4qp87ys09yhxa2h8r",
+      "title": "Battle Creek Public Schools — Transforming Perceptions of a School District",
+      "description": null,
+      "slug": "bcps",
+      "createdAt": "2025-11-17T05:19:54.448Z",
+      "updatedAt": "2025-11-17T06:05:41.893Z",
+      "publishedAt": "2025-11-17T06:05:41.907Z",
+      "order": 99,
+      "thumbnail": {
+        "id": 22,
+        "documentId": "qsy1z9zv7yw82kot2h1fokba",
+        "name": "thumb-bcps.png",
+        "alternativeText": null,
+        "caption": null,
+        "width": 1200,
+        "height": 750,
+        "formats": {
+          "thumbnail": {
+            "name": "thumbnail_thumb-bcps.png",
+            "hash": "thumbnail_thumb_bcps_3e4f572159",
+            "ext": ".png",
+            "mime": "image/png",
+            "path": null,
+            "width": 245,
+            "height": 153,
+            "size": 87.78,
+            "sizeInBytes": 87777,
+            "url": "/uploads/thumbnail_thumb_bcps_3e4f572159.png"
+          },
+          "small": {
+            "name": "small_thumb-bcps.png",
+            "hash": "small_thumb_bcps_3e4f572159",
+            "ext": ".png",
+            "mime": "image/png",
+            "path": null,
+            "width": 500,
+            "height": 313,
+            "size": 332.01,
+            "sizeInBytes": 332006,
+            "url": "/uploads/small_thumb_bcps_3e4f572159.png"
+          },
+          "medium": {
+            "name": "medium_thumb-bcps.png",
+            "hash": "medium_thumb_bcps_3e4f572159",
+            "ext": ".png",
+            "mime": "image/png",
+            "path": null,
+            "width": 750,
+            "height": 469,
+            "size": 717.62,
+            "sizeInBytes": 717624,
+            "url": "/uploads/medium_thumb_bcps_3e4f572159.png"
+          },
+          "large": {
+            "name": "large_thumb-bcps.png",
+            "hash": "large_thumb_bcps_3e4f572159",
+            "ext": ".png",
+            "mime": "image/png",
+            "path": null,
+            "width": 1000,
+            "height": 625,
+            "size": 1230.27,
+            "sizeInBytes": 1230272,
+            "url": "/uploads/large_thumb_bcps_3e4f572159.png"
+          }
+        },
+        "hash": "thumb_bcps_3e4f572159",
+        "ext": ".png",
+        "mime": "image/png",
+        "size": 332.66,
+        "url": "/uploads/thumb_bcps_3e4f572159.png",
+        "previewUrl": null,
+        "provider": "local",
+        "provider_metadata": null,
+        "createdAt": "2025-11-17T02:45:38.976Z",
+        "updatedAt": "2025-11-18T06:18:22.701Z",
+        "publishedAt": "2025-11-17T02:45:38.976Z"
+      },
+      "category": null,
+      "blocks": [],
+      "tags": [
+        {
+          "id": 10,
+          "documentId": "pucm86ixg1l78fodsgdj2qoo",
+          "slug": "digital",
+          "createdAt": "2025-11-17T02:41:40.744Z",
+          "updatedAt": "2025-11-17T02:41:40.744Z",
+          "publishedAt": "2025-11-17T02:41:40.748Z",
+          "name": "Digital"
+        }
+      ]
+    },
+    {
+      "id": 57,
+      "documentId": "s7x1zh8ys0vonbongfg8dli1",
+      "title": "LACRRCC: Get Out The Vote — Promoting Early Voting in LA County",
+      "description": null,
+      "slug": "gotv",
+      "createdAt": "2025-11-17T05:20:31.403Z",
+      "updatedAt": "2025-11-17T06:07:09.315Z",
+      "publishedAt": "2025-11-17T06:07:09.326Z",
+      "order": 90,
+      "thumbnail": {
+        "id": 14,
+        "documentId": "nggdgi5kv8qwa0snnsv90kh9",
+        "name": "thumb-gotv.png",
+        "alternativeText": null,
+        "caption": null,
+        "width": 1200,
+        "height": 750,
+        "formats": {
+          "thumbnail": {
+            "name": "thumbnail_thumb-gotv.png",
+            "hash": "thumbnail_thumb_gotv_6ac6de6e97",
+            "ext": ".png",
+            "mime": "image/png",
+            "path": null,
+            "width": 245,
+            "height": 153,
+            "size": 43.93,
+            "sizeInBytes": 43934,
+            "url": "/uploads/thumbnail_thumb_gotv_6ac6de6e97.png"
+          },
+          "small": {
+            "name": "small_thumb-gotv.png",
+            "hash": "small_thumb_gotv_6ac6de6e97",
+            "ext": ".png",
+            "mime": "image/png",
+            "path": null,
+            "width": 500,
+            "height": 313,
+            "size": 138.58,
+            "sizeInBytes": 138578,
+            "url": "/uploads/small_thumb_gotv_6ac6de6e97.png"
+          },
+          "medium": {
+            "name": "medium_thumb-gotv.png",
+            "hash": "medium_thumb_gotv_6ac6de6e97",
+            "ext": ".png",
+            "mime": "image/png",
+            "path": null,
+            "width": 750,
+            "height": 469,
+            "size": 267.92,
+            "sizeInBytes": 267924,
+            "url": "/uploads/medium_thumb_gotv_6ac6de6e97.png"
+          },
+          "large": {
+            "name": "large_thumb-gotv.png",
+            "hash": "large_thumb_gotv_6ac6de6e97",
+            "ext": ".png",
+            "mime": "image/png",
+            "path": null,
+            "width": 1000,
+            "height": 625,
+            "size": 427.65,
+            "sizeInBytes": 427648,
+            "url": "/uploads/large_thumb_gotv_6ac6de6e97.png"
+          }
+        },
+        "hash": "thumb_gotv_6ac6de6e97",
+        "ext": ".png",
+        "mime": "image/png",
+        "size": 143.29,
+        "url": "/uploads/thumb_gotv_6ac6de6e97.png",
+        "previewUrl": null,
+        "provider": "local",
+        "provider_metadata": null,
+        "createdAt": "2025-11-17T02:45:36.904Z",
+        "updatedAt": "2025-11-17T02:45:36.904Z",
+        "publishedAt": "2025-11-17T02:45:36.904Z"
+      },
+      "category": null,
+      "blocks": [],
+      "tags": [
+        {
+          "id": 14,
+          "documentId": "h8w5xe2pynr36xdyfcbkwjkh",
+          "slug": "campaign",
+          "createdAt": "2025-11-17T02:42:47.562Z",
+          "updatedAt": "2025-11-17T02:42:47.562Z",
+          "publishedAt": "2025-11-17T02:42:47.568Z",
+          "name": "Campaign"
+        },
+        {
+          "id": 6,
+          "documentId": "e2ivrqeyughcs5650sship7y",
+          "slug": "branding",
+          "createdAt": "2025-11-17T02:40:44.615Z",
+          "updatedAt": "2025-11-17T02:40:44.615Z",
+          "publishedAt": "2025-11-17T02:40:44.697Z",
+          "name": "Branding"
+        }
+      ]
+    },
+    {
+      "id": 58,
+      "documentId": "kob23y9hnfo225bvaooc4wen",
+      "title": "Hope for Haiti — Promoting a VR Experience at AWE 2023",
+      "description": null,
+      "slug": "hfh",
+      "createdAt": "2025-11-17T06:06:47.180Z",
+      "updatedAt": "2025-11-17T06:07:15.150Z",
+      "publishedAt": "2025-11-17T06:07:15.158Z",
+      "order": 95,
+      "thumbnail": {
+        "id": 17,
+        "documentId": "j8dz7biwyg7smcwz9oasmnhu",
+        "name": "thumb-hfh.png",
+        "alternativeText": null,
+        "caption": null,
+        "width": 1200,
+        "height": 750,
+        "formats": {
+          "thumbnail": {
+            "name": "thumbnail_thumb-hfh.png",
+            "hash": "thumbnail_thumb_hfh_f13c03050e",
+            "ext": ".png",
+            "mime": "image/png",
+            "path": null,
+            "width": 245,
+            "height": 153,
+            "size": 17.47,
+            "sizeInBytes": 17472,
+            "url": "/uploads/thumbnail_thumb_hfh_f13c03050e.png"
+          },
+          "small": {
+            "name": "small_thumb-hfh.png",
+            "hash": "small_thumb_hfh_f13c03050e",
+            "ext": ".png",
+            "mime": "image/png",
+            "path": null,
+            "width": 500,
+            "height": 313,
+            "size": 47.14,
+            "sizeInBytes": 47139,
+            "url": "/uploads/small_thumb_hfh_f13c03050e.png"
+          },
+          "large": {
+            "name": "large_thumb-hfh.png",
+            "hash": "large_thumb_hfh_f13c03050e",
+            "ext": ".png",
+            "mime": "image/png",
+            "path": null,
+            "width": 1000,
+            "height": 625,
+            "size": 130.02,
+            "sizeInBytes": 130020,
+            "url": "/uploads/large_thumb_hfh_f13c03050e.png"
+          },
+          "medium": {
+            "name": "medium_thumb-hfh.png",
+            "hash": "medium_thumb_hfh_f13c03050e",
+            "ext": ".png",
+            "mime": "image/png",
+            "path": null,
+            "width": 750,
+            "height": 469,
+            "size": 83.18,
+            "sizeInBytes": 83180,
+            "url": "/uploads/medium_thumb_hfh_f13c03050e.png"
+          }
+        },
+        "hash": "thumb_hfh_f13c03050e",
+        "ext": ".png",
+        "mime": "image/png",
+        "size": 31.44,
+        "url": "/uploads/thumb_hfh_f13c03050e.png",
+        "previewUrl": null,
+        "provider": "local",
+        "provider_metadata": null,
+        "createdAt": "2025-11-17T02:45:37.060Z",
+        "updatedAt": "2025-11-17T02:45:37.060Z",
+        "publishedAt": "2025-11-17T02:45:37.060Z"
+      },
+      "category": null,
+      "blocks": [],
+      "tags": [
+        {
+          "id": 22,
+          "documentId": "c5y35x8obf9rcdklwprttpne",
+          "slug": "event",
+          "createdAt": "2025-11-17T02:44:01.049Z",
+          "updatedAt": "2025-11-17T02:44:01.049Z",
+          "publishedAt": "2025-11-17T02:44:01.055Z",
+          "name": "Event"
+        },
+        {
+          "id": 12,
+          "documentId": "agj0y9vtdl3g0h9fchoca5qa",
+          "slug": "strategy",
+          "createdAt": "2025-11-17T02:41:55.514Z",
+          "updatedAt": "2025-11-17T02:41:55.514Z",
+          "publishedAt": "2025-11-17T02:41:55.575Z",
+          "name": "Strategy"
+        }
+      ]
+    },
+    {
+      "id": 59,
+      "documentId": "fp00f0fzyru5c5juq5lnv0f9",
+      "title": "PRISM: Fenton’s Queer ERG — Logo Design",
+      "description": null,
+      "slug": "prism-erg",
+      "createdAt": "2025-11-17T05:21:53.692Z",
+      "updatedAt": "2025-11-17T06:09:01.775Z",
+      "publishedAt": "2025-11-17T06:09:01.785Z",
+      "order": 80,
+      "thumbnail": {
+        "id": 15,
+        "documentId": "czslesspq5anygayk6s04iud",
+        "name": "thumb-prism.png",
+        "alternativeText": null,
+        "caption": null,
+        "width": 1200,
+        "height": 750,
+        "formats": {
+          "thumbnail": {
+            "name": "thumbnail_thumb-prism.png",
+            "hash": "thumbnail_thumb_prism_744008236d",
+            "ext": ".png",
+            "mime": "image/png",
+            "path": null,
+            "width": 245,
+            "height": 153,
+            "size": 6.52,
+            "sizeInBytes": 6522,
+            "url": "/uploads/thumbnail_thumb_prism_744008236d.png"
+          },
+          "large": {
+            "name": "large_thumb-prism.png",
+            "hash": "large_thumb_prism_744008236d",
+            "ext": ".png",
+            "mime": "image/png",
+            "path": null,
+            "width": 1000,
+            "height": 625,
+            "size": 32.61,
+            "sizeInBytes": 32614,
+            "url": "/uploads/large_thumb_prism_744008236d.png"
+          },
+          "medium": {
+            "name": "medium_thumb-prism.png",
+            "hash": "medium_thumb_prism_744008236d",
+            "ext": ".png",
+            "mime": "image/png",
+            "path": null,
+            "width": 750,
+            "height": 469,
+            "size": 21.97,
+            "sizeInBytes": 21967,
+            "url": "/uploads/medium_thumb_prism_744008236d.png"
+          },
+          "small": {
+            "name": "small_thumb-prism.png",
+            "hash": "small_thumb_prism_744008236d",
+            "ext": ".png",
+            "mime": "image/png",
+            "path": null,
+            "width": 500,
+            "height": 313,
+            "size": 13.79,
+            "sizeInBytes": 13788,
+            "url": "/uploads/small_thumb_prism_744008236d.png"
+          }
+        },
+        "hash": "thumb_prism_744008236d",
+        "ext": ".png",
+        "mime": "image/png",
+        "size": 6.68,
+        "url": "/uploads/thumb_prism_744008236d.png",
+        "previewUrl": null,
+        "provider": "local",
+        "provider_metadata": null,
+        "createdAt": "2025-11-17T02:45:37.015Z",
+        "updatedAt": "2025-11-17T02:45:37.015Z",
+        "publishedAt": "2025-11-17T02:45:37.015Z"
+      },
+      "category": null,
+      "blocks": [],
+      "tags": [
+        {
+          "id": 6,
+          "documentId": "e2ivrqeyughcs5650sship7y",
+          "slug": "branding",
+          "createdAt": "2025-11-17T02:40:44.615Z",
+          "updatedAt": "2025-11-17T02:40:44.615Z",
+          "publishedAt": "2025-11-17T02:40:44.697Z",
+          "name": "Branding"
+        }
+      ]
+    },
+    {
+      "id": 62,
+      "documentId": "tnr4lpr61amlv7j88ulr6zig",
+      "title": "W.K. Kellogg Foundation — Championing Change for Children in Mississippi",
+      "description": null,
+      "slug": "wkkf",
+      "createdAt": "2025-11-17T06:14:34.860Z",
+      "updatedAt": "2025-11-17T06:14:34.860Z",
+      "publishedAt": "2025-11-17T06:14:34.871Z",
+      "order": 70,
+      "thumbnail": null,
+      "category": null,
+      "blocks": [],
+      "tags": [
+        {
+          "id": 18,
+          "documentId": "t1wywp5sm8cat7tu64ivjyeq",
+          "slug": "interactive",
+          "createdAt": "2025-11-17T02:43:23.469Z",
+          "updatedAt": "2025-11-17T02:43:23.469Z",
+          "publishedAt": "2025-11-17T02:43:23.476Z",
+          "name": "Interactive"
+        },
+        {
+          "id": 10,
+          "documentId": "pucm86ixg1l78fodsgdj2qoo",
+          "slug": "digital",
+          "createdAt": "2025-11-17T02:41:40.744Z",
+          "updatedAt": "2025-11-17T02:41:40.744Z",
+          "publishedAt": "2025-11-17T02:41:40.748Z",
+          "name": "Digital"
+        }
+      ]
+    },
+    {
+      "id": 63,
+      "documentId": "oqj7iv3fy3belx7ekem0rgvz",
+      "title": "Stop AAPI Hate — Times Square Billboard",
+      "description": null,
+      "slug": "aapi",
+      "createdAt": "2025-11-17T05:22:16.331Z",
+      "updatedAt": "2025-11-17T06:15:21.296Z",
+      "publishedAt": "2025-11-17T06:15:21.305Z",
+      "order": 50,
+      "thumbnail": {
+        "id": 21,
+        "documentId": "xl6jybdz7kdzph0isqyyneph",
+        "name": "thumb-aapi.png",
+        "alternativeText": null,
+        "caption": null,
+        "width": 1200,
+        "height": 750,
+        "formats": {
+          "thumbnail": {
+            "name": "thumbnail_thumb-aapi.png",
+            "hash": "thumbnail_thumb_aapi_4b056f6dd9",
+            "ext": ".png",
+            "mime": "image/png",
+            "path": null,
+            "width": 245,
+            "height": 153,
+            "size": 93.28,
+            "sizeInBytes": 93279,
+            "url": "/uploads/thumbnail_thumb_aapi_4b056f6dd9.png"
+          },
+          "small": {
+            "name": "small_thumb-aapi.png",
+            "hash": "small_thumb_aapi_4b056f6dd9",
+            "ext": ".png",
+            "mime": "image/png",
+            "path": null,
+            "width": 500,
+            "height": 313,
+            "size": 330.05,
+            "sizeInBytes": 330046,
+            "url": "/uploads/small_thumb_aapi_4b056f6dd9.png"
+          },
+          "medium": {
+            "name": "medium_thumb-aapi.png",
+            "hash": "medium_thumb_aapi_4b056f6dd9",
+            "ext": ".png",
+            "mime": "image/png",
+            "path": null,
+            "width": 750,
+            "height": 469,
+            "size": 687.96,
+            "sizeInBytes": 687962,
+            "url": "/uploads/medium_thumb_aapi_4b056f6dd9.png"
+          },
+          "large": {
+            "name": "large_thumb-aapi.png",
+            "hash": "large_thumb_aapi_4b056f6dd9",
+            "ext": ".png",
+            "mime": "image/png",
+            "path": null,
+            "width": 1000,
+            "height": 625,
+            "size": 1149.37,
+            "sizeInBytes": 1149374,
+            "url": "/uploads/large_thumb_aapi_4b056f6dd9.png"
+          }
+        },
+        "hash": "thumb_aapi_4b056f6dd9",
+        "ext": ".png",
+        "mime": "image/png",
+        "size": 340.28,
+        "url": "/uploads/thumb_aapi_4b056f6dd9.png",
+        "previewUrl": null,
+        "provider": "local",
+        "provider_metadata": null,
+        "createdAt": "2025-11-17T02:45:38.454Z",
+        "updatedAt": "2025-11-17T02:45:38.454Z",
+        "publishedAt": "2025-11-17T02:45:38.454Z"
+      },
+      "category": null,
+      "blocks": [],
+      "tags": [
+        {
+          "id": 24,
+          "documentId": "zdijg0z7t0ux7u832b7yk34q",
+          "slug": "ooh",
+          "createdAt": "2025-11-17T02:44:08.502Z",
+          "updatedAt": "2025-11-17T02:44:08.502Z",
+          "publishedAt": "2025-11-17T02:44:08.506Z",
+          "name": "OOH"
+        }
+      ]
+    },
+    {
+      "id": 66,
+      "documentId": "d6umncz3mdouerur3nwj2qhu",
+      "title": "Together Toward Health — Addressing Health Inequitites in California",
+      "description": null,
+      "slug": "tth",
+      "createdAt": "2025-11-17T05:22:59.269Z",
+      "updatedAt": "2025-11-17T06:53:21.410Z",
+      "publishedAt": "2025-11-17T06:53:21.419Z",
+      "order": 60,
+      "thumbnail": null,
+      "category": null,
+      "blocks": [],
+      "tags": [
+        {
+          "id": 10,
+          "documentId": "pucm86ixg1l78fodsgdj2qoo",
+          "slug": "digital",
+          "createdAt": "2025-11-17T02:41:40.744Z",
+          "updatedAt": "2025-11-17T02:41:40.744Z",
+          "publishedAt": "2025-11-17T02:41:40.748Z",
+          "name": "Digital"
+        }
+      ]
+    },
+    {
+      "id": 68,
+      "documentId": "q4ss5nsti24vaogumnol2h5g",
+      "title": "Optimizely — Elevating Internal Company Events",
+      "description": null,
+      "slug": "optimizely",
+      "createdAt": "2025-11-17T05:21:14.468Z",
+      "updatedAt": "2025-11-17T06:54:26.579Z",
+      "publishedAt": "2025-11-17T06:54:26.589Z",
+      "order": 30,
+      "thumbnail": {
+        "id": 16,
+        "documentId": "kvn1mlm8ishjv9n2v62y3kml",
+        "name": "thumb-optimizely.png",
+        "alternativeText": null,
+        "caption": null,
+        "width": 1200,
+        "height": 750,
+        "formats": {
+          "thumbnail": {
+            "name": "thumbnail_thumb-optimizely.png",
+            "hash": "thumbnail_thumb_optimizely_29eaeae938",
+            "ext": ".png",
+            "mime": "image/png",
+            "path": null,
+            "width": 245,
+            "height": 153,
+            "size": 11.03,
+            "sizeInBytes": 11034,
+            "url": "/uploads/thumbnail_thumb_optimizely_29eaeae938.png"
+          },
+          "large": {
+            "name": "large_thumb-optimizely.png",
+            "hash": "large_thumb_optimizely_29eaeae938",
+            "ext": ".png",
+            "mime": "image/png",
+            "path": null,
+            "width": 1000,
+            "height": 625,
+            "size": 63.61,
+            "sizeInBytes": 63607,
+            "url": "/uploads/large_thumb_optimizely_29eaeae938.png"
+          },
+          "medium": {
+            "name": "medium_thumb-optimizely.png",
+            "hash": "medium_thumb_optimizely_29eaeae938",
+            "ext": ".png",
+            "mime": "image/png",
+            "path": null,
+            "width": 750,
+            "height": 469,
+            "size": 43.68,
+            "sizeInBytes": 43682,
+            "url": "/uploads/medium_thumb_optimizely_29eaeae938.png"
+          },
+          "small": {
+            "name": "small_thumb-optimizely.png",
+            "hash": "small_thumb_optimizely_29eaeae938",
+            "ext": ".png",
+            "mime": "image/png",
+            "path": null,
+            "width": 500,
+            "height": 313,
+            "size": 25.42,
+            "sizeInBytes": 25424,
+            "url": "/uploads/small_thumb_optimizely_29eaeae938.png"
+          }
+        },
+        "hash": "thumb_optimizely_29eaeae938",
+        "ext": ".png",
+        "mime": "image/png",
+        "size": 13.79,
+        "url": "/uploads/thumb_optimizely_29eaeae938.png",
+        "previewUrl": null,
+        "provider": "local",
+        "provider_metadata": null,
+        "createdAt": "2025-11-17T02:45:37.039Z",
+        "updatedAt": "2025-11-17T02:45:37.039Z",
+        "publishedAt": "2025-11-17T02:45:37.039Z"
+      },
+      "category": null,
+      "blocks": [],
+      "tags": [
+        {
+          "id": 22,
+          "documentId": "c5y35x8obf9rcdklwprttpne",
+          "slug": "event",
+          "createdAt": "2025-11-17T02:44:01.049Z",
+          "updatedAt": "2025-11-17T02:44:01.049Z",
+          "publishedAt": "2025-11-17T02:44:01.055Z",
+          "name": "Event"
+        },
+        {
+          "id": 8,
+          "documentId": "kjt3qck85el17d4lhjfgg3nv",
+          "slug": "print",
+          "createdAt": "2025-11-17T02:41:27.964Z",
+          "updatedAt": "2025-11-17T02:41:27.964Z",
+          "publishedAt": "2025-11-17T02:41:28.044Z",
+          "name": "Print"
+        }
+      ]
+    },
+    {
+      "id": 71,
+      "documentId": "ok9pvx0ikjx7d7wn1bduooq8",
+      "title": "Games For Change — Driving Social Impact Through Games",
+      "description": null,
+      "slug": "g4c",
+      "createdAt": "2025-11-17T02:38:34.287Z",
+      "updatedAt": "2025-11-18T06:20:17.940Z",
+      "publishedAt": "2025-11-18T06:20:17.960Z",
+      "order": 140,
+      "thumbnail": {
+        "id": 12,
+        "documentId": "j40icawfnqlxxefj7hz4lfyt",
+        "name": "thumb-g4c.png",
+        "alternativeText": null,
+        "caption": null,
+        "width": 1200,
+        "height": 750,
+        "formats": {
+          "thumbnail": {
+            "name": "thumbnail_thumb-g4c.png",
+            "hash": "thumbnail_thumb_g4c_017241b4c5",
+            "ext": ".png",
+            "mime": "image/png",
+            "path": null,
+            "width": 245,
+            "height": 153,
+            "size": 43.11,
+            "sizeInBytes": 43113,
+            "url": "/uploads/thumbnail_thumb_g4c_017241b4c5.png"
+          },
+          "small": {
+            "name": "small_thumb-g4c.png",
+            "hash": "small_thumb_g4c_017241b4c5",
+            "ext": ".png",
+            "mime": "image/png",
+            "path": null,
+            "width": 500,
+            "height": 313,
+            "size": 138.67,
+            "sizeInBytes": 138672,
+            "url": "/uploads/small_thumb_g4c_017241b4c5.png"
+          },
+          "medium": {
+            "name": "medium_thumb-g4c.png",
+            "hash": "medium_thumb_g4c_017241b4c5",
+            "ext": ".png",
+            "mime": "image/png",
+            "path": null,
+            "width": 750,
+            "height": 469,
+            "size": 273.92,
+            "sizeInBytes": 273916,
+            "url": "/uploads/medium_thumb_g4c_017241b4c5.png"
+          },
+          "large": {
+            "name": "large_thumb-g4c.png",
+            "hash": "large_thumb_g4c_017241b4c5",
+            "ext": ".png",
+            "mime": "image/png",
+            "path": null,
+            "width": 1000,
+            "height": 625,
+            "size": 445.01,
+            "sizeInBytes": 445009,
+            "url": "/uploads/large_thumb_g4c_017241b4c5.png"
+          }
+        },
+        "hash": "thumb_g4c_017241b4c5",
+        "ext": ".png",
+        "mime": "image/png",
+        "size": 134.79,
+        "url": "/uploads/thumb_g4c_017241b4c5.png",
+        "previewUrl": null,
+        "provider": "local",
+        "provider_metadata": null,
+        "createdAt": "2025-11-17T02:38:29.014Z",
+        "updatedAt": "2025-11-17T02:38:29.014Z",
+        "publishedAt": "2025-11-17T02:38:29.014Z"
+      },
+      "category": {
+        "id": 3,
+        "documentId": "zoa3ani7va15fdjhe4fzbrfu",
+        "name": "Case Study",
+        "slug": "case-study",
+        "description": null,
+        "createdAt": "2025-11-12T09:43:50.207Z",
+        "updatedAt": "2025-11-13T09:35:06.708Z",
+        "publishedAt": "2025-11-13T09:35:06.700Z"
+      },
+      "blocks": [
+        {
+          "__component": "shared.media",
+          "id": 17
+        },
+        {
+          "__component": "shared.rich-text",
+          "id": 28,
+          "body": "Testing the rich text component block here.\n\n![thumb-bcps.png](http://localhost:1337/uploads/thumb_bcps_3e4f572159.png)\n\nAdded an inline image to see how it differs from the media block."
+        }
+      ],
+      "tags": [
+        {
+          "id": 4,
+          "documentId": "j3t0j00jg6mx4m0jox6ytav5",
+          "slug": "web-ux",
+          "createdAt": "2025-11-13T22:09:51.874Z",
+          "updatedAt": "2025-11-17T02:38:51.520Z",
+          "publishedAt": "2025-11-17T02:38:51.530Z",
+          "name": "Web/UX"
+        }
+      ]
+    }
+  ],
+  "meta": {
+    "pagination": {
+      "page": 1,
+      "pageSize": 25,
+      "pageCount": 1,
+      "total": 14
+    }
+  }
+}

@@ -2,34 +2,55 @@
 layout: base.njk
 ---
 
+
 <article class="project-post">
-  {% if categories %}
-    <span class="project-categories">
-      {% for category in categories %}
-        <a href="/categories/{{ category | slug }}/">{{ category }}</a>{% if not loop.last %} {% endif %}
-      {% endfor %}
-    </span>
-  {% endif %}
-  
-  <h1>{{ title }}</h1>
-  
-  {% if image %}
-    <img src="{{ image }}" alt="" class="project-hero-image">
-  {% endif %}
-  
-  <div class="project-meta">
-    {% if tags %}
-      <span class="project-tags">
-        {% for tag in tags %}
-          <a href="/tags/{{ tag | slug }}/">{{ tag }}</a>{% if not loop.last %}, {% endif %}
-        {% endfor %}
-      </span>
-    {% endif %}
+
+
+  <div class="project-left">
+
+    <div class="project-meta">
+      {% if project.category %}
+        <span class="project-categories">
+          <a href="/categories/{{ project.category | slug }}/">{{ project.category }}</a> 
+        </span>
+      {% endif %}
+
+      {% if project.tags and project.tags.length %}
+        <span class="project-tags">
+          {% for tag in project.tags %}
+          &emsp;|&emsp;<a href="/tags/{{ tag | slug }}/">{{ tag }}</a>{% if not loop.last %}, {% endif %}
+          {% endfor %}
+        </span>
+      {% endif %}
+    </div>
+
+    <h1>{{ project.title }}</h1>
+    
+    <!-- Main content -->
+    <div class="project-content">
+      {% if project.content %}
+        {{ project.content | safe }}
+      {% else %}
+        <p>Content coming soon!</p>
+      {% endif %}
+    </div>
+
+    <a class="button-secondary" href="/projects/">← Back to Projects</a>
+
   </div>
-  
-  <div class="project-content">
-    {{ content | safe }}
+    
+  <!-- Image gallery -->
+  {% if project.images and project.images.length %}
+  <div class="project-gallery">
+    {% for image in project.images %}
+      <figure>
+        <img src="../{{ image.url }}" alt="{{ image.alternativeText or '' }}" class="project-page-image">
+        {% if image.caption %}
+          <figcaption>{{ image.caption }}</figcaption>
+        {% endif %}
+      </figure>
+    {% endfor %}
   </div>
-  
-  <a href="/projects/">← Back to Projects</a>
+  {% endif %}
+    
 </article>
