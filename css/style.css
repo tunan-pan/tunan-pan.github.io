@@ -593,10 +593,9 @@ home page
   min-height: 70vh;
   box-sizing: border-box;
   display: flex;
-  flex-direction: column;
-  justify-content: center; 
+  flex-direction: row;
+  justify-content: space-between; 
 }
-
 
 .home-intro-text {
   max-width: 650px;
@@ -622,6 +621,11 @@ home page
   margin-top: 60px;
 }
 
+
+.fox-visual {
+  height: 70vh;
+  max-width: 400px;
+}
 
 /* ----------------------------------
 about page - page-id-21
