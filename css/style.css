@@ -525,7 +525,7 @@ footer {
 /* Left section - CTA */
 
 .footer-cta p {
-  margin: 10px 0 20px;
+  margin: 10px 0 10px;
   line-height: 1.6;
 }
 
@@ -647,20 +647,22 @@ about page - page-id-21
 
 .about-image {
   display: block;
-  margin: 15px auto;
-  width: 100%;
-  min-height: 300px;
-  max-height: 400px;
-  max-width: 400px;
-  height: auto;
-  aspect-ratio: 1/1;
-  background-color: var(--color-darkgrey);
-  background-image: url("../images/bio-photo3.png");
-  background-size: cover;
+  margin: 10px auto;
+  width: 90%;
+  aspect-ratio: 1/1.49;
+  background-image: url("../images/bio-photo-polaroid2.png");
+  background-size:cover;
   background-repeat:no-repeat;
-  background-position:top right;
-  border-radius: 500px;
+  background-position:top left;
+  transform: rotate(-3deg);
 }
+@media (prefers-reduced-motion: no-preference) {
+  .about-image:hover {
+      transform: rotate(0deg);
+      transition: 0.3s ease-in-out;
+  }
+}
+
 
 .about-text strong {
   color: var(--color-pink);
@@ -817,6 +819,9 @@ about page - page-id-21
   
   .about-fox {
     padding: 100px 8% 50px;
+  }
+  .about-image {
+    width: 60%;
   }
 }
 
