@@ -482,6 +482,7 @@ a.logo:hover {
     padding: 100px var(--page-padding-sides);
     box-shadow: -2px 0 10px rgba(0, 0, 0, 0.1);
     gap: 0;
+    font-size: 1.25rem;
   }
 
   @media (prefers-reduced-motion: no-preference) {
@@ -978,6 +979,8 @@ Individual project pages
   display: flex;
   flex-direction: row;
   gap: 5%;
+  max-width: 850px;
+  margin: 0 auto;
 }
 
 /* content in left column */
@@ -999,7 +1002,7 @@ Individual project pages
 }
 
 .project-left p {
-  font-size: 0.9rem;
+  font-size: 1rem;
   line-height: 150%;
 }
 
@@ -1007,7 +1010,10 @@ Individual project pages
   margin-top: 20px;
 }
 
-
+.project-content img {
+  width: 100%;
+  border-radius: 10px;
+}
 /* content in right column */
 
 .project-gallery {
@@ -1031,7 +1037,7 @@ figcaption {
 
 
 
-@media (max-width: 1500px) {
+@media (max-width: 2000px) {
   .project-post {
     flex-direction: column;
   }

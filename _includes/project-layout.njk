@@ -11,14 +11,14 @@ layout: base.njk
     <div class="project-meta">
       {% if project.category %}
         <span class="project-categories">
-          <a href="/categories/{{ project.category | slug }}/">{{ project.category }}</a> 
+          <a href="/categories/{{ project.category | slug }}/">{{ project.category }}</a> &emsp;|&emsp;
         </span>
       {% endif %}
 
       {% if project.tags and project.tags.length %}
         <span class="project-tags">
           {% for tag in project.tags %}
-          &emsp;|&emsp;<a href="/tags/{{ tag | slug }}/">{{ tag }}</a>{% if not loop.last %}, {% endif %}
+          <a href="/tags/{{ tag | slug }}/">{{ tag }}</a>{% if not loop.last %}, {% endif %} 
           {% endfor %}
         </span>
       {% endif %}
@@ -35,7 +35,9 @@ layout: base.njk
       {% endif %}
     </div>
 
+    <!--
     <a class="button-secondary" href="/projects/">← Back to Projects</a>
+    -->
 
   </div>
     

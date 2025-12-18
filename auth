@@ -3,7 +3,7 @@ pass: Abcdefg1
 
 backend: cd backend, npm run dev
 frontend: npm start, npm run fetch-data
-
+use ctrl+C to stop running task (like start or run dev)
 
 _data/projects.js - Simply loads the static JSON file
 scripts/fetch-strapi-data.js - Fetches from Strapi and saves to projects_build.json (run this manually before deploying)
