@@ -48,37 +48,56 @@ pink: #F2126C
 fonts
 -----------------------------------*/
 
-/* headings and nav */
+/* headings */
 @font-face
 {
   font-family: "Lexend";
-  src: url("../fonts/Lexend/Lexend-Light.ttf");
+  src: url("../fonts/Lexend/Lexend-Regular.ttf");
+  font-weight: normal;
 }
 
 @font-face
 {
-  font-family: "Lexend-Bold";
+  font-family: "Lexend";
   src: url("../fonts/Lexend/Lexend-Bold.ttf");
   font-weight: bold;
 }
 
 @font-face
 {
-  font-family: "Lexend-Medium";
+  font-family: "Lexend";
   src: url("../fonts/Lexend/Lexend-Medium.ttf");
+  font-weight: 500;
 }
 
+@font-face
+{
+  font-family: "Lexend";
+  src: url("../fonts/Lexend/Lexend-Light.ttf");
+  font-weight: 300;
+}
+
+/* nav and buttons */
 
 @font-face
 {
   font-family: "LexendExa";
-  src: url("../fonts/Lexend/LexendExa-ExtraLight.ttf");
+  src: url("../fonts/Lexend/LexendExa-Light.ttf");
+  font-weight: normal;
 }
 
 @font-face
 {
-  font-family: "LexendExa-Bold";
+  font-family: "LexendExa";
   src: url("../fonts/Lexend/LexendExa-Bold.ttf");
+  font-weight: bold;
+}
+
+@font-face
+{
+  font-family: "LexendExa";
+  src: url("../fonts/Lexend/LexendExa-Medium.ttf");
+  font-weight: 500;
 }
 
 /* main body text */
@@ -94,20 +113,36 @@ fonts
   font-family: "InclusiveSans";
   src: url("../fonts/InclusiveSans/InclusiveSans-Bold.ttf");
   font-weight: bold;
-  font-style: normal;
 }
 @font-face
 {
   font-family: "InclusiveSans";
   src: url("../fonts/InclusiveSans/InclusiveSans-Italic.ttf");
+  font-weight: normal;
   font-style: italic;
 }
 @font-face
 {
-  font-family: "InclusiveSans-Med";
+  font-family: "InclusiveSans";
   src: url("../fonts/InclusiveSans/InclusiveSans-Medium.ttf");
-  font-style: normal;
+  font-weight: 500;
 }
+
+@font-face
+{
+  font-family: "InclusiveSans";
+  src: url("../fonts/InclusiveSans/InclusiveSans-BoldItalic.ttf");
+  font-weight: bold;
+  font-style: italic;
+}
+@font-face
+{
+  font-family: "InclusiveSans";
+  src: url("../fonts/InclusiveSans/InclusiveSans-MediumItalic.ttf");
+  font-weight: 500;
+  font-style: italic;
+}
+
 
 
 
@@ -224,22 +259,38 @@ p a:hover {
 }
 
 h1 {
-  font-family: "Lexend-Medium", sans-serif;
+  font-family: "Lexend", sans-serif;
   line-height: 125%;
   margin-bottom: .6em;
-  font-weight: normal;
+  font-weight: 500;
   font-size: 3em;
-}
-h1 strong {
-  font-family: "Lexend-Bold", sans-serif;
 }
 
 h2 {
-  font-family: "Lexend-Medium", sans-serif;
-  margin: 1rem 0;
-  font-weight: normal;
+  font-family: "Lexend", sans-serif;
+  margin: 2.5rem 0 1.5rem;
+  font-weight: 500;
   font-size: 2em;
 }
+
+h3 {
+  font-family: "Lexend", sans-serif;
+  margin: 1.8rem 0 1rem;
+  font-weight: bold;
+  font-size: 1.1em;
+  text-transform: uppercase;
+}
+
+/* Remove top margin if it's the first child of its parent */
+h1:first-child,
+h2:first-child,
+h3:first-child,
+h4:first-child,
+h5:first-child,
+h6:first-child {
+  margin-top: 1rem;
+}
+
 
 
 /* ----------------------------------
@@ -294,7 +345,7 @@ header nav
   font-family: "LexendExa", sans-serif;
   font-size: 1rem;
   text-transform: uppercase;
-  font-weight: bold;
+  font-weight: normal;
 }
 a.logo:hover {
   text-decoration: none;
@@ -317,7 +368,6 @@ a.logo:hover {
   font-size: 0.7rem;
   text-transform: uppercase;
   font-family: "LexendExa", sans-serif;
-  font-weight: bold;
 }
 
 .main-nav a {
@@ -331,7 +381,6 @@ a.logo:hover {
   text-decoration: underline;
   text-decoration-thickness: 20%;
   text-underline-offset: 8px;
-  font-weight: bold;
 }
 
 /* Individual link colors with icons */
@@ -607,7 +656,7 @@ home page
 
 .home-intro-text h1 {
   font-family: "Lexend", sans-serif;
-  font-weight: normal;
+  font-weight: 300;
   font-size: 2.6rem;
   margin-bottom: 30px;
 }
@@ -913,8 +962,8 @@ projects page - page-id-22
 /* Project Title */
 .project-item h2 {
   font-size: 1em;
-  font-family: 'InclusiveSans-Med', sans-serif;
-  font-weight: normal;
+  font-family: 'InclusiveSans', sans-serif;
+  font-weight: 500;
   line-height: 1.3;
   margin: 0 0 3px;
   padding: 0;
@@ -997,7 +1046,7 @@ Individual project pages
 }
 
 .project-post h1 {
-  font-size: 2.3rem;
+  font-size: 2.5rem;
   margin: 0 0 20px;
 }
 
