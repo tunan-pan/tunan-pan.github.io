@@ -60,6 +60,27 @@ export interface SharedSlider extends Struct.ComponentSchema {
   };
 }
 
+export interface SharedTable extends Struct.ComponentSchema {
+  collectionName: 'components_shared_tables';
+  info: {
+    displayName: 'table';
+  };
+  attributes: {
+    headers: Schema.Attribute.String;
+    tablerow: Schema.Attribute.Component<'shared.table-row', true>;
+  };
+}
+
+export interface SharedTableRow extends Struct.ComponentSchema {
+  collectionName: 'components_shared_table_rows';
+  info: {
+    displayName: 'Table Row';
+  };
+  attributes: {
+    cells: Schema.Attribute.String;
+  };
+}
+
 declare module '@strapi/strapi' {
   export module Public {
     export interface ComponentSchemas {
@@ -68,6 +89,8 @@ declare module '@strapi/strapi' {
       'shared.rich-text': SharedRichText;
       'shared.seo': SharedSeo;
       'shared.slider': SharedSlider;
+      'shared.table': SharedTable;
+      'shared.table-row': SharedTableRow;
     }
   }
 }

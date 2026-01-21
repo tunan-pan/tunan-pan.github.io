@@ -49,7 +49,11 @@
       "mappedBy": "articles"
     },
     "content": {
-      "type": "blocks"
+      "type": "customField",
+      "customField": "plugin::ckeditor5.CKEditor",
+      "options": {
+        "preset": "defaultHtml"
+      }
     },
     "images": {
       "type": "media",

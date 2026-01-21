@@ -28,11 +28,20 @@ pink: #F2126C
     2.1px 4.1px 5.2px -1.7px hsl(var(--shadow-color) / 0.36),
     5px 10px 12.6px -2.5px hsl(var(--shadow-color) / 0.36); */
 
-     0.3px 0.5px 0.6px hsl(var(--shadow-color) / 0.28),
+    0.3px 0.5px 0.6px hsl(var(--shadow-color) / 0.28),
     0.6px 1.3px 1.5px -1px hsl(var(--shadow-color) / 0.25),
     1.6px 3.3px 3.8px -2.1px hsl(var(--shadow-color) / 0.23),
     4.1px 8.2px 9.5px -3.1px hsl(var(--shadow-color) / 0.2);
+
+  --shadow-light:
+    1px 2px 8px hsl(var(--shadow-color) / 0.1),
+      2px 4px 16px hsl(var(--shadow-color) / 0.1),
+      4px 8px 20px hsl(var(--shadow-color) / 0.1);
+
 }
+
+
+
 
 @media (max-width: 650px ){
   :root {
@@ -277,7 +286,7 @@ h3 {
   font-family: "Lexend", sans-serif;
   margin: 1.8rem 0 1rem;
   font-weight: bold;
-  font-size: 1.1em;
+  font-size: 1.2em;
   text-transform: uppercase;
 }
 
@@ -291,6 +300,9 @@ h6:first-child {
   margin-top: 1rem;
 }
 
+ul li, ol li {
+  margin-bottom: 0.5rem;
+}
 
 
 /* ----------------------------------
@@ -1059,21 +1071,45 @@ Individual project pages
   margin-top: 20px;
 }
 
+
+.table {
+  margin-left:0;
+}
+table {
+  border-collapse: collapse;
+  display: block;
+  max-width: 100%;
+  background-color: #fff;
+  text-align: left;
+}
+
+tr, td, th  {
+  padding: 3px 10px;
+  border: 1px solid #cdcdcd;
+}
+
+th { border-bottom: 2px solid #333; }
+
+.table-color-grey {
+  background-color: var(--color-darkgrey);
+}
+.table-color-orange {
+  background-color: #fffaf4;;
+}
+
+figure.image {
+  margin: 1rem 0; /* spacing around images */
+  text-align: center; /* optional: center images */
+}
+
 .project-content img {
-  width: 100%;
+  width: unset!important; /* make image take full container width */
+  height: auto !important; /* maintain aspect ratio */
+  max-width: 100%; /* prevent overflowing the container */
+  aspect-ratio: auto !important; /* ignore CKEditor's inline aspect-ratio */
+  margin: 10px 0; /* spacing around images */
+  box-shadow: var(--shadow-light);
   border-radius: 10px;
-}
-/* content in right column */
-
-.project-gallery {
-  width: 60%;
-}
-
-img.project-page-image {
-  max-width: 100%;  
-  margin-top: 20px;
-  border-radius: 10px;
-  /*box-shadow: var(--shadow-medium);*/
 }
 
 figcaption {
@@ -1084,6 +1120,22 @@ figcaption {
   text-wrap: balance;
 }
 
+
+.projects-back {
+  margin-top: 50px;
+}
+
+/* content in right column */
+
+.project-gallery {
+  width: 60%;
+}
+
+img.project-page-image {
+  max-width: 100%;  
+  margin-top: 20px;
+  border-radius: 10px;
+}
 
 
 @media (max-width: 2000px) {

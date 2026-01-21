@@ -8,10 +8,18 @@ const { BlocksRenderer } = require('@strapi/blocks-react-renderer');
 
 function convertContent(content) {
   if (content == null) return "";
+
+  // If content is a string (CKEditor HTML), return it as-is
+  if (typeof content === "string") {
+    return content;
+  }
+
+  // If content is an array (Strapi blocks), render with BlocksRenderer
   return renderToString(
     React.createElement(BlocksRenderer, { content })
-  )
+  );
 }
+
 
 
 async function fetchAndSave() {
