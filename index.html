@@ -52,7 +52,13 @@
   <section class="home-top-container">
 		<div class="home-left">
 
-			<img class="fox-visual" src="images\Fox_Animated_Tail2.gif"/>
+			<div class="fox-container">
+      			<img class="fox-visual fox-static" src="images/fox/Fox_Static.png" alt="friendly fox"/>
+      			<img class="fox-visual fox-animated" src="images/fox/Fox_Frame_01.png" alt="" aria-hidden="true"/>
+      
+      			<div class="fox-hitbox" role="button" tabindex="0" aria-label="Pet the fox"></div>
+    		</div>
+
 
 			<div class="home-intro-text">
 				<h1>Hi, I'm Tunan! I'm a designer who cares about <strong>social impact</strong> & <strong>human-centered</strong> experiences.</h1>
@@ -72,20 +78,11 @@
 		
 		</div>
 
-			
-
-		<div class="home-right">
-
-
-			
-		</div>
-
-
-		
-		
   </section>
 
-  
+
+  <script src="/js/fox-animation.js"></script>
+
   </main>
 
   <footer>
@@ -115,30 +112,30 @@
 
   <script src="/js/menu.js"> // for mobile hamburger menu </script>
 
-<script>
-  const header = document.querySelector('.site-header');
-  let isScrolled = false;
-  let ticking = false;
-  
-  window.addEventListener('scroll', function() {
-    if (!ticking) {
-      window.requestAnimationFrame(function() {
-        const scrollY = window.scrollY;
-        
-        if (scrollY > 60 && !isScrolled) {
-          header.classList.add('scrolled');
-          isScrolled = true;
-        } else if (scrollY < 40 && isScrolled) {
-          header.classList.remove('scrolled');
-          isScrolled = false;
-        }
-        
-        ticking = false;
-      });
-      ticking = true;
-    }
-  });
-</script>
+  <script>
+    const header = document.querySelector('.site-header');
+    let isScrolled = false;
+    let ticking = false;
+    
+    window.addEventListener('scroll', function() {
+      if (!ticking) {
+        window.requestAnimationFrame(function() {
+          const scrollY = window.scrollY;
+          
+          if (scrollY > 60 && !isScrolled) {
+            header.classList.add('scrolled');
+            isScrolled = true;
+          } else if (scrollY < 40 && isScrolled) {
+            header.classList.remove('scrolled');
+            isScrolled = false;
+          }
+          
+          ticking = false;
+        });
+        ticking = true;
+      }
+    });
+  </script>
 
 
 </body>
