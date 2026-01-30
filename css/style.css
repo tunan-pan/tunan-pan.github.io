@@ -12,8 +12,8 @@ pink: #F2126C
 
 :root {
   --color-orange: #E93600;
-  --color-lightgrey: /* #F6F6F6;*/ #FFF1EE;
-  --color-darkgrey: /* #E9E9E9; */ #FFE4DB;
+  --color-lightgrey: /* #F6F6F6;*/ #fff5f3;
+  --color-darkgrey: /* #E9E9E9; */ #ffeae0;
   --color-purple: #7C1D9E ;
   --color-lightpurple: #E0BFE7;
   --color-yellow: #FEC949;
