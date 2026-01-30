@@ -686,17 +686,63 @@ home page
 
 .home-left {
   position: relative;
-    min-height: 70vh;
-
+  min-height: 70vh;
 }
-img.fox-visual {
+
+/* Fox container - wraps both static and animated versions */
+.fox-container {
   position: absolute;
-  z-index: -100;
   width: 55vw;
   right: -80px;
-  bottom: -10vh;  
+  bottom: -6vh;  
   max-width: 800px;
+  aspect-ratio: 1000 / 909;
 }
+
+/* Both fox images share the same positioning */
+.fox-visual {
+  position: absolute;
+  width: 100%;
+  height: auto;
+  top: 0;
+  left: 0;
+  display: block;
+  z-index: -1000;
+}
+
+/* Static fox is visible by default */
+.fox-static {
+  opacity: 1;
+  transition: none;
+}
+
+/* Animated fox is hidden by default */
+.fox-animated {
+  opacity: 0;
+  pointer-events: none;
+}
+
+/* When animating, hide static and show animated */
+.fox-container.is-animating .fox-static {
+  opacity: 0;
+}
+.fox-container.is-animating .fox-animated {
+  opacity: 1;
+}
+
+/* Hover trigger positioned over fox's head */
+.fox-hitbox {
+  position: absolute;
+  width: 30%;
+  aspect-ratio: 1 / 0.8;
+  top: 50%;
+  left: 35%;
+  cursor: pointer;
+  z-index: 1;
+}
+
+
+
 
 @media (max-width: 1435px) {
  .home-intro-text {
@@ -711,17 +757,16 @@ img.fox-visual {
   padding-right: 200px;
  }
 
-
 }
 
 @media (max-width: 1000px) {
   .home-intro-text, .home-disclaimer {
     width: 100%;
   } 
-  img.fox-visual {
-    position: static;
+  .fox-container {
+    position: relative;
     width: 100%;
-    margin-top: -130px;
+    margin: -130px 0 100px -100px;
   }
   .home-intro-small{
   padding-right: 0;
