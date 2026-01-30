@@ -1,7 +1,7 @@
 email: tunanp@gmail.com
 pass: Abcdefg1
 
-backend: cd backend, npm run dev
+backend: cd backend, npm run dev (npm run build if need to rebuild strapi)
 frontend: npm start, npm run fetch-data
 use ctrl+C to stop running task (like start or run dev)
 

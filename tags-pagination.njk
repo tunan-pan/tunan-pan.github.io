@@ -1,0 +1,57 @@
+---
+pagination:
+  data: project_tags
+  size: 1
+  alias: project_tag
+permalink: /tags/{{ project_tag | slugify }}/index.html
+layout: base.njk
+eleventyComputed:
+  title: "Tag: {{ project_tag }}"
+---
+
+<div class="projects-intro">
+  <h1>Tag: {{ project_tag }}</h1>
+</div>
+
+<div class="projects-grid">
+
+  {% for project in projects_build %}
+    {# Check if the tag appears in the project's tags array #}
+    {% if project.tags and project_tag in project.tags %}
+      <article class="project-item">
+
+        {% if project.image %}
+          <div class="project-image">
+            <a href="/projects/{{ project.slug }}/" tabindex="-1" aria-hidden="true">
+              <img src="{{ project.image.url or project.image }}" alt="">
+            </a>
+          </div>
+        {% endif %}
+
+        {% if project.category %}
+          <span class="project-categories">
+            {% if project.category is iterable and project.category is not string %}
+              {% for cat in project.category %}
+                <a href="/categories/{{ cat | slug }}/">{{ cat }}</a>{% if not loop.last %}, {% endif %}
+              {% endfor %}
+            {% else %}
+              <a href="/categories/{{ project.category | slug }}/">{{ project.category }}</a>
+            {% endif %}
+          </span>
+        {% endif %}
+
+        <h2><a href="/projects/{{ project.slug }}/">{{ project.title }}</a></h2>
+
+        {% if project.tags %}
+          <span class="project-tags">
+            {% for ptag in project.tags %}
+              <a href="/tags/{{ ptag | slug }}/">{{ ptag }}</a>{% if not loop.last %}, {% endif %}
+            {% endfor %}
+          </span>
+        {% endif %}
+
+      </article>
+    {% endif %}
+  {% endfor %}
+
+</div>

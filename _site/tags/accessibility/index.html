@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Tunan Pan - Design Portfolio - Tag: Accessibility</title>
+  <link rel="stylesheet" href="/css/style.css">
+  <link rel="icon" href="/favicon.ico" type="image/x-icon">
+  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+  <link rel="manifest" href="/site.webmanifest">
+
+  <!-- Essential Open Graph tags -->
+  <meta property="og:title" content="Tunan Pan - Design Portfolio">
+  <meta property="og:description" content="I'm a designer who cares about social impact & human-centered experiences.">
+  <meta property="og:image" content="https://tunan.art/images/seo-preview.png">
+  <meta property="og:url" content="https://tunan.art/">
+  <meta property="og:type" content="website">
+
+  <!-- Twitter Card tags (for better Twitter display) -->
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="Tunan Pan - Design Portfolio">
+  <meta name="twitter:description" content="I'm a designer who cares about social impact & human-centered experiences.">
+  <meta name="twitter:image" content="https://tunan.art/images/seo-preview.png">
+    
+</head>
+<body class="">
+
+  <header class="site-header">
+    <div class="header-container">
+        <a href="/" class="logo">
+            <img src="/images/logo/Logo-icon_1080x1080.svg" alt="Tunan Pan" width="25">
+            <span>Tunan Pan</span>
+        </a>
+        
+        <button class="mobile-menu-toggle" aria-label="Toggle menu">
+            <span class="hamburger"></span>
+        </button>
+        
+        <nav class="main-nav">
+            <a href="/projects/" >See My Work</a>
+            <a href="/about/" >Get To Know Me</a>
+            <a href="/contact/" >Say Hello</a>
+        </nav>
+    </div>
+</header>
+
+
+  <main>
+  
+<div class="projects-intro">
+  <h1>Tag: Accessibility</h1>
+</div>
+
+<div class="projects-grid">
+
+  
+    
+    
+      <article class="project-item">
+
+        
+          <div class="project-image">
+            <a href="/projects/yacht-rock/" tabindex="-1" aria-hidden="true">
+              <img src="/images/thumb-placeholder.png" alt="">
+            </a>
+          </div>
+        
+
+        
+          <span class="project-categories">
+            
+              <a href="/categories/case-study/">Case Study</a>
+            
+          </span>
+        
+
+        <h2><a href="/projects/yacht-rock/">Yacht Rock — Making an Accessible Game on Board Game Arena</a></h2>
+
+        
+          <span class="project-tags">
+            
+              <a href="/tags/accessibility/">Accessibility</a>, 
+            
+              <a href="/tags/webux/">Web/UX</a>
+            
+          </span>
+        
+
+      </article>
+    
+  
+    
+    
+  
+    
+    
+  
+    
+    
+  
+    
+    
+  
+    
+    
+  
+    
+    
+  
+    
+    
+  
+    
+    
+  
+    
+    
+  
+    
+    
+  
+    
+    
+  
+    
+    
+  
+    
+    
+  
+
+</div>
+  </main>
+
+  <footer>
+	<div class="footer-content">
+		<div class="footer-cta">
+		<img src="/images/logo/Logo-icon_1080x1080.svg" alt="" width="23">
+		<p>Thanks for stopping by!<br>Like what you see, or just want to chat?</p>
+		<a href="/contact/" class="button">Let's connect! <span aria-hidden="true">→</span></a>
+		</div>
+		
+		<div class="footer-nav">
+		<nav aria-label="Footer navigation">
+			<ul>
+			<li><a href="/" >Home</a></li>
+			<li><a href="/projects/" >Projects</a></li>
+			<li><a href="/about/" >About</a></li>
+			<li><a href="/contact/" >Contact</a></li>
+			</ul>
+		</nav>
+		</div>
+	</div>
+	
+	<div class="footer-bottom">
+		<p>© Tunan Pan 2025. Coded from scratch with love (and some frustration), so if you run into any bugs or accessibility issues, please do let me know!</p>
+	</div>
+</footer>
+
+  <script src="/js/menu.js"> // for mobile hamburger menu </script>
+
+<script>
+  const header = document.querySelector('.site-header');
+  let isScrolled = false;
+  let ticking = false;
+  
+  window.addEventListener('scroll', function() {
+    if (!ticking) {
+      window.requestAnimationFrame(function() {
+        const scrollY = window.scrollY;
+        
+        if (scrollY > 60 && !isScrolled) {
+          header.classList.add('scrolled');
+          isScrolled = true;
+        } else if (scrollY < 40 && isScrolled) {
+          header.classList.remove('scrolled');
+          isScrolled = false;
+        }
+        
+        ticking = false;
+      });
+      ticking = true;
+    }
+  });
+</script>
+
+
+</body>
+</html>

@@ -6,7 +6,7 @@ layout: base.njk
 <article class="project-post">
 
 
-  <div class="project-left">
+
 
     <div class="project-meta">
       {% if project.category %}
@@ -35,14 +35,14 @@ layout: base.njk
       {% endif %}
     </div>
 
-  </div>
+
     
   <!-- Image gallery -->
   {% if project.images and project.images.length %}
   <div class="project-gallery">
     {% for image in project.images %}
       <figure>
-        <img src="../{{ image.url }}" alt="{{ image.alternativeText or '' }}" class="project-page-image">
+        <img src="../{{ image.url }}" alt="{{ image.alternativeText or '' }}" >
         {% if image.caption %}
           <figcaption>{{ image.caption }}</figcaption>
         {% endif %}
@@ -51,9 +51,22 @@ layout: base.njk
   </div>
   {% endif %}
 
-    <div class="projects-back">
-          <a class="button-secondary" href="/projects/">← Back to Projects</a>
-    </div>
-    
     
 </article>
+
+
+{% set index = projects | findProjectIndex(project.slug) %}
+{% set prev = projects[index - 1] or projects[projects.length - 1] %}
+{% set next = projects[index + 1] or projects[0] %}
+
+  <div class="projects-more"><h4>View more projects</h4>
+    <nav>
+        {% if prev %}
+          <p class="project-prev">← <br/><a href="/projects/{{ prev.slug }}/">{{ prev.title }}</a></p>
+        {% endif %}
+
+        {% if next %}
+          <p class="project-next">→<br/><a href="/projects/{{ next.slug }}/">{{ next.title }}</a> </p>
+        {% endif %}
+    </nav>
+  </div>

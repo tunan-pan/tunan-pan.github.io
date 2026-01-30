@@ -11,7 +11,7 @@ function convertContent(content) {
 
   // If content is a string (CKEditor HTML), return it as-is
   if (typeof content === "string") {
-    return content;
+    return content.replaceAll("http://localhost:1337/uploads", "/images");
   }
 
   // If content is an array (Strapi blocks), render with BlocksRenderer
@@ -34,22 +34,32 @@ async function fetchAndSave() {
 
     console.log("✅ Fetched", json.data?.length, "articles");
 
+    const project_tags = new Set();
+    const project_categories = new Set();
 
     const projects = json.data.map(p => {
-      let image = "../images/thumb-placeholder.png";
+      let image = "/images/thumb-placeholder.png";
 
       if (p.thumbnail?.formats?.large?.url) {
-        image = p.thumbnail.formats.large.url.replace("/uploads", "../images");
+        image = p.thumbnail.formats.large.url.replace("/uploads", "/images");
       }
 
       // Process images
       const images = (p.images || []).map(img => ({
-        url: img.url?.replace("/uploads", "../images"),
+        url: img.url?.replace("/uploads", "/images"),
         alternativeText: img.alternativeText,
         name: img.name,
         caption: img.caption, 
         formats: img.formats, // Keep formats in case you want different sizes
       }));
+
+      tags = p.tags?.map(tag => tag.name) || [];
+      for (let tag of tags) {
+        project_tags.add(tag);
+      }
+      if (p.category?.name) {
+        project_categories.add(p.category.name)
+      } 
 
       return {
         title: p.title,
@@ -57,7 +67,7 @@ async function fetchAndSave() {
         url: `/projects/${p.slug}/`,
         image: image,
         category: p.category?.name || null,
-        tags: p.tags?.map(tag => tag.name) || [],
+        tags,
         order: p.order,
         description: p.description || null,
         content: convertContent(p.content),
@@ -72,6 +82,14 @@ async function fetchAndSave() {
       path.join(__dirname, "../_data/projects_build.json"),
       JSON.stringify(sortedProjects, null, 2)
     );
+    fs.writeFileSync(
+      path.join(__dirname, "../_data/project_tags.json"),
+      JSON.stringify([...project_tags], null, 2)
+    )
+    fs.writeFileSync(
+      path.join(__dirname, "../_data/project_categories.json"),
+      JSON.stringify([...project_categories], null, 2)
+    )
 
     console.log("✅ Saved", sortedProjects.length, "projects to _data/projects_build.json");
   } catch (err) {

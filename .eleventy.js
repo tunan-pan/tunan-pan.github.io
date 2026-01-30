@@ -1,4 +1,5 @@
 const markdownIt = require("markdown-it");
+/* const projects = require("./_data/projects_build.json"); */
 
 module.exports = function(eleventyConfig) {
   eleventyConfig.addPassthroughCopy("CNAME");
@@ -23,7 +24,22 @@ eleventyConfig.addFilter("markdown", (content) => {
   if (!content || typeof content !== 'string') return "";
   return md.render(content);
 });
-  
+
+// next/previous project logic
+eleventyConfig.addFilter("findProjectIndex", (projects, slug) => {
+  return projects.findIndex(p => p.slug === slug);
+});
+
+/*
+eleventyConfig.addCollection("projects", function() {
+    return projects.map(p => ({
+      ...p,
+      tags: ["projects", ...(p.tags || [])],
+      url: `/projects/${p.slug}/`
+    }));
+  });
+  */
+
 
   return {
     dir: {

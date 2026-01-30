@@ -16,7 +16,7 @@ title: Projects
     </pre>
   </details>
 </div>-->
-  
+
 <div class="projects-grid">
 
   {% for project in projects_build %}
@@ -47,7 +47,7 @@ title: Projects
       {% if project.tags %}
         <span class="project-tags">
           {% for tag in project.tags %}
-            <a href="/tags/{{ tag | slug }}/">{{ tag }}</a>{% if not loop.last %}, {% endif %}
+            <a href="/tags/{{ tag | slugify }}/">{{ tag }}</a>{% if not loop.last %}, {% endif %}
           {% endfor %}
         </span>
       {% endif %}

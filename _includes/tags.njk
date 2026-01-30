@@ -1,0 +1,28 @@
+<!--
+
+---
+pagination:
+  data: projects  # your _data/projects_build.json
+  size: 1
+  alias: tag
+  before: |
+    function(projects) {
+      // Collect all tags from JSON
+      const tagsSet = new Set();
+      projects.forEach(p => {
+        (p.tags || []).forEach(t => tagsSet.add(t));
+      });
+      return [...tagsSet];
+    }
+permalink: "tags/{{ tag | slug }}/index.html"
+---
+
+
+<h1>Projects tagged "{{ tag }}"</h1>
+<ul>
+{% set filteredProjects = projects | filter(p => p.tags.includes(tag)) %}
+{% for project in filteredProjects %}
+  <li><a href="{{ project.url }}">{{ project.title }}</a></li>
+{% endfor %}
+</ul>
+-->
