@@ -50,7 +50,7 @@
   <main>
   
 <div class="projects-intro">
-  <h1>Tag: Branding</h1>
+  <h1>Projects Tagged: Branding</h1>
 </div>
 
 <div class="projects-grid">
@@ -84,7 +84,7 @@
         
           <span class="project-tags">
             
-              <a href="/tags/webux/">Web/UX</a>, 
+              <a href="/tags/web-ux/">Web/UX</a>, 
             
               <a href="/tags/branding/">Branding</a>
             
@@ -236,7 +236,17 @@
   
 
 </div>
+
+<div class="back-to-projects">
+  <p><a class="button" href="/projects/"><span aria-hidden="true">&larr;</span> Back to all projects</a></p>
+</div>
   </main>
+
+  <button class="back-to-top" aria-label="Back to top">
+    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-chevron-up" viewBox="0 0 16 16">
+      <path fill-rule="evenodd" d="M7.646 4.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1-.708.708L8 5.707l-5.646 5.647a.5.5 0 0 1-.708-.708z"/>
+    </svg>
+  </button>
 
   <footer>
 	<div class="footer-content">
@@ -259,9 +269,11 @@
 	</div>
 	
 	<div class="footer-bottom">
-		<p>© Tunan Pan 2025. Coded from scratch with love (and some frustration), so if you run into any bugs or accessibility issues, please do let me know!</p>
+		<p>© Tunan Pan 2026. Coded from scratch with love (and some frustration), so if you run into any bugs or accessibility issues, please do let me know!</p>
 	</div>
 </footer>
+
+  
 
   <script src="/js/menu.js"> // for mobile hamburger menu </script>
 
@@ -287,6 +299,28 @@
         });
         ticking = true;
       }
+    });
+  </script>
+
+
+
+  <script>
+    const backToTopButton = document.querySelector('.back-to-top');
+    
+    window.addEventListener('scroll', () => {
+      if (window.scrollY > 800) { // pixels scrolled before buttons shows
+        backToTopButton.classList.add('show');
+      } else {
+        backToTopButton.classList.remove('show');
+      }
+    });
+    
+    // Smooth scroll to top when clicked
+    backToTopButton.addEventListener('click', () => {
+      window.scrollTo({
+        top: 0,
+        behavior: 'smooth'
+      });
     });
   </script>
 
