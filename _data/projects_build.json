@@ -3,13 +3,13 @@
     "title": "Yacht Rock — Making an Accessible Game on Board Game Arena",
     "slug": "yacht-rock",
     "url": "/projects/yacht-rock/",
-    "image": "/images/thumb-placeholder.png",
+    "image": "/images/large_thumb_yachtrock_a005863029.png",
     "category": "Case Study",
     "tags": [
       "Accessibility",
       "Web/UX"
     ],
-    "order": 150,
+    "order": 300,
     "description": null,
     "content": "",
     "images": []
@@ -24,7 +24,7 @@
       "Web/UX",
       "Branding"
     ],
-    "order": 140,
+    "order": 250,
     "description": null,
     "content": "<p><i>This work was created for my Creative Fellowship project in 2017, at a time when I didn’t yet know anything about UX or UI design. With no formal guidance, I instinctively approached the redesign through a user-centered lens, conducting research, breaking down user needs, and restructuring the information architecture. This project was a hint at the kind of work I naturally gravitate towards, and a major reason I’m returning to UX and interactive design today.</i></p><p><img src=\"/images/G4_C_laptop_mockup_homepage_2efdc8f952.gif\" alt=\"Homepage mockup\"></p><h2>The Problem</h2><p>Games for Change (G4C) is an organization that facilitates the creation and distribution of social impact video games. Unfortunately, their website at the time didn’t clearly communicate this mission or what G4C really offered.</p><p>I identified a few key issues:</p><ul><li><strong>Confusing navigation: </strong>Overloaded, unorganized menus with too many options and no clear user pathways</li><li><strong>Unclear mission and values:</strong> It wasn’t obvious who the site was for or why someone should care</li><li><strong>Outdated visual design:</strong> The site didn’t reflect the modern, innovative space G4C operates in, especially considering their audience is likely web-savvy</li></ul><figure class=\"image\"><img style=\"aspect-ratio:1600/900;\" src=\"/images/image_c8fdbaecd0.png\" alt=\"G4C's website at the time (2017)\" srcset=\"/images/thumbnail_image_c8fdbaecd0.png 245w,/images/small_image_c8fdbaecd0.png 500w,/images/medium_image_c8fdbaecd0.png 750w,/images/large_image_c8fdbaecd0.png 1000w,\" sizes=\"100vw\" width=\"1600\" height=\"900\"><figcaption>G4C's website at the time (2017)</figcaption></figure><h2>Research &amp; Insights</h2><h3>Priorities</h3><p>In order to reorganize the site and give a better overall impression of what G4C is, I needed to better understand the organization’s priorities.</p><p>Since this wasn’t a real client, I decided to look at their public social media channels as a way to infer what G4C considers “important”.</p><p><img src=\"/images/image_8c8e1a8eb5.png\" alt=\"image.png\" srcset=\"/images/thumbnail_image_8c8e1a8eb5.png 245w,/images/small_image_8c8e1a8eb5.png 500w,/images/medium_image_8c8e1a8eb5.png 750w,/images/large_image_8c8e1a8eb5.png 1000w,\" sizes=\"100vw\" width=\"1600\" height=\"901\"><img src=\"/images/image_dcf80b1c7e.png\" alt=\"image.png\" srcset=\"/images/thumbnail_image_dcf80b1c7e.png 245w,/images/small_image_dcf80b1c7e.png 500w,/images/medium_image_dcf80b1c7e.png 750w,/images/large_image_dcf80b1c7e.png 1000w,\" sizes=\"100vw\" width=\"1600\" height=\"898\"></p><p>I reviewed and tallied up the different type of posts on their Twitter and Facebook pages, finding these to be the most prevalent:</p><ul><li>Events and talks</li><li>Competitions</li><li>Game releases</li><li>Resources</li></ul><p>Although events were posted most frequently, I suspected this was skewed by the nature of social media’s purpose, rather than a representation of their importance. On the website itself, the G4C Festival also felt disproportionately featured compared to their broader mission.</p><h3>Audience</h3><p>Defining their target audience was a bit tricky. I looked at their social media followers, event attendees, and game developers, but also questioned some common assumptions.&nbsp;</p><p>An IGDA survey described the “typical” game developer as white, cis male, non-disabled, and around 31 years old. Given G4C’s focus on social impact, I believed their audience would be more diverse, including people who might not identify as gamers or developers at all.</p><p>I landed on this working audience profile:</p><ul><li>Young adults (18-35 years)</li><li>Interested in social impact and/or games</li><li>Diverse and underrepresented groups</li><li>Creative thinkers, innovative problem-solvers</li><li>Empathetic and socially conscious</li><li>Technologically comfortable</li></ul><h3>Design trends</h3><p>I also looked to contemporary website trends for inspiration, identifying design patterns that felt clear, engaging, and modern.</p><p><img src=\"/images/g4c_websitetrends2_cb4440f0f1.png\" alt=\"g4c-websitetrends2.png\" srcset=\"/images/thumbnail_g4c_websitetrends2_cb4440f0f1.png 245w,/images/small_g4c_websitetrends2_cb4440f0f1.png 500w,/images/medium_g4c_websitetrends2_cb4440f0f1.png 750w,/images/large_g4c_websitetrends2_cb4440f0f1.png 1000w,\" sizes=\"100vw\" width=\"1993\" height=\"1101\"><img src=\"/images/g4c_websitetrends_65c1ec99db.png\" alt=\"g4c-websitetrends.png\" srcset=\"/images/thumbnail_g4c_websitetrends_65c1ec99db.png 245w,/images/small_g4c_websitetrends_65c1ec99db.png 500w,/images/medium_g4c_websitetrends_65c1ec99db.png 750w,/images/large_g4c_websitetrends_65c1ec99db.png 1000w,\" sizes=\"100vw\" width=\"1790\" height=\"952\"></p><p>Trends I found included:</p><ul><li>Emphasis on content</li><li>Minimalistic, concise, efficient</li><li>More engagement, micro-interactions</li><li>Geometric, bold, duotone gradients</li><li>Human/conversationalist language</li><li>Responsive layouts</li><li>Personalized content</li><li>Gamification (emerging)</li></ul><h2>Recommendations &amp; Design</h2><h3>Navigation &amp; User Pathways</h3><p>I began by consolidating their existing pages into clearer top-level navigation categories.&nbsp;</p><p><img src=\"/images/image_bb8f7cbf94.png\" alt=\"Reorganized navigation structure\" srcset=\"/images/thumbnail_image_bb8f7cbf94.png 245w,/images/small_image_bb8f7cbf94.png 500w,/images/medium_image_bb8f7cbf94.png 750w,/images/large_image_bb8f7cbf94.png 1000w,\" sizes=\"100vw\" width=\"1600\" height=\"830\"></p><p>While this improved organization, it still felt bland/traditional and user-agnostic. Users might understand the labels, but not what it really means for them specifically.</p><p>To address this, I reframed the navigation around user intent rather than content buckets, trying out a few different tones:</p><figure class=\"table\"><table><thead><tr><th class=\"table-color-grey\">Traditional</th><th>Friendly</th><th>Action-oriented</th><th>Short/punchy</th><th>More abstract</th><th class=\"table-color-orange\">Final</th></tr></thead><tbody><tr><td class=\"table-color-grey\">About</td><td>About us</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td class=\"table-color-orange\">About us</td></tr><tr><td class=\"table-color-grey\">Resources</td><td>How we can help you /&nbsp;<br>Learn to make games</td><td>Get help</td><td>Learn</td><td>Absorb</td><td class=\"table-color-orange\">Get inventing</td></tr><tr><td class=\"table-color-grey\">Programs &amp; Events</td><td>Attend and event</td><td>Get engage /<br>Get involved</td><td>Attend</td><td>Engage</td><td class=\"table-color-orange\">Get involved</td></tr><tr><td class=\"table-color-grey\">Games</td><td>Play games</td><td>Play / Get inspired</td><td>Play</td><td>Experience</td><td class=\"table-color-orange\">Get inspired</td></tr><tr><td class=\"table-color-grey\">Contact</td><td>Contact us</td><td>Connect with us</td><td>&nbsp;</td><td>&nbsp;</td><td class=\"table-color-orange\">Stay connected</td></tr><tr><td class=\"table-color-grey\">Donate</td><td>Support us</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td class=\"table-color-orange\">Support us</td></tr></tbody></table></figure><p>The result was three action-oriented pathways that spoke to the user on a more emotional level:</p><ul><li><strong>Get Inspired</strong> — For visitors exploring social impact games and learning about G4C</li><li><strong>Get Involved</strong> – For users interested in events, especially the festival</li><li><strong>Get Inventing</strong> – For game creators seeking tools, resources, and support</li></ul><p><img src=\"/images/image_301e70afbf.png\" alt=\"image.png\" srcset=\"/images/thumbnail_image_301e70afbf.png 245w,/images/small_image_301e70afbf.png 500w,/images/medium_image_301e70afbf.png 750w,/images/large_image_301e70afbf.png 1000w,\" sizes=\"100vw\" width=\"1600\" height=\"682\"></p><h3>Clarifying the Mission</h3><p>To further guide my design decisions, I rewrote G4C’s mission statement into something more concrete and understandable:</p><blockquote><p>“G4C’s mission is to support and grow the field of social impact games.<br>Empowering game creators and social innovators (both individuals and organizations) with resources and networks to help them create/distribute social impact games, and educating/promoting the idea of using digital games as an effective means to create real impact for social change.”</p></blockquote><p>This wasn’t meant as final copy, but more for my own reference to help keep their overarching goals in mind.&nbsp;</p><p>The website should support this mission, with the goal for the site to be the go-to place for:</p><ul><li>tools/connections for game developers</li><li>newcomers to learn about social impact games</li><li>finding social impact games, giving feedback, supporting developers</li></ul><p>I also rewrote the homepage introductory content to better summarize who G4C is and why their work matters. In a real client project, this step would ideally involve close collaboration with a copywriter.</p><h2>Visual Direction &amp; Layout</h2><p>With the structure defined, I moved into wireframes and mockups for the homepage. My goals for the visual design were to:</p><ul><li>Create a modern, full-width, responsive layout</li><li>Reflect the innovation and energy of the organization</li><li>Highlight real people and real impact through their existing event photography and videos</li><li>Strengthen visual hierarchy and reduce cognitive load so that users can find what they need faster</li></ul><p><img src=\"/images/image_1b0069c7b0.png\" alt=\"wireframes\" srcset=\"/images/thumbnail_image_1b0069c7b0.png 174w,/images/small_image_1b0069c7b0.png 500w,/images/medium_image_1b0069c7b0.png 750w,/images/large_image_1b0069c7b0.png 1000w,\" sizes=\"100vw\" width=\"1600\" height=\"1431\"></p><p>I started with a standard hero section introducing the organization, with the three pathways beneath it, but it quickly felt text-heavy and as cluttered as their existing design.&nbsp;</p><p>After a few iterations I simplified it down so that the key information and actions were consolidated and appeared above the fold.</p><p>Keeping accessibility in mind (based on the limited knowledge I had at the time), I intentionally kept text labels visible in the navigation rather than relying on icons alone.</p><figure class=\"image\"><img style=\"aspect-ratio:1920/1080;\" src=\"/images/g4c_08_c9f026e2c7.png\" alt=\"initial homepage designs\" srcset=\"/images/thumbnail_g4c_08_c9f026e2c7.png 245w,/images/small_g4c_08_c9f026e2c7.png 500w,/images/medium_g4c_08_c9f026e2c7.png 750w,/images/large_g4c_08_c9f026e2c7.png 1000w,\" sizes=\"100vw\" width=\"1920\" height=\"1080\"><figcaption>Initial homepage mockups</figcaption></figure><h3>Navigation Placement</h3><p>I ultimately moved away from a bottom-aligned navigation, which felt space-heavy and inflexible for future changes. Instead, I decided on a vertical navigation bar on the right side of the screen. This gave the site more of a game/app feel, and allowed the intro content to remain visible while navigating.</p><p>This concept was designed for desktop only, but today I’d explore a mobile-first approach, and potentially lean further into an app/game-like experience.</p><p>The full-bleed background features rotating photos and videos from G4C events to emphasize the human side of their work.</p><p><img src=\"/images/g4c_12_c70c137690.png\" alt=\"g4c-12.png\" srcset=\"/images/thumbnail_g4c_12_c70c137690.png 245w,/images/small_g4c_12_c70c137690.png 500w,/images/medium_g4c_12_c70c137690.png 750w,/images/large_g4c_12_c70c137690.png 1000w,\" sizes=\"100vw\" width=\"1920\" height=\"1080\"></p><p><img src=\"/images/g4c_13_72a07afd5a.png\" alt=\"g4c-13.png\" srcset=\"/images/thumbnail_g4c_13_72a07afd5a.png 245w,/images/small_g4c_13_72a07afd5a.png 500w,/images/medium_g4c_13_72a07afd5a.png 750w,/images/large_g4c_13_72a07afd5a.png 1000w,\" sizes=\"100vw\" width=\"1920\" height=\"1080\"></p><p><img src=\"/images/g4c_14_284be6eb81.png\" alt=\"g4c-14.png\" srcset=\"/images/thumbnail_g4c_14_284be6eb81.png 245w,/images/small_g4c_14_284be6eb81.png 500w,/images/medium_g4c_14_284be6eb81.png 750w,/images/large_g4c_14_284be6eb81.png 1000w,\" sizes=\"100vw\" width=\"1920\" height=\"1080\"></p><h3>Gamification Concept</h3><p>To increase engagement, I explored light gamification ideas, such as earning points (stars) for exploring the site, that they could use towards helping causes they care about. Rather than tying points to monetary donations (which is likely not possible for their small organization), I imagined users using them to vote on which games, causes, or organizations G4C would spotlight on social media.</p><p><img src=\"/images/g4c_15_d416811f17.png\" alt=\"g4c-15.png\" srcset=\"/images/thumbnail_g4c_15_d416811f17.png 245w,/images/small_g4c_15_d416811f17.png 500w,/images/medium_g4c_15_d416811f17.png 750w,/images/large_g4c_15_d416811f17.png 1000w,\" sizes=\"100vw\" width=\"1920\" height=\"1080\"></p><h2>Feature Focus: “Play Games” Page</h2><p>We had a limited scope for this project, so I focused on one additional page that could benefit most from an update: the “Play Games” page.</p><p>This section lists a collection of social impact games, but the original design didn’t make them feel inspiring, meaningful, or informative.</p><p>In early iterations I explored adding user accounts so visitors could save and rate games, along with the stars/points system mentioned earlier. Ultimately, I chose not to include this, as introducing sign-ups too early could create friction, and it felt more important here for users to immediately see the games first.</p><p><img src=\"/images/g4c_games_page_mockups_0d59895ede.png\" alt=\"g4c-games-page-mockups.png\" srcset=\"/images/thumbnail_g4c_games_page_mockups_0d59895ede.png 245w,/images/small_g4c_games_page_mockups_0d59895ede.png 500w,/images/medium_g4c_games_page_mockups_0d59895ede.png 750w,/images/large_g4c_games_page_mockups_0d59895ede.png 1000w,\" sizes=\"100vw\" width=\"3000\" height=\"1843\"></p><p><strong>My final redesign:</strong></p><ul><li>Gave more prominence to game artwork (using a 3 column grid instead of 5)</li><li>Added clear labels for the main social issue each game addressed</li><li>Improved filtering options to support easier search and discovery</li></ul><p><img src=\"/images/g4c_games1_7d42946911.png\" alt=\"g4c-games1.png\" srcset=\"/images/thumbnail_g4c_games1_7d42946911.png 245w,/images/small_g4c_games1_7d42946911.png 500w,/images/medium_g4c_games1_7d42946911.png 750w,/images/large_g4c_games1_7d42946911.png 1000w,\" sizes=\"100vw\" width=\"2000\" height=\"1125\"><img src=\"/images/g4c_games2_5cbad4237b.png\" alt=\"g4c-games2.png\" srcset=\"/images/thumbnail_g4c_games2_5cbad4237b.png 245w,/images/small_g4c_games2_5cbad4237b.png 500w,/images/medium_g4c_games2_5cbad4237b.png 750w,/images/large_g4c_games2_5cbad4237b.png 1000w,\" sizes=\"100vw\" width=\"2000\" height=\"1125\"></p><p>To further motivate and inspire users, I also introduced a visual indicator to highlight games with measurable real-world impact, helping users connect play with tangible outcomes.</p><p><img src=\"/images/g4c_09_157c14adf4.png\" alt=\"g4c-09.png\" srcset=\"/images/thumbnail_g4c_09_157c14adf4.png 245w,/images/small_g4c_09_157c14adf4.png 500w,/images/medium_g4c_09_157c14adf4.png 750w,/images/large_g4c_09_157c14adf4.png 1000w,\" sizes=\"100vw\" width=\"1920\" height=\"1080\"></p><h2>Reflection</h2><p>Although this work was never implemented in the real world, it shows the beginnings of my UX leanings and the excitement I had during this process. Today, I’d approach this project with stronger accessibility practices, deeper user research, and more refined visual design, but the core instincts behind it remain the same. I believe my research insights still apply, and could help improve <a target=\"_blank\" rel=\"noopener noreferrer\" href=\"https://www.gamesforchange.org/\">G4C’s since-updated website</a>.</p>",
     "images": []
@@ -38,7 +38,7 @@
     "tags": [
       "Interactive"
     ],
-    "order": 130,
+    "order": 200,
     "description": null,
     "content": "<p>To explore augmented reality (AR), I taught myself Spark AR Studio and began creating Instagram filters during the height of their popularity.</p><p>I took the opportunity of a company spring-themed event to learn these skills, designing custom signage, menus, and a set of interactive AR filters for attendees to use throughout the event. The filters were designed to complement the seasonal theme and encourage playful engagement.</p><p>The final effects included:</p><ul><li>Face tracking: a 3D flower model that appears to be tucked above the user’s ear and follows with their head movement</li><li>Particle effects: floating flower petals that fall around the user</li><li>A lighthearted “personality” randomizer that predicts a faux company role for the user</li></ul>",
     "images": []
@@ -52,7 +52,7 @@
     "tags": [
       "Interactive"
     ],
-    "order": 120,
+    "order": 180,
     "description": null,
     "content": "<p>I explored the use of augmented reality (AR) as a way to make Johnson &amp; Johnson’s Global Public Health content more interactive and participatory, during a time when platforms like Instagram were shifting their focus toward Reels.</p><p>As part of this pitch, I developed several AR concepts rooted in the existing social content we were creating for the client, focusing on how AR could invite users to engage more actively with educational messaging rather than passively consume it.</p><p><iframe src=\"https://docs.google.com/presentation/d/e/2PACX-1vQcMnv9x7SYVIt_Vnzwb8fC-W9JcZOeKSZAVMTTqxHp5VKuhX7zKHeABB7JfbSgnvpRZ189bvL0Qoxe/pubembed?start=false&amp;loop=true&amp;delayms=3000\" frameborder=\"0\" allowfullscreen=\"true\" mozallowfullscreen=\"true\" webkitallowfullscreen=\"true\"></iframe></p>",
     "images": []
@@ -67,9 +67,38 @@
       "Event",
       "Strategy"
     ],
-    "order": 115,
+    "order": 150,
     "description": null,
     "content": "<p>Hope for Haiti developed a virtual reality experience and showcased it at the 2023 Augmented World Expo (AWE). When they put out a call for booth volunteers, I offered both my time at the expo and my design skills to help elevate their on-site presence and improve audience engagement.</p><p>Working within their existing brand and content, I designed a set of promotional materials focused on clarity, visual impact, and strong calls to action:</p><ul><li><strong>Updated easel poster designs</strong> — I simplified their previous text-heavy layouts into more visual, scannable designs with clear CTAs</li><li><strong>TV display</strong> — A looping video featuring the VR experience trailer alongside a persistent title and CTA</li><li><strong>Newsletter sign-up touchpoint</strong> — bringing attention to their existing newsletter by displaying a signup sheet on an iPad</li><li><strong>Social media assets</strong> — graphics for pre-event promotion, live posting during the expo, and post-event sharing, including a prepared asset for a potential Auggie Awards win</li></ul><p>While not all materials were ultimately used, I believe my work was useful for thinking through practical UX decisions within the constraints of a live expo setting, and maximizing engagement of attendees with limited attention spans.&nbsp;</p>",
+    "images": []
+  },
+  {
+    "title": "San Diego Humane Society — Creating a More Humane San Diego",
+    "slug": "sdhs",
+    "url": "/projects/sdhs/",
+    "image": "/images/large_thumb_sdhs_2b5879b9bd.png",
+    "category": null,
+    "tags": [
+      "OOH",
+      "Digital"
+    ],
+    "order": 120,
+    "description": null,
+    "content": "",
+    "images": []
+  },
+  {
+    "title": "Together Toward Health — Addressing Health Inequitites in California",
+    "slug": "tth",
+    "url": "/projects/tth/",
+    "image": "/images/large_thumb_phi_a3bee85f7e.png",
+    "category": null,
+    "tags": [
+      "Digital"
+    ],
+    "order": 110,
+    "description": null,
+    "content": "",
     "images": []
   },
   {
@@ -83,7 +112,7 @@
       "Digital",
       "Strategy"
     ],
-    "order": 110,
+    "order": 100,
     "description": null,
     "content": "",
     "images": []
@@ -98,7 +127,7 @@
       "Print",
       "Branding"
     ],
-    "order": 100,
+    "order": 90,
     "description": null,
     "content": "",
     "images": []
@@ -112,7 +141,21 @@
     "tags": [
       "Digital"
     ],
-    "order": 99,
+    "order": 88,
+    "description": null,
+    "content": "",
+    "images": []
+  },
+  {
+    "title": "Stop AAPI Hate — Times Square Billboard",
+    "slug": "aapi",
+    "url": "/projects/aapi/",
+    "image": "/images/large_thumb_aapi_4b056f6dd9.png",
+    "category": null,
+    "tags": [
+      "OOH"
+    ],
+    "order": 80,
     "description": null,
     "content": "",
     "images": []
@@ -127,21 +170,7 @@
       "Campaign",
       "Branding"
     ],
-    "order": 90,
-    "description": null,
-    "content": "",
-    "images": []
-  },
-  {
-    "title": "PRISM: Fenton’s Queer ERG — Logo Design",
-    "slug": "prism-erg",
-    "url": "/projects/prism-erg/",
-    "image": "/images/large_thumb_prism_744008236d.png",
-    "category": null,
-    "tags": [
-      "Branding"
-    ],
-    "order": 80,
+    "order": 70,
     "description": null,
     "content": "",
     "images": []
@@ -150,41 +179,13 @@
     "title": "W.K. Kellogg Foundation — Championing Change for Children in Mississippi",
     "slug": "wkkf",
     "url": "/projects/wkkf/",
-    "image": "/images/thumb-placeholder.png",
+    "image": "/images/large_thumb_wkkf2_92b82612de.png",
     "category": null,
     "tags": [
       "Interactive",
       "Digital"
     ],
-    "order": 70,
-    "description": null,
-    "content": "",
-    "images": []
-  },
-  {
-    "title": "Together Toward Health — Addressing Health Inequitites in California",
-    "slug": "tth",
-    "url": "/projects/tth/",
-    "image": "/images/thumb-placeholder.png",
-    "category": null,
-    "tags": [
-      "Digital"
-    ],
     "order": 60,
-    "description": null,
-    "content": "",
-    "images": []
-  },
-  {
-    "title": "Stop AAPI Hate — Times Square Billboard",
-    "slug": "aapi",
-    "url": "/projects/aapi/",
-    "image": "/images/large_thumb_aapi_4b056f6dd9.png",
-    "category": null,
-    "tags": [
-      "OOH"
-    ],
-    "order": 50,
     "description": null,
     "content": "",
     "images": []
@@ -1344,5 +1345,19 @@
         }
       }
     ]
+  },
+  {
+    "title": "PRISM: Fenton’s Queer ERG — Logo Design",
+    "slug": "prism-erg",
+    "url": "/projects/prism-erg/",
+    "image": "/images/large_thumb_prism_744008236d.png",
+    "category": null,
+    "tags": [
+      "Branding"
+    ],
+    "order": 20,
+    "description": null,
+    "content": "",
+    "images": []
   }
 ]
