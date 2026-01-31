@@ -30,17 +30,6 @@ eleventyConfig.addFilter("findProjectIndex", (projects, slug) => {
   return projects.findIndex(p => p.slug === slug);
 });
 
-/*
-eleventyConfig.addCollection("projects", function() {
-    return projects.map(p => ({
-      ...p,
-      tags: ["projects", ...(p.tags || [])],
-      url: `/projects/${p.slug}/`
-    }));
-  });
-  */
-
-
   return {
     dir: {
       input: ".",

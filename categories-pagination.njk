@@ -60,7 +60,7 @@ eleventyComputed:
           {% if project.tags %}
             <span class="project-tags">
               {% for ptag in project.tags %}
-                <a href="/tags/{{ ptag | slug }}/">{{ ptag }}</a>{% if not loop.last %}, {% endif %}
+                <a href="/tags/{{ ptag | slugify }}/">{{ ptag }}</a>{% if not loop.last %}, {% endif %}
               {% endfor %}
             </span>
           {% endif %}

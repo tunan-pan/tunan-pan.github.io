@@ -10,7 +10,7 @@ eleventyComputed:
 ---
 
 <div class="projects-intro">
-  <h1>Tag: {{ project_tag }}</h1>
+  <h1>Projects Tagged: {{ project_tag }}</h1>
 </div>
 
 <div class="projects-grid">
@@ -45,7 +45,7 @@ eleventyComputed:
         {% if project.tags %}
           <span class="project-tags">
             {% for ptag in project.tags %}
-              <a href="/tags/{{ ptag | slug }}/">{{ ptag }}</a>{% if not loop.last %}, {% endif %}
+              <a href="/tags/{{ ptag | slugify }}/">{{ ptag }}</a>{% if not loop.last %}, {% endif %}
             {% endfor %}
           </span>
         {% endif %}
@@ -54,4 +54,8 @@ eleventyComputed:
     {% endif %}
   {% endfor %}
 
+</div>
+
+<div class="back-to-projects">
+  <p><a class="button" href="/projects/"><span aria-hidden="true">&larr;</span> Back to all projects</a></p>
 </div>
