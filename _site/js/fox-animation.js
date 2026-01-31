@@ -5,7 +5,11 @@ constructor() {
     this.container = document.querySelector('.fox-container');
     this.hitbox = document.querySelector('.fox-hitbox');
     this.animatedImg = document.querySelector('.fox-animated');
-    
+    this.staticImg = document.querySelector('.fox-static');
+
+    // Check for reduced motion preference
+    this.prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
     // Animation configuration
     this.frames = [
     'images/fox/Fox_Frame_01.png',
@@ -47,16 +51,42 @@ init() {
     this.hitbox.addEventListener('mouseleave', () => {
       this.isHovering = false;
       // Animation will finish current loop and then stop
+
+    // Reset to neutral face if using reduced motion
+      if (this.prefersReducedMotion) {
+        setTimeout(() => {
+          this.staticImg.src = 'images/fox/Fox_Static.png';
+          this.container.classList.remove('showing-happy');
+        }, 500); // Small delay before reverting
+      }
     });
     
-    // Optional: keyboard accessibility
+    // keyboard accessibility
     this.hitbox.addEventListener('keydown', (e) => {
       if (e.key === 'Enter' || e.key === ' ') {
         e.preventDefault();
         this.isHovering = !this.isHovering;
         if (this.isHovering) {
           this.startAnimation();
+        } else if (this.prefersReducedMotion) {
+          // Reset to neutral for keyboard users too
+          setTimeout(() => {
+            this.staticImg.src = 'images/fox/Fox_Static.png';
+            this.container.classList.remove('showing-happy');
+          }, 500);
         }
+      }
+    });
+
+   // Listen for changes to motion preference (if user changes settings while page is open)
+    const motionMediaQuery = window.matchMedia('(prefers-reduced-motion: reduce)');
+    motionMediaQuery.addEventListener('change', (e) => {
+      this.prefersReducedMotion = e.matches;
+      if (this.prefersReducedMotion && this.isAnimating) {
+        // Stop animation if it's currently playing
+        this.endAnimation();
+        // Show happy face instead
+        this.showHappyFace();
       }
     });
   }
@@ -66,11 +96,19 @@ preloadFrames() {
     const img = new Image();
     img.src = src;
     });
-}
+    const happyImg = new Image();
+    happyImg.src = 'images/fox/Fox_Static-happy.png';
+  }
 
 startAnimation() {
     // Prevent multiple simultaneous animations
     if (this.isAnimating) return;
+
+    // If reduced motion is preferred, swap to happy face instead of animating
+    if (this.prefersReducedMotion) {
+      this.showHappyFace();
+      return;
+    }
     
     this.isAnimating = true;
     this.currentFrame = 0;
@@ -78,6 +116,12 @@ startAnimation() {
     
     this.playNextFrame();
 }
+
+ showHappyFace() {
+  // Swap static image to happy face
+  this.staticImg.src = 'images/fox/Fox_Static-happy.png';
+  this.container.classList.add('showing-happy');
+ }
 
 playNextFrame() {
     if (this.currentFrame < this.frames.length) {
