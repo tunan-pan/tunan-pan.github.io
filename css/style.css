@@ -1207,7 +1207,7 @@ th { border-bottom: 2px solid #333; }
 }
 
 
-.project-content img, .project-gallery img {
+.project-content img, .project-gallery img, .project-content video {
   display: block;
   width: unset!important; /* make image take full container width */
   height: auto !important; /* maintain aspect ratio */
@@ -1218,6 +1218,8 @@ th { border-bottom: 2px solid #333; }
   box-shadow: var(--shadow-light);
   border-radius: 10px;
 }
+
+
 
 figcaption {
   margin: -10px 20px 0;
