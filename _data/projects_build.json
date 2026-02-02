@@ -54,7 +54,7 @@
     ],
     "order": 180,
     "description": null,
-    "content": "<p>I explored the use of augmented reality (AR) as a way to make Johnson &amp; Johnson’s Global Public Health content more interactive and participatory, during a time when platforms like Instagram were shifting their focus toward Reels.</p><p>As part of this pitch, I developed several AR concepts rooted in the existing social content we were creating for the client, focusing on how AR could invite users to engage more actively with educational messaging rather than passively consume it.</p><p><iframe src=\"https://docs.google.com/presentation/d/e/2PACX-1vQcMnv9x7SYVIt_Vnzwb8fC-W9JcZOeKSZAVMTTqxHp5VKuhX7zKHeABB7JfbSgnvpRZ189bvL0Qoxe/pubembed?start=false&amp;loop=true&amp;delayms=3000\" frameborder=\"0\" allowfullscreen=\"true\" mozallowfullscreen=\"true\" webkitallowfullscreen=\"true\"></iframe></p>",
+    "content": "<p>I explored the use of augmented reality (AR) as a way to make Johnson &amp; Johnson’s Global Public Health content more interactive and participatory, during a time when platforms like Instagram were shifting their focus toward Reels.</p><p>As part of this pitch, I developed several AR concepts rooted in the existing social content we were creating for the client, focusing on how AR could invite users to engage more actively with educational messaging rather than passively consume it.</p><figure><p><iframe src=\"https://docs.google.com/presentation/d/e/2PACX-1vQcMnv9x7SYVIt_Vnzwb8fC-W9JcZOeKSZAVMTTqxHp5VKuhX7zKHeABB7JfbSgnvpRZ189bvL0Qoxe/pubembed?start=false&amp;loop=true&amp;delayms=3000\" frameborder=\"0\" allowfullscreen=\"true\" mozallowfullscreen=\"true\" webkitallowfullscreen=\"true\"></iframe></p><figcaption><a target=\"_blank\" rel=\"noopener noreferrer\" href=\"https://docs.google.com/presentation/d/1ibFPACaL_wplsP06BQj8aGtBRcojAdnCMVQBKTH9wJ8/edit?usp=sharing\"><i>(Presentation can also be viewed in Google Slides here)</i></a></figcaption></figure>",
     "images": []
   },
   {
@@ -69,8 +69,177 @@
     ],
     "order": 150,
     "description": null,
-    "content": "<p>Hope for Haiti developed a virtual reality experience and showcased it at the 2023 Augmented World Expo (AWE). When they put out a call for booth volunteers, I offered both my time at the expo and my design skills to help elevate their on-site presence and improve audience engagement.</p><p>Working within their existing brand and content, I designed a set of promotional materials focused on clarity, visual impact, and strong calls to action:</p><ul><li><strong>Updated easel poster designs</strong> — I simplified their previous text-heavy layouts into more visual, scannable designs with clear CTAs</li><li><strong>TV display</strong> — A looping video featuring the VR experience trailer alongside a persistent title and CTA</li><li><strong>Newsletter sign-up touchpoint</strong> — bringing attention to their existing newsletter by displaying a signup sheet on an iPad</li><li><strong>Social media assets</strong> — graphics for pre-event promotion, live posting during the expo, and post-event sharing, including a prepared asset for a potential Auggie Awards win</li></ul><p>While not all materials were ultimately used, I believe my work was useful for thinking through practical UX decisions within the constraints of a live expo setting, and maximizing engagement of attendees with limited attention spans.&nbsp;</p>",
-    "images": []
+    "content": "<p>Hope for Haiti developed a virtual reality experience and showcased it at the 2023 Augmented World Expo (AWE). When they put out a call for booth volunteers, I offered both my time at the expo and my design skills to help elevate their on-site presence and improve audience engagement.</p><p>Working within their existing brand and content, I designed a set of promotional materials focused on clarity, visual impact, and strong calls to action:</p><ul><li><strong>Updated easel poster designs</strong> — I simplified their previous text-heavy layouts into more visual, scannable designs with clear CTAs</li><li><strong>TV display</strong> — A looping video featuring the VR experience trailer alongside a persistent title and CTA</li><li><strong>Newsletter sign-up touchpoint</strong> — bringing attention to their existing newsletter by displaying a signup sheet on an iPad</li><li><strong>Social media assets</strong> — graphics for pre-event promotion, live posting during the expo, and post-event sharing, including a prepared asset for a potential Auggie Awards win</li></ul><p>While not all materials were ultimately used, I believe my work was useful for thinking through practical UX decisions within the constraints of a live expo setting, and maximizing engagement of attendees with limited attention spans.&nbsp;</p><p><img src=\"/images/HFH_AW_Eposters_v1_1_d4e0f5d1b3.jpg\" alt=\"HFH_AWEposters_v1-1.jpg\" srcset=\"/images/thumbnail_HFH_AW_Eposters_v1_1_d4e0f5d1b3.jpg 104w,/images/small_HFH_AW_Eposters_v1_1_d4e0f5d1b3.jpg 333w,/images/medium_HFH_AW_Eposters_v1_1_d4e0f5d1b3.jpg 500w,/images/large_HFH_AW_Eposters_v1_1_d4e0f5d1b3.jpg 667w,\" sizes=\"100vw\" width=\"1000\" height=\"1500\"></p>",
+    "images": [
+      {
+        "url": "/images/HFH_AW_Eposters_v1_1_d4e0f5d1b3.jpg",
+        "alternativeText": null,
+        "name": "HFH_AWEposters_v1-1.jpg",
+        "caption": null,
+        "formats": {
+          "thumbnail": {
+            "name": "thumbnail_HFH_AWEposters_v1-1.jpg",
+            "hash": "thumbnail_HFH_AW_Eposters_v1_1_d4e0f5d1b3",
+            "ext": ".jpg",
+            "mime": "image/jpeg",
+            "path": null,
+            "width": 104,
+            "height": 156,
+            "size": 5.57,
+            "sizeInBytes": 5573,
+            "url": "/uploads/thumbnail_HFH_AW_Eposters_v1_1_d4e0f5d1b3.jpg"
+          },
+          "small": {
+            "name": "small_HFH_AWEposters_v1-1.jpg",
+            "hash": "small_HFH_AW_Eposters_v1_1_d4e0f5d1b3",
+            "ext": ".jpg",
+            "mime": "image/jpeg",
+            "path": null,
+            "width": 333,
+            "height": 500,
+            "size": 37.53,
+            "sizeInBytes": 37528,
+            "url": "/uploads/small_HFH_AW_Eposters_v1_1_d4e0f5d1b3.jpg"
+          },
+          "medium": {
+            "name": "medium_HFH_AWEposters_v1-1.jpg",
+            "hash": "medium_HFH_AW_Eposters_v1_1_d4e0f5d1b3",
+            "ext": ".jpg",
+            "mime": "image/jpeg",
+            "path": null,
+            "width": 500,
+            "height": 750,
+            "size": 73.07,
+            "sizeInBytes": 73069,
+            "url": "/uploads/medium_HFH_AW_Eposters_v1_1_d4e0f5d1b3.jpg"
+          },
+          "large": {
+            "name": "large_HFH_AWEposters_v1-1.jpg",
+            "hash": "large_HFH_AW_Eposters_v1_1_d4e0f5d1b3",
+            "ext": ".jpg",
+            "mime": "image/jpeg",
+            "path": null,
+            "width": 667,
+            "height": 1000,
+            "size": 111.94,
+            "sizeInBytes": 111935,
+            "url": "/uploads/large_HFH_AW_Eposters_v1_1_d4e0f5d1b3.jpg"
+          }
+        }
+      },
+      {
+        "url": "/images/HFH_AW_Eposters_v1_2_a05e901614.jpg",
+        "alternativeText": null,
+        "name": "HFH_AWEposters_v1-2.jpg",
+        "caption": null,
+        "formats": {
+          "thumbnail": {
+            "name": "thumbnail_HFH_AWEposters_v1-2.jpg",
+            "hash": "thumbnail_HFH_AW_Eposters_v1_2_a05e901614",
+            "ext": ".jpg",
+            "mime": "image/jpeg",
+            "path": null,
+            "width": 104,
+            "height": 156,
+            "size": 6.18,
+            "sizeInBytes": 6180,
+            "url": "/uploads/thumbnail_HFH_AW_Eposters_v1_2_a05e901614.jpg"
+          },
+          "small": {
+            "name": "small_HFH_AWEposters_v1-2.jpg",
+            "hash": "small_HFH_AW_Eposters_v1_2_a05e901614",
+            "ext": ".jpg",
+            "mime": "image/jpeg",
+            "path": null,
+            "width": 333,
+            "height": 500,
+            "size": 45.49,
+            "sizeInBytes": 45491,
+            "url": "/uploads/small_HFH_AW_Eposters_v1_2_a05e901614.jpg"
+          },
+          "medium": {
+            "name": "medium_HFH_AWEposters_v1-2.jpg",
+            "hash": "medium_HFH_AW_Eposters_v1_2_a05e901614",
+            "ext": ".jpg",
+            "mime": "image/jpeg",
+            "path": null,
+            "width": 500,
+            "height": 750,
+            "size": 88.87,
+            "sizeInBytes": 88870,
+            "url": "/uploads/medium_HFH_AW_Eposters_v1_2_a05e901614.jpg"
+          },
+          "large": {
+            "name": "large_HFH_AWEposters_v1-2.jpg",
+            "hash": "large_HFH_AW_Eposters_v1_2_a05e901614",
+            "ext": ".jpg",
+            "mime": "image/jpeg",
+            "path": null,
+            "width": 667,
+            "height": 1000,
+            "size": 137.12,
+            "sizeInBytes": 137115,
+            "url": "/uploads/large_HFH_AW_Eposters_v1_2_a05e901614.jpg"
+          }
+        }
+      },
+      {
+        "url": "/images/HFH_AW_Eposters_v1_3_fb10d82a12.jpg",
+        "alternativeText": null,
+        "name": "HFH_AWEposters_v1-3.jpg",
+        "caption": null,
+        "formats": {
+          "thumbnail": {
+            "name": "thumbnail_HFH_AWEposters_v1-3.jpg",
+            "hash": "thumbnail_HFH_AW_Eposters_v1_3_fb10d82a12",
+            "ext": ".jpg",
+            "mime": "image/jpeg",
+            "path": null,
+            "width": 104,
+            "height": 156,
+            "size": 5.46,
+            "sizeInBytes": 5455,
+            "url": "/uploads/thumbnail_HFH_AW_Eposters_v1_3_fb10d82a12.jpg"
+          },
+          "small": {
+            "name": "small_HFH_AWEposters_v1-3.jpg",
+            "hash": "small_HFH_AW_Eposters_v1_3_fb10d82a12",
+            "ext": ".jpg",
+            "mime": "image/jpeg",
+            "path": null,
+            "width": 333,
+            "height": 500,
+            "size": 43.69,
+            "sizeInBytes": 43686,
+            "url": "/uploads/small_HFH_AW_Eposters_v1_3_fb10d82a12.jpg"
+          },
+          "medium": {
+            "name": "medium_HFH_AWEposters_v1-3.jpg",
+            "hash": "medium_HFH_AW_Eposters_v1_3_fb10d82a12",
+            "ext": ".jpg",
+            "mime": "image/jpeg",
+            "path": null,
+            "width": 500,
+            "height": 750,
+            "size": 90.35,
+            "sizeInBytes": 90348,
+            "url": "/uploads/medium_HFH_AW_Eposters_v1_3_fb10d82a12.jpg"
+          },
+          "large": {
+            "name": "large_HFH_AWEposters_v1-3.jpg",
+            "hash": "large_HFH_AW_Eposters_v1_3_fb10d82a12",
+            "ext": ".jpg",
+            "mime": "image/jpeg",
+            "path": null,
+            "width": 667,
+            "height": 1000,
+            "size": 143.24,
+            "sizeInBytes": 143241,
+            "url": "/uploads/large_HFH_AW_Eposters_v1_3_fb10d82a12.jpg"
+          }
+        }
+      }
+    ]
   },
   {
     "title": "San Diego Humane Society — Creating a More Humane San Diego",

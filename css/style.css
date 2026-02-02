@@ -43,8 +43,6 @@ pink: #F2126C
 }
 
 
-
-
 @media (max-width: 650px ){
   :root {
       --main-margin-top: 50px;
@@ -55,9 +53,9 @@ pink: #F2126C
     box-sizing: unset!important;
 }
 
-/* ----------------------------------
+/* --------------------------------------------------------------------
 fonts
------------------------------------*/
+---------------------------------------------------------------------*/
 
 /* headings */
 @font-face
@@ -157,9 +155,9 @@ fonts
 
 
 
-/* ----------------------------------
+/* --------------------------------------------------------------------
 main styles
------------------------------------*/
+---------------------------------------------------------------------*/
 
 html {
   font-size: 16px;
@@ -189,8 +187,6 @@ main {
   min-height: 50vh;
 }
 
-
-
 strong {
   font-weight: bold;
 }
@@ -199,14 +195,13 @@ em {
   font-style: italic;
 }
 
-p a {
+p a, figcaption a {
   text-decoration: underline;
   text-underline-offset: 2px;
   color: var(--color-orange);
   font-weight: bold;
 }
-p a:hover {
-  text-decoration: underline;
+p a:hover, figcaption a:hover {
   color: #000;
 }
 
@@ -308,41 +303,9 @@ ul li, ol li {
   margin-bottom: 0.5rem;
 }
 
-
-/* scroll back to top button */
-.back-to-top {
-  position: fixed;
-  bottom: 30px;
-  right: 30px;
-  width: 30px;
-  height: 30px;
-  background-color: #333;
-  color: white;
-  border: none;
-  border-radius: 50%;
-  cursor: pointer;
-  opacity: 0; 
-  visibility: hidden;
-  transition: opacity 0.3s, visibility 0.3s;
-  z-index: 1000;
-  padding: 0;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-  .back-to-top:hover {
-    background-color: #000;
-  }
-
-  .back-to-top.show {
-    opacity: 1;
-    visibility: visible;
-  }
-
-/* ----------------------------------
+/* --------------------------------------------------------------------
 header nav
------------------------------------*/
+---------------------------------------------------------------------*/
 
 .site-header {
   position: sticky;
@@ -428,53 +391,32 @@ a.logo:hover {
   color: #000;
   position: relative;
   transition: unset;
+  padding-bottom: 5px;
+  border-bottom: 3px solid transparent;
+  box-sizing: border-box;
 }
 
-.main-nav a:hover {
-  text-decoration: underline;
-  text-decoration-thickness: 20%;
-  text-underline-offset: 8px;
+.main-nav a:hover, .main-nav a.current {
+  border-bottom: 3px solid;
 }
 
-/* Individual link colors with icons */
+/* Individual link colors */
 .main-nav a[href="/projects/"]:hover, .main-nav a[href="/projects/"].current  {
-  text-decoration-color: var(--color-purple);
+  border-color: var(--color-purple);
 }
 
 .main-nav a[href="/about/"]:hover, .main-nav a[href="/about/"].current {
-  text-decoration-color: var(--color-pink);
+  border-color: var(--color-pink);
 }
 
 .main-nav a[href="/contact/"]:hover, .main-nav a[href="/contact/"].current {
-  text-decoration-color: var(--color-yellow);
+  border-color: var(--color-yellow);
 }
-
-/* Current page styling 
-.main-nav a[href="/projects/"].current {
-  text-decoration: underline;
-  text-decoration-color: var(--color-purple);
-  text-decoration-thickness: 20%;
-  text-underline-offset: 8px;
-}
-
-.main-nav a[href="/about/"].current {
-  text-decoration: underline;
-  text-decoration-color: var(--color-pink);
-  text-decoration-thickness: 20%;
-  text-underline-offset: 8px;
-}
-
-.main-nav a[href="/contact/"].current {
-  text-decoration: underline;
-  text-decoration-color: var(--color-yellow);
-  text-decoration-thickness: 20%;
-  text-underline-offset: 8px;
-}*/
 
 /* Logo icons after links */
 .main-nav a::after {
   transform: translateY(1.5px);
-  margin: 0 10px;
+  margin: 0  0 0 10px;
   display: inline-block;
 }
 
@@ -598,7 +540,7 @@ a.logo:hover {
   }
   
   .main-nav a {
-    padding: 30px 10px;
+    padding: 50px 10px 10px;
     text-align: right;
     display: block;
   }
@@ -606,9 +548,45 @@ a.logo:hover {
 
 
 
-/* ----------------------------------
+/* --------------------------------------------------------------------
+scroll back to top button
+---------------------------------------------------------------------*/
+
+.back-to-top {
+  position: fixed;
+  bottom: 30px;
+  right: 30px;
+  width: 30px;
+  height: 30px;
+  background-color: #333;
+  color: white;
+  border: none;
+  border-radius: 50%;
+  cursor: pointer;
+  opacity: 0; 
+  visibility: hidden;
+  transition: opacity 0.3s, visibility 0.3s;
+  z-index: 1000;
+  padding: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+  .back-to-top:hover {
+    background-color: #000;
+  }
+
+  .back-to-top.show {
+    opacity: 1;
+    visibility: visible;
+  }
+
+
+
+/* --------------------------------------------------------------------
 footer section
------------------------------------*/
+---------------------------------------------------------------------*/
 
 
 footer {
@@ -688,9 +666,10 @@ footer {
   }
 }
 
-/* ----------------------------------
+
+/* --------------------------------------------------------------------
 home page
------------------------------------*/
+---------------------------------------------------------------------*/
 
  .home-intro-text {
   width: 45vw;
@@ -779,8 +758,6 @@ home page
 }
 
 
-
-
 @media (max-width: 1435px) {
  .home-intro-text {
   width: 55vw;
@@ -793,9 +770,7 @@ home page
  .home-intro-small{
   padding-right: 200px;
  }
-
 }
-
 @media (max-width: 1000px) {
   .home-intro-text, .home-disclaimer {
     width: 100%;
@@ -809,16 +784,13 @@ home page
   .home-intro-small{
   padding-right: 0;
   }
-
-  
-
 }
 
 
 
-/* ----------------------------------
+/* --------------------------------------------------------------------
 about page - page-id-21
------------------------------------*/
+---------------------------------------------------------------------*/
 
 .about-page main {
   margin-top: 20px;
@@ -1038,9 +1010,9 @@ about page - page-id-21
 
 
 
-/* ----------------------------------
+/* --------------------------------------------------------------------
 projects page - page-id-22
------------------------------------*/
+---------------------------------------------------------------------*/
 
 /*turn these off once links are ready
 .projects-grid a { 
@@ -1158,9 +1130,9 @@ projects page - page-id-22
   
 }
 
-/* ----------------------------------
+/* --------------------------------------------------------------------
 Individual project pages
------------------------------------*/
+---------------------------------------------------------------------*/
 
 .project-post {
   /*display: flex;
@@ -1220,7 +1192,6 @@ th { border-bottom: 2px solid #333; }
 }
 
 
-
 figcaption {
   margin: -10px 20px 0;
   font-size: 0.7rem;
@@ -1229,15 +1200,12 @@ figcaption {
   text-wrap: balance;
 }
 
-
-
 iframe {
   width: 100%;
   height: auto; /* Ensure the height scales with the width */
   aspect-ratio: 16 / 9; /* Sets a 16:9 aspect ratio */
   margin: 20px 0;
 }
-
 
 /* more projects footer */
 
@@ -1311,14 +1279,9 @@ iframe {
 
 
 
-
-
-
-
-
-/* ----------------------------------
+/* --------------------------------------------------------------------
 contact page - page-id-23
------------------------------------*/
+---------------------------------------------------------------------*/
 
 .contact-intro {
   width: 70%;
