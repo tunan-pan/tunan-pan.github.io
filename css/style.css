@@ -1026,10 +1026,10 @@ projects page - page-id-22
 
 /* Projects Grid */
 .projects-grid {
-  margin-top: 50px;
+  margin: 50px auto 0;
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  gap: 30px 20px;
+  gap: 48px 32px;
 }
 
 .project-item {
@@ -1040,8 +1040,9 @@ projects page - page-id-22
 .project-image {
   overflow: hidden;
   min-height: 100px;
-  max-height: 250px;
-  margin-bottom: 10px;
+  /*max-height: 250px;*/
+  height: auto;
+  margin-bottom: 16px;
   border-radius: 10px;
   box-shadow: var(--shadow-medium);
 }
@@ -1072,13 +1073,12 @@ projects page - page-id-22
 
 /* Project Title */
 .project-item h2 {
-  font-size: 1em;
+  font-size: 1.1em;
   font-family: 'InclusiveSans', sans-serif;
   font-weight: 500;
-  line-height: 1.3;
+  line-height: 1.35em;
   margin: 0 0 3px;
   padding: 0;
-  
 }
 
 .project-item h2 a {
@@ -1093,10 +1093,17 @@ projects page - page-id-22
 /* Categories and Tags */
 .project-categories,
 .project-tags {
-  font-size: 0.6em;
+  font-size: 0.65em;
   text-transform: uppercase;
   display: block;
-  line-height: 1rem;
+  line-height: 130%;
+}
+
+.project-tags {
+  margin-top: 8px;
+}
+.project-categories {
+  margin-bottom: 6px;
 }
 
 .project-categories a {
@@ -1184,16 +1191,23 @@ th { border-bottom: 2px solid #333; }
   width: unset!important; /* make image take full container width */
   height: auto !important; /* maintain aspect ratio */
   max-width: 100%; /* prevent overflowing the container */
-  max-height: 80vh;
   aspect-ratio: auto !important; /* ignore CKEditor's inline aspect-ratio */
   margin: 30px auto!important; /* spacing around images */
   box-shadow: var(--shadow-light);
   border-radius: 10px;
 }
 
+figure {
+  display: block;
+  width: unset!important; 
+  height: auto !important; 
+  max-width: 100%; 
+  aspect-ratio: auto !important; 
+  margin: 30px auto!important;
+}
 
 figcaption {
-  margin: -10px 20px 0;
+  margin: -12px 20px 0;
   font-size: 0.7rem;
   line-height: 150%;
   text-align: center;
@@ -1202,9 +1216,10 @@ figcaption {
 
 iframe {
   width: 100%;
-  height: auto; /* Ensure the height scales with the width */
+  height: auto;  /* Ensure the height scales with the width */
   aspect-ratio: 16 / 9; /* Sets a 16:9 aspect ratio */
-  margin: 20px 0;
+  border-radius: 10px;
+  box-shadow: var(--shadow-light);
 }
 
 /* more projects footer */
