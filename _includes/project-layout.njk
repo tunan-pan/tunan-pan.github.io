@@ -39,7 +39,7 @@ layout: base.njk
   <div class="project-gallery">
     {% for image in project.images %}
       <figure>
-        <img src="../{{ image.url }}" alt="{{ image.alternativeText or '' }}" >
+        <img src="{{ image.url }}" alt="{{ image.alternativeText or '' }}" >
         {% if image.caption %}
           <figcaption>{{ image.caption }}</figcaption>
         {% endif %}
