@@ -4,6 +4,7 @@ layout: base.njk
 
 
 <article class="project-post">
+  
   <div class="column-left">
     <div class="project-meta">
       {% if project.category %}
@@ -39,8 +40,6 @@ layout: base.njk
       {% endif %}
     </div>
 
-
-    
     <!-- Image gallery -->
     {% if project.images and project.images.length %}
     <div class="project-gallery">
@@ -54,6 +53,7 @@ layout: base.njk
       {% endfor %}
     </div>
     {% endif %}
+    
 
   </div>
 

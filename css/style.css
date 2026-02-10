@@ -1040,10 +1040,6 @@ projects page - page-id-22
   position: relative;
 }
 
-.column-right {
-  margin-top: 12px;
-}
-
 /* Project Image */
 .project-image {
   overflow: hidden;
@@ -1149,10 +1145,14 @@ Individual project pages
 ---------------------------------------------------------------------*/
 .project-post {
   display: grid;
-  grid-template-columns: 1.2fr 1.8fr; 
+  grid-template-columns: 1fr 2fr; 
   gap: 0 8%;
   max-width: 1200px;
   margin: 0 auto;
+}
+
+.column-right {
+  margin-top: 12px;
 }
 
 .project-meta {
