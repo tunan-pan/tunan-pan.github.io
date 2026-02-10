@@ -71,6 +71,7 @@ async function fetchAndSave() {
         order: p.order,
         description: p.description || null,
         content: convertContent(p.content),
+        leftdescription: convertContent(p.leftdescription),
         images: images,
         stuff: p.stuff
       };

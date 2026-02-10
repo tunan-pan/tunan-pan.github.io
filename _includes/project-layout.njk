@@ -4,7 +4,7 @@ layout: base.njk
 
 
 <article class="project-post">
-
+  <div class="column-left">
     <div class="project-meta">
       {% if project.category %}
         <span class="project-categories">
@@ -22,33 +22,41 @@ layout: base.njk
     </div>
 
     <h1>{{ project.title }}</h1>
+
+      {% if project.leftdescription %}
+        {{ project.leftdescription | safe }}
+      {% else %}
+        <p>Content coming soon!</p>
+      {% endif %}
     
+  </div>
+  
+  <div class="column-right">
     <!-- Main content -->
     <div class="project-content">
       {% if project.content %}
         {{ project.content | safe }}
-      {% else %}
-        <p>Content coming soon!</p>
       {% endif %}
     </div>
 
 
     
-  <!-- Image gallery -->
-  {% if project.images and project.images.length %}
-  <div class="project-gallery">
-    {% for image in project.images %}
-      <figure>
-        <img src="{{ image.url }}" alt="{{ image.alternativeText or '' }}" >
-        {% if image.caption %}
-          <figcaption>{{ image.caption }}</figcaption>
-        {% endif %}
-      </figure>
-    {% endfor %}
-  </div>
-  {% endif %}
+    <!-- Image gallery -->
+    {% if project.images and project.images.length %}
+    <div class="project-gallery">
+      {% for image in project.images %}
+        <figure>
+          <img src="{{ image.url }}" alt="{{ image.alternativeText or '' }}" >
+          {% if image.caption %}
+            <figcaption>{{ image.caption }}</figcaption>
+          {% endif %}
+        </figure>
+      {% endfor %}
+    </div>
+    {% endif %}
 
-    
+  </div>
+
 </article>
 
 
