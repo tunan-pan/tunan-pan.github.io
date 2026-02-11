@@ -205,33 +205,22 @@ p a:hover, figcaption a:hover {
   color: #000;
 }
 
+a:focus-visisble {
+  outline: 3px solid #000;
+  outline-offset: 3px;
+} 
+
 .button  {
   background-color: var(--color-orange);
   color: #fff;
   text-transform: uppercase;
   font-family: 'Lexend' sans-serif;
   font-weight: bold;
-  font-size: .8rem;
+  font-size: .9rem;
   letter-spacing: .1rem;
   text-decoration: none;
   margin: .5rem 0;
-  padding: 5px 20px 3px;
-  width: auto;
-  border-radius: 30px;
-  display: inline-block;
-}
-
-.button-secondary {
-  border: 1px solid #000;
-  text-transform: uppercase;
-  font-family: 'Lexend' sans-serif;
-  font-weight: bold;
-  font-size: .7rem;
-  color: #000;
-  letter-spacing: .1rem;
-  text-decoration: none;
-  margin: .5rem 0;
-  padding: 2px 20px;
+  padding: .5rem 2rem;
   width: auto;
   border-radius: 30px;
   display: inline-block;
@@ -240,29 +229,43 @@ p a:hover, figcaption a:hover {
 .button:hover {
   background-color: #000;
   color: #fff;
+  transition: 1s;
+}
+
+.button-secondary {
+  border: 1px solid #000;
+  text-transform: uppercase;
+  font-family: 'Lexend' sans-serif;
+  font-weight: bold;
+  font-size: .8rem;
+  color: #000;
+  letter-spacing: .1rem;
+  text-decoration: none;
+  margin: .5rem 0;
+  padding: .4rem 1.5rem;
+  width: auto;
+  border-radius: 30px;
+  display: inline-block;
 }
 
 .button-secondary:hover {
   background-color: #000;
   color: #fff;
+  transition: 1s;
 }
 
 @media (prefers-reduced-motion: no-preference) {
-  .button:hover {
-    transition: 0.9s;
+  .arrow {
+    display: inline-block;
+    transition: transform 0.4s ease; 
   }
-  .button-secondary:hover {
-    transition: 0.7s;
+  .button:hover .arrow {
+    transform: translateX(6px); 
   }
-}
 
-.button:focus, a:focus {
-  outline: 2px solid #000;
-  outline-offset: 2px;
-} 
-
-.button:focus {
-  color: #fff;
+  .button-secondary:hover .arrow {
+    transform: translateX(4px); 
+  }
 }
 
 h1 {
@@ -367,9 +370,12 @@ a.logo:hover {
   text-decoration: none;
 }
 
+
 @media (prefers-reduced-motion: no-preference) {
   .logo:hover img {
     transform: rotate(15deg);
+  }
+  .logo img {
     transition: transform 0.4s ease;
   }
 }
@@ -394,23 +400,55 @@ a.logo:hover {
   padding-bottom: 5px;
   border-bottom: 3px solid transparent;
   box-sizing: border-box;
+  text-decoration: none;
 }
 
-.main-nav a:hover, .main-nav a.current {
-  border-bottom: 3px solid;
+/* link underline */
+
+.main-nav a::before {
+    content: "";
+    position: absolute;
+    display: block;
+    width: 100%;
+    height: 3px;
+    bottom: -3px;
+    left: 0;
+    background-color: transparent;
+    transform: scaleX(0);
+    transform-origin: top left;
+    transition: transform 0s ease;
+  }
+.main-nav a:hover::before {
+transform: scaleX(1);
 }
 
-/* Individual link colors */
-.main-nav a[href="/projects/"]:hover, .main-nav a[href="/projects/"].current  {
+.main-nav a[href="/projects/"]::before {
+  background-color: var(--color-purple);
+}
+
+.main-nav a[href="/about/"]::before {
+  background-color: var(--color-pink);
+}
+
+.main-nav a[href="/contact/"]::before {
+  background-color: var(--color-yellow);
+}
+
+/* Current link - individual colors */
+.main-nav a[href="/projects/"].current {
   border-color: var(--color-purple);
 }
 
-.main-nav a[href="/about/"]:hover, .main-nav a[href="/about/"].current {
+.main-nav a[href="/about/"].current {
   border-color: var(--color-pink);
 }
 
-.main-nav a[href="/contact/"]:hover, .main-nav a[href="/contact/"].current {
+.main-nav a[href="/contact/"].current {
   border-color: var(--color-yellow);
+}
+
+.main-nav a.current {
+  border-bottom: 3px solid;
 }
 
 /* Logo icons after links */
@@ -433,10 +471,15 @@ a.logo:hover {
 }
 
 @media (prefers-reduced-motion: no-preference) {
-  .main-nav a:hover::after {
-    rotate: 15deg;
+  .main-nav a::before {
+    transition: transform 0.4s ease!important;
   }
-}
+
+  .main-nav a::after {
+    transition: rotate 0.4s ease; 
+  }
+} 
+
 
 /* Mobile Menu Toggle */
 .mobile-menu-toggle {
@@ -532,6 +575,9 @@ a.logo:hover {
   @media (prefers-reduced-motion: no-preference) {
     .main-nav {
         transition: right 0.5s ease;
+    }
+    .main-nav a:hover::after {
+      rotate: 15deg;
     }
   }
 
@@ -692,11 +738,13 @@ home page
 }
 
 .home-disclaimer {
+  position: relative;
   font-size: 0.8em;
   margin-top: 60px;
   line-height: 150%;
   width: 40%;
   text-wrap: balance;
+  z-index: 1;
 }
 
 .home-left {
@@ -722,7 +770,7 @@ home page
   top: 0;
   left: 0;
   display: block;
-  z-index: -1000;
+  z-index: -999;
 }
 
 /* Static fox is visible by default */
@@ -778,8 +826,7 @@ home page
   .fox-container {
     position: relative;
     width: 100%;
-    margin: -130px 0 4em -100px;
-    z-index: 800;
+    margin: -60px 0 4em -100px;
   }
   .home-intro-small{
   padding-right: 0;
@@ -1174,7 +1221,9 @@ Individual project pages
 /* rich text stuff */
 
 .table {
+  display: block;
   margin-left:0;
+  overflow-x: scroll;
 }
 
 table {
@@ -1183,6 +1232,7 @@ table {
   max-width: 100%;
   background-color: #fff;
   text-align: left;
+  overflow-x: scroll;
 }
 
 tr, td, th  {
@@ -1198,6 +1248,19 @@ th { border-bottom: 2px solid #333; }
 .table-color-orange {
   background-color: #fffaf4;;
 }
+
+
+.column-left,
+.column-right {
+  min-width: 0; /* allows grid items to shrink below content size */
+  overflow-x: hidden;
+}
+.project-content {
+  min-width: 0;
+  overflow-x: auto;
+}
+  
+
 
 .project-content img, .project-gallery img, .project-content video {
   display: block;
@@ -1217,6 +1280,7 @@ figure {
   max-width: 100%; 
   aspect-ratio: auto !important; 
   margin: 30px auto!important;
+  overflow-x: scroll;
 }
 
 figcaption {
@@ -1352,14 +1416,14 @@ textarea::placeholder {
   border-radius: 30px;
   width: fit-content;
   margin: 0 auto;
-  padding: 12px 28px;
+  padding: .8rem 2rem;
   cursor: pointer;
-  font-size: 0.8em;
+  font-size: 0.9em;
 }
 
 .contact_form input[type="submit"]:focus {
-  outline: 2px solid #000;
-  outline-offset: 2px;
+  outline: 3px solid #000;
+  outline-offset: 3px;
   }
 
 @media (max-width: 768px) {
