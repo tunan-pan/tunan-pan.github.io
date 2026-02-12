@@ -214,7 +214,7 @@ a:focus-visisble {
   background-color: var(--color-orange);
   color: #fff;
   text-transform: uppercase;
-  font-family: 'Lexend' sans-serif;
+  font-family: 'Lexend', sans-serif;
   font-weight: bold;
   font-size: .9rem;
   letter-spacing: .1rem;
@@ -235,7 +235,7 @@ a:focus-visisble {
 .button-secondary {
   border: 1px solid #000;
   text-transform: uppercase;
-  font-family: 'Lexend' sans-serif;
+  font-family: 'Lexend', sans-serif;
   font-weight: bold;
   font-size: .8rem;
   color: #000;
@@ -258,13 +258,14 @@ a:focus-visisble {
   .arrow {
     display: inline-block;
     transition: transform 0.4s ease; 
+    font-family: 'Inclusive Sans', sans-serif;
   }
   .button:hover .arrow {
-    transform: translateX(6px); 
+    transform: translateX(5px); 
   }
 
   .button-secondary:hover .arrow {
-    transform: translateX(4px); 
+    transform: translateX(3px); 
   }
 }
 
@@ -362,7 +363,7 @@ header nav
 
 .logo span {
   font-family: "LexendExa", sans-serif;
-  font-size: 1rem;
+  font-size: 1.1rem;
   text-transform: uppercase;
   font-weight: normal;
 }
@@ -383,11 +384,11 @@ a.logo:hover {
 /* Desktop Navigation */
 .main-nav {
   display: flex;
-  gap: 2rem;
+  gap: 3rem;
   line-height: 1.2em;
   margin: 0;
   padding: 0;
-  font-size: 0.7rem;
+  font-size: 0.8rem;
   text-transform: uppercase;
   font-family: "LexendExa", sans-serif;
 }
@@ -397,6 +398,7 @@ a.logo:hover {
   color: #000;
   position: relative;
   transition: unset;
+  margin-top: 10px;
   padding-bottom: 5px;
   border-bottom: 3px solid transparent;
   box-sizing: border-box;
@@ -866,10 +868,12 @@ about page - page-id-21
   transform: rotate(-3deg);
 }
 @media (prefers-reduced-motion: no-preference) {
-  .about-image:hover {
-      transform: rotate(0deg);
-      transition: 0.3s ease-in-out;
+  .about-image {
+    transition: 0.3s ease-in-out;
   }
+    .about-image:hover {
+      transform: rotate(0deg);
+    }
 }
 
 
@@ -1410,21 +1414,18 @@ textarea::placeholder {
   min-height: 150px;
 }
 
-.contact_form input[type="submit"] {
+.contact_form button.button {
+  padding: 0 2rem;
   border: none;
-  color: #fff;
-  border-radius: 30px;
-  width: fit-content;
-  margin: 0 auto;
-  padding: .8rem 2rem;
   cursor: pointer;
-  font-size: 0.9em;
 }
 
-.contact_form input[type="submit"]:focus {
-  outline: 3px solid #000;
-  outline-offset: 3px;
-  }
+.contact_form button:hover {
+  background-color: #000;
+  color: #fff;
+  transition: 1s;
+}
+
 
 @media (max-width: 768px) {
   .contact-intro {
