@@ -757,9 +757,9 @@ home page
 /* Fox container - wraps both static and animated versions */
 .fox-container {
   position: absolute;
-  width: 55vw;
-  right: -80px;
-  bottom: -6vh;  
+  width: 65vw;
+  right: -120px;
+  bottom: -12vh;  
   max-width: 800px;
   aspect-ratio: 1000 / 909;
 }
@@ -779,6 +779,7 @@ home page
 .fox-static {
   opacity: 1;
   transition: none;
+
 }
 
 /* Animated fox is hidden by default */
@@ -801,12 +802,32 @@ home page
   width: 30%;
   aspect-ratio: 1 / 1.3;
   border-radius: 90px;
-  top: 50%;
+  top: 20%;
   left: 35%;
   z-index: 1;
-  cursor: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="40" height="40"><text y="32" font-size="32">💛</text></svg>') 20 20, pointer;
+ cursor: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="80" height="80"><text y="32" font-size="42">💛</text></svg>') 20 20, pointer;
 }
 
+@media (prefers-reduced-motion: no-preference) {
+  .particle {
+    position: fixed;
+    pointer-events: none;
+    font-size: 40px;
+    animation: float-up 4s ease-out forwards;
+    z-index: 9999;
+  }
+
+  @keyframes float-up {
+    0% {
+        opacity: 1;
+        transform: translateY(-20px) scale(0.5);
+    }
+    100% {
+        opacity: 0;
+        transform: translateY(-300px) scale(2);
+    }
+  }
+}
 
 @media (max-width: 1435px) {
  .home-intro-text {
