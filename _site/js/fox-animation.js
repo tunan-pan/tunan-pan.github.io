@@ -12,20 +12,20 @@ constructor() {
 
     // Animation configuration
     this.frames = [
-    'images/fox/Fox_Frame_01.png',
-    'images/fox/Fox_Frame_02.png',
-    'images/fox/Fox_Frame_03.png',
-    'images/fox/Fox_Frame_04.png',
-    'images/fox/Fox_Frame_05.png',
-    'images/fox/Fox_Frame_06.png',
-    'images/fox/Fox_Frame_07.png',
-    'images/fox/Fox_Frame_08.png',
-    'images/fox/Fox_Frame_09.png',
-    'images/fox/Fox_Frame_10.png',
-    'images/fox/Fox_Frame_11.png',
-    'images/fox/Fox_Frame_12.png',
-    'images/fox/Fox_Frame_13.png',
-    'images/fox/Fox_Frame_14.png'
+    'images/fox/Fox_Frame_01.svg',
+    'images/fox/Fox_Frame_02.svg',
+    'images/fox/Fox_Frame_03.svg',
+    'images/fox/Fox_Frame_04.svg',
+    'images/fox/Fox_Frame_05.svg',
+    'images/fox/Fox_Frame_06.svg',
+    'images/fox/Fox_Frame_07.svg',
+    'images/fox/Fox_Frame_08.svg',
+    'images/fox/Fox_Frame_09.svg',
+    'images/fox/Fox_Frame_10.svg',
+    'images/fox/Fox_Frame_11.svg',
+    'images/fox/Fox_Frame_12.svg',
+    'images/fox/Fox_Frame_13.svg',
+    'images/fox/Fox_Frame_14.svg'
     ];
     
     this.currentFrame = 0;
@@ -55,7 +55,7 @@ init() {
     // Reset to neutral face if using reduced motion
       if (this.prefersReducedMotion) {
         setTimeout(() => {
-          this.staticImg.src = 'images/fox/Fox_Static.png';
+          this.staticImg.src = 'images/fox/Fox_Static.svg';
           this.container.classList.remove('showing-happy');
         }, 500); // Small delay before reverting
       }
@@ -71,7 +71,7 @@ init() {
         } else if (this.prefersReducedMotion) {
           // Reset to neutral for keyboard users too
           setTimeout(() => {
-            this.staticImg.src = 'images/fox/Fox_Static.png';
+            this.staticImg.src = 'images/fox/Fox_Static.svg';
             this.container.classList.remove('showing-happy');
           }, 500);
         }
@@ -97,7 +97,7 @@ preloadFrames() {
     img.src = src;
     });
     const happyImg = new Image();
-    happyImg.src = 'images/fox/Fox_Static-happy.png';
+    happyImg.src = 'images/fox/Fox_Static-happy.svg';
   }
 
 startAnimation() {
@@ -119,7 +119,7 @@ startAnimation() {
 
  showHappyFace() {
   // Swap static image to happy face
-  this.staticImg.src = 'images/fox/Fox_Static-happy.png';
+  this.staticImg.src = 'images/fox/Fox_Static-happy.svg';
   this.container.classList.add('showing-happy');
  }
 
