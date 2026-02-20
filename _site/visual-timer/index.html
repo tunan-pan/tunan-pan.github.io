@@ -24,7 +24,7 @@
       flex-direction: column;
       justify-content: center;
       align-items: center;
-      padding: 20px;
+      padding: 10px;
       box-sizing: border-box;
     }
 
@@ -36,7 +36,6 @@
       text-align: center;
       width: 100%;
       max-width: 400px;
-      position: relative;
     }
 
     .app-title {
@@ -51,15 +50,16 @@
     .timer-container {
       text-align: center;
       width: 100%;
-      max-width: 400px;
-      position: relative;
+      display: flex;
+      flex-direction: column;
+      align-content: center;
     }
 
     .top-controls {
       position: absolute;
-      top: 0px;
-      left: 10px;
-      right: -10px;
+      top: 20px;
+      left: 20px;
+      right: 20px;
       display: flex;
       justify-content: space-between;
       padding: 0;
@@ -149,16 +149,15 @@
       font-weight: 300;
       color: white;
       letter-spacing: 4px;
-      margin-bottom: 24px;
-      margin-top: 100px;
+      margin-top: 50px;
       text-align: center;
     }
 
     .circle-container {
       position: relative;
-      width: 400px;
-      height: 400px;
-      margin: 0 auto 40px;
+      width: 100%;
+      max-height: 400px;
+      margin: 0 auto;
     }
 
     .circle-bg {
@@ -456,7 +455,7 @@
       <div class="time-display-large" id="timeDisplay">1:00</div>
       
       <div class="circle-container">
-        <svg width="400" height="400" viewBox="0 0 400 400">
+        <svg width="90vw" height="auto" viewBox="0 0 400 400">
           <!-- Tick marks (spokes) -->
           <g class="tick-marks" id="tickMarks"></g>
           
