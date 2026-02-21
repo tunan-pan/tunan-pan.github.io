@@ -3,23 +3,25 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Circular Timer</title>
+  <title>Tunan Pan — Personal Visual Timer</title>
   <style>
     body {
       margin: 0;
       padding: 0;
-      min-height: 100vh;
+      height: 100vh;
       display: flex;
       justify-content: center;
-      align-items: center;
+      align-items: flex-start;
       background: /*linear-gradient(135deg, #667eea 0%, #764ba2 100%);*/
       radial-gradient(circle at bottom right, #E481C6 -10%, #CB60BB 15%, #732F8E 40%, #3E1175 70%, #1E1E86 120%);
       font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+      overflow: hidden;
     }
 
     .screen {
-      width: 100%;
-      min-height: 100vh;
+      max-width: 90vw;
+      max-height: 90vh;
+      margin: auto;
       display: flex;
       flex-direction: column;
       justify-content: center;
@@ -27,23 +29,26 @@
       padding: 10px;
       box-sizing: border-box;
     }
-
+    @media (min-width: 450px){
+      .screen {
+        max-width: 400px;
+      }
+    }
+    
     .screen.hidden {
       display: none;
     }
 
     .setup-container {
       text-align: center;
-      width: 100%;
       max-width: 400px;
     }
 
     .app-title {
       color: white;
-      font-size: 48px;
+      font-size: 2.5rem;
+      text-wrap: pretty;
       font-weight: 300;
-      margin-bottom: 60px;
-      margin-top: 60px;
       letter-spacing: 2px;
     }
 
@@ -64,6 +69,13 @@
       justify-content: space-between;
       padding: 0;
       z-index: 10;
+    }
+    @media (min-width: 600px){
+      .top-controls {
+        top: 10%;
+        left: 10%;
+        right: 10%;
+      }
     }
 
     .icon-button {
@@ -94,6 +106,7 @@
     .sound-control {
       position: relative;
     }
+
 
     .sound-dropdown {
       position: absolute;
@@ -144,8 +157,9 @@
       border-radius: 0 0 12px 12px;
     }
 
+
     .time-display-large {
-      font-size: 72px;
+      font-size: 4rem;
       font-weight: 300;
       color: white;
       letter-spacing: 4px;
@@ -155,10 +169,26 @@
 
     .circle-container {
       position: relative;
-      width: 100%;
-      max-height: 400px;
+      width: 400px;
+      max-width: 400px;
       margin: 0 auto;
     }
+    .circle-container svg {
+      position: relative;
+    }
+
+    @media (max-width: 450px){
+      .circle-container {
+        width: 100%;
+        max-height: 400px;
+      }
+
+      .circle-container svg {
+      max-width: 100%;
+    }
+    }
+    
+    
 
     .circle-bg {
       fill: rgba(255, 255, 255, 0.1);
@@ -199,8 +229,8 @@
     }
 
     .large-button {
-      padding: 20px 50px;
-      font-size: 20px;
+      padding: 16px;
+      font-size: 1.2rem;
       font-weight: 600;
       border: 2px solid white;
       background: white;
@@ -210,8 +240,8 @@
       transition: all 0.3s ease;
       text-transform: uppercase;
       letter-spacing: 1px;
-      margin-top: 40px;
-      width: 100%;
+      margin-top: 20px;
+      width: 80%;
       max-width: 300px;
     }
 
@@ -234,7 +264,7 @@
 
     button {
       padding: 15px 25px;
-      font-size: 16px;
+      font-size: 0.8rem;
       font-weight: 500;
       border: 2px solid white;
       background: transparent;
@@ -268,6 +298,14 @@
       color: #511168;
       flex: 1.5;
       font-weight: 600;
+    }
+    #resetBtn {
+      background-image: url(button_reset.png);
+      font-size: 1.5rem;
+      font-weight: 300;
+    }
+    #addMinuteBtn {
+      background-image: url(button_add1.png);
     }
 
     .primary-button:hover {
@@ -304,8 +342,7 @@
     label {
       display: block;
       color: white;
-      font-size: 14px;
-      margin-bottom: 10px;
+      font-size: 1rem;
       text-transform: uppercase;
       letter-spacing: 1px;
       opacity: 0.9;
@@ -455,7 +492,7 @@
       <div class="time-display-large" id="timeDisplay">1:00</div>
       
       <div class="circle-container">
-        <svg width="90vw" height="auto" viewBox="0 0 400 400">
+        <svg viewBox="0 0 400 400">
           <!-- Tick marks (spokes) -->
           <g class="tick-marks" id="tickMarks"></g>
           
@@ -471,9 +508,10 @@
       </div>
 
       <div class="controls">
-        <button id="resetBtn">Reset</button>
-        <button id="addMinuteBtn">+1 Min</button>
+        <button id="resetBtn">&#8635;</button>
+        <button id="addMinuteBtn">+1 min</button>
         <button id="startPauseBtn" class="primary-button">Start</button>
+
       </div>
     </div>
   </div>
