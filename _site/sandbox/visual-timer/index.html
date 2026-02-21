@@ -78,7 +78,7 @@
       }
     }
 
-    .icon-button {
+    .top-button {
       background: transparent;
       border: none;
       color: white;
@@ -92,14 +92,14 @@
       text-align: center;
     }
 
-    .icon-button:hover {
+    .top-button:hover {
       background: rgba(255, 255, 255, 0.1);
       transform: scale(1.1);
       box-shadow: none;
       opacity: 1;
     }
 
-    .icon-button:active {
+    .top-button:active {
       transform: scale(0.95);
     }
 
@@ -169,9 +169,8 @@
 
     .circle-container {
       position: relative;
-      width: 400px;
-      max-width: 400px;
-      margin: 0 auto;
+      width: 380px;
+      margin: 10px auto;
     }
     .circle-container svg {
       position: relative;
@@ -180,15 +179,12 @@
     @media (max-width: 450px){
       .circle-container {
         width: 100%;
-        max-height: 400px;
       }
 
       .circle-container svg {
       max-width: 100%;
     }
     }
-    
-    
 
     .circle-bg {
       fill: rgba(255, 255, 255, 0.1);
@@ -293,25 +289,39 @@
       transform: none;
     }
 
-    .primary-button {
-      background: white;
-      color: #511168;
-      flex: 1.5;
-      font-weight: 600;
+
+    .icon-button {
+      width: 50px!important;
+      height: 50px!important;
+      padding: 0;
+      background-size: fill!important;
+      background-position: center!important;
+      background-repeat: no-repeat!important;
+      background-color: transparent!important;
+      border: none;
+      flex: unset;
+      color: transparent;
+      font-size: 0;
+      text-indent: -9999px; /* Hide any text */
+      margin: 20px 10px;
     }
     #resetBtn {
-      background-image: url(button_reset.png);
-      font-size: 1.5rem;
-      font-weight: 300;
-    }
-    #addMinuteBtn {
-      background-image: url(button_add1.png);
+      background-image: url('button_reset.png');
     }
 
-    .primary-button:hover {
-      background: rgba(255, 255, 255, 0.95);
-      transform: translateY(-2px);
-      box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
+    #addMinuteBtn {
+      background-image: url('button_add1.png');
+    }
+
+    #startPauseBtn {
+      background-image: url('button_start.png');
+      width: 80px!important;
+      height: 80px!important;
+      margin-top: 2px;
+    }
+    /* State for pause icon */
+    #startPauseBtn.is-paused {
+      background-image: url('button_pause.png');
     }
 
     .input-container {
@@ -444,7 +454,7 @@
       <div class="top-controls">
         <div></div>
         <div class="sound-control">
-          <button id="muteBtn" class="icon-button">🔊</button>
+          <button id="muteBtn" class="top-button">🔊</button>
           <div class="sound-dropdown" id="soundDropdown">
             <div class="sound-dropdown-item active" data-sound="gentle">Gentle</div>
             <div class="sound-dropdown-item" data-sound="urgent">Urgent</div>
@@ -478,9 +488,9 @@
   <div id="timerScreen" class="screen hidden">
     <div class="timer-container">
       <div class="top-controls">
-        <button id="backToSetupBtn" class="icon-button">←</button>
+        <button id="backToSetupBtn" class="top-button">←</button>
         <div class="sound-control">
-          <button id="muteBtn2" class="icon-button">🔊</button>
+          <button id="muteBtn2" class="top-button">🔊</button>
           <div class="sound-dropdown" id="soundDropdown2">
             <div class="sound-dropdown-item active" data-sound="gentle">Gentle</div>
             <div class="sound-dropdown-item" data-sound="urgent">Urgent</div>
@@ -508,9 +518,9 @@
       </div>
 
       <div class="controls">
-        <button id="resetBtn">&#8635;</button>
-        <button id="addMinuteBtn">+1 min</button>
-        <button id="startPauseBtn" class="primary-button">Start</button>
+        <button id="resetBtn" class="icon-button" aria-label="Reset"></button>
+        <button id="startPauseBtn" class="icon-button" aria-label="Start"></button>
+        <button id="addMinuteBtn" class="icon-button" aria-label="Add one minute"></button>
 
       </div>
     </div>
@@ -1161,7 +1171,8 @@
         if (!this.isRunning && this.currentTotalSeconds > 0) {
           this.isRunning = true;
           this.circleContainer.classList.add('running');
-          this.startPauseBtn.textContent = 'Pause';
+          this.startPauseBtn.classList.add('is-paused');
+          this.startPauseBtn.setAttribute('aria-label', 'Pause');
           
           // Disable pickers
           this.hoursPicker.style.pointerEvents = 'none';
@@ -1199,7 +1210,9 @@
           this.isRunning = false;
           this.circleContainer.classList.remove('running');
           cancelAnimationFrame(this.animationFrameId);
-          this.startPauseBtn.textContent = 'Start';
+          this.startPauseBtn.classList.remove('is-paused');
+          this.startPauseBtn.setAttribute('aria-label', 'Start');
+
         }
       }
 
@@ -1214,7 +1227,8 @@
         this.timeRemaining = this.currentTotalSeconds;
         
         this.updateDisplay(this.currentTotalSeconds);
-        this.startPauseBtn.textContent = 'Start';
+        this.startPauseBtn.classList.remove('is-paused');
+        this.startPauseBtn.setAttribute('aria-label', 'Start');
         
         // Re-enable pickers
         this.hoursPicker.style.pointerEvents = 'auto';

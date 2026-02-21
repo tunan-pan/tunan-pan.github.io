@@ -7,6 +7,7 @@ module.exports = function(eleventyConfig) {
   eleventyConfig.addPassthroughCopy("fonts");
   eleventyConfig.addPassthroughCopy("images");
   eleventyConfig.addPassthroughCopy("js");
+  eleventyConfig.addPassthroughCopy("sandbox");
   eleventyConfig.addPassthroughCopy("favicon.ico");
   eleventyConfig.addPassthroughCopy("favicon-16x16.png");
   eleventyConfig.addPassthroughCopy("favicon-32x32.png");
@@ -15,6 +16,7 @@ module.exports = function(eleventyConfig) {
   eleventyConfig.addPassthroughCopy("android-chrome-512x512.png");
   eleventyConfig.addPassthroughCopy({
     "backend/public/uploads": "images"
+  
   })
   eleventyConfig.ignores.add("backend/**");
 
