@@ -224,12 +224,12 @@ a:focus-visisble {
   width: auto;
   border-radius: 30px;
   display: inline-block;
+  transition: 1s;
 }
 
 .button:hover {
   background-color: #000;
   color: #fff;
-  transition: 1s;
 }
 
 .button-secondary {
@@ -246,12 +246,12 @@ a:focus-visisble {
   width: auto;
   border-radius: 30px;
   display: inline-block;
+  transition: 0.8s;
 }
 
 .button-secondary:hover {
   background-color: #000;
   color: #fff;
-  transition: 1s;
 }
 
 @media (prefers-reduced-motion: no-preference) {
@@ -305,6 +305,9 @@ h6:first-child {
 
 ul li, ol li {
   margin-bottom: 0.5rem;
+}
+li::marker {
+  color: var(--color-orange);
 }
 
 /* --------------------------------------------------------------------
@@ -604,8 +607,8 @@ scroll back to top button
   position: fixed;
   bottom: 30px;
   right: 30px;
-  width: 30px;
-  height: 30px;
+  width: 40px;
+  height: 40px;
   background-color: #333;
   color: white;
   border: none;
@@ -719,6 +722,13 @@ footer {
 home page
 ---------------------------------------------------------------------*/
 
+
+.home-top-container {
+  width: 100%;
+  position: relative;
+  margin: 5% auto 10%;
+}
+
  .home-intro-text {
   width: 45vw;
   max-width: 650px;
@@ -749,19 +759,16 @@ home page
   z-index: 1;
 }
 
-.home-left {
-  position: relative;
-  min-height: 70vh;
-}
+
 
 /* Fox container - wraps both static and animated versions */
 .fox-container {
   position: absolute;
-  width: 65vw;
-  right: -120px;
-  bottom: -12vh;  
-  max-width: 800px;
-  aspect-ratio: 1000 / 909;
+  width: 80vw;
+  right: -18vw;
+  bottom: -24vh;  
+  max-width: 1000px;
+  aspect-ratio: 1000 / 650;
 }
 
 /* Both fox images share the same positioning */
@@ -844,16 +851,20 @@ home page
  }
 }
 @media (max-width: 1000px) {
-  .home-intro-text, .home-disclaimer {
+  .home-intro-text {
     width: 100%;
   } 
-  .fox-container {
-    position: relative;
-    width: 100%;
-    margin: -60px 0 4em -100px;
-  }
+  
   .home-intro-small{
   padding-right: 0;
+  }
+}
+
+@media (max-width: 500px) {
+  .fox-container {
+    width: 100vw;
+    bottom: -160px;
+    right: -120px;
   }
 }
 
@@ -1210,8 +1221,21 @@ projects page - page-id-22
   .projects-grid {
     grid-template-columns: 1fr;
   }
-  
 }
+
+.fade-in  > * {
+  opacity: 0;
+  transform: translateY(40px);
+  transition: opacity 0.7s ease, transform 0.7s ease;
+}
+
+.fade-in > *.visible {
+  opacity: 1;
+  transform: translateY(0);
+    transition-delay: calc(var(--i) * 0.06s);
+
+}
+
 
 /* --------------------------------------------------------------------
 Individual project pages
@@ -1219,18 +1243,14 @@ Individual project pages
 .project-post {
   display: grid;
   grid-template-columns: 1fr 2fr; 
-  gap: 0 8%;
+  gap: 0 5%;
   max-width: 1200px;
   margin: 0 auto;
 }
 
-.column-right {
-  margin-top: 12px;
-}
-
 .project-meta {
   display: flex;
-  margin: 0 0 10px 3px;
+  margin: 0 0 4px 3px;
 }
 
 .project-meta .project-tags, .project-meta .project-categories {
@@ -1238,11 +1258,36 @@ Individual project pages
 }
 
 .project-post h1 {
-  font-size: 2.5rem;
+  font-size: 2.2rem;
   margin: 0 0 30px;
 }
 
+.leftdescription {
+  margin-bottom: 40px;
+}
 
+.project-role, .project-deliverables {
+  font-size: 0.9em;
+  line-height: 110%;
+  border-left: 1px solid var(--color-purple);
+  padding-left: 12px;
+  margin-bottom: 28px;
+}
+.project-deliverables {
+  margin-bottom: 100px;
+}
+.project-role p, .project-deliverables p {
+  font-size: 0.9em;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+}
+.project-role ul, .project-deliverables ul {
+  padding-left: 20px;
+}
+.project-role li::marker, .project-deliverables li::marker {
+  color: var(--color-purple);
+}
 
 /* rich text stuff */
 
@@ -1272,20 +1317,30 @@ th { border-bottom: 2px solid #333; }
   background-color: var(--color-darkgrey);
 }
 .table-color-orange {
-  background-color: #fffaf4;;
+  background-color: #fffaf4;;i
 }
-
 
 .column-left,
 .column-right {
   min-width: 0; /* allows grid items to shrink below content size */
-  overflow-x: hidden;
+}
+
+.column-left-inner {
+  position: sticky;
+  top: 180px;
+  left: 0;
+  max-height: 70vh;
+  overflow-y: auto;
+  mask-image: linear-gradient(to bottom, black 85%, transparent);
 }
 .project-content {
   min-width: 0;
-  overflow-x: auto;
 }
-  
+
+.project-content h2 {
+  border-top: 4px solid var(--color-orange);
+  padding: 24px 0 0;
+}
 
 
 .project-content img, .project-gallery img, .project-content video {
@@ -1306,12 +1361,11 @@ figure {
   max-width: 100%; 
   aspect-ratio: auto !important; 
   margin: 30px auto!important;
-  overflow-x: scroll;
 }
 
 figcaption {
   margin: -12px 20px 0;
-  font-size: 0.7rem;
+  font-size: 0.8rem;
   line-height: 150%;
   text-align: center;
   text-wrap: balance;
@@ -1328,7 +1382,7 @@ iframe {
 /* more projects footer */
 
 .projects-more {
-  margin-top: 200px;
+  margin-top: 100px;
 }
 
 .projects-more h4 {
