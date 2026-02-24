@@ -53,32 +53,45 @@
 <article class="project-post">
   
   <div class="column-left">
-    <div class="project-meta">
-      
+    <div class="column-left-inner">
+      <div class="project-meta">
+        
 
-      
-        <span class="project-tags">
-          
-          <a href="/tags/interactive/">Interactive</a> 
-          
-        </span>
-      
-    </div>
+        
+          <span class="project-tags">
+            
+            <a href="/tags/interactive/">Interactive</a> 
+            
+          </span>
+        
+      </div>
 
-    <h1>Johnson &amp; Johnson Global Public Health — Engaging Audiences With Augmented Reality</h1>
+      <h1>Johnson &amp; Johnson Global Public Health — Engaging Audiences With Augmented Reality</h1>
 
-      
-        <p>I explored the use of augmented reality (AR) as a way to make Johnson &amp; Johnson’s Global Public Health content more interactive and participatory, during a time when platforms like Instagram were shifting their focus toward Reels.</p><p>As part of this pitch, I developed several AR concepts rooted in the existing social content we were creating for the client, focusing on how AR could invite users to engage more actively with educational messaging rather than passively consume it.</p>
-      
+      <div class="leftdescription">
+        
+      </div>
     
+      <div class="project-role">
+        <p>My Role:</p>
+        
+      </div>
+      <div class="project-deliverables">
+        <p>Deliverables:</p>
+        
+      </div>
+
+
+    </div>
   </div>
   
   <div class="column-right">
     <!-- Main content -->
     <div class="project-content">
       
-        <figure><p><iframe src="https://docs.google.com/presentation/d/e/2PACX-1vQcMnv9x7SYVIt_Vnzwb8fC-W9JcZOeKSZAVMTTqxHp5VKuhX7zKHeABB7JfbSgnvpRZ189bvL0Qoxe/pubembed?start=false&amp;loop=true&amp;delayms=3000" frameborder="0" allowfullscreen="true" mozallowfullscreen="true" webkitallowfullscreen="true"></iframe></p><figcaption><a target="_blank" rel="noopener noreferrer" href="https://docs.google.com/presentation/d/1ibFPACaL_wplsP06BQj8aGtBRcojAdnCMVQBKTH9wJ8/edit?usp=sharing"><i>(Presentation can also be viewed in Google Slides here)</i></a></figcaption></figure>
+        <p>I explored the use of augmented reality (AR) as a way to make Johnson &amp; Johnson’s Global Public Health content more interactive and participatory, during a time when platforms like Instagram were shifting their focus toward Reels.</p><p>As part of this pitch, I developed several AR concepts rooted in the existing social content we were creating for the client, focusing on how AR could invite users to engage more actively with educational messaging rather than passively consume it.</p><figure><p><iframe src="https://docs.google.com/presentation/d/e/2PACX-1vQcMnv9x7SYVIt_Vnzwb8fC-W9JcZOeKSZAVMTTqxHp5VKuhX7zKHeABB7JfbSgnvpRZ189bvL0Qoxe/pubembed?start=false&amp;loop=true&amp;delayms=3000" frameborder="0" allowfullscreen="true" mozallowfullscreen="true" webkitallowfullscreen="true"></iframe></p><figcaption><a target="_blank" rel="noopener noreferrer" href="https://docs.google.com/presentation/d/1ibFPACaL_wplsP06BQj8aGtBRcojAdnCMVQBKTH9wJ8/edit?usp=sharing"><i>(Presentation can also be viewed in Google Slides here)</i></a></figcaption></figure>
       
+
     </div>
 
     <!-- Image gallery -->
@@ -140,55 +153,13 @@
 
   
 
-  <script src="/js/menu.js"> // for mobile hamburger menu </script>
+  <script src="/js/mobile-menu.js"></script>
 
-  <script>
-    const header = document.querySelector('.site-header');
-    let isScrolled = false;
-    let ticking = false;
-    
-    window.addEventListener('scroll', function() {
-      if (!ticking) {
-        window.requestAnimationFrame(function() {
-          const scrollY = window.scrollY;
-          
-          if (scrollY > 60 && !isScrolled) {
-            header.classList.add('scrolled');
-            isScrolled = true;
-          } else if (scrollY < 40 && isScrolled) {
-            header.classList.remove('scrolled');
-            isScrolled = false;
-          }
-          
-          ticking = false;
-        });
-        ticking = true;
-      }
-    });
-  </script>
+  <script src="/js/sticky-header.js"></script>
+  
+  <script src="/js/back-to-top.js"></script>
 
-
-
-  <script>
-    const backToTopButton = document.querySelector('.back-to-top');
-    
-    window.addEventListener('scroll', () => {
-      if (window.scrollY > 800) { // pixels scrolled before buttons shows
-        backToTopButton.classList.add('show');
-      } else {
-        backToTopButton.classList.remove('show');
-      }
-    });
-    
-    // Smooth scroll to top when clicked
-    backToTopButton.addEventListener('click', () => {
-      window.scrollTo({
-        top: 0,
-        behavior: 'smooth'
-      });
-    });
-  </script>
-
+  <script src="/js/fade-in.js"></script>
 
 </body>
 </html>

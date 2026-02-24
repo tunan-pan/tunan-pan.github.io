@@ -53,34 +53,49 @@
 <article class="project-post">
   
   <div class="column-left">
-    <div class="project-meta">
-      
+    <div class="column-left-inner">
+      <div class="project-meta">
+        
 
-      
-        <span class="project-tags">
-          
-          <a href="/tags/branding/">Branding</a>,  
-          
-          <a href="/tags/digital/">Digital</a>,  
-          
-          <a href="/tags/strategy/">Strategy</a> 
-          
-        </span>
-      
-    </div>
+        
+          <span class="project-tags">
+            
+            <a href="/tags/branding/">Branding</a>,  
+            
+            <a href="/tags/digital/">Digital</a>,  
+            
+            <a href="/tags/strategy/">Strategy</a> 
+            
+          </span>
+        
+      </div>
 
-    <h1>Carton Council — Increasing Carton Recycling Through Online Engagement</h1>
+      <h1>Carton Council — Increasing Carton Recycling Through Online Engagement</h1>
 
-      
-        <p>Content coming soon!</p>
-      
+      <div class="leftdescription">
+        
+      </div>
     
+      <div class="project-role">
+        <p>My Role:</p>
+        
+      </div>
+      <div class="project-deliverables">
+        <p>Deliverables:</p>
+        
+      </div>
+
+
+    </div>
   </div>
   
   <div class="column-right">
     <!-- Main content -->
     <div class="project-content">
       
+        <p>Content coming soon!</p>
+      
+
     </div>
 
     <!-- Image gallery -->
@@ -142,55 +157,13 @@
 
   
 
-  <script src="/js/menu.js"> // for mobile hamburger menu </script>
+  <script src="/js/mobile-menu.js"></script>
 
-  <script>
-    const header = document.querySelector('.site-header');
-    let isScrolled = false;
-    let ticking = false;
-    
-    window.addEventListener('scroll', function() {
-      if (!ticking) {
-        window.requestAnimationFrame(function() {
-          const scrollY = window.scrollY;
-          
-          if (scrollY > 60 && !isScrolled) {
-            header.classList.add('scrolled');
-            isScrolled = true;
-          } else if (scrollY < 40 && isScrolled) {
-            header.classList.remove('scrolled');
-            isScrolled = false;
-          }
-          
-          ticking = false;
-        });
-        ticking = true;
-      }
-    });
-  </script>
+  <script src="/js/sticky-header.js"></script>
+  
+  <script src="/js/back-to-top.js"></script>
 
-
-
-  <script>
-    const backToTopButton = document.querySelector('.back-to-top');
-    
-    window.addEventListener('scroll', () => {
-      if (window.scrollY > 800) { // pixels scrolled before buttons shows
-        backToTopButton.classList.add('show');
-      } else {
-        backToTopButton.classList.remove('show');
-      }
-    });
-    
-    // Smooth scroll to top when clicked
-    backToTopButton.addEventListener('click', () => {
-      window.scrollTo({
-        top: 0,
-        behavior: 'smooth'
-      });
-    });
-  </script>
-
+  <script src="/js/fade-in.js"></script>
 
 </body>
 </html>
