@@ -219,23 +219,6 @@
     "images": []
   },
   {
-    "title": "Together Toward Health — Addressing Health Inequities in California",
-    "slug": "tth",
-    "url": "/projects/tth/",
-    "image": "/images/large_thumb_phi_a3bee85f7e.png",
-    "category": null,
-    "tags": [
-      "Digital"
-    ],
-    "order": 110,
-    "description": null,
-    "content": "<p>In response to COVID-19’s unequal impact across California, the Public Health Institute created Together Toward Health (TTH), a statewide effort to reduce transmission by funding trusted local organizations serving Black, Latinx, Native American, immigrant, and low-income populations.</p><p>Their most immediate need was to update funders on how things were going, what were the emerging needs that TTH was seeing on the ground, and spotlighting the lifesaving impact that this work was making.&nbsp;</p><figure class=\"image\"><img style=\"aspect-ratio:1200/979;\" src=\"/images/PHI_Impact_Report_mockup2_full_8511973e2b.png\" alt=\"PHI_ImpactReport_mockup2-full.png\" srcset=\"/images/thumbnail_PHI_Impact_Report_mockup2_full_8511973e2b.png 191w,/images/small_PHI_Impact_Report_mockup2_full_8511973e2b.png 500w,/images/medium_PHI_Impact_Report_mockup2_full_8511973e2b.png 750w,/images/large_PHI_Impact_Report_mockup2_full_8511973e2b.png 1000w,\" sizes=\"100vw\" width=\"1200\" height=\"979\"></figure><h2>Design Work</h2><p>Materials I created in support of these needs included:</p><h3><strong>Monthly Funder Newsletters</strong></h3><p>An ongoing newsletter series to communicate updates and impact</p><h3><strong>“Sizzle Reel”</strong></h3><p>A short video showcasing TTH’s impact through testimonials from grantees and funders</p><div><iframe src=\"https://player.vimeo.com/video/1162053892?badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479\" frameborder=\"0\" allow=\"autoplay; fullscreen; picture-in-picture; clipboard-write; encrypted-media; web-share\" referrerpolicy=\"strict-origin-when-cross-origin\" title=\"Together Toward Health\"></iframe></div><h3><strong>Impact Report</strong></h3><p>An impact report that highlighted the key learnings from TTH that could benefit the public health and philanthropy fields. The report was developed for digital viewing on Issuu (no longer availalable online but the <u>report PDF can be viewed here</u>)</p><h3><strong>Case Statement Infographic&nbsp;</strong></h3><p>A policymaker case statement with supporting infographic to visualize the case for more equitable public health funding practices.</p><figure class=\"image image_resized\" style=\"width:75%!important;\"><img style=\"aspect-ratio:1200/1553;\" src=\"/images/PHI_Infographic_v3c_fullpage_b9ca6df8a3.png\" alt=\"PHI_Infographic.png\" srcset=\"/images/thumbnail_PHI_Infographic_v3c_fullpage_b9ca6df8a3.png 121w,/images/small_PHI_Infographic_v3c_fullpage_b9ca6df8a3.png 386w,/images/medium_PHI_Infographic_v3c_fullpage_b9ca6df8a3.png 580w,/images/large_PHI_Infographic_v3c_fullpage_b9ca6df8a3.png 773w,\" sizes=\"100vw\" width=\"1200\" height=\"1553\"></figure><h3><strong>Presentation Deck</strong></h3><p>Presentations preparing TTH for speaking opportunities, such as at the American Public Health Association Annual Meeting.</p><h2>Design Approach</h2><p>Across all deliverables, the goal was to:</p><ul><li>Make complex information easier to understand</li><li>Elevate community impact through storytelling</li><li>Maintain a polished, cohesive visual system</li></ul><h2>Impact</h2><p>The materials helped keep funders informed throughout the pandemic, and ended up contributing additional grant dollars beyond the initial commitment. They also equipped the TTH team with clear, presentation-ready storytelling tools to share their learnings with broader public health audiences, including national partners.</p>",
-    "leftdescription": "",
-    "role": "<ul><li>Visual Designer</li><li>Video Editor</li></ul>",
-    "deliverables": "<ul><li>Monthly digital newsletters</li><li>Short video</li><li>Impact report</li><li>Case statement infographic</li><li>Presentation deck</li></ul>",
-    "images": []
-  },
-  {
     "title": "Carton Council — Increasing Carton Recycling Through Online Engagement",
     "slug": "ccna",
     "url": "/projects/ccna/",
@@ -246,12 +229,47 @@
       "Digital",
       "Strategy"
     ],
-    "order": 100,
+    "order": 110,
     "description": null,
     "content": "",
     "leftdescription": "",
     "role": "",
     "deliverables": "",
+    "images": []
+  },
+  {
+    "title": "CARE Court — Introducing HTML5 Ads to a Healthcare Program Launch",
+    "slug": "care-court",
+    "url": "/projects/care-court/",
+    "image": "/images/thumb-placeholder.png",
+    "category": null,
+    "tags": [
+      "Digital",
+      "Print"
+    ],
+    "order": 110,
+    "description": null,
+    "content": "",
+    "leftdescription": "",
+    "role": "",
+    "deliverables": "",
+    "images": []
+  },
+  {
+    "title": "Together Toward Health — Addressing Health Inequities in California",
+    "slug": "tth",
+    "url": "/projects/tth/",
+    "image": "/images/large_thumb_phi_a3bee85f7e.png",
+    "category": null,
+    "tags": [
+      "Digital"
+    ],
+    "order": 100,
+    "description": null,
+    "content": "<p>In response to COVID-19’s unequal impact across California, the Public Health Institute created Together Toward Health (TTH), a statewide effort to reduce transmission by funding trusted local organizations serving Black, Latinx, Native American, immigrant, and low-income populations.</p><p>Their most immediate need was to update funders on how things were going, what were the emerging needs that TTH was seeing on the ground, and spotlighting the lifesaving impact that this work was making.&nbsp;</p><figure class=\"image\"><img style=\"aspect-ratio:1200/979;\" src=\"/images/PHI_Impact_Report_mockup2_full_8511973e2b.png\" alt=\"PHI_ImpactReport_mockup2-full.png\" srcset=\"/images/thumbnail_PHI_Impact_Report_mockup2_full_8511973e2b.png 191w,/images/small_PHI_Impact_Report_mockup2_full_8511973e2b.png 500w,/images/medium_PHI_Impact_Report_mockup2_full_8511973e2b.png 750w,/images/large_PHI_Impact_Report_mockup2_full_8511973e2b.png 1000w,\" sizes=\"100vw\" width=\"1200\" height=\"979\"></figure><h2>Design Work</h2><p>Materials I created in support of these needs included:</p><h3><strong>Monthly Funder Newsletters</strong></h3><p>An ongoing newsletter series to communicate updates and impact</p><h3><strong>“Sizzle Reel”</strong></h3><p>A short video showcasing TTH’s impact through testimonials from grantees and funders</p><div><iframe src=\"https://player.vimeo.com/video/1162053892?badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479\" frameborder=\"0\" allow=\"autoplay; fullscreen; picture-in-picture; clipboard-write; encrypted-media; web-share\" referrerpolicy=\"strict-origin-when-cross-origin\" title=\"Together Toward Health\"></iframe></div><h3><strong>Impact Report</strong></h3><p>An impact report that highlighted the key learnings from TTH that could benefit the public health and philanthropy fields. The report was developed for digital viewing on Issuu (no longer availalable online but the <u>report PDF can be viewed here</u>)</p><h3><strong>Case Statement Infographic&nbsp;</strong></h3><p>A policymaker case statement with supporting infographic to visualize the case for more equitable public health funding practices.</p><figure class=\"image image_resized\" style=\"width:75%!important;\"><img style=\"aspect-ratio:1200/1553;\" src=\"/images/PHI_Infographic_v3c_fullpage_b9ca6df8a3.png\" alt=\"PHI_Infographic.png\" srcset=\"/images/thumbnail_PHI_Infographic_v3c_fullpage_b9ca6df8a3.png 121w,/images/small_PHI_Infographic_v3c_fullpage_b9ca6df8a3.png 386w,/images/medium_PHI_Infographic_v3c_fullpage_b9ca6df8a3.png 580w,/images/large_PHI_Infographic_v3c_fullpage_b9ca6df8a3.png 773w,\" sizes=\"100vw\" width=\"1200\" height=\"1553\"></figure><h3><strong>Presentation Deck</strong></h3><p>Presentations preparing TTH for speaking opportunities, such as at the American Public Health Association Annual Meeting.</p><h2>Design Approach</h2><p>Across all deliverables, the goal was to:</p><ul><li>Make complex information easier to understand</li><li>Elevate community impact through storytelling</li><li>Maintain a polished, cohesive visual system</li></ul><h2>Impact</h2><p>The materials helped keep funders informed throughout the pandemic, and ended up contributing additional grant dollars beyond the initial commitment. They also equipped the TTH team with clear, presentation-ready storytelling tools to share their learnings with broader public health audiences, including national partners.</p>",
+    "leftdescription": "",
+    "role": "<ul><li>Visual Designer</li><li>Video Editor</li></ul>",
+    "deliverables": "<ul><li>Monthly digital newsletters</li><li>Short video</li><li>Impact report</li><li>Case statement infographic</li><li>Presentation deck</li></ul>",
     "images": []
   },
   {
