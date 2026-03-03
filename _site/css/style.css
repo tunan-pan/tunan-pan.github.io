@@ -310,6 +310,21 @@ li::marker {
   color: var(--color-orange);
 }
 
+/* fade-in appearing of images */
+@media (prefers-reduced-motion: no-preference) {
+  .fade-in  > * {
+    opacity: 0;
+    transform: translateY(40px);
+    transition: opacity 0.7s ease, transform 0.7s ease;
+  }
+
+  .fade-in > *.visible {
+    opacity: 1;
+   transform: translateY(0);
+    transition-delay: calc(var(--i) * 0.06s);
+  }
+}
+
 /* --------------------------------------------------------------------
 header nav
 ---------------------------------------------------------------------*/
@@ -607,8 +622,8 @@ scroll back to top button
   position: fixed;
   bottom: 30px;
   right: 30px;
-  width: 40px;
-  height: 40px;
+  width: 44px;
+  height: 44px;
   background-color: #333;
   color: white;
   border: none;
@@ -722,6 +737,10 @@ footer {
 home page
 ---------------------------------------------------------------------*/
 
+.home-page main {
+  overflow: hidden;
+  padding-top: 20px;
+}
 
 .home-top-container {
   width: 100%;
@@ -865,6 +884,9 @@ home page
     width: 100vw;
     bottom: -160px;
     right: -120px;
+  }
+  .home-top-container {
+    margin-top: 0!important;
   }
 }
 
@@ -1223,18 +1245,7 @@ projects page - page-id-22
   }
 }
 
-.fade-in  > * {
-  opacity: 0;
-  transform: translateY(40px);
-  transition: opacity 0.7s ease, transform 0.7s ease;
-}
 
-.fade-in > *.visible {
-  opacity: 1;
-  transform: translateY(0);
-    transition-delay: calc(var(--i) * 0.06s);
-
-}
 
 
 /* --------------------------------------------------------------------
@@ -1247,6 +1258,21 @@ Individual project pages
   max-width: 1200px;
   margin: 0 auto;
 }
+
+.column-left,
+.column-right {
+  min-width: 0; /* allows grid items to shrink below content size */
+}
+
+.column-left-inner {
+  position: sticky;
+  top: 180px;
+  left: 0;
+  max-height: 70vh;
+  overflow-y: auto;
+  mask-image: linear-gradient(to bottom, black 85%, transparent);
+}
+
 
 .project-meta {
   display: flex;
@@ -1276,6 +1302,7 @@ Individual project pages
 .project-deliverables {
   margin-bottom: 100px;
 }
+
 .project-role p, .project-deliverables p {
   font-size: 0.9em;
   font-weight: 600;
@@ -1288,6 +1315,27 @@ Individual project pages
 .project-role li::marker, .project-deliverables li::marker {
   color: var(--color-purple);
 }
+
+@media (max-width: 900px) {
+  .project-deliverables {
+    margin-bottom: 24px;
+  }
+  .column-left-inner {
+    max-height: unset;
+    mask-image: unset;
+  }
+}
+
+
+.project-content {
+  min-width: 0;
+}
+
+.project-content h2 {
+  border-top: 4px solid var(--color-orange);
+  padding: 24px 0 0;
+}
+
 
 /* rich text stuff */
 
@@ -1317,29 +1365,7 @@ th { border-bottom: 2px solid #333; }
   background-color: var(--color-darkgrey);
 }
 .table-color-orange {
-  background-color: #fffaf4;;i
-}
-
-.column-left,
-.column-right {
-  min-width: 0; /* allows grid items to shrink below content size */
-}
-
-.column-left-inner {
-  position: sticky;
-  top: 180px;
-  left: 0;
-  max-height: 70vh;
-  overflow-y: auto;
-  mask-image: linear-gradient(to bottom, black 85%, transparent);
-}
-.project-content {
-  min-width: 0;
-}
-
-.project-content h2 {
-  border-top: 4px solid var(--color-orange);
-  padding: 24px 0 0;
+  background-color: #fffaf4;
 }
 
 

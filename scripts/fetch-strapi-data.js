@@ -40,8 +40,17 @@ async function fetchAndSave() {
     const projects = json.data.map(p => {
       let image = "/images/thumb-placeholder.png";
 
-      if (p.thumbnail?.formats?.large?.url) {
-        image = p.thumbnail.formats.large.url.replace("/uploads", "/images");
+      if (p.thumbnail?.formats) {
+        const formats = p.thumbnail.formats;
+        const bestFormat =
+          formats.large ||
+          formats.medium ||
+          formats.small ||
+          formats.thumbnail;
+
+        if (bestFormat?.url) {
+          image = bestFormat.url.replace("/uploads", "/images");
+        }
       }
 
       // Process images

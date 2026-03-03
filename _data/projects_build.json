@@ -53,6 +53,23 @@
     "images": []
   },
   {
+    "title": "Library Extension — Conceptual Redesign for Clarity and Ease",
+    "slug": "library-ext",
+    "url": "/projects/library-ext/",
+    "image": "/images/medium_Lib_Ext_Thumbnail_2d93005f3d.png",
+    "category": null,
+    "tags": [
+      "Web/UX"
+    ],
+    "order": 190,
+    "description": null,
+    "content": "<p><img src=\"/images/Lib_Ext_Thumbnail_2d93005f3d.png\" alt=\"LibExt_Thumbnail.png\" srcset=\"/images/thumbnail_Lib_Ext_Thumbnail_2d93005f3d.png 245w,/images/small_Lib_Ext_Thumbnail_2d93005f3d.png 500w,/images/medium_Lib_Ext_Thumbnail_2d93005f3d.png 750w,\" sizes=\"100vw\" width=\"900\" height=\"520\"></p><p>Library Extension is a Chrome extension that appears while browsing Goodreads, showing whether a book is available at your selected libraries.</p><p>It’s an incredibly useful tool that makes it easy to borrow books or place holds without additional searches. However, the interface felt visually cluttered and overly dense, making it harder than necessary to quickly scan availability. The “Borrow” and “Place Hold” buttons also created a misleading interaction pattern that suggested direct action, but simply redirected users to the same page as the title link.</p><p>I redesigned the experience to prioritize clarity and speed. The updated layout introduces stronger visual hierarchy, removes non-essential information, and emphasizes availability at a glance. This also reduced its visual footprint, making it feel like a lightweight companion rather than an interruption to the browsing experience.<br>[image]</p><p>In the initial iterations, I removed repeated book titles and availability counts, as they didn’t meaningfully influence the decision to borrow or place a hold. I also explored restructuring each format (e.g., ebook, audiobook, physical) into its own clickable card, rather than relying solely on separate buttons or title links.&nbsp;</p><p>[image] [prototype]</p><p>After some refining and creating a prototype, I realized that despite reducing information, the extension still occupied a significant portion of the screen. Though it could be collapsed down, I knew it needed to be small enough when kept open for easy viewing without being obtrusive.</p><p>This led me to question the role of the “Borrow” and “Place Hold” buttons. Unlike traditional call-to-action buttons designed to drive conversion, these weren’t needed to persuade users as they are already motivated when checking availability. The extra buttons added visual weight without adding value, so I removed them and made each card the primary interactive element. This simplified the interface, reduced visual noise, and clarified the interaction model.<br>[image]</p><p>To further minimize visual impact, I made cards visually defined only on hover, similar to modern contextual menus. This reduced baseline visual density while preserving affordance when needed.<br>[prototype]</p>",
+    "leftdescription": "",
+    "role": "<ul><li>Product Designer</li></ul>",
+    "deliverables": "<ul><li>UX audit of existing extension</li><li>High-fidelity UI mockups</li><li>Interactive prototypes</li><li>Component system updates</li></ul>",
+    "images": []
+  },
+  {
     "title": "Johnson & Johnson Global Public Health — Engaging Audiences With Augmented Reality",
     "slug": "jnj",
     "url": "/projects/jnj/",
@@ -201,21 +218,21 @@
     ]
   },
   {
-    "title": "San Diego Humane Society — Creating a More Humane San Diego",
-    "slug": "sdhs",
-    "url": "/projects/sdhs/",
-    "image": "/images/large_thumb_sdhs_2b5879b9bd.png",
+    "title": "CARE Court — Introducing HTML5 Ads to a Healthcare Program Launch",
+    "slug": "care-court",
+    "url": "/projects/care-court/",
+    "image": "/images/thumb-placeholder.png",
     "category": null,
     "tags": [
-      "OOH",
-      "Digital"
+      "Digital",
+      "Print"
     ],
     "order": 120,
     "description": null,
-    "content": "<figure class=\"image\"><img style=\"aspect-ratio:1200/833;\" src=\"/images/SDHS_Billboard_Mockup_cropped_ea38d07ff0.jpg\" alt=\"Billboard\" srcset=\"/images/thumbnail_SDHS_Billboard_Mockup_cropped_ea38d07ff0.jpg 225w,/images/small_SDHS_Billboard_Mockup_cropped_ea38d07ff0.jpg 500w,/images/medium_SDHS_Billboard_Mockup_cropped_ea38d07ff0.jpg 750w,/images/large_SDHS_Billboard_Mockup_cropped_ea38d07ff0.jpg 1000w,\" sizes=\"100vw\" width=\"1200\" height=\"833\"></figure><p>San Diego Humane Society wanted to promote their mission through billboards and digital ads using original photography. I was brought onto the project shortly after the branding was finalized, to create video ads, social graphics, print ads, and billboards, while also leading the organization of my first professional photoshoot.&nbsp;</p><p>I managed everything for the shoot, from hiring human and animal models, to securing permits, and coordinating with the photographer and client. Because this took place during the pandemic, I directed remotely via video call, which introduced unique challenges and reinforced the importance of clear communication and strong pre-production planning.&nbsp;</p><p>This project remains a favourite of mine as it combined my love for animals, collaboration with an incredible photographer (who also taught me a lot about photo editing), and the opportunity to independently direct my first photoshoot.</p><figure class=\"image\"><img style=\"aspect-ratio:1200/803;\" src=\"/images/SDHS_Billboard_Cat_Mockup_77ed2871a1.jpg\" alt=\"Billboard\" srcset=\"/images/thumbnail_SDHS_Billboard_Cat_Mockup_77ed2871a1.jpg 234w,/images/small_SDHS_Billboard_Cat_Mockup_77ed2871a1.jpg 500w,/images/medium_SDHS_Billboard_Cat_Mockup_77ed2871a1.jpg 750w,/images/large_SDHS_Billboard_Cat_Mockup_77ed2871a1.jpg 1000w,\" sizes=\"100vw\" width=\"1200\" height=\"803\"></figure><div><iframe src=\"https://player.vimeo.com/video/1162037517?badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479&amp;title=0&amp;byline=0&amp;portrait=0&amp;\" frameborder=\"0\" allow=\"autoplay; fullscreen; picture-in-picture; clipboard-write; encrypted-media; web-share\" referrerpolicy=\"strict-origin-when-cross-origin\" \"style=\"width:50%;height:50%;&quot;\" title=\"San Diego Humane Society - Video Ad (30s)\"></iframe></div><figure class=\"image\"><img style=\"aspect-ratio:1200/1594;\" src=\"/images/SDHS_Digital_and_Print_Ads_9212320eea.png\" alt=\"Social media and print ads\" srcset=\"/images/thumbnail_SDHS_Digital_and_Print_Ads_9212320eea.png 117w,/images/small_SDHS_Digital_and_Print_Ads_9212320eea.png 376w,/images/medium_SDHS_Digital_and_Print_Ads_9212320eea.png 565w,/images/large_SDHS_Digital_and_Print_Ads_9212320eea.png 753w,\" sizes=\"100vw\" width=\"1200\" height=\"1594\"></figure>",
+    "content": "",
     "leftdescription": "",
-    "role": "<ul><li>Photoshoot Producer &amp; Art Director</li><li>Project Manager</li><li>Visual Designer</li><li>Video Editor</li></ul>",
-    "deliverables": "<ul><li>Original Photography Direction</li><li>Video Ads</li><li>Social Media &amp; Digital Newsletter Ads</li><li>Billboards</li></ul>",
+    "role": "",
+    "deliverables": "",
     "images": []
   },
   {
@@ -231,28 +248,28 @@
     ],
     "order": 110,
     "description": null,
-    "content": "",
+    "content": "<p>While millions of Americans recycle cans, bottles, and paper, many are unaware that food and beverage cartons can also be recycled, and confusion remains about which cartons are accepted and how to properly recycle them. Carton Council’s goals were multifold: raise awareness about the availability of carton recycling as new municipalities add cartons to residential recycling programs; help consumers better understand the ins and outs of carton recycling; and encourage recycling for a greener community and a healthier planet.</p><p>I joined the team as a Junior Designer, initially creating graphics for Carton Council based on established brand guidelines. As I became more familiar with the client and audience, I began evolving the visual approach, introducing cleaner design, more creative photography, and interactive content that encouraged engagement and aligned with emerging social media trends to better reach younger audiences.</p><p>Over time, I grew into the role of Art Director and took on a larger leadership position for the account. I became the lead designer (and sole designer for a period), helping shape the creative direction by pitching new initiatives, such as Instagram GIPHY stickers and an increased focus on Reels. I also oversaw the development of new carton packaging designs while managing a junior designer, and led the creative direction for the accompanying photoshoot.</p>",
     "leftdescription": "",
-    "role": "",
-    "deliverables": "",
+    "role": "<ul><li>Creative Strategist</li><li>Visual Designer</li><li>Design Manager</li><li>Project Manager</li><li>Photographer</li><li>Art Director</li><li>Video Editor</li></ul>",
+    "deliverables": "<ul><li>Updated brand guidelines</li><li>Monthly social media calendar</li><li>Social media content including graphics, gifs, and reels</li><li>Videos for ads, social, and message testing</li><li>Paid ads</li><li>Original photography</li><li>Online quiz</li><li>Carton packaging designs</li><li>Event collateral, displays, and handouts</li><li>Swag giveaway items</li><li>Presentation decks</li></ul>",
     "images": []
   },
   {
-    "title": "CARE Court — Introducing HTML5 Ads to a Healthcare Program Launch",
-    "slug": "care-court",
-    "url": "/projects/care-court/",
-    "image": "/images/thumb-placeholder.png",
+    "title": "San Diego Humane Society — Creating a More Humane San Diego",
+    "slug": "sdhs",
+    "url": "/projects/sdhs/",
+    "image": "/images/large_thumb_sdhs_2b5879b9bd.png",
     "category": null,
     "tags": [
-      "Digital",
-      "Print"
+      "OOH",
+      "Digital"
     ],
-    "order": 110,
+    "order": 105,
     "description": null,
-    "content": "",
+    "content": "<figure class=\"image\"><img style=\"aspect-ratio:1200/833;\" src=\"/images/SDHS_Billboard_Mockup_cropped_ea38d07ff0.jpg\" alt=\"Billboard\" srcset=\"/images/thumbnail_SDHS_Billboard_Mockup_cropped_ea38d07ff0.jpg 225w,/images/small_SDHS_Billboard_Mockup_cropped_ea38d07ff0.jpg 500w,/images/medium_SDHS_Billboard_Mockup_cropped_ea38d07ff0.jpg 750w,/images/large_SDHS_Billboard_Mockup_cropped_ea38d07ff0.jpg 1000w,\" sizes=\"100vw\" width=\"1200\" height=\"833\"></figure><p>San Diego Humane Society wanted to promote their mission through billboards and digital ads using original photography. I was brought onto the project shortly after the branding was finalized, to create video ads, social graphics, print ads, and billboards, while also leading the organization of my first professional photoshoot.&nbsp;</p><p>I managed everything for the shoot, from hiring human and animal models, to securing permits, and coordinating with the photographer and client. Because this took place during the pandemic, I directed remotely via video call, which introduced unique challenges and reinforced the importance of clear communication and strong pre-production planning.&nbsp;</p><p>This project remains a favourite of mine as it combined my love for animals, collaboration with an incredible photographer (who also taught me a lot about photo editing), and the opportunity to independently direct my first photoshoot.</p><figure class=\"image\"><img style=\"aspect-ratio:1200/803;\" src=\"/images/SDHS_Billboard_Cat_Mockup_77ed2871a1.jpg\" alt=\"Billboard\" srcset=\"/images/thumbnail_SDHS_Billboard_Cat_Mockup_77ed2871a1.jpg 234w,/images/small_SDHS_Billboard_Cat_Mockup_77ed2871a1.jpg 500w,/images/medium_SDHS_Billboard_Cat_Mockup_77ed2871a1.jpg 750w,/images/large_SDHS_Billboard_Cat_Mockup_77ed2871a1.jpg 1000w,\" sizes=\"100vw\" width=\"1200\" height=\"803\"></figure><div><iframe src=\"https://player.vimeo.com/video/1162037517?badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479&amp;title=0&amp;byline=0&amp;portrait=0&amp;\" frameborder=\"0\" allow=\"autoplay; fullscreen; picture-in-picture; clipboard-write; encrypted-media; web-share\" referrerpolicy=\"strict-origin-when-cross-origin\" \"style=\"width:50%;height:50%;&quot;\" title=\"San Diego Humane Society - Video Ad (30s)\"></iframe></div><figure class=\"image\"><img style=\"aspect-ratio:1200/1594;\" src=\"/images/SDHS_Digital_and_Print_Ads_9212320eea.png\" alt=\"Social media and print ads\" srcset=\"/images/thumbnail_SDHS_Digital_and_Print_Ads_9212320eea.png 117w,/images/small_SDHS_Digital_and_Print_Ads_9212320eea.png 376w,/images/medium_SDHS_Digital_and_Print_Ads_9212320eea.png 565w,/images/large_SDHS_Digital_and_Print_Ads_9212320eea.png 753w,\" sizes=\"100vw\" width=\"1200\" height=\"1594\"></figure>",
     "leftdescription": "",
-    "role": "",
-    "deliverables": "",
+    "role": "<ul><li>Photoshoot Producer &amp; Art Director</li><li>Project Manager</li><li>Visual Designer</li><li>Video Editor</li></ul>",
+    "deliverables": "<ul><li>Original Photography Direction</li><li>Video Ads</li><li>Social Media &amp; Digital Newsletter Ads</li><li>Billboards</li></ul>",
     "images": []
   },
   {
@@ -300,7 +317,7 @@
       "Campaign",
       "Branding"
     ],
-    "order": 70,
+    "order": 85,
     "description": null,
     "content": "",
     "leftdescription": "",
