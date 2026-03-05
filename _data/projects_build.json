@@ -326,6 +326,673 @@
     "images": []
   },
   {
+    "title": "Optimizely — Camp Optimizely",
+    "slug": "optimizely-camp",
+    "url": "/projects/optimizely-camp/",
+    "image": "/images/large_thumb_optimizely_camp_af023e3ead.png",
+    "category": null,
+    "tags": [
+      "Event",
+      "Print"
+    ],
+    "order": 35,
+    "description": null,
+    "content": "",
+    "leftdescription": "",
+    "role": "",
+    "deliverables": "",
+    "images": [
+      {
+        "url": "/images/ocamp_web_full1_836e96bbd2.jpg",
+        "alternativeText": null,
+        "name": "ocamp_web_full1.jpg",
+        "caption": null,
+        "formats": {
+          "thumbnail": {
+            "name": "thumbnail_ocamp_web_full1.jpg",
+            "hash": "thumbnail_ocamp_web_full1_836e96bbd2",
+            "ext": ".jpg",
+            "mime": "image/jpeg",
+            "path": null,
+            "width": 121,
+            "height": 156,
+            "size": 3.7,
+            "sizeInBytes": 3695,
+            "url": "/uploads/thumbnail_ocamp_web_full1_836e96bbd2.jpg"
+          },
+          "small": {
+            "name": "small_ocamp_web_full1.jpg",
+            "hash": "small_ocamp_web_full1_836e96bbd2",
+            "ext": ".jpg",
+            "mime": "image/jpeg",
+            "path": null,
+            "width": 386,
+            "height": 500,
+            "size": 20.33,
+            "sizeInBytes": 20334,
+            "url": "/uploads/small_ocamp_web_full1_836e96bbd2.jpg"
+          },
+          "medium": {
+            "name": "medium_ocamp_web_full1.jpg",
+            "hash": "medium_ocamp_web_full1_836e96bbd2",
+            "ext": ".jpg",
+            "mime": "image/jpeg",
+            "path": null,
+            "width": 580,
+            "height": 750,
+            "size": 35.44,
+            "sizeInBytes": 35441,
+            "url": "/uploads/medium_ocamp_web_full1_836e96bbd2.jpg"
+          },
+          "large": {
+            "name": "large_ocamp_web_full1.jpg",
+            "hash": "large_ocamp_web_full1_836e96bbd2",
+            "ext": ".jpg",
+            "mime": "image/jpeg",
+            "path": null,
+            "width": 773,
+            "height": 1000,
+            "size": 52.7,
+            "sizeInBytes": 52695,
+            "url": "/uploads/large_ocamp_web_full1_836e96bbd2.jpg"
+          }
+        }
+      },
+      {
+        "url": "/images/ocamp_web_full2_246e07f3bc.jpg",
+        "alternativeText": null,
+        "name": "ocamp_web_full2.jpg",
+        "caption": null,
+        "formats": {
+          "thumbnail": {
+            "name": "thumbnail_ocamp_web_full2.jpg",
+            "hash": "thumbnail_ocamp_web_full2_246e07f3bc",
+            "ext": ".jpg",
+            "mime": "image/jpeg",
+            "path": null,
+            "width": 121,
+            "height": 156,
+            "size": 4.35,
+            "sizeInBytes": 4347,
+            "url": "/uploads/thumbnail_ocamp_web_full2_246e07f3bc.jpg"
+          },
+          "small": {
+            "name": "small_ocamp_web_full2.jpg",
+            "hash": "small_ocamp_web_full2_246e07f3bc",
+            "ext": ".jpg",
+            "mime": "image/jpeg",
+            "path": null,
+            "width": 386,
+            "height": 500,
+            "size": 22.27,
+            "sizeInBytes": 22274,
+            "url": "/uploads/small_ocamp_web_full2_246e07f3bc.jpg"
+          },
+          "large": {
+            "name": "large_ocamp_web_full2.jpg",
+            "hash": "large_ocamp_web_full2_246e07f3bc",
+            "ext": ".jpg",
+            "mime": "image/jpeg",
+            "path": null,
+            "width": 773,
+            "height": 1000,
+            "size": 54.02,
+            "sizeInBytes": 54021,
+            "url": "/uploads/large_ocamp_web_full2_246e07f3bc.jpg"
+          },
+          "medium": {
+            "name": "medium_ocamp_web_full2.jpg",
+            "hash": "medium_ocamp_web_full2_246e07f3bc",
+            "ext": ".jpg",
+            "mime": "image/jpeg",
+            "path": null,
+            "width": 580,
+            "height": 750,
+            "size": 38.03,
+            "sizeInBytes": 38034,
+            "url": "/uploads/medium_ocamp_web_full2_246e07f3bc.jpg"
+          }
+        }
+      },
+      {
+        "url": "/images/ocamp_web_full6_d049579809.jpg",
+        "alternativeText": null,
+        "name": "ocamp_web_full6.jpg",
+        "caption": null,
+        "formats": {
+          "thumbnail": {
+            "name": "thumbnail_ocamp_web_full6.jpg",
+            "hash": "thumbnail_ocamp_web_full6_d049579809",
+            "ext": ".jpg",
+            "mime": "image/jpeg",
+            "path": null,
+            "width": 245,
+            "height": 146,
+            "size": 9.17,
+            "sizeInBytes": 9173,
+            "url": "/uploads/thumbnail_ocamp_web_full6_d049579809.jpg"
+          },
+          "small": {
+            "name": "small_ocamp_web_full6.jpg",
+            "hash": "small_ocamp_web_full6_d049579809",
+            "ext": ".jpg",
+            "mime": "image/jpeg",
+            "path": null,
+            "width": 500,
+            "height": 300,
+            "size": 29.18,
+            "sizeInBytes": 29182,
+            "url": "/uploads/small_ocamp_web_full6_d049579809.jpg"
+          },
+          "medium": {
+            "name": "medium_ocamp_web_full6.jpg",
+            "hash": "medium_ocamp_web_full6_d049579809",
+            "ext": ".jpg",
+            "mime": "image/jpeg",
+            "path": null,
+            "width": 750,
+            "height": 449,
+            "size": 56.53,
+            "sizeInBytes": 56527,
+            "url": "/uploads/medium_ocamp_web_full6_d049579809.jpg"
+          },
+          "large": {
+            "name": "large_ocamp_web_full6.jpg",
+            "hash": "large_ocamp_web_full6_d049579809",
+            "ext": ".jpg",
+            "mime": "image/jpeg",
+            "path": null,
+            "width": 1000,
+            "height": 599,
+            "size": 90.31,
+            "sizeInBytes": 90313,
+            "url": "/uploads/large_ocamp_web_full6_d049579809.jpg"
+          }
+        }
+      },
+      {
+        "url": "/images/ocamp_web_full7_4ede1b2e5c.jpg",
+        "alternativeText": null,
+        "name": "ocamp_web_full7.jpg",
+        "caption": null,
+        "formats": {
+          "thumbnail": {
+            "name": "thumbnail_ocamp_web_full7.jpg",
+            "hash": "thumbnail_ocamp_web_full7_4ede1b2e5c",
+            "ext": ".jpg",
+            "mime": "image/jpeg",
+            "path": null,
+            "width": 87,
+            "height": 156,
+            "size": 4.71,
+            "sizeInBytes": 4711,
+            "url": "/uploads/thumbnail_ocamp_web_full7_4ede1b2e5c.jpg"
+          },
+          "medium": {
+            "name": "medium_ocamp_web_full7.jpg",
+            "hash": "medium_ocamp_web_full7_4ede1b2e5c",
+            "ext": ".jpg",
+            "mime": "image/jpeg",
+            "path": null,
+            "width": 422,
+            "height": 750,
+            "size": 63.13,
+            "sizeInBytes": 63134,
+            "url": "/uploads/medium_ocamp_web_full7_4ede1b2e5c.jpg"
+          },
+          "small": {
+            "name": "small_ocamp_web_full7.jpg",
+            "hash": "small_ocamp_web_full7_4ede1b2e5c",
+            "ext": ".jpg",
+            "mime": "image/jpeg",
+            "path": null,
+            "width": 281,
+            "height": 500,
+            "size": 33.04,
+            "sizeInBytes": 33043,
+            "url": "/uploads/small_ocamp_web_full7_4ede1b2e5c.jpg"
+          },
+          "large": {
+            "name": "large_ocamp_web_full7.jpg",
+            "hash": "large_ocamp_web_full7_4ede1b2e5c",
+            "ext": ".jpg",
+            "mime": "image/jpeg",
+            "path": null,
+            "width": 562,
+            "height": 1000,
+            "size": 100.33,
+            "sizeInBytes": 100332,
+            "url": "/uploads/large_ocamp_web_full7_4ede1b2e5c.jpg"
+          }
+        }
+      },
+      {
+        "url": "/images/ocamp_web_full2c_22a44868b4.png",
+        "alternativeText": null,
+        "name": "ocamp_web_full2c.png",
+        "caption": null,
+        "formats": {
+          "thumbnail": {
+            "name": "thumbnail_ocamp_web_full2c.png",
+            "hash": "thumbnail_ocamp_web_full2c_22a44868b4",
+            "ext": ".png",
+            "mime": "image/png",
+            "path": null,
+            "width": 104,
+            "height": 156,
+            "size": 15.57,
+            "sizeInBytes": 15569,
+            "url": "/uploads/thumbnail_ocamp_web_full2c_22a44868b4.png"
+          },
+          "small": {
+            "name": "small_ocamp_web_full2c.png",
+            "hash": "small_ocamp_web_full2c_22a44868b4",
+            "ext": ".png",
+            "mime": "image/png",
+            "path": null,
+            "width": 332,
+            "height": 500,
+            "size": 107.09,
+            "sizeInBytes": 107093,
+            "url": "/uploads/small_ocamp_web_full2c_22a44868b4.png"
+          },
+          "medium": {
+            "name": "medium_ocamp_web_full2c.png",
+            "hash": "medium_ocamp_web_full2c_22a44868b4",
+            "ext": ".png",
+            "mime": "image/png",
+            "path": null,
+            "width": 498,
+            "height": 750,
+            "size": 222.14,
+            "sizeInBytes": 222141,
+            "url": "/uploads/medium_ocamp_web_full2c_22a44868b4.png"
+          }
+        }
+      },
+      {
+        "url": "/images/ocamp_web_full8_f3edc8a620.jpg",
+        "alternativeText": null,
+        "name": "ocamp_web_full8.jpg",
+        "caption": null,
+        "formats": {
+          "thumbnail": {
+            "name": "thumbnail_ocamp_web_full8.jpg",
+            "hash": "thumbnail_ocamp_web_full8_f3edc8a620",
+            "ext": ".jpg",
+            "mime": "image/jpeg",
+            "path": null,
+            "width": 245,
+            "height": 137,
+            "size": 11.1,
+            "sizeInBytes": 11096,
+            "url": "/uploads/thumbnail_ocamp_web_full8_f3edc8a620.jpg"
+          },
+          "small": {
+            "name": "small_ocamp_web_full8.jpg",
+            "hash": "small_ocamp_web_full8_f3edc8a620",
+            "ext": ".jpg",
+            "mime": "image/jpeg",
+            "path": null,
+            "width": 500,
+            "height": 281,
+            "size": 38.18,
+            "sizeInBytes": 38179,
+            "url": "/uploads/small_ocamp_web_full8_f3edc8a620.jpg"
+          },
+          "medium": {
+            "name": "medium_ocamp_web_full8.jpg",
+            "hash": "medium_ocamp_web_full8_f3edc8a620",
+            "ext": ".jpg",
+            "mime": "image/jpeg",
+            "path": null,
+            "width": 750,
+            "height": 422,
+            "size": 73.74,
+            "sizeInBytes": 73739,
+            "url": "/uploads/medium_ocamp_web_full8_f3edc8a620.jpg"
+          },
+          "large": {
+            "name": "large_ocamp_web_full8.jpg",
+            "hash": "large_ocamp_web_full8_f3edc8a620",
+            "ext": ".jpg",
+            "mime": "image/jpeg",
+            "path": null,
+            "width": 1000,
+            "height": 562,
+            "size": 116.24,
+            "sizeInBytes": 116240,
+            "url": "/uploads/large_ocamp_web_full8_f3edc8a620.jpg"
+          }
+        }
+      },
+      {
+        "url": "/images/ocamp_web_full9_abb06c385b.jpg",
+        "alternativeText": null,
+        "name": "ocamp_web_full9.jpg",
+        "caption": null,
+        "formats": {
+          "thumbnail": {
+            "name": "thumbnail_ocamp_web_full9.jpg",
+            "hash": "thumbnail_ocamp_web_full9_abb06c385b",
+            "ext": ".jpg",
+            "mime": "image/jpeg",
+            "path": null,
+            "width": 245,
+            "height": 132,
+            "size": 8.28,
+            "sizeInBytes": 8276,
+            "url": "/uploads/thumbnail_ocamp_web_full9_abb06c385b.jpg"
+          },
+          "medium": {
+            "name": "medium_ocamp_web_full9.jpg",
+            "hash": "medium_ocamp_web_full9_abb06c385b",
+            "ext": ".jpg",
+            "mime": "image/jpeg",
+            "path": null,
+            "width": 750,
+            "height": 406,
+            "size": 50.32,
+            "sizeInBytes": 50315,
+            "url": "/uploads/medium_ocamp_web_full9_abb06c385b.jpg"
+          },
+          "small": {
+            "name": "small_ocamp_web_full9.jpg",
+            "hash": "small_ocamp_web_full9_abb06c385b",
+            "ext": ".jpg",
+            "mime": "image/jpeg",
+            "path": null,
+            "width": 500,
+            "height": 270,
+            "size": 26.26,
+            "sizeInBytes": 26257,
+            "url": "/uploads/small_ocamp_web_full9_abb06c385b.jpg"
+          },
+          "large": {
+            "name": "large_ocamp_web_full9.jpg",
+            "hash": "large_ocamp_web_full9_abb06c385b",
+            "ext": ".jpg",
+            "mime": "image/jpeg",
+            "path": null,
+            "width": 1000,
+            "height": 541,
+            "size": 80.66,
+            "sizeInBytes": 80657,
+            "url": "/uploads/large_ocamp_web_full9_abb06c385b.jpg"
+          }
+        }
+      },
+      {
+        "url": "/images/ocamp_web_full3_5bfef9563b.png",
+        "alternativeText": null,
+        "name": "ocamp_web_full3.png",
+        "caption": null,
+        "formats": {
+          "thumbnail": {
+            "name": "thumbnail_ocamp_web_full3.png",
+            "hash": "thumbnail_ocamp_web_full3_5bfef9563b",
+            "ext": ".png",
+            "mime": "image/png",
+            "path": null,
+            "width": 168,
+            "height": 156,
+            "size": 16.72,
+            "sizeInBytes": 16723,
+            "url": "/uploads/thumbnail_ocamp_web_full3_5bfef9563b.png"
+          },
+          "small": {
+            "name": "small_ocamp_web_full3.png",
+            "hash": "small_ocamp_web_full3_5bfef9563b",
+            "ext": ".png",
+            "mime": "image/png",
+            "path": null,
+            "width": 500,
+            "height": 464,
+            "size": 75.22,
+            "sizeInBytes": 75217,
+            "url": "/uploads/small_ocamp_web_full3_5bfef9563b.png"
+          },
+          "medium": {
+            "name": "medium_ocamp_web_full3.png",
+            "hash": "medium_ocamp_web_full3_5bfef9563b",
+            "ext": ".png",
+            "mime": "image/png",
+            "path": null,
+            "width": 750,
+            "height": 696,
+            "size": 133.11,
+            "sizeInBytes": 133114,
+            "url": "/uploads/medium_ocamp_web_full3_5bfef9563b.png"
+          }
+        }
+      },
+      {
+        "url": "/images/ocamp_web_fullb2_83f7753bd2.jpg",
+        "alternativeText": null,
+        "name": "ocamp_web_fullb2.jpg",
+        "caption": null,
+        "formats": {
+          "thumbnail": {
+            "name": "thumbnail_ocamp_web_fullb2.jpg",
+            "hash": "thumbnail_ocamp_web_fullb2_83f7753bd2",
+            "ext": ".jpg",
+            "mime": "image/jpeg",
+            "path": null,
+            "width": 245,
+            "height": 137,
+            "size": 8.94,
+            "sizeInBytes": 8942,
+            "url": "/uploads/thumbnail_ocamp_web_fullb2_83f7753bd2.jpg"
+          },
+          "small": {
+            "name": "small_ocamp_web_fullb2.jpg",
+            "hash": "small_ocamp_web_fullb2_83f7753bd2",
+            "ext": ".jpg",
+            "mime": "image/jpeg",
+            "path": null,
+            "width": 500,
+            "height": 281,
+            "size": 30.27,
+            "sizeInBytes": 30271,
+            "url": "/uploads/small_ocamp_web_fullb2_83f7753bd2.jpg"
+          },
+          "medium": {
+            "name": "medium_ocamp_web_fullb2.jpg",
+            "hash": "medium_ocamp_web_fullb2_83f7753bd2",
+            "ext": ".jpg",
+            "mime": "image/jpeg",
+            "path": null,
+            "width": 750,
+            "height": 422,
+            "size": 59.03,
+            "sizeInBytes": 59034,
+            "url": "/uploads/medium_ocamp_web_fullb2_83f7753bd2.jpg"
+          },
+          "large": {
+            "name": "large_ocamp_web_fullb2.jpg",
+            "hash": "large_ocamp_web_fullb2_83f7753bd2",
+            "ext": ".jpg",
+            "mime": "image/jpeg",
+            "path": null,
+            "width": 1000,
+            "height": 562,
+            "size": 94.81,
+            "sizeInBytes": 94814,
+            "url": "/uploads/large_ocamp_web_fullb2_83f7753bd2.jpg"
+          }
+        }
+      },
+      {
+        "url": "/images/opride_web_full18_97eec4891d.jpg",
+        "alternativeText": null,
+        "name": "opride_web_full18.jpg",
+        "caption": null,
+        "formats": {
+          "thumbnail": {
+            "name": "thumbnail_opride_web_full18.jpg",
+            "hash": "thumbnail_opride_web_full18_97eec4891d",
+            "ext": ".jpg",
+            "mime": "image/jpeg",
+            "path": null,
+            "width": 245,
+            "height": 152,
+            "size": 4.45,
+            "sizeInBytes": 4451,
+            "url": "/uploads/thumbnail_opride_web_full18_97eec4891d.jpg"
+          },
+          "medium": {
+            "name": "medium_opride_web_full18.jpg",
+            "hash": "medium_opride_web_full18_97eec4891d",
+            "ext": ".jpg",
+            "mime": "image/jpeg",
+            "path": null,
+            "width": 750,
+            "height": 468,
+            "size": 24.32,
+            "sizeInBytes": 24319,
+            "url": "/uploads/medium_opride_web_full18_97eec4891d.jpg"
+          },
+          "large": {
+            "name": "large_opride_web_full18.jpg",
+            "hash": "large_opride_web_full18_97eec4891d",
+            "ext": ".jpg",
+            "mime": "image/jpeg",
+            "path": null,
+            "width": 1000,
+            "height": 624,
+            "size": 40.06,
+            "sizeInBytes": 40062,
+            "url": "/uploads/large_opride_web_full18_97eec4891d.jpg"
+          },
+          "small": {
+            "name": "small_opride_web_full18.jpg",
+            "hash": "small_opride_web_full18_97eec4891d",
+            "ext": ".jpg",
+            "mime": "image/jpeg",
+            "path": null,
+            "width": 500,
+            "height": 312,
+            "size": 12.71,
+            "sizeInBytes": 12713,
+            "url": "/uploads/small_opride_web_full18_97eec4891d.jpg"
+          }
+        }
+      },
+      {
+        "url": "/images/opride_web_full12_297dd68026.jpg",
+        "alternativeText": null,
+        "name": "opride_web_full12.jpg",
+        "caption": null,
+        "formats": {
+          "thumbnail": {
+            "name": "thumbnail_opride_web_full12.jpg",
+            "hash": "thumbnail_opride_web_full12_297dd68026",
+            "ext": ".jpg",
+            "mime": "image/jpeg",
+            "path": null,
+            "width": 219,
+            "height": 156,
+            "size": 12.75,
+            "sizeInBytes": 12750,
+            "url": "/uploads/thumbnail_opride_web_full12_297dd68026.jpg"
+          },
+          "small": {
+            "name": "small_opride_web_full12.jpg",
+            "hash": "small_opride_web_full12_297dd68026",
+            "ext": ".jpg",
+            "mime": "image/jpeg",
+            "path": null,
+            "width": 500,
+            "height": 357,
+            "size": 51.18,
+            "sizeInBytes": 51176,
+            "url": "/uploads/small_opride_web_full12_297dd68026.jpg"
+          },
+          "medium": {
+            "name": "medium_opride_web_full12.jpg",
+            "hash": "medium_opride_web_full12_297dd68026",
+            "ext": ".jpg",
+            "mime": "image/jpeg",
+            "path": null,
+            "width": 750,
+            "height": 536,
+            "size": 98.69,
+            "sizeInBytes": 98693,
+            "url": "/uploads/medium_opride_web_full12_297dd68026.jpg"
+          },
+          "large": {
+            "name": "large_opride_web_full12.jpg",
+            "hash": "large_opride_web_full12_297dd68026",
+            "ext": ".jpg",
+            "mime": "image/jpeg",
+            "path": null,
+            "width": 1000,
+            "height": 714,
+            "size": 153.18,
+            "sizeInBytes": 153180,
+            "url": "/uploads/large_opride_web_full12_297dd68026.jpg"
+          }
+        }
+      },
+      {
+        "url": "/images/optimizelypride_rocket6_268e7ebf7a.png",
+        "alternativeText": null,
+        "name": "optimizelypride--rocket6.png",
+        "caption": null,
+        "formats": {
+          "thumbnail": {
+            "name": "thumbnail_optimizelypride--rocket6.png",
+            "hash": "thumbnail_optimizelypride_rocket6_268e7ebf7a",
+            "ext": ".png",
+            "mime": "image/png",
+            "path": null,
+            "width": 156,
+            "height": 156,
+            "size": 13.03,
+            "sizeInBytes": 13027,
+            "url": "/uploads/thumbnail_optimizelypride_rocket6_268e7ebf7a.png"
+          },
+          "small": {
+            "name": "small_optimizelypride--rocket6.png",
+            "hash": "small_optimizelypride_rocket6_268e7ebf7a",
+            "ext": ".png",
+            "mime": "image/png",
+            "path": null,
+            "width": 500,
+            "height": 500,
+            "size": 46.08,
+            "sizeInBytes": 46078,
+            "url": "/uploads/small_optimizelypride_rocket6_268e7ebf7a.png"
+          },
+          "large": {
+            "name": "large_optimizelypride--rocket6.png",
+            "hash": "large_optimizelypride_rocket6_268e7ebf7a",
+            "ext": ".png",
+            "mime": "image/png",
+            "path": null,
+            "width": 1000,
+            "height": 1000,
+            "size": 115.36,
+            "sizeInBytes": 115357,
+            "url": "/uploads/large_optimizelypride_rocket6_268e7ebf7a.png"
+          },
+          "medium": {
+            "name": "medium_optimizelypride--rocket6.png",
+            "hash": "medium_optimizelypride_rocket6_268e7ebf7a",
+            "ext": ".png",
+            "mime": "image/png",
+            "path": null,
+            "width": 750,
+            "height": 750,
+            "size": 79.04,
+            "sizeInBytes": 79038,
+            "url": "/uploads/medium_optimizelypride_rocket6_268e7ebf7a.png"
+          }
+        }
+      }
+    ]
+  },
+  {
     "title": "Optimizely — Elevating Internal Company Events",
     "slug": "optimizely",
     "url": "/projects/optimizely/",
