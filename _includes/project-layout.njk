@@ -32,13 +32,13 @@ layout: base.njk
       </div>
     
       <div class="project-role">
-        <p>My Role:</p>
+        <p class="side-heading">My Role:</p>
         {% if project.role %}
           {{ project.role | safe }}
         {% endif %}
       </div>
       <div class="project-deliverables">
-        <p>Deliverables:</p>
+        <p class="side-heading">Deliverables:</p>
         {% if project.deliverables %}
           {{ project.deliverables | safe }}
         {% endif %}

@@ -22,7 +22,7 @@
     "slug": "library-ext",
     "url": "/projects/library-ext/",
     "image": "/images/large_Lib_Ext_Thumbnail_2d93005f3d.png",
-    "category": null,
+    "category": "Case Study",
     "tags": [
       "Web/UX"
     ],
@@ -63,7 +63,7 @@
     ],
     "order": 200,
     "description": null,
-    "content": "<p><video controls=\"\" loop=\"\" autoplay=\"\" muted=\"\" playsinline=\"\" width=\"100%\" height=\"auto\">\n                              <source src=\"/images/videos/SpringFling_ForWebsite_video.mp4\" type=\"video/mp4\">\n                              Your browser does not support the video tag.\n                            </video></p><p>To explore augmented reality (AR), I taught myself Spark AR Studio and began creating Instagram filters during the height of their popularity.</p><p>I took the opportunity of a company spring-themed event to learn these skills, developing a set of interactive AR filters for attendees to use throughout the event. The filters were designed to complement the seasonal theme and encourage playful engagement.</p><p>The final effects included:</p><ul><li><strong>Face tracking:</strong> a 3D flower model that appears to be tucked above the user’s ear and follows with their head movement</li><li><strong>Particle effects:</strong> floating flower petals that fall around the user</li><li>A lighthearted <strong>“personality” randomizer</strong> that predicts a faux company role for the user</li></ul><p><img src=\"/images/Spring_Fling_For_Website_images2_a3dd4e5425.png\" alt=\"SpringFling_ForWebsite_images2.png\" srcset=\"/images/thumbnail_Spring_Fling_For_Website_images2_a3dd4e5425.png 222w,/images/small_Spring_Fling_For_Website_images2_a3dd4e5425.png 500w,/images/medium_Spring_Fling_For_Website_images2_a3dd4e5425.png 750w,/images/large_Spring_Fling_For_Website_images2_a3dd4e5425.png 1000w,\" sizes=\"100vw\" width=\"1200\" height=\"842\"></p><p>&nbsp;</p>",
+    "content": "<p><video controls=\"\" loop=\"\" autoplay=\"\" muted=\"\" playsinline=\"\" width=\"100%\" height=\"auto\">\n                              <source src=\"/images/videos/SpringFling_ForWebsite_video.mp4\" type=\"video/mp4\">\n                              Your browser does not support the video tag.\n                            </video></p><p>To explore augmented reality (AR), I taught myself Spark AR Studio and began creating Instagram filters during the height of their popularity.</p><p>I took the opportunity of a company spring-themed event to make use of these skills, developing a set of interactive AR filters for attendees to use throughout the event. The filters were designed to complement the seasonal theme and encourage playful engagement.</p><p>The final effects included:</p><ul><li><strong>Face tracking:</strong> a 3D flower model that appears to be tucked above the user’s ear and follows with their head movement</li><li><strong>Particle effects:</strong> floating flower petals that fall around the user</li><li>A lighthearted <strong>“personality” randomizer</strong> that predicts a faux company role for the user</li></ul><p><img src=\"/images/Spring_Fling_For_Website_images2_a3dd4e5425.png\" alt=\"SpringFling_ForWebsite_images2.png\" srcset=\"/images/thumbnail_Spring_Fling_For_Website_images2_a3dd4e5425.png 222w,/images/small_Spring_Fling_For_Website_images2_a3dd4e5425.png 500w,/images/medium_Spring_Fling_For_Website_images2_a3dd4e5425.png 750w,/images/large_Spring_Fling_For_Website_images2_a3dd4e5425.png 1000w,\" sizes=\"100vw\" width=\"1200\" height=\"842\"></p><p>&nbsp;</p>",
     "leftdescription": "",
     "role": "<ul><li>Experiential Designer</li><li>Visual Designer</li></ul>",
     "deliverables": "<ul><li>AR Instagram filters</li><li>Signage</li><li>Menus</li><li>Outlook email invites</li></ul>",
@@ -87,913 +87,7 @@
     "images": []
   },
   {
-    "title": "CARE Court — Introducing HTML5 Ads to a Healthcare Program Launch",
-    "slug": "care-court",
-    "url": "/projects/care-court/",
-    "image": "/images/thumb-placeholder.png",
-    "category": null,
-    "tags": [
-      "Digital",
-      "Print"
-    ],
-    "order": 160,
-    "description": null,
-    "content": "",
-    "leftdescription": "",
-    "role": "",
-    "deliverables": "",
-    "images": []
-  },
-  {
-    "title": "Hope for Haiti — Promoting a VR Experience at AWE 2023",
-    "slug": "hfh",
-    "url": "/projects/hfh/",
-    "image": "/images/large_thumb_hfh_f13c03050e.png",
-    "category": null,
-    "tags": [
-      "Event",
-      "Strategy"
-    ],
-    "order": 150,
-    "description": null,
-    "content": "<p>Hope for Haiti developed a virtual reality experience to bring awareness to their cause, and showcased it at the 2023 Augmented World Expo (AWE). When they put out a call for booth volunteers, I offered both my time at the expo and my design skills to help elevate their on-site presence and improve audience engagement.</p><p>Working within their existing brand and content, I designed a set of promotional materials focused on clarity, visual impact, and strong calls to action:</p><ul><li><strong>Updated easel poster designs</strong> — I simplified their previous text-heavy layouts into more visual, scannable designs with clear CTAs</li><li><strong>TV display</strong> — A looping video featuring the VR experience trailer alongside a persistent title and CTA</li><li><strong>Newsletter sign-up touchpoint</strong> — bringing attention to their existing newsletter by displaying a signup sheet on an iPad</li><li><strong>Social media assets</strong> — graphics for pre-event promotion, live posting during the expo, and post-event sharing, including a prepared asset for a potential Auggie Awards win. These were created in Google Slides to allow the client to make edits easily on the fly.</li></ul><p>While not all materials were ultimately used, I believe my work was useful for thinking through practical UX decisions within the constraints of a live expo setting, and maximizing engagement of attendees with limited attention spans.&nbsp;</p>",
-    "leftdescription": "",
-    "role": "<ul><li>Creative Strategist</li><li>Visual Designer</li></ul>",
-    "deliverables": "<ul><li>Poster designs</li><li>Video for TV display</li><li>Social media graphics</li><li>Newsletter sign-up sheet</li></ul>",
-    "images": [
-      {
-        "url": "/images/HFH_photo_85e9da2c79.jpg",
-        "alternativeText": "Photo of HFH booth in action",
-        "name": "HFH_photo.jpg",
-        "caption": null,
-        "formats": {
-          "thumbnail": {
-            "name": "thumbnail_HFH_photo.jpg",
-            "hash": "thumbnail_HFH_photo_85e9da2c79",
-            "ext": ".jpg",
-            "mime": "image/jpeg",
-            "path": null,
-            "width": 208,
-            "height": 156,
-            "size": 9.65,
-            "sizeInBytes": 9647,
-            "url": "/uploads/thumbnail_HFH_photo_85e9da2c79.jpg"
-          },
-          "small": {
-            "name": "small_HFH_photo.jpg",
-            "hash": "small_HFH_photo_85e9da2c79",
-            "ext": ".jpg",
-            "mime": "image/jpeg",
-            "path": null,
-            "width": 500,
-            "height": 375,
-            "size": 41.11,
-            "sizeInBytes": 41108,
-            "url": "/uploads/small_HFH_photo_85e9da2c79.jpg"
-          },
-          "medium": {
-            "name": "medium_HFH_photo.jpg",
-            "hash": "medium_HFH_photo_85e9da2c79",
-            "ext": ".jpg",
-            "mime": "image/jpeg",
-            "path": null,
-            "width": 750,
-            "height": 563,
-            "size": 80.51,
-            "sizeInBytes": 80506,
-            "url": "/uploads/medium_HFH_photo_85e9da2c79.jpg"
-          },
-          "large": {
-            "name": "large_HFH_photo.jpg",
-            "hash": "large_HFH_photo_85e9da2c79",
-            "ext": ".jpg",
-            "mime": "image/jpeg",
-            "path": null,
-            "width": 1000,
-            "height": 750,
-            "size": 133.19,
-            "sizeInBytes": 133193,
-            "url": "/uploads/large_HFH_photo_85e9da2c79.jpg"
-          }
-        }
-      },
-      {
-        "url": "/images/HFH_posters2_b0de0f8a82.png",
-        "alternativeText": null,
-        "name": "HFH_posters2.png",
-        "caption": null,
-        "formats": {
-          "thumbnail": {
-            "name": "thumbnail_HFH_posters2.png",
-            "hash": "thumbnail_HFH_posters2_b0de0f8a82",
-            "ext": ".png",
-            "mime": "image/png",
-            "path": null,
-            "width": 160,
-            "height": 156,
-            "size": 44.22,
-            "sizeInBytes": 44223,
-            "url": "/uploads/thumbnail_HFH_posters2_b0de0f8a82.png"
-          },
-          "small": {
-            "name": "small_HFH_posters2.png",
-            "hash": "small_HFH_posters2_b0de0f8a82",
-            "ext": ".png",
-            "mime": "image/png",
-            "path": null,
-            "width": 500,
-            "height": 487,
-            "size": 347.66,
-            "sizeInBytes": 347655,
-            "url": "/uploads/small_HFH_posters2_b0de0f8a82.png"
-          },
-          "medium": {
-            "name": "medium_HFH_posters2.png",
-            "hash": "medium_HFH_posters2_b0de0f8a82",
-            "ext": ".png",
-            "mime": "image/png",
-            "path": null,
-            "width": 750,
-            "height": 731,
-            "size": 731.64,
-            "sizeInBytes": 731635,
-            "url": "/uploads/medium_HFH_posters2_b0de0f8a82.png"
-          },
-          "large": {
-            "name": "large_HFH_posters2.png",
-            "hash": "large_HFH_posters2_b0de0f8a82",
-            "ext": ".png",
-            "mime": "image/png",
-            "path": null,
-            "width": 1000,
-            "height": 974,
-            "size": 1243.2,
-            "sizeInBytes": 1243204,
-            "url": "/uploads/large_HFH_posters2_b0de0f8a82.png"
-          }
-        }
-      }
-    ]
-  },
-  {
-    "title": "Every Vote In — 360 Campaign Promoting Early Voting in LA County",
-    "slug": "gotv",
-    "url": "/projects/gotv/",
-    "image": "/images/large_thumb_gotv_6ac6de6e97.png",
-    "category": null,
-    "tags": [
-      "Campaign",
-      "Branding"
-    ],
-    "order": 115,
-    "description": null,
-    "content": "<p><strong>For the historic 2020 election during COVID-19, I led creative development as the sole designer on the largest integrated campaign of my career.</strong> “Every Vote In” was a countywide 360° campaign effort for Los Angeles County Registrar-Recorder/County Clerk, designed to drive voter registration, promote early and mail-in voting, and educate one of the most diverse populations in the U.S.</p><p>At the time, I was only a junior designer, and the scale, visibility, and stakes of this project were intimidating. Leading creative across hundreds of assets, multiple workstreams, and cross-functional teams pushed me to think beyond execution and into systems, process, and coordination. <strong>This project became an early turning point in developing my project management mindset and confidence operating at scale.</strong></p><h2>Creative Leadership</h2><p>I developed a bold, modern visual system that was adaptable across digital, social, video, TV, radio, print, and OOH, all within an accelerated 7-week timeline.</p><p><strong>Key creative challenges included:</strong></p><ul><li>Designing a flexible identity system that could <strong>scale across 13 languages</strong>, and ensuring layouts supported varying copy lengths and non-Latin glyphs<br>Using culturally resonant, <strong>portrait-forward visuals</strong> that reflected LA County’s diverse communities</li><li><strong>Building editable design systems in Google Slides </strong>so non-designers from client teams and partner organizations could make copy and translation updates without compromising brand integrity</li><li><strong>Iterating creative in real time </strong>based on engagement data and campaign phases</li></ul><h2>Results</h2><p>The campaign <strong>contributed to historic voter engagement</strong> in LA County:</p><ul><li><strong>76% voter turnout</strong> (up from 69% in 2016)</li><li>Nearly <strong>80% of 4.3 million ballots</strong> cast by mail</li><li>Digital ads delivered <strong>102M+ impressions</strong></li><li><strong>77.7% average video completion</strong> rate (well above 50% benchmark)</li><li><strong>204M+ OOH impressions</strong> across 501,947 placements throughout 5 supervisorial districts</li><li><strong>36M+ impressions</strong> from in-language print ads</li><li>Featured by the Los Angeles Times as <strong>“one of the best-ever uses of the ad format” </strong>for our homepage takeover</li></ul><p>Beyond performance metrics, the campaign achieved widespread community adoption, with <strong>partner organizations customizing and distributing our toolkits</strong>, and large-scale “I Voted” installations organically generating social engagement across the county.<br>&nbsp;</p>",
-    "leftdescription": "",
-    "role": "<ul><li>Sole &amp; Lead Visual Designer</li></ul>",
-    "deliverables": "<ul><li>Campaign brand</li><li>Paid ads for digital &amp; print</li><li>Social media graphics</li><li>Social &amp; print templates for community partners</li><li>OOH (including signage for stores, buses, kiosks, billboards)</li><li>Website toolkit materials</li><li>Email templates</li></ul>",
-    "images": []
-  },
-  {
-    "title": "Carton Council — Increasing Carton Recycling Through Online Engagement",
-    "slug": "ccna",
-    "url": "/projects/ccna/",
-    "image": "/images/large_thumb_ccna_cee6b095f5.png",
-    "category": null,
-    "tags": [
-      "Branding",
-      "Digital",
-      "Strategy"
-    ],
-    "order": 110,
-    "description": null,
-    "content": "<p>While millions of Americans recycle cans, bottles, and paper, many are unaware that food and beverage cartons can also be recycled, and confusion remains about which cartons are accepted and how to properly recycle them.&nbsp;</p><p>Carton Council’s goals were multifold:&nbsp;</p><ul><li>Raise awareness about the availability of carton recycling as new municipalities add cartons to residential recycling programs</li><li>Help consumers better understand the ins and outs of carton recycling</li><li>Encourage recycling for a greener community and a healthier planet</li></ul><p>I joined the team as a Junior Designer, initially creating graphics for Carton Council based on established brand guidelines. As I became more familiar with the client and audience,<strong> I began evolving the visual approach, introducing cleaner design, more creative photography, and interactive content that encouraged engagement </strong>and aligned with emerging social media trends to better reach younger audiences.</p><p>Over time, I grew into the role of Art Director and took on a larger leadership position for the account. I became the lead designer (and sole designer for a period), shaping the creative direction by pitching new initiatives, such as Instagram GIPHY stickers and an increased focus on Reels. I also oversaw the development of new carton packaging designs while managing a junior designer, and led the creative direction for the accompanying photoshoot.</p>",
-    "leftdescription": "",
-    "role": "<ul><li>Creative Strategist</li><li>Visual Designer</li><li>Design Manager</li><li>Project Manager</li><li>Photographer</li><li>Art Director</li><li>Video Editor</li></ul>",
-    "deliverables": "<ul><li>Updated brand guidelines</li><li>Monthly social media calendar</li><li>Social media content including graphics, gifs, and reels</li><li>Videos for ads, social, and message testing</li><li>Paid ads</li><li>Original photography</li><li>Online quiz</li><li>Carton packaging designs</li><li>Event collateral, displays, and handouts</li><li>Swag giveaway items</li><li>Presentation decks</li></ul>",
-    "images": []
-  },
-  {
-    "title": "San Diego Humane Society — Creating a More Humane San Diego",
-    "slug": "sdhs",
-    "url": "/projects/sdhs/",
-    "image": "/images/large_thumb_sdhs_2b5879b9bd.png",
-    "category": null,
-    "tags": [
-      "OOH",
-      "Digital"
-    ],
-    "order": 105,
-    "description": null,
-    "content": "<figure class=\"image\"><img style=\"aspect-ratio:1200/833;\" src=\"/images/SDHS_Billboard_Mockup_cropped_ea38d07ff0.jpg\" alt=\"Billboard\" srcset=\"/images/thumbnail_SDHS_Billboard_Mockup_cropped_ea38d07ff0.jpg 225w,/images/small_SDHS_Billboard_Mockup_cropped_ea38d07ff0.jpg 500w,/images/medium_SDHS_Billboard_Mockup_cropped_ea38d07ff0.jpg 750w,/images/large_SDHS_Billboard_Mockup_cropped_ea38d07ff0.jpg 1000w,\" sizes=\"100vw\" width=\"1200\" height=\"833\"></figure><p>San Diego Humane Society wanted to promote their mission through billboards and digital ads using original photography. I was brought onto the project shortly after the branding was finalized, to create video ads, social graphics, print ads, and billboards, while also leading the organization of my first professional photoshoot.&nbsp;</p><p>I managed everything for the shoot, from hiring human and animal models, to securing permits, and coordinating with the photographer and client. Because this took place during the pandemic, I directed remotely via video call, which introduced unique challenges and reinforced the importance of clear communication and strong pre-production planning.&nbsp;</p><p>This project remains a favourite of mine as it combined my love for animals, collaboration with an incredible photographer (who also taught me a lot about photo editing), and the opportunity to independently direct my first photoshoot.</p><figure class=\"image\"><img style=\"aspect-ratio:1200/803;\" src=\"/images/SDHS_Billboard_Cat_Mockup_77ed2871a1.jpg\" alt=\"Billboard\" srcset=\"/images/thumbnail_SDHS_Billboard_Cat_Mockup_77ed2871a1.jpg 234w,/images/small_SDHS_Billboard_Cat_Mockup_77ed2871a1.jpg 500w,/images/medium_SDHS_Billboard_Cat_Mockup_77ed2871a1.jpg 750w,/images/large_SDHS_Billboard_Cat_Mockup_77ed2871a1.jpg 1000w,\" sizes=\"100vw\" width=\"1200\" height=\"803\"></figure><div><iframe src=\"https://player.vimeo.com/video/1162037517?badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479&amp;title=0&amp;byline=0&amp;portrait=0&amp;\" frameborder=\"0\" allow=\"autoplay; fullscreen; picture-in-picture; clipboard-write; encrypted-media; web-share\" referrerpolicy=\"strict-origin-when-cross-origin\" \"style=\"width:50%;height:50%;&quot;\" title=\"San Diego Humane Society - Video Ad (30s)\"></iframe></div><figure class=\"image\"><img style=\"aspect-ratio:1200/1594;\" src=\"/images/SDHS_Digital_and_Print_Ads_9212320eea.png\" alt=\"Social media and print ads\" srcset=\"/images/thumbnail_SDHS_Digital_and_Print_Ads_9212320eea.png 117w,/images/small_SDHS_Digital_and_Print_Ads_9212320eea.png 376w,/images/medium_SDHS_Digital_and_Print_Ads_9212320eea.png 565w,/images/large_SDHS_Digital_and_Print_Ads_9212320eea.png 753w,\" sizes=\"100vw\" width=\"1200\" height=\"1594\"></figure>",
-    "leftdescription": "",
-    "role": "<ul><li>Photoshoot Producer &amp; Art Director</li><li>Project Manager</li><li>Visual Designer</li><li>Video Editor</li></ul>",
-    "deliverables": "<ul><li>Original Photography Direction</li><li>Video Ads</li><li>Social Media &amp; Digital Newsletter Ads</li><li>Billboards</li></ul>",
-    "images": []
-  },
-  {
-    "title": "Together Toward Health — Addressing Health Inequities in California",
-    "slug": "tth",
-    "url": "/projects/tth/",
-    "image": "/images/large_thumb_phi_a3bee85f7e.png",
-    "category": null,
-    "tags": [
-      "Digital"
-    ],
-    "order": 100,
-    "description": null,
-    "content": "<p>In response to COVID-19’s unequal impact across California, the Public Health Institute created Together Toward Health (TTH), a statewide effort to reduce transmission by funding trusted local organizations serving Black, Latinx, Native American, immigrant, and low-income populations.</p><p>Their most immediate need was to update funders on how things were going, what were the emerging needs that TTH was seeing on the ground, and spotlighting the lifesaving impact that this work was making.&nbsp;</p><figure class=\"image\"><img style=\"aspect-ratio:1200/979;\" src=\"/images/PHI_Impact_Report_mockup2_full_8511973e2b.png\" alt=\"PHI_ImpactReport_mockup2-full.png\" srcset=\"/images/thumbnail_PHI_Impact_Report_mockup2_full_8511973e2b.png 191w,/images/small_PHI_Impact_Report_mockup2_full_8511973e2b.png 500w,/images/medium_PHI_Impact_Report_mockup2_full_8511973e2b.png 750w,/images/large_PHI_Impact_Report_mockup2_full_8511973e2b.png 1000w,\" sizes=\"100vw\" width=\"1200\" height=\"979\"></figure><h2>Design Work</h2><p>Materials I created in support of these needs included:</p><h3><strong>Monthly Funder Newsletters</strong></h3><p>An ongoing newsletter series to communicate updates and impact</p><h3><strong>“Sizzle Reel”</strong></h3><p>A short video showcasing TTH’s impact through testimonials from grantees and funders</p><div><iframe src=\"https://player.vimeo.com/video/1162053892?badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479\" frameborder=\"0\" allow=\"autoplay; fullscreen; picture-in-picture; clipboard-write; encrypted-media; web-share\" referrerpolicy=\"strict-origin-when-cross-origin\" title=\"Together Toward Health\"></iframe></div><h3><strong>Impact Report</strong></h3><p>An impact report that highlighted the key learnings from TTH that could benefit the public health and philanthropy fields. The report was developed for digital viewing on Issuu (no longer availalable online but the <u>report PDF can be viewed here</u>)</p><h3><strong>Case Statement Infographic&nbsp;</strong></h3><p>A policymaker case statement with supporting infographic to visualize the case for more equitable public health funding practices.</p><figure class=\"image image_resized\" style=\"width:75%!important;\"><img style=\"aspect-ratio:1200/1553;\" src=\"/images/PHI_Infographic_v3c_fullpage_b9ca6df8a3.png\" alt=\"PHI_Infographic.png\" srcset=\"/images/thumbnail_PHI_Infographic_v3c_fullpage_b9ca6df8a3.png 121w,/images/small_PHI_Infographic_v3c_fullpage_b9ca6df8a3.png 386w,/images/medium_PHI_Infographic_v3c_fullpage_b9ca6df8a3.png 580w,/images/large_PHI_Infographic_v3c_fullpage_b9ca6df8a3.png 773w,\" sizes=\"100vw\" width=\"1200\" height=\"1553\"></figure><h3><strong>Presentation Deck</strong></h3><p>Presentations preparing TTH for speaking opportunities, such as at the American Public Health Association Annual Meeting.</p><h2>Design Approach</h2><p>Across all deliverables, the goal was to:</p><ul><li>Make complex information easier to understand</li><li>Elevate community impact through storytelling</li><li>Maintain a polished, cohesive visual system</li></ul><h2>Impact</h2><p>The materials helped keep funders informed throughout the pandemic, and ended up contributing additional grant dollars beyond the initial commitment. They also equipped the TTH team with clear, presentation-ready storytelling tools to share their learnings with broader public health audiences, including national partners.</p>",
-    "leftdescription": "",
-    "role": "<ul><li>Visual Designer</li><li>Video Editor</li></ul>",
-    "deliverables": "<ul><li>Monthly digital newsletters</li><li>Short video</li><li>Impact report</li><li>Case statement infographic</li><li>Presentation deck</li></ul>",
-    "images": []
-  },
-  {
-    "title": "Battle Creek Public Schools — Transforming Perceptions of a School District",
-    "slug": "bcps",
-    "url": "/projects/bcps/",
-    "image": "/images/large_thumb_bcps_3e4f572159.png",
-    "category": null,
-    "tags": [
-      "Digital",
-      "Print"
-    ],
-    "order": 88,
-    "description": null,
-    "content": "<p><strong>I joined the BCPS account as a junior designer and grew into the lead (and sometimes sole) designer supporting the district’s multi-year communications strategy during its equity-driven transformation funded by the W.K. Kellogg Foundation.</strong></p><p>My role evolved from production to strategy, including facilitating brainstorms, contributing campaign concepts, and creating materials for enrollment, teacher recruitment, and community engagement. After transitioning off the account, I was re-engaged due to the strong working relationship and institutional knowledge I had built with the client, <strong>returning to provide creative leadership and ensure consistency </strong>during a critical phase of the district’s transformation.</p><h2>Design Work</h2><p>Much of the work followed established brand guidelines, requiring<strong> high-volume, day-to-day communications </strong>across print and digital. The focus was less on visual experimentation and more on <strong>clarity, accessibility, and trust-building at scale</strong> — particularly during moments of crisis.</p><p>During COVID-19 school closures, I designed a take-home kindergarten learning packet, including an interactive scavenger hunt poster to support families navigating remote learning. This project required quickly adapting district messaging into engaging, age-appropriate materials during an unprecedented period of uncertainty.</p><p><strong>This account strengthened my ability to design consistently across large systems, and deepened my understanding of how consistent, sustained communications can shift perception and build trust over time.</strong></p>",
-    "leftdescription": "",
-    "role": "<ul><li>Visual Designer</li><li>Creative Lead &amp; Strategist</li></ul>",
-    "deliverables": "<ul><li>Classroom materials, handouts, and posters</li><li>Print newsletters and direct mail to families</li><li>Social media content and digital ad creative</li><li>Campaign concepts &amp; materials</li><li>Crisis communications support</li></ul>",
-    "images": []
-  },
-  {
-    "title": "Optimizely — Camp Optimizely",
-    "slug": "optimizely-camp",
-    "url": "/projects/optimizely-camp/",
-    "image": "/images/large_thumb_optimizely_camp_af023e3ead.png",
-    "category": null,
-    "tags": [
-      "Event",
-      "Print"
-    ],
-    "order": 35,
-    "description": null,
-    "content": "",
-    "leftdescription": "",
-    "role": "",
-    "deliverables": "",
-    "images": [
-      {
-        "url": "/images/ocamp_web_full1_836e96bbd2.jpg",
-        "alternativeText": null,
-        "name": "ocamp_web_full1.jpg",
-        "caption": null,
-        "formats": {
-          "thumbnail": {
-            "name": "thumbnail_ocamp_web_full1.jpg",
-            "hash": "thumbnail_ocamp_web_full1_836e96bbd2",
-            "ext": ".jpg",
-            "mime": "image/jpeg",
-            "path": null,
-            "width": 121,
-            "height": 156,
-            "size": 3.7,
-            "sizeInBytes": 3695,
-            "url": "/uploads/thumbnail_ocamp_web_full1_836e96bbd2.jpg"
-          },
-          "small": {
-            "name": "small_ocamp_web_full1.jpg",
-            "hash": "small_ocamp_web_full1_836e96bbd2",
-            "ext": ".jpg",
-            "mime": "image/jpeg",
-            "path": null,
-            "width": 386,
-            "height": 500,
-            "size": 20.33,
-            "sizeInBytes": 20334,
-            "url": "/uploads/small_ocamp_web_full1_836e96bbd2.jpg"
-          },
-          "medium": {
-            "name": "medium_ocamp_web_full1.jpg",
-            "hash": "medium_ocamp_web_full1_836e96bbd2",
-            "ext": ".jpg",
-            "mime": "image/jpeg",
-            "path": null,
-            "width": 580,
-            "height": 750,
-            "size": 35.44,
-            "sizeInBytes": 35441,
-            "url": "/uploads/medium_ocamp_web_full1_836e96bbd2.jpg"
-          },
-          "large": {
-            "name": "large_ocamp_web_full1.jpg",
-            "hash": "large_ocamp_web_full1_836e96bbd2",
-            "ext": ".jpg",
-            "mime": "image/jpeg",
-            "path": null,
-            "width": 773,
-            "height": 1000,
-            "size": 52.7,
-            "sizeInBytes": 52695,
-            "url": "/uploads/large_ocamp_web_full1_836e96bbd2.jpg"
-          }
-        }
-      },
-      {
-        "url": "/images/ocamp_web_full2_246e07f3bc.jpg",
-        "alternativeText": null,
-        "name": "ocamp_web_full2.jpg",
-        "caption": null,
-        "formats": {
-          "thumbnail": {
-            "name": "thumbnail_ocamp_web_full2.jpg",
-            "hash": "thumbnail_ocamp_web_full2_246e07f3bc",
-            "ext": ".jpg",
-            "mime": "image/jpeg",
-            "path": null,
-            "width": 121,
-            "height": 156,
-            "size": 4.35,
-            "sizeInBytes": 4347,
-            "url": "/uploads/thumbnail_ocamp_web_full2_246e07f3bc.jpg"
-          },
-          "small": {
-            "name": "small_ocamp_web_full2.jpg",
-            "hash": "small_ocamp_web_full2_246e07f3bc",
-            "ext": ".jpg",
-            "mime": "image/jpeg",
-            "path": null,
-            "width": 386,
-            "height": 500,
-            "size": 22.27,
-            "sizeInBytes": 22274,
-            "url": "/uploads/small_ocamp_web_full2_246e07f3bc.jpg"
-          },
-          "large": {
-            "name": "large_ocamp_web_full2.jpg",
-            "hash": "large_ocamp_web_full2_246e07f3bc",
-            "ext": ".jpg",
-            "mime": "image/jpeg",
-            "path": null,
-            "width": 773,
-            "height": 1000,
-            "size": 54.02,
-            "sizeInBytes": 54021,
-            "url": "/uploads/large_ocamp_web_full2_246e07f3bc.jpg"
-          },
-          "medium": {
-            "name": "medium_ocamp_web_full2.jpg",
-            "hash": "medium_ocamp_web_full2_246e07f3bc",
-            "ext": ".jpg",
-            "mime": "image/jpeg",
-            "path": null,
-            "width": 580,
-            "height": 750,
-            "size": 38.03,
-            "sizeInBytes": 38034,
-            "url": "/uploads/medium_ocamp_web_full2_246e07f3bc.jpg"
-          }
-        }
-      },
-      {
-        "url": "/images/ocamp_web_full6_d049579809.jpg",
-        "alternativeText": null,
-        "name": "ocamp_web_full6.jpg",
-        "caption": null,
-        "formats": {
-          "thumbnail": {
-            "name": "thumbnail_ocamp_web_full6.jpg",
-            "hash": "thumbnail_ocamp_web_full6_d049579809",
-            "ext": ".jpg",
-            "mime": "image/jpeg",
-            "path": null,
-            "width": 245,
-            "height": 146,
-            "size": 9.17,
-            "sizeInBytes": 9173,
-            "url": "/uploads/thumbnail_ocamp_web_full6_d049579809.jpg"
-          },
-          "small": {
-            "name": "small_ocamp_web_full6.jpg",
-            "hash": "small_ocamp_web_full6_d049579809",
-            "ext": ".jpg",
-            "mime": "image/jpeg",
-            "path": null,
-            "width": 500,
-            "height": 300,
-            "size": 29.18,
-            "sizeInBytes": 29182,
-            "url": "/uploads/small_ocamp_web_full6_d049579809.jpg"
-          },
-          "medium": {
-            "name": "medium_ocamp_web_full6.jpg",
-            "hash": "medium_ocamp_web_full6_d049579809",
-            "ext": ".jpg",
-            "mime": "image/jpeg",
-            "path": null,
-            "width": 750,
-            "height": 449,
-            "size": 56.53,
-            "sizeInBytes": 56527,
-            "url": "/uploads/medium_ocamp_web_full6_d049579809.jpg"
-          },
-          "large": {
-            "name": "large_ocamp_web_full6.jpg",
-            "hash": "large_ocamp_web_full6_d049579809",
-            "ext": ".jpg",
-            "mime": "image/jpeg",
-            "path": null,
-            "width": 1000,
-            "height": 599,
-            "size": 90.31,
-            "sizeInBytes": 90313,
-            "url": "/uploads/large_ocamp_web_full6_d049579809.jpg"
-          }
-        }
-      },
-      {
-        "url": "/images/ocamp_web_full7_4ede1b2e5c.jpg",
-        "alternativeText": null,
-        "name": "ocamp_web_full7.jpg",
-        "caption": null,
-        "formats": {
-          "thumbnail": {
-            "name": "thumbnail_ocamp_web_full7.jpg",
-            "hash": "thumbnail_ocamp_web_full7_4ede1b2e5c",
-            "ext": ".jpg",
-            "mime": "image/jpeg",
-            "path": null,
-            "width": 87,
-            "height": 156,
-            "size": 4.71,
-            "sizeInBytes": 4711,
-            "url": "/uploads/thumbnail_ocamp_web_full7_4ede1b2e5c.jpg"
-          },
-          "medium": {
-            "name": "medium_ocamp_web_full7.jpg",
-            "hash": "medium_ocamp_web_full7_4ede1b2e5c",
-            "ext": ".jpg",
-            "mime": "image/jpeg",
-            "path": null,
-            "width": 422,
-            "height": 750,
-            "size": 63.13,
-            "sizeInBytes": 63134,
-            "url": "/uploads/medium_ocamp_web_full7_4ede1b2e5c.jpg"
-          },
-          "small": {
-            "name": "small_ocamp_web_full7.jpg",
-            "hash": "small_ocamp_web_full7_4ede1b2e5c",
-            "ext": ".jpg",
-            "mime": "image/jpeg",
-            "path": null,
-            "width": 281,
-            "height": 500,
-            "size": 33.04,
-            "sizeInBytes": 33043,
-            "url": "/uploads/small_ocamp_web_full7_4ede1b2e5c.jpg"
-          },
-          "large": {
-            "name": "large_ocamp_web_full7.jpg",
-            "hash": "large_ocamp_web_full7_4ede1b2e5c",
-            "ext": ".jpg",
-            "mime": "image/jpeg",
-            "path": null,
-            "width": 562,
-            "height": 1000,
-            "size": 100.33,
-            "sizeInBytes": 100332,
-            "url": "/uploads/large_ocamp_web_full7_4ede1b2e5c.jpg"
-          }
-        }
-      },
-      {
-        "url": "/images/ocamp_web_full2c_22a44868b4.png",
-        "alternativeText": null,
-        "name": "ocamp_web_full2c.png",
-        "caption": null,
-        "formats": {
-          "thumbnail": {
-            "name": "thumbnail_ocamp_web_full2c.png",
-            "hash": "thumbnail_ocamp_web_full2c_22a44868b4",
-            "ext": ".png",
-            "mime": "image/png",
-            "path": null,
-            "width": 104,
-            "height": 156,
-            "size": 15.57,
-            "sizeInBytes": 15569,
-            "url": "/uploads/thumbnail_ocamp_web_full2c_22a44868b4.png"
-          },
-          "small": {
-            "name": "small_ocamp_web_full2c.png",
-            "hash": "small_ocamp_web_full2c_22a44868b4",
-            "ext": ".png",
-            "mime": "image/png",
-            "path": null,
-            "width": 332,
-            "height": 500,
-            "size": 107.09,
-            "sizeInBytes": 107093,
-            "url": "/uploads/small_ocamp_web_full2c_22a44868b4.png"
-          },
-          "medium": {
-            "name": "medium_ocamp_web_full2c.png",
-            "hash": "medium_ocamp_web_full2c_22a44868b4",
-            "ext": ".png",
-            "mime": "image/png",
-            "path": null,
-            "width": 498,
-            "height": 750,
-            "size": 222.14,
-            "sizeInBytes": 222141,
-            "url": "/uploads/medium_ocamp_web_full2c_22a44868b4.png"
-          }
-        }
-      },
-      {
-        "url": "/images/ocamp_web_full8_f3edc8a620.jpg",
-        "alternativeText": null,
-        "name": "ocamp_web_full8.jpg",
-        "caption": null,
-        "formats": {
-          "thumbnail": {
-            "name": "thumbnail_ocamp_web_full8.jpg",
-            "hash": "thumbnail_ocamp_web_full8_f3edc8a620",
-            "ext": ".jpg",
-            "mime": "image/jpeg",
-            "path": null,
-            "width": 245,
-            "height": 137,
-            "size": 11.1,
-            "sizeInBytes": 11096,
-            "url": "/uploads/thumbnail_ocamp_web_full8_f3edc8a620.jpg"
-          },
-          "small": {
-            "name": "small_ocamp_web_full8.jpg",
-            "hash": "small_ocamp_web_full8_f3edc8a620",
-            "ext": ".jpg",
-            "mime": "image/jpeg",
-            "path": null,
-            "width": 500,
-            "height": 281,
-            "size": 38.18,
-            "sizeInBytes": 38179,
-            "url": "/uploads/small_ocamp_web_full8_f3edc8a620.jpg"
-          },
-          "medium": {
-            "name": "medium_ocamp_web_full8.jpg",
-            "hash": "medium_ocamp_web_full8_f3edc8a620",
-            "ext": ".jpg",
-            "mime": "image/jpeg",
-            "path": null,
-            "width": 750,
-            "height": 422,
-            "size": 73.74,
-            "sizeInBytes": 73739,
-            "url": "/uploads/medium_ocamp_web_full8_f3edc8a620.jpg"
-          },
-          "large": {
-            "name": "large_ocamp_web_full8.jpg",
-            "hash": "large_ocamp_web_full8_f3edc8a620",
-            "ext": ".jpg",
-            "mime": "image/jpeg",
-            "path": null,
-            "width": 1000,
-            "height": 562,
-            "size": 116.24,
-            "sizeInBytes": 116240,
-            "url": "/uploads/large_ocamp_web_full8_f3edc8a620.jpg"
-          }
-        }
-      },
-      {
-        "url": "/images/ocamp_web_full9_abb06c385b.jpg",
-        "alternativeText": null,
-        "name": "ocamp_web_full9.jpg",
-        "caption": null,
-        "formats": {
-          "thumbnail": {
-            "name": "thumbnail_ocamp_web_full9.jpg",
-            "hash": "thumbnail_ocamp_web_full9_abb06c385b",
-            "ext": ".jpg",
-            "mime": "image/jpeg",
-            "path": null,
-            "width": 245,
-            "height": 132,
-            "size": 8.28,
-            "sizeInBytes": 8276,
-            "url": "/uploads/thumbnail_ocamp_web_full9_abb06c385b.jpg"
-          },
-          "medium": {
-            "name": "medium_ocamp_web_full9.jpg",
-            "hash": "medium_ocamp_web_full9_abb06c385b",
-            "ext": ".jpg",
-            "mime": "image/jpeg",
-            "path": null,
-            "width": 750,
-            "height": 406,
-            "size": 50.32,
-            "sizeInBytes": 50315,
-            "url": "/uploads/medium_ocamp_web_full9_abb06c385b.jpg"
-          },
-          "small": {
-            "name": "small_ocamp_web_full9.jpg",
-            "hash": "small_ocamp_web_full9_abb06c385b",
-            "ext": ".jpg",
-            "mime": "image/jpeg",
-            "path": null,
-            "width": 500,
-            "height": 270,
-            "size": 26.26,
-            "sizeInBytes": 26257,
-            "url": "/uploads/small_ocamp_web_full9_abb06c385b.jpg"
-          },
-          "large": {
-            "name": "large_ocamp_web_full9.jpg",
-            "hash": "large_ocamp_web_full9_abb06c385b",
-            "ext": ".jpg",
-            "mime": "image/jpeg",
-            "path": null,
-            "width": 1000,
-            "height": 541,
-            "size": 80.66,
-            "sizeInBytes": 80657,
-            "url": "/uploads/large_ocamp_web_full9_abb06c385b.jpg"
-          }
-        }
-      },
-      {
-        "url": "/images/ocamp_web_full3_5bfef9563b.png",
-        "alternativeText": null,
-        "name": "ocamp_web_full3.png",
-        "caption": null,
-        "formats": {
-          "thumbnail": {
-            "name": "thumbnail_ocamp_web_full3.png",
-            "hash": "thumbnail_ocamp_web_full3_5bfef9563b",
-            "ext": ".png",
-            "mime": "image/png",
-            "path": null,
-            "width": 168,
-            "height": 156,
-            "size": 16.72,
-            "sizeInBytes": 16723,
-            "url": "/uploads/thumbnail_ocamp_web_full3_5bfef9563b.png"
-          },
-          "small": {
-            "name": "small_ocamp_web_full3.png",
-            "hash": "small_ocamp_web_full3_5bfef9563b",
-            "ext": ".png",
-            "mime": "image/png",
-            "path": null,
-            "width": 500,
-            "height": 464,
-            "size": 75.22,
-            "sizeInBytes": 75217,
-            "url": "/uploads/small_ocamp_web_full3_5bfef9563b.png"
-          },
-          "medium": {
-            "name": "medium_ocamp_web_full3.png",
-            "hash": "medium_ocamp_web_full3_5bfef9563b",
-            "ext": ".png",
-            "mime": "image/png",
-            "path": null,
-            "width": 750,
-            "height": 696,
-            "size": 133.11,
-            "sizeInBytes": 133114,
-            "url": "/uploads/medium_ocamp_web_full3_5bfef9563b.png"
-          }
-        }
-      },
-      {
-        "url": "/images/ocamp_web_fullb2_83f7753bd2.jpg",
-        "alternativeText": null,
-        "name": "ocamp_web_fullb2.jpg",
-        "caption": null,
-        "formats": {
-          "thumbnail": {
-            "name": "thumbnail_ocamp_web_fullb2.jpg",
-            "hash": "thumbnail_ocamp_web_fullb2_83f7753bd2",
-            "ext": ".jpg",
-            "mime": "image/jpeg",
-            "path": null,
-            "width": 245,
-            "height": 137,
-            "size": 8.94,
-            "sizeInBytes": 8942,
-            "url": "/uploads/thumbnail_ocamp_web_fullb2_83f7753bd2.jpg"
-          },
-          "small": {
-            "name": "small_ocamp_web_fullb2.jpg",
-            "hash": "small_ocamp_web_fullb2_83f7753bd2",
-            "ext": ".jpg",
-            "mime": "image/jpeg",
-            "path": null,
-            "width": 500,
-            "height": 281,
-            "size": 30.27,
-            "sizeInBytes": 30271,
-            "url": "/uploads/small_ocamp_web_fullb2_83f7753bd2.jpg"
-          },
-          "medium": {
-            "name": "medium_ocamp_web_fullb2.jpg",
-            "hash": "medium_ocamp_web_fullb2_83f7753bd2",
-            "ext": ".jpg",
-            "mime": "image/jpeg",
-            "path": null,
-            "width": 750,
-            "height": 422,
-            "size": 59.03,
-            "sizeInBytes": 59034,
-            "url": "/uploads/medium_ocamp_web_fullb2_83f7753bd2.jpg"
-          },
-          "large": {
-            "name": "large_ocamp_web_fullb2.jpg",
-            "hash": "large_ocamp_web_fullb2_83f7753bd2",
-            "ext": ".jpg",
-            "mime": "image/jpeg",
-            "path": null,
-            "width": 1000,
-            "height": 562,
-            "size": 94.81,
-            "sizeInBytes": 94814,
-            "url": "/uploads/large_ocamp_web_fullb2_83f7753bd2.jpg"
-          }
-        }
-      },
-      {
-        "url": "/images/opride_web_full18_97eec4891d.jpg",
-        "alternativeText": null,
-        "name": "opride_web_full18.jpg",
-        "caption": null,
-        "formats": {
-          "thumbnail": {
-            "name": "thumbnail_opride_web_full18.jpg",
-            "hash": "thumbnail_opride_web_full18_97eec4891d",
-            "ext": ".jpg",
-            "mime": "image/jpeg",
-            "path": null,
-            "width": 245,
-            "height": 152,
-            "size": 4.45,
-            "sizeInBytes": 4451,
-            "url": "/uploads/thumbnail_opride_web_full18_97eec4891d.jpg"
-          },
-          "medium": {
-            "name": "medium_opride_web_full18.jpg",
-            "hash": "medium_opride_web_full18_97eec4891d",
-            "ext": ".jpg",
-            "mime": "image/jpeg",
-            "path": null,
-            "width": 750,
-            "height": 468,
-            "size": 24.32,
-            "sizeInBytes": 24319,
-            "url": "/uploads/medium_opride_web_full18_97eec4891d.jpg"
-          },
-          "large": {
-            "name": "large_opride_web_full18.jpg",
-            "hash": "large_opride_web_full18_97eec4891d",
-            "ext": ".jpg",
-            "mime": "image/jpeg",
-            "path": null,
-            "width": 1000,
-            "height": 624,
-            "size": 40.06,
-            "sizeInBytes": 40062,
-            "url": "/uploads/large_opride_web_full18_97eec4891d.jpg"
-          },
-          "small": {
-            "name": "small_opride_web_full18.jpg",
-            "hash": "small_opride_web_full18_97eec4891d",
-            "ext": ".jpg",
-            "mime": "image/jpeg",
-            "path": null,
-            "width": 500,
-            "height": 312,
-            "size": 12.71,
-            "sizeInBytes": 12713,
-            "url": "/uploads/small_opride_web_full18_97eec4891d.jpg"
-          }
-        }
-      },
-      {
-        "url": "/images/opride_web_full12_297dd68026.jpg",
-        "alternativeText": null,
-        "name": "opride_web_full12.jpg",
-        "caption": null,
-        "formats": {
-          "thumbnail": {
-            "name": "thumbnail_opride_web_full12.jpg",
-            "hash": "thumbnail_opride_web_full12_297dd68026",
-            "ext": ".jpg",
-            "mime": "image/jpeg",
-            "path": null,
-            "width": 219,
-            "height": 156,
-            "size": 12.75,
-            "sizeInBytes": 12750,
-            "url": "/uploads/thumbnail_opride_web_full12_297dd68026.jpg"
-          },
-          "small": {
-            "name": "small_opride_web_full12.jpg",
-            "hash": "small_opride_web_full12_297dd68026",
-            "ext": ".jpg",
-            "mime": "image/jpeg",
-            "path": null,
-            "width": 500,
-            "height": 357,
-            "size": 51.18,
-            "sizeInBytes": 51176,
-            "url": "/uploads/small_opride_web_full12_297dd68026.jpg"
-          },
-          "medium": {
-            "name": "medium_opride_web_full12.jpg",
-            "hash": "medium_opride_web_full12_297dd68026",
-            "ext": ".jpg",
-            "mime": "image/jpeg",
-            "path": null,
-            "width": 750,
-            "height": 536,
-            "size": 98.69,
-            "sizeInBytes": 98693,
-            "url": "/uploads/medium_opride_web_full12_297dd68026.jpg"
-          },
-          "large": {
-            "name": "large_opride_web_full12.jpg",
-            "hash": "large_opride_web_full12_297dd68026",
-            "ext": ".jpg",
-            "mime": "image/jpeg",
-            "path": null,
-            "width": 1000,
-            "height": 714,
-            "size": 153.18,
-            "sizeInBytes": 153180,
-            "url": "/uploads/large_opride_web_full12_297dd68026.jpg"
-          }
-        }
-      },
-      {
-        "url": "/images/optimizelypride_rocket6_268e7ebf7a.png",
-        "alternativeText": null,
-        "name": "optimizelypride--rocket6.png",
-        "caption": null,
-        "formats": {
-          "thumbnail": {
-            "name": "thumbnail_optimizelypride--rocket6.png",
-            "hash": "thumbnail_optimizelypride_rocket6_268e7ebf7a",
-            "ext": ".png",
-            "mime": "image/png",
-            "path": null,
-            "width": 156,
-            "height": 156,
-            "size": 13.03,
-            "sizeInBytes": 13027,
-            "url": "/uploads/thumbnail_optimizelypride_rocket6_268e7ebf7a.png"
-          },
-          "small": {
-            "name": "small_optimizelypride--rocket6.png",
-            "hash": "small_optimizelypride_rocket6_268e7ebf7a",
-            "ext": ".png",
-            "mime": "image/png",
-            "path": null,
-            "width": 500,
-            "height": 500,
-            "size": 46.08,
-            "sizeInBytes": 46078,
-            "url": "/uploads/small_optimizelypride_rocket6_268e7ebf7a.png"
-          },
-          "large": {
-            "name": "large_optimizelypride--rocket6.png",
-            "hash": "large_optimizelypride_rocket6_268e7ebf7a",
-            "ext": ".png",
-            "mime": "image/png",
-            "path": null,
-            "width": 1000,
-            "height": 1000,
-            "size": 115.36,
-            "sizeInBytes": 115357,
-            "url": "/uploads/large_optimizelypride_rocket6_268e7ebf7a.png"
-          },
-          "medium": {
-            "name": "medium_optimizelypride--rocket6.png",
-            "hash": "medium_optimizelypride_rocket6_268e7ebf7a",
-            "ext": ".png",
-            "mime": "image/png",
-            "path": null,
-            "width": 750,
-            "height": 750,
-            "size": 79.04,
-            "sizeInBytes": 79038,
-            "url": "/uploads/medium_optimizelypride_rocket6_268e7ebf7a.png"
-          }
-        }
-      }
-    ]
-  },
-  {
-    "title": "Optimizely — Elevating Internal Company Events",
+    "title": "Optimizely — Elevating Internal Company Experiences",
     "slug": "optimizely",
     "url": "/projects/optimizely/",
     "image": "/images/large_thumb_optimizely_29eaeae938.png",
@@ -1002,12 +96,12 @@
       "Event",
       "Print"
     ],
-    "order": 30,
+    "order": 150,
     "description": null,
-    "content": "<h2>Pride Week</h2><p>&nbsp;</p><h2>Camp Optimizely (Bring Your Kids To Work Day)</h2>",
+    "content": "<p>While working as a receptionist at Optimizely, I identified opportunities to improve internal communications and employee experiences. I proactively offered my design skills to support company-wide events, leading the visual direction and production of materials for <strong>Camp Optimizely</strong> and <strong>Pride Week</strong>.&nbsp;</p><p>With no dedicated budget, I designed materials that could be produced using standard office equipment and assembled by hand, and larger installations were created from repurposed cardboard packaging. These constraints shaped my design decisions and encouraged creative, low-cost solutions while still maintaining a cohesive experience.</p><h2 id=\"camp-optimizely\">Camp Optimizely — Designing an Office Adventure for Future Optinauts&nbsp;</h2><p>Camp Optimizely was a camp-themed “Bring Your Kids to Work Day” event designed to introduce employees’ children to the company, through a playful experience built around the idea of them becoming “future Optinauts.”</p><p>I designed a set of materials that worked together to guide the experience and reinforce the camp theme, including flyers, signage, activity packs for each child, a photo wall with illustrated cardboard animal cutouts, and a physical tent and faux campfire gathering area.</p><h2 id=\"optimizely-pride\">Pride Week — Design for Education and Inclusion</h2><p>I volunteered my design services to Optimizely’s Pride Committee to support the company’s Pride Week programming and parade participation.</p><p>Working within a short timeline of only a few weeks, I designed a range of materials to support the week’s activities, including event graphics and educational materials. The materials were designed with clear hierarchy and quick-scan readability so employees could learn in casual office settings such as break rooms and shared tables.</p><p>In the spirit of inclusivity, I also designed gender-neutral restroom signage for the office, to provide more welcoming and affirming language in shared spaces.</p><h2>Reflection</h2><p>These projects reinforced my interest in experience design and how thoughtful design can create meaningful moments within everyday environments. They also showed how design can make learning more approachable, helping people engage with new ideas in casual, shared spaces rather than formal educational settings.</p>",
     "leftdescription": "",
-    "role": "",
-    "deliverables": "",
+    "role": "<ul><li>Visual Designer</li><li>Design Strategist</li></ul>",
+    "deliverables": "<p>Camp Optimizely:</p><ul><li>Flyers and signage</li><li>Activity packs (booklet, merit badges, name tags, apparel design)</li><li>Photo op wall</li><li>Gathering area</li></ul><p>Pride Week:</p><ul><li>Agenda</li><li>Educational table tents &amp; posters</li><li>Gender-neutral restroom signs</li><li>T-shirt &amp; tattoo designs</li><li>Props for parade float</li></ul>",
     "images": [
       {
         "url": "/images/opride_web_full2_a2c2a03915.jpg",
@@ -2150,5 +1244,243 @@
         }
       }
     ]
+  },
+  {
+    "title": "CARE Court — Introducing HTML5 Ads to a Healthcare Program Launch",
+    "slug": "care-court",
+    "url": "/projects/care-court/",
+    "image": "/images/thumb-placeholder.png",
+    "category": null,
+    "tags": [
+      "Digital"
+    ],
+    "order": 145,
+    "description": null,
+    "content": "",
+    "leftdescription": "",
+    "role": "",
+    "deliverables": "",
+    "images": []
+  },
+  {
+    "title": "Hope for Haiti — Promoting a VR Experience at AWE 2023",
+    "slug": "hfh",
+    "url": "/projects/hfh/",
+    "image": "/images/large_thumb_hfh_f13c03050e.png",
+    "category": null,
+    "tags": [
+      "Event",
+      "Strategy"
+    ],
+    "order": 140,
+    "description": null,
+    "content": "<p>Hope for Haiti developed a virtual reality experience to bring awareness to their cause, and showcased it at the 2023 Augmented World Expo (AWE). When they put out a call for booth volunteers, I offered both my time at the expo and my design skills to help elevate their on-site presence and improve audience engagement.</p><p>Working within their existing brand and content, I designed a set of promotional materials focused on clarity, visual impact, and strong calls to action:</p><ul><li><strong>Updated easel poster designs</strong> — I simplified their previous text-heavy layouts into more visual, scannable designs with clear CTAs</li><li><strong>TV display</strong> — A looping video featuring the VR experience trailer alongside a persistent title and CTA</li><li><strong>Newsletter sign-up touchpoint</strong> — bringing attention to their existing newsletter by displaying a signup sheet on an iPad</li><li><strong>Social media assets</strong> — graphics for pre-event promotion, live posting during the expo, and post-event sharing, including a prepared asset for a potential Auggie Awards win. These were created in Google Slides to allow the client to make edits easily on the fly.</li></ul><p>While not all materials were ultimately used, I believe my work was useful for thinking through practical UX decisions within the constraints of a live expo setting, and maximizing engagement of attendees with limited attention spans.&nbsp;</p>",
+    "leftdescription": "",
+    "role": "<ul><li>Creative Strategist</li><li>Visual Designer</li></ul>",
+    "deliverables": "<ul><li>Poster designs</li><li>Video for TV display</li><li>Social media graphics</li><li>Newsletter sign-up sheet</li></ul>",
+    "images": [
+      {
+        "url": "/images/HFH_photo_85e9da2c79.jpg",
+        "alternativeText": "Photo of HFH booth in action",
+        "name": "HFH_photo.jpg",
+        "caption": null,
+        "formats": {
+          "thumbnail": {
+            "name": "thumbnail_HFH_photo.jpg",
+            "hash": "thumbnail_HFH_photo_85e9da2c79",
+            "ext": ".jpg",
+            "mime": "image/jpeg",
+            "path": null,
+            "width": 208,
+            "height": 156,
+            "size": 9.65,
+            "sizeInBytes": 9647,
+            "url": "/uploads/thumbnail_HFH_photo_85e9da2c79.jpg"
+          },
+          "small": {
+            "name": "small_HFH_photo.jpg",
+            "hash": "small_HFH_photo_85e9da2c79",
+            "ext": ".jpg",
+            "mime": "image/jpeg",
+            "path": null,
+            "width": 500,
+            "height": 375,
+            "size": 41.11,
+            "sizeInBytes": 41108,
+            "url": "/uploads/small_HFH_photo_85e9da2c79.jpg"
+          },
+          "medium": {
+            "name": "medium_HFH_photo.jpg",
+            "hash": "medium_HFH_photo_85e9da2c79",
+            "ext": ".jpg",
+            "mime": "image/jpeg",
+            "path": null,
+            "width": 750,
+            "height": 563,
+            "size": 80.51,
+            "sizeInBytes": 80506,
+            "url": "/uploads/medium_HFH_photo_85e9da2c79.jpg"
+          },
+          "large": {
+            "name": "large_HFH_photo.jpg",
+            "hash": "large_HFH_photo_85e9da2c79",
+            "ext": ".jpg",
+            "mime": "image/jpeg",
+            "path": null,
+            "width": 1000,
+            "height": 750,
+            "size": 133.19,
+            "sizeInBytes": 133193,
+            "url": "/uploads/large_HFH_photo_85e9da2c79.jpg"
+          }
+        }
+      },
+      {
+        "url": "/images/HFH_posters2_b0de0f8a82.png",
+        "alternativeText": null,
+        "name": "HFH_posters2.png",
+        "caption": null,
+        "formats": {
+          "thumbnail": {
+            "name": "thumbnail_HFH_posters2.png",
+            "hash": "thumbnail_HFH_posters2_b0de0f8a82",
+            "ext": ".png",
+            "mime": "image/png",
+            "path": null,
+            "width": 160,
+            "height": 156,
+            "size": 44.22,
+            "sizeInBytes": 44223,
+            "url": "/uploads/thumbnail_HFH_posters2_b0de0f8a82.png"
+          },
+          "small": {
+            "name": "small_HFH_posters2.png",
+            "hash": "small_HFH_posters2_b0de0f8a82",
+            "ext": ".png",
+            "mime": "image/png",
+            "path": null,
+            "width": 500,
+            "height": 487,
+            "size": 347.66,
+            "sizeInBytes": 347655,
+            "url": "/uploads/small_HFH_posters2_b0de0f8a82.png"
+          },
+          "medium": {
+            "name": "medium_HFH_posters2.png",
+            "hash": "medium_HFH_posters2_b0de0f8a82",
+            "ext": ".png",
+            "mime": "image/png",
+            "path": null,
+            "width": 750,
+            "height": 731,
+            "size": 731.64,
+            "sizeInBytes": 731635,
+            "url": "/uploads/medium_HFH_posters2_b0de0f8a82.png"
+          },
+          "large": {
+            "name": "large_HFH_posters2.png",
+            "hash": "large_HFH_posters2_b0de0f8a82",
+            "ext": ".png",
+            "mime": "image/png",
+            "path": null,
+            "width": 1000,
+            "height": 974,
+            "size": 1243.2,
+            "sizeInBytes": 1243204,
+            "url": "/uploads/large_HFH_posters2_b0de0f8a82.png"
+          }
+        }
+      }
+    ]
+  },
+  {
+    "title": "Every Vote In — 360 Campaign Promoting Early Voting in LA County",
+    "slug": "gotv",
+    "url": "/projects/gotv/",
+    "image": "/images/large_thumb_gotv_6ac6de6e97.png",
+    "category": null,
+    "tags": [
+      "Campaign",
+      "Branding"
+    ],
+    "order": 115,
+    "description": null,
+    "content": "<p><strong>For the historic 2020 election during COVID-19, I led creative development as the sole designer on the largest integrated campaign of my career.</strong> “Every Vote In” was a countywide 360° campaign effort for Los Angeles County Registrar-Recorder/County Clerk, designed to drive voter registration, promote early and mail-in voting, and educate one of the most diverse populations in the U.S.</p><p>At the time, I was only a junior designer, and the scale, visibility, and stakes of this project were intimidating. Leading creative across hundreds of assets, multiple workstreams, and cross-functional teams pushed me to think beyond execution and into systems, process, and coordination. <strong>This project became an early turning point in developing my project management mindset and confidence operating at scale.</strong></p><h2>Design Work</h2><p>I developed a bold, modern visual system that was adaptable across digital, social, video, TV, radio, print, and OOH, all within an accelerated 7-week timeline.</p><p><strong>Key creative challenges included:</strong></p><ul><li>Designing a flexible identity system that could <strong>scale across 13 languages</strong>, and ensuring layouts supported varying copy lengths and non-Latin glyphs</li><li>Using culturally resonant, <strong>portrait-forward visuals</strong> that reflected LA County’s diverse communities</li><li><strong>Building editable design systems in Google Slides </strong>so non-designers from client teams and partner organizations could make copy and translation updates without compromising brand integrity</li><li><strong>Iterating creative in real time </strong>based on engagement data and campaign phases</li></ul><h2>Impact</h2><p>The campaign <strong>contributed to historic voter engagement</strong> in LA County:</p><ul><li><strong>76% voter turnout</strong> (up from 69% in 2016)</li><li>Nearly <strong>80% of 4.3 million ballots</strong> cast by mail</li><li>Digital ads delivered <strong>102M+ impressions</strong></li><li><strong>77.7% average video completion</strong> rate (well above 50% benchmark)</li><li><strong>204M+ OOH impressions</strong> across 501,947 placements throughout 5 supervisorial districts</li><li><strong>36M+ impressions</strong> from in-language print ads</li><li>Featured by the Los Angeles Times as <strong>“one of the best-ever uses of the ad format” </strong>for our homepage takeover</li></ul><p>Beyond performance metrics, the campaign achieved widespread community adoption, with <strong>partner organizations customizing and distributing our toolkits</strong>, and large-scale “I Voted” installations organically generating social engagement across the county.<br>&nbsp;</p>",
+    "leftdescription": "",
+    "role": "<ul><li>Sole &amp; Lead Visual Designer</li></ul>",
+    "deliverables": "<ul><li>Campaign brand</li><li>Paid ads for digital &amp; print</li><li>Social media graphics</li><li>Social &amp; print templates for community partners</li><li>OOH (including signage for stores, buses, kiosks, billboards)</li><li>Website toolkit materials</li><li>Email templates</li></ul>",
+    "images": []
+  },
+  {
+    "title": "Carton Council — Increasing Carton Recycling Through Online Engagement",
+    "slug": "ccna",
+    "url": "/projects/ccna/",
+    "image": "/images/large_thumb_ccna_cee6b095f5.png",
+    "category": null,
+    "tags": [
+      "Branding",
+      "Digital",
+      "Strategy"
+    ],
+    "order": 110,
+    "description": null,
+    "content": "<p>While millions of Americans recycle cans, bottles, and paper, many are unaware that food and beverage cartons can also be recycled, and confusion remains about which cartons are accepted and how to properly recycle them. Carton Council’s goals were multifold:&nbsp;</p><ul><li>Raise awareness about the availability of carton recycling as new municipalities add cartons to residential recycling programs</li><li>Help consumers better understand the ins and outs of carton recycling</li><li>Encourage recycling for a greener community and a healthier planet</li></ul><p>I joined the team as a Junior Designer, initially creating graphics for Carton Council based on established brand guidelines. As I became more familiar with the client and audience,<strong> I began evolving the visual approach, introducing cleaner design, more creative photography, and interactive content that encouraged engagement </strong>and aligned with emerging social media trends to better reach younger audiences.</p><p>Over time, I grew into the role of Art Director and took on a larger leadership position for the account. I became the lead designer (and sole designer for a period), shaping the creative direction by pitching new initiatives, such as Instagram GIPHY stickers and an increased focus on Reels. I also oversaw the development of new carton packaging designs while managing a junior designer, and led the creative direction for the accompanying photoshoot.</p>",
+    "leftdescription": "",
+    "role": "<ul><li>Creative Strategist</li><li>Visual Designer</li><li>Design Manager</li><li>Project Manager</li><li>Photographer</li><li>Art Director</li><li>Video Editor</li></ul>",
+    "deliverables": "<ul><li>Updated brand guidelines</li><li>Monthly social media calendar</li><li>Social media content including graphics, gifs, and reels</li><li>Videos for ads, social, and message testing</li><li>Paid ads</li><li>Original photography</li><li>Online quiz</li><li>Carton packaging designs</li><li>Event collateral, displays, and handouts</li><li>Swag giveaway items</li><li>Presentation decks</li></ul>",
+    "images": []
+  },
+  {
+    "title": "San Diego Humane Society — Creating a More Humane San Diego",
+    "slug": "sdhs",
+    "url": "/projects/sdhs/",
+    "image": "/images/large_thumb_sdhs_2b5879b9bd.png",
+    "category": null,
+    "tags": [
+      "OOH",
+      "Digital"
+    ],
+    "order": 105,
+    "description": null,
+    "content": "<figure class=\"image\"><img style=\"aspect-ratio:1200/833;\" src=\"/images/SDHS_Billboard_Mockup_cropped_ea38d07ff0.jpg\" alt=\"Billboard\" srcset=\"/images/thumbnail_SDHS_Billboard_Mockup_cropped_ea38d07ff0.jpg 225w,/images/small_SDHS_Billboard_Mockup_cropped_ea38d07ff0.jpg 500w,/images/medium_SDHS_Billboard_Mockup_cropped_ea38d07ff0.jpg 750w,/images/large_SDHS_Billboard_Mockup_cropped_ea38d07ff0.jpg 1000w,\" sizes=\"100vw\" width=\"1200\" height=\"833\"></figure><p>San Diego Humane Society wanted to promote their mission through billboards and digital ads using original photography. I was brought onto the project shortly after the branding was finalized, to create video ads, social graphics, print ads, and billboards, while also leading the organization of my first professional photoshoot.&nbsp;</p><p>I managed everything for the shoot, from hiring human and animal models, to securing permits, and coordinating with the photographer and client. Because this took place during the pandemic, I directed remotely via video call, which introduced unique challenges and reinforced the importance of clear communication and strong pre-production planning.&nbsp;</p><p>This project remains a favourite of mine as it combined my love for animals, collaboration with an incredible photographer (who also taught me a lot about photo editing), and the opportunity to independently direct my first photoshoot.</p><figure class=\"image\"><img style=\"aspect-ratio:1200/803;\" src=\"/images/SDHS_Billboard_Cat_Mockup_77ed2871a1.jpg\" alt=\"Billboard\" srcset=\"/images/thumbnail_SDHS_Billboard_Cat_Mockup_77ed2871a1.jpg 234w,/images/small_SDHS_Billboard_Cat_Mockup_77ed2871a1.jpg 500w,/images/medium_SDHS_Billboard_Cat_Mockup_77ed2871a1.jpg 750w,/images/large_SDHS_Billboard_Cat_Mockup_77ed2871a1.jpg 1000w,\" sizes=\"100vw\" width=\"1200\" height=\"803\"></figure><div><iframe src=\"https://player.vimeo.com/video/1162037517?badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479&amp;title=0&amp;byline=0&amp;portrait=0&amp;\" frameborder=\"0\" allow=\"autoplay; fullscreen; picture-in-picture; clipboard-write; encrypted-media; web-share\" referrerpolicy=\"strict-origin-when-cross-origin\" \"style=\"width:50%;height:50%;&quot;\" title=\"San Diego Humane Society - Video Ad (30s)\"></iframe></div><figure class=\"image\"><img style=\"aspect-ratio:1200/1594;\" src=\"/images/SDHS_Digital_and_Print_Ads_9212320eea.png\" alt=\"Social media and print ads\" srcset=\"/images/thumbnail_SDHS_Digital_and_Print_Ads_9212320eea.png 117w,/images/small_SDHS_Digital_and_Print_Ads_9212320eea.png 376w,/images/medium_SDHS_Digital_and_Print_Ads_9212320eea.png 565w,/images/large_SDHS_Digital_and_Print_Ads_9212320eea.png 753w,\" sizes=\"100vw\" width=\"1200\" height=\"1594\"></figure>",
+    "leftdescription": "",
+    "role": "<ul><li>Photoshoot Producer &amp; Art Director</li><li>Project Manager</li><li>Visual Designer</li><li>Video Editor</li></ul>",
+    "deliverables": "<ul><li>Original Photography Direction</li><li>Video Ads</li><li>Social Media &amp; Digital Newsletter Ads</li><li>Billboards</li></ul>",
+    "images": []
+  },
+  {
+    "title": "Together Toward Health — Addressing Health Inequities in California",
+    "slug": "tth",
+    "url": "/projects/tth/",
+    "image": "/images/large_thumb_phi_a3bee85f7e.png",
+    "category": null,
+    "tags": [
+      "Digital"
+    ],
+    "order": 100,
+    "description": null,
+    "content": "<p>In response to COVID-19’s unequal impact across California, the Public Health Institute created Together Toward Health (TTH), a statewide effort to reduce transmission by funding trusted local organizations serving Black, Latinx, Native American, immigrant, and low-income populations.</p><p>Their most immediate need was to update funders on how things were going, what were the emerging needs that TTH was seeing on the ground, and spotlighting the lifesaving impact that this work was making.&nbsp;</p><figure class=\"image\"><img style=\"aspect-ratio:1200/979;\" src=\"/images/PHI_Impact_Report_mockup2_full_8511973e2b.png\" alt=\"PHI_ImpactReport_mockup2-full.png\" srcset=\"/images/thumbnail_PHI_Impact_Report_mockup2_full_8511973e2b.png 191w,/images/small_PHI_Impact_Report_mockup2_full_8511973e2b.png 500w,/images/medium_PHI_Impact_Report_mockup2_full_8511973e2b.png 750w,/images/large_PHI_Impact_Report_mockup2_full_8511973e2b.png 1000w,\" sizes=\"100vw\" width=\"1200\" height=\"979\"></figure><h2>Design Work</h2><p>Materials I created in support of these needs included:</p><h3><strong>Monthly Funder Newsletters</strong></h3><p>An ongoing newsletter series to communicate updates and impact</p><h3><strong>“Sizzle Reel”</strong></h3><p>A short video showcasing TTH’s impact through testimonials from grantees and funders</p><div><iframe src=\"https://player.vimeo.com/video/1162053892?badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479\" frameborder=\"0\" allow=\"autoplay; fullscreen; picture-in-picture; clipboard-write; encrypted-media; web-share\" referrerpolicy=\"strict-origin-when-cross-origin\" title=\"Together Toward Health\"></iframe></div><h3><strong>Impact Report</strong></h3><p>An impact report that highlighted the key learnings from TTH that could benefit the public health and philanthropy fields. The report was developed for digital viewing on Issuu (no longer availalable online but the <u>report PDF can be viewed here</u>)</p><h3><strong>Case Statement Infographic&nbsp;</strong></h3><p>A policymaker case statement with supporting infographic to visualize the case for more equitable public health funding practices.</p><figure class=\"image image_resized\" style=\"width:75%!important;\"><img style=\"aspect-ratio:1200/1553;\" src=\"/images/PHI_Infographic_v3c_fullpage_b9ca6df8a3.png\" alt=\"PHI_Infographic.png\" srcset=\"/images/thumbnail_PHI_Infographic_v3c_fullpage_b9ca6df8a3.png 121w,/images/small_PHI_Infographic_v3c_fullpage_b9ca6df8a3.png 386w,/images/medium_PHI_Infographic_v3c_fullpage_b9ca6df8a3.png 580w,/images/large_PHI_Infographic_v3c_fullpage_b9ca6df8a3.png 773w,\" sizes=\"100vw\" width=\"1200\" height=\"1553\"></figure><h3><strong>Presentation Deck</strong></h3><p>Presentations preparing TTH for speaking opportunities, such as at the American Public Health Association Annual Meeting.</p><h2>Design Approach</h2><p>Across all deliverables, the goal was to:</p><ul><li>Make complex information easier to understand</li><li>Elevate community impact through storytelling</li><li>Maintain a polished, cohesive visual system</li></ul><h2>Impact</h2><p>The materials helped keep funders informed throughout the pandemic, and ended up contributing additional grant dollars beyond the initial commitment. They also equipped the TTH team with clear, presentation-ready storytelling tools to share their learnings with broader public health audiences, including national partners.</p>",
+    "leftdescription": "",
+    "role": "<ul><li>Visual Designer</li><li>Video Editor</li></ul>",
+    "deliverables": "<ul><li>Monthly digital newsletters</li><li>Short video</li><li>Impact report</li><li>Case statement infographic</li><li>Presentation deck</li></ul>",
+    "images": []
+  },
+  {
+    "title": "Battle Creek Public Schools — Transforming Perceptions of a School District",
+    "slug": "bcps",
+    "url": "/projects/bcps/",
+    "image": "/images/large_thumb_bcps_3e4f572159.png",
+    "category": null,
+    "tags": [
+      "Digital",
+      "Print"
+    ],
+    "order": 88,
+    "description": null,
+    "content": "<p><strong>I joined the BCPS account as a junior designer and grew into the lead (and sometimes sole) designer supporting the district’s multi-year communications strategy during its equity-driven transformation funded by the W.K. Kellogg Foundation.</strong></p><p>My role evolved from production to strategy, including facilitating brainstorms, contributing campaign concepts, and creating materials for enrollment, teacher recruitment, and community engagement. After transitioning off the account, I was re-engaged due to the strong working relationship and institutional knowledge I had built with the client, <strong>returning to provide creative leadership and ensure consistency </strong>during a critical phase of the district’s transformation.</p><h2>Design Work</h2><p>Much of the work followed established brand guidelines, requiring<strong> high-volume, day-to-day communications </strong>across print and digital. The focus was less on visual experimentation and more on <strong>clarity, accessibility, and trust-building at scale</strong> — particularly during moments of crisis.</p><p>During COVID-19 school closures, I designed a take-home kindergarten learning packet, including an interactive scavenger hunt poster to support families navigating remote learning. This project required quickly adapting district messaging into engaging, age-appropriate materials during an unprecedented period of uncertainty.</p><p><strong>This account strengthened my ability to design consistently across large systems, and deepened my understanding of how consistent, sustained communications can shift perception and build trust over time.</strong></p>",
+    "leftdescription": "",
+    "role": "<ul><li>Visual Designer</li><li>Creative Lead &amp; Strategist</li></ul>",
+    "deliverables": "<ul><li>Classroom materials, handouts, and posters</li><li>Print newsletters and direct mail to families</li><li>Social media content and digital ad creative</li><li>Campaign concepts &amp; materials</li><li>Crisis communications support</li></ul>",
+    "images": []
   }
 ]
