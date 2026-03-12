@@ -15,7 +15,7 @@ const hoverTarget = document.getElementById('hoverTarget');
             currentIndex = (currentIndex + 1) % emojis.length; // Loop back to start
             
             // Position at cursor with slight random offset
-            particle.style.left = (x + (Math.random() - 0.5) * 20) + 'px';
+            particle.style.left = (x + (Math.random() - 2.5) * 30) + 'px';
             particle.style.top = y + 'px';
             
             document.body.appendChild(particle);
@@ -36,7 +36,7 @@ const hoverTarget = document.getElementById('hoverTarget');
             // Create particles continuously while hovering
             particleInterval = setInterval(() => {
                 createParticle(mouseX, mouseY);
-            }, 200);
+            }, 400);
         });
 
         hoverTarget.addEventListener('mousemove', (e) => {
