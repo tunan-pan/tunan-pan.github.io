@@ -16,7 +16,7 @@ const hoverTarget = document.getElementById('hoverTarget');
             
             // Position at cursor with slight random offset
             particle.style.left = (x + (Math.random() - 2.5) * 30) + 'px';
-            particle.style.top = y + 'px';
+            particle.style.top = (y - 150) + 'px';
             
             document.body.appendChild(particle);
             

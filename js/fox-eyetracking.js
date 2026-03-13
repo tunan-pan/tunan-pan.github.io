@@ -73,6 +73,14 @@ document.addEventListener('DOMContentLoaded', () => {
 
   document.addEventListener('mousemove', (e) => {
     const svgCursor = getSVGPoint(e.clientX, e.clientY);
+
+    // If cursor is below the eyes, drift back to rest position
+    if (svgCursor.y > 460) {
+      targetLx = 0; targetLy = 0;
+      targetRx = 0; targetRy = 0;
+      return;
+    }
+
     const ol = eyeOffset(LEFT_EYE,  svgCursor);
     const or = eyeOffset(RIGHT_EYE, svgCursor);
     targetLx = ol.x; targetLy = ol.y;
@@ -80,7 +88,7 @@ document.addEventListener('DOMContentLoaded', () => {
   });
 
   function animate() {
-    const ease = 0.12;
+    const ease = 0.1;
     lx += (targetLx - lx) * ease;
     ly += (targetLy - ly) * ease;
     rx += (targetRx - rx) * ease;

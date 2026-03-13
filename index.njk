@@ -3,30 +3,16 @@ layout: base.njk
 title: Home
 ---
 
-  <section class="home-top-container">
-		
 
 
-			<div class="home-intro-text">
-				<h1>Hi, I'm Tunan! I'm a designer who cares about <strong>social impact</strong> & <strong>human-centered</strong> experiences.</h1>
-				
-				<div class="home-intro-small">
-					<p>I create designs that are thoughtful, functional, and fun — always with real people (and real change) in mind.</p>
-					<p><em>Formerly an Art Director at a social change agency, I'm now turning my focus to creating accessible interactive designs.</em></p>
-				</div>
 
-				<p><a class="home-button button" href="/projects/">Take a look at my work <span class="arrow" aria-hidden="true">→</span></a></p>
-		
-			</div>
-
-			<div class="home-disclaimer">
-				<p><span aria-hidden="true">&#128679;</span> <em>This site is currently under construction so please excuse the mess!</em></p>
-			</div>
-
-
+    <div class="fox-window">
 			<div class="fox-container">
-        <!-- static SVG of fox 
-        <img class="fox-visual fox-static" src="images/fox/Fox_Static.svg" alt="friendly fox who wags its tail when you click on it" width="200" height="200"/>-->
+
+        <!-- curved mask -->
+        <svg class="fox-mask" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none" viewBox="0 0 1000 200">
+          <path d="M0,200 L0,80 Q500,140 1000,80 L1000,200 Z" fill="#F6F6F6"/>
+        </svg>
 
         <svg id="fox-static-svg"
             class="fox-visual fox-static"
@@ -129,7 +115,28 @@ title: Home
         
         <!-- hover area for animation -->
         <div class="fox-hitbox" id="hoverTarget" role="button" tabindex="0" aria-label="Pet the fox"></div>
+        
+      </div>
     </div>
+
+
+  <section class="home-top-container">
+
+			<div class="home-intro-text">
+				<h1>Hi, I'm Tunan! I'm a designer who cares about <strong>social impact</strong> & <strong>human-centered</strong> experiences.</h1>
+				
+				<div class="home-intro-small">
+					<p>I create designs that are thoughtful, functional, and fun — always with real people (and real change) in mind.</p>
+					<p><em>Formerly an Art Director at a social change agency, I'm now turning my focus to creating accessible interactive designs.</em></p>
+				</div>
+
+				<p><a class="home-button button" href="/projects/">Take a look at my work <span class="arrow" aria-hidden="true">→</span></a></p>
+		
+			</div>
+
+			
+
+
 
   </section>
 
