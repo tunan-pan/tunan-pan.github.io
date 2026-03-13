@@ -5,7 +5,7 @@ orange: #E93600
 background light grey: #F6F6F6 -- light orange: #fff5f3
 footer darker grey: #E9E9E9 -- darker orange: #ffeae0
 purple: #7C1D9E (old #4F1E85)
-light purple: #E0BFE7          #E1D7FF
+light purple: #E0BFE7          fox bg #E1D7FF
 yellow: #FEC949
 pink: #F2126C
 -----------------------------------*/
@@ -15,7 +15,7 @@ pink: #F2126C
   --color-lightgrey: #F6F6F6;
   --color-darkgrey: #E9E9E9; 
   --color-purple: #7C1D9E ;
-  --color-lightpurple: #E1D7FF;
+  --color-lightpurple: #e6cdff;
   --color-yellow: #f4ac05;
   --color-pink: #E0005A;
   --color-darkmode: #262626;
@@ -177,7 +177,9 @@ body {
   text-wrap: pretty;
   margin: 0;
   padding: 0;
-  overflow-x: hidden;
+}
+html, body {
+  overflow-x: clip;
 }
 
 main {
@@ -218,6 +220,7 @@ a:focus-visisble {
   font-weight: bold;
   font-size: .9rem;
   letter-spacing: .1rem;
+  line-height: 150%;
   text-decoration: none;
   margin: .5rem 0;
   padding: .5rem 2rem;
@@ -240,6 +243,7 @@ a:focus-visisble {
   font-size: .8rem;
   color: #000;
   letter-spacing: .1rem;
+  line-height: 150%;
   text-decoration: none;
   margin: .5rem 0;
   padding: .4rem 1.5rem;
@@ -781,7 +785,11 @@ home page
   max-width: 100%;
   margin-bottom: 50px;
 }
-
+@media (max-width:680px) {
+  .home-page main {
+    margin-bottom: 100px;
+  }
+}
 .home-top-container {
   position: relative;
   width: 100%;
@@ -791,8 +799,9 @@ home page
 
  .home-intro-text {
   width: 100%;
-  max-width: 650px;
+  max-width: 710px;
   margin: 0 auto;
+  padding: 0 30px;
   font-size: 1.2em;
   line-height: 150%;
   text-wrap: balance;
@@ -804,6 +813,11 @@ home page
   font-weight: 300;
   font-size: 2.8rem;
   margin-bottom: 30px;
+}
+@media (max-width: 550px) {
+  .home-intro-text h1 {
+      font-size: 2.4rem;
+  }
 }
 
 .home-button {
@@ -830,7 +844,7 @@ home page
   transform: translateX(-50%);
   top: 0;
   z-index: 1; /* fox is below the masking ellipse */
-  background-color: #E1D7FF;
+  background-color: var(--color-lightpurple);
 }
 
 .fox-mask {
@@ -842,6 +856,7 @@ home page
   height: 90vh;
   z-index: 2;
 }
+
 
 /* Both fox images share the same positioning */
 .fox-visual {
@@ -896,58 +911,8 @@ home page
     animation: float-up 4s ease-out forwards;
     z-index: 9999;
   }
-
-  @keyframes float-up {
-    0% {
-        opacity: 1;
-        transform: translateY(-20px) scale(0.5);
-    }
-    100% {
-        opacity: 0;
-        transform: translateY(-300px) scale(2);
-    }
-  }
-}
-/*
-@media (max-width: 1435px) {
- .home-intro-text {
-  width: 55vw;
- }
-}
-@media (max-width: 1175px) {
- .home-intro-text {
-  width: 65vw;
- }
- .home-intro-small{
-  padding-right: 200px;
- }
-}
-@media (max-width: 1000px) {
-  .home-intro-text {
-    width: 100%;
-  } 
-  .home-intro-small{
-  padding-right: 0;
-  }
 }
 
-@media (max-width: 500px) {
-  .home-page main {
-     overflow: hidden;
-  }
-  .home-intro-text h1{
-    font-size: 2.5rem;
-  } 
-  
-  .fox-container {
-    width: 100vw;
-    bottom: -160px;
-    right: -120px;
-  }
-  .home-top-container {
-    margin-top: 0!important;
-  }
-}*/
 
 
 
@@ -970,24 +935,61 @@ about page - page-id-21
   min-height: 200px;
 }
 
+.photo-stack {
+  position: relative;
+  width: 90%;
+  margin: 0 auto 10px;
+  container-type: inline-size;
+}
 .about-image {
   display: block;
-  margin: 0 auto 10px;
-  width: 90%;
-  aspect-ratio: 1/1.49;
-  background-image: url("../images/bio-photo-polaroid2.png");
-  background-size:cover;
-  background-repeat:no-repeat;
-  background-position:top left;
-  transform: rotate(-3deg);
+  width: 100%;
+  aspect-ratio: 1 / 1.49;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: top left;
+  position: absolute;
+  top: 0;
+  left: 0;
+  transition: transform 0.5s ease-in-out;
+  z-index: -1;
 }
+
 @media (prefers-reduced-motion: no-preference) {
-  .about-image {
-    transition: 0.3s ease-in-out;
+  .photo-stack:hover .about-image:last-child,
+  .photo-stack.is-hovered .about-image:last-child {
+    transform: rotate(-20deg) translateX(-125cqw) !important;
+    z-index: 10 !important;
   }
-    .about-image:hover {
-      transform: rotate(0deg);
-    }
+
+  .photo-stack:hover .about-image:nth-last-child(2),
+  .photo-stack.is-hovered .about-image:nth-last-child(2) {
+    transform: rotate(8deg) translateX(5cqw) !important;
+  }
+
+  .photo-stack:hover .about-image:nth-last-child(3),
+  .photo-stack.is-hovered .about-image:nth-last-child(3) {
+    transform: rotate(-10deg) translateX(-4cqw) !important;
+  }
+}
+
+@media (max-width: 850px) {
+  .photo-stack {
+    height: 55vw;
+    min-height: 290px;
+  }
+  .about-image {
+    width: 50%;
+    min-width: 200px;
+    left: 20%;
+  }
+  @media (prefers-reduced-motion: no-preference) {
+  .photo-stack:hover .about-image:last-child,
+  .photo-stack.is-hovered .about-image:last-child {
+    transform: rotate(-20deg) translateX(-75cqw) !important;
+    z-index: 10 !important;
+  }
+}
 }
 
 
@@ -1142,13 +1144,11 @@ about page - page-id-21
   .about-grid {
     grid-template-columns: 1fr;
   }
-  
+
   .about-cards {
     grid-template-columns: 1fr;
   }
-  .about-image {
-    width: 60%;
-  }
+  
   .about-fox-inner {
     padding: 0 calc(10px + var(--page-padding-sides)) 20px;
 }
