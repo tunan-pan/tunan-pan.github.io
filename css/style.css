@@ -911,6 +911,16 @@ home page
     animation: float-up 4s ease-out forwards;
     z-index: 9999;
   }
+  
+  @keyframes float-up {
+    0% {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+    }
+    100% {
+        opacity: 0;
+        transform: translateY(-280px) scale(2);
+    }
 }
 
 
