@@ -403,7 +403,7 @@ a.logo:hover {
   }
 }
 
-/* Desktop Navigation */
+/*--- Desktop Navigation ---*/
 .main-nav {
   display: flex;
   gap: 3rem;
@@ -428,20 +428,19 @@ a.logo:hover {
 }
 
 /* link underline */
-
 .main-nav a::before {
-    content: "";
-    position: absolute;
-    display: block;
-    width: 100%;
-    height: 3px;
-    bottom: -3px;
-    left: 0;
-    background-color: transparent;
-    transform: scaleX(0);
-    transform-origin: top left;
-    transition: transform 0s ease;
-  }
+  content: "";
+  position: absolute;
+  display: block;
+  width: 100%;
+  height: 3px;
+  bottom: -3px;
+  left: 0;
+  background-color: transparent;
+  transform: scaleX(0);
+  transform-origin: top left;
+  transition: transform 0s ease;
+}
 .main-nav a:hover::before {
 transform: scaleX(1);
 }
@@ -483,51 +482,27 @@ transform: scaleX(1);
   margin: 0  0 0 10px;
   display: inline-block;
 }
-/*
-.main-nav a[href="/projects/"]::after {
-  content: url("../images/logo/logo-purple.svg");
-}
 
-.main-nav a[href="/about/"]::after {
-  content: url("../images/logo/logo-pink.svg");
-}
-
-.main-nav a[href="/contact/"]::after {
-  content: url("../images/logo/logo-yellow.svg");
-}*/
-
-.main-nav a[href="/projects/"]::after {
+.main-nav a[href="/projects/"]::after, .main-nav a[href="/about/"]::after, .main-nav a[href="/contact/"]::after {
   content: "";
   display: inline-block;
-  width: 11px;  /* set to your SVG's dimensions */
+  width: 11px;
   height: 11px;
-  background-color: var(--color-purple); /* this becomes the SVG color */
   -webkit-mask: url("../images/logo/logo-purple.svg") no-repeat center;
   mask: url("../images/logo/logo-purple.svg") no-repeat center;
   mask-size: contain;
 }
 
-.main-nav a[href="/about/"]::after {
-  content: "";
-  display: inline-block;
-  width: 11px;  /* set to your SVG's dimensions */
-  height: 11px;
-  background-color: var(--color-pink); /* this becomes the SVG color */
-  -webkit-mask: url("../images/logo/logo-pink.svg") no-repeat center;
-  mask: url("../images/logo/logo-pink.svg") no-repeat center;
-  mask-size: contain;
+.main-nav a[href="/projects/"]::after {
+  background-color: var(--color-purple); /
 }
 
+.main-nav a[href="/about/"]::after {
+  background-color: var(--color-pink); 
+}
 
 .main-nav a[href="/contact/"]::after {
-  content: "";
-  display: inline-block;
-  width: 11px;  /* set to your SVG's dimensions */
-  height: 11px;
-  background-color: var(--color-yellow); /* this becomes the SVG color */
-  -webkit-mask: url("../images/logo/logo-yellow.svg") no-repeat center;
-  mask: url("../images/logo/logo-yellow.svg") no-repeat center;
-  mask-size: contain;
+  background-color: var(--color-yellow); 
 }
 
 @media (prefers-reduced-motion: no-preference) {
@@ -541,9 +516,7 @@ transform: scaleX(1);
 
 } 
 
-
-
-/* Mobile Menu Toggle */
+/* --- Mobile Menu Toggle --- */
 .mobile-menu-toggle {
   display: none;
   background: none;
@@ -610,7 +583,7 @@ transform: scaleX(1);
   top: 0;
 }
 
-/* Mobile Styles */
+/* -------- Mobile Styles -------- */
 @media (max-width: 768px) {
   .header-container {
     height: 40px;
@@ -843,7 +816,7 @@ home page
   left: 50%;
   transform: translateX(-50%);
   top: 0;
-  z-index: 1; /* fox is below the masking ellipse */
+  z-index: 1;
   background-color: var(--color-lightpurple);
 }
 
@@ -857,7 +830,6 @@ home page
   z-index: 2;
 }
 
-
 /* Both fox images share the same positioning */
 .fox-visual {
   position: absolute;
@@ -870,19 +842,16 @@ home page
   z-index: 1;
 }
 
-/* Static fox is visible by default */
 .fox-static {
   opacity: 1;
   transition: none;
 }
 
-/* Animated fox is hidden by default */
 .fox-animated {
   opacity: 0;
   pointer-events: none;
 }
 
-/* When animating, hide static and show animated */
 .fox-container.is-animating .fox-static {
   opacity: 0;
 }
@@ -890,7 +859,6 @@ home page
   opacity: 1;
 }
 
-/* Hover trigger positioned over fox's head */
 .fox-hitbox {
   position: absolute;
   aspect-ratio: 1 / 0.4;
@@ -925,7 +893,6 @@ home page
 
 
 
-
 /* --------------------------------------------------------------------
 about page - page-id-21
 ---------------------------------------------------------------------*/
@@ -933,9 +900,9 @@ about page - page-id-21
 .about-page main {
   margin-top: 20px;
   padding-bottom: 0;
-  max-width: 1000px;
+  max-width: 1100px;
 }
-/* About Intro Section */
+
 .about-grid {
   display: grid;
   grid-template-columns: 1fr 2fr;
@@ -951,6 +918,7 @@ about page - page-id-21
   margin: 0 auto 10px;
   container-type: inline-size;
 }
+
 .about-image {
   display: block;
   width: 100%;
@@ -994,12 +962,12 @@ about page - page-id-21
     left: 20%;
   }
   @media (prefers-reduced-motion: no-preference) {
-  .photo-stack:hover .about-image:last-child,
-  .photo-stack.is-hovered .about-image:last-child {
-    transform: rotate(-20deg) translateX(-75cqw) !important;
-    z-index: 10 !important;
+    .photo-stack:hover .about-image:last-child,
+    .photo-stack.is-hovered .about-image:last-child {
+      transform: rotate(-20deg) translateX(-75cqw) !important;
+      z-index: 10 !important;
+    }
   }
-}
 }
 
 
@@ -1031,7 +999,7 @@ about page - page-id-21
   border-radius: 16px;
 }
 
-/* Fox Section */
+/* What the Fox Section */
 .about-fox {
   position: relative;
   padding: 150px 0 70px;
@@ -1042,7 +1010,6 @@ about page - page-id-21
   z-index: -1;
   background-color: var(--color-lightpurple);
 }
-
 
 .about-fox strong {
   color: #000;
@@ -1137,7 +1104,8 @@ about page - page-id-21
   background-image: url("../images/values/purpose.png");
 }
 
-/* Tablet */
+/* Responsive */
+
 @media (max-width: 1024px) {
   .about-grid {
     grid-template-columns: 1fr 1.5fr;
@@ -1149,7 +1117,6 @@ about page - page-id-21
   }
 }
 
-/* Mobile */
 @media (max-width: 850px) {
   .about-grid {
     grid-template-columns: 1fr;
@@ -1161,7 +1128,7 @@ about page - page-id-21
   
   .about-fox-inner {
     padding: 0 calc(10px + var(--page-padding-sides)) 20px;
-}
+  }
 }
 
 @media (max-width: 600px) {
@@ -1181,9 +1148,8 @@ about page - page-id-21
   .about-fox-logos {
     flex-direction: row;
     justify-content: flex-start;
-    gap: 20px;
+    gap: 20px;  
   }
-  
 }
 
 
@@ -1536,17 +1502,6 @@ iframe {
 }
 
 
-
-/* tag and category pages */
-
-.back-to-projects {
-  margin: 50px auto 0;
-  text-align: center;
-}
-
-
-
-
 /* --------------------------------------------------------------------
 contact page - page-id-23
 ---------------------------------------------------------------------*/
@@ -1564,7 +1519,7 @@ contact page - page-id-23
   text-align: center;
 }
 
-.contact_form input, textarea  {
+.contact_form input, textarea {
   border: none;
   border-bottom: 1px solid #000;
   color: #000;
@@ -1604,7 +1559,6 @@ textarea::placeholder {
   color: #fff;
   transition: 1s;
 }
-
 
 @media (max-width: 768px) {
   .contact-intro {
