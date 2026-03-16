@@ -223,7 +223,7 @@ a:focus-visisble {
   line-height: 150%;
   text-decoration: none;
   margin: .5rem 0;
-  padding: .5rem 2rem;
+  padding: 1rem 2rem;
   width: auto;
   border-radius: 30px;
   display: inline-block;
