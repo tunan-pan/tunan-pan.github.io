@@ -724,6 +724,16 @@ footer {
   padding: 30px 0 0;
   font-size: 0.75rem;
   line-height: 150%;
+  text-wrap: balance;
+}
+
+.footer-bottom a {
+  color: #000;
+  transition: color 0.3s;
+}
+
+.footer-bottom a:hover {
+  color: var(--color-orange);
 }
 
 /* Tablet/Mobile Responsive */
