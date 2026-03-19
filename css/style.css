@@ -1562,6 +1562,7 @@ textarea::placeholder {
   padding: 0 2rem;
   border: none;
   cursor: pointer;
+  line-height: 100%!important;
 }
 
 .contact_form button:hover {
