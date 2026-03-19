@@ -218,12 +218,12 @@ a:focus-visisble {
   text-transform: uppercase;
   font-family: 'Lexend', sans-serif;
   font-weight: bold;
-  font-size: .9rem;
+  font-size: 1.1rem;
   letter-spacing: .1rem;
   line-height: 150%;
   text-decoration: none;
   margin: .5rem 0;
-  padding: 1rem 2rem;
+  padding: 0.8rem 2rem;
   width: auto;
   border-radius: 30px;
   display: inline-block;
