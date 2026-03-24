@@ -207,9 +207,10 @@ p a:hover, figcaption a:hover {
   color: #000;
 }
 
-a:focus-visisble {
+:focus-visible {
   outline: 3px solid #000;
   outline-offset: 3px;
+  border-radius: 50px;
 } 
 
 .button  {
@@ -423,7 +424,6 @@ a.logo:hover {
   margin-top: 10px;
   padding-bottom: 5px;
   border-bottom: 3px solid transparent;
-  /*box-sizing: border-box;*/
   text-decoration: none;
 }
 
@@ -440,6 +440,7 @@ a.logo:hover {
   transform: scaleX(0);
   transform-origin: top left;
   transition: transform 0s ease;
+  border-radius: 0!important;
 }
 .main-nav a:hover::before {
 transform: scaleX(1);
@@ -889,7 +890,7 @@ home page
     animation: float-up 4s ease-out forwards;
     z-index: 9999;
   }
-  
+
   @keyframes float-up {
     0% {
         opacity: 1;
@@ -899,8 +900,8 @@ home page
         opacity: 0;
         transform: translateY(-280px) scale(2);
     }
+  }
 }
-
 
 
 /* --------------------------------------------------------------------
@@ -1545,6 +1546,7 @@ contact page - page-id-23
 .contact_form input:focus, textarea:focus {
   border-bottom: 4px solid var(--color-yellow);
   outline: none;
+  border-radius: 0!important;
 }
 
 .contact_form input::placeholder,
