@@ -38,7 +38,10 @@ async function fetchAndSave() {
     const project_categories = new Set();
 
     const projects = json.data.map(p => {
-      let image = "/images/thumb-placeholder.png";
+      let image = {
+        url: "/images/thumb-placeholder.png",
+        alternativeText: ""
+      };
 
       if (p.thumbnail?.formats) {
         const formats = p.thumbnail.formats;
@@ -51,6 +54,9 @@ async function fetchAndSave() {
         if (bestFormat?.url) {
           image = bestFormat.url.replace("/uploads", "/images");
         }
+
+        image.alternativeText = p.thumbnail.alternativeText || "";
+
       }
 
       // Process images

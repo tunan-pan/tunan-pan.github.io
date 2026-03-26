@@ -8,20 +8,25 @@ layout: base.njk
   <div class="column-left">
     <div class="column-left-inner">
       <div class="project-meta">
-        {% if project.category %}
+        {% if project.category == "sandbox" %}
           <span class="project-categories">
             <a href="/categories/{{ project.category | slug }}/">{{ project.category }}</a> &emsp;|&emsp;
           </span>
         {% endif %}
 
-        {% if project.tags and project.tags.length %}
-          <span class="project-tags">
-            {% for tag in project.tags %}
-            <a href="/tags/{{ tag | slugify }}/">{{ tag }}</a>{% if not loop.last %}, {% endif %} 
-            {% endfor %}
-          </span>
+        {% if project.tags %}
+          {% for tag in project.tags %}
+            {% if tag == "Case Study" %}
+              <span class="tag tag--case">Case study</span>
+            {% endif %}
+            {% if tag == "WIP" %}
+              <span class="tag tag--wip">WIP</span>
+            {% endif %}
+          {% endfor %}
         {% endif %}
+
       </div>
+
 
       <h1>{{ project.title }}</h1>
 
@@ -30,6 +35,19 @@ layout: base.njk
           {{ project.leftdescription | safe }}
         {% endif %}
       </div>
+
+          
+
+      {% set filteredTags = project.tags | reject("equalto", "Case Study") | reject("equalto", "WIP") %}
+
+      {% if filteredTags.length %}
+        <span class="project-tags">
+          {% for tag in filteredTags %}
+            <a href="/tags/{{ tag | slugify }}/">{{ tag }}</a>{% if not loop.last %}, {% endif %}
+          {% endfor %}
+        </span>
+      {% endif %}
+
     
       <div class="project-role">
         <p class="side-heading">My Role:</p>

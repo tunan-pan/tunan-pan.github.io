@@ -5,54 +5,135 @@ title: Projects
 
 <div class="projects-intro">
   <h1>My Projects</h1>
+  <p>A mix of case studies, experiments, and client work — all things I've made and learned from.</p>
   <p>This page is still a work in progress and being updated regularly!</p>
 </div>
 
-<!-- DEBUG: Remove this after checking 
-  <details>
-    <summary>Debug: Click to see project data</summary>
-    <pre style="background: #f5f5f5; padding: 1rem; overflow: auto;">
-{{ projects_build | dump(2) }}
-    </pre>
-  </details>
-</div>-->
+<pre>{{ project.image | dump }}</pre>
 
-<div class="projects-grid fade-in">
+{% set featured = projects_build | whereCategory("featured") %}
+{% set sandbox = projects_build | whereCategory("sandbox") %}
+{% set more = projects_build | whereCategory("more") %}
 
-  {% for project in projects_build %}
-    <article class="project-item">
+{# ── Featured Work ── #}
+<section class="projects-section fade-in">
+  <div class="section-header">
+    <h2 class="section-label">Featured Work</h2>
+    <p class="section-desc">Projects related to UX, interactive design, and accessibility.</p>
+  </div>
 
-      {% if project.image %}
-        <div class="project-image">
-          <a href="/projects/{{ project.slug }}/" tabindex="-1" aria-hidden="true">
-            <img src="{{ project.image.url or project.image }}" alt="">
-          </a>
-        </div>
-      {% endif %}
-
-      {% if project.category %}
-        <span class="project-categories">
-          {% if project.category is iterable and project.category is not string %}
-            {% for cat in project.category %}
-              <a href="/categories/{{ cat | slug }}/">{{ cat }}</a>{% if not loop.last %}, {% endif %}
-            {% endfor %}
-          {% else %}
-            <a href="/categories/{{ project.category | slug }}/">{{ project.category }}</a>
+  <div class="projects-grid projects-grid--featured fade-in">
+    {% for project in featured %}
+        <article class="project-card{% if loop.first %} project-card--hero{% endif %}">
+          
+          {% if project.image %}
+            <a href="/projects/{{ project.slug }}/" class="project-card__thumb" tabindex="-1">
+              <img src="{{ project.image.url or project.image }}" alt="">
+            </a>
           {% endif %}
-        </span>
-      {% endif %}
 
-      <h2><a href="/projects/{{ project.slug }}/">{{ project.title }}</a></h2>
+          <div class="project-card__body">
 
-      {% if project.tags %}
-        <span class="project-tags">
-          {% for tag in project.tags %}
-            <a href="/tags/{{ tag | slugify }}/">{{ tag }}</a>{% if not loop.last %}, {% endif %}
-          {% endfor %}
-        </span>
+             <div class="project-card__meta">
+              {% if project.tags %}
+                {% for tag in project.tags %}
+                  {% if tag == "Case Study" %}
+                    <span class="tag tag--case">Case study</span>
+                  {% endif %}
+                  {% if tag == "WIP" %}
+                    <span class="tag tag--wip">WIP</span>
+                  {% endif %}
+                {% endfor %}
+              {% endif %}
+            </div>
+            
+            <h3><a href="/projects/{{ project.slug }}/">{{ project.title }}</a></h3>
+            
+            {% if loop.first and project.description %}
+              <p class="project-card__desc">{{ project.description }}</p>
+            {% endif %}
+            
+
+            {% set filteredTags = project.tags | reject("equalto", "Case Study") | reject("equalto", "WIP") %}
+
+            {% if filteredTags.length %}
+              <span class="project-tags">
+                {% for tag in filteredTags %}
+                  <a href="/tags/{{ tag | slugify }}/">{{ tag }}</a>{% if not loop.last %}, {% endif %}
+                {% endfor %}
+              </span>
+            {% endif %}
+
+
+          </div>
+
+        </article>
+      {% endfor %}
+    </div>
+  </section>
+
+{# ── Sandbox ── #}
+{% if sandbox | length %}
+<section class="projects-section projects-section--sandbox fade-in">
+
+  <div class="section-header">
+    <h2 class="section-label">Sandbox</h2>
+    <p class="section-desc">Smaller experiments built to learn, explore, or just have fun.</p>
+  </div>
+
+<div class="projects-grid projects-grid--sandbox fade-in">
+  {% for project in sandbox %}
+    <article class="project-card project-card--sandbox">
+      
+      {% if project.image %}
+        <a href="/projects/{{ project.slug }}/" class="project-card__thumb" tabindex="-1">
+          <img src="{{ project.image.url or project.image }}" alt="">
+        </a>
       {% endif %}
+      <div class="project-card__body">
+        <h3><a href="/projects/{{ project.slug }}/">{{ project.title }}</a></h3>
+      </div>
 
     </article>
   {% endfor %}
-
 </div>
+</section>
+{% endif %}
+
+{# ── More Work ── #}
+{% if more | length %}
+<section class="projects-section projects-section--more fade-in">
+<div class="section-header">
+  <h2 class="section-label">Additional Work</h2>
+  <p class="section-desc">Projects from my previous roles in design and social impact.</p>
+</div>
+
+<div class="projects-grid projects-grid--more fade-in">
+  {% for project in more %}
+    <article class="project-card project-card--small">
+
+      {% if project.image %}
+        <a href="/projects/{{ project.slug }}/" class="project-card__thumb" tabindex="-1">
+          <img src="{{ project.image.url or project.image }}" alt="">
+        </a>
+      {% endif %}
+
+      <div class="project-card__body">
+        
+        <h3><a href="/projects/{{ project.slug }}/">{{ project.title }}</a></h3>
+        
+        {% if project.tags %}
+          <span class="project-tags">
+            {% for tag in project.tags %}
+              <a href="/tags/{{ tag | slugify }}/">{{ tag }}</a>{% if not loop.last %}, {% endif %}
+            {% endfor %}
+          </span>
+        {% endif %}
+
+      </div>
+
+    </article>
+  {% endfor %}
+</div>
+</section>
+{% endif %}

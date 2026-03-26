@@ -36,7 +36,7 @@ hoverTarget.addEventListener('mouseenter', (e) => {
     // Create particles continuously while hovering
     particleInterval = setInterval(() => {
         createParticle(mouseX, mouseY);
-    }, 400);
+    }, 600);
 });
 
 hoverTarget.addEventListener('mousemove', (e) => {
