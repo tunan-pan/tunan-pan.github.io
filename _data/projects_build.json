@@ -10,7 +10,7 @@
     "description": null,
     "content": "<p>My first \"vibe coding\" project with Claude. I created initial mockups in Figma, described my vision, and iteratively refined the code (both by hand and through Claude).</p><p>This came about as I needed a 4 minute timer for a board game, but existing visual timers only offered preset durations — usually an hour. I didn't want to see 4 minutes as a tiny sliver of a 60-minute circle, I wanted the full circle to represent my chosen time. So I built my own customizable visual timer where you set the max time, and the entire circle represents exactly that.</p><figure class=\"image\"><img style=\"aspect-ratio:1855/1097;\" src=\"/images/visual_timer_1_b48e098b9c.png\" alt=\"\" srcset=\"/images/thumbnail_visual_timer_1_b48e098b9c.png 245w,/images/small_visual_timer_1_b48e098b9c.png 500w,/images/medium_visual_timer_1_b48e098b9c.png 750w,/images/large_visual_timer_1_b48e098b9c.png 1000w,\" sizes=\"100vw\" width=\"1855\" height=\"1097\"><figcaption>initial mockup ideas</figcaption></figure>",
     "leftbuttonText": "Try the timer",
-    "leftbuttonUrl": "https://tunan.art/sandbox/visual-timer/",
+    "leftbuttonUrl": "../../sandbox/visual-timer",
     "role": "",
     "deliverables": "",
     "images": []
@@ -19,7 +19,7 @@
     "title": "Games For Change — Driving Social Impact Through Games",
     "slug": "g4c",
     "url": "/projects/g4c/",
-    "image": "/images/large_thumb_g4c_017241b4c5.png",
+    "image": "/images/large_thumb_g4c_featured_eab34786cf.png",
     "category": "featured",
     "tags": [
       "Web/UX",

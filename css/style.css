@@ -244,6 +244,7 @@ p a:hover, figcaption a:hover {
   border: 0;
   font-size: 1rem;
   padding: 0.6rem 1.5rem;
+  margin-top: 16px;
 }
 .button-projects:hover {
   background-color: var(--color-orange);

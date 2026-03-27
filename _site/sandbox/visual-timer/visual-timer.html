@@ -29,15 +29,17 @@
     body {
       margin: 0;
       padding: 0;
+      background: /*linear-gradient(135deg, #667eea 0%, #764ba2 100%);*/
+      radial-gradient(circle at bottom right, #E481C6 -10%, #CB60BB 15%, #732F8E 40%, #3E1175 70%, #1E1E86 120%);
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+      font-size: 16px;
+    }
+
+    .wrapper {
       height: 100vh;
       display: flex;
       justify-content: center;
       align-items: flex-start;
-      background: /*linear-gradient(135deg, #667eea 0%, #764ba2 100%);*/
-      radial-gradient(circle at bottom right, #E481C6 -10%, #CB60BB 15%, #732F8E 40%, #3E1175 70%, #1E1E86 120%);
-      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
-      overflow: hidden;
-      font-size: 16px;
     }
 
     .screen {
@@ -494,9 +496,27 @@
       background-image: url('button_pause.png');
     }
 
+    .footer {
+      z-index: 1000;
+      color: #fff;
+      text-align: center;
+      font-size: .8rem;
+      background-color:rgba(0, 0, 0, 0.1);
+      padding: 10px 10px 16px;
+    }
+    .footer a {
+      color: #fff;
+      text-underline-offset: 6px;
+    }
+    .footer a:hover {
+      color:rgba(255, 255, 255, 0.666)
+    }
+
   </style>
 </head>
 <body>
+
+<div class="wrapper">
   <div id="setupScreen" class="screen">
     <div class="setup-container">
       <div class="top-controls">
@@ -572,6 +592,11 @@
 
       </div>
     </div>
+  </div>
+</div>
+
+  <div class="footer">
+    <p><a href="https://tunan.art/projects/visual-timer/" target="_blank">An experiment by Tunan Pan.</a></p>
   </div>
 
   <script>
