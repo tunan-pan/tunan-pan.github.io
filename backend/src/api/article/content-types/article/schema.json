@@ -48,12 +48,11 @@
       "target": "api::tag.tag",
       "mappedBy": "articles"
     },
-    "leftdescription": {
-      "type": "customField",
-      "customField": "plugin::ckeditor5.CKEditor",
-      "options": {
-        "preset": "defaultHtml"
-      }
+    "leftbuttonText": {
+      "type": "string"
+    },
+    "leftbuttonUrl": {
+      "type": "string"
     },
     "role": {
       "type": "customField",

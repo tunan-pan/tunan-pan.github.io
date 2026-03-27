@@ -10,7 +10,7 @@ layout: base.njk
       <div class="project-meta">
         {% if project.category == "sandbox" %}
           <span class="project-categories">
-            <a href="/categories/{{ project.category | slug }}/">{{ project.category }}</a> &emsp;|&emsp;
+            <a href="/categories/{{ project.category | slug }}/">{{ project.category }}</a>
           </span>
         {% endif %}
 
@@ -30,12 +30,11 @@ layout: base.njk
 
       <h1>{{ project.title }}</h1>
 
-      <div class="leftdescription">
-        {% if project.leftdescription %}
-          {{ project.leftdescription | safe }}
+      <div class="leftbutton">
+        {% if project.leftbuttonText and project.leftbuttonUrl %}
+          <a class="button button-projects" href="{{ project.leftbuttonUrl }}" target="_blank">{{ project.leftbuttonText }} <span class="arrow" aria-hidden="true">→</span></a>
         {% endif %}
       </div>
-
           
 
       {% set filteredTags = project.tags | reject("equalto", "Case Study") | reject("equalto", "WIP") %}
@@ -50,14 +49,14 @@ layout: base.njk
 
     
       <div class="project-role">
-        <p class="side-heading">My Role:</p>
         {% if project.role %}
+          <p class="side-heading">My Role:</p>
           {{ project.role | safe }}
         {% endif %}
       </div>
       <div class="project-deliverables">
-        <p class="side-heading">Deliverables:</p>
         {% if project.deliverables %}
+          <p class="side-heading">Deliverables:</p>
           {{ project.deliverables | safe }}
         {% endif %}
       </div>

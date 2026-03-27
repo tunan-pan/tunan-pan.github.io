@@ -201,48 +201,52 @@ p a:hover, figcaption a:hover {
 } 
 
 .button  {
-  background-color: var(--color-orange);
-  color: #fff;
-  text-transform: uppercase;
   font-family: 'Lexend', sans-serif;
   font-weight: bold;
-  font-size: 1.1rem;
-  letter-spacing: .1rem;
-  line-height: 150%;
+  text-transform: uppercase;
   text-decoration: none;
+  letter-spacing: 0.1rem;
   margin: .5rem 0;
-  padding: 0.8rem 2rem;
   width: auto;
-  border-radius: 30px;
+  border-radius: 999px;
   display: inline-block;
   transition: 1s;
 }
 
-.button:hover {
+.button-primary {
+  background-color: var(--color-orange);
+  color: #fff;  
+  font-size: 1.1rem;
+  line-height: 150%;
+  padding: 0.8rem 2rem;
+}
+.button-primary:hover {
   background-color: #000;
   color: #fff;
 }
 
 .button-secondary {
   border: 1px solid #000;
-  text-transform: uppercase;
-  font-family: 'Lexend', sans-serif;
-  font-weight: bold;
-  font-size: .8rem;
   color: #000;
-  letter-spacing: .1rem;
+  font-size: .8rem;
   line-height: 150%;
-  text-decoration: none;
-  margin: .5rem 0;
   padding: .4rem 1.5rem;
-  width: auto;
-  border-radius: 30px;
-  display: inline-block;
   transition: 0.8s;
 }
-
 .button-secondary:hover {
   background-color: #000;
+  color: #fff;
+}
+
+.button-projects {
+  background-color: #000;
+  color: #fff;
+  border: 0;
+  font-size: 1rem;
+  padding: 0.6rem 1.5rem;
+}
+.button-projects:hover {
+  background-color: var(--color-orange);
   color: #fff;
 }
 
@@ -872,7 +876,7 @@ home page
 
 @media (prefers-reduced-motion: no-preference) {
   .particle {
-    position: fixed;
+    position: fixed; 
     pointer-events: none;
     font-size: 40px;
     animation: float-up 6s ease-out forwards;
@@ -1272,11 +1276,11 @@ projects page - page-id-22
 }
 
 .project-card--hero .project-card__body {
-  padding: 28px 20px;
+  padding: 20px;
   display: flex;
   flex-direction: column;
-  justify-content: center;
   gap: 4px;
+  justify-content: center;
 }
 
 .project-card--hero .project-card__body h3 {
@@ -1355,9 +1359,14 @@ projects page - page-id-22
   display: inline-block;
 }
 
+
 .projects-grid .project-tags {
   margin-top: auto;
   padding-top: 20px;
+}
+
+.project-card--hero .project-tags {
+  margin-top: 0!important;
 }
 
 .project-categories {

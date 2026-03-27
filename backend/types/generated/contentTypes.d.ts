@@ -497,13 +497,8 @@ export interface ApiArticleArticle extends Struct.CollectionTypeSchema {
       'images' | 'files' | 'videos' | 'audios',
       true
     >;
-    leftdescription: Schema.Attribute.RichText &
-      Schema.Attribute.CustomField<
-        'plugin::ckeditor5.CKEditor',
-        {
-          preset: 'defaultHtml';
-        }
-      >;
+    leftbuttonText: Schema.Attribute.String;
+    leftbuttonUrl: Schema.Attribute.String;
     locale: Schema.Attribute.String & Schema.Attribute.Private;
     localizations: Schema.Attribute.Relation<
       'oneToMany',
