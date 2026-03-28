@@ -70,29 +70,6 @@
     "images": []
   },
   {
-    "title": "Designing a Predictive Support App for Autistic Meltdown Prevention",
-    "slug": "support-dog",
-    "url": "/projects/support-dog/",
-    "image": {
-      "url": "/images/thumb-placeholder.png",
-      "alternativeText": ""
-    },
-    "category": "featured",
-    "tags": [
-      "Web/UX",
-      "Branding",
-      "WIP"
-    ],
-    "order": 320,
-    "description": null,
-    "content": "",
-    "leftbuttonText": null,
-    "leftbuttonUrl": null,
-    "role": "",
-    "deliverables": "",
-    "images": []
-  },
-  {
     "title": "Yacht Rock — Making an Accessible Game on Board Game Arena",
     "slug": "yacht-rock",
     "url": "/projects/yacht-rock/",
@@ -135,7 +112,7 @@
     "slug": "jnj",
     "url": "/projects/jnj/",
     "image": "/images/large_thumb_jnj_ar_3e45cad895.png",
-    "category": "more",
+    "category": "featured",
     "tags": [
       "Interactive"
     ],

@@ -184,14 +184,20 @@
   .chip-icon { font-size: 15px; line-height: 1; }
 
 
+  #chipGroups {
+    position: relative;
+    z-index: -1;
+  }
 
-#chipGroups.collapsed {
-  display: none;
-}
+  #chipGroups.collapsed {
+    display: none;
+  }
 
 .explore-toggle {
   text-align: center;
   margin-bottom: 1rem;
+  position: relative;
+    z-index: -1;
 }
 
 .explore-toggle button {
@@ -348,7 +354,7 @@
     <div id="selectedChips" class="selected-chips"></div>
 
     <div class="explore-toggle a3">
-    <button id="toggleChips">or explore common cravings ↓</button>
+    <button id="toggleChips">explore common cravings ↓</button>
   </div>
 
     

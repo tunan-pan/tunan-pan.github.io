@@ -13,7 +13,7 @@ eleventyComputed:
   <h1>Category: {{ project_category }}</h1>
 </div>
 
-<div class="projects-grid">
+<div class="projects-grid projects-grid--more fade-in">
 
   {% for project in projects_build %}
     {# Check if the category matches the project's category #}
@@ -33,29 +33,19 @@ eleventyComputed:
       {% endif %}
 
       {% if matches %}
-        <article class="project-item">
+        <article class="project-card project-card--small">
 
           {% if project.image %}
-            <div class="project-image">
-              <a href="/projects/{{ project.slug }}/" tabindex="-1" aria-hidden="true">
+              <a href="/projects/{{ project.slug }}/" class="project-card__thumb" tabindex="-1" aria-hidden="true">
                 <img src="{{ project.image.url or project.image }}" alt="">
               </a>
-            </div>
           {% endif %}
 
-          {% if project.category %}
-            <span class="project-categories">
-              {% if project.category is iterable and project.category is not string %}
-                {% for cat in project.category %}
-                  <a href="/categories/{{ cat | slug }}/">{{ cat }}</a>{% if not loop.last %}, {% endif %}
-                {% endfor %}
-              {% else %}
-                <a href="/categories/{{ project.category | slug }}/">{{ project.category }}</a>
-              {% endif %}
-            </span>
-          {% endif %}
+          
 
-          <h2><a href="/projects/{{ project.slug }}/">{{ project.title }}</a></h2>
+          <div class="project-card__body">
+            <h3><a href="/projects/{{ project.slug }}/">{{ project.title }}</a></h3>
+
 
           {% if project.tags %}
             <span class="project-tags">
@@ -73,5 +63,5 @@ eleventyComputed:
 </div>
 
 <div class="back-to-projects">
-  <p><a class="button" href="/projects/"><span aria-hidden="true">&larr;</span> Back to all projects</a></p>
+  <p><a class="button button-secondary" href="/projects/"><span aria-hidden="true">&larr;</span> Back to all projects</a></p>
 </div>
