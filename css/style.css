@@ -251,16 +251,29 @@ p a:hover, figcaption a:hover {
   color: #fff;
 }
 
+.arrow, .arrow-back {
+  display: inline-block;
+  transition: transform 0.4s ease; 
+  font-family: 'Inclusive Sans', sans-serif;
+}
+
+.back {
+  font-size: 0.7rem;
+  color: #000;
+  font-family: 'Lexend', sans-serif;
+  text-transform: uppercase;
+  text-decoration: none;
+  letter-spacing: 0.03rem;
+  margin: 0 0 10px 0;
+}
+.back:hover {
+  color: var(--color-orange);
+}
+
 @media (prefers-reduced-motion: no-preference) {
-  .arrow {
-    display: inline-block;
-    transition: transform 0.4s ease; 
-    font-family: 'Inclusive Sans', sans-serif;
-  }
   .button:hover .arrow {
     transform: translateX(5px); 
   }
-
   .button-secondary:hover .arrow {
     transform: translateX(3px); 
   }
@@ -1466,6 +1479,9 @@ Individual project pages
   border-radius: 10px;
 }
 
+.column-right {
+  margin-top: 32px;
+}
 
 .project-meta {
   display: flex;
@@ -1570,6 +1586,10 @@ th { border-bottom: 2px solid #333; }
   margin: 30px auto!important; /* spacing around images */
   box-shadow: var(--shadow-light);
   border-radius: 10px;
+}
+
+.project-content > p:first-child {
+  margin-top: 24px;
 }
 
 
