@@ -7,22 +7,17 @@ layout: base.njk
   
   <div class="column-left">
     <div class="column-left-inner">
+
+    
+      
+
       <div class="project-meta">
+   <a class="back" href="/projects/"><span aria-hidden="true" class="arrow-back">&larr;</span> Back to all projects</a>
+
         {% if project.category == "sandbox" %}
-          <span class="project-categories">
+          &ensp;|&ensp;<span class="project-categories">
             <a href="/categories/{{ project.category | slug }}/">{{ project.category }}</a>
           </span>
-        {% endif %}
-
-        {% if project.tags %}
-          {% for tag in project.tags %}
-            {% if tag == "Case Study" %}
-              <span class="tag tag--case">Case study</span>
-            {% endif %}
-            {% if tag == "WIP" %}
-              <span class="tag tag--wip">WIP</span>
-            {% endif %}
-          {% endfor %}
         {% endif %}
 
       </div>
@@ -35,7 +30,19 @@ layout: base.njk
           <a class="button button-projects" href="{{ project.leftbuttonUrl }}" target="_blank">{{ project.leftbuttonText }} <span class="arrow" aria-hidden="true">→</span></a>
         {% endif %}
       </div>
-          
+      
+    
+      {% if project.tags %}
+          {% for tag in project.tags %}
+            {% if tag == "Case Study" %}
+              <span class="tag tag--case">Case study</span>&ensp;
+            {% endif %}
+            {% if tag == "WIP" %}
+              <span class="tag tag--wip">WIP</span>&ensp;
+            {% endif %}
+          {% endfor %}
+        {% endif %}
+
 
       {% set filteredTags = project.tags | reject("equalto", "Case Study") | reject("equalto", "WIP") %}
 
