@@ -7,7 +7,7 @@ const header = document.querySelector('.site-header');
         window.requestAnimationFrame(function() {
           const scrollY = window.scrollY;
           
-          if (scrollY > 60 && !isScrolled) {
+          if (scrollY > 80 && !isScrolled) {
             header.classList.add('scrolled');
             isScrolled = true;
           } else if (scrollY < 40 && isScrolled) {
