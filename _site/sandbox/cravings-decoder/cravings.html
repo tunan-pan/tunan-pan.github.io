@@ -1,0 +1,1004 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Cravings Interpreter | by Tunan Pan</title>
+<link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,500;1,400&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+
+  body {
+    font-family: 'DM Sans', sans-serif;
+    min-height: 100vh;
+    color: #2A1A14;
+    transition: background-color 1s ease;
+    background-color: hsl(20,80%,96%);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 3.5rem 2.5rem 0;
+  }
+
+  #bgGradient {
+    position: fixed; inset: 0; z-index: 0; opacity: 0;
+    transition: opacity 1s ease, background 1s ease;
+    pointer-events: none;
+  }
+
+  .page {
+    position: relative; z-index: 1;
+    width: 100%; max-width: 600px;
+    display: flex;
+  flex-direction: column;
+  justify-content: center;
+  min-height: 80vh;
+  }
+
+  #pickerScreen { animation: fadeUp 0.5s ease both; }
+  #resultsScreen { display: none; animation: fadeUp 0.5s ease both; }
+
+  header { text-align: center; margin-bottom: 2.75rem; }
+
+  .eyebrow {
+    font-size: 11px; letter-spacing: 0.14em; text-transform: uppercase;
+    color: #A0624E; font-weight: 400; margin-bottom: 0.6rem;
+  }
+
+  h1 {
+    font-family: 'Lora', serif;
+    font-size: clamp(36px, 5vw, 40px);
+    font-weight: 400; line-height: 1.3; margin-bottom: 0.55rem; color: #2A1A14;
+  }
+  h1 em { font-style: italic; color: #6B3A2A; }
+
+  .header-sub { font-size: 16px; color: #A0624E; font-weight: 300; line-height: 1.6; }
+
+  .disclaimer {
+    display: inline-block; font-size: 11px; color: #7A4A38;
+    background: rgba(42,26,20,0.09); border-radius: 99px;
+    padding: 3px 12px; margin-top: 0.75rem; font-style: italic;
+  }
+
+  /* search */
+  .search-wrap { position: relative; margin-bottom: 3.25rem; }
+
+  .search-input {
+    width: 100%; font-family: 'DM Sans', sans-serif; font-size: 14px;
+    padding: 11px 44px 11px 16px; border-radius: 99px;
+    border: 1.5px solid rgba(42,26,20,0.18);
+    background: rgba(255,255,255,0.65); color: #2A1A14; outline: none;
+    transition: border-color 0.18s, background 0.18s;
+  }
+  .search-input::placeholder { color: #A0624E; }
+  .search-input:focus { border-color: rgba(42,26,20,0.35); background: rgba(255,255,255,0.88); }
+
+  .search-icon {
+    position: absolute; right: 14px; top: 50%; transform: translateY(-50%);
+    font-size: 14px; opacity: 0.35; pointer-events: none;
+    /* decorative — hidden from screen readers via aria-hidden in HTML */
+  }
+
+  /* dropdown — high z-index so it sits above chips */
+  .suggestions {
+    position: absolute; top: calc(100% + 6px); left: 0; right: 0;
+    background: #FFF8F4; border: 1.5px solid rgba(42,26,20,0.2);
+    border-radius: 14px; overflow: hidden; z-index: 1000;
+    box-shadow: 0 8px 28px rgba(42,26,20,0.14);
+    display: none;
+  }
+  .suggestions.open { display: block; }
+
+  .suggestion-item {
+    padding: 10px 16px; font-size: 13px; color: #5C2A18; cursor: pointer;
+    display: flex; align-items: center; gap: 10px; transition: background 0.12s;
+    border: none; width: 100%; background: transparent; text-align: left;
+    font-family: 'DM Sans', sans-serif;
+  }
+  .suggestion-item:hover,
+  .suggestion-item:focus,
+  .suggestion-item[aria-selected="true"] {
+    background: rgba(253,232,224,0.85); outline: none;
+  }
+  .sug-icon { font-size: 16px; width: 20px; text-align: center; }
+
+
+
+.search-row {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+  margin-bottom: 1rem;
+}
+
+.search-row .search-wrap {
+  flex: 1;
+  margin-bottom: 0;
+}
+
+/* selected chips in search bar */
+
+.selected-chips {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  margin-bottom: 1.5rem;
+}
+
+.selected-chip {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 6px 10px;
+  border-radius: 999px;
+  background: #2A1A14;
+  color: #FDE8E0;
+  font-size: 12px;
+}
+
+.selected-chip button {
+  all: unset;
+  cursor: pointer;
+  font-size: 12px;
+  opacity: 0.7;
+}
+
+.selected-chip button:hover {
+  opacity: 1;
+}
+
+
+  /* chip groups */
+  .group { margin-bottom: 1.75rem; }
+
+  .group-label {
+    font-size: 10px; letter-spacing: 0.12em; text-transform: uppercase;
+    color: #A0624E; font-weight: 500; margin-bottom: 0.65rem;
+    padding-left: 2px;
+  }
+
+  .chips-grid { display: flex; flex-wrap: wrap; gap: 7px; }
+
+  .chip {
+    font-family: 'DM Sans', sans-serif; font-size: 13px; font-weight: 400;
+    padding: 7px 14px 7px 10px; border-radius: 99px;
+    border: 1.5px solid rgba(42,26,20,0.16);
+    background: rgba(255,255,255,0.6); color: #5C2A18; cursor: pointer;
+    transition: all 0.18s ease; user-select: none;
+    display: flex; align-items: center; gap: 6px;
+    /* keyboard accessible */
+    position: relative;
+  }
+  .chip:hover {
+    border-color: rgba(42,26,20,0.32); color: #2A1A14;
+    background: rgba(255,255,255,0.85); transform: translateY(-1px);
+  }
+  .chip:focus-visible {
+    outline: 2.5px solid #6B3A2A; outline-offset: 2px;
+  }
+  .chip.selected {
+    background: #2A1A14; border-color: #2A1A14;
+    color: #FDE8E0; transform: translateY(-1px);
+  }
+  .chip-icon { font-size: 15px; line-height: 1; }
+
+
+
+#chipGroups.collapsed {
+  display: none;
+}
+
+.explore-toggle {
+  text-align: center;
+  margin-bottom: 1rem;
+}
+
+.explore-toggle button {
+  background: none;
+  border: none;
+  color: #A0624E;
+  font-size: 13px;
+  cursor: pointer;
+}
+
+
+
+
+
+  .submit-row {
+    display: flex; align-items: center; justify-content: space-between;
+    margin-top: 0.25rem;
+  }
+
+  .count-label { font-size: 13px; color: #A0624E; font-style: italic; }
+  .count-label strong { color: #6B3A2A; font-style: normal; font-weight: 500; }
+
+  .submit-btn {
+    font-family: 'Lora', serif; font-size: 15px; font-style: italic; font-weight: 400;
+    padding: 11px 28px; border-radius: 99px;
+    border: 1.5px solid #2A1A14; background: #2A1A14; color: #FDE8E0;
+    cursor: pointer; transition: all 0.2s ease;
+  }
+  .submit-btn:hover:not(:disabled) { background: #6B3A2A; border-color: #6B3A2A; transform: translateY(-1px); }
+  .submit-btn:focus-visible { outline: 2.5px solid #6B3A2A; outline-offset: 3px; }
+  .submit-btn:disabled { opacity: 0.3; cursor: not-allowed; }
+
+  /* results */
+  .results-eyebrow {
+    font-size: 11px; letter-spacing: 0.14em; text-transform: uppercase;
+    color: #A0624E; font-weight: 400; margin-bottom: 0.4rem; text-align: center;
+  }
+  .results-heading {
+    font-family: 'Lora', serif; font-size: clamp(22px, 4vw, 28px);
+    font-weight: 400; color: #2A1A14; margin-bottom: 2rem; text-align: center;
+  }
+
+  .result-card {
+    border-radius: 18px; padding: 1.25rem 1.4rem;
+    margin-bottom: 1rem; border: 1.5px solid transparent;
+    animation: fadeUp 0.45s ease both;
+  }
+
+  .rc-peach    { background: #FDEEE8; border-color: #F2B49B; }
+  .rc-mint     { background: #E4F6F0; border-color: #80C9B5; }
+  .rc-lavender { background: #EEE9FA; border-color: #B8A8E8; }
+  .rc-butter   { background: #FEF6DC; border-color: #E8C96A; }
+  .rc-sky      { background: #E3F1FB; border-color: #90C4E8; }
+  .rc-rose     { background: #FBEAF0; border-color: #E8A0BC; }
+  .rc-sand     { background: #F5EFE4; border-color: #D4B896; }
+
+  /* All card text colours confirmed AA/AAA against their backgrounds */
+  .rc-peach    .rc-craving, .rc-peach    .rc-nutrient, .rc-peach    .rc-note { color: #5C2010; }
+  .rc-mint     .rc-craving, .rc-mint     .rc-nutrient, .rc-mint     .rc-note { color: #124838; }
+  .rc-lavender .rc-craving, .rc-lavender .rc-nutrient, .rc-lavender .rc-note { color: #342470; }
+  .rc-butter   .rc-craving, .rc-butter   .rc-nutrient, .rc-butter   .rc-note { color: #4A3200; }
+  .rc-sky      .rc-craving, .rc-sky      .rc-nutrient, .rc-sky      .rc-note { color: #0E3458; }
+  .rc-rose     .rc-craving, .rc-rose     .rc-nutrient, .rc-rose     .rc-note { color: #5C1838; }
+  .rc-sand     .rc-craving, .rc-sand     .rc-nutrient, .rc-sand     .rc-note { color: #3D2810; }
+
+  .rc-craving {
+    font-size: 11px; letter-spacing: 0.1em; text-transform: uppercase;
+    font-weight: 500; margin-bottom: 4px;
+  }
+  .rc-nutrient { font-family: 'Lora', serif; font-size: 17px; font-weight: 500; margin-bottom: 7px; }
+  .rc-note { font-size: 13.5px; line-height: 1.65; font-weight: 300; }
+
+  .start-over {
+    font-family: 'DM Sans', sans-serif; font-size: 13px;
+    padding: 10px 24px; border-radius: 99px;
+    border: 1.5px solid rgba(42,26,20,0.28); background: transparent;
+    color: #6B3A2A; cursor: pointer; transition: all 0.18s ease;
+    display: block; margin: 1.5rem auto 0;
+  }
+  .start-over:hover { border-color: #2A1A14; color: #2A1A14; }
+  .start-over:focus-visible { outline: 2.5px solid #6B3A2A; outline-offset: 3px; }
+
+    #footer {
+      width: 100%;
+      z-index: 1000;
+      bottom: 0;
+      text-align: center;
+      font-size: .7rem;
+      padding: 10px 10px 16px;
+      margin-top: 100px;
+    }
+    #footer a {
+      color:rgba(0, 0, 0, 0.5);
+      text-underline-offset: 6px;
+    }
+    #footer a:hover {
+      color:rgba(0, 0, 0, 1);
+    }
+
+
+  @keyframes fadeUp {
+    from { opacity: 0; transform: translateY(12px); }
+    to   { opacity: 1; transform: translateY(0); }
+  }
+
+  .a1 { animation: fadeUp 0.5s 0.05s ease both; }
+  .a2 { animation: fadeUp 0.5s 0.1s  ease both; }
+  .a3 { animation: fadeUp 0.5s 0.15s ease both; }
+  .a4 { animation: fadeUp 0.5s 0.2s  ease both; }
+</style>
+</head>
+<body>
+
+<div id="bgGradient" aria-hidden="true"></div>
+
+<div class="page">
+  
+  <div id="pickerScreen">
+    <header>
+      <p class="eyebrow">a gentle check-in</p>
+      <h1>what is my body <em>asking for?</em></h1>
+      <p class="header-sub">what have you been craving lately, and what does it mean?</p>
+      <!--<span class="disclaimer">not medical advice, just a curious nudge</span>-->
+    </header>
+
+    <div class="search-row a1">
+      
+      <div class="search-wrap">
+        <input
+          class="search-input"
+          type="text"
+          id="searchInput"
+          placeholder="type a craving, or pick below..."
+          autocomplete="off"
+          role="combobox"
+          aria-expanded="false"
+          aria-controls="suggestions"
+          aria-autocomplete="list"
+          aria-label="Search for a craving"
+        />
+        <span class="search-icon" aria-hidden="true">✦</span>
+        <div
+          class="suggestions"
+          id="suggestions"
+          role="listbox"
+        ></div>
+      </div>
+
+      <button class="submit-btn" id="submitBtn" disabled onclick="showResults()">
+        tell me why →
+      </button>
+    </div>
+
+    <div id="selectedChips" class="selected-chips"></div>
+
+    <div class="explore-toggle a3">
+    <button id="toggleChips">or explore common cravings ↓</button>
+  </div>
+
+    
+    <div id="chipGroups" class="collapsed"></div>
+
+  </div>
+
+  
+
+    
+
+  <div id="resultsScreen" role="main">
+    <p class="results-eyebrow">here's what might be going on</p>
+    <h2 class="results-heading">listening to your body</h2>
+    <div id="resultsCards"></div>
+    <button class="start-over" onclick="startOver()">← check again</button>
+  </div>
+</div>
+
+<footer id="footer">
+  <a href="https://tunan.art" target="_blank" rel="noopener">an experiment by tunan pan</a>
+</footer>
+
+<script>
+/* ── DATA ─────────────────────────────────────────── */
+
+const GROUPS = [
+  {
+    id: 'taste',
+    label: 'flavours & tastes',
+    ids: ['sweet','salty','spicy','bitter','cold','citrus','umami'],
+  },
+  {
+    id: 'texture',
+    label: 'textures',
+    ids: ['tex_crunchy','tex_chewy','tex_soft','tex_creamy','tex_watery','tex_crispy','tex_other'],
+  },
+  {
+    id: 'food',
+    label: 'specific foods',
+    ids: ['chocolate','dairy','red_meat','carbs','eggs','leafy','fish','nuts','fruit','fatty','caffeine'],
+  },
+  {
+    id: 'other',
+    label: 'something else',
+    ids: ['nothing'],
+  },
+];
+
+const CRAVINGS = [
+  /* ── TASTES ── */
+  {id:'sweet', icon:'🍯', label:'something sweet', color:'rc-peach',
+   nutrient:'energy, chromium, or a blood sugar dip',
+   note:"Reaching for something sweet is often your blood sugar asking for a top-up — especially if you haven't eaten in a while. It can also point to low chromium (found in broccoli, wholegrains, and nuts), or sometimes it's emotional: your brain associates sugar with comfort when you're stressed or depleted. If it hits hard in the afternoon, try a protein-forward snack first."},
+
+  {id:'salty', icon:'🧂', label:'something salty', color:'rc-sky',
+   nutrient:'sodium, electrolytes, or adrenal support',
+   note:"Salt cravings can mean you're dehydrated and need electrolytes, not just water. They can also point to adrenal fatigue — your body needing a little more sodium to regulate stress. If you've been sweating a lot, crying, or just exhausted lately, this makes a lot of sense. A pinch of salt in your water or a small salty snack can genuinely help."},
+
+  {id:'spicy', icon:'🌶️', label:'something spicy', color:'rc-peach',
+   nutrient:'endorphins, or congestion relief',
+   note:"Spicy food triggers endorphin release — craving it can mean you're after a mood lift or a mild adrenaline hit. It's also helpful when you're congested or your sinuses feel heavy. It can also just mean you need some excitement — not everything has to be a deficiency!"},
+
+  {id:'citrus', icon:'🍋', label:'something sour / citrusy', color:'rc-mint',
+   nutrient:'vitamin C, or a need to feel refreshed',
+   note:"Craving sour or citrusy things can signal low vitamin C, which your body can't make or store for long. It's also linked to wanting something bright when you feel sluggish — like your nervous system asking for a reset. Vitamin C supports immunity, skin, and iron absorption. A glass of orange juice or some strawberries might hit the spot literally and biologically."},
+
+  {id:'bitter', icon:'🫖', label:'something bitter', color:'rc-mint',
+   nutrient:'digestive support, or liver signalling',
+   note:"Bitterness cravings — think coffee (not caffeine, but the actual bitterness), dark leafy greens, or dark chocolate — are often your digestive system asking for support. Bitter compounds stimulate bile production, which helps digest fats and supports liver function. If you've eaten heavily recently or your digestion feels sluggish, this craving is your gut being quite wise."},
+
+  {id:'umami', icon:'🍄', label:'something savoury / umami', color:'rc-sand',
+   nutrient:'protein, glutamate, or overall nourishment',
+   note:"Craving deep savoury flavours — broth, mushrooms, soy sauce, aged cheese, miso — often signals that your body wants substantial nourishment rather than something sweet or light. Umami is associated with glutamate, which supports brain function, and with protein satisfaction. It can also simply mean you're properly hungry and your body knows it needs a real meal."},
+
+  /* ── SPECIFIC FOODS ── */
+  {id:'chocolate', icon:'🍫', label:'chocolate', color:'rc-lavender',
+   nutrient:'magnesium',
+   note:"This one has actual science behind it: dark chocolate is one of the richest sources of magnesium, and magnesium deficiency is incredibly common. Magnesium helps with sleep, muscle tension, anxiety, and headaches. Other sources include dark leafy greens, pumpkin seeds, and bananas — but honestly, a small piece of dark chocolate is fine too."},
+
+  {id:'dairy', icon:'🥛', label:'dairy / milk / cheese', color:'rc-butter',
+   nutrient:'calcium, vitamin D, or healthy fats',
+   note:"A pull toward milk, cheese, or yogurt often signals your body wants calcium or vitamin D — especially if you've had limited sun lately (hello, Pacific Northwest winters). It can also mean you need more fat in your diet, or occasionally magnesium. If you've been indoors a lot, a vitamin D supplement might be worth considering."},
+
+  {id:'red_meat', icon:'🥩', label:'red meat', color:'rc-peach',
+   nutrient:'iron, zinc, or protein',
+   note:"Craving red meat — especially if it's intense or unusual for you — is a pretty reliable signal of low iron or zinc. Iron deficiency is very common, especially for people who menstruate, and shows up as fatigue, brain fog, and feeling unusually cold. Zinc supports immunity and healing. If this craving keeps coming back, it might be worth getting your iron levels checked."},
+
+  {id:'carbs', icon:'🍞', label:'bread / carbs / pasta', color:'rc-butter',
+   nutrient:'energy, serotonin, or tryptophan',
+   note:"Carb cravings are often your brain asking for serotonin — carbohydrates help tryptophan (a serotonin precursor) cross into the brain. This is especially common when you're stressed, sad, or sleep-deprived. It's also just your body needing fuel. Whole grain carbs will keep you steadier than refined ones, but if your body is asking for toast right now, that's okay too."},
+
+  {id:'eggs', icon:'🥚', label:'eggs', color:'rc-butter',
+   nutrient:'choline, protein, or B vitamins',
+   note:"Eggs are nutritional powerhouses, and craving them often points to a need for choline (important for brain and liver health), complete protein, or B12 and B vitamins. If you've been feeling mentally foggy or fatigued, eggs are a genuinely good call. They're one of the few foods that contain almost every nutrient in one package."},
+
+  {id:'leafy', icon:'🥬', label:'greens / salad', color:'rc-mint',
+   nutrient:'folate, magnesium, or iron',
+   note:"Craving a salad or greens is your body being quite literally wise. Leafy greens are packed with folate (B9, important for cell repair and mood), magnesium, iron, and vitamin K. If you're craving greenery, trust it — your body is asking for something genuinely nourishing."},
+
+  {id:'fish', icon:'🐟', label:'fish / seafood', color:'rc-sky',
+   nutrient:'omega-3s, iodine, or selenium',
+   note:"Fish cravings often signal a need for omega-3 fatty acids, which support brain function, mood regulation, and inflammation. Seafood is also one of the best sources of iodine (thyroid health) and selenium (a powerful antioxidant). If you've been feeling foggy or low, this craving is worth listening to."},
+
+  {id:'nuts', icon:'🥜', label:'nuts / seeds', color:'rc-butter',
+   nutrient:'healthy fats, magnesium, or zinc',
+   note:"Nuts and seeds are incredibly nutrient-dense, and craving them usually points to healthy fats, magnesium, or zinc. Pumpkin seeds are especially high in magnesium, walnuts are rich in omega-3s, and Brazil nuts are one of the best selenium sources around. A small handful is genuinely one of the best snacks you can have."},
+
+  {id:'fruit', icon:'🍓', label:'fresh fruit', color:'rc-rose',
+   nutrient:'natural sugars, vitamin C, or hydration',
+   note:"Craving fresh fruit often means you need quick natural energy, vitamin C, or actually just water — many fruits are 80–90% water. It can also be a gentle signal that your diet has been heavy and your body wants something lighter. Berries are especially good if the craving is vague."},
+
+  {id:'fatty', icon:'🥑', label:'fatty / oily foods', color:'rc-mint',
+   nutrient:'essential fatty acids or fat-soluble vitamins',
+   note:"Craving rich, oily, or fatty foods can mean your body needs essential fatty acids (omega-3s and omega-6s), which you can only get through food. These are critical for brain function, mood, and reducing inflammation. It can also mean you need more fat-soluble vitamins like A, D, E, or K. Avocado, salmon, olive oil, and nuts are all good places to start."},
+
+  {id:'caffeine', icon:'☕', label:'coffee / tea / caffeine', color:'rc-lavender',
+   nutrient:'sleep debt, iron deficiency, or low blood pressure',
+   note:"This one's usually pretty honest: you're tired. Sleep debt is the most common cause. But caffeine cravings can also point to iron deficiency (fatigue that coffee temporarily masks) or low blood pressure. If you're relying on caffeine to function, it's worth asking what's underneath the tiredness."},
+
+  {id:'cold', icon:'🧊', label:'something cold / icy', color:'rc-sky',
+   nutrient:'iron deficiency (pica), or overheating',
+   note:"Craving ice specifically can actually be a sign of iron-deficiency anaemia — it's a form of pica and more common than people realise. If you find yourself chomping ice regularly and feeling tired or cold, it might be worth checking your iron. Beyond that, wanting something cold can just mean your body needs to cool down or you're dehydrated."},
+
+  /* ── TEXTURES ── */
+  {id:'tex_crunchy', icon:'🥨', label:'crunchy', color:'rc-sky',
+   nutrient:'stress release or jaw tension',
+   note:"Crunchy cravings are well-studied and mostly about stress. The act of biting down hard activates the same jaw muscles that tense during anxiety, and the crunch provides a satisfying release — almost like a physical sigh. If you've been wound up, overwhelmed, or just can't settle, your nervous system might literally be asking for something to bite into. Apples, carrots, crackers, or rice cakes all work."},
+
+  {id:'tex_chewy', icon:'🍬', label:'chewy', color:'rc-rose',
+   nutrient:'focus, tension release, or jaw stimulation',
+   note:"Chewing repetitively is a known self-regulation behaviour — it activates the cerebellum and can improve focus and reduce cortisol. Neurodivergent folks in particular often find rhythmic chewing grounding and calming. Gum is the classic version, but chewy foods like dried mango, bagels, or even a tough piece of bread serve the same function. If you find yourself reaching for chewy things during deep work or overwhelm, it's your nervous system self-soothing."},
+
+  {id:'tex_soft', icon:'🍰', label:'soft / fluffy', color:'rc-butter',
+   nutrient:'comfort, emotional regulation, or low energy',
+   note:"Soft textures are deeply associated with comfort and safety — they require minimal effort to eat, which signals to the nervous system that it's okay to relax. Craving softness (fresh bread, mashed potato, soft rice) often comes with emotional depletion, illness, sadness, or low physical energy. It's your body asking for something easy. There's nothing wrong with this; gentle foods for gentle moments is valid self-care."},
+
+  {id:'tex_creamy', icon:'🍦', label:'creamy / smooth', color:'rc-lavender',
+   nutrient:'comfort, fat-soluble nutrients, or nervous system support',
+   note:"Creamy textures activate the same soothing response as soft ones, but with an added richness that often signals a need for healthy fats or fat-soluble vitamins (A, D, E, K). Smooth, coating foods can also be particularly appealing when your throat or digestive system is irritated. And sometimes, the appeal is purely emotional — creamy foods are globally associated with reward and comfort across almost every culture."},
+
+  {id:'tex_watery', icon:'🍉', label:'watery / juicy', color:'rc-mint',
+   nutrient:'hydration or electrolytes',
+   note:"Craving foods with high water content — watermelon, cucumber, grapes, broth, gazpacho — is often simply your body telling you it's dehydrated, but in a more interesting way than just 'drink water.' High-water foods also tend to carry electrolytes and minerals, so this craving can point to a need for sodium, potassium, or magnesium alongside plain fluids. It's also common in hot weather or after exercise."},
+
+  {id:'tex_crispy', icon:'🧇', label:'crispy / thin', color:'rc-sand',
+   nutrient:'oral stimulation, or sensory-seeking',
+   note:"Crispy is distinct from crunchy — it's lighter, airier, more about the snap than the bite. Craving it is often about sensory stimulation rather than any specific nutrient. For sensory-seeking individuals, the delicate texture and sound of something crispy can be genuinely regulating. It can also appear when you want a snack but not a heavy one — your body wants input without weight."},
+
+  {id:'tex_other', icon:'✦', label:'a specific texture I can\'t quite name', color:'rc-sand',
+   nutrient:'sensory regulation or interoceptive awareness',
+   note:"The fact that you're noticing a texture craving at all is worth something — many people never tune into this. Texture preferences are deeply linked to sensory processing, emotional state, and interoception (your body's internal sense). If you can't quite name what you want, try asking: do I want something that requires effort, or something easy? Something coating, or something that disappears? Something with resistance, or something that melts? Following that thread usually gets you there."},
+
+  /* ── OTHER ── */
+  {id:'nothing', icon:'💭', label:'honestly… nothing sounds good', color:'rc-lavender',
+   nutrient:'possible zinc deficiency, or emotional depletion',
+   note:"When nothing sounds appealing, it can sometimes mean zinc deficiency — one of its symptoms is reduced appetite and dulled taste. But it's just as often emotional: grief, burnout, depression, overwhelm, or dissociation can all blunt appetite. If this has been lasting a while, be gentle with yourself. Try something very simple and familiar — soup, toast, a plain cracker. Small and easy counts."},
+];
+
+const BG_COLORS = {
+  sweet:[15,88,93], salty:[200,72,93], spicy:[15,82,93],
+  citrus:[168,65,93], bitter:[155,55,93], umami:[35,60,93],
+  chocolate:[265,65,94], dairy:[42,88,94], red_meat:[10,82,93],
+  carbs:[38,88,94], eggs:[45,82,94], leafy:[145,60,93],
+  fish:[200,68,93], nuts:[35,78,93], fruit:[348,72,93],
+  fatty:[155,60,93], caffeine:[268,55,94], cold:[205,78,93],
+  tex_crunchy:[195,68,93], tex_chewy:[350,72,93], tex_soft:[42,80,94],
+  tex_creamy:[270,60,94], tex_watery:[175,65,93], tex_crispy:[30,65,93],
+  tex_other:[25,55,94], nothing:[278,45,95],
+};
+
+const ALIASES = {
+  sweet:[
+    'sweet','sugar','candy','dessert','cake','cookie','biscuit','syrup',
+    'cupcake','brownie','chocolate cake','ice cream','frosting','icing',
+    'donut','doughnut','pastry','pie','tart','gummy','gummy bears',
+    'caramel','toffee','honey','maple','marshmallow','churro'
+  ],
+
+  salty:[
+    'salty','salt','chips','crisps','savoury','savory','pretzels','popcorn',
+    'fries','french fries','nachos','salted nuts','crackers','jerky',
+    'salted popcorn','ramen','instant noodles','fast food'
+  ],
+
+  spicy:[
+    'spicy','hot','chilli','chili','pepper','spice','sriracha','jalapeño',
+    'jalapeno','hot sauce','buffalo','curry','kimchi','wasabi','tabasco',
+    'spicy noodles','spicy ramen','tacos','spicy food'
+  ],
+
+  citrus:[
+    'citrus','sour','lemon','orange','lime','tangy','acidic','vinegar','sharp',
+    'grapefruit','yuzu','pickle','pickles','pickle juice','vinaigrette',
+    'sour candy','sour gummies'
+  ],
+
+  bitter:[
+    'bitter','dark','coffee bitter','arugula','rocket','dark chocolate','tonic',
+    'black coffee','espresso','matcha bitter','kale','grapefruit peel'
+  ],
+
+  umami:[
+    'umami','savoury','savory','broth','miso','soy','mushroom','meat flavour','meaty',
+    'ramen','pho','gravy','stock','parmesan','aged cheese','fermented',
+    'soy sauce','teriyaki','savory snack'
+  ],
+
+  chocolate:[
+    'chocolate','cocoa','cacao','choc',
+    'chocolate bar','milk chocolate','dark chocolate','hot chocolate',
+    'chocolate chips','nutella','fudge','truffle'
+  ],
+
+  dairy:[
+    'milk','cheese','yogurt','cream','butter','dairy','ice cream',
+    'cheesecake','mac and cheese','mac n cheese','cream cheese',
+    'whipped cream','gelato','custard'
+  ],
+
+  red_meat:[
+    'meat','beef','steak','burger','pork','lamb','red meat','mince','bacon',
+    'bbq','barbecue','sausage','ribs','meatballs','ham','pepperoni'
+  ],
+
+  carbs:[
+    'carbs','bread','pasta','rice','noodles','toast','carbohydrate','bagel','potato',
+    'fries','pizza','sandwich','wrap','tortilla','quesadilla',
+    'mac and cheese','spaghetti','ramen','dumplings','gnocchi'
+  ],
+
+  eggs:[
+    'eggs','egg','omelette','scrambled','fried egg',
+    'poached egg','boiled egg','egg sandwich','breakfast'
+  ],
+
+  leafy:[
+    'greens','salad','leafy','vegetables','veg','kale','spinach','lettuce',
+    'arugula','rocket','spring mix','cabbage','brussels sprouts',
+    'healthy','light food'
+  ],
+
+  fish:[
+    'fish','seafood','salmon','tuna','prawn','shrimp','sushi','cod',
+    'crab','lobster','fish tacos','anchovy','sardines'
+  ],
+
+  nuts:[
+    'nuts','seeds','almonds','peanuts','cashews','walnuts','nut butter','pumpkin seeds',
+    'peanut butter','almond butter','trail mix','granola','pistachios'
+  ],
+
+  fruit:[
+    'fruit','berries','apple','banana','grapes','mango','strawberry','melon',
+    'blueberries','raspberries','pineapple','peach','pear','kiwi',
+    'smoothie','fruit salad'
+  ],
+
+  fatty:[
+    'fatty','oily','greasy','avocado','fried','olive oil','rich',
+    'buttery','cheesy','deep fried','fast food','burger','fries'
+  ],
+
+  caffeine:[
+    'coffee','tea','caffeine','energy drink','matcha','espresso','latte','green tea',
+    'cold brew','americano','cappuccino','iced coffee','boba','milk tea'
+  ],
+
+  cold:[
+    'cold','icy','ice','frozen','cool','ice cream','sorbet','cold water',
+    'smoothie','milkshake','iced drink','frozen yogurt','slushie'
+  ],
+
+  tex_crunchy:[
+    'crunchy','crunch','crispy chips','crackers','raw carrot','celery','hard','snap',
+    'granola','toast','nuts','chips','pretzels','crisp','croutons'
+  ],
+
+  tex_chewy:[
+    'chewy','gummy','gummies','chew','tough','bagel','dried fruit','caramel','sticky',
+    'taffy','mochi','licorice','fruit snacks'
+  ],
+
+  tex_soft:[
+    'soft','fluffy','pillowy','mushy','tender','fresh bread','mashed','gentle',
+    'pancakes','scrambled eggs','soft tofu','banana bread'
+  ],
+
+  tex_creamy:[
+    'creamy','smooth','silky','velvety','thick','mashed potato','ice cream','yogurt','pudding',
+    'custard','soup','mac and cheese','cheese sauce','alfredo'
+  ],
+
+  tex_watery:[
+    'watery','juicy','hydrating','fresh','cucumber','watermelon','soup','broth',
+    'orange','grapes','smoothie','juice'
+  ],
+
+  tex_crispy:[
+    'crispy','thin','crackers','wafer','rice cake','light crunch','snap',
+    'chips','fries','crispy chicken','tempura'
+  ],
+
+  tex_other:[
+    'texture','mouthfeel','weird texture','can\'t explain','specific'
+  ],
+
+  nothing:[
+    'nothing','not hungry','no appetite','none','nope','nothing sounds good',
+    'meh','idk','i don\'t know','whatever','anything','don\'t care'
+  ],
+};
+
+/* ── BUILD UI ─────────────────────────────────────── */
+
+const cravingMap = {};
+CRAVINGS.forEach(c => cravingMap[c.id] = c);
+
+const selected = new Set();
+const chipEls = {};
+
+const groupContainer = document.getElementById('chipGroups');
+GROUPS.forEach(g => {
+  const wrap = document.createElement('div');
+  wrap.className = 'group';
+  wrap.innerHTML = `<p class="group-label">${g.label}</p><div class="chips-grid" id="grid-${g.id}"></div>`;
+  groupContainer.appendChild(wrap);
+
+  const grid = wrap.querySelector('.chips-grid');
+  g.ids.forEach(id => {
+    const c = cravingMap[id];
+    if (!c) return;
+    const el = document.createElement('button');
+    el.className = 'chip';
+    el.dataset.id = id;
+    el.setAttribute('role', 'checkbox');
+    el.setAttribute('aria-checked', 'false');
+    el.setAttribute('aria-label', c.label);
+    el.innerHTML = `<span class="chip-icon" aria-hidden="true">${c.icon}</span><span>${c.label}</span>`;
+    el.addEventListener('click', () => toggleChip(id, el));
+    grid.appendChild(el);
+    chipEls[id] = el;
+  });
+});
+
+function renderSelectedChips() {
+  const container = document.getElementById('selectedChips');
+  container.innerHTML = '';
+
+  selected.forEach(id => {
+    const c = cravingMap[id];
+    if (!c) return;
+
+    const chip = document.createElement('div');
+    chip.className = 'selected-chip';
+    chip.innerHTML = `
+      <span>${c.icon} ${c.label}</span>
+      <button aria-label="remove">×</button>
+    `;
+
+    chip.querySelector('button').addEventListener('click', () => {
+      selected.delete(id);
+      if (chipEls[id]) {
+        chipEls[id].classList.remove('selected');
+        chipEls[id].setAttribute('aria-checked','false');
+      }
+      updateCount();
+      updateBg();
+      renderSelectedChips();
+    });
+
+    container.appendChild(chip);
+  });
+}
+
+function toggleChip(id, el) {
+  if (selected.has(id)) {
+    selected.delete(id);
+    el.classList.remove('selected');
+    el.setAttribute('aria-checked', 'false');
+  } else {
+    selected.add(id);
+    el.classList.add('selected');
+    el.setAttribute('aria-checked', 'true');
+  }
+  updateCount(); updateBg(); renderSelectedChips(); updateInputState(); 
+}
+
+document.getElementById('toggleChips').addEventListener('click', () => {
+  const el = document.getElementById('chipGroups');
+  el.classList.toggle('collapsed');
+});
+
+
+/* don't need counter, this is safest way to remove supposedly */
+function updateCount() {
+  const el = document.getElementById('countLabel');
+  if (el) {
+    el.textContent = selected.size === 0
+      ? 'nothing selected yet'
+      : `${selected.size} selected`;
+  }
+
+  document.getElementById('submitBtn').disabled = selected.size === 0;
+}
+
+function hsl(h,s,l){ return `hsl(${h},${s}%,${l}%)`; }
+
+function updateBg() {
+  const ids = [...selected].filter(id => BG_COLORS[id]);
+  const grad = document.getElementById('bgGradient');
+  if (ids.length === 0) {
+    grad.style.opacity = '0';
+    document.body.style.backgroundColor = hsl(20,80,96);
+    return;
+  }
+  if (ids.length === 1) {
+    const [h,s,l] = BG_COLORS[ids[0]];
+    document.body.style.backgroundColor = hsl(h,s,l);
+    grad.style.opacity = '0';
+    return;
+  }
+  const stops = ids.map((id,i) => {
+    const [h,s,l] = BG_COLORS[id];
+    return `${hsl(h,s,l)} ${Math.round(i/(ids.length-1)*100)}%`;
+  });
+  grad.style.background = `linear-gradient(135deg, ${stops.join(', ')})`;
+  grad.style.opacity = '1';
+  document.body.style.backgroundColor = hsl(...BG_COLORS[ids[0]]);
+}
+
+function updateInputState() {
+  const input = document.getElementById('searchInput');
+
+  if (selected.size > 0) {
+    input.placeholder = '+ add another craving?';
+  } else {
+    input.placeholder = 'type a craving...';
+  }
+
+  input.focus();
+}
+
+
+
+/* ── SEARCH / AUTOCOMPLETE ────────────────────────── */
+
+const searchInput = document.getElementById('searchInput');
+const suggestionsEl = document.getElementById('suggestions');
+let activeIdx = -1;
+
+function findMatches(q) {
+  if (!q) return [];
+  q = q.toLowerCase().trim();
+  return CRAVINGS.filter(c => {
+    if (selected.has(c.id)) return false;
+    const hay = (c.label + ' ' + (ALIASES[c.id]||[]).join(' ')).toLowerCase();
+    return hay.includes(q);
+  }).slice(0,5);
+}
+
+function renderSuggestions(matches) {
+  if (!matches.length) { closeSuggestions(); return; }
+  activeIdx = -1;
+  suggestionsEl.innerHTML = matches.map((c,i) =>
+    `<button class="suggestion-item" role="option" data-id="${c.id}" id="sug-${i}" aria-selected="false">
+      <span class="sug-icon" aria-hidden="true">${c.icon}</span><span>${c.label}</span>
+    </button>`).join('');
+  suggestionsEl.classList.add('open');
+  searchInput.setAttribute('aria-expanded', 'true');
+}
+
+function closeSuggestions() {
+  suggestionsEl.classList.remove('open');
+  suggestionsEl.innerHTML = '';
+  searchInput.setAttribute('aria-expanded', 'false');
+  activeIdx = -1;
+}
+
+function selectSuggestion(id) {
+  if (chipEls[id] && !selected.has(id)) {
+    selected.add(id);
+    chipEls[id].classList.add('selected');
+    chipEls[id].setAttribute('aria-checked', 'true');
+  }
+  searchInput.value = '';
+  closeSuggestions();
+  updateCount(); updateBg(); renderSelectedChips(); updateInputState(); 
+  searchInput.focus();
+}
+
+searchInput.addEventListener('input', () => {
+  renderSuggestions(findMatches(searchInput.value));
+});
+
+suggestionsEl.addEventListener('click', e => {
+  const item = e.target.closest('.suggestion-item');
+  if (item) selectSuggestion(item.dataset.id);
+});
+
+document.addEventListener('click', e => {
+  if (!e.target.closest('.search-wrap')) closeSuggestions();
+});
+
+/* arrow key + tab navigation in dropdown */
+searchInput.addEventListener('keydown', e => {
+  const items = suggestionsEl.querySelectorAll('.suggestion-item');
+
+  if (e.key === 'ArrowDown') {
+    e.preventDefault();
+    if (!suggestionsEl.classList.contains('open')) return;
+    activeIdx = Math.min(activeIdx + 1, items.length - 1);
+    updateActiveItem(items);
+    return;
+  }
+  if (e.key === 'ArrowUp') {
+    e.preventDefault();
+    activeIdx = Math.max(activeIdx - 1, -1);
+    updateActiveItem(items);
+    return;
+  }
+  if (e.key === 'Tab' && suggestionsEl.classList.contains('open') && items.length) {
+    e.preventDefault();
+    activeIdx = (activeIdx + 1) % items.length;
+    updateActiveItem(items);
+    return;
+  }
+  if (e.key === 'Enter') {
+    if (activeIdx >= 0 && items[activeIdx]) {
+      selectSuggestion(items[activeIdx].dataset.id);
+    } else {
+      const q = searchInput.value.trim();
+      if (!q) return;
+      const matches = findMatches(q);
+      if (matches.length) { selectSuggestion(matches[0].id); }
+      else { addCustom(q); searchInput.value = ''; closeSuggestions(); }
+    }
+    return;
+  }
+  if (e.key === 'Escape') { closeSuggestions(); }
+});
+
+/* keyboard nav within dropdown */
+suggestionsEl.addEventListener('keydown', e => {
+  const items = suggestionsEl.querySelectorAll('.suggestion-item');
+  if (e.key === 'ArrowDown') { e.preventDefault(); activeIdx = Math.min(activeIdx+1, items.length-1); updateActiveItem(items); }
+  if (e.key === 'ArrowUp')   { e.preventDefault(); activeIdx = Math.max(activeIdx-1, -1); updateActiveItem(items); if (activeIdx === -1) searchInput.focus(); }
+  if (e.key === 'Enter' && activeIdx >= 0) selectSuggestion(items[activeIdx].dataset.id);
+  if (e.key === 'Escape') { closeSuggestions(); searchInput.focus(); }
+});
+
+function updateActiveItem(items) {
+  items.forEach((el, i) => {
+    const active = i === activeIdx;
+    el.setAttribute('aria-selected', active ? 'true' : 'false');
+    if (active) {
+      el.focus();
+      searchInput.setAttribute('aria-activedescendant', el.id);
+    }
+  });
+  if (activeIdx === -1) searchInput.removeAttribute('aria-activedescendant');
+}
+
+/* ── CUSTOM CHIP ──────────────────────────────────── */
+
+function addCustom(val) {
+  const id = 'custom_' + Date.now();
+  const newCraving = {id, icon:'✦', label:val, color:'rc-mint',
+    nutrient:'something your body knows',
+    note:`You noted a craving for "${val}." Our bodies often know what they need before our minds catch up. It's worth pausing and asking: is this a texture, a temperature, a taste, or a feeling you're after? Sometimes the craving is less about the food itself and more about what it represents — comfort, energy, familiarity, or something you simply haven't had in a while.`
+  };
+  CRAVINGS.push(newCraving);
+  cravingMap[id] = newCraving;
+
+  const customGrid = document.getElementById('grid-other') ||
+    (() => { /* fallback: create an other group if missing */
+      const g = document.createElement('div'); g.className = 'group';
+      g.innerHTML = '<p class="group-label">added by you</p><div class="chips-grid" id="grid-custom"></div>';
+      groupContainer.appendChild(g); return g.querySelector('.chips-grid');
+    })();
+
+  const el = document.createElement('button');
+  el.className = 'chip selected'; el.dataset.id = id;
+  el.setAttribute('role','checkbox'); el.setAttribute('aria-checked','true');
+  el.setAttribute('aria-label', val);
+  el.innerHTML = `<span class="chip-icon" aria-hidden="true">✦</span><span>${val}</span>`;
+  el.addEventListener('click', () => toggleChip(id, el));
+  customGrid.appendChild(el);
+  chipEls[id] = el;
+  selected.add(id);
+  updateCount(); updateBg(); renderSelectedChips(); updateInputState(); 
+}
+
+/* ── RESULTS ──────────────────────────────────────── */
+
+function showResults() {
+  const cards = document.getElementById('resultsCards');
+  cards.innerHTML = '';
+  [...selected].forEach((id, i) => {
+    const data = cravingMap[id];
+    if (!data) return;
+    const card = document.createElement('div');
+    card.className = `result-card ${data.color}`;
+    card.style.animationDelay = `${i*0.07}s`;
+    /* icon in craving label is decorative */
+    card.innerHTML = `
+      <p class="rc-craving"><span aria-hidden="true">${data.icon}</span> ${data.label}</p>
+      <p class="rc-nutrient">might mean: ${data.nutrient}</p>
+      <p class="rc-note">${data.note}</p>`;
+    cards.appendChild(card);
+  });
+  document.getElementById('pickerScreen').style.display = 'none';
+  document.getElementById('resultsScreen').style.display = 'block';
+  window.scrollTo({top:0, behavior:'smooth'});
+}
+
+function startOver() {
+  selected.clear();
+  
+  renderSelectedChips();
+  updateCount();
+  updateBg();
+
+  const input = document.getElementById('searchInput');
+  input.value = '';
+  input.placeholder = 'type a craving...';
+
+  Object.values(chipEls).forEach(el => {
+    el.classList.remove('selected');
+    el.setAttribute('aria-checked','false');
+  });
+  /* remove custom chips */
+  document.querySelectorAll('[data-id^="custom_"]').forEach(el => el.remove());
+  document.getElementById('resultsScreen').style.display = 'none';
+  document.getElementById('pickerScreen').style.display = 'block';
+  searchInput.value = '';
+  updateCount(); updateBg(); renderSelectedChips();
+  window.scrollTo({top:0, behavior:'smooth'});
+}
+
+/* ── FOOTER ON SCROLL ───────────────────────────────
+
+const footer = document.getElementById('footer');
+window.addEventListener('scroll', () => {
+  const scrolled = window.scrollY > 80;
+  footer.classList.toggle('visible', scrolled);
+}, {passive: true});
+
+/* ── INIT ─────────────────────────────────────────── */
+updateBg();
+</script>
+</body>
+</html>
