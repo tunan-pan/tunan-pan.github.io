@@ -62,7 +62,7 @@
   }
 
   /* search */
-  .search-wrap { position: relative; margin-bottom: 3.25rem; }
+  .search-wrap { position: relative; margin-bottom: 3.25rem; width: 100%;}
 
   .search-input {
     width: 100%; font-family: 'DM Sans', sans-serif; font-size: 14px;
@@ -105,11 +105,16 @@
 
 
 
-.search-row {
+.search-row { /* includes submit button */
   display: flex;
   gap: 10px;
   align-items: center;
   margin-bottom: 1rem;
+}
+@media (max-width: 500px) {
+  .search-row {
+    flex-direction: column;
+  }
 }
 
 .search-row .search-wrap {
@@ -210,12 +215,12 @@
 
 
 
-
-
+/*
   .submit-row {
-    display: flex; align-items: center; justify-content: space-between;
+    display: flex; flex-direction: column; align-items: center; justify-content: space-between;
     margin-top: 0.25rem;
   }
+*/
 
   .count-label { font-size: 13px; color: #A0624E; font-style: italic; }
   .count-label strong { color: #6B3A2A; font-style: normal; font-weight: 500; }
