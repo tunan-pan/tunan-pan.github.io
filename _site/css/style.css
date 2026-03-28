@@ -795,7 +795,8 @@ home page
 
 .fox-mask {
   position: absolute;
-  top: 110px; /* slightly less than fox-visual */
+  top: 70px;
+  /* top: 110px; /* slightly less than fox-visual */
   left: 50%;
   transform: translateX(-50%);
   width: 120%;
@@ -808,7 +809,8 @@ home page
   position: absolute;
   height: 66vh;
   width: auto;
-  top: 120px;
+  top: 80px;
+  /*top: 120px;*/
   left: 49%;
   transform: translateX(-50%);
   display: block;
@@ -837,11 +839,10 @@ home page
   aspect-ratio: 1 / 0.4;
   height: 6vh;
   border-radius: 90px;
-  top: calc(44vh + 110px);
+  /*top: calc(44vh + 110px);*/
   left: 50%;
   transform: translateX(-52%);
   z-index: 4;
-  border: 1px solid black;
   cursor: url("data:image/svg+xml;charset=utf-8,%3Csvg xmlns='http://www.w3.org/2000/svg' width='100' height='100'%3E%3Ctext y='50' font-size='42'%3E💛%3C/text%3E%3C/svg%3E") 50 50, pointer;
 }
 
@@ -877,7 +878,7 @@ home page
 .home-top-container {
   position: relative;
   width: 100%;
-  margin: calc(66vh + 40px) auto 0;
+  margin: calc(66vh + 5px) auto 0;
   z-index: 5;
 }
 
