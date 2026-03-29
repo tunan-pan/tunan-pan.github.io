@@ -839,7 +839,7 @@ home page
   aspect-ratio: 1 / 0.4;
   height: 6vh;
   border-radius: 90px;
-  /*top: calc(44vh + 110px);*/
+  top: calc(45vh + 60px);
   left: 50%;
   transform: translateX(-52%);
   z-index: 4;
