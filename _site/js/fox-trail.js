@@ -1,5 +1,6 @@
 // fox-trail.js
-// Rainbow pastel glow trail with eased lag, scoped to .fox-container.
+// Reveals rainbow pastel colour as you move the mouse over the fox area.
+// Uses explicit stroke tracking instead of destination-out, so there's no ghost residue.
 
 document.addEventListener('DOMContentLoaded', () => {
 
@@ -31,12 +32,12 @@ document.addEventListener('DOMContentLoaded', () => {
   window.addEventListener('resize', resize);
 
   // --- Config ---
-  const RADIUS  = 28;   // glow size — uniform across the whole trail
-  const MAX_PTS = 48;   // more points = longer tail
-  const EASE    = 0.08; // how quickly the trail catches the mouse (lower = more lag)
+  const RADIUS       = 28;    // brush size (px)
+  const STROKE_LIFE  = 1000;  // how long each stroke lives in ms (lower = fades faster)
+  const COLOR_SPEED  = 0.0008;
 
-  // Pastel rainbow: red -> orange -> yellow -> green -> blue -> indigo -> violet
-  const PASTEL_COLORS = [
+  // Pastel rainbow, looping back to red for a seamless cycle
+  const PASTEL = [
     [255, 180, 180], // red
     [255, 210, 170], // orange
     [255, 245, 170], // yellow
@@ -44,15 +45,15 @@ document.addEventListener('DOMContentLoaded', () => {
     [170, 215, 255], // blue
     [190, 180, 255], // indigo
     [230, 180, 255], // violet
+    [255, 180, 180], // red again (seamless loop)
   ];
 
-  // Interpolate between two adjacent pastel stops
-  function getPastelColor(t) {
-    const scaled = t * (PASTEL_COLORS.length - 1);
+  function getColor(t) {
+    const scaled = (t % 1) * (PASTEL.length - 1);
     const i = Math.floor(scaled);
     const f = scaled - i;
-    const a = PASTEL_COLORS[Math.min(i,     PASTEL_COLORS.length - 1)];
-    const b = PASTEL_COLORS[Math.min(i + 1, PASTEL_COLORS.length - 1)];
+    const a = PASTEL[i];
+    const b = PASTEL[i + 1];
     return [
       Math.round(a[0] + (b[0] - a[0]) * f),
       Math.round(a[1] + (b[1] - a[1]) * f),
@@ -61,24 +62,23 @@ document.addEventListener('DOMContentLoaded', () => {
   }
 
   // --- State ---
-  const points  = [];
+  // Each stroke: { x, y, r, g, b, born }
+  const strokes = [];
+  let mouseX    = -999, mouseY = -999;
   let isInside  = false;
-  let mouseX    = 0, mouseY    = 0; // raw mouse target
-  let trailX    = 0, trailY    = 0; // eased trail position
+  const startTime = performance.now();
 
   foxContainer.addEventListener('mouseenter', e => {
     isInside = true;
-    // Snap trail to cursor on entry so it doesn't slide in from off-screen
     const rect = foxContainer.getBoundingClientRect();
-    trailX = e.clientX - rect.left;
-    trailY = e.clientY - rect.top;
-    mouseX = trailX;
-    mouseY = trailY;
+    mouseX = e.clientX - rect.left;
+    mouseY = e.clientY - rect.top;
   });
 
   foxContainer.addEventListener('mouseleave', () => {
     isInside = false;
-    points.length = 0; // clear trail when mouse leaves
+    mouseX = -999;
+    mouseY = -999;
   });
 
   window.addEventListener('mousemove', e => {
@@ -90,33 +90,37 @@ document.addEventListener('DOMContentLoaded', () => {
 
   // --- Render loop ---
   function draw() {
-    if (isInside) {
-      // Ease trail position toward mouse each frame
-      trailX += (mouseX - trailX) * EASE;
-      trailY += (mouseY - trailY) * EASE;
+    const now = performance.now();
+    const t   = (now - startTime) * COLOR_SPEED;
 
-      points.push({ x: trailX, y: trailY });
-      if (points.length > MAX_PTS) points.shift();
+    // Add a new stroke at mouse position
+    if (isInside && mouseX > 0) {
+      const [r, g, b] = getColor(t);
+      strokes.push({ x: mouseX, y: mouseY, r, g, b, born: now });
     }
 
+    // Evict fully faded strokes
+    while (strokes.length && now - strokes[0].born > STROKE_LIFE) {
+      strokes.shift();
+    }
+
+    // Redraw from scratch each frame — no residue possible
     ctx.clearRect(0, 0, canvas.width, canvas.height);
 
-    for (let i = 0; i < points.length; i++) {
-      // t: 0 = oldest (tail end), 1 = newest (at cursor)
-      const t     = i / Math.max(points.length - 1, 1);
-      const alpha = t * 0.45; // uniform size, only opacity varies
-      const [r, g, b] = getPastelColor(t);
+    for (const s of strokes) {
+      const age     = now - s.born;
+      const life    = Math.max(0, 1 - age / STROKE_LIFE); // 1 = fresh, 0 = gone
+      // Ease out: full opacity quickly, then slow fade
+      const opacity = life * life;
 
-      const grd = ctx.createRadialGradient(
-        points[i].x, points[i].y, 0,
-        points[i].x, points[i].y, RADIUS
-      );
-      grd.addColorStop(0,   `rgba(${r}, ${g}, ${b}, ${alpha})`);
-      grd.addColorStop(0.5, `rgba(${r}, ${g}, ${b}, ${alpha * 0.5})`);
-      grd.addColorStop(1,   `rgba(${r}, ${g}, ${b}, 0)`);
+      const grd = ctx.createRadialGradient(s.x, s.y, 0, s.x, s.y, RADIUS);
+      grd.addColorStop(0,    `rgba(${s.r}, ${s.g}, ${s.b}, ${0.9  * opacity})`);
+      grd.addColorStop(0.45, `rgba(${s.r}, ${s.g}, ${s.b}, ${0.55 * opacity})`);
+      grd.addColorStop(0.85, `rgba(${s.r}, ${s.g}, ${s.b}, ${0.08 * opacity})`);
+      grd.addColorStop(1,    `rgba(${s.r}, ${s.g}, ${s.b}, 0)`);
 
       ctx.beginPath();
-      ctx.arc(points[i].x, points[i].y, RADIUS, 0, Math.PI * 2);
+      ctx.arc(s.x, s.y, RADIUS, 0, Math.PI * 2);
       ctx.fillStyle = grd;
       ctx.fill();
     }

@@ -1,6 +1,6 @@
 // fox-trail.js
 // Reveals rainbow pastel colour as you move the mouse over the fox area.
-// Uses explicit stroke tracking instead of destination-out, so there's no ghost residue.
+// Strokes accumulate and fade slowly, like painting with light.
 
 document.addEventListener('DOMContentLoaded', () => {
 
@@ -24,17 +24,22 @@ document.addEventListener('DOMContentLoaded', () => {
   const ctx = canvas.getContext('2d');
 
   function resize() {
+    const tmp = document.createElement('canvas');
+    tmp.width = canvas.width;
+    tmp.height = canvas.height;
+    tmp.getContext('2d').drawImage(canvas, 0, 0);
     const rect = foxContainer.getBoundingClientRect();
     canvas.width  = rect.width;
     canvas.height = rect.height;
+    ctx.drawImage(tmp, 0, 0);
   }
   resize();
   window.addEventListener('resize', resize);
 
   // --- Config ---
-  const RADIUS       = 28;    // brush size (px)
-  const STROKE_LIFE  = 1000;  // how long each stroke lives in ms (lower = fades faster)
-  const COLOR_SPEED  = 0.0008;
+  const RADIUS      = 28;     // brush size (px)
+  const FADE_RATE   = 0.025;  // opacity erased per frame — higher = disappears faster, less ghost residue
+  const COLOR_SPEED = 0.0008; // how fast colour cycles over time
 
   // Pastel rainbow, looping back to red for a seamless cycle
   const PASTEL = [
@@ -62,10 +67,8 @@ document.addEventListener('DOMContentLoaded', () => {
   }
 
   // --- State ---
-  // Each stroke: { x, y, r, g, b, born }
-  const strokes = [];
-  let mouseX    = -999, mouseY = -999;
-  let isInside  = false;
+  let mouseX   = -999, mouseY = -999;
+  let isInside = false;
   const startTime = performance.now();
 
   foxContainer.addEventListener('mouseenter', e => {
@@ -90,37 +93,27 @@ document.addEventListener('DOMContentLoaded', () => {
 
   // --- Render loop ---
   function draw() {
-    const now = performance.now();
-    const t   = (now - startTime) * COLOR_SPEED;
+    const t = (performance.now() - startTime) * COLOR_SPEED;
 
-    // Add a new stroke at mouse position
+    // Fade existing strokes using destination-out compositing
+    ctx.globalCompositeOperation = 'destination-out';
+    ctx.fillStyle = `rgba(0, 0, 0, ${FADE_RATE})`;
+    ctx.fillRect(0, 0, canvas.width, canvas.height);
+    ctx.globalCompositeOperation = 'source-over';
+
+    // Paint glow at current mouse position
     if (isInside && mouseX > 0) {
       const [r, g, b] = getColor(t);
-      strokes.push({ x: mouseX, y: mouseY, r, g, b, born: now });
-    }
 
-    // Evict fully faded strokes
-    while (strokes.length && now - strokes[0].born > STROKE_LIFE) {
-      strokes.shift();
-    }
-
-    // Redraw from scratch each frame — no residue possible
-    ctx.clearRect(0, 0, canvas.width, canvas.height);
-
-    for (const s of strokes) {
-      const age     = now - s.born;
-      const life    = Math.max(0, 1 - age / STROKE_LIFE); // 1 = fresh, 0 = gone
-      // Ease out: full opacity quickly, then slow fade
-      const opacity = life * life;
-
-      const grd = ctx.createRadialGradient(s.x, s.y, 0, s.x, s.y, RADIUS);
-      grd.addColorStop(0,    `rgba(${s.r}, ${s.g}, ${s.b}, ${0.9  * opacity})`);
-      grd.addColorStop(0.45, `rgba(${s.r}, ${s.g}, ${s.b}, ${0.55 * opacity})`);
-      grd.addColorStop(0.85, `rgba(${s.r}, ${s.g}, ${s.b}, ${0.08 * opacity})`);
-      grd.addColorStop(1,    `rgba(${s.r}, ${s.g}, ${s.b}, 0)`);
+      // Tight falloff: stays opaque in the centre, drops cleanly to zero at the edge
+      const grd = ctx.createRadialGradient(mouseX, mouseY, 0, mouseX, mouseY, RADIUS);
+      grd.addColorStop(0,    `rgba(${r}, ${g}, ${b}, 0.9)`);
+      grd.addColorStop(0.45, `rgba(${r}, ${g}, ${b}, 0.55)`);
+      grd.addColorStop(0.9, `rgba(${r}, ${g}, ${b}, 0.15)`);
+      grd.addColorStop(1,    `rgba(${r}, ${g}, ${b}, 0)`);
 
       ctx.beginPath();
-      ctx.arc(s.x, s.y, RADIUS, 0, Math.PI * 2);
+      ctx.arc(mouseX, mouseY, RADIUS, 0, Math.PI * 2);
       ctx.fillStyle = grd;
       ctx.fill();
     }
