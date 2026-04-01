@@ -18,13 +18,12 @@ title: Projects
 <section class="projects-section fade-in">
   <div class="section-header">
     <h2 class="section-label">Featured Work</h2>
-    <p class="section-desc">Projects related to UX, interactive design, and accessibility.</p>
+    <p class="section-desc">Projects related to UX and accessibility.</p>
   </div>
 
   <div class="projects-grid projects-grid--featured fade-in">
     {% for project in featured %}
-        <article class="project-card{% if loop.first %} project-card--hero{% endif %}">
-          
+        <article class="project-card"> <!--put back in class if want hero: {% if loop.first %} project-card--hero{% endif %}-->
           {% if project.image %}
             <a href="/projects/{{ project.slug }}/" class="project-card__thumb" tabindex="-1">
               <img src="{{ project.image.url or project.image }}" alt="">
@@ -48,7 +47,7 @@ title: Projects
             
             <h3><a href="/projects/{{ project.slug }}/">{{ project.title }}</a></h3>
             
-            {% if loop.first and project.description %}
+            {% if project.description %}
               <p class="project-card__desc">{{ project.description }}</p>
             {% endif %}
             
@@ -91,6 +90,7 @@ title: Projects
       {% endif %}
       <div class="project-card__body">
         <h3><a href="/projects/{{ project.slug }}/">{{ project.title }}</a></h3>
+        
       </div>
 
     </article>
