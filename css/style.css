@@ -393,7 +393,7 @@ header nav
 
 .logo span {
   font-family: "LexendExa", sans-serif;
-  font-size: 1.1rem;
+  font-size: 1.2rem;
   text-transform: uppercase;
   font-weight: normal;
 }
@@ -418,7 +418,7 @@ a.logo:hover {
   line-height: 1.2em;
   margin: 0;
   padding: 0;
-  font-size: 0.8rem;
+  font-size: 0.9rem;
   text-transform: uppercase;
   font-family: "LexendExa", sans-serif;
 }
@@ -801,7 +801,7 @@ home page
   transform: translateX(-50%);
   width: 120%;
   height: 90vh;
-  z-index: 2;
+  z-index: 5;
 }
 
 /* Both fox images share the same positioning */
@@ -814,7 +814,7 @@ home page
   left: 49%;
   transform: translateX(-50%);
   display: block;
-  z-index: 1;
+  z-index: 4;
 }
 
 .fox-static {
@@ -884,11 +884,11 @@ home page
 
  .home-intro-text {
   width: 100%;
-  max-width: 710px;
+  max-width: 750px;
   margin: 0 auto;
   padding: 0 30px;
   font-size: 1.2em;
-  line-height: 150%;
+  line-height: 180%;
   text-wrap: balance;
   text-align: center;
 }
@@ -898,6 +898,7 @@ home page
   font-weight: 300;
   font-size: 2.8rem;
   margin-bottom: 30px;
+  line-height: 140%;
 }
 @media (max-width: 550px) {
   .home-intro-text h1 {
@@ -919,6 +920,7 @@ about page - page-id-21
 .about-page main {
   padding-bottom: 0;
   max-width: 1100px;
+  margin-bottom: 0;
 }
 
 .about-grid {
