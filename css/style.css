@@ -196,7 +196,8 @@ em {
 }
 
 p a,
-figcaption a {
+figcaption a,
+ul a {
   text-decoration: underline;
   text-underline-offset: 2px;
   color: #000;
@@ -204,7 +205,8 @@ figcaption a {
 }
 
 p a:hover,
-figcaption a:hover {
+figcaption a:hover,
+ul a:hover {
   color: var(--color-orange);
 }
 
@@ -1045,6 +1047,19 @@ about page - page-id-21
 .about-text h1 {
   margin-top: 0;
 }
+
+@counter-style thumbs {
+  system: cyclic;
+  symbols: "🌱";
+  suffix: " ";
+}
+
+.about-text li {
+  list-style: thumbs;
+  margin-left: -20px;
+}
+
+
 
 /* Three Column Cards */
 .about-cards {

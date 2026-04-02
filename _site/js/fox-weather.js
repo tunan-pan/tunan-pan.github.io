@@ -370,7 +370,7 @@
       transition: background 0.2s ease;
     `;
     btn.addEventListener('mouseenter', () => btn.style.background = '#ffffff');
-    btn.addEventListener('mouseleave', () => btn.style.background = 'transparent');
+    btn.addEventListener('mouseleave', () => btn.style.background = '#F6F6F6');
 
     const popup = document.createElement('div');
     popup.style.cssText = `
@@ -406,7 +406,7 @@
 
     const blurb = document.createElement('p');
     blurb.style.cssText = 'margin: 0 0 12px;';
-    blurb.textContent = "This little section of the page is an interactive playground - give it a try, and don't forget to pet the fox 😉 If the motion isn't your thing, you can turn it off below.";
+    blurb.textContent = "This little section of the page is an interactive playground — give it a try, and don't forget to pet the fox 😉 If the motion isn't your thing, you can turn it off below.";
 
     const toggleRow = document.createElement('label');
     toggleRow.style.cssText = 'display:flex; align-items:center; gap:8px; cursor:pointer; font-size:0.78rem; color:#555;';
