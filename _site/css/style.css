@@ -166,7 +166,7 @@ body {
   font-family: "InclusiveSans", sans-serif;
   font-weight: normal;
   font-style: normal;
-  line-height: 150%;
+  line-height: 160%;
   color: #000;
   text-wrap: pretty;
   margin: 0;
@@ -197,7 +197,7 @@ em {
 
 p a,
 figcaption a,
-ul a {
+li a {
   text-decoration: underline;
   text-underline-offset: 2px;
   color: #000;
@@ -206,7 +206,7 @@ ul a {
 
 p a:hover,
 figcaption a:hover,
-ul a:hover {
+li a:hover {
   color: var(--color-orange);
 }
 
