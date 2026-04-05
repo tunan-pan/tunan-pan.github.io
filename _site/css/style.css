@@ -55,6 +55,22 @@ pink: #F2126C
   box-sizing: border-box;
 }
 
+::selection {
+  background-color: #E5D3FD;
+  /* #f9e4c9; */
+}
+
+.button::selection {
+  color: #000;
+}
+
+.about-fox-text>*::selection,
+.about-fox-text strong::selection,
+.core-values>*::selection {
+  background-color: #603993;
+  color: #fff;
+}
+
 /* --------------------------------------------------------------------
 fonts
 ---------------------------------------------------------------------*/
@@ -1452,7 +1468,6 @@ projects page - page-id-22
   display: inline-block;
 }
 
-
 .projects-grid .project-tags {
   margin-top: auto;
   padding-top: 20px;
@@ -1466,24 +1481,16 @@ projects page - page-id-22
   margin-bottom: 2px;
 }
 
-/*
-.project-categories span {
-  color: var(--color-purple);
-  font-weight: bold;
-  text-decoration: none;
-}
-*/
-.project-tags {
+.project-tags a {
+  text-decoration: none !important;
   color: #545454;
-  text-decoration: none;
-  font-weight: normal;
+
 }
 
-/*
 .project-tags a:hover,
 .project-categories a:hover {
   color: #000;
-}*/
+}
 
 /* Responsive */
 @media (max-width: 1024px) {
