@@ -4,20 +4,21 @@ layout: base.njk
 
 
 <article class="project-post">
-  
-  <div class="column-left">
+
+  <section class="column-left" aria-label="Left column - project details">
     <div class="column-left-inner">
 
-    
-      
+
+
 
       <div class="project-meta">
-   <a class="back" href="/projects/"><span aria-hidden="true" class="arrow-back">&larr;</span> Back to all projects</a>
+        <a class="back" href="/projects/"><span aria-hidden="true" class="arrow-back">&larr;</span> Back to all
+          projects</a>
 
         {% if project.category == "sandbox" %}
-          &ensp;|&ensp;<span class="project-categories">
-            <a href="/categories/{{ project.category | slug }}/">{{ project.category }}</a>
-          </span>
+        &ensp;|&ensp;<span class="project-categories">
+          <a href="/categories/{{ project.category | slug }}/">{{ project.category }}</a>
+        </span>
         {% endif %}
 
       </div>
@@ -25,62 +26,63 @@ layout: base.njk
 
       <h1>{{ project.title }}</h1>
 
-      
-      
-    
+
+
+
       {% if project.tags %}
-          {% for tag in project.tags %}
-            {% if tag == "Case Study" %}
-              <span class="tag tag--case">Case study</span>&ensp;
-            {% endif %}
-            {% if tag == "WIP" %}
-              <span class="tag tag--wip">WIP</span>&ensp;
-            {% endif %}
-          {% endfor %}
-        {% endif %}
+      {% for tag in project.tags %}
+      {% if tag == "Case Study" %}
+      <span class="tag tag--case">Case study</span>&ensp;
+      {% endif %}
+      {% if tag == "WIP" %}
+      <span class="tag tag--wip">WIP</span>&ensp;
+      {% endif %}
+      {% endfor %}
+      {% endif %}
 
 
       {% set filteredTags = project.tags | reject("equalto", "Case Study") | reject("equalto", "WIP") %}
 
       {% if filteredTags.length %}
-        <span class="project-tags">
-          {% for tag in filteredTags %}
-            <a href="/tags/{{ tag | slugify }}/">{{ tag }}</a>{% if not loop.last %}, {% endif %}
-          {% endfor %}
-        </span>
+      <span class="project-tags">
+        {% for tag in filteredTags %}
+        <a href="/tags/{{ tag | slugify }}/">{{ tag }}</a>{% if not loop.last %}, {% endif %}
+        {% endfor %}
+      </span>
       {% endif %}
 
       <div class="leftbutton">
         {% if project.leftbuttonText and project.leftbuttonUrl %}
-          <a class="button button-projects" href="{{ project.leftbuttonUrl }}" target="_blank">{{ project.leftbuttonText }} <span class="arrow" aria-hidden="true">→</span></a>
+        <a class="button button-projects" href="{{ project.leftbuttonUrl }}" target="_blank">{{ project.leftbuttonText
+          }} <span class="arrow" aria-hidden="true">→</span></a>
         {% endif %}
       </div>
 
-    
+
       <div class="project-role">
         {% if project.role %}
-          <p class="side-heading">My Role:</p>
-          {{ project.role | safe }}
+        <p class="side-heading">My Role:</p>
+        {{ project.role | safe }}
         {% endif %}
       </div>
       <div class="project-deliverables">
         {% if project.deliverables %}
-          <p class="side-heading">Deliverables:</p>
-          {{ project.deliverables | safe }}
+        <p class="side-heading">Deliverables:</p>
+        {{ project.deliverables | safe }}
         {% endif %}
       </div>
 
 
     </div>
-  </div>
-  
-  <div class="column-right fade-in">
+  </section>
+
+  <section class="column-right fade-in" aria-label="Project main content">
     <!-- Main content -->
     <div class="project-content">
       {% if project.content %}
-        {{ project.content | safe }}
+      {{ project.content | safe }}
       {% else %}
-        <p>Content coming soon!</p>
+      <p>Content coming soon!</p>
       {% endif %}
 
     </div>
@@ -89,18 +91,17 @@ layout: base.njk
     {% if project.images and project.images.length %}
     <div class="project-gallery">
       {% for image in project.images %}
-        <figure>
-          <img src="{{ image.url }}" alt="{{ image.alternativeText or '' }}" >
-          {% if image.caption %}
-            <figcaption>{{ image.caption }}</figcaption>
-          {% endif %}
-        </figure>
+      <figure>
+        <img src="{{ image.url }}" alt="{{ image.alternativeText or '' }}">
+        {% if image.caption %}
+        <figcaption>{{ image.caption }}</figcaption>
+        {% endif %}
+      </figure>
       {% endfor %}
     </div>
     {% endif %}
-    
 
-  </div>
+  </section>
 
 </article>
 
@@ -109,14 +110,15 @@ layout: base.njk
 {% set prev = projects[index - 1] or projects[projects.length - 1] %}
 {% set next = projects[index + 1] or projects[0] %}
 
-  <div class="projects-more"><h4>View more projects</h4>
-    <nav>
-        {% if prev %}
-          <p class="project-prev">← <br/><a href="/projects/{{ prev.slug }}/">{{ prev.title }}</a></p>
-        {% endif %}
+<section class="projects-more" aria-labelledby="more-projects">
+  <h4 id="more-projects">View more projects</h4>
+  <nav>
+    {% if prev %}
+    <p class="project-prev">← <br /><a href="/projects/{{ prev.slug }}/">{{ prev.title }}</a></p>
+    {% endif %}
 
-        {% if next %}
-          <p class="project-next">→<br/><a href="/projects/{{ next.slug }}/">{{ next.title }}</a> </p>
-        {% endif %}
-    </nav>
-  </div>
+    {% if next %}
+    <p class="project-next">→<br /><a href="/projects/{{ next.slug }}/">{{ next.title }}</a> </p>
+    {% endif %}
+  </nav>
+</section>

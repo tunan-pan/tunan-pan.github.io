@@ -39,12 +39,12 @@
             <img src="/images/logo/Logo-icon_1080x1080.svg" alt="logo" width="25">
             <span>Tunan Pan</span>
         </a>
-        
+
         <button class="mobile-menu-toggle" aria-label="Toggle menu">
             <span class="hamburger"></span>
         </button>
-        
-        <nav class="main-nav">
+
+        <nav class="main-nav" aria-label="Main navigation">
             <a href="/projects/" >See My Work</a>
             <a href="/about/" >Get To Know Me</a>
             <a href="/contact/" >Say Hello</a>
@@ -52,25 +52,25 @@
     </div>
 </header>
 
-
   <main>
   
 
 <article class="project-post">
-  
-  <div class="column-left">
+
+  <section class="column-left" aria-label="Left column - project details">
     <div class="column-left-inner">
 
-    
-      
+
+
 
       <div class="project-meta">
-   <a class="back" href="/projects/"><span aria-hidden="true" class="arrow-back">&larr;</span> Back to all projects</a>
+        <a class="back" href="/projects/"><span aria-hidden="true" class="arrow-back">&larr;</span> Back to all
+          projects</a>
 
         
-          &ensp;|&ensp;<span class="project-categories">
-            <a href="/categories/sandbox/">sandbox</a>
-          </span>
+        &ensp;|&ensp;<span class="project-categories">
+          <a href="/categories/sandbox/">sandbox</a>
+        </span>
         
 
       </div>
@@ -78,12 +78,12 @@
 
       <h1>Custom Visual Timer</h1>
 
+
+
+
       
       
-    
       
-          
-        
 
 
       
@@ -92,11 +92,11 @@
 
       <div class="leftbutton">
         
-          <a class="button button-projects" href="../../sandbox/visual-timer" target="_blank">Try the timer <span class="arrow" aria-hidden="true">→</span></a>
+        <a class="button button-projects" href="../../sandbox/visual-timer" target="_blank">Try the timer <span class="arrow" aria-hidden="true">→</span></a>
         
       </div>
 
-    
+
       <div class="project-role">
         
       </div>
@@ -106,22 +106,21 @@
 
 
     </div>
-  </div>
-  
-  <div class="column-right fade-in">
+  </section>
+
+  <section class="column-right fade-in" aria-label="Project main content">
     <!-- Main content -->
     <div class="project-content">
       
-        <p>My first "vibe coding" project with Claude. I created initial mockups in Figma, described my vision, and iteratively refined the code (both by hand and through Claude).</p><p>This came about as I needed a 4 minute timer for a board game, but existing visual timers only offered preset durations — usually an hour. I didn't want to see 4 minutes as a tiny sliver of a 60-minute circle, I wanted the full circle to represent my chosen time. So I built my own customizable visual timer where you set the max time, and the entire circle represents exactly that.</p><figure class="image"><img style="aspect-ratio:1855/1097;" src="/images/visual_timer_1_b48e098b9c.png" alt="" srcset="/images/thumbnail_visual_timer_1_b48e098b9c.png 245w,/images/small_visual_timer_1_b48e098b9c.png 500w,/images/medium_visual_timer_1_b48e098b9c.png 750w,/images/large_visual_timer_1_b48e098b9c.png 1000w," sizes="100vw" width="1855" height="1097"><figcaption>initial mockup ideas</figcaption></figure>
+      <p>My first "vibe coding" project with Claude. I created initial mockups in Figma, described my vision, and iteratively refined the code (both by hand and through Claude).</p><p>This came about as I needed a 4 minute timer for a board game, but existing visual timers only offered preset durations — usually an hour. I didn't want to see 4 minutes as a tiny sliver of a 60-minute circle, I wanted the full circle to represent my chosen time. So I built my own customizable visual timer where you set the max time, and the entire circle represents exactly that.</p><figure class="image"><img style="aspect-ratio:1855/1097;" src="/images/visual_timer_1_b48e098b9c.png" alt="" srcset="/images/thumbnail_visual_timer_1_b48e098b9c.png 245w,/images/small_visual_timer_1_b48e098b9c.png 500w,/images/medium_visual_timer_1_b48e098b9c.png 750w,/images/large_visual_timer_1_b48e098b9c.png 1000w," sizes="100vw" width="1855" height="1097"><figcaption>initial mockup ideas</figcaption></figure>
       
 
     </div>
 
     <!-- Image gallery -->
     
-    
 
-  </div>
+  </section>
 
 </article>
 
@@ -130,17 +129,18 @@
 
 
 
-  <div class="projects-more"><h4>View more projects</h4>
-    <nav>
-        
-          <p class="project-prev">← <br/><a href="/projects/cravings/">Cravings Interpreter</a></p>
-        
+<section class="projects-more" aria-labelledby="more-projects">
+  <h4 id="more-projects">View more projects</h4>
+  <nav>
+    
+    <p class="project-prev">← <br /><a href="/projects/cravings/">Cravings Interpreter</a></p>
+    
 
-        
-          <p class="project-next">→<br/><a href="/projects/spring-fling/">Spring Fling — Instagram AR Filters</a> </p>
-        
-    </nav>
-  </div>
+    
+    <p class="project-next">→<br /><a href="/projects/spring-fling/">Spring Fling — Instagram AR Filters</a> </p>
+    
+  </nav>
+</section>
   </main>
 
   <button class="back-to-top" aria-label="Back to top">

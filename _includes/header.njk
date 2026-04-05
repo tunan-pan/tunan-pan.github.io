@@ -4,15 +4,15 @@
             <img src="/images/logo/Logo-icon_1080x1080.svg" alt="logo" width="25">
             <span>Tunan Pan</span>
         </a>
-        
+
         <button class="mobile-menu-toggle" aria-label="Toggle menu">
             <span class="hamburger"></span>
         </button>
-        
-        <nav class="main-nav">
-            <a href="/projects/" {% if page.url == '/projects/' %}class="current"{% endif %}>See My Work</a>
-            <a href="/about/" {% if page.url == '/about/' %}class="current"{% endif %}>Get To Know Me</a>
-            <a href="/contact/" {% if page.url == '/contact/' %}class="current"{% endif %}>Say Hello</a>
+
+        <nav class="main-nav" aria-label="Main navigation">
+            <a href="/projects/" {% if page.url=='/projects/' %}class="current" {% endif %}>See My Work</a>
+            <a href="/about/" {% if page.url=='/about/' %}class="current" {% endif %}>Get To Know Me</a>
+            <a href="/contact/" {% if page.url=='/contact/' %}class="current" {% endif %}>Say Hello</a>
         </nav>
     </div>
 </header>

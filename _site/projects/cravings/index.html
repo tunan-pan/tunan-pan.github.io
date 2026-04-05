@@ -39,12 +39,12 @@
             <img src="/images/logo/Logo-icon_1080x1080.svg" alt="logo" width="25">
             <span>Tunan Pan</span>
         </a>
-        
+
         <button class="mobile-menu-toggle" aria-label="Toggle menu">
             <span class="hamburger"></span>
         </button>
-        
-        <nav class="main-nav">
+
+        <nav class="main-nav" aria-label="Main navigation">
             <a href="/projects/" >See My Work</a>
             <a href="/about/" >Get To Know Me</a>
             <a href="/contact/" >Say Hello</a>
@@ -52,25 +52,25 @@
     </div>
 </header>
 
-
   <main>
   
 
 <article class="project-post">
-  
-  <div class="column-left">
+
+  <section class="column-left" aria-label="Left column - project details">
     <div class="column-left-inner">
 
-    
-      
+
+
 
       <div class="project-meta">
-   <a class="back" href="/projects/"><span aria-hidden="true" class="arrow-back">&larr;</span> Back to all projects</a>
+        <a class="back" href="/projects/"><span aria-hidden="true" class="arrow-back">&larr;</span> Back to all
+          projects</a>
 
         
-          &ensp;|&ensp;<span class="project-categories">
-            <a href="/categories/sandbox/">sandbox</a>
-          </span>
+        &ensp;|&ensp;<span class="project-categories">
+          <a href="/categories/sandbox/">sandbox</a>
+        </span>
         
 
       </div>
@@ -78,17 +78,17 @@
 
       <h1>Cravings Interpreter</h1>
 
+
+
+
       
       
-    
       
-          
-            
-            
-              <span class="tag tag--wip">WIP</span>&ensp;
-            
-          
-        
+      
+      <span class="tag tag--wip">WIP</span>&ensp;
+      
+      
+      
 
 
       
@@ -97,11 +97,11 @@
 
       <div class="leftbutton">
         
-          <a class="button button-projects" href="../../sandbox/cravings" target="_blank">Try it out here <span class="arrow" aria-hidden="true">→</span></a>
+        <a class="button button-projects" href="../../sandbox/cravings" target="_blank">Try it out here <span class="arrow" aria-hidden="true">→</span></a>
         
       </div>
 
-    
+
       <div class="project-role">
         
       </div>
@@ -111,22 +111,21 @@
 
 
     </div>
-  </div>
-  
-  <div class="column-right fade-in">
+  </section>
+
+  <section class="column-right fade-in" aria-label="Project main content">
     <!-- Main content -->
     <div class="project-content">
       
-        <p>A small experimental tool for making sense of food cravings!&nbsp;</p><p>This was my first fully “vibe coded” project where I skipped the usual Figma phase and built directly in the browser, using AI as a collaborative partner. I described the concept and visual direction, then iterated between Claude and ChatGPT to shape both the interface and logic.</p><p>The idea came from a personal problem: I’d often crave very specific textures or flavors, and always wondered why. I realized cravings can often point to something deeper that’s needed by your body, but instead of Googling it every time, I wanted a lightweight tool I could use to translate that for me.</p><p>Right now, the tool uses a structured set of keywords and associations to map inputs to categories. In the future, I’d be interested in exploring a more dynamic, AI-driven version that can better handle nuanced or mixed cravings.</p>
+      <p>A small experimental tool for making sense of food cravings!&nbsp;</p><p>This was my first fully “vibe coded” project where I skipped the usual Figma phase and built directly in the browser, using AI as a collaborative partner. I described the concept and visual direction, then iterated between Claude and ChatGPT to shape both the interface and logic.</p><p>The idea came from a personal problem: I’d often crave very specific textures or flavors, and always wondered why. I realized cravings can often point to something deeper that’s needed by your body, but instead of Googling it every time, I wanted a lightweight tool I could use to translate that for me.</p><p>Right now, the tool uses a structured set of keywords and associations to map inputs to categories. In the future, I’d be interested in exploring a more dynamic, AI-driven version that can better handle nuanced or mixed cravings.</p>
       
 
     </div>
 
     <!-- Image gallery -->
     
-    
 
-  </div>
+  </section>
 
 </article>
 
@@ -135,17 +134,18 @@
 
 
 
-  <div class="projects-more"><h4>View more projects</h4>
-    <nav>
-        
-          <p class="project-prev">← <br/><a href="/projects/bga-a11y/">The Accessibility Resource BGA Was Missing</a></p>
-        
+<section class="projects-more" aria-labelledby="more-projects">
+  <h4 id="more-projects">View more projects</h4>
+  <nav>
+    
+    <p class="project-prev">← <br /><a href="/projects/bga-a11y/">The Accessibility Resource BGA Was Missing</a></p>
+    
 
-        
-          <p class="project-next">→<br/><a href="/projects/visual-timer/">Custom Visual Timer</a> </p>
-        
-    </nav>
-  </div>
+    
+    <p class="project-next">→<br /><a href="/projects/visual-timer/">Custom Visual Timer</a> </p>
+    
+  </nav>
+</section>
   </main>
 
   <button class="back-to-top" aria-label="Back to top">

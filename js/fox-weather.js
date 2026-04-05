@@ -351,7 +351,7 @@
   // rgba(84, 84, 84, 1);
   function buildInfoButton() {
     const btn = document.createElement('button');
-    btn.setAttribute('aria-label', 'About this section');
+    btn.setAttribute('aria-label', 'About the hero image');
     btn.textContent = '?';
     btn.style.cssText = `
       position: absolute;
