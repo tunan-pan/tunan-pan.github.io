@@ -39,12 +39,12 @@
             <img src="/images/logo/Logo-icon_1080x1080.svg" alt="logo" width="25">
             <span>Tunan Pan</span>
         </a>
-        
+
         <button class="mobile-menu-toggle" aria-label="Toggle menu">
             <span class="hamburger"></span>
         </button>
-        
-        <nav class="main-nav">
+
+        <nav class="main-nav" aria-label="Main navigation">
             <a href="/projects/" >See My Work</a>
             <a href="/about/" >Get To Know Me</a>
             <a href="/contact/" >Say Hello</a>
@@ -52,20 +52,20 @@
     </div>
 </header>
 
-
   <main>
   
 
 <article class="project-post">
-  
-  <div class="column-left">
+
+  <section class="column-left" aria-label="Left column - project details">
     <div class="column-left-inner">
 
-    
-      
+
+
 
       <div class="project-meta">
-   <a class="back" href="/projects/"><span aria-hidden="true" class="arrow-back">&larr;</span> Back to all projects</a>
+        <a class="back" href="/projects/"><span aria-hidden="true" class="arrow-back">&larr;</span> Back to all
+          projects</a>
 
         
 
@@ -74,68 +74,67 @@
 
       <h1>Reducing Friction in a Tool People Already Love</h1>
 
+
+
+
       
       
-    
       
-          
-            
-            
-          
-            
-              <span class="tag tag--case">Case study</span>&ensp;
-            
-            
-          
+      
+      
+      
+      <span class="tag tag--case">Case study</span>&ensp;
+      
+      
+      
+      
+
+
+      
+
+      
+      <span class="project-tags">
         
-
-
-      
-
-      
-        <span class="project-tags">
-          
-            <a href="/tags/web-ux/">Web/UX</a>
-          
-        </span>
+        <a href="/tags/web-ux/">Web/UX</a>
+        
+      </span>
       
 
       <div class="leftbutton">
         
       </div>
 
-    
+
       <div class="project-role">
         
-          <p class="side-heading">My Role:</p>
-          <ul><li>Product Designer</li></ul>
+        <p class="side-heading">My Role:</p>
+        <ul><li>Product Designer</li></ul>
         
       </div>
       <div class="project-deliverables">
         
-          <p class="side-heading">Deliverables:</p>
-          <ul><li>UX audit of existing extension</li><li>High-fidelity UI mockups</li><li>Interactive prototypes</li><li>Component system updates</li></ul>
+        <p class="side-heading">Deliverables:</p>
+        <ul><li>UX audit of existing extension</li><li>High-fidelity UI mockups</li><li>Interactive prototypes</li><li>Component system updates</li></ul>
         
       </div>
 
 
     </div>
-  </div>
-  
-  <div class="column-right fade-in">
+  </section>
+
+  <section class="column-right fade-in" aria-label="Project main content">
     <!-- Main content -->
     <div class="project-content">
       
-        <p><img src="/images/Lib_Ext_Thumbnail_2d93005f3d.png" alt="Preview of the Library Extension design alongside a Goodreads page" srcset="/images/thumbnail_Lib_Ext_Thumbnail_2d93005f3d.png 245w,/images/small_Lib_Ext_Thumbnail_2d93005f3d.png 500w,/images/medium_Lib_Ext_Thumbnail_2d93005f3d.png 750w,/images/large_Lib_Ext_Thumbnail_2d93005f3d.png 1000w," sizes="100vw" width="1800" height="1128"></p><p><strong>Library Extension is a Chrome extension that appears while browsing Goodreads, showing whether a book is available at your selected libraries.</strong> It’s an incredibly useful tool that makes it easy to borrow books or place holds without additional searches.</p><p><strong>However, the interface had several friction points:</strong></p><ul><li>The interface felt visually cluttered and overly dense</li><li>Weak hierarchy and extra information made availability harder to scan quickly</li><li>The “Borrow” and “Place Hold” buttons were misleading (implied direct action but simply redirected users to the same page as the title link)</li><li>The overall visual weight felt intrusive within the browsing experience</li></ul><p><strong>I redesigned the experience to prioritize clarity and speed, by:</strong></p><ul><li>Strengthening the visual hierarchy to improve scannability</li><li>Removing non-essential and redundant information</li><li>Emphasizing availability at a glance</li><li>Consolidating interactions to eliminate misleading affordances</li><li>Reducing the visual footprint so the extension feels like a lightweight companion rather than an interruption</li></ul><p><img src="/images/Lib_Ext_1a_af35dbeaec.png" alt="comparison of existing extension UI and redesign" srcset="/images/thumbnail_Lib_Ext_1a_af35dbeaec.png 245w,/images/small_Lib_Ext_1a_af35dbeaec.png 500w,/images/medium_Lib_Ext_1a_af35dbeaec.png 750w,/images/large_Lib_Ext_1a_af35dbeaec.png 1000w," sizes="100vw" width="1800" height="1128"></p><h2>Design Process</h2><p>In the initial iterations, I removed repeated book titles and availability counts, as they didn’t meaningfully influence the decision to borrow or place a hold. I also explored restructuring each format (e.g., ebook, audiobook, physical) into its own clickable card, rather than relying solely on separate buttons or title links.&nbsp;</p><p><img src="/images/Lib_Ext_2_c180ad782c.png" alt="draft designs" srcset="/images/thumbnail_Lib_Ext_2_c180ad782c.png 153w,/images/small_Lib_Ext_2_c180ad782c.png 491w,/images/medium_Lib_Ext_2_c180ad782c.png 736w,/images/large_Lib_Ext_2_c180ad782c.png 981w," sizes="100vw" width="1800" height="1834"></p><p>After some refining and creating an initial prototype, I realized that despite reducing information, the extension still occupied a significant portion of the screen. Though it could be collapsed down, I knew it needed to be small enough when kept open for easy viewing without being obtrusive.</p><p><img src="/images/Lib_Ext_3_54a0b308cc.png" alt="draft designs" srcset="/images/thumbnail_Lib_Ext_3_54a0b308cc.png 224w,/images/small_Lib_Ext_3_54a0b308cc.png 500w,/images/medium_Lib_Ext_3_54a0b308cc.png 750w,/images/large_Lib_Ext_3_54a0b308cc.png 1000w," sizes="100vw" width="1800" height="1256"></p><p>This led me to question the role of the “Borrow” and “Place Hold” buttons. Unlike traditional call-to-action buttons designed to drive conversion, these weren’t needed to persuade users as they are already motivated when checking availability. The extra buttons added visual weight without adding value, so I removed them and made each card the primary interactive element. This simplified the interface, reduced visual noise, and clarified the interaction model.</p><p><img src="/images/Lib_Ext_4_6dc9174bac.png" alt="draft designs" srcset="/images/thumbnail_Lib_Ext_4_6dc9174bac.png 233w,/images/small_Lib_Ext_4_6dc9174bac.png 500w,/images/medium_Lib_Ext_4_6dc9174bac.png 750w,/images/large_Lib_Ext_4_6dc9174bac.png 1000w," sizes="100vw" width="1800" height="1204"></p><h2>Final Prototype</h2><p>To further minimize visual impact, I made cards visually defined only on hover, similar to modern contextual menus. This reduced baseline visual density while preserving affordance when needed.</p><p><iframe style="border:1px solid rgba(0, 0, 0, 0.1);height:550px;margin:0 auto;width:100%;" src="https://embed.figma.com/proto/PIrWgkmAAurwQGZGRoc1Dl/Goodreads-Library-ext?page-id=76%3A2272&amp;node-id=76-2359&amp;p=f&amp;viewport=-1094%2C-564%2C1.52&amp;scaling=min-zoom&amp;content-scaling=fixed&amp;embed-host=share" allowfullscreen=""></iframe></p><h2>Takeaways &amp; Next Steps</h2><p>This project challenged my initial assumptions — I began with a vision of how I wanted the extension to look, but the process required deeper consideration around interaction patterns, hierarchy, and visual weight within an existing browsing environment.</p><p>Because this redesign is currently based on my own experience and preferences, the next step is validation. I’m exploring ways to gather feedback from other users to better understand what information they prioritize and how they use the extension, so I can potentially bring this to the original developers.</p><p>I’m also in the process of learning how to adapt the existing extension’s code so I can at least make use of my redesign locally!<br>&nbsp;</p>
+      <p><img src="/images/Lib_Ext_Thumbnail_2d93005f3d.png" alt="Preview of the Library Extension design alongside a Goodreads page" srcset="/images/thumbnail_Lib_Ext_Thumbnail_2d93005f3d.png 245w,/images/small_Lib_Ext_Thumbnail_2d93005f3d.png 500w,/images/medium_Lib_Ext_Thumbnail_2d93005f3d.png 750w,/images/large_Lib_Ext_Thumbnail_2d93005f3d.png 1000w," sizes="100vw" width="1800" height="1128"></p><p><strong>Library Extension is a Chrome extension that appears while browsing Goodreads, showing whether a book is available at your selected libraries.</strong> It’s an incredibly useful tool that makes it easy to borrow books or place holds without additional searches.</p><p><strong>However, the interface had several friction points:</strong></p><ul><li>The interface felt visually cluttered and overly dense</li><li>Weak hierarchy and extra information made availability harder to scan quickly</li><li>The “Borrow” and “Place Hold” buttons were misleading (implied direct action but simply redirected users to the same page as the title link)</li><li>The overall visual weight felt intrusive within the browsing experience</li></ul><p><strong>I redesigned the experience to prioritize clarity and speed, by:</strong></p><ul><li>Strengthening the visual hierarchy to improve scannability</li><li>Removing non-essential and redundant information</li><li>Emphasizing availability at a glance</li><li>Consolidating interactions to eliminate misleading affordances</li><li>Reducing the visual footprint so the extension feels like a lightweight companion rather than an interruption</li></ul><p><img src="/images/Lib_Ext_1a_af35dbeaec.png" alt="comparison of existing extension UI and redesign" srcset="/images/thumbnail_Lib_Ext_1a_af35dbeaec.png 245w,/images/small_Lib_Ext_1a_af35dbeaec.png 500w,/images/medium_Lib_Ext_1a_af35dbeaec.png 750w,/images/large_Lib_Ext_1a_af35dbeaec.png 1000w," sizes="100vw" width="1800" height="1128"></p><h2>Design Process</h2><p>In the initial iterations, I removed repeated book titles and availability counts, as they didn’t meaningfully influence the decision to borrow or place a hold. I also explored restructuring each format (e.g., ebook, audiobook, physical) into its own clickable card, rather than relying solely on separate buttons or title links.&nbsp;</p><p><img src="/images/Lib_Ext_2_c180ad782c.png" alt="draft designs" srcset="/images/thumbnail_Lib_Ext_2_c180ad782c.png 153w,/images/small_Lib_Ext_2_c180ad782c.png 491w,/images/medium_Lib_Ext_2_c180ad782c.png 736w,/images/large_Lib_Ext_2_c180ad782c.png 981w," sizes="100vw" width="1800" height="1834"></p><p>After some refining and creating an initial prototype, I realized that despite reducing information, the extension still occupied a significant portion of the screen. Though it could be collapsed down, I knew it needed to be small enough when kept open for easy viewing without being obtrusive.</p><p><img src="/images/Lib_Ext_3_54a0b308cc.png" alt="draft designs" srcset="/images/thumbnail_Lib_Ext_3_54a0b308cc.png 224w,/images/small_Lib_Ext_3_54a0b308cc.png 500w,/images/medium_Lib_Ext_3_54a0b308cc.png 750w,/images/large_Lib_Ext_3_54a0b308cc.png 1000w," sizes="100vw" width="1800" height="1256"></p><p>This led me to question the role of the “Borrow” and “Place Hold” buttons. Unlike traditional call-to-action buttons designed to drive conversion, these weren’t needed to persuade users as they are already motivated when checking availability. The extra buttons added visual weight without adding value, so I removed them and made each card the primary interactive element. This simplified the interface, reduced visual noise, and clarified the interaction model.</p><p><img src="/images/Lib_Ext_4_6dc9174bac.png" alt="draft designs" srcset="/images/thumbnail_Lib_Ext_4_6dc9174bac.png 233w,/images/small_Lib_Ext_4_6dc9174bac.png 500w,/images/medium_Lib_Ext_4_6dc9174bac.png 750w,/images/large_Lib_Ext_4_6dc9174bac.png 1000w," sizes="100vw" width="1800" height="1204"></p><h2>Final Prototype</h2><p>To further minimize visual impact, I made cards visually defined only on hover, similar to modern contextual menus. This reduced baseline visual density while preserving affordance when needed.</p><p><iframe style="border:1px solid rgba(0, 0, 0, 0.1);height:550px;margin:0 auto;width:100%;" src="https://embed.figma.com/proto/PIrWgkmAAurwQGZGRoc1Dl/Goodreads-Library-ext?page-id=76%3A2272&amp;node-id=76-2359&amp;p=f&amp;viewport=-1094%2C-564%2C1.52&amp;scaling=min-zoom&amp;content-scaling=fixed&amp;embed-host=share" allowfullscreen=""></iframe></p><h2>Takeaways &amp; Next Steps</h2><p>This project challenged my initial assumptions — I began with a vision of how I wanted the extension to look, but the process required deeper consideration around interaction patterns, hierarchy, and visual weight within an existing browsing environment.</p><p>Because this redesign is currently based on my own experience and preferences, the next step is validation. I’m exploring ways to gather feedback from other users to better understand what information they prioritize and how they use the extension, so I can potentially bring this to the original developers.</p><p>I’m also in the process of learning how to adapt the existing extension’s code so I can at least make use of my redesign locally!<br>&nbsp;</p>
       
 
     </div>
 
     <!-- Image gallery -->
     
-    
 
-  </div>
+  </section>
 
 </article>
 
@@ -144,17 +143,18 @@
 
 
 
-  <div class="projects-more"><h4>View more projects</h4>
-    <nav>
-        
-          <p class="project-prev">← <br/><a href="/projects/tth/">Together Toward Health — Addressing Health Inequities in California</a></p>
-        
+<section class="projects-more" aria-labelledby="more-projects">
+  <h4 id="more-projects">View more projects</h4>
+  <nav>
+    
+    <p class="project-prev">← <br /><a href="/projects/tth/">Together Toward Health — Addressing Health Inequities in California</a></p>
+    
 
-        
-          <p class="project-next">→<br/><a href="/projects/g4c/">When the Website Undersells the Mission — Redesigning for Clarity and Impact</a> </p>
-        
-    </nav>
-  </div>
+    
+    <p class="project-next">→<br /><a href="/projects/g4c/">When the Website Undersells the Mission — Redesigning for Clarity and Impact</a> </p>
+    
+  </nav>
+</section>
   </main>
 
   <button class="back-to-top" aria-label="Back to top">
