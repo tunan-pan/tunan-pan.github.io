@@ -78,25 +78,25 @@ fonts
 /* headings */
 @font-face {
   font-family: "Lexend";
-  src: url("../fonts/Lexend/Lexend-Regular.ttf");
+  src: url("/fonts/Lexend/Lexend-Regular.ttf");
   font-weight: normal;
 }
 
 @font-face {
   font-family: "Lexend";
-  src: url("../fonts/Lexend/Lexend-Bold.ttf");
+  src: url("/fonts/Lexend/Lexend-Bold.ttf");
   font-weight: bold;
 }
 
 @font-face {
   font-family: "Lexend";
-  src: url("../fonts/Lexend/Lexend-Medium.ttf");
+  src: url("/fonts/Lexend/Lexend-Medium.ttf");
   font-weight: 500;
 }
 
 @font-face {
   font-family: "Lexend";
-  src: url("../fonts/Lexend/Lexend-Light.ttf");
+  src: url("/fonts/Lexend/Lexend-Light.ttf");
   font-weight: 300;
 }
 
@@ -104,58 +104,58 @@ fonts
 
 @font-face {
   font-family: "LexendExa";
-  src: url("../fonts/Lexend/LexendExa-Light.ttf");
+  src: url("/fonts/Lexend/LexendExa-Light.ttf");
   font-weight: normal;
 }
 
 @font-face {
   font-family: "LexendExa";
-  src: url("../fonts/Lexend/LexendExa-Bold.ttf");
+  src: url("/fonts/Lexend/LexendExa-Bold.ttf");
   font-weight: bold;
 }
 
 @font-face {
   font-family: "LexendExa";
-  src: url("../fonts/Lexend/LexendExa-Medium.ttf");
+  src: url("/fonts/Lexend/LexendExa-Medium.ttf");
   font-weight: 500;
 }
 
 /* main body text */
 @font-face {
   font-family: "InclusiveSans";
-  src: url("../fonts/InclusiveSans/InclusiveSans-Regular.ttf");
+  src: url("/fonts/InclusiveSans/InclusiveSans-Regular.ttf");
   font-weight: normal;
 }
 
 @font-face {
   font-family: "InclusiveSans";
-  src: url("../fonts/InclusiveSans/InclusiveSans-Bold.ttf");
+  src: url("/fonts/InclusiveSans/InclusiveSans-Bold.ttf");
   font-weight: bold;
 }
 
 @font-face {
   font-family: "InclusiveSans";
-  src: url("../fonts/InclusiveSans/InclusiveSans-Italic.ttf");
+  src: url("/fonts/InclusiveSans/InclusiveSans-Italic.ttf");
   font-weight: normal;
   font-style: italic;
 }
 
 @font-face {
   font-family: "InclusiveSans";
-  src: url("../fonts/InclusiveSans/InclusiveSans-Medium.ttf");
+  src: url("/fonts/InclusiveSans/InclusiveSans-Medium.ttf");
   font-weight: 500;
 }
 
 @font-face {
   font-family: "InclusiveSans";
-  src: url("../fonts/InclusiveSans/InclusiveSans-BoldItalic.ttf");
+  src: url("/fonts/InclusiveSans/InclusiveSans-BoldItalic.ttf");
   font-weight: bold;
   font-style: italic;
 }
 
 @font-face {
   font-family: "InclusiveSans";
-  src: url("../fonts/InclusiveSans/InclusiveSans-MediumItalic.ttf");
+  src: url("/fonts/InclusiveSans/InclusiveSans-MediumItalic.ttf");
   font-weight: 500;
   font-style: italic;
 }
@@ -540,8 +540,8 @@ a.logo:hover {
   display: inline-block;
   width: 11px;
   height: 11px;
-  -webkit-mask: url("../images/logo/logo-purple.svg") no-repeat center;
-  mask: url("../images/logo/logo-purple.svg") no-repeat center;
+  -webkit-mask: url("/images/logo/logo-purple.svg") no-repeat center;
+  mask: url("/images/logo/logo-purple.svg") no-repeat center;
   mask-size: contain;
 }
 
@@ -1145,15 +1145,15 @@ about page - page-id-21
 }
 
 .logo-purple {
-  background-image: url("../images/logo/logo-purple.svg");
+  background-image: url("/images/logo/logo-purple.svg");
 }
 
 .logo-pink {
-  background-image: url("../images/logo/logo-pink.svg");
+  background-image: url("/images/logo/logo-pink.svg");
 }
 
 .logo-white {
-  background-image: url("../images/logo/logo-white.svg");
+  background-image: url("/images/logo/logo-white.svg");
 }
 
 /* Core Values */
@@ -1194,23 +1194,23 @@ about page - page-id-21
 }
 
 .authenticity {
-  background-image: url("../images/values/authenticity.png");
+  background-image: url("/images/values/authenticity.png");
 }
 
 .compassion {
-  background-image: url("../images/values/compassion.png");
+  background-image: url("/images/values/compassion.png");
 }
 
 .creativity {
-  background-image: url("../images/values/creativity.png");
+  background-image: url("/images/values/creativity.png");
 }
 
 .balance {
-  background-image: url("../images/values/balance.png");
+  background-image: url("/images/values/balance.png");
 }
 
 .purpose {
-  background-image: url("../images/values/purpose.png");
+  background-image: url("/images/values/purpose.png");
 }
 
 /* Responsive */
@@ -1294,7 +1294,6 @@ projects page - page-id-22
 .project-card {
   background: #fff;
   border-radius: 12px;
-  box-shadow: var(--shadow-medium);
   overflow: hidden;
   position: relative;
 }
@@ -1305,6 +1304,11 @@ projects page - page-id-22
   height: 100%;
   text-decoration: none;
   color: inherit;
+}
+
+.project-card:has(a:hover) {
+  box-shadow: var(--shadow-medium);
+  transform: translateY(-4px);
 }
 
 .project-card__thumb {
@@ -1321,15 +1325,21 @@ projects page - page-id-22
   display: block;
 }
 
+/*
 .project-card:hover .project-card__thumb img {
   transform: scale(1.03);
   opacity: 0.85;
-}
+}*/
 
 @media (prefers-reduced-motion: no-preference) {
   .project-card__thumb img {
-    transition: transform 0.5s ease-out, opacity 0.5s;
+    transition: transform 0.3s ease-out, opacity 0.5s;
   }
+
+  .project-card {
+    transition: 0.3s ease;
+  }
+
 }
 
 .project-card__body {
