@@ -181,7 +181,7 @@ body {
 }
 
 main {
-  padding: var(--main-margin-top) var(--page-padding-sides) 100px;
+  padding: var(--main-margin-top) var(--page-padding-sides) 20px;
   max-width: 1200px;
   margin: 120px auto;
   min-height: 50vh;
@@ -746,6 +746,7 @@ footer {
 }
 
 .footer-nav a {
+  font-weight: normal;
   text-decoration: none;
   color: inherit;
   transition: color 0.3s;
@@ -1250,18 +1251,8 @@ about page - page-id-21
 projects page - page-id-22
 ---------------------------------------------------------------------*/
 
-/*turn these off once links are ready
-.projects-grid a { 
-  pointer-events: none;
-  cursor: default; 
-} */
-
 .projects-intro {
-  margin-bottom: 100px;
-}
-
-.projects-intro p {
-  font-size: 1rem;
+  margin-bottom: 70px;
 }
 
 /* Projects Grid */
@@ -1392,6 +1383,10 @@ projects page - page-id-22
   margin-bottom: 100px;
 }
 
+.projects-section:last-of-type {
+  margin-bottom: 0;
+}
+
 .section-header {
   padding-bottom: 10px;
   width: 100%;
@@ -1422,7 +1417,7 @@ projects page - page-id-22
 /* Case Study / WIP tags */
 .project-card__meta {
   display: flex;
-  gap: 6px;
+  gap: 4px;
   flex-wrap: wrap;
 }
 
