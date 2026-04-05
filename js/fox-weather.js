@@ -37,6 +37,7 @@
   // -----------------------------------------------------------------------
 
   const canvas = document.createElement('canvas');
+  canvas.setAttribute('aria-hidden', 'true');
   canvas.style.cssText = `
     position: absolute;
     inset: 0;
