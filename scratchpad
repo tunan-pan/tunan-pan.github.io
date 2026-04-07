@@ -1,0 +1,82 @@
+
+  function buildInfoButton() {
+    const btn = document.createElement('button');
+    btn.setAttribute('aria-label', 'About this animation');
+    btn.textContent = '?';
+    btn.style.cssText = `
+      position: absolute;
+      bottom: 30%;
+      right: 30px;
+      z-index: 10;
+      width: 28px;
+      height: 28px;
+      border-radius: 50%;
+      border: 0;
+      background: rgba(84, 84, 84, 1);
+      color: rgba(255,255,255,0.85);
+      font-size: 13px;
+      font-family: inherit;
+      cursor: pointer;
+      transition: background 0.2s ease;
+    `;
+    btn.addEventListener('mouseenter', () => btn.style.background = '#E93600');
+    btn.addEventListener('mouseleave', () => btn.style.background = 'rgba(84, 84, 84, 1)');
+
+
+
+
+    
+    blurb.textContent = "This little section of the page is an interactive playground - give it a try, and don't forget to pet the fox 😉 If the motion isn't your thing, you can turn it off below.";
+
+
+
+
+      // Night states share a dark sky; day states have their own
+  const GRADIENTS = {
+    'sunny': { top: '#87CEEB', mid: '#C9E8F5', horizon: '#FFD9B0', bottom: '#FFE8CC' },
+    'cloudy': { top: '#8A9BB5', bottom: '#C5CEDB' },
+    'rainy': { top: '#5A6878', bottom: '#8A97A8' },
+    'snowy': { top: '#7A8FA8', bottom: '#B0C0D0' },
+    'night-clear': { top: '#0D1B3E', bottom: '#1A2F5E' },
+    'night-cloudy': { top: '#0D1B3E', bottom: '#1A2F5E' },
+    'night-rainy': { top: '#080F1F', bottom: '#0F1E38' },
+    'night-snowy': { top: '#111828', bottom: '#1C2A42' },
+  };
+
+
+
+
+
+
+
+
+
+
+
+
+<div style="width: 1440px; height: 900px" data-us-project="Mc1udMQ3iesW8M0LaDro"></div>
+<script type="text/javascript">
+  !function(){
+    var u=window.UnicornStudio;
+    if(u&&u.init){
+      if(document.readyState==="loading"){
+        document.addEventListener("DOMContentLoaded",function(){u.init()})
+      } else {
+          u.init()
+        }
+      }
+        else{
+          window.UnicornStudio={isInitialized:!1};
+          var i=document.createElement("script");
+          i.src="https://cdn.jsdelivr.net/gh/hiunicornstudio/unicornstudio.js@v2.1.6/dist/unicornStudio.umd.js",
+          i.onload=function(){
+            if(document.readyState==="loading"){
+              document.addEventListener("DOMContentLoaded",function(){UnicornStudio.init()})
+            } else {
+              UnicornStudio.init()
+            }
+          },
+          (document.head||document.body).appendChild(i)
+        }
+  }();
+  </script>
