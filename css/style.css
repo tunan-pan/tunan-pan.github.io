@@ -1491,7 +1491,7 @@ projects page - page-id-22
   margin-bottom: 2px;
 }
 
-.project-tags a {
+.project-tags a, .project-categories a {
   text-decoration: none !important;
   color: #545454;
 

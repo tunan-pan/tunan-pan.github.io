@@ -15,12 +15,6 @@ layout: base.njk
         <a class="back" href="/projects/"><span aria-hidden="true" class="arrow-back">&larr;</span> Back to all
           projects</a>
 
-        {% if project.category == "sandbox" %}
-        &ensp;|&ensp;<span class="project-categories">
-          <a href="/categories/{{ project.category | slug }}/">{{ project.category }}</a>
-        </span>
-        {% endif %}
-
       </div>
 
 
@@ -42,6 +36,13 @@ layout: base.njk
 
 
       {% set filteredTags = project.tags | reject("equalto", "Case Study") | reject("equalto", "WIP") %}
+
+      {% if project.category == "sandbox" %}
+      <span class="project-categories">
+        <a href="/categories/{{ project.category | slug }}/">{{ project.category }}</a>&ensp;&ensp;|&ensp;
+      </span>
+      {% endif %}
+
 
       {% if filteredTags.length %}
       <span class="project-tags">

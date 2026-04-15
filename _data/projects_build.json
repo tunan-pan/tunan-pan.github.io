@@ -113,21 +113,22 @@
     "images": []
   },
   {
-    "title": "Johnson & Johnson Global Public Health — Engaging Audiences With Augmented Reality",
-    "slug": "jnj",
-    "url": "/projects/jnj/",
-    "image": "/images/large_thumb_jnj_ar_3e45cad895.png",
+    "title": "Every Vote In — 360 Campaign Promoting Early Voting in LA County",
+    "slug": "gotv",
+    "url": "/projects/gotv/",
+    "image": "/images/large_thumb_gotv_6ac6de6e97.png",
     "category": "more",
     "tags": [
-      "Interactive"
+      "Campaign",
+      "Branding"
     ],
-    "order": 180,
+    "order": 185,
     "description": null,
-    "content": "<p>I explored the use of augmented reality (AR) as a way to make Johnson &amp; Johnson’s Global Public Health content more interactive and participatory, during a time when platforms like Instagram were shifting their focus toward Reels.</p><p>As part of this pitch, I developed several AR concepts rooted in the existing social content we were creating for the client, focusing on how AR could invite users to engage more actively with educational messaging rather than passively consume it.</p><figure><p><iframe src=\"https://docs.google.com/presentation/d/e/2PACX-1vQcMnv9x7SYVIt_Vnzwb8fC-W9JcZOeKSZAVMTTqxHp5VKuhX7zKHeABB7JfbSgnvpRZ189bvL0Qoxe/pubembed?start=false&amp;loop=true&amp;delayms=3000\" frameborder=\"0\" allowfullscreen=\"true\" mozallowfullscreen=\"true\" webkitallowfullscreen=\"true\"></iframe></p><figcaption><a target=\"_blank\" rel=\"noopener noreferrer\" href=\"https://docs.google.com/presentation/d/1ibFPACaL_wplsP06BQj8aGtBRcojAdnCMVQBKTH9wJ8/edit?usp=sharing\"><i>(Presentation can also be viewed in Google Slides here)</i></a></figcaption></figure>",
+    "content": "<p><img src=\"/images/GOTV_webbanners_English_Horizontal_1_71ae1aee1a.png\" alt=\"web banner with &quot;Vote Early, Vote Safely&quot;\" srcset=\"/images/thumbnail_GOTV_webbanners_English_Horizontal_1_71ae1aee1a.png 245w,/images/small_GOTV_webbanners_English_Horizontal_1_71ae1aee1a.png 500w,/images/medium_GOTV_webbanners_English_Horizontal_1_71ae1aee1a.png 750w,/images/large_GOTV_webbanners_English_Horizontal_1_71ae1aee1a.png 1000w,\" sizes=\"100vw\" width=\"1200\" height=\"375\"></p><p>For the historic 2020 election during COVID-19,<strong> I led the production of creative assets on the largest integrated campaign of my career.</strong> “Every Vote In” was a countywide 360° campaign effort for Los Angeles County Registrar-Recorder/County Clerk, designed to drive voter registration, promote early and mail-in voting during the pandemic, and educate one of the most diverse populations in the U.S. The campaign contributed to a <strong>rise in voter turnout in L.A. County, from 69% in 2016 to 76% in 2020.</strong></p><p>At the time, I was only a junior designer, and the scale, visibility, and stakes of this project were intimidating. I established the campaign’s early visual direction and built the core design system used across hundreds of assets. Working across multiple workstreams and cross-functional teams pushed me to think beyond execution and into systems, process, and coordination. This project became an early turning point in developing my project management mindset and confidence operating at scale.</p><h2>Design Work</h2><p>I developed a bold, modern visual system that was adaptable across digital, social, video, TV, radio, print, and OOH, all within an accelerated 7-week timeline.</p><p><strong>Key creative challenges included:</strong></p><ul><li>Designing a flexible identity system that could <strong>scale across 13 languages</strong>, and ensuring layouts supported varying copy lengths and non-Latin glyphs</li><li>Using culturally resonant, <strong>portrait-forward visuals</strong> that reflected LA County’s diverse communities</li><li><strong>Building editable design systems in Google Slides </strong>so non-designers from client teams and partner organizations could make copy and translation updates without compromising brand integrity</li><li><strong>Iterating creative in real time </strong>based on engagement data and campaign phases</li></ul><p><img src=\"/images/GOTV_1_770f5f21a9.png\" alt=\"work samples, including social graphics, ad banners, printed materials, OOH\" srcset=\"/images/thumbnail_GOTV_1_770f5f21a9.png 135w,/images/small_GOTV_1_770f5f21a9.png 434w,/images/medium_GOTV_1_770f5f21a9.png 651w,/images/large_GOTV_1_770f5f21a9.png 868w,\" sizes=\"100vw\" width=\"1200\" height=\"1382\"></p><h2>Impact</h2><p>The campaign <strong>contributed to historic voter engagement</strong> in LA County:</p><ul><li><strong>76% voter turnout</strong> (up from 69% in 2016)</li><li>Nearly <strong>80% of 4.3 million ballots</strong> cast by mail</li><li>Digital ads delivered <strong>102M+ impressions</strong></li><li><strong>77.7% average video completion</strong> rate (well above 50% benchmark)</li><li><strong>204M+ OOH impressions</strong> across 501,947 placements throughout 5 supervisorial districts</li><li><strong>36M+ impressions</strong> from in-language print ads</li><li>Featured by the Los Angeles Times as <strong>“one of the best-ever uses of the ad format” </strong>for our homepage takeover</li></ul><p>Beyond performance metrics, the campaign achieved widespread community adoption, with <strong>partner organizations customizing and distributing our toolkits</strong>, and large-scale “I Voted” installations organically generating social engagement across the county.<br>&nbsp;</p>",
     "leftbuttonText": null,
     "leftbuttonUrl": null,
-    "role": "<ul><li>Design Strategist</li></ul>",
-    "deliverables": "<ul><li>Pitch presentation</li><li>AR experience mockups</li></ul>",
+    "role": "<ul><li>Visual Designer</li></ul>",
+    "deliverables": "<ul><li>Campaign brand</li><li>Paid ads for digital &amp; print</li><li>Social media graphics</li><li>Social &amp; print templates for community partners</li><li>OOH (including signage for stores, buses, kiosks, billboards)</li><li>Website toolkit materials</li><li>Email templates</li></ul>",
     "images": []
   },
   {
@@ -139,13 +140,70 @@
     "tags": [
       "Digital"
     ],
-    "order": 155,
+    "order": 180,
     "description": null,
     "content": "<p><video controls=\"\" loop=\"\" autoplay=\"\" muted=\"\" playsinline=\"\" width=\"50%\" height=\"auto\">\n                                                                              <source src=\"/images/videos/CARECourt_ad-recording_970x250.mp4\" type=\"video/mp4\">\n                                                                              Your browser does not support the video tag.\n                                                                            </video></p><p>This project was particularly meaningful to me because<strong> I led the adoption and implementation of HTML5 display ads for the first time within the agency.</strong> In previous campaigns, I had worked with display ads limited to static or .gif formats, which often resulted in large file sizes, low visual quality, and limited animation and interactivity. I researched alternatives and discovered HTML5 ads were the industry standard.&nbsp;</p><p>This campaign was the first where I had both agency support and resources to develop them. I managed a freelancer to create designs across multiple ad sizes, enabling richer, lightweight animations that reinforced the campaign’s message. Beyond this campaign, the project established a foundation for future HTML5 ads at the agency.&nbsp;</p><p><img class=\"no-effect\" src=\"/images/CARE_Court_displayads_84d3393d34.png\" alt=\"display ad previews (not animated)\" srcset=\"/images/thumbnail_CARE_Court_displayads_84d3393d34.png 176w,/images/small_CARE_Court_displayads_84d3393d34.png 500w,/images/medium_CARE_Court_displayads_84d3393d34.png 750w,/images/large_CARE_Court_displayads_84d3393d34.png 1000w,\" sizes=\"100vw\" width=\"1288\" height=\"1140\"></p>",
     "leftbuttonText": null,
     "leftbuttonUrl": null,
     "role": "<ul><li>Creative Lead / Art Director</li><li>Project Manager</li></ul>",
     "deliverables": "<ul><li>HTML5 display ads</li><li>Social media ads</li><li>Eblast</li><li>Print ads</li><li>Toolkit</li><li>Fact sheet</li><li>Brochure</li></ul>",
+    "images": []
+  },
+  {
+    "title": "Johnson & Johnson Global Public Health — Engaging Audiences With Augmented Reality",
+    "slug": "jnj",
+    "url": "/projects/jnj/",
+    "image": "/images/large_thumb_jnj_ar_3e45cad895.png",
+    "category": "more",
+    "tags": [
+      "Interactive"
+    ],
+    "order": 170,
+    "description": null,
+    "content": "<p>I explored the use of augmented reality (AR) as a way to make Johnson &amp; Johnson’s Global Public Health content more interactive and participatory, during a time when platforms like Instagram were shifting their focus toward Reels.</p><p>As part of this pitch, I developed several AR concepts rooted in the existing social content we were creating for the client, focusing on how AR could invite users to engage more actively with educational messaging rather than passively consume it.</p><figure><p><iframe src=\"https://docs.google.com/presentation/d/e/2PACX-1vQcMnv9x7SYVIt_Vnzwb8fC-W9JcZOeKSZAVMTTqxHp5VKuhX7zKHeABB7JfbSgnvpRZ189bvL0Qoxe/pubembed?start=false&amp;loop=true&amp;delayms=3000\" frameborder=\"0\" allowfullscreen=\"true\" mozallowfullscreen=\"true\" webkitallowfullscreen=\"true\"></iframe></p><figcaption><a target=\"_blank\" rel=\"noopener noreferrer\" href=\"https://docs.google.com/presentation/d/1ibFPACaL_wplsP06BQj8aGtBRcojAdnCMVQBKTH9wJ8/edit?usp=sharing\"><i>(Presentation can also be viewed in Google Slides here)</i></a></figcaption></figure>",
+    "leftbuttonText": null,
+    "leftbuttonUrl": null,
+    "role": "<ul><li>Design Strategist</li></ul>",
+    "deliverables": "<ul><li>Pitch presentation</li><li>AR experience mockups</li></ul>",
+    "images": []
+  },
+  {
+    "title": "Carton Council — Increasing Carton Recycling Through Online Engagement",
+    "slug": "ccna",
+    "url": "/projects/ccna/",
+    "image": "/images/large_thumb_ccna2_5f232ee44c.png",
+    "category": "more",
+    "tags": [
+      "Branding",
+      "Digital",
+      "Strategy"
+    ],
+    "order": 165,
+    "description": null,
+    "content": "<p>While millions of Americans recycle cans, bottles, and paper, many are unaware that food and beverage cartons can also be recycled, and confusion remains about which cartons are accepted and how to properly recycle them. Carton Council’s goals were to raise awareness, educate consumers, and encourage recycling for a greener community and a healthier planet.</p><p>I joined the team as a junior designer, initially creating graphics for Carton Council based on established brand guidelines. As I became more familiar with the client and audience,<strong> I began evolving the visual approach, introducing cleaner design, more creative photography, and interactive content that encouraged engagement </strong>and aligned with emerging social media trends to better reach younger audiences.</p><figure class=\"image\"><img style=\"aspect-ratio:1200/1050;\" src=\"/images/CCNA_1b_6065486e48.png\" alt=\"sample of social graphics\" srcset=\"/images/thumbnail_CCNA_1b_6065486e48.png 178w,/images/small_CCNA_1b_6065486e48.png 500w,/images/medium_CCNA_1b_6065486e48.png 750w,/images/large_CCNA_1b_6065486e48.png 1000w,\" sizes=\"100vw\" width=\"1200\" height=\"1050\"></figure><p>Over time, I grew into the role of Art Director and took on a larger leadership position for the account. I became the lead designer (and sole designer for a period), helping shape the creative direction and expanding the brand across social and campaigns. This included:</p><ul><li><strong>Leading monthly brainstorms</strong> with the digital team to develop social content</li><li>Pitching and launching <strong>new initiatives</strong> such as Instagram GIPHY stickers and an increased focus on Reels</li><li><strong>Creating new brand guidelines</strong> to support the updated visual direction</li><li><strong>Overseeing a junior designer </strong>on new carton packaging designs, and videos for message testing</li><li>Acting as the <strong>photographer for social</strong> content shoots and <strong>leading creative direction </strong>for larger photoshoots</li><li><strong>Coordinating giveaways</strong> and social content with partner brands</li><li><strong>Auditing and contributing design feedback </strong>during a website redesign with an external development team</li></ul><p>I also worked on several integrated campaigns, including a 2018 initiative in Delaware and Maryland that used video, social content, IG Stories, Facebook chatbot, online quiz, and interactive experiences to educate residents about carton recycling. During the two-month campaign, the work generated <strong>15.5M impressions, 1.7M video views, 62K click-throughs, and 40K social engagements</strong>, with<strong> 97% of quiz participants reporting they intended to recycle cartons.</strong></p>",
+    "leftbuttonText": null,
+    "leftbuttonUrl": null,
+    "role": "<ul><li>Creative Strategist</li><li>Visual Designer</li><li>Design Manager</li><li>Project Manager</li><li>Photographer</li><li>Art Director</li><li>Video Editor</li></ul>",
+    "deliverables": "<ul><li>Updated brand guidelines</li><li>Monthly social media calendar</li><li>Social media content including graphics, gifs, and reels</li><li>Videos for ads, social, and message testing</li><li>Paid ads</li><li>Original photography</li><li>Online quiz</li><li>Carton packaging designs</li><li>Event collateral, displays, and handouts</li><li>Swag giveaway items</li><li>Presentation decks</li></ul>",
+    "images": []
+  },
+  {
+    "title": "Battle Creek Public Schools — Transforming Perceptions of a School District",
+    "slug": "bcps",
+    "url": "/projects/bcps/",
+    "image": "/images/large_thumb_bcps_3e4f572159.png",
+    "category": "more",
+    "tags": [
+      "Digital",
+      "Print"
+    ],
+    "order": 160,
+    "description": null,
+    "content": "<p><img src=\"/images/bcps_0_23b4f5ca96.jpg\" alt=\"BCPS students holding signs supporting the school\" srcset=\"/images/thumbnail_bcps_0_23b4f5ca96.jpg 234w,/images/small_bcps_0_23b4f5ca96.jpg 500w,/images/medium_bcps_0_23b4f5ca96.jpg 750w,/images/large_bcps_0_23b4f5ca96.jpg 1000w,\" sizes=\"100vw\" width=\"1200\" height=\"800\"></p><p>Battle Creek Public Schools (BCPS) is a school district in central Michigan, and for decades they experienced declining enrollment and negative reputational challenges, draining resources out of BCPS and into the area’s whiter, wealthier school districts. But thanks to a five-year, $51 million grant by the W.K. Kellogg Foundation in 2017, we have been able to <strong>rebuild the district’s reputation and improve academic achievement at BCPS.</strong></p><p>I joined the BCPS account as a junior designer and <strong>grew into the lead (and sometimes sole) designer supporting the district’s multi-year communications.</strong> My role evolved from production to strategy, including facilitating brainstorms, contributing campaign concepts, and shaping materials for enrollment, teacher recruitment, and community engagement.&nbsp;</p><p>After transitioning off the account, I was re-engaged due to the strong working relationship and institutional knowledge I had built with the client, returning to provide creative leadership and ensure consistency during a critical phase of the district’s transformation.</p><h2>Design Work</h2><p>Much of the work followed established brand guidelines, requiring<strong> high-volume, day-to-day communications </strong>across print and digital. The focus was less on visual experimentation and more on <strong>clarity, accessibility, and trust-building at scale</strong> — particularly during moments of crisis.</p><p>During COVID-19 school closures, I designed a take-home kindergarten learning packet, including an interactive scavenger hunt poster to support families navigating remote learning. This project required quickly adapting district messaging into engaging, age-appropriate materials during an unprecedented period of uncertainty.</p><p>I also helped train their in-house communications manager on InDesign foundations and design principles, allowing them to grow more self-sufficient over the years.</p><p>This account strengthened my ability to design consistently across large systems, and deepened my understanding of how consistent, sustained communications can shift perception and build trust over time.</p><p><img src=\"/images/BCPS_1_dark_4e3fd08c7b.png\" alt=\"work samples, including posters, activity pack, reports, printed materials\" srcset=\"/images/thumbnail_BCPS_1_dark_4e3fd08c7b.png 118w,/images/small_BCPS_1_dark_4e3fd08c7b.png 377w,/images/medium_BCPS_1_dark_4e3fd08c7b.png 566w,/images/large_BCPS_1_dark_4e3fd08c7b.png 754w,\" sizes=\"100vw\" width=\"1200\" height=\"1591\"></p><h2>Impact</h2><ul><li>Our multi-platform digital ad campaigns garnered <strong>millions of impressions</strong> and helped <strong>increase enrollment numbers</strong></li><li>Promoted honest and transparent communications with staff,<strong> diminishing teacher turnover</strong></li><li><strong>21% more people</strong> in 2020 than in 2019 said that BCPS is <strong>“exactly or very close to what I want for my child.”</strong></li><li>Our COVID-19 communications <strong>enhanced the opinion of 57%</strong> of surveyed residents&nbsp;<br>&nbsp;</li></ul>",
+    "leftbuttonText": null,
+    "leftbuttonUrl": null,
+    "role": "<ul><li>Visual Designer</li><li>Creative Lead &amp; Strategist</li></ul>",
+    "deliverables": "<ul><li>Classroom materials, handouts, and posters</li><li>Print newsletters and direct mail to families</li><li>Social media content and digital ad creative</li><li>Campaign concepts &amp; materials</li><li>Crisis communications support</li></ul>",
     "images": []
   },
   {
@@ -165,64 +223,6 @@
     "leftbuttonUrl": null,
     "role": "<ul><li>Visual Designer</li><li>Design Strategist</li></ul>",
     "deliverables": "<p>Camp Optimizely:</p><ul><li>Flyers and signage</li><li>Activity packs (booklet, merit badges, name tags, apparel design)</li><li>Photo op wall</li><li>Gathering area</li></ul><p>Pride Week:</p><ul><li>Agenda</li><li>Educational table tents &amp; posters</li><li>Gender-neutral restroom signs</li><li>T-shirt &amp; tattoo designs</li><li>Props for parade float</li></ul>",
-    "images": []
-  },
-  {
-    "title": "Carton Council — Increasing Carton Recycling Through Online Engagement",
-    "slug": "ccna",
-    "url": "/projects/ccna/",
-    "image": "/images/large_thumb_ccna2_5f232ee44c.png",
-    "category": "more",
-    "tags": [
-      "Branding",
-      "Digital",
-      "Strategy"
-    ],
-    "order": 135,
-    "description": null,
-    "content": "<p>While millions of Americans recycle cans, bottles, and paper, many are unaware that food and beverage cartons can also be recycled, and confusion remains about which cartons are accepted and how to properly recycle them. Carton Council’s goals were to raise awareness, educate consumers, and encourage recycling for a greener community and a healthier planet.</p><p>I joined the team as a junior designer, initially creating graphics for Carton Council based on established brand guidelines. As I became more familiar with the client and audience,<strong> I began evolving the visual approach, introducing cleaner design, more creative photography, and interactive content that encouraged engagement </strong>and aligned with emerging social media trends to better reach younger audiences.</p><figure class=\"image\"><img style=\"aspect-ratio:1200/1050;\" src=\"/images/CCNA_1b_6065486e48.png\" alt=\"sample of social graphics\" srcset=\"/images/thumbnail_CCNA_1b_6065486e48.png 178w,/images/small_CCNA_1b_6065486e48.png 500w,/images/medium_CCNA_1b_6065486e48.png 750w,/images/large_CCNA_1b_6065486e48.png 1000w,\" sizes=\"100vw\" width=\"1200\" height=\"1050\"></figure><p>Over time, I grew into the role of Art Director and took on a larger leadership position for the account. I became the lead designer (and sole designer for a period), helping shape the creative direction and expanding the brand across social and campaigns. This included:</p><ul><li><strong>Leading monthly brainstorms</strong> with the digital team to develop social content</li><li>Pitching and launching <strong>new initiatives</strong> such as Instagram GIPHY stickers and an increased focus on Reels</li><li><strong>Creating new brand guidelines</strong> to support the updated visual direction</li><li><strong>Overseeing a junior designer </strong>on new carton packaging designs, and videos for message testing</li><li>Acting as the <strong>photographer for social</strong> content shoots and <strong>leading creative direction </strong>for larger photoshoots</li><li><strong>Coordinating giveaways</strong> and social content with partner brands</li><li><strong>Auditing and contributing design feedback </strong>during a website redesign with an external development team</li></ul><p>I also worked on several integrated campaigns, including a 2018 initiative in Delaware and Maryland that used video, social content, IG Stories, Facebook chatbot, online quiz, and interactive experiences to educate residents about carton recycling. During the two-month campaign, the work generated <strong>15.5M impressions, 1.7M video views, 62K click-throughs, and 40K social engagements</strong>, with<strong> 97% of quiz participants reporting they intended to recycle cartons.</strong></p>",
-    "leftbuttonText": null,
-    "leftbuttonUrl": null,
-    "role": "<ul><li>Creative Strategist</li><li>Visual Designer</li><li>Design Manager</li><li>Project Manager</li><li>Photographer</li><li>Art Director</li><li>Video Editor</li></ul>",
-    "deliverables": "<ul><li>Updated brand guidelines</li><li>Monthly social media calendar</li><li>Social media content including graphics, gifs, and reels</li><li>Videos for ads, social, and message testing</li><li>Paid ads</li><li>Original photography</li><li>Online quiz</li><li>Carton packaging designs</li><li>Event collateral, displays, and handouts</li><li>Swag giveaway items</li><li>Presentation decks</li></ul>",
-    "images": []
-  },
-  {
-    "title": "Battle Creek Public Schools — Transforming Perceptions of a School District",
-    "slug": "bcps",
-    "url": "/projects/bcps/",
-    "image": "/images/large_thumb_bcps_3e4f572159.png",
-    "category": "more",
-    "tags": [
-      "Digital",
-      "Print"
-    ],
-    "order": 120,
-    "description": null,
-    "content": "<p><img src=\"/images/bcps_0_23b4f5ca96.jpg\" alt=\"BCPS students holding signs supporting the school\" srcset=\"/images/thumbnail_bcps_0_23b4f5ca96.jpg 234w,/images/small_bcps_0_23b4f5ca96.jpg 500w,/images/medium_bcps_0_23b4f5ca96.jpg 750w,/images/large_bcps_0_23b4f5ca96.jpg 1000w,\" sizes=\"100vw\" width=\"1200\" height=\"800\"></p><p>Battle Creek Public Schools (BCPS) is a school district in central Michigan, and for decades they experienced declining enrollment and negative reputational challenges, draining resources out of BCPS and into the area’s whiter, wealthier school districts. But thanks to a five-year, $51 million grant by the W.K. Kellogg Foundation in 2017, we have been able to <strong>rebuild the district’s reputation and improve academic achievement at BCPS.</strong></p><p>I joined the BCPS account as a junior designer and <strong>grew into the lead (and sometimes sole) designer supporting the district’s multi-year communications.</strong> My role evolved from production to strategy, including facilitating brainstorms, contributing campaign concepts, and shaping materials for enrollment, teacher recruitment, and community engagement.&nbsp;</p><p>After transitioning off the account, I was re-engaged due to the strong working relationship and institutional knowledge I had built with the client, returning to provide creative leadership and ensure consistency during a critical phase of the district’s transformation.</p><h2>Design Work</h2><p>Much of the work followed established brand guidelines, requiring<strong> high-volume, day-to-day communications </strong>across print and digital. The focus was less on visual experimentation and more on <strong>clarity, accessibility, and trust-building at scale</strong> — particularly during moments of crisis.</p><p>During COVID-19 school closures, I designed a take-home kindergarten learning packet, including an interactive scavenger hunt poster to support families navigating remote learning. This project required quickly adapting district messaging into engaging, age-appropriate materials during an unprecedented period of uncertainty.</p><p>I also helped train their in-house communications manager on InDesign foundations and design principles, allowing them to grow more self-sufficient over the years.</p><p>This account strengthened my ability to design consistently across large systems, and deepened my understanding of how consistent, sustained communications can shift perception and build trust over time.</p><p><img src=\"/images/BCPS_1_dark_4e3fd08c7b.png\" alt=\"work samples, including posters, activity pack, reports, printed materials\" srcset=\"/images/thumbnail_BCPS_1_dark_4e3fd08c7b.png 118w,/images/small_BCPS_1_dark_4e3fd08c7b.png 377w,/images/medium_BCPS_1_dark_4e3fd08c7b.png 566w,/images/large_BCPS_1_dark_4e3fd08c7b.png 754w,\" sizes=\"100vw\" width=\"1200\" height=\"1591\"></p><h2>Impact</h2><ul><li>Our multi-platform digital ad campaigns garnered <strong>millions of impressions</strong> and helped <strong>increase enrollment numbers</strong></li><li>Promoted honest and transparent communications with staff,<strong> diminishing teacher turnover</strong></li><li><strong>21% more people</strong> in 2020 than in 2019 said that BCPS is <strong>“exactly or very close to what I want for my child.”</strong></li><li>Our COVID-19 communications <strong>enhanced the opinion of 57%</strong> of surveyed residents&nbsp;<br>&nbsp;</li></ul>",
-    "leftbuttonText": null,
-    "leftbuttonUrl": null,
-    "role": "<ul><li>Visual Designer</li><li>Creative Lead &amp; Strategist</li></ul>",
-    "deliverables": "<ul><li>Classroom materials, handouts, and posters</li><li>Print newsletters and direct mail to families</li><li>Social media content and digital ad creative</li><li>Campaign concepts &amp; materials</li><li>Crisis communications support</li></ul>",
-    "images": []
-  },
-  {
-    "title": "Every Vote In — 360 Campaign Promoting Early Voting in LA County",
-    "slug": "gotv",
-    "url": "/projects/gotv/",
-    "image": "/images/large_thumb_gotv_6ac6de6e97.png",
-    "category": "more",
-    "tags": [
-      "Campaign",
-      "Branding"
-    ],
-    "order": 115,
-    "description": null,
-    "content": "<p><img src=\"/images/GOTV_webbanners_English_Horizontal_1_71ae1aee1a.png\" alt=\"web banner with &quot;Vote Early, Vote Safely&quot;\" srcset=\"/images/thumbnail_GOTV_webbanners_English_Horizontal_1_71ae1aee1a.png 245w,/images/small_GOTV_webbanners_English_Horizontal_1_71ae1aee1a.png 500w,/images/medium_GOTV_webbanners_English_Horizontal_1_71ae1aee1a.png 750w,/images/large_GOTV_webbanners_English_Horizontal_1_71ae1aee1a.png 1000w,\" sizes=\"100vw\" width=\"1200\" height=\"375\"></p><p>For the historic 2020 election during COVID-19,<strong> I led the production of creative assets on the largest integrated campaign of my career.</strong> “Every Vote In” was a countywide 360° campaign effort for Los Angeles County Registrar-Recorder/County Clerk, designed to drive voter registration, promote early and mail-in voting during the pandemic, and educate one of the most diverse populations in the U.S. The campaign contributed to a <strong>rise in voter turnout in L.A. County, from 69% in 2016 to 76% in 2020.</strong></p><p>At the time, I was only a junior designer, and the scale, visibility, and stakes of this project were intimidating. I established the campaign’s early visual direction and built the core design system used across hundreds of assets. Working across multiple workstreams and cross-functional teams pushed me to think beyond execution and into systems, process, and coordination. This project became an early turning point in developing my project management mindset and confidence operating at scale.</p><h2>Design Work</h2><p>I developed a bold, modern visual system that was adaptable across digital, social, video, TV, radio, print, and OOH, all within an accelerated 7-week timeline.</p><p><strong>Key creative challenges included:</strong></p><ul><li>Designing a flexible identity system that could <strong>scale across 13 languages</strong>, and ensuring layouts supported varying copy lengths and non-Latin glyphs</li><li>Using culturally resonant, <strong>portrait-forward visuals</strong> that reflected LA County’s diverse communities</li><li><strong>Building editable design systems in Google Slides </strong>so non-designers from client teams and partner organizations could make copy and translation updates without compromising brand integrity</li><li><strong>Iterating creative in real time </strong>based on engagement data and campaign phases</li></ul><p><img src=\"/images/GOTV_1_770f5f21a9.png\" alt=\"work samples, including social graphics, ad banners, printed materials, OOH\" srcset=\"/images/thumbnail_GOTV_1_770f5f21a9.png 135w,/images/small_GOTV_1_770f5f21a9.png 434w,/images/medium_GOTV_1_770f5f21a9.png 651w,/images/large_GOTV_1_770f5f21a9.png 868w,\" sizes=\"100vw\" width=\"1200\" height=\"1382\"></p><h2>Impact</h2><p>The campaign <strong>contributed to historic voter engagement</strong> in LA County:</p><ul><li><strong>76% voter turnout</strong> (up from 69% in 2016)</li><li>Nearly <strong>80% of 4.3 million ballots</strong> cast by mail</li><li>Digital ads delivered <strong>102M+ impressions</strong></li><li><strong>77.7% average video completion</strong> rate (well above 50% benchmark)</li><li><strong>204M+ OOH impressions</strong> across 501,947 placements throughout 5 supervisorial districts</li><li><strong>36M+ impressions</strong> from in-language print ads</li><li>Featured by the Los Angeles Times as <strong>“one of the best-ever uses of the ad format” </strong>for our homepage takeover</li></ul><p>Beyond performance metrics, the campaign achieved widespread community adoption, with <strong>partner organizations customizing and distributing our toolkits</strong>, and large-scale “I Voted” installations organically generating social engagement across the county.<br>&nbsp;</p>",
-    "leftbuttonText": null,
-    "leftbuttonUrl": null,
-    "role": "<ul><li>Visual Designer</li></ul>",
-    "deliverables": "<ul><li>Campaign brand</li><li>Paid ads for digital &amp; print</li><li>Social media graphics</li><li>Social &amp; print templates for community partners</li><li>OOH (including signage for stores, buses, kiosks, billboards)</li><li>Website toolkit materials</li><li>Email templates</li></ul>",
     "images": []
   },
   {
