@@ -22,6 +22,7 @@ pink: #F2126C
 
   --page-padding-sides: 8%;
   --main-margin-top: 70px;
+  --text-margin-bottom: 1.25rem;
 
   --shadow-color: 0deg 0% 60%;
   --shadow-medium:
@@ -182,7 +183,7 @@ body {
   font-family: "InclusiveSans", sans-serif;
   font-weight: normal;
   font-style: normal;
-  line-height: 160%;
+  line-height: 150%;
   color: #000;
   text-wrap: pretty;
   margin: 0;
@@ -209,6 +210,10 @@ strong {
 
 em {
   font-style: italic;
+}
+
+p {
+  margin-bottom: var(--text-margin-bottom);
 }
 
 p a,
@@ -353,7 +358,15 @@ h6:first-child {
 
 ul li,
 ol li {
-  margin-bottom: 0.5rem;
+  margin-bottom: calc(var(--text-margin-bottom) / 1.5);
+}
+ul li:first-child,
+ol li:first-child {
+  margin-top: calc(var(--text-margin-bottom) / -50%);
+}
+ul li:last-child,
+ol li:last-child {
+  margin-bottom: var(--text-margin-bottom);
 }
 
 li::marker {
@@ -1353,8 +1366,8 @@ projects page - page-id-22
   font-family: 'InclusiveSans', sans-serif;
   font-size: 1.2rem;
   font-weight: 500;
-  line-height: 130%;
-  margin: 6px 0 4px;
+  line-height: 150%;
+  margin: 8px 0;
   padding: 0;
   text-transform: none;
   letter-spacing: normal;
