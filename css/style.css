@@ -855,7 +855,7 @@ home page
 .fox-container {
   position: absolute;
   width: 100%;
-  height: 70dvh; /*should be slightly less than the fox-mask*/
+  height: 75dvh; /*should be same as the fox-mask*/
   left: 50%;
   transform: translateX(-50%);
   top: 0;
@@ -950,7 +950,7 @@ home page
 .home-top-container {
   position: relative;
   width: 100%;
-  margin: calc(80px + 60dvh + 20px) auto 0;
+  margin: calc(80px + 60dvh + 30px) auto 0;
   z-index: 5;
 }
 
