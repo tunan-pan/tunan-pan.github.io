@@ -202,7 +202,6 @@ main {
   max-width: 1200px;
   margin: 120px auto;
   min-height: 50vh;
-  box-sizing: content-box;
 }
 
 strong {
@@ -744,7 +743,6 @@ footer section
 footer {
   background-color: var(--color-darkgrey);
   padding: 50px var(--page-padding-sides);
-
 }
 
 .footer-content {
@@ -842,7 +840,9 @@ home page
 .home-page main {
   padding: 0;
   max-width: 100%;
-  margin-bottom: 0px;
+  border: 1px solid black;
+  margin: 0;
+  height: 100dvh;
 }
 
 @media (max-width:680px) {
@@ -851,38 +851,46 @@ home page
   }
 }
 
+.fox-window {
+  background-color: var(--color-lightpurple);
+  position: absolute;
+  width: 100%;
+  height: 100dvh;
+  z-index: 1;
+}
+
 /* Fox container - wraps both static and animated versions */
 .fox-container {
   position: absolute;
   width: 100%;
-  height: 70dvh; /*should be slightly less than the fox-mask*/
+  margin: 0 auto;
+  height: 100dvh; 
   left: 50%;
   transform: translateX(-50%);
   top: 0;
   z-index: 1;
-  background-color: var(--color-lightpurple);
   overflow: hidden; /* prevents side scrolling on mobile */
+  border: 1px solid black;
+  padding: 50px var(--page-padding-sides);
 }
 
-.fox-mask {
+.fox-wrapper {
   position: absolute;
-  top: 200px;
-  left: 50%;
-  transform: translateX(-50%);
-  width: 120%;
-  height: 75dvh;
-  z-index: 5;
+  /*bottom: -140px;
+  right: -200px;*/
+  bottom: -18vh;
+  right: -22vw;
+  height: min(100dvh, 60vw);
+  aspect-ratio: 1093.09 / 702.91;
+  z-index: 4;
+  margin: 0 var(--page-padding-sides);
 }
 
 /* Both fox images share the same positioning */
 .fox-visual {
-  position: absolute;
-  height: 60dvh;
-  width: auto;
-  top: 160px;
-  /*top: 120px;*/
-  left: 49%;
-  transform: translateX(-50%);
+  position: relative;
+  height: 100%;
+  width: 100%;
   display: block;
   z-index: 4;
 }
@@ -892,11 +900,13 @@ home page
   transition: none;
 }
 
-.fox-animated {
+.fox-visual.fox-animated {
   opacity: 0;
   pointer-events: none;
+  position: absolute; /* Keep animated one absolute so it overlays */
+  top: 0;
+  left: 0;
 }
-
 .fox-container.is-animating .fox-static {
   opacity: 0;
 }
@@ -908,12 +918,11 @@ home page
 .fox-hitbox {
   position: absolute;
   aspect-ratio: 1 / 0.4;
-  height: 8dvh;
+  height: 12%;
   border-radius: 90px;
-  top: calc(160px + (60dvh * 0.65));
-  left: 50%;
-  transform: translateX(-52%);
-  z-index: 5;
+  top: 65%; 
+  left: 40%;
+  z-index: 50;
   cursor: url("data:image/svg+xml;charset=utf-8,%3Csvg xmlns='http://www.w3.org/2000/svg' width='100' height='100'%3E%3Ctext y='50' font-size='42'%3E💛%3C/text%3E%3C/svg%3E") 50 50, pointer;
 }
 
@@ -945,30 +954,39 @@ home page
 }
 
 
-
-
 .home-top-container {
   position: relative;
-  width: 100%;
-  margin: calc(80px + 60dvh + 20px) auto 0;
+  max-width: 65%;
+  margin: calc(15dvh) 0 0 -100px;
+  padding: 50px 20px 30px 80px;
   z-index: 5;
+  background-color: #fff;
+  /*border-radius: 63% 37% 54% 46% / 55% 48% 52% 45%;*/
+  border-radius: 46% 67% 77% 43% / 65% 62% 48% 55%;
+
+  box-shadow: var(--shadow-light);
 }
+
+
+
+
+
 
 .home-intro-text {
   width: 100%;
   max-width: 750px;
   margin: 0 auto;
-  padding: 0 30px;
-  font-size: 1.2em;
+  padding: 0 30px 0 0;
+  font-size: 1.4rem;
   line-height: 180%;
+  text-align: left;
   text-wrap: balance;
-  text-align: center;
 }
 
 .home-intro-text h1 {
   font-family: "Lexend", sans-serif;
   font-weight: 300;
-  font-size: 2.8rem;
+  font-size: 3rem;
   margin-bottom: 30px;
   line-height: 140%;
 }
@@ -992,7 +1010,7 @@ about page - page-id-21
 
 .about-page main {
   padding-bottom: 0;
-  max-width: 1000px;
+  max-width: 1100px;
   margin-bottom: 0;
 }
 
@@ -1002,7 +1020,7 @@ about page - page-id-21
   gap: 40px;
   align-items: start;
   margin: 0 0 50px;
-  min-height: 400px;
+  min-height: 200px;
 }
 
 .photo-stack {
@@ -1014,7 +1032,7 @@ about page - page-id-21
 
 .about-image {
   display: block;
-  width: 90%;
+  width: 100%;
   aspect-ratio: 1 / 1.49;
   background-size: cover;
   background-repeat: no-repeat;
@@ -1048,7 +1066,7 @@ about page - page-id-21
 @media (max-width: 850px) {
   .photo-stack {
     height: 55vw;
-    min-height: 200px;
+    min-height: 290px;
   }
 
   .about-image {

@@ -202,6 +202,7 @@ main {
   max-width: 1200px;
   margin: 120px auto;
   min-height: 50vh;
+  box-sizing: content-box;
 }
 
 strong {
@@ -405,7 +406,7 @@ header nav
   background-color: #fff;
   transition: background-color 0.3s ease, box-shadow 0.5s ease;
   box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
-  height: 72px;
+  height: 82px;
 }
 
 @media (prefers-reduced-motion: no-preference) {
@@ -422,7 +423,7 @@ header nav
   display: flex;
   justify-content: space-between;
   align-items: center;
-  box-sizing: border-box;
+  box-sizing: content-box;
 }
 
 @media (prefers-reduced-motion: no-preference) {
@@ -432,7 +433,7 @@ header nav
 }
 
 .site-header.scrolled .header-container {
-  padding-top: 2.5rem;
+  padding-top: 1.5rem;
 }
 
 .logo {
@@ -841,7 +842,7 @@ home page
 .home-page main {
   padding: 0;
   max-width: 100%;
-  margin-bottom: 50px;
+  margin-bottom: 0px;
 }
 
 @media (max-width:680px) {
@@ -854,34 +855,31 @@ home page
 .fox-container {
   position: absolute;
   width: 100%;
-  height: 80vh;
-  /*should be slightly less than the fox-mask*/
+  height: 70dvh; /*should be slightly less than the fox-mask*/
   left: 50%;
   transform: translateX(-50%);
   top: 0;
   z-index: 1;
   background-color: var(--color-lightpurple);
-  overflow: hidden;
-  /* prevents side scrolling on mobile */
+  overflow: hidden; /* prevents side scrolling on mobile */
 }
 
 .fox-mask {
   position: absolute;
-  top: 70px;
-  /* top: 110px; /* slightly less than fox-visual */
+  top: 200px;
   left: 50%;
   transform: translateX(-50%);
   width: 120%;
-  height: 90vh;
+  height: 75dvh;
   z-index: 5;
 }
 
 /* Both fox images share the same positioning */
 .fox-visual {
   position: absolute;
-  height: 66vh;
+  height: 60dvh;
   width: auto;
-  top: 80px;
+  top: 160px;
   /*top: 120px;*/
   left: 49%;
   transform: translateX(-50%);
@@ -910,9 +908,9 @@ home page
 .fox-hitbox {
   position: absolute;
   aspect-ratio: 1 / 0.4;
-  height: 6vh;
+  height: 8dvh;
   border-radius: 90px;
-  top: calc(45vh + 60px);
+  top: calc(160px + (60dvh * 0.65));
   left: 50%;
   transform: translateX(-52%);
   z-index: 5;
@@ -952,7 +950,7 @@ home page
 .home-top-container {
   position: relative;
   width: 100%;
-  margin: calc(66vh + 5px) auto 0;
+  margin: calc(80px + 60dvh + 20px) auto 0;
   z-index: 5;
 }
 
@@ -994,7 +992,7 @@ about page - page-id-21
 
 .about-page main {
   padding-bottom: 0;
-  max-width: 1100px;
+  max-width: 1000px;
   margin-bottom: 0;
 }
 
@@ -1004,7 +1002,7 @@ about page - page-id-21
   gap: 40px;
   align-items: start;
   margin: 0 0 50px;
-  min-height: 200px;
+  min-height: 400px;
 }
 
 .photo-stack {
@@ -1016,7 +1014,7 @@ about page - page-id-21
 
 .about-image {
   display: block;
-  width: 100%;
+  width: 90%;
   aspect-ratio: 1 / 1.49;
   background-size: cover;
   background-repeat: no-repeat;
@@ -1050,7 +1048,7 @@ about page - page-id-21
 @media (max-width: 850px) {
   .photo-stack {
     height: 55vw;
-    min-height: 290px;
+    min-height: 200px;
   }
 
   .about-image {

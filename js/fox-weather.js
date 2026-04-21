@@ -356,7 +356,7 @@
     btn.textContent = '?';
     btn.style.cssText = `
       position: absolute;
-      bottom: 30%;
+      bottom: 25%;
       right: 30px;
       z-index: 10;
       width: 28px;
@@ -376,8 +376,8 @@
     const popup = document.createElement('div');
     popup.style.cssText = `
       position: absolute;
-      bottom: calc(28% + 38px);
-      right: 14px;
+      bottom: calc(25% + 38px);
+      right: 30px;
       z-index: 11;
       width: 240px;
       background: rgba(255,255,255,0.96);
