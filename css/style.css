@@ -419,7 +419,7 @@ header nav
   max-width: 1200px;
   margin: 0 auto;
   height: 40px;
-  padding: 5rem var(--page-padding-sides);
+  padding: 3rem var(--page-padding-sides);
   display: flex;
   justify-content: space-between;
   align-items: center;
