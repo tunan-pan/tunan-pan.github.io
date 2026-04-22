@@ -950,7 +950,7 @@ home page
 .home-top-container {
   position: relative;
   width: 100%;
-  margin: calc(80px + 60dvh + 30px) auto 0;
+  margin: calc(80px + 60dvh + 10px) auto 0;
   z-index: 5;
 }
 
@@ -959,7 +959,7 @@ home page
   max-width: 750px;
   margin: 0 auto;
   padding: 0 30px;
-  font-size: 1.2em;
+  font-size: 1.3rem;
   line-height: 180%;
   text-wrap: balance;
   text-align: center;
@@ -973,15 +973,26 @@ home page
   line-height: 140%;
 }
 
-@media (max-width: 550px) {
-  .home-intro-text h1 {
-    font-size: 2.4rem;
-  }
-}
-
 .home-button {
   margin-top: 20px;
 }
+
+
+@media (max-width: 500px) {
+  .home-top-container {
+    margin: calc(80px + 60dvh + 30px) auto 0;
+  }
+  .home-intro-text { 
+    font-size: 1.1rem;
+  }
+  .home-intro-text h1 {
+    font-size: 2.4rem;
+  }
+  .home-button {
+    letter-spacing: 1px;
+  }
+}
+
 
 
 
