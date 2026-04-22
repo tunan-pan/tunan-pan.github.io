@@ -39,12 +39,12 @@
             <img src="/images/logo/Logo-icon_1080x1080.svg" alt="logo" width="25">
             <span>Tunan Pan</span>
         </a>
-        
+
         <button class="mobile-menu-toggle" aria-label="Toggle menu">
             <span class="hamburger"></span>
         </button>
-        
-        <nav class="main-nav">
+
+        <nav class="main-nav" aria-label="Main navigation">
             <a href="/projects/" >See My Work</a>
             <a href="/about/" >Get To Know Me</a>
             <a href="/contact/" >Say Hello</a>
@@ -52,55 +52,65 @@
     </div>
 </header>
 
-
   <main>
   
 
 <article class="project-post">
-  
-  <div class="column-left">
-    <div class="column-left-inner">
-      <div class="project-meta">
-        
 
-        
-          
-            
-            
-          
-            
-            
-          
-            
-            
-              <span class="tag tag--wip">WIP</span>
-            
-          
-        
+  <section class="column-left" aria-label="Left column - project details">
+    <div class="column-left-inner">
+
+
+
+
+      <div class="project-meta">
+        <a class="back" href="/projects/"><span aria-hidden="true" class="arrow-back">&larr;</span> Back to all
+          projects</a>
 
       </div>
 
 
       <h1>Designing a Predictive Support App for Autistic Meltdown Prevention</h1>
 
+
+
+
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      <span class="tag tag--wip">WIP</span>&ensp;
+      
+      
+      
+
+
+      
+
+      
+
+
+      
+      <span class="project-tags">
+        
+        <a href="/tags/web-ux/">Web/UX</a>, 
+        
+        <a href="/tags/branding/">Branding</a>
+        
+      </span>
+      
+
       <div class="leftbutton">
         
       </div>
-          
 
-      
 
-      
-        <span class="project-tags">
-          
-            <a href="/tags/web-ux/">Web/UX</a>, 
-          
-            <a href="/tags/branding/">Branding</a>
-          
-        </span>
-      
-
-    
       <div class="project-role">
         
       </div>
@@ -110,22 +120,21 @@
 
 
     </div>
-  </div>
-  
-  <div class="column-right fade-in">
+  </section>
+
+  <section class="column-right fade-in" aria-label="Project main content">
     <!-- Main content -->
     <div class="project-content">
       
-        <p>Content coming soon!</p>
+      <p>Content coming soon!</p>
       
 
     </div>
 
     <!-- Image gallery -->
     
-    
 
-  </div>
+  </section>
 
 </article>
 
@@ -134,17 +143,18 @@
 
 
 
-  <div class="projects-more"><h4>View more projects</h4>
-    <nav>
-        
-          <p class="project-prev">← <br/><a href="/projects/library-ext/">Library Extension — Conceptual Redesign for Clarity and Ease</a></p>
-        
+<section class="projects-more" aria-labelledby="more-projects">
+  <h4 id="more-projects">View more projects</h4>
+  <nav>
+    
+    <p class="project-prev">← <br /><a href="/projects/bga-a11y/">Accessibility Guide for Board Game Arena</a></p>
+    
 
-        
-          <p class="project-next">→<br/><a href="/projects/yacht-rock/">Yacht Rock — Making an Accessible Game on Board Game Arena</a> </p>
-        
-    </nav>
-  </div>
+    
+    <p class="project-next">→<br /><a href="/projects/cravings/">Cravings Interpreter</a> </p>
+    
+  </nav>
+</section>
   </main>
 
   <button class="back-to-top" aria-label="Back to top">
