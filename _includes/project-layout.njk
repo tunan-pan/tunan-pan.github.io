@@ -111,15 +111,16 @@ layout: base.njk
 {% set prev = projects[index - 1] or projects[projects.length - 1] %}
 {% set next = projects[index + 1] or projects[0] %}
 
-<section class="projects-more" aria-labelledby="more-projects">
-  <h4 id="more-projects">View more projects</h4>
+<section class="projects-more" aria-label="more-projects">
   <nav>
     {% if prev %}
-    <p class="project-prev">← <br /><a href="/projects/{{ prev.slug }}/">{{ prev.title }}</a></p>
+    <p class="project-prev">← <br/><a href="/projects/{{ prev.slug }}/">Previous project: <br/>{{ prev.title }}</a></p>
     {% endif %}
 
     {% if next %}
-    <p class="project-next">→<br /><a href="/projects/{{ next.slug }}/">{{ next.title }}</a> </p>
+    <p class="project-next"> →<br/><a href="/projects/{{ next.slug }}/">Next project: <br/>{{ next.title }}</a></p>
+
+    
     {% endif %}
   </nav>
 </section>
