@@ -1328,7 +1328,13 @@ projects page - page-id-22
   color: inherit;
 }
 
-.project-card:has(a:hover) {
+.project-card:has(a:focus-visible) {
+  outline: 3px solid #000;
+  outline-offset: 4px;
+  border-radius: 12px;
+}
+
+.project-card:has(a:hover), .project-card:has(a:focus-visible) {
   box-shadow: var(--shadow-medium);
   transform: translateY(-4px);
 }
@@ -1388,11 +1394,6 @@ projects page - page-id-22
   text-decoration: none;
 }
 
-/*
-.project-card__body h3 a:hover {
-  color: var(--color-orange);
-}
-*/
 .project-card__desc {
   font-size: 0.9em;
   color: #555;
@@ -1504,7 +1505,7 @@ projects page - page-id-22
   align-items: center;
 }
 
-/* Categories and Tags */
+/* Categories (currently not used) and Tags */
 .project-categories,
 .project-tags, .tag--default {
   font-size: 0.7rem;
