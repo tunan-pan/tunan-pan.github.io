@@ -283,7 +283,7 @@ li a:hover {
   border: 0;
   font-size: 1rem;
   padding: 0.6rem 1.5rem;
-  margin-top: 16px;
+  margin-top: 28px;
 }
 
 .button-projects:hover {
@@ -1789,16 +1789,16 @@ iframe {
 
 .projects-more {
   margin-top: 100px;
+  border-top: 1px solid black;
 }
-
+/*
 .projects-more h4 {
   display: block;
-  border-top: 1px solid black;
   padding-top: 1em;
   text-align: center;
   text-transform: uppercase;
 }
-
+*/
 .projects-more nav {
   display: grid;
   grid-template-columns: 1fr 1fr;
