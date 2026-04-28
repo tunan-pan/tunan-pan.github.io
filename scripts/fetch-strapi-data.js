@@ -43,20 +43,42 @@ async function fetchAndSave() {
         alternativeText: ""
       };
 
-      if (p.thumbnail?.formats) {
-        const formats = p.thumbnail.formats;
-        const bestFormat =
-          formats.large ||
-          formats.medium ||
-          formats.small ||
-          formats.thumbnail;
+      if (p.thumbnail) {
+        const t = p.thumbnail;
+        const isVideo = t.mime?.startsWith("video/");
+        const isGif = t.mime === "image/gif";
 
-        if (bestFormat?.url) {
-          image = bestFormat.url.replace("/uploads", "/images");
+        if (isVideo || isGif) {
+          // Videos and GIFs: use the URL directly, no format processing
+          image = {
+            url: t.url?.replace("/uploads", "/images"),
+            mime: t.mime,
+            alternativeText: t.alternativeText || ""
+          };
+        } else if (t.formats) {
+          // Static images: pick the best format
+          const formats = t.formats;
+          const bestFormat =
+            formats.large ||
+            formats.medium ||
+            formats.small ||
+            formats.thumbnail;
+
+          if (bestFormat?.url) {
+            image = {
+              url: bestFormat.url.replace("/uploads", "/images"),
+              mime: t.mime || "image/jpeg",
+              alternativeText: t.alternativeText || ""
+            };
+          }
+        } else if (t.url) {
+          // Fallback: no formats, just a direct URL
+          image = {
+            url: t.url.replace("/uploads", "/images"),
+            mime: t.mime || "",
+            alternativeText: t.alternativeText || ""
+          };
         }
-
-        image.alternativeText = p.thumbnail.alternativeText || "";
-
       }
 
       // Process images

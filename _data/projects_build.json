@@ -25,7 +25,11 @@
     "title": "Library Extention Redesign",
     "slug": "library-ext",
     "url": "/projects/library-ext/",
-    "image": "/images/large_Lib_Ext_Thumbnail_2d93005f3d.png",
+    "image": {
+      "url": "/images/large_Lib_Ext_Thumbnail_2d93005f3d.png",
+      "mime": "image/png",
+      "alternativeText": "Preview of the Library Extension"
+    },
     "category": "featured",
     "tags": [
       "Web/UX",
@@ -44,7 +48,11 @@
     "title": "Games For Change Website Redesign",
     "slug": "g4c",
     "url": "/projects/g4c/",
-    "image": "/images/large_thumb_g4c_featured_eab34786cf.png",
+    "image": {
+      "url": "/images/G4_C_laptop_mockup_homepage_4714a84fcf.mp4",
+      "mime": "video/mp4",
+      "alternativeText": ""
+    },
     "category": "featured",
     "tags": [
       "Web/UX",
@@ -63,7 +71,11 @@
     "title": "Accessibility Guide for Board Game Arena",
     "slug": "bga-a11y",
     "url": "/projects/bga-a11y/",
-    "image": "/images/medium_thumb_bga2_e8c79527b8.png",
+    "image": {
+      "url": "/images/medium_thumb_bga2_e8c79527b8.png",
+      "mime": "image/png",
+      "alternativeText": ""
+    },
     "category": "featured",
     "tags": [
       "Accessibility",
@@ -83,7 +95,11 @@
     "title": "Cravings Interpreter",
     "slug": "cravings",
     "url": "/projects/cravings/",
-    "image": "/images/large_cravings_thumb_a34de905cc.png",
+    "image": {
+      "url": "/images/large_cravings_thumb_a34de905cc.png",
+      "mime": "image/png",
+      "alternativeText": ""
+    },
     "category": "sandbox",
     "tags": [
       "WIP",
@@ -102,7 +118,11 @@
     "title": "Custom Visual Timer",
     "slug": "visual-timer",
     "url": "/projects/visual-timer/",
-    "image": "/images/large_visual_timer_thumb_21e330f99e.png",
+    "image": {
+      "url": "/images/large_visual_timer_thumb_21e330f99e.png",
+      "mime": "image/png",
+      "alternativeText": ""
+    },
     "category": "sandbox",
     "tags": [
       "Web/UX"
@@ -120,7 +140,11 @@
     "title": "Spring Fling: AR Filters",
     "slug": "spring-fling",
     "url": "/projects/spring-fling/",
-    "image": "/images/large_thumb_springfling_4a9d07690e.png",
+    "image": {
+      "url": "/images/large_thumb_springfling_4a9d07690e.png",
+      "mime": "image/png",
+      "alternativeText": "preview of AR filter"
+    },
     "category": "sandbox",
     "tags": [
       "Interactive"
@@ -138,7 +162,11 @@
     "title": "Every Vote In: 2020 Elections in LA County",
     "slug": "gotv",
     "url": "/projects/gotv/",
-    "image": "/images/large_thumb_gotv_6ac6de6e97.png",
+    "image": {
+      "url": "/images/large_thumb_gotv_6ac6de6e97.png",
+      "mime": "image/png",
+      "alternativeText": "\"Make your plan to vote today\" banner"
+    },
     "category": "more",
     "tags": [
       "Campaign",
@@ -157,7 +185,11 @@
     "title": "Battle Creek Public Schools",
     "slug": "bcps",
     "url": "/projects/bcps/",
-    "image": "/images/large_thumb_bcps_3e4f572159.png",
+    "image": {
+      "url": "/images/large_thumb_bcps_3e4f572159.png",
+      "mime": "image/png",
+      "alternativeText": "BCPS graduating student"
+    },
     "category": "more",
     "tags": [
       "Digital",
@@ -176,7 +208,11 @@
     "title": "Recycle Your Cartons",
     "slug": "ccna",
     "url": "/projects/ccna/",
-    "image": "/images/large_thumb_ccna2_5f232ee44c.png",
+    "image": {
+      "url": "/images/large_thumb_ccna2_5f232ee44c.png",
+      "mime": "image/png",
+      "alternativeText": "food and beverage cartons"
+    },
     "category": "more",
     "tags": [
       "Branding",
@@ -196,7 +232,11 @@
     "title": "Together Toward Health",
     "slug": "tth",
     "url": "/projects/tth/",
-    "image": "/images/large_thumb_phi_a3bee85f7e.png",
+    "image": {
+      "url": "/images/large_thumb_phi_a3bee85f7e.png",
+      "mime": "image/png",
+      "alternativeText": "impact report mockup"
+    },
     "category": "more",
     "tags": [
       "Digital"
@@ -214,7 +254,11 @@
     "title": "Optimizely Internal Experiences",
     "slug": "optimizely",
     "url": "/projects/optimizely/",
-    "image": "/images/large_thumb_optimizely_29eaeae938.png",
+    "image": {
+      "url": "/images/large_thumb_optimizely_29eaeae938.png",
+      "mime": "image/png",
+      "alternativeText": "Optimizely logo (Pride version)"
+    },
     "category": "more",
     "tags": [
       "Event",
@@ -233,7 +277,11 @@
     "title": "CARE Court Program Launch",
     "slug": "care-court",
     "url": "/projects/care-court/",
-    "image": "/images/medium_thumb_carecourt_50254303bc.png",
+    "image": {
+      "url": "/images/medium_thumb_carecourt_50254303bc.png",
+      "mime": "image/png",
+      "alternativeText": ""
+    },
     "category": "more",
     "tags": [
       "Digital"
@@ -251,7 +299,11 @@
     "title": "Hope for Haiti at AWE 2023",
     "slug": "hfh",
     "url": "/projects/hfh/",
-    "image": "/images/large_thumb_hfh_f13c03050e.png",
+    "image": {
+      "url": "/images/large_thumb_hfh_f13c03050e.png",
+      "mime": "image/png",
+      "alternativeText": "\"Inspiring Hope\" logo"
+    },
     "category": "more",
     "tags": [
       "Event",
@@ -270,7 +322,11 @@
     "title": "Johnson & Johnson Global Public Health",
     "slug": "jnj",
     "url": "/projects/jnj/",
-    "image": "/images/large_thumb_jnj_ar_3e45cad895.png",
+    "image": {
+      "url": "/images/large_thumb_jnj_ar_3e45cad895.png",
+      "mime": "image/png",
+      "alternativeText": "preview of AR concepts"
+    },
     "category": "more",
     "tags": [
       "Interactive"
@@ -288,7 +344,11 @@
     "title": "San Diego Humane Society",
     "slug": "sdhs",
     "url": "/projects/sdhs/",
-    "image": "/images/large_thumb_sdhs_2b5879b9bd.png",
+    "image": {
+      "url": "/images/large_thumb_sdhs_2b5879b9bd.png",
+      "mime": "image/png",
+      "alternativeText": "billboard mockup"
+    },
     "category": "more",
     "tags": [
       "OOH",

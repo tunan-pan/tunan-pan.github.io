@@ -30,11 +30,21 @@ title: Projects
         <div class="project-card__thumb">
 
           <!--put back in class if want hero: {% if loop.first %} project-card--hero{% endif %}-->
+
+
           {% if project.image %}
-
-          <img src="{{ project.image.url or project.image }}" alt="">
-
+            {% if project.image.mime and 'video' in project.image.mime %}
+              <video autoplay loop muted playsinline>
+                <source src="{{ project.image.url }}" type="{{ project.image.mime }}">
+              </video>
+            {% elif project.image.mime == 'image/gif' %}
+              <img src="{{ project.image.url }}" alt="">
+            {% else %}
+              <img src="{{ project.image.url or project.image }}" alt="">
+            {% endif %}
           {% endif %}
+
+
         </div>
         <div class="project-card__body">
 

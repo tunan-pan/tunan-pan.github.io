@@ -46,7 +46,16 @@
   </button>
 
   {% include 'footer.njk' %}
-
+  
+<script>
+  if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+    document.querySelectorAll('video[autoplay]').forEach(v => {
+      v.autoplay = false;
+      v.pause();
+      v.currentTime = 0;
+    });
+  }
+</script>
   
 
   <script src="/js/mobile-menu.js"></script>
