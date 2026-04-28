@@ -19,7 +19,8 @@
     "leftbuttonUrl": null,
     "role": "",
     "deliverables": "",
-    "images": []
+    "images": [],
+    "hideFromNav": true
   },
   {
     "title": "Library Extention Redesign",
@@ -42,7 +43,8 @@
     "leftbuttonUrl": null,
     "role": "<ul><li>Product Designer</li></ul>",
     "deliverables": "<ul><li>UX audit of existing extension</li><li>High-fidelity UI mockups</li><li>Interactive prototypes</li><li>Component system updates</li></ul>",
-    "images": []
+    "images": [],
+    "hideFromNav": false
   },
   {
     "title": "Games For Change Website Redesign",
@@ -65,7 +67,8 @@
     "leftbuttonUrl": null,
     "role": "<ul><li>UX Researcher &amp; Strategist</li><li>UX/UI Designer</li><li>Content &amp; Information Architect</li></ul>",
     "deliverables": "<ul><li>Website audit</li><li>Audience &amp; content analysis</li><li>Reorganized sitemap</li><li>Wireframes</li><li>High-fidelity UI mockups</li></ul>",
-    "images": []
+    "images": [],
+    "hideFromNav": false
   },
   {
     "title": "Accessibility Guide for Board Game Arena",
@@ -89,7 +92,8 @@
     "leftbuttonUrl": "https://tunan.notion.site/28b3521a8e3780c5901ce060f7063e33?v=28b3521a8e37804b83b8000c7de6e481&pvs=74",
     "role": "",
     "deliverables": "",
-    "images": []
+    "images": [],
+    "hideFromNav": false
   },
   {
     "title": "Cravings Interpreter",
@@ -112,7 +116,8 @@
     "leftbuttonUrl": "../../sandbox/cravings",
     "role": "",
     "deliverables": "",
-    "images": []
+    "images": [],
+    "hideFromNav": false
   },
   {
     "title": "Custom Visual Timer",
@@ -134,7 +139,8 @@
     "leftbuttonUrl": "../../sandbox/visual-timer",
     "role": "",
     "deliverables": "",
-    "images": []
+    "images": [],
+    "hideFromNav": false
   },
   {
     "title": "Spring Fling: AR Filters",
@@ -156,7 +162,8 @@
     "leftbuttonUrl": null,
     "role": "<ul><li>Experiential Designer</li><li>Visual Designer</li></ul>",
     "deliverables": "<ul><li>AR Instagram filters</li><li>Signage</li><li>Menus</li><li>Outlook email invites</li></ul>",
-    "images": []
+    "images": [],
+    "hideFromNav": false
   },
   {
     "title": "Every Vote In: 2020 Elections in LA County",
@@ -179,7 +186,8 @@
     "leftbuttonUrl": null,
     "role": "<ul><li>Visual Designer</li></ul>",
     "deliverables": "<ul><li>Campaign brand</li><li>Paid ads for digital &amp; print</li><li>Social media graphics</li><li>Social &amp; print templates for community partners</li><li>OOH (including signage for stores, buses, kiosks, billboards)</li><li>Website toolkit materials</li><li>Email templates</li></ul>",
-    "images": []
+    "images": [],
+    "hideFromNav": false
   },
   {
     "title": "Battle Creek Public Schools",
@@ -202,7 +210,8 @@
     "leftbuttonUrl": null,
     "role": "<ul><li>Visual Designer</li><li>Creative Lead &amp; Strategist</li></ul>",
     "deliverables": "<ul><li>Classroom materials, handouts, and posters</li><li>Print newsletters and direct mail to families</li><li>Social media content and digital ad creative</li><li>Campaign concepts &amp; materials</li><li>Crisis communications support</li></ul>",
-    "images": []
+    "images": [],
+    "hideFromNav": false
   },
   {
     "title": "Recycle Your Cartons",
@@ -226,7 +235,8 @@
     "leftbuttonUrl": null,
     "role": "<ul><li>Creative Strategist</li><li>Visual Designer</li><li>Design Manager</li><li>Project Manager</li><li>Photographer</li><li>Art Director</li><li>Video Editor</li></ul>",
     "deliverables": "<ul><li>Updated brand guidelines</li><li>Monthly social media calendar</li><li>Social media content including graphics, gifs, and reels</li><li>Videos for ads, social, and message testing</li><li>Paid ads</li><li>Original photography</li><li>Online quiz</li><li>Carton packaging designs</li><li>Event collateral, displays, and handouts</li><li>Swag giveaway items</li><li>Presentation decks</li></ul>",
-    "images": []
+    "images": [],
+    "hideFromNav": false
   },
   {
     "title": "Together Toward Health",
@@ -248,7 +258,8 @@
     "leftbuttonUrl": null,
     "role": "<ul><li>Visual Designer</li><li>Video Editor</li></ul>",
     "deliverables": "<ul><li>Monthly digital newsletters</li><li>Short video</li><li>Impact report</li><li>Case statement infographic</li><li>Presentation deck</li></ul>",
-    "images": []
+    "images": [],
+    "hideFromNav": false
   },
   {
     "title": "Optimizely Internal Experiences",
@@ -271,7 +282,8 @@
     "leftbuttonUrl": null,
     "role": "<ul><li>Visual Designer</li><li>Design Strategist</li></ul>",
     "deliverables": "<p>Camp Optimizely:</p><ul><li>Flyers and signage</li><li>Activity packs (booklet, merit badges, name tags, apparel design)</li><li>Photo op wall</li><li>Gathering area</li></ul><p>Pride Week:</p><ul><li>Agenda</li><li>Educational table tents &amp; posters</li><li>Gender-neutral restroom signs</li><li>T-shirt &amp; tattoo designs</li><li>Props for parade float</li></ul>",
-    "images": []
+    "images": [],
+    "hideFromNav": false
   },
   {
     "title": "CARE Court Program Launch",
@@ -293,7 +305,8 @@
     "leftbuttonUrl": null,
     "role": "<ul><li>Creative Lead / Art Director</li><li>Project Manager</li></ul>",
     "deliverables": "<ul><li>HTML5 display ads</li><li>Social media ads</li><li>Eblast</li><li>Print ads</li><li>Toolkit</li><li>Fact sheet</li><li>Brochure</li></ul>",
-    "images": []
+    "images": [],
+    "hideFromNav": false
   },
   {
     "title": "Hope for Haiti at AWE 2023",
@@ -316,7 +329,8 @@
     "leftbuttonUrl": null,
     "role": "<ul><li>Creative Strategist</li><li>Visual Designer</li></ul>",
     "deliverables": "<ul><li>Poster designs</li><li>Video for TV display</li><li>Social media graphics</li><li>Newsletter sign-up sheet</li></ul>",
-    "images": []
+    "images": [],
+    "hideFromNav": false
   },
   {
     "title": "Johnson & Johnson Global Public Health",
@@ -338,7 +352,8 @@
     "leftbuttonUrl": null,
     "role": "<ul><li>Design Strategist</li></ul>",
     "deliverables": "<ul><li>Pitch presentation</li><li>AR experience mockups</li></ul>",
-    "images": []
+    "images": [],
+    "hideFromNav": false
   },
   {
     "title": "San Diego Humane Society",
@@ -361,6 +376,7 @@
     "leftbuttonUrl": null,
     "role": "<ul><li>Photoshoot Producer &amp; Art Director</li><li>Project Manager</li><li>Visual Designer</li><li>Video Editor</li></ul>",
     "deliverables": "<ul><li>Original Photography Direction</li><li>Video Ads</li><li>Social Media &amp; Digital Newsletter Ads</li><li>Billboards</li></ul>",
-    "images": []
+    "images": [],
+    "hideFromNav": false
   }
 ]

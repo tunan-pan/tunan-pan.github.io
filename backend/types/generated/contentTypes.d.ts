@@ -490,6 +490,7 @@ export interface ApiArticleArticle extends Struct.CollectionTypeSchema {
         }
       >;
     description: Schema.Attribute.Text;
+    hideFromNav: Schema.Attribute.Boolean;
     images: Schema.Attribute.Media<
       'images' | 'files' | 'videos' | 'audios',
       true

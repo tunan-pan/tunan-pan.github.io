@@ -35,6 +35,10 @@ const markdownIt = require("markdown-it");
     return (projects || []).filter(p => p.category === category);
   });
 
+  // to filter for projects that aren't hidden
+  eleventyConfig.addFilter("navProjects", (projects) => {
+    return projects.filter(p => !p.hideFromNav);
+  });
 
 
   return {

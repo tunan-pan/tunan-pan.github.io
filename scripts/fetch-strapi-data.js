@@ -113,7 +113,8 @@ async function fetchAndSave() {
         role: convertContent(p.role),
         deliverables: convertContent(p.deliverables),
         images: images,
-        stuff: p.stuff
+        stuff: p.stuff,
+        hideFromNav: p.hideFromNav || false
       };
     });
 

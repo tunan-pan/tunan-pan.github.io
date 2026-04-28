@@ -107,9 +107,10 @@ layout: base.njk
 </article>
 
 
-{% set index = projects | findProjectIndex(project.slug) %}
-{% set prev = projects[index - 1] or projects[projects.length - 1] %}
-{% set next = projects[index + 1] or projects[0] %}
+{% set navProjects = projects | navProjects %}
+{% set index = navProjects | findProjectIndex(project.slug) %}
+{% set prev = navProjects[index - 1] or navProjects[navProjects.length - 1] %}
+{% set next = navProjects[index + 1] or navProjects[0] %}
 
 <section class="projects-more" aria-label="more-projects">
   <nav>
