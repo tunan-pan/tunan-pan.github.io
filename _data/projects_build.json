@@ -82,8 +82,7 @@
     "category": "featured",
     "tags": [
       "Accessibility",
-      "WIP",
-      "Case Study"
+      "WIP"
     ],
     "order": 2300,
     "description": "Practical implementation patterns for accessible game design",
