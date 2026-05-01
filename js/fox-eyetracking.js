@@ -72,6 +72,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
 
   document.addEventListener('mousemove', (e) => {
+    if (!window.FoxMotion.enabled) return; 
     const svgCursor = getSVGPoint(e.clientX, e.clientY);
 
     // If cursor is below the eyes, drift back to rest position
@@ -88,6 +89,13 @@ document.addEventListener('DOMContentLoaded', () => {
   });
 
   function animate() {
+
+    // When motion is off, drift eyes back to centre
+    if (!window.FoxMotion.enabled) {
+      targetLx = 0; targetLy = 0;
+      targetRx = 0; targetRy = 0;
+    }
+
     const ease = 0.1;
     lx += (targetLx - lx) * ease;
     ly += (targetLy - ly) * ease;
@@ -100,4 +108,15 @@ document.addEventListener('DOMContentLoaded', () => {
     requestAnimationFrame(animate);
   }
   animate();
+
+
+  window.addEventListener('foxmotion', e => {
+    if (!e.detail.enabled) {
+      // Snap targets to centre immediately
+      targetLx = 0; targetLy = 0;
+      targetRx = 0; targetRy = 0;
+    }
+  });
+
+
 });

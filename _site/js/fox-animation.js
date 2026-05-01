@@ -53,7 +53,7 @@ class FoxAnimator {
       // Animation will finish current loop and then stop
 
       // Reset to neutral face if using reduced motion
-      if (this.prefersReducedMotion) {
+      if (this.prefersReducedMotion || !window.FoxMotion.enabled) {
         setTimeout(() => {
           this.staticImg.src = '/images/fox/Fox_Static.svg';
           this.container.classList.remove('showing-happy');
@@ -68,7 +68,7 @@ class FoxAnimator {
         this.isHovering = !this.isHovering;
         if (this.isHovering) {
           this.startAnimation();
-        } else if (this.prefersReducedMotion) {
+        } else if (this.prefersReducedMotion || !window.FoxMotion.enabled) {
           // Reset to neutral for keyboard users too
           setTimeout(() => {
             this.staticImg.src = '/images/fox/Fox_Static.svg';
@@ -82,13 +82,21 @@ class FoxAnimator {
     const motionMediaQuery = window.matchMedia('(prefers-reduced-motion: reduce)');
     motionMediaQuery.addEventListener('change', (e) => {
       this.prefersReducedMotion = e.matches;
-      if (this.prefersReducedMotion && this.isAnimating) {
+      if ((this.prefersReducedMotion || !window.FoxMotion.enabled) && this.isAnimating) {
         // Stop animation if it's currently playing
         this.endAnimation();
         // Show happy face instead
         this.showHappyFace();
       }
     });
+
+
+    window.addEventListener('foxmotion', () => {
+      if (!window.FoxMotion.enabled) {
+        this.endAnimation();
+      }
+    });
+
   }
 
   preloadFrames() {
@@ -105,7 +113,7 @@ class FoxAnimator {
     if (this.isAnimating) return;
 
     // If reduced motion is preferred, swap to happy face instead of animating
-    if (this.prefersReducedMotion) {
+    if (this.prefersReducedMotion || !window.FoxMotion.enabled) {
       this.showHappyFace();
       return;
     }
