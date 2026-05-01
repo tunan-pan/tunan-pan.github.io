@@ -35,7 +35,8 @@ hoverTarget.addEventListener('mouseenter', (e) => {
     
     // Create particles continuously while hovering
     particleInterval = setInterval(() => {
-        createParticle(mouseX, mouseY);
+        if (!window.FoxMotion.enabled) return;
+            createParticle(mouseX, mouseY);
     }, 600);
 });
 
@@ -48,4 +49,10 @@ hoverTarget.addEventListener('mousemove', (e) => {
 hoverTarget.addEventListener('mouseleave', () => {
     // Stop creating particles when mouse leaves
     clearInterval(particleInterval);
+});
+
+window.addEventListener('foxmotion', e => {
+  if (!e.detail.enabled) {
+    clearInterval(particleInterval);
+  }
 });
