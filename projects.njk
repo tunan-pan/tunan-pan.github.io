@@ -49,7 +49,7 @@ title: Projects
         <div class="project-card__body">
 
           
-
+          <p class="project-card__eyebrow">{{ project.client }}</p>
           <h3>{{ project.title }}</h3>
 
           {% if project.description %}
@@ -70,15 +70,17 @@ title: Projects
               {% endif %}
             {% endfor %}
 
+            <!--
             {# Then normal tags #}
             {% set filteredTags = project.tags | reject("equalto", "Case Study") | reject("equalto", "WIP") %}
 
             {% for tag in filteredTags %}
               <span class="tag tag--default">{{ tag }}</span>
             {% endfor %}
+            -->
 
           </div>
-        {% endif %}
+          {% endif %}
 
 
         </div>
@@ -124,21 +126,15 @@ title: Projects
             {% endif %}
           </div>
 
+          <p class="project-card__eyebrow">{{ project.client }}</p>
           <h3>{{ project.title }}</h3>
 
           {% if project.description %}
-          <p class="project-card__desc">{{ project.description }}</p>
+          <p class="project-card__desc project-tags-row">{{ project.description }}</p>
           {% endif %}
 
-
+          <!--
           {% set filteredTags = project.tags | reject("equalto", "Case Study") | reject("equalto", "WIP") %}
-
-          {% if filteredTags.length %}
-          <div class="tag">
-            
-          </div>
-          {% endif %}
-
 
           {% if project.tags %}
           <div class="project-tags-row">
@@ -166,6 +162,7 @@ title: Projects
 
           </div>
           {% endif %}
+          -->
 
         </div>
 
@@ -206,7 +203,7 @@ title: Projects
           <h3>{{ project.title }}</h3>
 
           {% if project.description %}
-          <p class="project-card__desc">{{ project.description }}</p>
+          <p class="project-card__desc project-tags-row">{{ project.description }}</p>
           {% endif %}
 
         </div>

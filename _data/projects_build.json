@@ -1,5 +1,6 @@
 [
   {
+    "client": null,
     "title": "Seattle Animal Shelter Donation Redesign",
     "slug": "sas-donate",
     "url": "/projects/sas-donate/",
@@ -12,7 +13,7 @@
       "Web/UX",
       "Case Study"
     ],
-    "order": 2500,
+    "order": 2400,
     "description": "Reducing friction to improve donation flow initation and completion",
     "content": "<h2>The Problem</h2><p>Seattle Animal Shelter’s current online donation experience has several friction points, including low visibility, disruptive transitions, and a complex form, which may discourage users from completing donations.</p><h4>1. Navigation friction: Indirect and low-emphasis donation pathway</h4><figure class=\"image image-style-align-right\"><img style=\"aspect-ratio:1414/1080;\" src=\"/images/SAS_current_desktop_1_107444e308.png\" alt=\"\" srcset=\"/images/thumbnail_SAS_current_desktop_1_107444e308.png 204w,/images/small_SAS_current_desktop_1_107444e308.png 500w,/images/medium_SAS_current_desktop_1_107444e308.png 750w,/images/large_SAS_current_desktop_1_107444e308.png 1000w,\" sizes=\"100vw\" width=\"1414\" height=\"1080\" get=\"\" involved\"=\"\" page\"=\"\"><figcaption>current SAS Get Involved page</figcaption></figure><p>Rather than providing a direct entry point, the navigation routes users through a general “Get Involved” page. Here, donating is one of several options and is presented as an inline link with minimal visual hierarchy. This lack of emphasis makes it harder for high-intent users to quickly identify and access the donation flow.</p><p>Also, users visiting nonprofit sites often expect a clear and prominent donation call-to-action, especially in the top navigation bar, making this pattern inconsistent with common user expectations.</p><p>However, I decided to limit the scope of this project and only focus on optimizing the donation page and flow itself, assuming users are able to locate the page or are directed there from external sources.</p><h4>2. Flow disruption: External payment system introduces friction</h4><figure class=\"image\"><img style=\"aspect-ratio:1500/1672;\" src=\"/images/SAS_current_desktop_2_a4b3422237.png\" alt=\"\" srcset=\"/images/thumbnail_SAS_current_desktop_2_a4b3422237.png 140w,/images/small_SAS_current_desktop_2_a4b3422237.png 449w,/images/medium_SAS_current_desktop_2_a4b3422237.png 673w,/images/large_SAS_current_desktop_2_a4b3422237.png 897w,\" sizes=\"100vw\" width=\"1500\" height=\"1672\"><figcaption>current SAS Donation landing page</figcaption></figure><p>The donation process redirects users to an external government payment page. This abrupt transition creates a potential drop-off point, as it introduces uncertainty and can feel disconnected from the main site experience.</p><p>Additionally, key donation options (such as amount selection and fund designation) are hidden behind this link, reducing motivation for users to proceed.</p><h4>3. Form complexity: Long, multi-step form increases cognitive load</h4><figure class=\"image\"><img style=\"aspect-ratio:1500/1751;\" src=\"/images/SAS_current_desktop_3_37d2c2533f.png\" alt=\"\" srcset=\"/images/thumbnail_SAS_current_desktop_3_37d2c2533f.png 134w,/images/small_SAS_current_desktop_3_37d2c2533f.png 428w,/images/medium_SAS_current_desktop_3_37d2c2533f.png 642w,/images/large_SAS_current_desktop_3_37d2c2533f.png 857w,\" sizes=\"100vw\" width=\"1500\" height=\"1751\"><figcaption>current SAS external Donation page (step 1 of 2)</figcaption></figure><p>The current form combines the drawbacks of both single-page and multi-step forms: each page is long and dense, while still requiring multiple steps to complete.This creates cognitive overload and uncertainty, as users may feel they have already completed significant effort, only to encounter additional steps.</p><p>Allowing users to donate to multiple funds simultaneously also introduces unnecessary decision fatigue, further increasing the likelihood of abandonment.</p><h3>My Design Goals</h3><p>Increase successful donation completion by:</p><ul><li>Reducing friction for high-intent donors</li><li>Increasing trust during the payment transition</li><li>Simplifying and streamlining the donation process</li></ul><h3>The Constraints</h3><ul><li>Government website structure and design limitations</li><li>External payment system (.aspx)</li><li>Likely limited engineering resources</li></ul><h2>Researching Competitors and Best Practices</h2><p>I looked at several similar organizations: Another government shelter, other well known shelters and animal organizations, and other shelters/rescues in the local Washington area.</p><figure class=\"image\"><img style=\"aspect-ratio:1920/1080;\" src=\"/images/Research_1_ea4ffd2c08.png\" alt=\"\" srcset=\"/images/thumbnail_Research_1_ea4ffd2c08.png 245w,/images/small_Research_1_ea4ffd2c08.png 500w,/images/medium_Research_1_ea4ffd2c08.png 750w,/images/large_Research_1_ea4ffd2c08.png 1000w,\" sizes=\"100vw\" width=\"1920\" height=\"1080\"><figcaption>Example donation page: Seattle Humane</figcaption></figure><figure class=\"image\"><img style=\"aspect-ratio:1920/1129;\" src=\"/images/Research_3_32268e6ec2.png\" alt=\"\" srcset=\"/images/thumbnail_Research_3_32268e6ec2.png 245w,/images/small_Research_3_32268e6ec2.png 500w,/images/medium_Research_3_32268e6ec2.png 750w,/images/large_Research_3_32268e6ec2.png 1000w,\" sizes=\"100vw\" width=\"1920\" height=\"1129\"><figcaption>Example donation page: ASPCA</figcaption></figure><figure class=\"image\"><img style=\"aspect-ratio:1920/1380;\" src=\"/images/Research_2_1c6ae0bf0b.png\" alt=\"\" srcset=\"/images/thumbnail_Research_2_1c6ae0bf0b.png 217w,/images/small_Research_2_1c6ae0bf0b.png 500w,/images/medium_Research_2_1c6ae0bf0b.png 750w,/images/large_Research_2_1c6ae0bf0b.png 1000w,\" sizes=\"100vw\" width=\"1920\" height=\"1380\"><figcaption>Example donation page: CARES</figcaption></figure><h4><strong>Key Patterns / Best Practices:</strong></h4><ul><li>Multi-step donation flows are commonly used and have been shown to improve completion rates (e.g. Blackbaud research) due to reduced cognitive load.</li><li>Additionally, it supports progressive data capture that allows the organization to re-engage users who do drop off</li><li>Preset donation amounts and monthly giving options reduce decision friction</li><li>Default selections help guide users toward common choices</li><li>Tangible, impact-based messaging (e.g. “$25 fills a food bowl”) helps users understand the real-world effect of their donation</li><li>Strong visual hierarchy and minimal first steps reduce cognitive load</li><li>Compelling images and strong messaging remind users about the cause they’re supporting</li><li>Consistent branding reinforces trust throughout the process</li><li>Progress indicators help users understand where they are in the flow</li><li>Visual cues (e.g. heart icons and subtle animations on the CARES site) can draw attention to preferred actions such as monthly donations and create moments of delight</li></ul><h4><strong>Common Issues:</strong></h4><ul><li>Single-page forms are often too long and overwhelming</li><li>External payment pages with inconsistent branding reduce trust</li><li>On mobile, key actions (such as donation amounts) are sometimes pushed below the fold, increasing friction</li></ul><h2>The User</h2><p>For this project I don’t believe a full persona profile is required, but I did want to define the user and their goals:</p><ul><li><strong>User: </strong>First-time donor motivated to support animal welfare</li><li><strong>Context: </strong>Lands on the donation page via search, social, or external links</li><li><strong>Goal: </strong>Quickly and confidently complete a donation</li><li><strong>Concerns: </strong>Trust, effort required, and clarity on how their donation will be used</li></ul><h2>Defining success</h2><p>These are the metrics I would use to measure success:</p><ul><li>Donation completion rate</li><li>Form drop-off rate</li><li>Time to complete donation</li></ul><p>As this is a conceptual project, baseline metrics are unavailable. However, my informal testing showed the current flow takes approximately ___ minutes to complete.</p><h2>User flow</h2><p><img src=\"/images/SAS_user_flow_0ea7ae5834.png\" alt=\"Flow diagram comparing current and proposed Seattle Animal Shelter donation flows, highlighting friction points and improvements\" srcset=\"/images/thumbnail_SAS_user_flow_0ea7ae5834.png 211w,/images/small_SAS_user_flow_0ea7ae5834.png 500w,/images/medium_SAS_user_flow_0ea7ae5834.png 750w,/images/large_SAS_user_flow_0ea7ae5834.png 1000w,\" sizes=\"100vw\" width=\"2228\" height=\"1644\"></p><p>Current flow:</p><ol><li>Land on donation page</li><li>Scroll to find donation CTA (⚠️ low visibility)</li><li>Redirected to external page (⚠️ potential trust drop-off)</li><li>Step 1: long form (⚠️ cognitive overload, decision fatigue)</li><li>Discover “Proceed to Payment Details” button at end (⚠️ unexpected additional step)</li><li>Step 2: continued long form</li><li>Submit &amp; confirmation page</li></ol><p>Proposed flow:</p><ol><li>Land on donation page with immediately visible donation options </li><li>Informed redirect to secure payment page</li><li>Step 1: Donation details only, with clear progress indicator throughout</li><li>Step 2: Billing information</li><li>Step 3: Payment details </li><li>Submit &amp; confirmation page<br>&nbsp;</li></ol><h2>Wireframes</h2><p>&nbsp;</p><h2>UI Design</h2><p>&nbsp;</p><h2>Prototype</h2><p>&nbsp;</p><h2>Results</h2><p>&nbsp;</p>",
     "leftbuttonText": null,
@@ -23,7 +24,8 @@
     "hideFromNav": true
   },
   {
-    "title": "Library Extention Redesign",
+    "client": "Library Extension",
+    "title": "Finding and borrowing library books faster",
     "slug": "library-ext",
     "url": "/projects/library-ext/",
     "image": {
@@ -36,8 +38,8 @@
       "Web/UX",
       "Case Study"
     ],
-    "order": 2335,
-    "description": "Reducing cognitive load to improve task efficiency",
+    "order": 2300,
+    "description": "Browser extension · Reducing cognitive load and friction",
     "content": "<p><img src=\"/images/Lib_Ext_Thumbnail_2d93005f3d.png\" alt=\"Preview of the Library Extension design alongside a Goodreads page\" srcset=\"/images/thumbnail_Lib_Ext_Thumbnail_2d93005f3d.png 245w,/images/small_Lib_Ext_Thumbnail_2d93005f3d.png 500w,/images/medium_Lib_Ext_Thumbnail_2d93005f3d.png 750w,/images/large_Lib_Ext_Thumbnail_2d93005f3d.png 1000w,\" sizes=\"100vw\" width=\"1800\" height=\"1128\"></p><p><strong>Library Extension is a Chrome extension that appears while browsing Goodreads, showing whether a book is available at your selected libraries.</strong> It’s an incredibly useful tool that makes it easy to borrow books or place holds without additional searches.</p><p><strong>However, the interface had several friction points:</strong></p><ul><li>The interface felt visually cluttered and overly dense</li><li>Weak hierarchy and extra information made availability harder to scan quickly</li><li>The “Borrow” and “Place Hold” buttons were misleading (implied direct action but simply redirected users to the same page as the title link)</li><li>The overall visual weight felt intrusive within the browsing experience</li></ul><p><strong>I redesigned the experience to prioritize clarity and speed, by:</strong></p><ul><li>Strengthening the visual hierarchy to improve scannability</li><li>Removing non-essential and redundant information</li><li>Emphasizing availability at a glance</li><li>Consolidating interactions to eliminate misleading affordances</li><li>Reducing the visual footprint so the extension feels like a lightweight companion rather than an interruption</li></ul><p><img src=\"/images/Lib_Ext_1a_af35dbeaec.png\" alt=\"comparison of existing extension UI and redesign\" srcset=\"/images/thumbnail_Lib_Ext_1a_af35dbeaec.png 245w,/images/small_Lib_Ext_1a_af35dbeaec.png 500w,/images/medium_Lib_Ext_1a_af35dbeaec.png 750w,/images/large_Lib_Ext_1a_af35dbeaec.png 1000w,\" sizes=\"100vw\" width=\"1800\" height=\"1128\"></p><h2>Design Process</h2><p>In the initial iterations, I removed repeated book titles and availability counts, as they didn’t meaningfully influence the decision to borrow or place a hold. I also explored restructuring each format (e.g., ebook, audiobook, physical) into its own clickable card, rather than relying solely on separate buttons or title links.&nbsp;</p><p><img src=\"/images/Lib_Ext_2_c180ad782c.png\" alt=\"draft designs\" srcset=\"/images/thumbnail_Lib_Ext_2_c180ad782c.png 153w,/images/small_Lib_Ext_2_c180ad782c.png 491w,/images/medium_Lib_Ext_2_c180ad782c.png 736w,/images/large_Lib_Ext_2_c180ad782c.png 981w,\" sizes=\"100vw\" width=\"1800\" height=\"1834\"></p><p>After some refining and creating an initial prototype, I realized that despite reducing information, the extension still occupied a significant portion of the screen. Though it could be collapsed down, I knew it needed to be small enough when kept open for easy viewing without being obtrusive.</p><p><img src=\"/images/Lib_Ext_3_54a0b308cc.png\" alt=\"draft designs\" srcset=\"/images/thumbnail_Lib_Ext_3_54a0b308cc.png 224w,/images/small_Lib_Ext_3_54a0b308cc.png 500w,/images/medium_Lib_Ext_3_54a0b308cc.png 750w,/images/large_Lib_Ext_3_54a0b308cc.png 1000w,\" sizes=\"100vw\" width=\"1800\" height=\"1256\"></p><p>This led me to question the role of the “Borrow” and “Place Hold” buttons. Unlike traditional call-to-action buttons designed to drive conversion, these weren’t needed to persuade users as they are already motivated when checking availability. The extra buttons added visual weight without adding value, so I removed them and made each card the primary interactive element. This simplified the interface, reduced visual noise, and clarified the interaction model.</p><p><img src=\"/images/Lib_Ext_4_6dc9174bac.png\" alt=\"draft designs\" srcset=\"/images/thumbnail_Lib_Ext_4_6dc9174bac.png 233w,/images/small_Lib_Ext_4_6dc9174bac.png 500w,/images/medium_Lib_Ext_4_6dc9174bac.png 750w,/images/large_Lib_Ext_4_6dc9174bac.png 1000w,\" sizes=\"100vw\" width=\"1800\" height=\"1204\"></p><h2>Final Prototype</h2><p>To further minimize visual impact, I made cards visually defined only on hover, similar to modern contextual menus. This reduced baseline visual density while preserving affordance when needed.</p><p><iframe style=\"border:1px solid rgba(0, 0, 0, 0.1);height:550px;margin:0 auto;width:100%;\" src=\"https://embed.figma.com/proto/PIrWgkmAAurwQGZGRoc1Dl/Goodreads-Library-ext?page-id=76%3A2272&amp;node-id=76-2359&amp;p=f&amp;viewport=-1094%2C-564%2C1.52&amp;scaling=min-zoom&amp;content-scaling=fixed&amp;embed-host=share\" allowfullscreen=\"\"></iframe></p><h2>Takeaways &amp; Next Steps</h2><p>This project challenged my initial assumptions — I began with a vision of how I wanted the extension to look, but the process required deeper consideration around interaction patterns, hierarchy, and visual weight within an existing browsing environment.</p><p>Because this redesign is currently based on my own experience and preferences, the next step is validation. I’m exploring ways to gather feedback from other users to better understand what information they prioritize and how they use the extension, so I can potentially bring this to the original developers.</p><p>I’m also in the process of learning how to adapt the existing extension’s code so I can at least make use of my redesign locally!<br>&nbsp;</p>",
     "leftbuttonText": null,
     "leftbuttonUrl": null,
@@ -47,7 +49,8 @@
     "hideFromNav": false
   },
   {
-    "title": "Games For Change Website Redesign",
+    "client": "Games For Change",
+    "title": "Helping users discover social impact games",
     "slug": "g4c",
     "url": "/projects/g4c/",
     "image": {
@@ -60,8 +63,8 @@
       "Web/UX",
       "Case Study"
     ],
-    "order": 2330,
-    "description": "Restructuring IA to improve content discovery and user pathways",
+    "order": 2200,
+    "description": "IA & UI redesign · improving content discovery and navigation",
     "content": "<p><video controls=\"\" loop=\"\" autoplay=\"\" muted=\"\" playsinline=\"\" width=\"100%\" height=\"auto\">\n                              <source src=\"/images/videos/G4C_laptop-mockup_homepage.mp4\" type=\"video/mp4\">\n                              Your browser does not support the video tag.\n                            </video></p><p><i>This work was created for my Creative Fellowship project in 2017, at a time when I didn’t yet know anything about UX or UI design. With no formal guidance, I instinctively approached the redesign through a user-centered lens, conducting research, breaking down user needs, and restructuring the information architecture.</i></p><p><i>This project was a hint at the kind of work I naturally gravitate towards, and a major reason I’m returning to UX and interactive design today.</i></p><h2>The Problem</h2><p>Games for Change (G4C) is an organization that facilitates the creation and distribution of social impact video games. Unfortunately, their website at the time didn’t clearly communicate this mission or what G4C really offered.</p><p>I identified a few key issues:</p><ul><li><strong>Confusing navigation: </strong>Overloaded, unorganized menus with too many options and no clear user pathways</li><li><strong>Unclear mission and values:</strong> It wasn’t obvious who the site was for or why someone should care</li><li><strong>Outdated visual design:</strong> The site didn’t reflect the modern, innovative space G4C operates in, especially considering their audience is likely web-savvy</li></ul><figure class=\"image\"><img style=\"aspect-ratio:1600/900;\" src=\"/images/image_c8fdbaecd0.png\" alt=\"G4C's website at the time (2017)\" srcset=\"/images/thumbnail_image_c8fdbaecd0.png 245w,/images/small_image_c8fdbaecd0.png 500w,/images/medium_image_c8fdbaecd0.png 750w,/images/large_image_c8fdbaecd0.png 1000w,\" sizes=\"100vw\" width=\"1600\" height=\"900\"><figcaption>G4C's website at the time (2017)</figcaption></figure><h2>Research &amp; Insights</h2><h3>Priorities</h3><p>In order to reorganize the site and give a better overall impression of what G4C is, I needed to better understand the organization’s priorities.</p><p>Since this wasn’t a real client, I decided to look at their public social media channels as a way to infer what G4C considers “important”.</p><p><img src=\"/images/g4c_research_fa0a783f8a.png\" alt=\"Twitter &amp; Facebook posts\" srcset=\"/images/thumbnail_g4c_research_fa0a783f8a.png 177w,/images/small_g4c_research_fa0a783f8a.png 500w,/images/medium_g4c_research_fa0a783f8a.png 750w,/images/large_g4c_research_fa0a783f8a.png 1000w,\" sizes=\"100vw\" width=\"1200\" height=\"1057\"></p><p>I reviewed and tallied up the different type of posts on their Twitter and Facebook pages, finding these to be the most prevalent:</p><ul><li>Events and talks</li><li>Competitions</li><li>Game releases</li><li>Resources</li></ul><p>Although events were posted most frequently, I suspected this was skewed by the nature of social media’s purpose, rather than a representation of their importance. On the website itself, the G4C Festival also felt disproportionately featured compared to their broader mission.</p><h3>Audience</h3><p>Defining their target audience was a bit tricky. I looked at their social media followers, event attendees, and game developers, but also questioned some common assumptions.&nbsp;</p><p>An IGDA survey described the “typical” game developer as white, cis male, non-disabled, and around 31 years old. Given G4C’s focus on social impact, I believed their audience would be more diverse, including people who might not identify as gamers or developers at all.</p><p>I landed on this working audience profile:</p><ul><li>Young adults (18-35 years)</li><li>Interested in social impact and/or games</li><li>Diverse and underrepresented groups</li><li>Creative thinkers, innovative problem-solvers</li><li>Empathetic and socially conscious</li><li>Technologically comfortable</li></ul><h3>Design trends</h3><p>I also looked to contemporary website trends for inspiration, identifying design patterns that felt clear, engaging, and modern.</p><p><img src=\"/images/g4c_inspiration_5727e409ee.png\" alt=\"design trends\" srcset=\"/images/thumbnail_g4c_inspiration_5727e409ee.png 142w,/images/small_g4c_inspiration_5727e409ee.png 457w,/images/medium_g4c_inspiration_5727e409ee.png 685w,/images/large_g4c_inspiration_5727e409ee.png 913w,\" sizes=\"100vw\" width=\"1200\" height=\"1314\"></p><p>Trends I found included:</p><ul><li>Emphasis on content</li><li>Minimalistic, concise, efficient</li><li>More engagement, micro-interactions</li><li>Geometric, bold, duotone gradients</li><li>Human/conversationalist language</li><li>Responsive layouts</li><li>Personalized content</li><li>Gamification (emerging)</li></ul><h2>Recommendations &amp; Design</h2><h3>Navigation &amp; User Pathways</h3><p>I began by consolidating their existing pages into clearer top-level navigation categories.&nbsp;</p><p><img src=\"/images/g4c_ia_c757a9545d.png\" alt=\"reorganized navigation structure\" srcset=\"/images/thumbnail_g4c_ia_c757a9545d.png 245w,/images/small_g4c_ia_c757a9545d.png 500w,/images/medium_g4c_ia_c757a9545d.png 750w,/images/large_g4c_ia_c757a9545d.png 1000w,\" sizes=\"100vw\" width=\"1200\" height=\"720\"></p><p>While this improved organization, it still felt bland/traditional and user-agnostic. Users might understand the labels, but not what it really means for them specifically.</p><p>To address this, I reframed the navigation around user intent rather than content buckets, trying out a few different tones:</p><figure class=\"table\"><table><thead><tr><th class=\"table-color-grey\">Traditional</th><th>Friendly</th><th>Action-oriented</th><th>Punchy</th><th>Abstract</th><th class=\"table-color-orange\">Final</th></tr></thead><tbody><tr><td class=\"table-color-grey\">About</td><td>About us</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td class=\"table-color-orange\">About us</td></tr><tr><td class=\"table-color-grey\">Resources</td><td>Learn to make games</td><td>Get help</td><td>Learn</td><td>Absorb</td><td class=\"table-color-orange\">Get inventing</td></tr><tr><td class=\"table-color-grey\">Programs &amp; Events</td><td>Attend and event</td><td>Get engaged</td><td>Attend</td><td>Engage</td><td class=\"table-color-orange\">Get involved</td></tr><tr><td class=\"table-color-grey\">Games</td><td>Play games</td><td>Get inspired</td><td>Play</td><td>Experience</td><td class=\"table-color-orange\">Get inspired</td></tr><tr><td class=\"table-color-grey\">Contact</td><td>Contact us</td><td>Connect with us</td><td>&nbsp;</td><td>&nbsp;</td><td class=\"table-color-orange\">Stay connected</td></tr><tr><td class=\"table-color-grey\">Donate</td><td>Support us</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td class=\"table-color-orange\">Support us</td></tr></tbody></table></figure><p>The result was three action-oriented pathways that spoke to the user on a more emotional level:</p><ul><li><strong>Get Inspired</strong> — For visitors exploring social impact games and learning about G4C</li><li><strong>Get Involved</strong> – For users interested in events, especially the festival</li><li><strong>Get Inventing</strong> – For game creators seeking tools, resources, and support</li></ul><p><img src=\"/images/image_301e70afbf.png\" alt=\"list of links falling under each pathway\" srcset=\"/images/thumbnail_image_301e70afbf.png 245w,/images/small_image_301e70afbf.png 500w,/images/medium_image_301e70afbf.png 750w,/images/large_image_301e70afbf.png 1000w,\" sizes=\"100vw\" width=\"1600\" height=\"682\"></p><h3>Clarifying the Mission</h3><p>To further guide my design decisions, I rewrote G4C’s mission statement into something more concrete and understandable:</p><blockquote><p>“G4C’s mission is to support and grow the field of social impact games.<br>Empowering game creators and social innovators (both individuals and organizations) with resources and networks to help them create/distribute social impact games, and educating/promoting the idea of using digital games as an effective means to create real impact for social change.”</p></blockquote><p>This wasn’t meant as final copy, but more for my own reference to help keep their overarching goals in mind.&nbsp;</p><p>The website should support this mission, with the goal for the site to be the go-to place for:</p><ul><li>tools/connections for game developers</li><li>newcomers to learn about social impact games</li><li>finding social impact games, giving feedback, supporting developers</li></ul><p>I also rewrote the homepage introductory content to better summarize who G4C is and why their work matters. In a real client project, this step would ideally involve close collaboration with a copywriter.</p><h2>Visual Direction &amp; Layout</h2><p>With the structure defined, I moved into wireframes and mockups for the homepage. My goals for the visual design were to:</p><ul><li>Create a modern, full-width, responsive layout</li><li>Reflect the innovation and energy of the organization</li><li>Highlight real people and real impact through their existing event photography and videos</li><li>Strengthen visual hierarchy and reduce cognitive load so that users can find what they need faster</li></ul><p><img src=\"/images/image_1b0069c7b0.png\" alt=\"wireframes\" srcset=\"/images/thumbnail_image_1b0069c7b0.png 174w,/images/small_image_1b0069c7b0.png 500w,/images/medium_image_1b0069c7b0.png 750w,/images/large_image_1b0069c7b0.png 1000w,\" sizes=\"100vw\" width=\"1600\" height=\"1431\"></p><p>I started with a standard hero section introducing the organization, with the three pathways beneath it, but it quickly felt text-heavy and as cluttered as their existing design.&nbsp;</p><p>After a few iterations I simplified it down so that the key information and actions were consolidated and appeared above the fold.</p><p>Keeping accessibility in mind (based on the limited knowledge I had at the time), I intentionally kept text labels visible in the navigation rather than relying on icons alone.</p><figure class=\"image\"><img style=\"aspect-ratio:1200/787;\" src=\"/images/g4c_mockups_home_5f250c1495.png\" alt=\"\" srcset=\"/images/thumbnail_g4c_mockups_home_5f250c1495.png 238w,/images/small_g4c_mockups_home_5f250c1495.png 500w,/images/medium_g4c_mockups_home_5f250c1495.png 750w,/images/large_g4c_mockups_home_5f250c1495.png 1000w,\" sizes=\"100vw\" width=\"1200\" height=\"787\"><figcaption>some initial home page mockups</figcaption></figure><h3>Navigation Placement</h3><p>I ultimately moved away from a bottom-aligned navigation, which felt space-heavy and inflexible for future changes. Instead, I decided on a vertical navigation bar on the right side of the screen. This gave the site more of a game/app feel, and allowed the intro content to remain visible while navigating.</p><p>This concept was designed for desktop only, but today I’d explore a mobile-first approach, and potentially lean further into an app/game-like experience.</p><p>The full-bleed background features rotating photos and videos from G4C events to emphasize the human side of their work.</p><p><img src=\"/images/g4c_homepage_menu_e4d94d9d32.png\" alt=\"Home page menu\" srcset=\"/images/thumbnail_g4c_homepage_menu_e4d94d9d32.png 224w,/images/small_g4c_homepage_menu_e4d94d9d32.png 500w,/images/medium_g4c_homepage_menu_e4d94d9d32.png 750w,/images/large_g4c_homepage_menu_e4d94d9d32.png 1000w,\" sizes=\"100vw\" width=\"1200\" height=\"834\"></p><h3>Gamification Concept</h3><p>To increase engagement, I explored light gamification ideas, such as earning points (stars) for exploring the site, that they could use towards helping causes they care about. Rather than tying points to monetary donations (which is likely not possible for their small organization), I imagined users using them to vote on which games, causes, or organizations G4C would spotlight on social media.</p><p><img src=\"/images/g4c_15_d416811f17.png\" alt=\"preview of login screen with stars/points system\" srcset=\"/images/thumbnail_g4c_15_d416811f17.png 245w,/images/small_g4c_15_d416811f17.png 500w,/images/medium_g4c_15_d416811f17.png 750w,/images/large_g4c_15_d416811f17.png 1000w,\" sizes=\"100vw\" width=\"1920\" height=\"1080\"></p><h2>Feature Focus: “Play Games” Page</h2><p>We had a limited scope for this project, so I focused on one additional page that could benefit most from an update: the “Play Games” page.</p><p>This section lists a collection of social impact games, but the original design didn’t make them feel inspiring, meaningful, or informative.</p><p>In early iterations I explored adding user accounts so visitors could save and rate games, along with the stars/points system mentioned earlier. Ultimately, I chose not to include this, as introducing sign-ups too early could create friction, and it felt more important here for users to immediately see the games first.</p><figure class=\"image\"><img style=\"aspect-ratio:1200/787;\" src=\"/images/g4c_mockups_play_ed84f75089.png\" alt=\"g4c-mockups-play.png\" srcset=\"/images/thumbnail_g4c_mockups_play_ed84f75089.png 238w,/images/small_g4c_mockups_play_ed84f75089.png 500w,/images/medium_g4c_mockups_play_ed84f75089.png 750w,/images/large_g4c_mockups_play_ed84f75089.png 1000w,\" sizes=\"100vw\" width=\"1200\" height=\"787\"><figcaption>some initial Games page mockups</figcaption></figure><p><strong>My final redesign:</strong></p><ul><li>Gave more prominence to game artwork (using a 3 column grid instead of 5)</li><li>Added clear labels for the main social issue each game addressed</li><li>Improved filtering options to support easier search and discovery</li></ul><p><video controls=\"\" loop=\"\" autoplay=\"\" muted=\"\" playsinline=\"\" width=\"100%\" height=\"auto\">\n                              <source src=\"/images/videos/G4C_laptop-mockup_gamespage.mp4\" type=\"video/mp4\">\n                              Your browser does not support the video tag.\n                            </video></p><p>To further motivate and inspire users, I also introduced a visual indicator to highlight games with measurable real-world impact, helping users connect play with tangible outcomes.</p><p><img src=\"/images/g4c_realimpact_1ca75af9c9.png\" alt=\"icon representing games with real world impact\" srcset=\"/images/thumbnail_g4c_realimpact_1ca75af9c9.png 245w,/images/small_g4c_realimpact_1ca75af9c9.png 500w,/images/medium_g4c_realimpact_1ca75af9c9.png 750w,/images/large_g4c_realimpact_1ca75af9c9.png 1000w,\" sizes=\"100vw\" width=\"1200\" height=\"513\"></p><h2>Reflection</h2><p>Although this work was never implemented in the real world, it shows the beginnings of my UX leanings and the excitement I had during this process. Today, I’d approach this project with stronger accessibility practices, deeper user research, and more refined visual design, but the core instincts behind it remain the same. I believe my research insights still apply, and could help improve <a target=\"_blank\" rel=\"noopener noreferrer\" href=\"https://www.gamesforchange.org/\">G4C’s since-updated website</a>.</p>",
     "leftbuttonText": null,
     "leftbuttonUrl": null,
@@ -71,7 +74,8 @@
     "hideFromNav": false
   },
   {
-    "title": "Accessibility Guide for Board Game Arena",
+    "client": "Board Game Arena",
+    "title": "Making online board games more accessible",
     "slug": "bga-a11y",
     "url": "/projects/bga-a11y/",
     "image": {
@@ -84,8 +88,8 @@
       "Accessibility",
       "WIP"
     ],
-    "order": 2300,
-    "description": "Practical implementation patterns for accessible game design",
+    "order": 2100,
+    "description": "Accessibility guide · practical implementation patterns",
     "content": "<figure class=\"image\"><a href=\"https://tunan.notion.site/28b3521a8e3780c5901ce060f7063e33?v=28b3521a8e37804b83b8000c7de6e481&amp;pvs=74\" target=\"_blank\" rel=\"noopener noreferrer\"><img style=\"aspect-ratio:1200/811;\" src=\"/images/BGA_screenshot_f1563fa6a9.png\" alt=\"screenshot of the Accessiblity Guidance document\" srcset=\"/images/thumbnail_BGA_screenshot_f1563fa6a9.png 231w,/images/small_BGA_screenshot_f1563fa6a9.png 500w,/images/medium_BGA_screenshot_f1563fa6a9.png 750w,/images/large_BGA_screenshot_f1563fa6a9.png 1000w,\" sizes=\"100vw\" width=\"1200\" height=\"811\"></a></figure><h2>The Problem</h2><p><a target=\"_blank\" rel=\"noopener noreferrer\" href=\"https://en.boardgamearena.com/\">Board Game Arena</a> (BGA) hosts over 600 digital board games, but accessibility guidance for developers is limited. While WCAG guidelines exist for general web accessibility, they don't provide practical implementation examples for the complex, interactive interfaces needed for games on BGA.</p><p>BGA uses a custom JavaScript framework with particular HTML structures and CSS constraints that create unique challenges for accessibility implementation. When I began helping develop a game for the platform, I quickly realized that understanding what to make accessible was only half the battle — knowing how to implement it within BGA's framework was the missing piece.</p><h2>Why This Matters</h2><p>Board games should be accessible to everyone. By creating practical, implementation-focused documentation, I'm helping future BGA developers build accessibility in from the start, rather than retrofitting it later (or not at all). This isn't just about compliance — it's about making sure more players can enjoy these games.</p><h2>My Approach</h2><p>What started as personal learning notes while working on my game, evolved into something larger. As I worked through accessibility challenges specific to the BGA platform, I began documenting practical solutions — not just accessibility theory, but concrete implementation patterns.</p><p>The result is a living accessibility document focused on:</p><ul><li><strong>BGA-specific guidance:</strong> Solutions tailored to BGA's framework, structure, and limitations</li><li><strong>Practical implementation: </strong>Real code examples and patterns for common game interface elements</li><li><strong>Game interface solutions: </strong>Addressing challenges unique to board game UIs (game boards, card displays, player areas, interactive elements)</li></ul><h2>Outcome &amp; Next Steps</h2><p>My documentation provides the deeper, practical layer that developers need: specific implementation strategies, code examples, and solutions for the real challenges they'll encounter building accessible games on BGA.</p><p>Interestingly, after I'd created my initial documentation, but before sharing it publicly, BGA updated their wiki to include some basic accessibility guidelines. I hadn't realized I could edit the wiki myself, but now knowing I can, I'll be using my work to expand on their guidelines.</p><p>I'm currently in the process of incorporating feedback from other developers first, to ensure all content is correct and understandable. This includes moving the resource out of the current Notion platform, so that the resource itself is also accessible!</p>",
     "leftbuttonText": "View the resource",
     "leftbuttonUrl": "https://tunan.notion.site/28b3521a8e3780c5901ce060f7063e33?v=28b3521a8e37804b83b8000c7de6e481&pvs=74",
@@ -95,77 +99,8 @@
     "hideFromNav": false
   },
   {
-    "title": "Cravings Interpreter",
-    "slug": "cravings",
-    "url": "/projects/cravings/",
-    "image": {
-      "url": "/images/large_cravings_thumb_a34de905cc.png",
-      "mime": "image/png",
-      "alternativeText": ""
-    },
-    "category": "sandbox",
-    "tags": [
-      "WIP",
-      "Web/UX"
-    ],
-    "order": 1010,
-    "description": "AI-assisted web prototype",
-    "content": "<p>A small experimental tool for making sense of food cravings!&nbsp;</p><p>This was my first fully “vibe coded” project where I skipped the usual Figma phase and built directly in the browser, using AI as a collaborative partner. I described the concept and visual direction, then iterated between Claude and ChatGPT to shape both the interface and logic.</p><p>The idea came from a personal problem: I’d often crave very specific textures or flavors, and always wondered why. I realized cravings can often point to something deeper that’s needed by your body, but instead of Googling it every time, I wanted a lightweight tool I could use to translate that for me.</p><p>Right now, the tool uses a structured set of keywords and associations to map inputs to categories. In the future, I’d be interested in exploring a more dynamic, AI-driven version that can better handle nuanced or mixed cravings.</p>",
-    "leftbuttonText": "Try it out here",
-    "leftbuttonUrl": "../../sandbox/cravings",
-    "role": "",
-    "deliverables": "",
-    "images": [],
-    "hideFromNav": false
-  },
-  {
-    "title": "Custom Visual Timer",
-    "slug": "visual-timer",
-    "url": "/projects/visual-timer/",
-    "image": {
-      "url": "/images/large_visual_timer_thumb_21e330f99e.png",
-      "mime": "image/png",
-      "alternativeText": ""
-    },
-    "category": "sandbox",
-    "tags": [
-      "Web/UX"
-    ],
-    "order": 1005,
-    "description": "Figma → AI-assisted dev",
-    "content": "<p>My first \"vibe coding\" project with Claude. I created initial mockups in Figma, described my vision, and iteratively refined the code (both by hand and through Claude).</p><p>This came about as I needed a 4 minute timer for a board game, but existing visual timers only offered preset durations — usually an hour. I didn't want to see 4 minutes as a tiny sliver of a 60-minute circle, I wanted the full circle to represent my chosen time. So I built my own customizable visual timer where you set the max time, and the entire circle represents exactly that.</p><figure class=\"image\"><img style=\"aspect-ratio:1855/1097;\" src=\"/images/visual_timer_1_b48e098b9c.png\" alt=\"\" srcset=\"/images/thumbnail_visual_timer_1_b48e098b9c.png 245w,/images/small_visual_timer_1_b48e098b9c.png 500w,/images/medium_visual_timer_1_b48e098b9c.png 750w,/images/large_visual_timer_1_b48e098b9c.png 1000w,\" sizes=\"100vw\" width=\"1855\" height=\"1097\"><figcaption>initial mockup ideas</figcaption></figure>",
-    "leftbuttonText": "Try the timer",
-    "leftbuttonUrl": "../../sandbox/visual-timer",
-    "role": "",
-    "deliverables": "",
-    "images": [],
-    "hideFromNav": false
-  },
-  {
-    "title": "Spring Fling: AR Filters",
-    "slug": "spring-fling",
-    "url": "/projects/spring-fling/",
-    "image": {
-      "url": "/images/large_thumb_springfling_4a9d07690e.png",
-      "mime": "image/png",
-      "alternativeText": "preview of AR filter"
-    },
-    "category": "sandbox",
-    "tags": [
-      "Interactive"
-    ],
-    "order": 1000,
-    "description": "Spark AR Studio",
-    "content": "<p><video controls=\"\" loop=\"\" autoplay=\"\" muted=\"\" playsinline=\"\" width=\"100%\" height=\"auto\">\n                              <source src=\"/images/videos/SpringFling_ForWebsite_video.mp4\" type=\"video/mp4\">\n                              Your browser does not support the video tag.\n                            </video></p><p>To explore augmented reality (AR), I taught myself Spark AR Studio and began creating Instagram filters during the height of their popularity.</p><p>I took the opportunity of a company spring-themed event to make use of these skills, developing a set of interactive AR filters for attendees to use throughout the event. The filters were designed to complement the seasonal theme and encourage playful engagement.</p><p>The final effects included:</p><ul><li><strong>Face tracking:</strong> a 3D flower model that appears to be tucked above the user’s ear and follows with their head movement</li><li><strong>Particle effects:</strong> floating flower petals that fall around the user</li><li>A lighthearted <strong>“personality” randomizer</strong> that predicts a faux company role for the user</li></ul><p><img src=\"/images/Spring_Fling_For_Website_images2_a3dd4e5425.png\" alt=\"menu and email invite designs\" srcset=\"/images/thumbnail_Spring_Fling_For_Website_images2_a3dd4e5425.png 222w,/images/small_Spring_Fling_For_Website_images2_a3dd4e5425.png 500w,/images/medium_Spring_Fling_For_Website_images2_a3dd4e5425.png 750w,/images/large_Spring_Fling_For_Website_images2_a3dd4e5425.png 1000w,\" sizes=\"100vw\" width=\"1200\" height=\"842\"></p><p>&nbsp;</p>",
-    "leftbuttonText": null,
-    "leftbuttonUrl": null,
-    "role": "<ul><li>Experiential Designer</li><li>Visual Designer</li></ul>",
-    "deliverables": "<ul><li>AR Instagram filters</li><li>Signage</li><li>Menus</li><li>Outlook email invites</li></ul>",
-    "images": [],
-    "hideFromNav": false
-  },
-  {
-    "title": "Every Vote In: 2020 Elections in LA County",
+    "client": "Every Vote In",
+    "title": "Increasing voter turnout in the 2020 elections",
     "slug": "gotv",
     "url": "/projects/gotv/",
     "image": {
@@ -178,8 +113,8 @@
       "Campaign",
       "Branding"
     ],
-    "order": 550,
-    "description": "Integrated civic campaign driving record-breaking 76% voter turnout (+8pts)",
+    "order": 1080,
+    "description": "Integrated civic campaign · record-breaking 76% turnout (+8pts)",
     "content": "<p><img src=\"/images/GOTV_webbanners_English_Horizontal_1_71ae1aee1a.png\" alt=\"web banner with &quot;Vote Early, Vote Safely&quot;\" srcset=\"/images/thumbnail_GOTV_webbanners_English_Horizontal_1_71ae1aee1a.png 245w,/images/small_GOTV_webbanners_English_Horizontal_1_71ae1aee1a.png 500w,/images/medium_GOTV_webbanners_English_Horizontal_1_71ae1aee1a.png 750w,/images/large_GOTV_webbanners_English_Horizontal_1_71ae1aee1a.png 1000w,\" sizes=\"100vw\" width=\"1200\" height=\"375\"></p><p>For the 2020 general election during COVID-19,<strong> I led the production of creative assets on the largest integrated campaign of my career.</strong> “Every Vote In” was a countywide 360° campaign effort for Los Angeles County Registrar-Recorder/County Clerk, designed to drive voter registration, promote early and mail-in voting during the pandemic, and educate one of the most diverse populations in the U.S. The campaign contributed to a <strong>rise in voter turnout in L.A. County, from 68% in 2016 to 76% in 2020.</strong></p><p>At the time, I was only a junior designer, and the scale, visibility, and stakes of this project were intimidating. I established the campaign’s early visual direction and built the core design system used across hundreds of assets. Working across multiple workstreams and cross-functional teams pushed me to think beyond execution and into systems, process, and coordination. This project became an early turning point in developing my project management mindset and confidence operating at scale.</p><h2>Design Work</h2><p>I developed a bold, modern visual system that was adaptable across digital, social, video, TV, radio, print, and OOH, all within an accelerated 7-week timeline.</p><p><strong>Key creative challenges included:</strong></p><ul><li>Designing a flexible identity system that could <strong>scale across 13 languages</strong>, and ensuring layouts supported varying copy lengths and non-Latin glyphs</li><li>Using culturally resonant, <strong>portrait-forward visuals</strong> that reflected LA County’s diverse communities</li><li><strong>Building editable design systems in Google Slides </strong>so non-designers from client teams and partner organizations could make copy and translation updates without compromising brand integrity</li><li><strong>Iterating creative in real time </strong>based on engagement data and campaign phases</li></ul><p><img src=\"/images/GOTV_1_770f5f21a9.png\" alt=\"work samples, including social graphics, ad banners, printed materials, OOH\" srcset=\"/images/thumbnail_GOTV_1_770f5f21a9.png 135w,/images/small_GOTV_1_770f5f21a9.png 434w,/images/medium_GOTV_1_770f5f21a9.png 651w,/images/large_GOTV_1_770f5f21a9.png 868w,\" sizes=\"100vw\" width=\"1200\" height=\"1382\"></p><h2>Impact</h2><p>The campaign <strong>contributed to historic voter engagement</strong> in LA County:</p><ul><li><strong>76% voter turnout</strong> (up from 68% in 2016)</li><li>Nearly <strong>80% of 4.3 million ballots</strong> cast by mail</li><li>Digital ads delivered <strong>102M+ impressions</strong></li><li><strong>77.7% average video completion</strong> rate (well above 50% benchmark)</li><li><strong>204M+ OOH impressions</strong> across 501,947 placements throughout 5 supervisorial districts</li><li><strong>36M+ impressions</strong> from in-language print ads</li><li>Featured by the Los Angeles Times as <strong>“one of the best-ever uses of the ad format” </strong>for our homepage takeover</li></ul><p>Beyond performance metrics, the campaign achieved widespread community adoption, with <strong>partner organizations customizing and distributing our toolkits</strong>, and large-scale “I Voted” installations organically generating social engagement across the county.<br>&nbsp;</p>",
     "leftbuttonText": null,
     "leftbuttonUrl": null,
@@ -189,7 +124,8 @@
     "hideFromNav": false
   },
   {
-    "title": "Battle Creek Public Schools",
+    "client": "Battle Creek Public Schools",
+    "title": "Rebuilding trust in a public school system",
     "slug": "bcps",
     "url": "/projects/bcps/",
     "image": {
@@ -202,8 +138,8 @@
       "Digital",
       "Print"
     ],
-    "order": 500,
-    "description": "Multi-year communications system rebuilding trust and increasing enrollment",
+    "order": 1070,
+    "description": "Multi-year communications system · increasing enrollment",
     "content": "<p><img src=\"/images/bcps_0_23b4f5ca96.jpg\" alt=\"BCPS students holding signs supporting the school\" srcset=\"/images/thumbnail_bcps_0_23b4f5ca96.jpg 234w,/images/small_bcps_0_23b4f5ca96.jpg 500w,/images/medium_bcps_0_23b4f5ca96.jpg 750w,/images/large_bcps_0_23b4f5ca96.jpg 1000w,\" sizes=\"100vw\" width=\"1200\" height=\"800\"></p><p>Battle Creek Public Schools (BCPS) is a school district in central Michigan, and for decades they experienced declining enrollment and negative reputational challenges, draining resources out of BCPS and into the area’s whiter, wealthier school districts. But thanks to a five-year, $51 million grant by the W.K. Kellogg Foundation in 2017, we have been able to <strong>rebuild the district’s reputation and improve academic achievement at BCPS.</strong></p><p>I joined the BCPS account as a junior designer and <strong>grew into the lead (and sometimes sole) designer supporting the district’s multi-year communications.</strong> My role evolved from production to strategy, including facilitating brainstorms, contributing campaign concepts, and shaping materials for enrollment, teacher recruitment, and community engagement.&nbsp;</p><p>After transitioning off the account, I was re-engaged due to the strong working relationship and institutional knowledge I had built with the client, returning to provide creative leadership and ensure consistency during a critical phase of the district’s transformation.</p><h2>Design Work</h2><p>Much of the work followed established brand guidelines, requiring<strong> high-volume, day-to-day communications </strong>across print and digital. The focus was less on visual experimentation and more on <strong>clarity, accessibility, and trust-building at scale</strong> — particularly during moments of crisis.</p><p>During COVID-19 school closures, I designed a take-home kindergarten learning packet, including an interactive scavenger hunt poster to support families navigating remote learning. This project required quickly adapting district messaging into engaging, age-appropriate materials during an unprecedented period of uncertainty.</p><p>I also helped train their in-house communications manager on InDesign foundations and design principles, allowing them to grow more self-sufficient over the years.</p><p>This account strengthened my ability to design consistently across large systems, and deepened my understanding of how consistent, sustained communications can shift perception and build trust over time.</p><p><img src=\"/images/BCPS_1_dark_4e3fd08c7b.png\" alt=\"work samples, including posters, activity pack, reports, printed materials\" srcset=\"/images/thumbnail_BCPS_1_dark_4e3fd08c7b.png 118w,/images/small_BCPS_1_dark_4e3fd08c7b.png 377w,/images/medium_BCPS_1_dark_4e3fd08c7b.png 566w,/images/large_BCPS_1_dark_4e3fd08c7b.png 754w,\" sizes=\"100vw\" width=\"1200\" height=\"1591\"></p><h2>Impact</h2><ul><li>Our multi-platform digital ad campaigns garnered <strong>millions of impressions</strong> and helped <strong>increase enrollment numbers</strong></li><li>Promoted honest and transparent communications with staff,<strong> diminishing teacher turnover</strong></li><li><strong>21% more people</strong> in 2020 than in 2019 said that BCPS is <strong>“exactly or very close to what I want for my child.”</strong></li><li>Our COVID-19 communications <strong>enhanced the opinion of 57%</strong> of surveyed residents&nbsp;<br>&nbsp;</li></ul>",
     "leftbuttonText": null,
     "leftbuttonUrl": null,
@@ -213,7 +149,8 @@
     "hideFromNav": false
   },
   {
-    "title": "Recycle Your Cartons",
+    "client": "Carton Council",
+    "title": "Making carton recycling easier to understand and adopt",
     "slug": "ccna",
     "url": "/projects/ccna/",
     "image": {
@@ -227,8 +164,8 @@
       "Digital",
       "Strategy"
     ],
-    "order": 400,
-    "description": "Evolving brand and social strategy to drive awareness and behavior change around recycling",
+    "order": 1060,
+    "description": "Behavior change · brand + social strategy",
     "content": "<p>While millions of Americans recycle cans, bottles, and paper, many are unaware that food and beverage cartons can also be recycled, and confusion remains about which cartons are accepted and how to properly recycle them. Carton Council’s goals were to raise awareness, educate consumers, and encourage recycling for a greener community and a healthier planet.</p><p>I joined the team as a junior designer, initially creating graphics for Carton Council based on established brand guidelines. As I became more familiar with the client and audience,<strong> I began evolving the visual approach, introducing cleaner design, more creative photography, and interactive content that encouraged engagement </strong>and aligned with emerging social media trends to better reach younger audiences.</p><figure class=\"image\"><img style=\"aspect-ratio:1200/1050;\" src=\"/images/CCNA_1b_6065486e48.png\" alt=\"sample of social graphics\" srcset=\"/images/thumbnail_CCNA_1b_6065486e48.png 178w,/images/small_CCNA_1b_6065486e48.png 500w,/images/medium_CCNA_1b_6065486e48.png 750w,/images/large_CCNA_1b_6065486e48.png 1000w,\" sizes=\"100vw\" width=\"1200\" height=\"1050\"></figure><p>Over time, I grew into the role of Art Director and took on a larger leadership position for the account. I became the lead designer (and sole designer for a period), helping shape the creative direction and expanding the brand across social and campaigns. This included:</p><ul><li><strong>Leading monthly brainstorms</strong> with the digital team to develop social content</li><li>Pitching and launching <strong>new initiatives</strong> such as Instagram GIPHY stickers and an increased focus on Reels</li><li><strong>Creating new brand guidelines</strong> to support the updated visual direction</li><li><strong>Overseeing a junior designer </strong>on new carton packaging designs, and videos for message testing</li><li>Acting as the <strong>photographer for social</strong> content shoots and <strong>leading creative direction </strong>for larger photoshoots</li><li><strong>Coordinating giveaways</strong> and social content with partner brands</li><li><strong>Auditing and contributing design feedback </strong>during a website redesign with an external development team</li></ul><p>I also worked on several integrated campaigns, including a 2018 initiative in Delaware and Maryland that used video, social content, IG Stories, Facebook chatbot, online quiz, and interactive experiences to educate residents about carton recycling. During the two-month campaign, the work generated <strong>15.5M impressions, 1.7M video views, 62K click-throughs, and 40K social engagements</strong>, with<strong> 97% of quiz participants reporting they intended to recycle cartons.</strong></p>",
     "leftbuttonText": null,
     "leftbuttonUrl": null,
@@ -238,7 +175,8 @@
     "hideFromNav": false
   },
   {
-    "title": "Together Toward Health",
+    "client": "Together Toward Health",
+    "title": "Communicating public health impact during COVID-19",
     "slug": "tth",
     "url": "/projects/tth/",
     "image": {
@@ -250,8 +188,8 @@
     "tags": [
       "Digital"
     ],
-    "order": 360,
-    "description": "Designing storytelling systems to communicate public health impact",
+    "order": 1050,
+    "description": "Digital storytelling · reports, video, newsletters",
     "content": "<p><iframe src=\"https://player.vimeo.com/video/1162053892?badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479\" frameborder=\"0\" allow=\"autoplay; fullscreen; picture-in-picture; clipboard-write; encrypted-media; web-share\" referrerpolicy=\"strict-origin-when-cross-origin\" title=\"Together Toward Health\"></iframe></p><p>In response to COVID-19’s unequal impact across California, the Public Health Institute created Together Toward Health (TTH), a statewide effort to reduce transmission by funding trusted local organizations serving Black, Latinx, Native American, immigrant, and low-income populations.</p><p>Their most immediate need was to update funders on how things were going, what were the emerging needs that TTH was seeing on the ground, and spotlighting the lifesaving impact that this work was making.&nbsp;</p><h2>Design Work</h2><p>Materials I created in support of these needs included:</p><ul><li><strong>Monthly Funder Newsletters</strong> — Designed an ongoing newsletter series to communicate updates and impact</li><li><strong>“Sizzle Reel” </strong>— Created a short video showcasing TTH’s impact through testimonials from grantees and funders</li><li><strong>Impact Report </strong>— Designed a comprehensive impact report that highlighted the key learnings from TTH that could benefit the public health and philanthropy fields</li><li><strong>Case Statement Infographic </strong>— Designed a policymaker case statement with supporting infographic to visualize the case for more equitable public health funding practices</li><li><strong>Presentation Deck </strong>— Designed presentations for speaking opportunities</li></ul><p>Across all deliverables, the goal was to:</p><ul><li>Make complex information easier to understand</li><li>Elevate community impact through storytelling</li><li>Maintain a polished, cohesive visual system</li></ul><figure class=\"image\"><img style=\"aspect-ratio:1200/1417;\" src=\"/images/TTH_report_grid_4f1cfdcb3e.png\" alt=\"sample of annual report pages\" srcset=\"/images/thumbnail_TTH_report_grid_4f1cfdcb3e.png 132w,/images/small_TTH_report_grid_4f1cfdcb3e.png 423w,/images/medium_TTH_report_grid_4f1cfdcb3e.png 635w,/images/large_TTH_report_grid_4f1cfdcb3e.png 847w,\" sizes=\"100vw\" width=\"1200\" height=\"1417\"></figure><h2>Impact</h2><p>The materials helped keep funders informed throughout the pandemic, and ended up contributing additional grant dollars beyond the initial commitment. They also equipped the TTH team with clear, presentation-ready storytelling tools to share their learnings with broader public health audiences, including national partners.</p>",
     "leftbuttonText": null,
     "leftbuttonUrl": null,
@@ -261,7 +199,8 @@
     "hideFromNav": false
   },
   {
-    "title": "Optimizely Internal Experiences",
+    "client": "Optimizely",
+    "title": "Designing engaging employee experiences on no budget",
     "slug": "optimizely",
     "url": "/projects/optimizely/",
     "image": {
@@ -274,8 +213,8 @@
       "Event",
       "Print"
     ],
-    "order": 350,
-    "description": "Designing low-cost, high-impact experiences for employee engagement",
+    "order": 1040,
+    "description": "Internal events · print + environmental design",
     "content": "<p>While working as a receptionist at Optimizely, I identified opportunities to improve internal communications and employee experiences. I proactively offered my design skills to support company-wide events, leading the visual direction and production of materials for <strong>Camp Optimizely</strong> and <strong>Pride Week</strong>.&nbsp;</p><p>With no dedicated budget, I designed materials that could be produced using standard office equipment and assembled by hand, and larger installations were created from repurposed cardboard packaging. These constraints shaped my design decisions and encouraged creative, low-cost solutions while still maintaining a cohesive experience.</p><h2 id=\"camp-optimizely\">Camp Optimizely — Designing an Office Adventure for Future Optinauts&nbsp;</h2><p><img src=\"/images/Camp_Optimizely_0_46510fee30.png\" alt=\"camp immersive environment set up\" srcset=\"/images/thumbnail_Camp_Optimizely_0_46510fee30.png 245w,/images/small_Camp_Optimizely_0_46510fee30.png 500w,/images/medium_Camp_Optimizely_0_46510fee30.png 750w,/images/large_Camp_Optimizely_0_46510fee30.png 1000w,\" sizes=\"100vw\" width=\"1200\" height=\"675\"></p><p>Camp Optimizely was a camp-themed “Bring Your Kids to Work Day” event designed to introduce employees’ children to the company, through a playful experience built around the idea of them becoming “future Optinauts.”</p><p>I designed a set of materials that worked together to guide the experience and reinforce the camp theme, including flyers, signage, activity packs for each child, a photo wall with illustrated cardboard animal cutouts, and a physical tent and faux campfire gathering area.</p><figure class=\"image\"><img style=\"aspect-ratio:1200/1510;\" src=\"/images/Camp_Optimizely_1_ba321cd14b.png\" alt=\"preview of activity packs and posters\" srcset=\"/images/thumbnail_Camp_Optimizely_1_ba321cd14b.png 124w,/images/small_Camp_Optimizely_1_ba321cd14b.png 397w,/images/medium_Camp_Optimizely_1_ba321cd14b.png 596w,/images/large_Camp_Optimizely_1_ba321cd14b.png 795w,\" sizes=\"100vw\" width=\"1200\" height=\"1510\"></figure><h2 id=\"optimizely-pride\">Pride Week — Design for Education and Inclusion</h2><p><img src=\"/images/Optimizely_Pride_0_371586c873.png\" alt=\"agenda table tent\" srcset=\"/images/thumbnail_Optimizely_Pride_0_371586c873.png 245w,/images/small_Optimizely_Pride_0_371586c873.png 500w,/images/medium_Optimizely_Pride_0_371586c873.png 750w,/images/large_Optimizely_Pride_0_371586c873.png 1000w,\" sizes=\"100vw\" width=\"1200\" height=\"693\"></p><p>I volunteered my design services to Optimizely’s Pride Committee to support the company’s Pride Week programming and parade participation.</p><p>Working within a short timeline of only a few weeks, I designed a range of materials to support the week’s activities, including event graphics and educational materials. The materials were designed with clear hierarchy and quick-scan readability so employees could learn in casual office settings such as break rooms and shared tables.</p><p>In the spirit of inclusivity, I also designed gender-neutral restroom signage for the office, to provide more welcoming and affirming language in shared spaces.</p><p><img src=\"/images/Optimizely_Pride_1_51fd69261b.png\" alt=\"print materials displayed in the office, and photo at pride week\" srcset=\"/images/thumbnail_Optimizely_Pride_1_51fd69261b.png 127w,/images/small_Optimizely_Pride_1_51fd69261b.png 408w,/images/medium_Optimizely_Pride_1_51fd69261b.png 612w,/images/large_Optimizely_Pride_1_51fd69261b.png 816w,\" sizes=\"100vw\" width=\"1200\" height=\"1471\"></p><h2>Reflection</h2><p>These projects reinforced my interest in experience design and how thoughtful design can create meaningful moments within everyday environments. They also showed how design can make learning more approachable, helping people engage with new ideas in casual, shared spaces rather than formal educational settings.</p>",
     "leftbuttonText": null,
     "leftbuttonUrl": null,
@@ -285,7 +224,8 @@
     "hideFromNav": false
   },
   {
-    "title": "CARE Court Program Launch",
+    "client": "CARE Court",
+    "title": "Introducing HTML5 ads to improve campaign performance",
     "slug": "care-court",
     "url": "/projects/care-court/",
     "image": {
@@ -297,8 +237,8 @@
     "tags": [
       "Digital"
     ],
-    "order": 250,
-    "description": "Introducing HTML5 ads to enable scalable, high-quality digital campaigns",
+    "order": 1030,
+    "description": "Creative direction · first implementation at agency",
     "content": "<p><video controls=\"\" loop=\"\" autoplay=\"\" muted=\"\" playsinline=\"\" width=\"50%\" height=\"auto\">\n                                                                              <source src=\"/images/videos/CARECourt_ad-recording_970x250.mp4\" type=\"video/mp4\">\n                                                                              Your browser does not support the video tag.\n                                                                            </video></p><p>This project was particularly meaningful to me because<strong> I led the adoption and implementation of HTML5 display ads for the first time within the agency.</strong> In previous campaigns, I had worked with display ads limited to static or .gif formats, which often resulted in large file sizes, low visual quality, and limited animation and interactivity. I researched alternatives and discovered HTML5 ads were the industry standard.&nbsp;</p><p>This campaign was the first where I had both agency support and resources to develop them. I managed a freelancer to create designs across multiple ad sizes, enabling richer, lightweight animations that reinforced the campaign’s message. Beyond this campaign, the project established a foundation for future HTML5 ads at the agency.&nbsp;</p><p><img class=\"no-effect\" src=\"/images/CARE_Court_displayads_84d3393d34.png\" alt=\"display ad previews (not animated)\" srcset=\"/images/thumbnail_CARE_Court_displayads_84d3393d34.png 176w,/images/small_CARE_Court_displayads_84d3393d34.png 500w,/images/medium_CARE_Court_displayads_84d3393d34.png 750w,/images/large_CARE_Court_displayads_84d3393d34.png 1000w,\" sizes=\"100vw\" width=\"1288\" height=\"1140\"></p>",
     "leftbuttonText": null,
     "leftbuttonUrl": null,
@@ -308,7 +248,8 @@
     "hideFromNav": false
   },
   {
-    "title": "Hope for Haiti at AWE 2023",
+    "client": "Hope for Haiti",
+    "title": "Helping conference attendees engage with a VR story",
     "slug": "hfh",
     "url": "/projects/hfh/",
     "image": {
@@ -321,8 +262,8 @@
       "Event",
       "Strategy"
     ],
-    "order": 180,
-    "description": "Designing booth experiences to increase engagement with a VR story",
+    "order": 1020,
+    "description": "AWE 2023 · booth experience design",
     "content": "<figure class=\"image\"><img style=\"aspect-ratio:4032/3024;\" src=\"/images/HFH_photo_85e9da2c79.jpg\" alt=\"Photo of HFH booth in action\" srcset=\"/images/thumbnail_HFH_photo_85e9da2c79.jpg 208w,/images/small_HFH_photo_85e9da2c79.jpg 500w,/images/medium_HFH_photo_85e9da2c79.jpg 750w,/images/large_HFH_photo_85e9da2c79.jpg 1000w,\" sizes=\"100vw\" width=\"4032\" height=\"3024\"></figure><p>Hope for Haiti developed a virtual reality experience to bring awareness to their cause, and showcased it at the 2023 Augmented World Expo (AWE). When they put out a call for booth volunteers, I offered both my time at the expo and my design skills to help elevate their on-site presence and improve audience engagement.</p><p>Working within their existing brand and content, I designed a set of promotional materials focused on clarity, visual impact, and strong calls to action:</p><ul><li><strong>Updated easel poster designs</strong> — I simplified their previous text-heavy layouts into more visual, scannable designs with clear CTAs</li><li><strong>TV display</strong> — A looping video featuring the VR experience trailer alongside a persistent title and CTA</li><li><strong>Newsletter sign-up touchpoint</strong> — bringing attention to their existing newsletter by displaying a signup sheet on an iPad</li><li><strong>Social media assets</strong> — graphics for pre-event promotion, live posting during the expo, and post-event sharing, including a prepared asset for a potential Auggie Awards win. These were created in Google Slides to allow the client to make edits easily on the fly.</li></ul><p>While not all materials were ultimately used, I believe my work was useful for thinking through practical UX decisions within the constraints of a live expo setting, and maximizing engagement of attendees with limited attention spans.&nbsp;</p><p><img src=\"/images/HFH_posters2_b0de0f8a82.png\" alt=\"posters\" srcset=\"/images/thumbnail_HFH_posters2_b0de0f8a82.png 160w,/images/small_HFH_posters2_b0de0f8a82.png 500w,/images/medium_HFH_posters2_b0de0f8a82.png 750w,/images/large_HFH_posters2_b0de0f8a82.png 1000w,\" sizes=\"100vw\" width=\"1200\" height=\"1169\"></p>",
     "leftbuttonText": null,
     "leftbuttonUrl": null,
@@ -332,7 +273,8 @@
     "hideFromNav": false
   },
   {
-    "title": "Johnson & Johnson Global Public Health",
+    "client": "Johnson & Johnson Global Public Health",
+    "title": "Turning public health audiences into active participants",
     "slug": "jnj",
     "url": "/projects/jnj/",
     "image": {
@@ -344,8 +286,8 @@
     "tags": [
       "Interactive"
     ],
-    "order": 160,
-    "description": "Proposing AR-based interaction models to drive active audience participation",
+    "order": 1010,
+    "description": "AR concepts · audience engagement",
     "content": "<p>I explored the use of augmented reality (AR) as a way to make Johnson &amp; Johnson’s Global Public Health content more interactive and participatory, during a time when platforms like Instagram were shifting their focus toward Reels.</p><p>As part of this pitch, I developed several AR concepts rooted in the existing social content we were creating for the client, focusing on how AR could invite users to engage more actively with educational messaging rather than passively consume it.</p><figure><p><iframe src=\"https://docs.google.com/presentation/d/e/2PACX-1vQcMnv9x7SYVIt_Vnzwb8fC-W9JcZOeKSZAVMTTqxHp5VKuhX7zKHeABB7JfbSgnvpRZ189bvL0Qoxe/pubembed?start=false&amp;loop=true&amp;delayms=3000\" frameborder=\"0\" allowfullscreen=\"true\" mozallowfullscreen=\"true\" webkitallowfullscreen=\"true\"></iframe></p><figcaption><a target=\"_blank\" rel=\"noopener noreferrer\" href=\"https://docs.google.com/presentation/d/1ibFPACaL_wplsP06BQj8aGtBRcojAdnCMVQBKTH9wJ8/edit?usp=sharing\"><i>(Presentation can also be viewed in Google Slides here)</i></a></figcaption></figure>",
     "leftbuttonText": null,
     "leftbuttonUrl": null,
@@ -355,7 +297,8 @@
     "hideFromNav": false
   },
   {
-    "title": "San Diego Humane Society",
+    "client": "San Diego Humane Society",
+    "title": "Bringing an animal welfare campaign to life",
     "slug": "sdhs",
     "url": "/projects/sdhs/",
     "image": {
@@ -368,13 +311,86 @@
       "OOH",
       "Digital"
     ],
-    "order": 150,
-    "description": "Leading creative production and directing a multi-channel photoshoot",
+    "order": 1005,
+    "description": "Photoshoot art direction & production",
     "content": "<figure class=\"image\"><img style=\"aspect-ratio:1200/833;\" src=\"/images/SDHS_Billboard_Mockup_cropped_ea38d07ff0.jpg\" alt=\"Billboard\" srcset=\"/images/thumbnail_SDHS_Billboard_Mockup_cropped_ea38d07ff0.jpg 225w,/images/small_SDHS_Billboard_Mockup_cropped_ea38d07ff0.jpg 500w,/images/medium_SDHS_Billboard_Mockup_cropped_ea38d07ff0.jpg 750w,/images/large_SDHS_Billboard_Mockup_cropped_ea38d07ff0.jpg 1000w,\" sizes=\"100vw\" width=\"1200\" height=\"833\"></figure><p>San Diego Humane Society wanted to promote their mission through billboards and digital ads using original photography. I was brought onto the project shortly after the branding was finalized, to create video ads, social graphics, print ads, and billboards, while also leading the organization of my first professional photoshoot.&nbsp;</p><p>I managed everything for the shoot, from hiring human and animal models, to securing permits, and coordinating with the photographer and client. Because this took place during the pandemic, I directed remotely via video call, which introduced unique challenges and reinforced the importance of clear communication and strong pre-production planning.&nbsp;</p><p>This project remains a favourite of mine as it combined my love for animals, collaboration with an incredible photographer (who also taught me a lot about photo editing), and the opportunity to independently direct my first photoshoot.</p><figure class=\"image\"><img style=\"aspect-ratio:1200/803;\" src=\"/images/SDHS_Billboard_Cat_Mockup_77ed2871a1.jpg\" alt=\"Billboard\" srcset=\"/images/thumbnail_SDHS_Billboard_Cat_Mockup_77ed2871a1.jpg 234w,/images/small_SDHS_Billboard_Cat_Mockup_77ed2871a1.jpg 500w,/images/medium_SDHS_Billboard_Cat_Mockup_77ed2871a1.jpg 750w,/images/large_SDHS_Billboard_Cat_Mockup_77ed2871a1.jpg 1000w,\" sizes=\"100vw\" width=\"1200\" height=\"803\"></figure><div><iframe src=\"https://player.vimeo.com/video/1162037517?badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479&amp;title=0&amp;byline=0&amp;portrait=0&amp;\" frameborder=\"0\" allow=\"autoplay; fullscreen; picture-in-picture; clipboard-write; encrypted-media; web-share\" referrerpolicy=\"strict-origin-when-cross-origin\" \"style=\"width:50%;height:50%;&quot;\" title=\"San Diego Humane Society - Video Ad (30s)\"></iframe></div><figure class=\"image\"><img style=\"aspect-ratio:1200/1594;\" src=\"/images/SDHS_Digital_and_Print_Ads_9212320eea.png\" alt=\"Social media and print ads\" srcset=\"/images/thumbnail_SDHS_Digital_and_Print_Ads_9212320eea.png 117w,/images/small_SDHS_Digital_and_Print_Ads_9212320eea.png 376w,/images/medium_SDHS_Digital_and_Print_Ads_9212320eea.png 565w,/images/large_SDHS_Digital_and_Print_Ads_9212320eea.png 753w,\" sizes=\"100vw\" width=\"1200\" height=\"1594\"></figure>",
     "leftbuttonText": null,
     "leftbuttonUrl": null,
     "role": "<ul><li>Photoshoot Producer &amp; Art Director</li><li>Project Manager</li><li>Visual Designer</li><li>Video Editor</li></ul>",
     "deliverables": "<ul><li>Original Photography Direction</li><li>Video Ads</li><li>Social Media &amp; Digital Newsletter Ads</li><li>Billboards</li></ul>",
+    "images": [],
+    "hideFromNav": false
+  },
+  {
+    "client": null,
+    "title": "Cravings Interpreter",
+    "slug": "cravings",
+    "url": "/projects/cravings/",
+    "image": {
+      "url": "/images/large_cravings_thumb_a34de905cc.png",
+      "mime": "image/png",
+      "alternativeText": ""
+    },
+    "category": "sandbox",
+    "tags": [
+      "WIP",
+      "Web/UX"
+    ],
+    "order": 15,
+    "description": "AI-assisted web prototype",
+    "content": "<p>A small experimental tool for making sense of food cravings!&nbsp;</p><p>This was my first fully “vibe coded” project where I skipped the usual Figma phase and built directly in the browser, using AI as a collaborative partner. I described the concept and visual direction, then iterated between Claude and ChatGPT to shape both the interface and logic.</p><p>The idea came from a personal problem: I’d often crave very specific textures or flavors, and always wondered why. I realized cravings can often point to something deeper that’s needed by your body, but instead of Googling it every time, I wanted a lightweight tool I could use to translate that for me.</p><p>Right now, the tool uses a structured set of keywords and associations to map inputs to categories. In the future, I’d be interested in exploring a more dynamic, AI-driven version that can better handle nuanced or mixed cravings.</p>",
+    "leftbuttonText": "Try it out here",
+    "leftbuttonUrl": "../../sandbox/cravings",
+    "role": "",
+    "deliverables": "",
+    "images": [],
+    "hideFromNav": false
+  },
+  {
+    "client": null,
+    "title": "Custom Visual Timer",
+    "slug": "visual-timer",
+    "url": "/projects/visual-timer/",
+    "image": {
+      "url": "/images/large_visual_timer_thumb_21e330f99e.png",
+      "mime": "image/png",
+      "alternativeText": ""
+    },
+    "category": "sandbox",
+    "tags": [
+      "Web/UX"
+    ],
+    "order": 12,
+    "description": "Figma → AI-assisted dev",
+    "content": "<p>My first \"vibe coding\" project with Claude. I created initial mockups in Figma, described my vision, and iteratively refined the code (both by hand and through Claude).</p><p>This came about as I needed a 4 minute timer for a board game, but existing visual timers only offered preset durations — usually an hour. I didn't want to see 4 minutes as a tiny sliver of a 60-minute circle, I wanted the full circle to represent my chosen time. So I built my own customizable visual timer where you set the max time, and the entire circle represents exactly that.</p><figure class=\"image\"><img style=\"aspect-ratio:1855/1097;\" src=\"/images/visual_timer_1_b48e098b9c.png\" alt=\"\" srcset=\"/images/thumbnail_visual_timer_1_b48e098b9c.png 245w,/images/small_visual_timer_1_b48e098b9c.png 500w,/images/medium_visual_timer_1_b48e098b9c.png 750w,/images/large_visual_timer_1_b48e098b9c.png 1000w,\" sizes=\"100vw\" width=\"1855\" height=\"1097\"><figcaption>initial mockup ideas</figcaption></figure>",
+    "leftbuttonText": "Try the timer",
+    "leftbuttonUrl": "../../sandbox/visual-timer",
+    "role": "",
+    "deliverables": "",
+    "images": [],
+    "hideFromNav": false
+  },
+  {
+    "client": null,
+    "title": "Spring Fling: AR Filters",
+    "slug": "spring-fling",
+    "url": "/projects/spring-fling/",
+    "image": {
+      "url": "/images/large_thumb_springfling_4a9d07690e.png",
+      "mime": "image/png",
+      "alternativeText": "preview of AR filter"
+    },
+    "category": "sandbox",
+    "tags": [
+      "Interactive"
+    ],
+    "order": 10,
+    "description": "Spark AR Studio",
+    "content": "<p><video controls=\"\" loop=\"\" autoplay=\"\" muted=\"\" playsinline=\"\" width=\"100%\" height=\"auto\">\n                              <source src=\"/images/videos/SpringFling_ForWebsite_video.mp4\" type=\"video/mp4\">\n                              Your browser does not support the video tag.\n                            </video></p><p>To explore augmented reality (AR), I taught myself Spark AR Studio and began creating Instagram filters during the height of their popularity.</p><p>I took the opportunity of a company spring-themed event to make use of these skills, developing a set of interactive AR filters for attendees to use throughout the event. The filters were designed to complement the seasonal theme and encourage playful engagement.</p><p>The final effects included:</p><ul><li><strong>Face tracking:</strong> a 3D flower model that appears to be tucked above the user’s ear and follows with their head movement</li><li><strong>Particle effects:</strong> floating flower petals that fall around the user</li><li>A lighthearted <strong>“personality” randomizer</strong> that predicts a faux company role for the user</li></ul><p><img src=\"/images/Spring_Fling_For_Website_images2_a3dd4e5425.png\" alt=\"menu and email invite designs\" srcset=\"/images/thumbnail_Spring_Fling_For_Website_images2_a3dd4e5425.png 222w,/images/small_Spring_Fling_For_Website_images2_a3dd4e5425.png 500w,/images/medium_Spring_Fling_For_Website_images2_a3dd4e5425.png 750w,/images/large_Spring_Fling_For_Website_images2_a3dd4e5425.png 1000w,\" sizes=\"100vw\" width=\"1200\" height=\"842\"></p><p>&nbsp;</p>",
+    "leftbuttonText": null,
+    "leftbuttonUrl": null,
+    "role": "<ul><li>Experiential Designer</li><li>Visual Designer</li></ul>",
+    "deliverables": "<ul><li>AR Instagram filters</li><li>Signage</li><li>Menus</li><li>Outlook email invites</li></ul>",
     "images": [],
     "hideFromNav": false
   }

@@ -15,6 +15,9 @@
     "order": {
       "type": "integer"
     },
+    "client": {
+      "type": "string"
+    },
     "title": {
       "type": "string"
     },

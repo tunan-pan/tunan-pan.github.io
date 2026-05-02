@@ -99,6 +99,7 @@ async function fetchAndSave() {
       } 
 
       return {
+        client: p.client,
         title: p.title,
         slug: p.slug,
         url: `/projects/${p.slug}/`,

@@ -17,6 +17,9 @@ layout: base.njk
 
       </div>
 
+      {% if project.client %}
+      <p class="project-card__eyebrow">{{ project.client }}:</p>
+      {% endif %}
 
       <h1>{{ project.title }}</h1>
 
@@ -39,11 +42,11 @@ layout: base.njk
 
       {% if project.category == "sandbox" %}
       <span class="project-categories">
-        <a href="/categories/{{ project.category | slug }}/">{{ project.category }}</a>&ensp;&ensp;|&ensp;
+        <a href="/categories/{{ project.category | slug }}/">{{ project.category }}</a>
       </span>
       {% endif %}
 
-
+<!--
       {% if filteredTags.length %}
       <span class="project-tags">
         {% for tag in filteredTags %}
@@ -51,6 +54,7 @@ layout: base.njk
         {% endfor %}
       </span>
       {% endif %}
+-->
 
       <div class="leftbutton">
         {% if project.leftbuttonText and project.leftbuttonUrl %}

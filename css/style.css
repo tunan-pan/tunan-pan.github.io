@@ -20,6 +20,10 @@ pink: #F2126C
   --color-pink: #E0005A;
   --color-darkmode: #262626;
 
+  --color-lightblack: #636363;
+  --color-black: #111;
+ 
+
   --page-padding-sides: 8%;
   --main-margin-top: 70px;
   --text-margin-bottom: 1rem;
@@ -62,7 +66,7 @@ pink: #F2126C
 }
 
 .button::selection {
-  color: #000;
+  color: var(--color-black);
 }
 
 .about-fox-text>*::selection,
@@ -184,7 +188,7 @@ body {
   font-weight: normal;
   font-style: normal;
   line-height: 150%;
-  color: #000;
+  color: var(--color-black);
   text-wrap: pretty;
   margin: 0;
   padding: 0;
@@ -222,7 +226,7 @@ figcaption a,
 li a {
   text-decoration: underline;
   text-underline-offset: 2px;
-  color: #000;
+  color: var(--color-black);
   font-weight: bold;
 }
 
@@ -260,25 +264,25 @@ li a:hover {
 }
 
 .button-primary:hover {
-  background-color: #000;
+  background-color: #var(--color-black);
   color: #fff;
 }
 
 .button-secondary {
-  border: 1px solid #000;
-  color: #000;
+  border: 1px solid var(--color-black);
+  color: var(--color-black);
   font-size: .8rem;
   line-height: 150%;
   padding: .4rem 1.5rem;
 }
 
 .button-secondary:hover {
-  background-color: #000;
+  background-color: var(--color-black);
   color: #fff;
 }
 
 .button-projects {
-  background-color: #000;
+  background-color: var(--color-black);
   color: #fff;
   border: 0;
   font-size: 1rem;
@@ -300,12 +304,13 @@ li a:hover {
 
 .back {
   font-size: 0.7rem;
-  color: #000;
+  color: var(--color-black);
   font-family: 'Lexend', sans-serif;
   text-transform: uppercase;
-  text-decoration: none;
+  text-decoration: underline;
   letter-spacing: 0.03rem;
   margin: 0 0 10px 0;
+  text-underline-offset: 4px;
 }
 
 .back:hover {
@@ -484,7 +489,7 @@ a.logo:hover {
 
 .main-nav a {
   text-decoration: none;
-  color: #000;
+  color: var(--color-black);
   position: relative;
   transition: unset;
   margin-top: 10px;
@@ -678,7 +683,7 @@ a.logo:hover {
   }
 
   .main-nav a {
-    color: #000;
+    color: var(--color-black);
   }
 
   @media (prefers-reduced-motion: no-preference) {
@@ -730,7 +735,7 @@ scroll back to top button
 }
 
 .back-to-top:hover {
-  background-color: #000;
+  background-color: var(--color-black);
 }
 
 .back-to-top.show {
@@ -805,7 +810,7 @@ footer {
 }
 
 .footer-bottom a {
-  color: #000;
+  color: var(--color-black);
   transition: color 0.3s;
 }
 
@@ -1141,7 +1146,7 @@ about page - page-id-21
 }
 
 .about-fox strong {
-  color: #000;
+  color: var(--color-black);
 }
 
 .about-fox-inner {
@@ -1309,7 +1314,7 @@ projects page - page-id-22
 }
 
 .projects-grid--sandbox {
-  grid-template-columns: repeat(4, 1fr);
+  grid-template-columns: repeat(5, 1fr);
 }
 
 .projects-grid--more {
@@ -1381,12 +1386,23 @@ projects page - page-id-22
   height: 100%;
 }
 
+.project-card__eyebrow {
+  font-size: 0.8rem;
+  font-weight: 300;
+  line-height: 130%;
+  color: var(--color-lightblack);
+  display: inline-block;
+  margin: 4px 0;
+  text-transform: uppercase;
+  
+}
+
 .project-card__body h3 {
   font-family: 'InclusiveSans', sans-serif;
-  font-size: 1.2rem;
+  font-size: 1.3rem;
   font-weight: 500;
   line-height: 140%;
-  margin: 8px 0;
+  margin: 0 0 16px 0;
   padding: 0;
   text-transform: none;
   letter-spacing: normal;
@@ -1394,15 +1410,19 @@ projects page - page-id-22
 
 .project-card h3,
 .project-card a {
-  color: #000;
+  color: var(--color-black);
   text-decoration: none;
 }
 
 .project-card__desc {
-  font-size: 0.9em;
-  color: #555;
-  margin: 0 0 20px;
+  font-size: 0.8rem;
+  color: var(--color-black);
+  margin: 0 0 24px;
   line-height: 1.55;
+}
+
+.project-card__desc:last-child {
+  margin-bottom: 0;
 }
 
 /* Hero card — spans 2 columns, side-by-side layout */
@@ -1450,7 +1470,7 @@ projects page - page-id-22
 .section-header {
   padding-bottom: 10px;
   width: 100%;
-  border-bottom: 1px solid #000;
+  border-bottom: 1px solid var(--color-black);
   display: flex;
   justify-content: space-between;
   align-items: baseline;
@@ -1460,7 +1480,7 @@ projects page - page-id-22
   font-family: 'LexendExa', sans-serif;
   font-size: 1.5em;
   text-transform: uppercase;
-  color: #000000;
+  color: var(--color-black);
   margin: 0;
   font-weight: 500;
 }
@@ -1546,7 +1566,7 @@ projects page - page-id-22
 
 .project-tags a:hover,
 .project-categories a:hover {
-  color: #000;
+  color: var(--color-black);
 }
 
 /* Responsive */
@@ -1560,7 +1580,7 @@ projects page - page-id-22
   }
 
   .projects-grid--sandbox {
-    grid-template-columns: repeat(3, 1fr);
+    grid-template-columns: repeat(4, 1fr);
   }
 
   .project-card--hero {
@@ -1568,12 +1588,21 @@ projects page - page-id-22
   }
 }
 
-@media (max-width: 600px) {
+@media (max-width: 800px) {
+  .projects-grid--sandbox {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+@media (max-width: 650px) {
 
   .projects-grid--featured,
-  .projects-grid--more,
-  .projects-grid--sandbox {
+  .projects-grid--more {
     grid-template-columns: 1fr;
+  }
+
+  .projects-grid--sandbox {
+    grid-template-columns: repeat(2, 1fr);
   }
 
   .project-card--hero {
@@ -1647,6 +1676,16 @@ Individual project pages
 .project-meta .project-tags,
 .project-meta .project-categories {
   margin: 0;
+}
+
+.project-post .project-card__eyebrow {
+  font-family: "Lexend", sans-serif;
+  font-size: 2.1rem;
+  color: var(--color-black);
+  text-transform: none;
+  font-weight: 300;
+  margin-bottom: 0;
+  line-height: 110%;
 }
 
 .project-post h1 {
@@ -1818,7 +1857,7 @@ iframe {
   text-transform: none;
   letter-spacing: unset;
   border: none;
-  color: #000;
+  color: var(--color-black);
   font-size: 1em;
   font-weight: normal;
 }
@@ -1878,8 +1917,8 @@ contact page - page-id-23
 .contact_form input,
 textarea {
   border: none;
-  border-bottom: 1px solid #000;
-  color: #000;
+  border-bottom: 1px solid var(--color-black);
+  color: var(--color-black);
   font-family: InclusiveSans;
   font-size: 1rem;
   padding: 16px;
@@ -1916,7 +1955,7 @@ textarea::placeholder {
 }
 
 .contact_form button:hover {
-  background-color: #000;
+  background-color: var(--color-black);
   color: #fff;
 }
 
