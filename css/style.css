@@ -264,7 +264,7 @@ li a:hover {
 }
 
 .button-primary:hover {
-  background-color: #var(--color-black);
+  background-color: var(--color-black);
   color: #fff;
 }
 
