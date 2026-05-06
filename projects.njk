@@ -7,19 +7,18 @@ title: Projects
   <h1>My Projects</h1>
 </div>
 
-<pre>{{ project.image | dump }}</pre>
-
 {% set featured = projects_build | whereCategory("featured") %}
 {% set sandbox = projects_build | whereCategory("sandbox") %}
 {% set more = projects_build | whereCategory("more") %}
 
 {# ── Featured Work ── #}
 <section class="projects-section fade-in" aria-labelledby="featured-proj-heading">
+  <!--
   <div class="section-header">
     <h2 class="section-label" id="featured-proj-heading">Featured Work</h2>
     <p class="section-desc">UX and accessibility projects.</p>
   </div>
-
+  -->
   <div class="projects-grid projects-grid--featured fade-in">
     {% for project in featured %}
     <article class="project-card">
@@ -94,11 +93,12 @@ title: Projects
 {# ── More Work ── #}
 {% if more | length %}
 <section class="projects-section projects-section--more fade-in" aria-labelledby="additonal-proj-heading">
+  <!--
   <div class="section-header">
     <h2 class="section-label" id="additonal-proj-heading">Additional Work</h2>
     <p class="section-desc">Projects from my previous roles in design and social impact.</p>
   </div>
-
+  -->
   <div class="projects-grid projects-grid--more fade-in">
     {% for project in more %}
     <article class="project-card project-card--small">

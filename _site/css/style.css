@@ -864,7 +864,7 @@ home page
 .fox-container {
   position: absolute;
   width: 100%;
-  height: 75dvh; /*should be same as the fox-mask*/
+  height: 75vh; /*should be same as the fox-mask*/
   left: 50%;
   transform: translateX(-50%);
   top: 0;
@@ -879,14 +879,14 @@ home page
   left: 50%;
   transform: translateX(-50%);
   width: 120%;
-  height: 75dvh;
+  height: 75vh;
   z-index: 5;
 }
 
 /* Both fox images share the same positioning */
 .fox-visual {
   position: absolute;
-  height: 60dvh;
+  height: 60vh;
   width: auto;
   top: 160px;
   /*top: 120px;*/
@@ -917,7 +917,7 @@ home page
 .fox-hitbox {
   position: absolute;
   aspect-ratio: 1 / 0.4;
-  height: 8dvh;
+  height: 8vh;
   border-radius: 90px;
   top: calc(160px + (60dvh * 0.65));
   left: 50%;
@@ -983,7 +983,7 @@ home page
 }
 
 .home-button {
-  margin-top: 20px;
+  margin-top: 50px;
 }
 
 
@@ -1002,6 +1002,23 @@ home page
   }
 }
 
+
+
+.home-page .projects-section {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 50px var(--page-padding-sides);
+  text-align: center;
+}
+
+.home-page .section-header {
+  text-align: center;
+  display: inline-block;
+  border-top: 1px solid var(--color-darkgrey);
+  border-bottom: none;
+  padding-top: 50px;
+  font-size: 0.8rem;
+}
 
 
 
@@ -1327,6 +1344,7 @@ projects page - page-id-22
   border-radius: 12px;
   overflow: hidden;
   position: relative;
+  text-align: left;
 }
 
 .project-card a {
@@ -1458,6 +1476,11 @@ projects page - page-id-22
 
 
 /* Section headers */
+
+.projects-section:first-of-type {
+  margin-bottom: -20px;
+}
+
 .projects-section {
   margin-bottom: 100px;
 }
