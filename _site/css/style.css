@@ -1126,7 +1126,7 @@ home page
     background-color: #fff;
   }
 
-  .home-page .project-card--hero:nth-child(even) > a .project-card__thumb {
+  .home-page .project-card--hero:nth-child(odd) > a .project-card__thumb {
   order: 1;
   }
   .home-page .project-card--hero .project-card__thumb {
