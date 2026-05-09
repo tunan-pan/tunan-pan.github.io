@@ -189,88 +189,74 @@ title: Home
 </section>
 
 
-        {% set featured = projects_build | whereCategory("featured") %}
+{% set featured = projects_build | whereCategory("featured") %}
 
-        {# ── Featured Work ── #}
-        <section class="projects-section fade-in" aria-labelledby="featured-proj-heading">
-          <div class="section-header">
-            <h2 class="section-label" id="featured-proj-heading">Featured Work</h2>
+<section class="projects-section fade-in" aria-labelledby="featured-proj-heading">
+  <div class="section-header">
+    <h2 class="section-label" id="featured-proj-heading">Featured Work</h2>
+  </div>
+
+  <div class="projects-grid projects-grid--featured fade-in">
+    {% for project in featured %}
+    <article class="project-card project-card--hero"   style="background-color: {{ project.homepageAccentColor or '#ffffff' }};">
+
+      <a href="/projects/{{ project.slug }}/">
+        <div class="project-card__thumb" class="project-card project-card--hero"   style="background-color: {{ project.homepageAccentColor or '#ffffff' }};">
+
+          {% if project.homepageCardImage %}
+            {% if project.homepageCardImage.mime and 'video' in project.homepageCardImage.mime %}
+              <video autoplay loop muted playsinline>
+                <source src="{{ project.homepageCardImage.url }}" type="{{ project.homepageCardImage.mime }}">
+              </video>
+            {% elif project.homepageCardImage.mime == 'image/gif' %}
+              <img src="{{ project.homepageCardImage.url }}" alt="">
+            {% else %}
+              <img src="{{ project.homepageCardImage.url or project.homepageCardImage }}" alt="">
+            {% endif %}
+          {% endif %}
+
+
+        </div>
+        <div class="project-card__body">
+
+          
+          <p class="project-card__eyebrow">{{ project.client }}</p>
+          <h3>{{ project.title }}</h3>
+
+          {% if project.description %}
+          <p class="project-card__desc">{{ project.description }}</p>
+          {% endif %}
+
+          
+          {% if project.tags %}
+          <div class="project-tags-row">
+              
+                <span class="button button-secondary">
+                 {% if "Case Study" in project.tags %}
+                    View case study 
+                  {% else %}
+                    View project
+                  {% endif %}
+                  <span class="arrow" aria-hidden="true">→</span>
+                </span>
+
           </div>
-
-          <div class="projects-grid projects-grid--featured fade-in">
-            {% for project in featured %}
-            <article class="project-card">
-
-              <a href="/projects/{{ project.slug }}/">
-                <div class="project-card__thumb">
-
-                  <!--put back in class if want hero: {% if loop.first %} project-card--hero{% endif %}-->
+          {% endif %}
 
 
-                  {% if project.image %}
-                    {% if project.image.mime and 'video' in project.image.mime %}
-                      <video autoplay loop muted playsinline>
-                        <source src="{{ project.image.url }}" type="{{ project.image.mime }}">
-                      </video>
-                    {% elif project.image.mime == 'image/gif' %}
-                      <img src="{{ project.image.url }}" alt="">
-                    {% else %}
-                      <img src="{{ project.image.url or project.image }}" alt="">
-                    {% endif %}
-                  {% endif %}
+        </div>
+
+      </a>
+
+    </article>
+    {% endfor %}
+  </div>
 
 
-                </div>
-                <div class="project-card__body">
-
-                  
-                  <p class="project-card__eyebrow">{{ project.client }}</p>
-                  <h3>{{ project.title }}</h3>
-
-                  {% if project.description %}
-                  <p class="project-card__desc">{{ project.description }}</p>
-                  {% endif %}
-
-                  
-                  {% if project.tags %}
-                  <div class="project-tags-row">
-
-                    {# Case Study / WIP first #}
-                    {% for tag in project.tags %}
-                      {% if tag == "Case Study" %}
-                        <span class="tag tag--case">Case study</span>
-                      {% endif %}
-                      {% if tag == "WIP" %}
-                        <span class="tag tag--wip">WIP</span>
-                      {% endif %}
-                    {% endfor %}
-
-                    <!--
-                    {# Then normal tags #}
-                    {% set filteredTags = project.tags | reject("equalto", "Case Study") | reject("equalto", "WIP") %}
-
-                    {% for tag in filteredTags %}
-                      <span class="tag tag--default">{{ tag }}</span>
-                    {% endfor %}
-                    -->
-
-                  </div>
-                  {% endif %}
+  <p><a class="home-button button button-primary" href="/projects/">View more projects <span class="arrow" aria-hidden="true">→</span></a></p>
 
 
-                </div>
-
-              </a>
-
-            </article>
-            {% endfor %}
-          </div>
-
-
-          <p><a class="home-button button button-primary" href="/projects/">View all projects <span class="arrow" aria-hidden="true">→</span></a></p>
-
-
-        </section>
+</section>
 
 
 

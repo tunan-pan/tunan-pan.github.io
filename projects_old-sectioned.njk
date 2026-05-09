@@ -1,0 +1,216 @@
+---
+layout: base.njk
+title: Projects
+---
+
+<div class="projects-intro">
+  <h1>My Projects</h1>
+</div>
+
+{% set featured = projects_build | whereCategory("featured") %}
+{% set sandbox = projects_build | whereCategory("sandbox") %}
+{% set more = projects_build | whereCategory("more") %}
+
+{# ── Featured Work ── #}
+<section class="projects-section fade-in" aria-labelledby="featured-proj-heading">
+  <!--
+  <div class="section-header">
+    <h2 class="section-label" id="featured-proj-heading">Featured Work</h2>
+    <p class="section-desc">UX and accessibility projects.</p>
+  </div>
+  -->
+  <div class="projects-grid projects-grid--featured fade-in">
+    {% for project in featured %}
+    <article class="project-card">
+
+      <a href="/projects/{{ project.slug }}/">
+        <div class="project-card__thumb">
+
+          <!--put back in class if want hero: {% if loop.first %} project-card--hero{% endif %}-->
+
+
+          {% if project.image %}
+            {% if project.image.mime and 'video' in project.image.mime %}
+              <video autoplay loop muted playsinline>
+                <source src="{{ project.image.url }}" type="{{ project.image.mime }}">
+              </video>
+            {% elif project.image.mime == 'image/gif' %}
+              <img src="{{ project.image.url }}" alt="">
+            {% else %}
+              <img src="{{ project.image.url or project.image }}" alt="">
+            {% endif %}
+          {% endif %}
+
+
+        </div>
+        <div class="project-card__body">
+
+          
+          <p class="project-card__eyebrow">{{ project.client }}</p>
+          <h3>{{ project.title }}</h3>
+
+          {% if project.description %}
+          <p class="project-card__desc">{{ project.description }}</p>
+          {% endif %}
+
+          
+          {% if project.tags %}
+          <div class="project-tags-row">
+
+            {# Case Study / WIP first #}
+            {% for tag in project.tags %}
+              {% if tag == "Case Study" %}
+                <span class="tag tag--case">Case study</span>
+              {% endif %}
+              {% if tag == "WIP" %}
+                <span class="tag tag--wip">WIP</span>
+              {% endif %}
+            {% endfor %}
+
+            <!--
+            {# Then normal tags #}
+            {% set filteredTags = project.tags | reject("equalto", "Case Study") | reject("equalto", "WIP") %}
+
+            {% for tag in filteredTags %}
+              <span class="tag tag--default">{{ tag }}</span>
+            {% endfor %}
+            -->
+
+          </div>
+          {% endif %}
+
+
+        </div>
+
+      </a>
+
+    </article>
+    {% endfor %}
+  </div>
+</section>
+
+
+{# ── More Work ── #}
+{% if more | length %}
+<section class="projects-section projects-section--more fade-in" aria-labelledby="additonal-proj-heading">
+  <!--
+  <div class="section-header">
+    <h2 class="section-label" id="additonal-proj-heading">Additional Work</h2>
+    <p class="section-desc">Projects from my previous roles in design and social impact.</p>
+  </div>
+  -->
+  <div class="projects-grid projects-grid--more fade-in">
+    {% for project in more %}
+    <article class="project-card project-card--small">
+      <a href="/projects/{{ project.slug }}/">
+        <div class="project-card__thumb">
+          {% if project.image %}
+          <img src="{{ project.image.url or project.image }}" alt="">
+          {% endif %}
+        </div>
+
+        <div class="project-card__body">
+
+          <div class="project-card__meta">
+            {% if project.tags %}
+            {% for tag in project.tags %}
+            {% if tag == "Case Study" %}
+            <span class="tag tag--case">Case study</span>
+            {% endif %}
+            {% if tag == "WIP" %}
+            <span class="tag tag--wip">WIP</span>
+            {% endif %}
+            {% endfor %}
+            {% endif %}
+          </div>
+
+          <p class="project-card__eyebrow">{{ project.client }}</p>
+          <h3>{{ project.title }}</h3>
+
+          {% if project.description %}
+          <p class="project-card__desc project-tags-row">{{ project.description }}</p>
+          {% endif %}
+
+          <!--
+          {% set filteredTags = project.tags | reject("equalto", "Case Study") | reject("equalto", "WIP") %}
+
+          {% if project.tags %}
+          <div class="project-tags-row">
+
+            {# Case Study / WIP first #}
+            {% for tag in project.tags %}
+              {% if tag == "Case Study" %}
+                <span class="tag tag--case">Case study</span>
+              {% endif %}
+              {% if tag == "WIP" %}
+                <span class="tag tag--wip">WIP</span>
+              {% endif %}
+            {% endfor %}
+
+            {# Then normal tags #}
+            {% set filteredTags = project.tags | reject("equalto", "Case Study") | reject("equalto", "WIP") %}
+
+            
+              <span class="tag tag--default">
+              {% for tag in filteredTags %}
+              {{ tag }}{% if not loop.last %}, {% endif %}
+              {% endfor %}
+            </span>
+           
+
+          </div>
+          {% endif %}
+          -->
+
+        </div>
+
+      </a>
+    </article>
+    {% endfor %}
+  </div>
+</section>
+{% endif %}
+
+
+
+
+{# ── Sandbox ── #}
+{% if sandbox | length %}
+<section class="projects-section projects-section--sandbox fade-in" aria-labelledby="sandbox-proj-heading">
+
+  <div class="section-header">
+    <h2 class="section-label" id="sandbox-proj-heading">Sandbox</h2>
+    <p class="section-desc">Smaller experiments built to learn, explore, or just have fun.</p>
+  </div>
+
+  <div class="projects-grid projects-grid--sandbox fade-in">
+    {% for project in sandbox %}
+    <article class="project-card project-card--sandbox">
+
+      <a href="/projects/{{ project.slug }}/">
+
+        {% if project.image %}
+
+        <div class="project-card__thumb">
+          <img src="{{ project.image.url or project.image }}" alt="">
+        </div>
+        {% endif %}
+
+        <div class="project-card__body">
+
+          <h3>{{ project.title }}</h3>
+
+          {% if project.description %}
+          <p class="project-card__desc project-tags-row">{{ project.description }}</p>
+          {% endif %}
+
+        </div>
+
+      </a>
+
+    </article>
+    {% endfor %}
+  </div>
+
+</section>
+{% endif %}

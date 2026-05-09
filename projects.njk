@@ -7,27 +7,17 @@ title: Projects
   <h1>My Projects</h1>
 </div>
 
-{% set featured = projects_build | whereCategory("featured") %}
-{% set sandbox = projects_build | whereCategory("sandbox") %}
-{% set more = projects_build | whereCategory("more") %}
+{% set projects = projects_build | rejectattr("isSandbox") %}
 
-{# ── Featured Work ── #}
-<section class="projects-section fade-in" aria-labelledby="featured-proj-heading">
-  <!--
-  <div class="section-header">
-    <h2 class="section-label" id="featured-proj-heading">Featured Work</h2>
-    <p class="section-desc">UX and accessibility projects.</p>
-  </div>
-  -->
+<section class="projects-section fade-in">
   <div class="projects-grid projects-grid--featured fade-in">
-    {% for project in featured %}
+    
+    {% for project in projects %}
+
     <article class="project-card">
 
       <a href="/projects/{{ project.slug }}/">
         <div class="project-card__thumb">
-
-          <!--put back in class if want hero: {% if loop.first %} project-card--hero{% endif %}-->
-
 
           {% if project.image %}
             {% if project.image.mime and 'video' in project.image.mime %}
@@ -67,15 +57,6 @@ title: Projects
               {% endif %}
             {% endfor %}
 
-            <!--
-            {# Then normal tags #}
-            {% set filteredTags = project.tags | reject("equalto", "Case Study") | reject("equalto", "WIP") %}
-
-            {% for tag in filteredTags %}
-              <span class="tag tag--default">{{ tag }}</span>
-            {% endfor %}
-            -->
-
           </div>
           {% endif %}
 
@@ -88,94 +69,13 @@ title: Projects
     {% endfor %}
   </div>
 </section>
-
-
-{# ── More Work ── #}
-{% if more | length %}
-<section class="projects-section projects-section--more fade-in" aria-labelledby="additonal-proj-heading">
-  <!--
-  <div class="section-header">
-    <h2 class="section-label" id="additonal-proj-heading">Additional Work</h2>
-    <p class="section-desc">Projects from my previous roles in design and social impact.</p>
-  </div>
-  -->
-  <div class="projects-grid projects-grid--more fade-in">
-    {% for project in more %}
-    <article class="project-card project-card--small">
-      <a href="/projects/{{ project.slug }}/">
-        <div class="project-card__thumb">
-          {% if project.image %}
-          <img src="{{ project.image.url or project.image }}" alt="">
-          {% endif %}
-        </div>
-
-        <div class="project-card__body">
-
-          <div class="project-card__meta">
-            {% if project.tags %}
-            {% for tag in project.tags %}
-            {% if tag == "Case Study" %}
-            <span class="tag tag--case">Case study</span>
-            {% endif %}
-            {% if tag == "WIP" %}
-            <span class="tag tag--wip">WIP</span>
-            {% endif %}
-            {% endfor %}
-            {% endif %}
-          </div>
-
-          <p class="project-card__eyebrow">{{ project.client }}</p>
-          <h3>{{ project.title }}</h3>
-
-          {% if project.description %}
-          <p class="project-card__desc project-tags-row">{{ project.description }}</p>
-          {% endif %}
-
-          <!--
-          {% set filteredTags = project.tags | reject("equalto", "Case Study") | reject("equalto", "WIP") %}
-
-          {% if project.tags %}
-          <div class="project-tags-row">
-
-            {# Case Study / WIP first #}
-            {% for tag in project.tags %}
-              {% if tag == "Case Study" %}
-                <span class="tag tag--case">Case study</span>
-              {% endif %}
-              {% if tag == "WIP" %}
-                <span class="tag tag--wip">WIP</span>
-              {% endif %}
-            {% endfor %}
-
-            {# Then normal tags #}
-            {% set filteredTags = project.tags | reject("equalto", "Case Study") | reject("equalto", "WIP") %}
-
-            
-              <span class="tag tag--default">
-              {% for tag in filteredTags %}
-              {{ tag }}{% if not loop.last %}, {% endif %}
-              {% endfor %}
-            </span>
-           
-
-          </div>
-          {% endif %}
-          -->
-
-        </div>
-
-      </a>
-    </article>
-    {% endfor %}
-  </div>
-</section>
-{% endif %}
-
 
 
 
 {# ── Sandbox ── #}
-{% if sandbox | length %}
+
+{% set sandboxProjects = projects_build | selectattr("isSandbox", "equalto", true) %}
+
 <section class="projects-section projects-section--sandbox fade-in" aria-labelledby="sandbox-proj-heading">
 
   <div class="section-header">
@@ -184,7 +84,8 @@ title: Projects
   </div>
 
   <div class="projects-grid projects-grid--sandbox fade-in">
-    {% for project in sandbox %}
+    
+    {% for project in sandboxProjects %}
     <article class="project-card project-card--sandbox">
 
       <a href="/projects/{{ project.slug }}/">
@@ -213,4 +114,3 @@ title: Projects
   </div>
 
 </section>
-{% endif %}

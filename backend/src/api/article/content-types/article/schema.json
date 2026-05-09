@@ -89,6 +89,19 @@
     },
     "hideFromNav": {
       "type": "boolean"
+    },
+    "homepageAccentColor": {
+      "type": "string"
+    },
+    "homepageCardImage": {
+      "type": "media",
+      "multiple": false,
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ]
     }
   }
 }

@@ -81,7 +81,20 @@ async function fetchAndSave() {
         }
       }
 
-      // Process images
+
+      // Homepage card image
+      let homepageCardImage = null;
+
+      if (p.homepageCardImage) {
+        homepageCardImage = {
+          url: p.homepageCardImage.url?.replace("/uploads", "/images"),
+          mime: p.homepageCardImage.mime,
+          alternativeText: p.homepageCardImage.alternativeText || ""
+        };
+      }
+      
+
+      // Process gallery images
       const images = (p.images || []).map(img => ({
         url: img.url?.replace("/uploads", "/images"),
         alternativeText: img.alternativeText,
@@ -115,7 +128,12 @@ async function fetchAndSave() {
         deliverables: convertContent(p.deliverables),
         images: images,
         stuff: p.stuff,
-        hideFromNav: p.hideFromNav || false
+        hideFromNav: p.hideFromNav || false,
+        homepageAccentColor: p.homepageAccentColor,
+        homepageCardImage: homepageCardImage,
+
+        isSandbox: p.category?.name === "sandbox",
+        isFeatured: p.category?.name === "featured",
       };
     });
 

@@ -492,6 +492,10 @@ export interface ApiArticleArticle extends Struct.CollectionTypeSchema {
       >;
     description: Schema.Attribute.Text;
     hideFromNav: Schema.Attribute.Boolean;
+    homepageAccentColor: Schema.Attribute.String;
+    homepageCardImage: Schema.Attribute.Media<
+      'images' | 'files' | 'videos' | 'audios'
+    >;
     images: Schema.Attribute.Media<
       'images' | 'files' | 'videos' | 'audios',
       true
