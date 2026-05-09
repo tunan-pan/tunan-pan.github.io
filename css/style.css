@@ -864,7 +864,7 @@ home page
 .fox-container {
   position: absolute;
   width: 100%;
-  height: 75vh; /*should be same as the fox-mask*/
+  height: 74vh; /*should be same/slight less as the fox-mask*/
   left: 50%;
   transform: translateX(-50%);
   top: 0;
