@@ -9,10 +9,15 @@
 
   const STORAGE_KEY = 'fox-motion-enabled';
 
-  // Honour prefers-reduced-motion as the default if no preference saved yet
   const systemDefault = !window.matchMedia('(prefers-reduced-motion: reduce)').matches;
   const saved = sessionStorage.getItem(STORAGE_KEY);
   let _enabled = saved !== null ? saved === 'true' : systemDefault;
+
+  function syncCursorClass(enabled) {
+    const hitbox = document.querySelector('.fox-hitbox');
+    if (!hitbox) return;
+    hitbox.classList.toggle('motion-enabled', enabled);
+  }
 
   window.FoxMotion = {
     get enabled() { return _enabled; },
@@ -21,7 +26,13 @@
       _enabled = !!val;
       sessionStorage.setItem(STORAGE_KEY, _enabled);
       window.dispatchEvent(new CustomEvent('foxmotion', { detail: { enabled: _enabled } }));
+      syncCursorClass(_enabled);
     },
   };
+
+  // Run once on DOMContentLoaded to set correct cursor on page load
+  document.addEventListener('DOMContentLoaded', () => {
+    syncCursorClass(_enabled);
+  });
 
 })();

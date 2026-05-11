@@ -131,6 +131,7 @@ async function fetchAndSave() {
         hideFromNav: p.hideFromNav || false,
         homepageAccentColor: p.homepageAccentColor,
         homepageCardImage: homepageCardImage,
+        longDescription: p.longDescription,
 
         isSandbox: p.category?.name === "sandbox",
         isFeatured: p.category?.name === "featured",

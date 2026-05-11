@@ -102,6 +102,9 @@
         "videos",
         "audios"
       ]
+    },
+    "longDescription": {
+      "type": "text"
     }
   }
 }

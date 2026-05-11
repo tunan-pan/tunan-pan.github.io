@@ -5,8 +5,6 @@ document.addEventListener('DOMContentLoaded', () => {
   const foxContainer = document.querySelector('.fox-container');
   if (!foxContainer) return;
 
-  if (!window.FoxMotion || !window.FoxMotion.enabled) return;
-
   // --- Config ---
   const GLYPHS = ['+', '*', '#', ':', '-', '+'];
   const GRID_SIZE = 12;

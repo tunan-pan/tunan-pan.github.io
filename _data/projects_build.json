@@ -23,13 +23,14 @@
     "role": "<ul><li>UX Designer</li></ul>",
     "deliverables": "<ul><li>Donation flow audit</li><li>Competitor and UX best-practice analysis</li><li>User flow restructuring</li><li>Wireframes</li><li>High-fidelity UI mockups</li><li>Interactive prototype</li></ul>",
     "images": [],
-    "hideFromNav": true,
+    "hideFromNav": false,
     "homepageAccentColor": "#D5E3FF",
     "homepageCardImage": {
       "url": "/images/Featured_SAS_c95832d48d.png",
       "mime": "image/png",
       "alternativeText": ""
     },
+    "longDescription": "Redesigned the donation flow to simplify the giving process, increase trust, and help users complete donations with greater confidence.",
     "isSandbox": false,
     "isFeatured": true
   },
@@ -63,6 +64,7 @@
       "mime": "video/mp4",
       "alternativeText": ""
     },
+    "longDescription": "Improved information architecture and navigation to help users discover social impact games more easily across a growing content library.",
     "isSandbox": false,
     "isFeatured": true
   },
@@ -96,6 +98,7 @@
       "mime": "image/png",
       "alternativeText": ""
     },
+    "longDescription": "Simplified the borrowing experience by reducing clutter, improving scanability, and streamlining key user actions.",
     "isSandbox": false,
     "isFeatured": true
   },
@@ -129,6 +132,7 @@
       "mime": "image/png",
       "alternativeText": ""
     },
+    "longDescription": "Created practical accessibility patterns and interface recommendations to improve usability for players with different access needs.",
     "isSandbox": false,
     "isFeatured": true
   },
@@ -158,6 +162,7 @@
     "hideFromNav": false,
     "homepageAccentColor": null,
     "homepageCardImage": null,
+    "longDescription": null,
     "isSandbox": false,
     "isFeatured": false
   },
@@ -188,6 +193,7 @@
     "hideFromNav": false,
     "homepageAccentColor": null,
     "homepageCardImage": null,
+    "longDescription": null,
     "isSandbox": false,
     "isFeatured": false
   },
@@ -217,6 +223,7 @@
     "hideFromNav": false,
     "homepageAccentColor": null,
     "homepageCardImage": null,
+    "longDescription": null,
     "isSandbox": false,
     "isFeatured": false
   },
@@ -245,6 +252,7 @@
     "hideFromNav": false,
     "homepageAccentColor": null,
     "homepageCardImage": null,
+    "longDescription": null,
     "isSandbox": false,
     "isFeatured": false
   },
@@ -274,6 +282,7 @@
     "hideFromNav": false,
     "homepageAccentColor": null,
     "homepageCardImage": null,
+    "longDescription": null,
     "isSandbox": false,
     "isFeatured": false
   },
@@ -302,6 +311,7 @@
     "hideFromNav": false,
     "homepageAccentColor": null,
     "homepageCardImage": null,
+    "longDescription": null,
     "isSandbox": false,
     "isFeatured": false
   },
@@ -330,6 +340,7 @@
     "hideFromNav": false,
     "homepageAccentColor": null,
     "homepageCardImage": null,
+    "longDescription": null,
     "isSandbox": false,
     "isFeatured": false
   },
@@ -359,6 +370,7 @@
     "hideFromNav": false,
     "homepageAccentColor": null,
     "homepageCardImage": null,
+    "longDescription": null,
     "isSandbox": false,
     "isFeatured": false
   },
@@ -388,6 +400,7 @@
     "hideFromNav": false,
     "homepageAccentColor": null,
     "homepageCardImage": null,
+    "longDescription": null,
     "isSandbox": false,
     "isFeatured": false
   },
@@ -417,6 +430,7 @@
     "hideFromNav": false,
     "homepageAccentColor": null,
     "homepageCardImage": null,
+    "longDescription": null,
     "isSandbox": true,
     "isFeatured": false
   },
@@ -445,6 +459,7 @@
     "hideFromNav": false,
     "homepageAccentColor": null,
     "homepageCardImage": null,
+    "longDescription": null,
     "isSandbox": true,
     "isFeatured": false
   },
@@ -473,6 +488,7 @@
     "hideFromNav": false,
     "homepageAccentColor": null,
     "homepageCardImage": null,
+    "longDescription": null,
     "isSandbox": true,
     "isFeatured": false
   }
