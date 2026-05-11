@@ -53,7 +53,7 @@ class FoxAnimator {
       // Animation will finish current loop and then stop
 
       // Reset to neutral face if using reduced motion
-      if (this.prefersReducedMotion || !window.FoxMotion.enabled) {
+      if (!window.FoxMotion.enabled) {
         setTimeout(() => {
           this.staticImg.src = '/images/fox/Fox_Static.svg';
           this.container.classList.remove('showing-happy');
@@ -68,7 +68,7 @@ class FoxAnimator {
         this.isHovering = !this.isHovering;
         if (this.isHovering) {
           this.startAnimation();
-        } else if (this.prefersReducedMotion || !window.FoxMotion.enabled) {
+        } else if (!window.FoxMotion.enabled) {
           // Reset to neutral for keyboard users too
           setTimeout(() => {
             this.staticImg.src = '/images/fox/Fox_Static.svg';
@@ -82,7 +82,7 @@ class FoxAnimator {
     const motionMediaQuery = window.matchMedia('(prefers-reduced-motion: reduce)');
     motionMediaQuery.addEventListener('change', (e) => {
       this.prefersReducedMotion = e.matches;
-      if ((this.prefersReducedMotion || !window.FoxMotion.enabled) && this.isAnimating) {
+      if (!window.FoxMotion.enabled) {
         // Stop animation if it's currently playing
         this.endAnimation();
         // Show happy face instead
@@ -113,7 +113,7 @@ class FoxAnimator {
     if (this.isAnimating) return;
 
     // If reduced motion is preferred, swap to happy face instead of animating
-    if (this.prefersReducedMotion || !window.FoxMotion.enabled) {
+    if (!window.FoxMotion.enabled) {
       this.showHappyFace();
       return;
     }
@@ -127,8 +127,8 @@ class FoxAnimator {
 
   showHappyFace() {
     // Swap static image to happy face
-    this.staticImg.src = '/images/fox/Fox_Static-happy.svg';
-    this.container.classList.add('showing-happy');
+      this.container.classList.add('showing-happy');
+
   }
 
   playNextFrame() {
