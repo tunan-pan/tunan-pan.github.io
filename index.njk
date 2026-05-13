@@ -5,7 +5,9 @@ title: Home
 
 
 
-<!-- ///////// FOX AREA  ///////// -->
+<!-- ///////////////////////////////////////////////////////////////
+FOX AREA
+/////////////////////////////////////////////////////////////// -->
 
 <section class="fox-window" aria-label="interactive visuals">
   <div class="fox-container">
@@ -177,7 +179,9 @@ title: Home
 </section>
 
 
-<!-- ///////// HERO TEXT  ///////// -->
+<!-- ///////////////////////////////////////////////////////////////
+HERO TEXT
+/////////////////////////////////////////////////////////////// -->
 
 <section class="home-top-container" aria-label="intro">
 
@@ -186,8 +190,7 @@ title: Home
       Hi, I'm Tunan! I'm a
       <span class="word-wrap" id="w1" tabindex="0" role="button"
             aria-label="visual-turned-UX designer">
-        <span class="highlight">designer</span>
-        <span class="annotation annotation-above" id="ann1" aria-hidden="true">
+          <span class="annotation annotation-above" id="ann1" aria-hidden="true">
           <span class="ann-text">visual-turned-UX</span>
           <svg id="svg1" width="28" height="22" viewBox="0 0 28 22">
             <path id="arrow1-head" class="arrow-head"
@@ -196,6 +199,7 @@ title: Home
                   stroke-linecap="round" stroke-linejoin="round"/>
           </svg>
         </span>
+        <span class="highlight">designer</span>
       </span>
        with a background in
       <span class="word-wrap" id="w2" tabindex="0" role="button"
@@ -226,74 +230,207 @@ title: Home
 </section>
 
 
-<!-- ///////// FEATURED PROJECTS  ///////// -->
+<!-- ///////////////////////////////////////////////////////////////
+PROJECTS SECTION
+/////////////////////////////////////////////////////////////// -->
 
-{% set featured = projects_build | whereCategory("featured") %}
-
-<section id="projects-section" class="projects-section featured-projects fade-in" aria-labelledby="featured-proj-heading">
+<section id="projects-section" class="projects-section" aria-label="My Work">
   <div class="section-wrapper">
-    <div class="section-header">
-      <h1 class="section-label angled-background" id="featured-proj-heading">Featured Work</h1>
+    
+    <!-- Post-it note tabs -->
+    <div class="project-tabs">
+      <button class="tab-note tab-note--active" data-tab="current-focus">
+        <span>Current Focus</span>
+      </button>
+      <button class="tab-note" data-tab="past-life">
+        <span>Past Life</span>
+      </button>
+      <button class="tab-note" data-tab="side-quests">
+        <span>Side Quests</span>
+      </button>
+      <div class="projects-white-bg"></div>
     </div>
 
-    <div class="projects-grid projects-grid--featured fade-in">
-      {% for project in featured %}
-      <article class="project-card project-card--hero"   style="background-color: {{ project.homepageAccentColor or '#ffffff' }}; border: 1px solid {{ project.homepageAccentColor or '#e4e4e4' }};">
+    <!-- Tab content panels -->
 
-        <a href="/projects/{{ project.slug }}/">
-          <div class="project-card__thumb" class="project-card project-card--hero"   style="background-color: {{ project.homepageAccentColor or '#ffffff' }};">
+    <!------------ CURRENT FOCUS / FEATURED ------------->
+    <div class="tab-content tab-content--active" data-content="current-focus">
+      <div class="projects-grid projects-grid--featured">
+        
 
-            {% if project.homepageCardImage %}
-              {% if project.homepageCardImage.mime and 'video' in project.homepageCardImage.mime %}
-                <video autoplay loop muted playsinline>
-                  <source src="{{ project.homepageCardImage.url }}" type="{{ project.homepageCardImage.mime }}">
-                </video>
-              {% elif project.homepageCardImage.mime == 'image/gif' %}
-                <img src="{{ project.homepageCardImage.url }}" alt="">
-              {% else %}
-                <img src="{{ project.homepageCardImage.url or project.homepageCardImage }}" alt="">
-              {% endif %}
-            {% endif %}
+        {% set featured = projects_build | whereCategory("featured") %}
 
-          </div>
-          <div class="project-card__body">
-            
-            <p class="project-card__eyebrow">{{ project.client }}</p>
-            <h2 class="project-title">{{ project.title }}</h2>
+          <div class="projects-grid projects-grid--featured fade-in">
+            {% for project in featured %}
+            <article class="project-card project-card--hero"   style="background-color: {{ project.homepageAccentColor or '#ffffff' }}; border: 1px solid {{ project.homepageAccentColor or '#e4e4e4' }};">
 
-            {% if project.longDescription %}
-            <p class="project-card__desc">{{ project.longDescription }}</p>
-            {% endif %}
+              <a href="/projects/{{ project.slug }}/">
+                <div class="project-card__thumb" class="project-card project-card--hero"   style="background-color: {{ project.homepageAccentColor or '#ffffff' }};">
 
-            {% if project.tags %}
-            <div class="project-tags-row">
-                  <span class="button button-secondary">
-                  {% if "Case Study" in project.tags %}
-                      View case study 
+                  {% if project.homepageCardImage %}
+                    {% if project.homepageCardImage.mime and 'video' in project.homepageCardImage.mime %}
+                      <video autoplay loop muted playsinline>
+                        <source src="{{ project.homepageCardImage.url }}" type="{{ project.homepageCardImage.mime }}">
+                      </video>
+                    {% elif project.homepageCardImage.mime == 'image/gif' %}
+                      <img src="{{ project.homepageCardImage.url }}" alt="">
                     {% else %}
-                      View project
+                      <img src="{{ project.homepageCardImage.url or project.homepageCardImage }}" alt="">
                     {% endif %}
-                    <span class="arrow" aria-hidden="true">→</span>
-                  </span>
-            </div>
-            {% endif %}
+                  {% endif %}
 
+                </div>
+                <div class="project-card__body">
+                  
+                  <p class="project-card__eyebrow">{{ project.client }}</p>
+                  <h2 class="project-title">{{ project.title }}</h2>
+
+                  {% if project.longDescription %}
+                  <p class="project-card__desc">{{ project.longDescription }}</p>
+                  {% endif %}
+
+                  {% if project.tags %}
+                  <div class="project-tags-row">
+                        <span class="button button-secondary">
+                        {% if "Case Study" in project.tags %}
+                            View case study 
+                          {% else %}
+                            View project
+                          {% endif %}
+                          <span class="arrow" aria-hidden="true">→</span>
+                        </span>
+                  </div>
+                  {% endif %}
+
+                </div>
+
+              </a>
+
+            </article>
+            {% endfor %}
           </div>
-
-        </a>
-
-      </article>
-      {% endfor %}
+ 
+      </div>
     </div>
 
+    <!------------ PAST LIFE / ADDITIONAL ------------->
+    <div class="tab-content" data-content="past-life">
+      <div class="projects-grid fade-in">
 
-    <p><a class="home-button button button-secondary" href="/projects/#more-projects">View more projects <span class="arrow" aria-hidden="true">→</span></a></p>
-  </div>
+        {% set more = projects_build | whereCategory("more") %}
+        
+        {% if more | length %}
+        
+          <div class="section-wrapper">
+            
+            <div class="projects-grid projects-grid--more fade-in">
+              {% for project in more %}
+              <article class="project-card project-card--small">
+                <a href="/projects/{{ project.slug }}/">
+                  <div class="project-card__thumb">
+                    
+
+                    {% if project.image %}
+                      {% if project.image.mime and 'video' in project.image.mime %}
+                        <video autoplay loop muted playsinline>
+                          <source src="{{ project.image.url }}" type="{{ project.image.mime }}">
+                        </video>
+                      {% elif project.image.mime == 'image/gif' %}
+                        <img src="{{ project.image.url }}" alt="">
+                      {% else %}
+                        <img src="{{ project.image.url or project.image }}" alt="">
+                      {% endif %}
+                    {% endif %}
+                  </div>
+
+                  <div class="project-card__body">
+
+                    <div class="project-card__meta">
+                      {% if project.tags %}
+                      {% for tag in project.tags %}
+                      {% if tag == "Case Study" %}
+                      <span class="tag tag--case">Case study</span>
+                      {% endif %}
+                      {% if tag == "WIP" %}
+                      <span class="tag tag--wip">WIP</span>
+                      {% endif %}
+                      {% endfor %}
+                      {% endif %}
+                    </div>
+
+                    <p class="project-card__eyebrow">{{ project.client }}</p>
+                    <h2 class="project-title">{{ project.title }}</h2>
+
+                    {% if project.description %}
+                    <p class="project-card__desc project-tags-row">{{ project.description }}</p>
+                    {% endif %}
+
+                  </div>
+
+                </a>
+              </article>
+              {% endfor %}
+            </div>
+          </div>
+        
+        {% endif %}
+
+      </div>
+    </div>
+
+    <!------------ SIDE QUESTS / SANDOBX ------------->
+    
+    <div class="tab-content" data-content="side-quests">
+      <div class="projects-grid fade-in">
+
+        {% set sandbox = projects_build | whereCategory("sandbox") %}
+        {% if sandbox | length %}
+
+        <div class="projects-grid projects-grid--sandbox fade-in">
+          {% for project in sandbox %}
+          <article class="project-card project-card--sandbox">
+
+            <a href="/projects/{{ project.slug }}/">
+
+              {% if project.image %}
+
+              <div class="project-card__thumb">
+                <img src="{{ project.image.url or project.image }}" alt="">
+              </div>
+              {% endif %}
+
+              <div class="project-card__body">
+
+                <h2 class="project-title">{{ project.title }}</h2>
+
+                {% if project.description %}
+                <p class="project-card__desc project-tags-row">{{ project.description }}</p>
+                {% endif %}
+
+              </div>
+
+            </a>
+
+          </article>
+          {% endfor %}
+        </div>
+
+        {% endif %}
+
+      </div>
+    </div>
+
+  </div>  
 </section>
 
 
 
-<!-- ///////// ABOUT  ///////// -->
+
+
+
+<!-- ///////////////////////////////////////////////////////////////
+ABOUT
+/////////////////////////////////////////////////////////////// -->
 
 <section id="about-section" class="about-section fade-in" aria-labelledby="about-section-heading">
   <div class="section-wrapper">
@@ -314,15 +451,16 @@ title: Home
         </div>
 
         <div class="notepad-background">
-          <p><span aria-hidden="true">&#127793;</span> Some other things I'm currently working on:</p>
+          <p><span aria-hidden="true">&#127793;</span> Some things I'm currently working on:</p>
           <ul>
-            <li><a href="https://tunan.art/projects/bga-a11y/" target="_blank">improving
-          accessibility on Board Game Arena</a></li>
+            <li><a
+          href="https://editor.p5js.org/tunan-pan/sketches/8he8nOGZ5" target="_blank">experimenting with p5.js</a></li>
+            
+            <li>this website!</li>
             <li><a
           href="https://tunan.notion.site/Designing-a-Digital-Support-Companion-for-Sensory-Overload-A-UX-Exploration-32a3521a8e37803ba92af83453233d9f" target="_blank">designing
           a sensory overload management app</a></li>
-            <li><a
-          href="https://editor.p5js.org/tunan-pan/sketches/8he8nOGZ5" target="_blank">experimenting with p5.js</a></li>
+            <li>learning JavaScript</li>
           </ul>
         </div>
       </div>
@@ -340,9 +478,6 @@ title: Home
         <span class="tag"><span aria-hidden="true">&#128205;</span> Seattle, Washington, USA</span>
       </div>
 
-      
-      
-
     </div>
   </div>
 </section>
@@ -350,7 +485,9 @@ title: Home
 
 
 
-<!-- ///////// CONTACT  ///////// -->
+<!-- ///////////////////////////////////////////////////////////////
+CONTACT
+/////////////////////////////////////////////////////////////// -->
 
 <section id="contact-section" class="contact-section fade-in" aria-labelledby="contact-section-heading">
   <div class="section-wrapper">
@@ -373,7 +510,9 @@ title: Home
 </section>
 
 
-
+<!-- ///////////////////////////////////////////////////////////////
+SCRIPTS
+/////////////////////////////////////////////////////////////// -->
 
 <script src="/js/fox-motion.js"></script>
 <script src="/js/fox-eyetracking.js"></script>
@@ -382,4 +521,5 @@ title: Home
 <script src="/js/fox-weather.js"></script>
 <script src="/js/fox-trail.js"></script>
 
+<script src="/js/project-tabs.js"></script>
 <script src="/js/photo-stack.js"></script>

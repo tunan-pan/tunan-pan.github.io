@@ -112,7 +112,7 @@
       "mime": "image/png",
       "alternativeText": ""
     },
-    "category": "more",
+    "category": "featured",
     "tags": [
       "Accessibility",
       "WIP"
@@ -134,7 +134,7 @@
     },
     "longDescription": "Created practical accessibility patterns and interface recommendations to improve usability for players with different access needs.",
     "isSandbox": false,
-    "isFeatured": false
+    "isFeatured": true
   },
   {
     "client": "Every Vote In",
