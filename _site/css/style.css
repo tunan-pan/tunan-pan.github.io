@@ -260,7 +260,7 @@ li a:hover {
 }
 
 .button {
-  font-family: 'Lexend', sans-serif;
+  font-family: "Lexend", sans-serif;
   font-weight: bold;
   text-transform: uppercase;
   text-decoration: none;
@@ -322,7 +322,7 @@ li a:hover {
 .back {
   font-size: 0.7rem;
   color: var(--color-black);
-  font-family: 'Lexend', sans-serif;
+  font-family: "Lexend", sans-serif;
   text-transform: uppercase;
   text-decoration: underline;
   letter-spacing: 0.03rem;
@@ -535,7 +535,7 @@ a.logo:hover {
   transform: scaleX(1);
 }
 
-.main-nav a[href="/projects/"]::before {
+.main-nav a[href="#projects-section"]::before {
   background-color: var(--color-purple);
 }
 
@@ -549,7 +549,7 @@ a.logo:hover {
 
 
 /* Current link - individual colors */
-.main-nav a[href="/projects/"].current {
+.main-nav a[href="#projects-section"].current {
   border-color: var(--color-purple);
 }
 
@@ -573,7 +573,7 @@ a.logo:hover {
   display: inline-block;
 }
 
-.main-nav a[href="/projects/"]::after,
+.main-nav a[href="#projects-section"]::after,
 .main-nav a[href="#about-section"]::after,
 .main-nav a[href="#contact-section"]::after {
   content: "";
@@ -585,7 +585,7 @@ a.logo:hover {
   mask-size: contain;
 }
 
-.main-nav a[href="/projects/"]::after {
+.main-nav a[href="#projects-section"]::after {
   background-color: var(--color-purple);
 }
 
@@ -996,7 +996,7 @@ HERO TEXT AREA
 /* Annotation container */
 .annotation {
   position: absolute;
-  font-family: 'Gaegu', cursive;
+  font-family: "Gaegu", cursive;
   font-size: 15px;
   color: var(--color-purple);
   white-space: nowrap;
@@ -1117,11 +1117,12 @@ SECTION HEADERS
 }
 
 .section-wrapper h1 {
-  font-family: 'LexendExa', sans-serif;
+  font-family: "LexendExa", sans-serif;
   text-transform: uppercase;
   font-weight: 300!important;
-  letter-spacing: 28%;
+  letter-spacing: 25%;
   font-size: 1.3rem;
+  line-height: 180%;
 }
 
 .angled-background {
@@ -1155,6 +1156,11 @@ PROJECTS SECTION
   text-align: center;
   width: 100%;
 }
+
+#projects-section {
+  scroll-margin-top: 110px; 
+}
+
 .projects-section .section-wrapper {
   max-width: 100%; /* Allow full width */
   padding: 0; /* Remove padding */
@@ -1188,7 +1194,7 @@ PROJECTS SECTION
   justify-content: center;
   gap: 20px;
   width: 100%;
-  height: 80px; /* height of visible tabs */
+  height: 100px; /* height of visible tabs */
   z-index: 3; 
   padding: 0 var(--page-padding-sides);
 }
@@ -1199,14 +1205,18 @@ PROJECTS SECTION
   border: none;
   cursor: pointer;
   padding: 0;
-  font-family: 'LexendExa', sans-serif;
+  font-family: "LexendExa", sans-serif;
   text-transform: uppercase;
   font-weight: 300;
   letter-spacing: 0.05em;
-  font-size: 0.9rem;
+  font-size: 1rem;
   transition: transform 0.3s ease;
-  flex: 1; /* Makes tabs equal width */
-  min-width: 0; /* Allows shrinking */
+  flex: 1; 
+  min-width: 0;
+}
+
+.tab-note--active p {
+  display: none!important;
 }
 
 .tab-note span {
@@ -1214,9 +1224,15 @@ PROJECTS SECTION
   padding: 16px 32px;
   position: relative;
   z-index: 1;
-  white-space: nowrap;
-  overflow: hidden;
-  text-overflow: ellipsis;
+  padding: 20px 12px;
+}
+
+.tab-note p {
+  font-family: "Gaegu", sans-serif;
+  text-transform: none;
+  font-size: 1.1rem;
+  line-height: 110%;
+  margin: 10px 5px;
 }
 
 /* Post-it note backgrounds */
@@ -1227,7 +1243,7 @@ PROJECTS SECTION
   left: 0;
   right: 0;
   bottom: -40px; /* Extends below the visible area */
-  transform: rotate(-1deg);
+  transform: rotate(-3deg);
   box-shadow: 0 4px 8px -8px rgba(0, 0, 0, 0.15);
   z-index: -1;
   transition: transform 0.3s ease, box-shadow 0.3s ease;
@@ -1235,16 +1251,16 @@ PROJECTS SECTION
 
 /* Different colors for each tab */
 .tab-note[data-tab="current-focus"]::before {
-  background: #D4CBFF;
+  background: #E1B3FF;
 }
 
 .tab-note[data-tab="past-life"]::before {
-  background: #FDD6FF;
-  transform: rotate(1deg);
+  background: #B1B6FF;
+  transform: rotate(1.5deg);
 }
 
 .tab-note[data-tab="side-quests"]::before {
-  background: #FFE7B4;
+  background: #C3E2FF;
   transform: rotate(-1.5deg);
 }
 
@@ -1263,6 +1279,10 @@ PROJECTS SECTION
   transform: translateY(0);
   z-index: 2; /* Above white section */
   position: relative; /* Ensure z-index works */
+}
+
+.tab-note--active p {
+  display:block!important;
 }
 
 .tab-note--active::before {
@@ -1309,26 +1329,24 @@ PROJECTS SECTION
 
 /* Responsive - tabs get narrower, not stacked */
 @media (max-width: 768px) {
-  .project-tabs {
-    max-width: 90%;
-  }
-
   .tab-note {
-    font-size: 0.75rem;
+    font-size: 0.9rem;
+  }
+  .tab-note p {
+    font-size: 0.9rem;
   }
 
-  .tab-note span {
-    padding: 12px 12px;
-  }
 }
 
 @media (max-width: 500px) {
-  .tab-note {
-    font-size: 0.65rem;
+  .project-tabs {
+    gap: 5px;
   }
-
-  .tab-note span {
-    padding: 10px 8px;
+  .tab-note {
+    font-size: 0.8rem;
+  }
+  .tab-note p {
+    font-size: 0.8rem;
   }
 }
 
@@ -1661,7 +1679,7 @@ PROJECTS SECTION
   }
 
   .projects-grid--more {
-    grid-template-columns: repeat(2, 1fr);
+    grid-template-columns: repeat(3, 1fr);
   }
 
   .projects-grid--sandbox {
@@ -1673,7 +1691,11 @@ PROJECTS SECTION
   }
 }
 
-@media (max-width: 800px) {
+@media (max-width: 950px) {
+  .projects-grid--more {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
   .projects-grid--sandbox {
     grid-template-columns: repeat(3, 1fr);
   }
@@ -1713,6 +1735,12 @@ PROJECTS SECTION
   }
 }
 
+@media (max-width: 450px) {
+  .projects-grid--sandbox {
+    grid-template-columns: repeat(1, 1fr);
+  }
+}
+
 
 
 
@@ -1726,7 +1754,7 @@ ABOUT SECTION
   position: relative;
 }
 #about-section {
-  scroll-margin-top: 110px; 
+  scroll-margin-top: 80px; 
 }
 .about-grid {
   max-width: 800px;
@@ -1887,6 +1915,10 @@ CONTACT SECTION
   text-align: center;
   text-wrap: balance;
   padding: 0 20px;
+}
+
+#contact-section {
+  scroll-margin-top: 110px; 
 }
 
 .three-column {

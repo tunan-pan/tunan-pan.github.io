@@ -41,21 +41,23 @@ const defaultObserverOptions = {
 // Special options for shorter sections (like about/contact at bottom)
 const bottomSectionOptions = {
   root: null,
-  rootMargin: '-60% 0px -20% 0px',
+  rootMargin: '-20% 0px -20% 0px',
   threshold: 0
 };
 
 const setActiveLink = (sectionId) => {
-  if (currentSection === sectionId) return; // Prevent unnecessary updates
+  if (currentSection === sectionId) return;
   currentSection = sectionId;
   
   // Remove 'current' from all links
   navLinks.forEach(link => link.classList.remove('current'));
   
   // Add 'current' to the link matching this section
-  const activeLink = document.querySelector(`nav a[href="#${sectionId}"]`);
-  if (activeLink) {
-    activeLink.classList.add('current');
+  if (sectionId) {
+    const activeLink = document.querySelector(`nav a[href="#${sectionId}"]`);
+    if (activeLink) {
+      activeLink.classList.add('current');
+    }
   }
 };
 
@@ -74,17 +76,21 @@ const handleIntersection = (entries) => {
     }
   });
   
+  // If no sections are intersecting (scrolled above everything), clear active
+  if (intersectingSections.size === 0) {
+    setActiveLink(null);
+    return;
+  }
+  
   // Determine which section should be active
-  if (intersectingSections.size > 0) {
-    const sectionArray = Array.from(intersectingSections);
-    
-    if (scrollingDown) {
-      // When scrolling down, use the last intersecting section
-      setActiveLink(sectionArray[sectionArray.length - 1]);
-    } else {
-      // When scrolling up, use the first intersecting section
-      setActiveLink(sectionArray[0]);
-    }
+  const sectionArray = Array.from(intersectingSections);
+  
+  if (scrollingDown) {
+    // When scrolling down, use the last intersecting section
+    setActiveLink(sectionArray[sectionArray.length - 1]);
+  } else {
+    // When scrolling up, use the first intersecting section
+    setActiveLink(sectionArray[0]);
   }
 };
 
@@ -116,6 +122,110 @@ navLinks.forEach(link => {
         e.preventDefault();
       }
       // Otherwise let the smooth scroll happen naturally
+    }
+  });
+});
+
+
+
+
+
+
+
+
+
+// Enable manual scroll restoration
+if ('scrollRestoration' in history) {
+  history.scrollRestoration = 'manual';
+}
+
+document.addEventListener('DOMContentLoaded', () => {
+  
+  // Store tab state in history when switching tabs
+  const tabs = document.querySelectorAll('.tab-note');
+  tabs.forEach(tab => {
+    tab.addEventListener('click', () => {
+      const targetTab = tab.dataset.tab;
+      
+      // Store current state in history
+      const currentUrl = new URL(window.location);
+      currentUrl.searchParams.set('tab', targetTab);
+      history.replaceState({ tab: targetTab }, '', currentUrl);
+    });
+  });
+  
+  // Store project context when clicking a project card
+  const projectLinks = document.querySelectorAll('.project-card a');
+  
+  projectLinks.forEach(link => {
+    link.addEventListener('click', (e) => {
+      const activeTab = document.querySelector('.tab-note--active');
+      if (activeTab) {
+        const tabId = activeTab.dataset.tab;
+        const scrollY = window.scrollY;
+        
+        // Store in history state AND sessionStorage as backup
+        history.replaceState(
+          { tab: tabId, scrollY: scrollY }, 
+          '', 
+          window.location.href
+        );
+        sessionStorage.setItem('activeProjectTab', tabId);
+        sessionStorage.setItem('projectsScrollY', scrollY);
+      }
+    });
+  });
+  
+  // Restore state on page load (handles both back button and direct navigation)
+  const restoreState = () => {
+    // Try history state first (for back button)
+    let savedTab = history.state?.tab;
+    let savedScroll = history.state?.scrollY;
+    
+    // Fall back to sessionStorage (for "back to projects" link)
+    if (!savedTab) {
+      savedTab = sessionStorage.getItem('activeProjectTab');
+      savedScroll = sessionStorage.getItem('projectsScrollY');
+    }
+    
+    // Also check URL params
+    const urlParams = new URLSearchParams(window.location.search);
+    const tabParam = urlParams.get('tab');
+    if (tabParam) savedTab = tabParam;
+    
+    const urlHash = window.location.hash;
+    if ((urlHash === '#projects-section' || tabParam) && savedTab) {
+      // Restore tab
+      const tabButton = document.querySelector(`[data-tab="${savedTab}"]`);
+      if (tabButton && !tabButton.classList.contains('tab-note--active')) {
+        tabButton.click();
+      }
+      
+      // Restore scroll position
+      setTimeout(() => {
+        if (savedScroll) {
+          window.scrollTo({
+            top: parseInt(savedScroll),
+            behavior: 'instant' // Use 'instant' for back button, feels more natural
+          });
+        } else {
+          document.getElementById('projects-section')?.scrollIntoView({ behavior: 'smooth' });
+        }
+        
+        // Clear sessionStorage after use
+        sessionStorage.removeItem('activeProjectTab');
+        sessionStorage.removeItem('projectsScrollY');
+      }, 100);
+    }
+  };
+  
+  // Run on initial page load
+  restoreState();
+  
+  // Listen for popstate (back/forward button)
+  window.addEventListener('popstate', (event) => {
+    if (event.state) {
+      restoreState();
     }
   });
 });

@@ -241,12 +241,18 @@ PROJECTS SECTION
     <div class="project-tabs">
       <button class="tab-note tab-note--active" data-tab="current-focus">
         <span>Current Focus</span>
+        <p>honing my UX skills</p>
+        <p>self initiated projects</p>
       </button>
       <button class="tab-note" data-tab="past-life">
         <span>Past Life</span>
+        <p>my agency years</p>
+        <p>real client work, real impact</p>
       </button>
       <button class="tab-note" data-tab="side-quests">
-        <span>Side Quests</span>
+        <span>Just For Fun</span>
+        <p>smaller experiments</p>
+        <p>quick prototyping</p>
       </button>
       <div class="projects-white-bg"></div>
     </div>
@@ -262,7 +268,7 @@ PROJECTS SECTION
 
           <div class="projects-grid projects-grid--featured fade-in">
             {% for project in featured %}
-            <article class="project-card project-card--hero"   style="background-color: {{ project.homepageAccentColor or '#ffffff' }}; border: 1px solid {{ project.homepageAccentColor or '#e4e4e4' }};">
+            <article class="project-card project-card--hero"   style="background-color: {{ project.homepageAccentColor or '#ffffff' }};">
 
               <a href="/projects/{{ project.slug }}/">
                 <div class="project-card__thumb" class="project-card project-card--hero"   style="background-color: {{ project.homepageAccentColor or '#ffffff' }};">
@@ -460,7 +466,7 @@ ABOUT
             <li><a
           href="https://tunan.notion.site/Designing-a-Digital-Support-Companion-for-Sensory-Overload-A-UX-Exploration-32a3521a8e37803ba92af83453233d9f" target="_blank">designing
           a sensory overload management app</a></li>
-            <li>learning JavaScript</li>
+            <li>levelling up on Beat Saber</li>
           </ul>
         </div>
       </div>
