@@ -1166,6 +1166,8 @@ PROJECTS SECTION
   padding: 0; /* Remove padding */
   position: relative;
 }
+
+/* white strip to hide inactive tabs */
 .projects-white-bg::before {
   content: '';
   position: absolute;
@@ -1210,13 +1212,10 @@ PROJECTS SECTION
   font-weight: 300;
   letter-spacing: 0.05em;
   font-size: 1rem;
+  color: #000;
   transition: transform 0.3s ease;
   flex: 1; 
   min-width: 0;
-}
-
-.tab-note--active p {
-  display: none!important;
 }
 
 .tab-note span {
@@ -1233,6 +1232,8 @@ PROJECTS SECTION
   font-size: 1.1rem;
   line-height: 110%;
   margin: 10px 5px;
+  display: block;
+  display: hidden;
 }
 
 /* Post-it note backgrounds */
@@ -1243,7 +1244,7 @@ PROJECTS SECTION
   left: 0;
   right: 0;
   bottom: -40px; /* Extends below the visible area */
-  transform: rotate(-3deg);
+  transform: rotate(-2deg);
   box-shadow: 0 4px 8px -8px rgba(0, 0, 0, 0.15);
   z-index: -1;
   transition: transform 0.3s ease, box-shadow 0.3s ease;
@@ -1261,7 +1262,10 @@ PROJECTS SECTION
 
 .tab-note[data-tab="side-quests"]::before {
   background: #C3E2FF;
-  transform: rotate(-1.5deg);
+  transform: rotate(-3deg) translateY(-5px);
+}
+.tab-note[data-tab="side-quests"] span{
+  transform: translateY(-5px);
 }
 
 /* Inactive tabs - pushed down AND behind */
@@ -1282,7 +1286,7 @@ PROJECTS SECTION
 }
 
 .tab-note--active p {
-  display:block!important;
+  display:block;
 }
 
 .tab-note--active::before {
@@ -1299,7 +1303,7 @@ PROJECTS SECTION
   border-radius: 4px;
 }
 
-/* Tab content panels - full width white section */
+/* Tab content panels */
 .tab-content {
   display: none;
   background-color: var(--color-projects-bg);
@@ -1310,7 +1314,6 @@ PROJECTS SECTION
   width: 100%;
   min-height: 50dvh;
 }
-
 .tab-content--active {
   display: block;
 }
@@ -1344,6 +1347,9 @@ PROJECTS SECTION
   }
   .tab-note {
     font-size: 0.8rem;
+  }
+  .tab-note span {
+    padding: 15px 12px 20px;
   }
   .tab-note p {
     font-size: 0.8rem;
