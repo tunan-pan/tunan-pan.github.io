@@ -57,7 +57,7 @@ eleventyComputed:
                 {% endif %}
               </div>
 
-              <h3>{{ project.title }}</h3>
+              <h2>{{ project.title }}</h2>
 
               {% set filteredTags = project.tags | reject("equalto", "Case Study") | reject("equalto", "WIP") %}
 
@@ -83,5 +83,5 @@ eleventyComputed:
 </div>
 
 <div class="back-to-projects">
-  <p><a class="button button-secondary" href="/projects/"><span aria-hidden="true">&larr;</span> Back to all projects</a></p>
+  <p><a class="button button-secondary" href="/#projects-section"><span aria-hidden="true">&larr;</span> Back to projects</a></p>
 </div>

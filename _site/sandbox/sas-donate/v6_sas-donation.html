@@ -1,0 +1,1155 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Seattle Animal Shelter — Donation</title>
+<style>
+/* ============================================================
+   DESIGN TOKENS — tweak colors / spacing here
+   ============================================================ */
+:root {
+  --seattle-blue: #2a3a8c;
+  --seattle-blue-hover: #1f2c6e;
+  --seattle-yellow: #f5c518;
+  --seattle-yellow-soft: #fdecaa;
+  --bg: #ffffff;
+  --fg: #1a1a1a;
+  --muted: #f3f4f6;
+  --muted-fg: #6b7280;
+  --border: #d8dbe0;
+  --input-border: #c4c8cf;
+  --required: #c0392b;
+  --link: #2a5db0;
+  --step-bg: #f3f4f6;
+  --radius: 6px;
+}
+
+/* ============================================================
+   BASE
+   ============================================================ */
+* { box-sizing: border-box; }
+html, body { margin: 0; padding: 0; }
+body {
+  font-family: system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+  color: var(--fg);
+  background: #eee;
+  line-height: 1.4;
+}
+button { font: inherit; cursor: pointer; }
+a { color: var(--link); }
+
+/* Phone-frame container */
+.app {
+  max-width: 480px;
+  margin: 0 auto;
+  background: var(--bg);
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+/* ============================================================
+   HEADER
+   ============================================================ */
+
+
+.gov-bar {
+  background: #1b1b1b;
+  color: #fff;
+  font-size: 11px;
+  padding: 6px 16px;
+}
+.gov-bar a { color: #fff; font-weight: 600; }
+
+
+.seattle-bar {
+  height: 70px;
+  background-image: url(images/SAS-header-mobile-focused.png);
+  background-size: contain;
+  background-repeat: none;
+}
+
+.page-title {
+  padding: 18px 16px;
+  border-bottom: 1px solid var(--border);
+}
+.page-title h1 { margin: 0; font-size: 22px; }
+
+/* ============================================================
+   STEPPER
+   ============================================================ */
+.stepper {
+  background: var(--step-bg);
+  padding: 18px 24px;
+  border-bottom: 1px solid var(--border);
+}
+.stepper ol {
+  list-style: none; margin: 0; padding: 0;
+  display: flex; justify-content: space-between;
+  max-width: 360px; margin: 0 auto;
+}
+.stepper li {
+  flex: 1;
+  display: flex; flex-direction: column; align-items: center;
+  position: relative;
+}
+.stepper li:not(:last-child)::after {
+  content: ""; position: absolute; top: 16px; left: 50%;
+  width: 100%; height: 1px; background: var(--border);
+}
+.stepper .circle {
+  position: relative; z-index: 1;
+  width: 32px; height: 32px;
+  border-radius: 50%;
+  display: flex; align-items: center; justify-content: center;
+  font-weight: 600; font-size: 14px;
+  background: var(--muted);
+  color: var(--muted-fg);
+  border: 1px solid var(--border);
+}
+.stepper li.done .circle, .stepper li.active .circle {
+  background: var(--seattle-blue); color: #fff; border-color: var(--seattle-blue);
+}
+.stepper .label {
+  margin-top: 8px; font-size: 13px; color: var(--muted-fg);
+}
+.stepper li.active .label { color: var(--fg); font-weight: 600; }
+
+/* ============================================================
+   MAIN / FOOTER
+   ============================================================ */
+main { flex: 1; padding: 24px; }
+main h2 { font-size: 26px; margin: 0 0 16px; }
+
+.footer {
+  text-align: center; padding: 8px 24px 32px;
+}
+.footer a { font-size: 14px; text-decoration: none; }
+.footer a:hover { text-decoration: underline; }
+
+/* ============================================================
+   FORM PRIMITIVES
+   ============================================================ */
+label.field { display: block; margin-bottom: 6px; font-size: 14px; }
+.req { color: var(--required); }
+.optional { color: var(--muted-fg); }
+
+input[type="text"], input[type="email"], input[type="tel"],
+input[type="number"], select {
+  width: 100%; height: 44px;
+  padding: 0 12px;
+  border: 1px solid var(--input-border);
+  border-radius: var(--radius);
+  background: #fff;
+  font-size: 15px;
+}
+input.error, select.error { border-color: var(--required); }
+.error-msg { color: var(--required); font-size: 12px; margin: 4px 0 0; }
+
+.field-group { margin-bottom: 18px; position: relative; }
+.row { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+
+.required-note { color: var(--required); font-size: 12px; margin: 0 0 20px; }
+
+.btn-primary {
+  width: 100%; height: 54px;
+  background: var(--seattle-blue);
+  color: #fff; font-weight: 600; font-size: 17px;
+  border: none; border-radius: var(--radius);
+  margin-top: 24px;
+  display: inline-flex; align-items: center; justify-content: center; gap: 8px;
+  text-decoration: none;
+}
+.btn-primary:hover { background: var(--seattle-blue-hover); }
+
+.back-link {
+  background: none; border: none; padding: 0;
+  color: var(--muted-fg); font-size: 14px;
+  display: inline-flex; align-items: center; gap: 4px;
+  margin-bottom: 12px;
+}
+.back-link:hover { color: var(--fg); }
+
+/* ============================================================
+   FAKE AUTOCOMPLETE
+   ============================================================ */
+.autocomplete-dropdown {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  right: 0;
+  background: #fff;
+  border: 1px solid #b8bdc4;
+  border-top: none;
+  border-radius: 0 0 var(--radius) var(--radius);
+  box-shadow: 0 4px 6px rgba(0,0,0,.1);
+  z-index: 100;
+  display: none;
+  max-height: 200px;
+  overflow-y: auto;
+}
+.autocomplete-dropdown.show { display: block; }
+.autocomplete-item {
+  padding: 10px 12px;
+  cursor: pointer;
+  font-size: 14px;
+  border-bottom: 1px solid #f3f4f6;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+.autocomplete-item:last-child { border-bottom: none; }
+.autocomplete-item:hover {
+  background: #f3f4f6;
+}
+.autocomplete-item .icon {
+  width: 16px;
+  height: 16px;
+  opacity: 0.5;
+}
+.autocomplete-item .main {
+  flex: 1;
+  font-weight: 500;
+}
+.autocomplete-item .sub {
+  font-size: 12px;
+  color: var(--muted-fg);
+}
+
+/* ============================================================
+   DONATION PAGE
+   ============================================================ */
+.amount-grid {
+  display: grid; grid-template-columns: repeat(3, 1fr); gap: 12px;
+  margin-bottom: 8px;
+}
+.amount-btn {
+  height: 54px;
+  border: 2px solid var(--seattle-yellow);
+  background: #fff; border-radius: var(--radius);
+  font-weight: 600; font-size: 17px;
+}
+.amount-btn.active { background: var(--seattle-yellow); }
+
+#otherAmount, #otherAmountIntro { height: unset!important; }
+
+.disclaimer { 
+  font-size: 12px;
+  color: #666; 
+  text-align: center;
+  padding-top: 10px;
+}
+
+.fund-label {
+  display: flex; align-items: center; gap: 8px;
+  margin: 24px 0 8px; font-size: 14px; font-weight: 500;
+}
+.info-btn {
+  width: 20px; height: 20px; border-radius: 50%;
+  background: var(--muted-fg); color: #fff; border: none;
+  font-size: 12px; display: inline-flex; align-items: center; justify-content: center;
+}
+
+.checkbox-row {
+  display: flex; align-items: flex-start; gap: 12px;
+  margin: 24px 0 0; cursor: pointer;
+  font-size: 14px;
+}
+.checkbox-row input { margin-top: 2px; width: 18px; height: 18px; }
+.checkbox-row .hint { display: block; color: var(--muted-fg); font-size: 12px; margin-top: 4px; }
+
+.radio-row { display: flex; gap: 24px; margin-bottom: 16px; }
+.radio-row label { display: inline-flex; align-items: center; gap: 8px; font-size: 14px; cursor: pointer; }
+
+.tribute-section, .note-section { margin-top: 16px; }
+
+/* Modal */
+.modal-overlay {
+  position: fixed; inset: 0; background: rgba(0,0,0,.4);
+  display: none; align-items: flex-start; justify-content: center;
+  padding: 96px 16px 16px; z-index: 50;
+}
+.modal-overlay.open { display: flex; }
+.modal {
+  background: #fff; border-radius: var(--radius);
+  padding: 24px; max-width: 360px; width: 100%;
+  box-shadow: 0 10px 30px rgba(0,0,0,.2); position: relative;
+}
+.modal h3 { margin: 0 0 4px; font-size: 15px; }
+.modal p { margin: 0 0 16px; font-size: 14px; }
+.modal .close {
+  position: absolute; top: 8px; right: 12px;
+  background: none; border: none; font-size: 22px; color: var(--muted-fg);
+}
+
+/* ============================================================
+   PAYMENT
+   ============================================================ */
+.summary {
+  background: var(--muted); border: 1px solid var(--border);
+  border-radius: var(--radius); padding: 16px; font-size: 14px;
+  margin-top: 4px;
+}
+.summary hr { border: none; border-top: 1px solid var(--border); margin: 12px 0; }
+.summary .total { display: flex; justify-content: space-between; font-weight: 700; }
+
+.cc-label-row {
+  display: flex; justify-content: space-between; align-items: center;
+  margin-bottom: 6px;
+}
+.cc-brands { display: inline-flex; align-items: center; gap: 6px; font-size: 12px; font-weight: 700; }
+.cc-brands .mc-r, .cc-brands .mc-y {
+  width: 18px; height: 18px; border-radius: 50%; display: inline-block;
+}
+.cc-brands .mc-r { background: #eb001b; margin-right: -8px; }
+.cc-brands .mc-y { background: #f79e1b; opacity: .9; }
+.cc-brands .visa { color: #1a1f71; font-style: italic; }
+
+.captcha {
+  width: 100%;
+  border: 1px solid var(--border); background: #fff;
+  border-radius: var(--radius);
+  padding: 12px;
+  display: flex; align-items: center; gap: 12px;
+  margin-top: 4px;
+  text-align: left;
+}
+.captcha .box {
+  width: 28px; height: 28px;
+  border: 2px solid var(--muted-fg);
+  border-radius: 4px; background: #fff;
+  display: flex; align-items: center; justify-content: center;
+  flex: 0 0 auto;
+}
+.captcha .label { flex: 1; font-size: 14px; }
+.captcha .meta {
+  text-align: right; font-size: 10px; color: var(--muted-fg); line-height: 1.3;
+}
+.captcha .meta .row1 { display: flex; align-items: center; gap: 4px; justify-content: flex-end; }
+.captcha .meta .ring {
+  width: 18px; height: 18px; border-radius: 50%;
+  border: 2px solid var(--seattle-blue); border-top-color: transparent;
+}
+.captcha .meta .brand { font-weight: 700; font-size: 12px; color: var(--fg); }
+
+.spinner {
+  width: 20px; height: 20px; border: 2px solid var(--seattle-blue);
+  border-top-color: transparent; border-radius: 50%;
+  animation: spin .8s linear infinite;
+}
+@keyframes spin { to { transform: rotate(360deg); } }
+.check { color: #16a34a; font-weight: 700; font-size: 18px; }
+
+/* ============================================================
+   THANK YOU
+   ============================================================ */
+.thank-you h2 { font-size: 30px; line-height: 1.2; margin-bottom: 20px; }
+.thank-you img {
+  width: 100%; height: 192px; object-fit: cover;
+  border-radius: var(--radius); margin-bottom: 20px;
+}
+.thank-you p { font-size: 14px; margin: 0 0 12px; }
+.thank-you h3 { font-size: 18px; margin: 24px 0 12px; }
+.share-row { display: flex; gap: 12px; margin-bottom: 32px; }
+.share-row a {
+  width: 40px; height: 40px; border-radius: 50%;
+  background: var(--seattle-blue); color: #fff;
+  display: inline-flex; align-items: center; justify-content: center;
+  text-decoration: none;
+}
+.share-row a:hover { background: var(--seattle-blue-hover); }
+.share-row svg { width: 20px; height: 20px; fill: currentColor; }
+
+/* ============================================================
+   PAGE SWITCHER
+   ============================================================ */
+.page { display: none; }
+.page.active { display: block; }
+</style>
+</head>
+<body>
+
+<div class="app">
+
+  <!-- ============ HEADER ============ -->
+  <div class="gov-bar">
+    This is an official government website. <a href="#" onclick="return false">Here's how you know</a>
+  </div>
+  <div class="seattle-bar">
+  </div>
+  <div class="page-title"><h1>Seattle Animal Shelter</h1></div>
+
+  <!-- ============ STEPPER ============ -->
+  <div class="stepper" id="stepperWrap">
+    <ol id="stepper">
+      <li data-step="1"><div class="circle">1</div><div class="label">Donation</div></li>
+      <li data-step="2"><div class="circle">2</div><div class="label">Billing</div></li>
+      <li data-step="3"><div class="circle">3</div><div class="label">Payment</div></li>
+    </ol>
+  </div>
+
+  <main>
+
+    <!-- ================================================================
+         PAGE 0 — INTRO / LANDING (no stepper)
+         ================================================================ -->
+    <section class="page active" id="page-intro">
+      <!-- Blank space — fill in your intro text/images here -->
+      <div style="min-height: 320px;">
+
+        <h2>Donate</h2>
+        <img src="images/dog.png" width='400' height='192' alt="Happy dog" />
+        <p>Making a donation to the Seattle Animal Shelter is one of the simplest things you can do to <strong>save a life and prevent pet homelessness.</strong> Your donation goes directly to helping our staff and volunteers perform lifesaving work.
+        </p>
+
+        <h3>Choose an amount to donate:</h3>
+
+      </div>
+
+      <div class="amount-grid" id="amount-grid-intro">
+        <button class="amount-btn" data-amount="250">$250</button>
+        <button class="amount-btn" data-amount="100">$100</button>
+        <button class="amount-btn" data-amount="50">$50</button>
+        <button class="amount-btn" data-amount="25">$25</button>
+        <button class="amount-btn" data-amount="other">Other</button>
+        <input type="text" id="otherAmountIntro" inputmode="decimal" placeholder="$0.00" />
+      </div>
+      <p class="error-msg" id="err-amount-intro" style="display:none"></p>
+
+      <button class="btn-primary" id="introDonate">Donate</button>
+      <p class="disclaimer">You’ll be redirected to a secure payment page.</p>
+
+    </section>
+
+    <!-- ================================================================
+         PAGE 1 — DONATION
+         ================================================================ -->
+    <section class="page" id="page-donation">
+      <h2>Your Donation</h2>
+
+      <div class="amount-grid" id="amount-grid">
+        <button class="amount-btn" data-amount="250">$250</button>
+        <button class="amount-btn" data-amount="100">$100</button>
+        <button class="amount-btn" data-amount="50">$50</button>
+        <button class="amount-btn" data-amount="25">$25</button>
+        <button class="amount-btn" data-amount="other">Other</button>
+        <input type="text" id="otherAmount" inputmode="decimal" placeholder="$0.00" />
+      </div>
+      <p class="error-msg" id="err-amount" style="display:none"></p>
+
+      <div class="fund-label">
+        <span>Fund designation:</span>
+        <button class="info-btn" id="openFundsInfo" aria-label="Info">?</button>
+      </div>
+      <select id="fund">
+        <option>Greatest Need</option>
+        <option>Animal Care &amp; Welfare</option>
+        <option>Spay/Neuter Support</option>
+      </select>
+
+      <label class="checkbox-row">
+        <input type="checkbox" id="tribute" />
+        <span>Make this gift a tribute</span>
+      </label>
+
+      <div class="tribute-section" id="tributeSection" style="display:none">
+        <div class="radio-row">
+          <label><input type="radio" name="tributeType" value="honor" checked /> In Honor of</label>
+          <label><input type="radio" name="tributeType" value="memory" /> In Memory of</label>
+        </div>
+        <div class="field-group">
+          <label class="field">Name of Tribute <span class="req">*</span></label>
+          <input type="text" id="tributeName" />
+          <p class="error-msg" id="err-tributeName" style="display:none"></p>
+        </div>
+
+        <label class="checkbox-row">
+          <input type="checkbox" id="sendNote" />
+          <span>Send acknowledgement note</span>
+        </label>
+
+        <div class="note-section" id="noteSection" style="display:none">
+          <div class="radio-row">
+            <label><input type="radio" name="noteMethod" value="email" checked /> By email</label>
+            <label><input type="radio" name="noteMethod" value="mail" /> By mail</label>
+          </div>
+          <div class="field-group">
+            <label class="field">Name of Recipient <span class="req">*</span></label>
+            <input type="text" id="recipientName" />
+            <p class="error-msg" id="err-recipientName" style="display:none"></p>
+          </div>
+          <div class="field-group" id="emailGroup">
+            <label class="field">Recipient's Email Address <span class="req">*</span></label>
+            <input type="email" id="recipientEmail" autocomplete="off" />
+            <p class="error-msg" id="err-recipientEmail" style="display:none"></p>
+          </div>
+          <div id="mailGroup" style="display:none">
+            <div class="field-group">
+              <label class="field">Recipient's Address <span class="req">*</span></label>
+              <input type="text" id="recipientAddress" autocomplete="off" />
+              <p class="error-msg" id="err-recipientAddress" style="display:none"></p>
+            </div>
+            <div class="field-group">
+              <label class="field">Apt/Suite/Other <span class="optional">(Optional)</span></label>
+              <input type="text" id="recipientApt" autocomplete="off" />
+            </div>
+            <div class="field-group">
+              <label class="field">City <span class="req">*</span></label>
+              <input type="text" id="recipientCity" autocomplete="off" />
+              <p class="error-msg" id="err-recipientCity" style="display:none"></p>
+            </div>
+            <div class="row field-group">
+              <div>
+                <label class="field">State <span class="req">*</span></label>
+                <input type="text" id="recipientState" autocomplete="off" />
+                <p class="error-msg" id="err-recipientState" style="display:none"></p>
+              </div>
+              <div>
+                <label class="field">ZIP <span class="req">*</span></label>
+                <input type="text" id="recipientZip" autocomplete="off" />
+                <p class="error-msg" id="err-recipientZip" style="display:none"></p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <button class="btn-primary" id="donationContinue">Continue</button>
+    </section>
+
+    <!-- ================================================================
+         PAGE 2 — BILLING
+         ================================================================ -->
+    <section class="page" id="page-billing">
+      <button class="back-link" data-go="donation">← Back</button>
+      <h2>Billing Information</h2>
+      <p class="required-note">* These fields are required.</p>
+
+      <div class="field-group">
+        <label class="field" for="b-name">Full Name <span class="req">*</span></label>
+        <input type="text" id="b-name" autocomplete="off" />
+        <div class="autocomplete-dropdown" id="ac-b-name"></div>
+        <p class="error-msg" id="err-b-name" style="display:none"></p>
+      </div>
+      <div class="field-group">
+        <label class="field" for="b-address">Address <span class="req">*</span></label>
+        <input type="text" id="b-address" autocomplete="off" />
+        <div class="autocomplete-dropdown" id="ac-b-address"></div>
+        <p class="error-msg" id="err-b-address" style="display:none"></p>
+      </div>
+      <div class="field-group">
+        <label class="field" for="b-apt">Apt/Suite/Other <span class="optional">(Optional)</span></label>
+        <input type="text" id="b-apt" autocomplete="off" />
+        <p class="error-msg" id="err-b-apt" style="display:none"></p>
+      </div>
+      <div class="field-group">
+        <label class="field" for="b-city">City <span class="req">*</span></label>
+        <input type="text" id="b-city" autocomplete="off" />
+        <div class="autocomplete-dropdown" id="ac-b-city"></div>
+        <p class="error-msg" id="err-b-city" style="display:none"></p>
+      </div>
+      <div class="row field-group">
+        <div style="position: relative;">
+          <label class="field" for="b-state">State <span class="req">*</span></label>
+          <input type="text" id="b-state" autocomplete="off" />
+          <div class="autocomplete-dropdown" id="ac-b-state"></div>
+          <p class="error-msg" id="err-b-state" style="display:none"></p>
+        </div>
+        <div style="position: relative;">
+          <label class="field" for="b-zip">ZIP <span class="req">*</span></label>
+          <input type="text" id="b-zip" autocomplete="off" />
+          <div class="autocomplete-dropdown" id="ac-b-zip"></div>
+          <p class="error-msg" id="err-b-zip" style="display:none"></p>
+        </div>
+      </div>
+      <div class="field-group">
+        <label class="field" for="b-email">Email Address <span class="req">*</span></label>
+        <input type="email" id="b-email" autocomplete="off" />
+        <div class="autocomplete-dropdown" id="ac-b-email"></div>
+        <p class="error-msg" id="err-b-email" style="display:none"></p>
+      </div>
+      <div class="field-group">
+        <label class="field" for="b-phone">Phone Number <span class="req">*</span></label>
+        <input type="tel" id="b-phone" autocomplete="off" />
+        <div class="autocomplete-dropdown" id="ac-b-phone"></div>
+        <p class="error-msg" id="err-b-phone" style="display:none"></p>
+      </div>
+
+      <label class="checkbox-row">
+        <input type="checkbox" id="b-updates" />
+        <span>
+          Yes, I would like to receive updates from the Seattle Animal Shelter.
+          <span class="hint">We will never distribute your information unless required by law.</span>
+        </span>
+      </label>
+
+      <button class="btn-primary" id="billingContinue">Continue</button>
+    </section>
+
+    <!-- ================================================================
+         PAGE 3 — PAYMENT
+         ================================================================ -->
+    <section class="page" id="page-payment">
+      <button class="back-link" data-go="billing">← Back</button>
+      <h2>Payment Details</h2>
+      <p class="required-note">* These fields are required.</p>
+
+      <div class="field-group">
+        <div class="cc-label-row">
+          <label class="field" style="margin:0">Credit Card Number <span class="req">*</span></label>
+          <span class="cc-brands">
+            <span class="mc-r"></span><span class="mc-y"></span>
+            <span class="visa">VISA</span>
+          </span>
+        </div>
+        <input type="text" id="p-card" inputmode="numeric" autocomplete="off"/>
+        <div class="autocomplete-dropdown" id="ac-p-card"></div>
+        <p class="error-msg" id="err-p-card" style="display:none"></p>
+      </div>
+
+      <div class="row field-group">
+        <div style="position: relative;">
+          <label class="field">Expiration (MM/YY) <span class="req">*</span></label>
+          <input type="text" id="p-exp" inputmode="numeric" placeholder="MM/YY" autocomplete="off" />
+          <div class="autocomplete-dropdown" id="ac-p-exp"></div>
+          <p class="error-msg" id="err-p-exp" style="display:none"></p>
+        </div>
+        <div style="position: relative;">
+          <label class="field">CVV / CVC <span class="req">*</span></label>
+          <input type="text" id="p-cvv" inputmode="numeric" autocomplete="off" />
+          <div class="autocomplete-dropdown" id="ac-p-cvv"></div>
+          <p class="error-msg" id="err-p-cvv" style="display:none"></p>
+        </div>
+      </div>
+
+      <div class="summary">
+        <p style="margin:0 0 4px">Please review your payment information carefully. When you click "Complete Donation," your card will be charged.</p>
+        <hr/>
+        <div class="total"><span>Your Donation Amount</span><span id="summaryAmount">$0.00</span></div>
+      </div>
+
+      <div class="field-group" style="margin-top:20px">
+        <button type="button" class="captcha" id="captcha">
+          <span class="box" id="captchaBox"></span>
+          <span class="label">I'm not a robot</span>
+          <span class="meta">
+            <span class="row1"><span class="ring"></span><span class="brand">reCAPTCHA</span></span>
+            <span>Privacy - Terms</span>
+          </span>
+        </button>
+        <p class="error-msg" id="err-captcha" style="display:none"></p>
+      </div>
+
+      <button class="btn-primary" id="donateNow">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2 4 6v6c0 5 3.5 9 8 10 4.5-1 8-5 8-10V6l-8-4z"/></svg>
+        Donate now
+      </button>
+    </section>
+
+    <!-- ================================================================
+         PAGE 4 — THANK YOU
+         ================================================================ -->
+    <section class="page thank-you" id="page-thanks">
+      <h2>Thank you for your gift!</h2>
+      <img src="images/cat.png" width='400' height='192' alt="Sleeping kitten" />
+      <p>Your donation ensures more pets get the care and second chance they deserve.</p>
+      <p>A confirmation with your donation details has been sent to your email. If you have any questions, you can contact us at (206) 386-7387 or
+        <a href="#" onclick="return false">seattleanimalshelter@seattle.gov</a>.
+      </p>
+
+      <h3>Help more pets by sharing your support:</h3>
+      <div class="share-row">
+        <a href="#" onclick="return false" aria-label="Email">
+          <svg viewBox="0 0 24 24"><path d="M2 6h20v12H2zM2 6l10 7 10-7"/></svg>
+        </a>
+        <a href="#" onclick="return false" aria-label="Facebook">
+          <svg viewBox="0 0 24 24"><path d="M13 22v-8h3l1-4h-4V7c0-1 .5-2 2-2h2V1h-3c-3 0-5 2-5 5v4H6v4h3v8z"/></svg>
+        </a>
+        <a href="#" onclick="return false" aria-label="X">
+          <svg viewBox="0 0 24 24"><path d="M18.244 2H21l-6.52 7.45L22 22h-6.86l-4.78-6.26L4.8 22H2l6.97-7.97L1.5 2h6.94l4.32 5.71L18.244 2z"/></svg>
+        </a>
+        <a href="#" onclick="return false" aria-label="LinkedIn">
+          <svg viewBox="0 0 24 24"><path d="M4 4h4v4H4zM4 10h4v10H4zM10 10h4v2c.7-1.2 2-2 4-2 3 0 4 2 4 5v5h-4v-4c0-1.5-.5-2.5-2-2.5s-2 1-2 2.5V20h-4z"/></svg>
+        </a>
+      </div>
+
+      <button type="button" class="btn-primary" style="display:flex" data-go="intro">Back to Seattle Animal Shelter</button>
+    </section>
+
+  </main>
+
+  <footer class="footer">
+    <a href="#" onclick="return false">ⓘ Tax and Privacy Information</a>
+  </footer>
+</div>
+
+<!-- Funds info modal -->
+<div class="modal-overlay" id="fundsModal">
+  <div class="modal">
+    <button class="close" id="closeFundsInfo" aria-label="Close">×</button>
+    <h3>Greatest Need</h3>
+    <p>Gives the shelter the ability to direct funds to the shelter's most urgent needs.</p>
+    <h3>Animal Care &amp; Welfare</h3>
+    <p>Support animal welfare including vet care for shelter animals and support of the foster and volunteer programs.</p>
+    <h3>Spay/Neuter Support</h3>
+    <p>Help cover the costs for pet owners who qualify for income assistance ensuring that dogs, cats, and rabbits can receive the spay/neuter surgeries they need.</p>
+  </div>
+</div>
+
+<script>
+/* ============================================================
+   FAKE AUTOCOMPLETE DATA
+   ============================================================ */
+const autocompleteProfiles = [
+  {
+    name: "Sarah Johnson",
+    address: "742 Evergreen Terrace",
+    apt: "",
+    city: "Seattle",
+    state: "WA",
+    zip: "98101",
+    email: "sarah.johnson@email.com",
+    phone: "(206) 555-0123",
+    card: "4532 1234 5678 9010",
+    exp: "12/26",
+    cvv: "123"
+  },
+  {
+    name: "Michael Chen",
+    address: "1428 Elm Street",
+    apt: "Apt 5B",
+    city: "Redmond",
+    state: "WA",
+    zip: "98052",
+    email: "m.chen@example.com",
+    phone: "(425) 555-0198",
+    card: "5412 3456 7890 1234",
+    exp: "08/27",
+    cvv: "456"
+  },
+  {
+    name: "Jessica Martinez",
+    address: "2401 Pine Boulevard",
+    apt: "",
+    city: "Bellevue",
+    state: "WA",
+    zip: "98004",
+    email: "jess.martinez@mail.com",
+    phone: "(425) 555-0234",
+    card: "4916 2345 6789 0123",
+    exp: "03/28",
+    cvv: "789"
+  }
+];
+
+/* ============================================================
+   AUTOCOMPLETE SYSTEM
+   ============================================================ */
+let currentDropdown = null;
+let selectedProfileIndex = -1; // Track which profile was selected
+
+function showAutocomplete(inputId, items) {
+  hideAllDropdowns();
+  const dropdown = document.getElementById('ac-' + inputId);
+  if (!dropdown) return;
+  
+  dropdown.innerHTML = '';
+  items.forEach((item, index) => {
+    const div = document.createElement('div');
+    div.className = 'autocomplete-item';
+    div.innerHTML = `
+      <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+        <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path>
+        <circle cx="12" cy="7" r="4"></circle>
+      </svg>
+      <span class="main">${item.main}</span>
+      ${item.sub ? `<span class="sub">${item.sub}</span>` : ''}
+    `;
+    div.onclick = () => item.onclick();
+    dropdown.appendChild(div);
+  });
+  
+  dropdown.classList.add('show');
+  currentDropdown = dropdown;
+}
+
+function hideAllDropdowns() {
+  document.querySelectorAll('.autocomplete-dropdown').forEach(d => d.classList.remove('show'));
+  currentDropdown = null;
+}
+
+function fillBillingForm(profile, profileIndex) {
+  selectedProfileIndex = profileIndex;
+  document.getElementById('b-name').value = profile.name;
+  document.getElementById('b-address').value = profile.address;
+  document.getElementById('b-apt').value = profile.apt;
+  document.getElementById('b-city').value = profile.city;
+  document.getElementById('b-state').value = profile.state;
+  document.getElementById('b-zip').value = profile.zip;
+  document.getElementById('b-email').value = profile.email;
+  document.getElementById('b-phone').value = profile.phone;
+  hideAllDropdowns();
+}
+
+function fillPaymentForm(profile) {
+  document.getElementById('p-card').value = profile.card;
+  document.getElementById('p-exp').value = profile.exp;
+  document.getElementById('p-cvv').value = profile.cvv;
+  hideAllDropdowns();
+}
+
+// Setup billing field autocomplete
+function setupBillingAutocomplete() {
+  const fields = ['b-name', 'b-address', 'b-city', 'b-state', 'b-zip', 'b-email', 'b-phone'];
+  
+  fields.forEach(fieldId => {
+    const input = document.getElementById(fieldId);
+    if (!input) return;
+    
+    input.onfocus = () => {
+      const items = autocompleteProfiles.map((profile, index) => {
+        let main = '';
+        let sub = '';
+        
+        if (fieldId === 'b-name') {
+          main = profile.name;
+          sub = profile.address;
+        } else if (fieldId === 'b-address') {
+          main = profile.address;
+          sub = profile.city + ', ' + profile.state;
+        } else if (fieldId === 'b-city') {
+          main = profile.city;
+          sub = profile.state + ' ' + profile.zip;
+        } else if (fieldId === 'b-state') {
+          main = profile.state;
+          sub = profile.city;
+        } else if (fieldId === 'b-zip') {
+          main = profile.zip;
+          sub = profile.city + ', ' + profile.state;
+        } else if (fieldId === 'b-email') {
+          main = profile.email;
+          sub = profile.name;
+        } else if (fieldId === 'b-phone') {
+          main = profile.phone;
+          sub = profile.name;
+        }
+        
+        return {
+          main,
+          sub,
+          onclick: () => fillBillingForm(profile, index)
+        };
+      });
+      
+      showAutocomplete(fieldId, items);
+    };
+  });
+}
+
+// Setup payment field autocomplete
+function setupPaymentAutocomplete() {
+  const cardFields = ['p-card', 'p-exp', 'p-cvv'];
+  
+  cardFields.forEach(fieldId => {
+    const input = document.getElementById(fieldId);
+    if (!input) return;
+    
+    input.onfocus = () => {
+      // If user selected a profile in billing, show only that profile's cards
+      const profilesToShow = selectedProfileIndex >= 0 
+        ? [autocompleteProfiles[selectedProfileIndex]]
+        : autocompleteProfiles;
+      
+      const items = profilesToShow.map(profile => {
+        let main = '';
+        let sub = '';
+        
+        if (fieldId === 'p-card') {
+          main = profile.card;
+          sub = profile.name;
+        } else if (fieldId === 'p-exp') {
+          main = profile.exp;
+          sub = 'Expires';
+        } else if (fieldId === 'p-cvv') {
+          main = '•••';
+          sub = 'CVV';
+        }
+        
+        return {
+          main,
+          sub,
+          onclick: () => fillPaymentForm(profile)
+        };
+      });
+      
+      showAutocomplete(fieldId, items);
+    };
+  });
+}
+
+// Close dropdowns when clicking outside
+document.addEventListener('click', (e) => {
+  if (!e.target.closest('.field-group')) {
+    hideAllDropdowns();
+  }
+});
+
+/* ============================================================
+   PROTOTYPE LOGIC
+   ============================================================ */
+const state = { amount: 0 };
+
+// ----- Page navigation -----
+const pages = ["intro", "donation", "billing", "payment", "thanks"];
+function go(name) {
+  pages.forEach(p => document.getElementById("page-" + p).classList.toggle("active", p === name));
+  document.getElementById("stepperWrap").style.display = (name === "intro") ? "none" : "block";
+  const stepIndex = { donation: 1, billing: 2, payment: 3, thanks: 4 }[name];
+  document.querySelectorAll("#stepper li").forEach(li => {
+    const n = +li.dataset.step;
+    const done = stepIndex !== undefined && n < stepIndex;
+    const active = stepIndex !== undefined && n === stepIndex;
+    li.classList.toggle("active", active);
+    li.classList.toggle("done", done);
+    li.querySelector(".circle").textContent = done ? "✓" : n;
+  });
+  
+  // Initialize autocomplete when reaching billing or payment pages
+  if (name === 'billing') {
+    setupBillingAutocomplete();
+  } else if (name === 'payment') {
+    setupPaymentAutocomplete();
+  }
+  
+  window.scrollTo(0, 0);
+}
+document.querySelectorAll("[data-go]").forEach(b => b.onclick = () => go(b.dataset.go));
+
+// Intro Donate button — validate amount before navigating
+document.getElementById("introDonate").onclick = () => {
+  clearErrors(["amount-intro"]);
+  if (selectedAmount === "other") {
+    const raw = document.getElementById("otherAmountIntro").value.replace('$', '');
+    const n = parseFloat(raw);
+    if (!n || n <= 0) {
+      setError("amount-intro", "Please enter a valid donation amount.");
+      return;
+    }
+  }
+  go("donation");
+};
+go("intro");
+
+// ----- Helpers -----
+function setError(id, msg) {
+  const el = document.getElementById("err-" + id);
+  const input = document.getElementById(id);
+  if (msg) { el.textContent = msg; el.style.display = "block"; if (input) input.classList.add("error"); }
+  else     { el.style.display = "none"; if (input) input.classList.remove("error"); }
+}
+function clearErrors(ids) { ids.forEach(id => setError(id, "")); }
+
+/* ============================================================
+   DONATION PAGE
+   ============================================================ */
+let selectedAmount = 100;
+
+const amountGrids = [
+  { grid: document.getElementById("amount-grid"),       other: document.getElementById("otherAmount") },
+  { grid: document.getElementById("amount-grid-intro"), other: document.getElementById("otherAmountIntro") }
+];
+
+function renderAmounts() {
+  amountGrids.forEach(({ grid, other }) => {
+    grid.querySelectorAll(".amount-btn").forEach(b => {
+      const v = b.dataset.amount;
+      const active = (v === "other" && selectedAmount === "other") ||
+                     (+v === selectedAmount);
+      b.classList.toggle("active", active);
+    });
+    // Sync the "other" input value across grids (only one is typed in at a time)
+    if (selectedAmount !== "other") {
+      other.value = "";
+    }
+  });
+}
+
+function formatOtherInput(input) {
+  let value = input.value.replace(/[^0-9.]/g, '');
+  const parts = value.split('.');
+  if (parts.length > 2) value = parts[0] + '.' + parts.slice(1).join('');
+  if (parts[1] && parts[1].length > 2) value = parts[0] + '.' + parts[1].slice(0, 2);
+
+  if (value) {
+    input.value = '$' + value;
+    selectedAmount = "other";
+    // Mirror typed value to the other grid's input
+    amountGrids.forEach(({ other }) => {
+      if (other !== input) other.value = input.value;
+    });
+    renderAmounts();
+  } else {
+    input.value = '';
+    amountGrids.forEach(({ other }) => { if (other !== input) other.value = ''; });
+  }
+
+  setTimeout(() => {
+    input.setSelectionRange(input.value.length, input.value.length);
+  }, 0);
+}
+
+function blurOtherInput(input) {
+  if (input.value) {
+    const num = parseFloat(input.value.replace('$', ''));
+    if (!isNaN(num) && num > 0) {
+      const formatted = '$' + num.toFixed(2);
+      input.value = formatted;
+      amountGrids.forEach(({ other }) => { if (other !== input) other.value = formatted; });
+    }
+  }
+}
+
+amountGrids.forEach(({ grid, other }) => {
+  grid.querySelectorAll(".amount-btn").forEach(b => {
+    b.onclick = () => {
+      const v = b.dataset.amount;
+      selectedAmount = v === "other" ? "other" : +v;
+      if (v === "other") {
+        other.focus();
+      }
+      renderAmounts();
+    };
+  });
+  other.oninput = () => formatOtherInput(other);
+  other.onblur  = () => blurOtherInput(other);
+});
+
+renderAmounts();
+
+// Tribute toggles
+const tribute = document.getElementById("tribute");
+tribute.onchange = () => {
+  document.getElementById("tributeSection").style.display = tribute.checked ? "block" : "none";
+};
+const sendNote = document.getElementById("sendNote");
+sendNote.onchange = () => {
+  document.getElementById("noteSection").style.display = sendNote.checked ? "block" : "none";
+};
+
+// Email vs Mail toggle
+document.querySelectorAll('input[name="noteMethod"]').forEach(r => {
+  r.onchange = () => {
+    const isMail = document.querySelector('input[name="noteMethod"]:checked').value === "mail";
+    document.getElementById("emailGroup").style.display = isMail ? "none" : "block";
+    document.getElementById("mailGroup").style.display = isMail ? "block" : "none";
+  };
+});
+
+// Funds modal
+document.getElementById("openFundsInfo").onclick = () => document.getElementById("fundsModal").classList.add("open");
+document.getElementById("closeFundsInfo").onclick = () => document.getElementById("fundsModal").classList.remove("open");
+document.getElementById("fundsModal").onclick = (e) => { if (e.target.id === "fundsModal") e.currentTarget.classList.remove("open"); };
+
+// Continue
+document.getElementById("donationContinue").onclick = () => {
+  clearErrors(["amount", "tributeName", "recipientName", "recipientEmail",
+               "recipientAddress", "recipientCity", "recipientState", "recipientZip"]);
+  let ok = true, finalAmount = 0;
+  if (selectedAmount === "other") {
+    const rawValue = document.getElementById("otherAmount").value.replace('$', '');
+    const n = parseFloat(rawValue);
+    if (!n || n <= 0) { setError("amount", "Please enter a valid donation amount."); ok = false; }
+    else finalAmount = n;
+  } else { finalAmount = selectedAmount; }
+
+  if (tribute.checked) {
+    const tName = document.getElementById("tributeName").value.trim();
+    if (!tName) { setError("tributeName", "Name of tribute is required."); ok = false; }
+    if (sendNote.checked) {
+      if (!document.getElementById("recipientName").value.trim()) { setError("recipientName", "Name of recipient is required."); ok = false; }
+      const method = document.querySelector('input[name="noteMethod"]:checked').value;
+      if (method === "email") {
+        const em = document.getElementById("recipientEmail").value.trim();
+        if (!em) { setError("recipientEmail", "Recipient's email is required."); ok = false; }
+        else if (!/^\S+@\S+\.\S+$/.test(em)) { setError("recipientEmail", "Enter a valid email address."); ok = false; }
+      } else {
+        if (!document.getElementById("recipientAddress").value.trim()) { setError("recipientAddress", "Address is required."); ok = false; }
+        if (!document.getElementById("recipientCity").value.trim()) { setError("recipientCity", "City is required."); ok = false; }
+        if (!document.getElementById("recipientState").value.trim()) { setError("recipientState", "State is required."); ok = false; }
+        if (!document.getElementById("recipientZip").value.trim()) { setError("recipientZip", "ZIP is required."); ok = false; }
+      }
+    }
+  }
+  if (!ok) return;
+  state.amount = finalAmount;
+  go("billing");
+};
+
+/* ============================================================
+   BILLING PAGE
+   ============================================================ */
+document.getElementById("billingContinue").onclick = () => {
+  const ids = ["b-name","b-address","b-city","b-state","b-zip","b-email","b-phone"];
+  clearErrors(ids);
+  let ok = true;
+  const labels = {
+    "b-name":"Full name", "b-address":"Address", "b-city":"City",
+    "b-state":"State", "b-zip":"ZIP", "b-email":"Email", "b-phone":"Phone number"
+  };
+  ids.forEach(id => {
+    if (!document.getElementById(id).value.trim()) {
+      setError(id, labels[id] + " is required."); ok = false;
+    }
+  });
+  const em = document.getElementById("b-email").value.trim();
+  if (em && !/^\S+@\S+\.\S+$/.test(em)) { setError("b-email", "Enter a valid email."); ok = false; }
+  if (!ok) return;
+  go("payment");
+  document.getElementById("summaryAmount").textContent = "$" + state.amount.toFixed(2);
+};
+
+/* ============================================================
+   PAYMENT PAGE
+   ============================================================ */
+const cardInput = document.getElementById("p-card");
+cardInput.oninput = () => {
+  cardInput.value = cardInput.value.replace(/\D/g,"").slice(0,19).replace(/(\d{4})(?=\d)/g,"$1 ");
+};
+const expInput = document.getElementById("p-exp");
+expInput.oninput = () => {
+  const d = expInput.value.replace(/\D/g,"").slice(0,4);
+  expInput.value = d.length > 2 ? d.slice(0,2) + "/" + d.slice(2) : d;
+};
+const cvvInput = document.getElementById("p-cvv");
+cvvInput.oninput = () => { cvvInput.value = cvvInput.value.replace(/\D/g,"").slice(0,4); };
+
+let captchaState = "idle";
+const captchaBox = document.getElementById("captchaBox");
+document.getElementById("captcha").onclick = () => {
+  if (captchaState !== "idle") return;
+  captchaState = "loading";
+  captchaBox.innerHTML = '<span class="spinner"></span>';
+  setTimeout(() => {
+    captchaState = "done";
+    captchaBox.innerHTML = '<span class="check">✓</span>';
+  }, 1400);
+};
+
+document.getElementById("donateNow").onclick = () => {
+  clearErrors(["p-card","p-exp","p-cvv","captcha"]);
+  let ok = true;
+  const digits = cardInput.value.replace(/\s/g,"");
+  if (!digits) { setError("p-card","Credit card number is required."); ok = false; }
+  else if (!/^\d{13,19}$/.test(digits)) { setError("p-card","Enter a valid card number."); ok = false; }
+  if (!expInput.value) { setError("p-exp","Expiration is required."); ok = false; }
+  else if (!/^\d{2}\/\d{2}$/.test(expInput.value)) { setError("p-exp","Use MM/YY format."); ok = false; }
+  if (!cvvInput.value) { setError("p-cvv","CVV is required."); ok = false; }
+  else if (!/^\d{3,4}$/.test(cvvInput.value)) { setError("p-cvv","Invalid CVV."); ok = false; }
+  if (captchaState !== "done") { setError("captcha","Please complete the CAPTCHA."); ok = false; }
+  if (!ok) return;
+  go("thanks");
+};
+</script>
+</body>
+</html>

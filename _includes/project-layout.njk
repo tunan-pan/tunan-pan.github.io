@@ -37,7 +37,7 @@ layout: base.njk
       {% endfor %}
       {% endif %}
 
-
+<!--
       {% set filteredTags = project.tags | reject("equalto", "Case Study") | reject("equalto", "WIP") %}
 
       {% if project.category == "sandbox" %}
@@ -45,6 +45,7 @@ layout: base.njk
         <a href="/categories/{{ project.category | slug }}/">{{ project.category }}</a>
       </span>
       {% endif %}
+-->
 
 <!--
       {% if filteredTags.length %}
