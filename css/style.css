@@ -1194,7 +1194,7 @@ PROJECTS SECTION
   transform: translateX(-50%);
   display: flex;
   justify-content: center;
-  gap: 20px;
+  gap: 3%;
   width: 100%;
   height: 100px; /* height of visible tabs */
   z-index: 3; 
@@ -1216,6 +1216,7 @@ PROJECTS SECTION
   transition: transform 0.3s ease;
   flex: 1; 
   min-width: 0;
+  max-width: 300px;
 }
 
 .tab-note span {
@@ -1349,7 +1350,7 @@ PROJECTS SECTION
     font-size: 0.8rem;
   }
   .tab-note span {
-    padding: 15px 12px 20px;
+    padding: 15px 6px 20px;
   }
   .tab-note p {
     font-size: 0.8rem;
@@ -1444,6 +1445,11 @@ PROJECTS SECTION
 }
 
 @media (max-width: 950px) {
+
+  .projects-grid--featured {
+    gap: 20px;
+  }
+
   .projects-grid--featured .project-card.project-card--hero > a {
     grid-template-columns: 1fr;
   }
@@ -1467,9 +1473,10 @@ PROJECTS SECTION
 }
 
 @media (max-width: 600px) {
+
   .projects-grid--featured .project-card--hero {
     grid-column: span 3;
-    margin-bottom: 50px;
+    margin-bottom: 20px;
     font-size: 12px;
   }
 
