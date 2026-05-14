@@ -167,12 +167,20 @@ fonts
 }
 
 
-/* home page annotation */
+/* handwriting */
 
 @font-face {
   font-family: "Gaegu";
-  src: url("/fonts/Gaegu/gaegu-regular-webfont.woff2");
+  src: url("/fonts/Gaegu/Gaegu-Regular.woff2") format('woff2'),
+       url("/fonts/Gaegu/Gaegu-Regular.woff") format('woff');
   font-weight: normal;
+}
+
+@font-face {
+  font-family: "Gaegu";
+  src: url("/fonts/Gaegu/Gaegu-Bold.woff2") format('woff2'),
+       url("/fonts/Gaegu/Gaegu-Bold.woff") format('woff');
+  font-weight: bold;
 }
 
 
