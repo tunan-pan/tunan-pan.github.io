@@ -345,36 +345,6 @@
     "isFeatured": false
   },
   {
-    "client": "Hope for Haiti",
-    "title": "Helping conference attendees engage with a VR story",
-    "slug": "hfh",
-    "url": "/projects/hfh/",
-    "image": {
-      "url": "/images/large_thumb_hfh_f13c03050e.png",
-      "mime": "image/png",
-      "alternativeText": "\"Inspiring Hope\" logo"
-    },
-    "category": "more",
-    "tags": [
-      "Event",
-      "Strategy"
-    ],
-    "order": 1010,
-    "description": "AWE 2023 · booth experience design",
-    "content": "<figure class=\"image\"><img style=\"aspect-ratio:4032/3024;\" src=\"/images/HFH_photo_85e9da2c79.jpg\" alt=\"Photo of HFH booth in action\" srcset=\"/images/thumbnail_HFH_photo_85e9da2c79.jpg 208w,/images/small_HFH_photo_85e9da2c79.jpg 500w,/images/medium_HFH_photo_85e9da2c79.jpg 750w,/images/large_HFH_photo_85e9da2c79.jpg 1000w,\" sizes=\"100vw\" width=\"4032\" height=\"3024\"></figure><p>Hope for Haiti developed a virtual reality experience to bring awareness to their cause, and showcased it at the 2023 Augmented World Expo (AWE). When they put out a call for booth volunteers, I offered both my time at the expo and my design skills to help elevate their on-site presence and improve audience engagement.</p><p>Working within their existing brand and content, I designed a set of promotional materials focused on clarity, visual impact, and strong calls to action:</p><ul><li><strong>Updated easel poster designs</strong> — I simplified their previous text-heavy layouts into more visual, scannable designs with clear CTAs</li><li><strong>TV display</strong> — A looping video featuring the VR experience trailer alongside a persistent title and CTA</li><li><strong>Newsletter sign-up touchpoint</strong> — bringing attention to their existing newsletter by displaying a signup sheet on an iPad</li><li><strong>Social media assets</strong> — graphics for pre-event promotion, live posting during the expo, and post-event sharing, including a prepared asset for a potential Auggie Awards win. These were created in Google Slides to allow the client to make edits easily on the fly.</li></ul><p>While not all materials were ultimately used, I believe my work was useful for thinking through practical UX decisions within the constraints of a live expo setting, and maximizing engagement of attendees with limited attention spans.&nbsp;</p><p><img src=\"/images/HFH_posters2_b0de0f8a82.png\" alt=\"posters\" srcset=\"/images/thumbnail_HFH_posters2_b0de0f8a82.png 160w,/images/small_HFH_posters2_b0de0f8a82.png 500w,/images/medium_HFH_posters2_b0de0f8a82.png 750w,/images/large_HFH_posters2_b0de0f8a82.png 1000w,\" sizes=\"100vw\" width=\"1200\" height=\"1169\"></p>",
-    "leftbuttonText": null,
-    "leftbuttonUrl": null,
-    "role": "<ul><li>Creative Strategist</li><li>Visual Designer</li></ul>",
-    "deliverables": "<ul><li>Poster designs</li><li>Video for TV display</li><li>Social media graphics</li><li>Newsletter sign-up sheet</li></ul>",
-    "images": [],
-    "hideFromNav": false,
-    "homepageAccentColor": null,
-    "homepageCardImage": null,
-    "longDescription": null,
-    "isSandbox": false,
-    "isFeatured": false
-  },
-  {
     "client": "San Diego Humane Society",
     "title": "Bringing an animal welfare campaign to life",
     "slug": "sdhs",
