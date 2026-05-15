@@ -363,7 +363,7 @@
       height: 28px;
       border-radius: 50%;
       border: 1px solid #4b4b4b; 
-      background: #F6F6F6;
+      background: #f1f0f0;
       color: #000);
       font-size: 16px;
       font-family: "Lexend";

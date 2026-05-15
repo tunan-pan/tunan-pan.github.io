@@ -47,19 +47,13 @@ eleventyComputed:
             {% endif %}
           </div>
 
-          <h2>{{ project.title }}</h2>
+          <p class="project-card__eyebrow">{{ project.client }}</p>
+          <h2 class="project-title">{{ project.title }}</h2>
 
-          {% set filteredTags = project.tags | reject("equalto", "Case Study") | reject("equalto", "WIP") %}
-
-          {% if filteredTags.length %}
-          <div class="project-tags">
-            <span>
-              {% for tag in filteredTags %}
-              {{ tag }}{% if not loop.last %}, {% endif %}
-              {% endfor %}
-            </span>
-          </div>
+          {% if project.description %}
+          <p class="project-card__desc project-tags-row">{{ project.description }}</p>
           {% endif %}
+
 
         </div>
 
@@ -72,6 +66,5 @@ eleventyComputed:
 </div>
 
 <div class="back-to-projects">
-  <p><a class="button button-secondary" href="/projects/"><span aria-hidden="true">&larr;</span> Back to all
-      projects</a></p>
+  <p><a class="button button-secondary" href="/#projects-section"><span aria-hidden="true">&larr;</span> Back to projects</a></p>
 </div>
