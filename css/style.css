@@ -959,7 +959,7 @@ HERO TEXT AREA
   max-width: 750px;
   margin: 0 auto;
   padding: 0 30px;
-  font-size: 1.3rem;
+  font-size: 1.4rem;
   line-height: 200%;
   text-wrap: balance;
   text-align: center;
@@ -1196,7 +1196,7 @@ PROJECTS SECTION
 .projects-intro {
   max-width: 60%;
   margin: 0 auto 20px;
-  font-size: 1.2rem;
+  font-size: 1.1rem;
   line-height: 150%;
 }
 
