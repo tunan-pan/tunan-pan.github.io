@@ -1160,13 +1160,13 @@ PROJECTS SECTION
 
 .projects-section {
   margin: 0 auto 0px;
-  padding: 100px 0 0;
+  padding: 60px 0 0;
   text-align: center;
   width: 100%;
 }
 
 #projects-section {
-  scroll-margin-top: 110px; 
+  scroll-margin-top: 160px; 
 }
 
 .projects-section .section-wrapper {
@@ -1193,6 +1193,12 @@ PROJECTS SECTION
   margin: 0;
 }
 
+.projects-intro {
+  max-width: 60%;
+  margin: 0 auto 20px;
+  font-size: 1.2rem;
+  line-height: 150%;
+}
 
 /* Tabs - positioned absolutely to sit at top */
 .project-tabs {
@@ -1260,21 +1266,18 @@ PROJECTS SECTION
 }
 
 /* Different colors for each tab */
-.tab-note[data-tab="current-focus"]::before {
+.tab-note[data-tab="ux"]::before {
   background: #E1B3FF;
 }
 
-.tab-note[data-tab="past-life"]::before {
+.tab-note[data-tab="graphic"]::before {
   background: #B1B6FF;
   transform: rotate(1.5deg);
 }
 
-.tab-note[data-tab="side-quests"]::before {
+.tab-note[data-tab="play"]::before {
   background: #C3E2FF;
   transform: rotate(-3deg) translateY(-5px);
-}
-.tab-note[data-tab="side-quests"] span{
-  transform: translateY(-5px);
 }
 
 /* Inactive tabs - pushed down AND behind */

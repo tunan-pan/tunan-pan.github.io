@@ -191,7 +191,7 @@ HERO TEXT
       <span class="word-wrap" id="w1" tabindex="0" role="button"
             aria-label="visual-turned-UX designer">
           <span class="annotation annotation-above" id="ann1" aria-hidden="true">
-          <span class="ann-text">visual-turned-UX</span>
+          <span class="ann-text">graphic & now UX</span>
           <svg id="svg1" width="28" height="22" viewBox="0 0 28 22">
             <path id="arrow1-head" class="arrow-head"
                   d="M5 15 L9 10 L11 16"
@@ -239,19 +239,19 @@ PROJECTS SECTION
     
     <!-- Post-it note tabs -->
     <div class="project-tabs">
-      <button class="tab-note tab-note--active" data-tab="current-focus">
-        <span>Current Focus</span>
+      <button class="tab-note tab-note--active" data-tab="ux">
+        <span>UX & Product</span>
         <p>honing my UX skills</p>
-        <p>self initiated projects</p>
+        <p>self directed projects</p>
       </button>
-      <button class="tab-note" data-tab="past-life">
-        <span>Past Life</span>
-        <p>my agency years</p>
+      <button class="tab-note" data-tab="graphic">
+        <span>Graphic Design</span>
+        <p>agency experience</p>
         <p>real client work, real impact</p>
       </button>
-      <button class="tab-note" data-tab="side-quests">
-        <span>Just For Fun</span>
-        <p>smaller experiments</p>
+      <button class="tab-note" data-tab="play">
+        <span>Experiments</span>
+        <p>creative explorations</p>
         <p>quick prototyping</p>
       </button>
       <div class="projects-white-bg"></div>
@@ -260,9 +260,10 @@ PROJECTS SECTION
     <!-- Tab content panels -->
 
     <!------------ CURRENT FOCUS / FEATURED ------------->
-    <div class="tab-content tab-content--active" data-content="current-focus">
+    <div class="tab-content tab-content--active" data-content="ux">
       <div class="projects-grid projects-grid--featured">
         
+        <p class="projects-intro">My current focus: UX & UI, interaction design, web accessibility, and product thinking.</p>
 
         {% set featured = projects_build | whereCategory("featured") %}
 
@@ -319,9 +320,11 @@ PROJECTS SECTION
       </div>
     </div>
 
-    <!------------ PAST LIFE / ADDITIONAL ------------->
-    <div class="tab-content" data-content="past-life">
+    <!------------ GRAPHIC DESIGN ------------->
+    <div class="tab-content" data-content="graphic">
       <div class="projects-grid fade-in">
+
+        <p class="projects-intro">Ten years in communications and marketing, creating brand systems, campaigns, publications, digital experiences, creative strategies, and more.</p>
 
         {% set more = projects_build | whereCategory("more") %}
         
@@ -384,10 +387,12 @@ PROJECTS SECTION
       </div>
     </div>
 
-    <!------------ SIDE QUESTS / SANDOBX ------------->
+    <!------------ SANDBOX ------------->
     
-    <div class="tab-content" data-content="side-quests">
+    <div class="tab-content" data-content="play">
       <div class="projects-grid fade-in">
+
+        
 
         {% set sandbox = projects_build | whereCategory("sandbox") %}
         {% if sandbox | length %}
