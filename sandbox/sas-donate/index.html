@@ -232,7 +232,25 @@ input.error, select.error { border-color: var(--required); }
 }
 .amount-btn.active { background: var(--seattle-yellow); }
 
+
+.other-wrap {
+  display: flex;
+  grid-column: span 2;
+}
+
+.other-wrap .amount-btn {
+  border-radius: var(--radius) 0 0 var(--radius);
+  flex-shrink: 0;
+  width: 135px;
+}
+.other-wrap input {
+  border-radius: 0 var(--radius) var(--radius) 0;
+  border-left: none;
+}
+
 #otherAmount, #otherAmountIntro { height: unset!important; }
+
+
 
 .disclaimer { 
   font-size: 12px;
@@ -381,7 +399,7 @@ input.error, select.error { border-color: var(--required); }
   <div class="page-title"><h1>Seattle Animal Shelter</h1></div>
 
   <!-- ============ STEPPER ============ -->
-  <div class="stepper" id="stepperWrap">
+  <div class="stepper" id="stepperWrap" style="display:none">
     <ol id="stepper">
       <li data-step="1"><div class="circle">1</div><div class="label">Donation</div></li>
       <li data-step="2"><div class="circle">2</div><div class="label">Billing</div></li>
@@ -399,7 +417,7 @@ input.error, select.error { border-color: var(--required); }
       <div style="min-height: 320px;">
 
         <h2>Donate</h2>
-        <img src="images/dog.png" width='400' height='192' alt="Happy dog" />
+        <img src="images/dog.png" width='100%' height='192' alt="Happy dog" />
         <p>Making a donation to the Seattle Animal Shelter is one of the simplest things you can do to <strong>save a life and prevent pet homelessness.</strong> Your donation goes directly to helping our staff and volunteers perform lifesaving work.
         </p>
 
@@ -412,8 +430,10 @@ input.error, select.error { border-color: var(--required); }
         <button class="amount-btn" data-amount="100">$100</button>
         <button class="amount-btn" data-amount="50">$50</button>
         <button class="amount-btn" data-amount="25">$25</button>
-        <button class="amount-btn" data-amount="other">Other</button>
-        <input type="text" id="otherAmountIntro" inputmode="decimal" placeholder="$0.00" />
+        <div class="other-wrap">
+          <button class="amount-btn" data-amount="other">Other</button>
+          <input type="text" id="otherAmountIntro" inputmode="decimal" placeholder="$0.00" />
+        </div>
       </div>
       <p class="error-msg" id="err-amount-intro" style="display:none"></p>
 
@@ -441,8 +461,10 @@ input.error, select.error { border-color: var(--required); }
         <button class="amount-btn" data-amount="100">$100</button>
         <button class="amount-btn" data-amount="50">$50</button>
         <button class="amount-btn" data-amount="25">$25</button>
-        <button class="amount-btn" data-amount="other">Other</button>
-        <input type="text" id="otherAmount" inputmode="decimal" placeholder="$0.00" />
+        <div class="other-wrap">
+          <button class="amount-btn" data-amount="other">Other</button>
+          <input type="text" id="otherAmount" inputmode="decimal" placeholder="$0.00" />
+        </div>
       </div>
       <p class="error-msg" id="err-amount" style="display:none"></p>
 
@@ -664,7 +686,7 @@ input.error, select.error { border-color: var(--required); }
          ================================================================ -->
     <section class="page thank-you" id="page-thanks">
       <h2>Thank you for your gift!</h2>
-      <img src="images/cat.png" width='400' height='192' alt="Sleeping kitten" />
+      <img src="images/cat.png" width='100%' height='192' alt="Sleeping kitten" />
       <p>Your donation ensures more pets get the care and second chance they deserve.</p>
       <p>A confirmation with your donation details has been sent to your email. If you have any questions, you can contact us at (206) 386-7387 or
         <a href="#" onclick="return false">seattleanimalshelter@seattle.gov</a>.
