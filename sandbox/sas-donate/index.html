@@ -47,7 +47,6 @@ a { color: var(--link); }
   min-height: 100vh;
   display: flex;
   flex-direction: column;
-  overflow-x: hidden;
 }
 
 /* ============================================================
@@ -149,6 +148,7 @@ input.error, select.error { border-color: var(--required); }
 .error-msg { color: var(--required); font-size: 12px; margin: 4px 0 0; }
 
 .field-group { margin-bottom: 18px; position: relative; }
+.field-group .label { color: var(--fg); }
 .row { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
 
 .required-note { color: var(--required); font-size: 12px; margin: 0 0 20px; }
@@ -675,7 +675,7 @@ input.error, select.error { border-color: var(--required); }
       <div class="field-group" style="margin-top:20px">
         <button type="button" class="captcha" id="captcha">
           <span class="box" id="captchaBox"></span>
-          <span class="label">I'm not a robot</span>
+          <span class="label" style="color: var(--fg)">I'm not a robot</span>
           <span class="meta">
             <span class="row1"><span class="ring"></span><span class="brand">reCAPTCHA</span></span>
             <span>Privacy - Terms</span>
