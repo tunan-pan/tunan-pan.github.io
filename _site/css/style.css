@@ -1275,7 +1275,7 @@ PROJECTS SECTION
   transform: rotate(1.5deg);
 }
 
-.tab-note[data-tab="play"]::before {
+.tab-note[data-tab="interactive"]::before {
   background: #C3E2FF;
   transform: rotate(-3deg) translateY(-5px);
 }
@@ -1384,6 +1384,10 @@ PROJECTS SECTION
 }
 
 .projects-grid--more {
+  grid-template-columns: repeat(3, 1fr);
+}
+
+.projects-grid--interactive {
   grid-template-columns: repeat(3, 1fr);
 }
 

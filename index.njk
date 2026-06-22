@@ -191,7 +191,7 @@ HERO TEXT
       <span class="word-wrap" id="w1" tabindex="0" role="button"
             aria-label="visual-turned-UX designer">
           <span class="annotation annotation-above" id="ann1" aria-hidden="true">
-          <span class="ann-text">graphic & now UX</span>
+          <span class="ann-text">graphic, UX & interactive</span>
           <svg id="svg1" width="28" height="22" viewBox="0 0 28 22">
             <path id="arrow1-head" class="arrow-head"
                   d="M5 15 L9 10 L11 16"
@@ -249,11 +249,18 @@ PROJECTS SECTION
         <p>agency experience</p>
         <p>real client work, real impact</p>
       </button>
+      <button class="tab-note" data-tab="interactive">
+        <span>Experiential</span>
+        <p>interactive storytelling</p>
+        <p>installations, event design</p>
+      </button>
+      <!--
       <button class="tab-note" data-tab="play">
         <span>Experiments</span>
         <p>creative explorations</p>
         <p>quick prototyping</p>
       </button>
+      -->
       <div class="projects-white-bg"></div>
     </div>
 
@@ -387,7 +394,66 @@ PROJECTS SECTION
       </div>
     </div>
 
-    <!------------ SANDBOX ------------->
+    <!------------ INTERACTIVE ------------->
+    
+    <div class="tab-content" data-content="interactive">
+      <div class="projects-grid fade-in">
+
+        
+
+        {% set interactive = projects_build | whereCategory("interactive") %}
+        {% if interactive | length %}
+
+        <div class="projects-grid projects-grid--interactive fade-in">
+          {% for project in interactive %}
+          <article class="project-card project-card--small">
+
+            <a href="/projects/{{ project.slug }}/">
+
+              {% if project.image %}
+
+              <div class="project-card__thumb">
+                <img src="{{ project.image.url or project.image }}" alt="">
+              </div>
+              {% endif %}
+
+              <div class="project-card__body">
+
+                    <div class="project-card__meta">
+                      {% if project.tags %}
+                      {% for tag in project.tags %}
+                      {% if tag == "Case Study" %}
+                      <span class="tag tag--case">Case study</span>
+                      {% endif %}
+                      {% if tag == "WIP" %}
+                      <span class="tag tag--wip">WIP</span>
+                      {% endif %}
+                      {% endfor %}
+                      {% endif %}
+                    </div>
+
+                    <p class="project-card__eyebrow">{{ project.client }}</p>
+                    <h2 class="project-title">{{ project.title }}</h2>
+
+                    {% if project.description %}
+                    <p class="project-card__desc project-tags-row">{{ project.description }}</p>
+                    {% endif %}
+
+                  </div>
+
+            </a>
+
+          </article>
+          {% endfor %}
+        </div>
+
+        {% endif %}
+
+      </div>
+    </div>
+
+
+    <!------------ SANDBOX 
     
     <div class="tab-content" data-content="play">
       <div class="projects-grid fade-in">
@@ -430,6 +496,8 @@ PROJECTS SECTION
 
       </div>
     </div>
+    ------------->
+
 
   </div>  
 </section>
@@ -477,8 +545,8 @@ ABOUT
       </div>
 
       <div class="about-text">
-        <p>I’m a multidisciplinary designer transitioning into UX/UI after over a decade working in graphic design and art direction for mission-driven organizations.</p>
-        <p>From the earliest days of coding websites for my Neopets, to my later explorations of <a href="https://valthea.itch.io/" target="_blank">game dev</a> and <a href="/tags/interactive" target="_blank">AR/XR</a>, I’ve always been drawn to interactive experiences and the way design shapes how people think, feel, and connect.</p>
+        <p>I’m a multidisciplinary designer working across UX/UI, brand, and interactive experiences, with over a decade of experience in graphic design and art direction for mission-driven organizations.</p>
+        <p>From the earliest days of coding websites for my Neopets, to my later explorations of <a href="/?tab=interactive" target="_blank">event design, AR/XR</a>, and <a href="https://valthea.itch.io/" target="_blank">game dev</a>, I’ve always been drawn to interactive experiences and the way design shapes how people think, feel, and connect.</p>
         <p>For me, design has always been about helping people and making the world a better place. As an Asian New Zealander, queer, and neurodivergent woman, I’m always thinking about how differently people experience the world. I notice the details, am always questioning "why?", and care deeply about making designs that truly include everyone.</p>
 
         <span class="tag">
