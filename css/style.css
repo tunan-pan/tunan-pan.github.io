@@ -1710,6 +1710,10 @@ PROJECTS SECTION
     grid-template-columns: repeat(3, 1fr);
   }
 
+  .projects-grid--interactive {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
   .projects-grid--sandbox {
     grid-template-columns: repeat(4, 1fr);
   }
@@ -1724,6 +1728,10 @@ PROJECTS SECTION
     grid-template-columns: repeat(2, 1fr);
   }
 
+  .projects-grid--interactive {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
   .projects-grid--sandbox {
     grid-template-columns: repeat(3, 1fr);
   }
@@ -1732,7 +1740,8 @@ PROJECTS SECTION
 @media (max-width: 650px) {
 
   .projects-grid--featured,
-  .projects-grid--more {
+  .projects-grid--more, 
+  .projects-grid--interactive {
     grid-template-columns: 1fr;
   }
 
