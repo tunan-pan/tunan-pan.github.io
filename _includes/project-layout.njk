@@ -2,19 +2,18 @@
 layout: base.njk
 ---
 
+<!--extract sections from Strapi content before rendering-->
+{% set sections = project.content | extractSections %} 
+
 
 <article class="project-post">
 
   <section class="column-left" aria-label="Left column - project details">
     <div class="column-left-inner">
 
-
-
-
       <div class="project-meta">
         <a class="back" href="/#projects-section"><span aria-hidden="true" class="arrow-back">&larr;</span> Back to
           projects</a>
-
       </div>
 
       {% if project.client %}
@@ -22,9 +21,6 @@ layout: base.njk
       {% endif %}
 
       <h1>{{ project.title }}</h1>
-
-
-
 
       {% if project.tags %}
       {% for tag in project.tags %}
@@ -112,6 +108,41 @@ layout: base.njk
 </article>
 
 
+<!-- floating toc - only renders if there are 2+ sections -->
+{% if sections.length > 1 %}
+<nav class="section-nav" aria-hidden="true" tabindex="-1">
+  <ul>
+
+    {# Hover panel with full labels #}
+    <div class="section-nav__panel" aria-hidden="true">
+      {% for section in sections %}
+        <a href="{{ page.url }}#{{ section.id }}"
+          class="section-nav__panel-item"
+          data-panel-section="{{ section.id }}"
+          tabindex="-1"
+        >{{ section.title }}</a>
+      {% endfor %}
+    </div>
+
+    {# Dots #}
+    {% for section in sections %}
+    <li>
+      <a href="{{ page.url }}#{{ section.id }}"
+        class="section-nav__dot"
+        data-section="{{ section.id }}"
+        tabindex="-1"
+      >
+        <span class="section-nav__dot-circle"></span>
+        <span class="visually-hidden">{{ section.title }}</span>
+      </a>
+    </li>
+    {% endfor %}
+
+  </ul>
+</nav>
+{% endif %}
+
+
 {% set navProjects = projects | navProjects %}
 {% set index = navProjects | findProjectIndex(project.slug) %}
 {% set prev = navProjects[index - 1] or navProjects[navProjects.length - 1] %}
@@ -130,3 +161,7 @@ layout: base.njk
     {% endif %}
   </nav>
 </section>
+
+
+
+<script src="/js/section-nav.js"></script>
