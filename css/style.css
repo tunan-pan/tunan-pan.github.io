@@ -2014,6 +2014,166 @@ Individual project pages
   margin: 0 auto;
 }
 
+/* ------ Section nav rail ------ */
+
+/* scroll offset */
+.project-content h2 {
+  scroll-margin-top: 130px;
+}
+
+/* Visually hidden but available to AT if aria-hidden is ever removed */
+.visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+.section-nav {
+  position: fixed;
+  right: 1.5rem;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 100;
+}
+
+.section-nav ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 1px;
+  align-items: center;
+  position: relative;
+}
+
+.section-nav ul li {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 16px;
+  height: 16px;
+  flex-shrink: 0;
+  flex-grow: 0;
+}
+
+/* The hover panel — hidden by default */
+.section-nav__panel {
+  position: absolute;
+  right: 16px; /* sits just left of the dots */
+  top: 50%;
+  transform: translateY(-50%);
+  background: #fff;
+  border-radius: 8px;
+  box-shadow: var(--shadow-medium);
+  padding: 10px 0;
+  min-width: 120px;
+  max-width: 180px;
+  opacity: 0;
+  pointer-events: none;
+  z-index: -1;
+}
+
+.section-nav ul:hover .section-nav__panel {
+  opacity: 1;
+  pointer-events: all;
+  z-index: 1;
+}
+
+/* Individual label inside panel */
+.section-nav__panel-item {
+  display: block;
+  padding: 5px 14px;
+  font-family: "Lexend", sans-serif;
+  font-size: 0.65rem;
+  font-weight: 300;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  color: var(--color-black);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  text-decoration: none;
+  max-width: 100%;
+}
+
+.section-nav__panel-item:hover {
+  background-color: var(--color-lightgrey);
+}
+
+.section-nav__panel-item.is-active {
+  padding-left: 12px;
+  color: var(--color-black);
+  font-weight: bold;
+}
+
+/* The dot */
+.section-nav__dot {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-decoration: none;
+  width: 16px;
+  height: 16px;
+  flex-shrink: 0;
+}
+
+/* Remove the ::after entirely */
+.section-nav__dot::after {
+  display: none;
+}
+
+.section-nav__dot-circle {
+  display: block;
+  width: 4px;
+  height: 4px;
+  border-radius: 50%;
+  background: var(--color-lightblack);
+  opacity: 0.3;
+  flex-shrink: 0;
+  transition: opacity 0.2s ease, transform 0.2s ease, border-radius 0.2s ease;
+}
+
+.section-nav__dot.is-active .section-nav__dot-circle {
+  opacity: 1;
+  background: var(--color-orange);
+}
+
+.section-nav ul:hover .section-nav__dot .section-nav__dot-circle {
+  opacity: 0.5;
+}
+
+.section-nav ul:hover .section-nav__dot.is-active .section-nav__dot-circle {
+  opacity: 1;
+}
+
+/* Transitions */
+@media (prefers-reduced-motion: no-preference) {
+  .section-nav__dot.is-active .section-nav__dot-circle {
+    transform: scale(1.25);
+  }
+}
+
+@media (max-width: 1100px) {
+  .section-nav {
+  right: 0.5rem;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .section-nav__panel,
+  .section-nav__dot::after { transition: none; }
+}
+
+ 
+
+
 .column-left,
 .column-right {
   min-width: 0;
