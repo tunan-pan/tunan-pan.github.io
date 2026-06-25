@@ -1,10 +1,22 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-DVHK7K0FLZ"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+
+    gtag('config', 'G-DVHK7K0FLZ');
+  </script>
+
+
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Tunan Pan is a designer focused on social impact and human-centered digital experiences. View selected case studies and design work.">
-  <title>Tunan Pan | Designer | </title>
+  <meta name="description" content="Tunan Pan is a Seattled-based designer focused on social impact and accessible, human-centered digital experiences. View selected case studies and design work.">
+  <title>Tunan Pan | Designer</title>
   <link rel="stylesheet" href="/css/style.css">
   <link rel="icon" href="/favicon.ico" type="image/x-icon">
   <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
@@ -14,7 +26,7 @@
 
   <!-- Essential Open Graph tags -->
   <meta property="og:title" content="Tunan Pan | Designer">
-  <meta property="og:description" content="I'm a designer who cares about social impact & human-centered experiences.">
+  <meta property="og:description" content="Tunan Pan is a Seattled-based designer focused on social impact and accessible, human-centered digital experiences. View selected case studies and design work.">
   <meta property="og:image" content="https://tunan.art/images/seo-preview-rect.png">
   <meta property="og:image:width" content="1200">
   <meta property="og:image:height" content="627">
@@ -27,7 +39,7 @@
   <!-- Twitter Card tags (for better Twitter display) -->
   <meta name="twitter:card" content="summary">
   <meta name="twitter:title" content="Tunan Pan | Designer">
-  <meta name="twitter:description" content="I'm a designer who cares about social impact & human-centered experiences.">
+  <meta name="twitter:description" content="Tunan Pan is a Seattled-based designer focused on social impact and accessible, human-centered digital experiences. View selected case studies and design work.">
   <meta name="twitter:image" content="https://tunan.art/images/seo-preview-rect.png">
     
 </head>
@@ -45,35 +57,32 @@
         </button>
 
         <nav class="main-nav" aria-label="Main navigation">
-            <a href="/projects/" >See My Work</a>
-            <a href="/about/" >Get To Know Me</a>
-            <a href="/contact/" >Say Hello</a>
+            <a href="#projects-section">My Work</a>
+            <a href="#about-section">About Me</a>
+            <a href="#contact-section">Say Hello</a>
         </nav>
     </div>
 </header>
 
   <main>
   
+<!--extract sections from Strapi content before rendering-->
+ 
+
 
 <article class="project-post">
 
   <section class="column-left" aria-label="Left column - project details">
     <div class="column-left-inner">
 
-
-
-
       <div class="project-meta">
-        <a class="back" href="/projects/"><span aria-hidden="true" class="arrow-back">&larr;</span> Back to all
+        <a class="back" href="/#projects-section"><span aria-hidden="true" class="arrow-back">&larr;</span> Back to
           projects</a>
-
       </div>
 
+      
 
       <h1>Designing a Predictive Support App for Autistic Meltdown Prevention</h1>
-
-
-
 
       
       
@@ -90,12 +99,13 @@
       
       
 
-
+<!--
       
 
       
+-->
 
-
+<!--
       
       <span class="project-tags">
         
@@ -105,6 +115,7 @@
         
       </span>
       
+-->
 
       <div class="leftbutton">
         
@@ -139,22 +150,33 @@
 </article>
 
 
+<!-- floating toc - only renders if there are 2+ sections -->
 
 
 
 
-<section class="projects-more" aria-labelledby="more-projects">
-  <h4 id="more-projects">View more projects</h4>
+
+
+
+
+<section class="projects-more" aria-label="more-projects">
   <nav>
     
-    <p class="project-prev">← <br /><a href="/projects/bga-a11y/">Accessibility Guide for Board Game Arena</a></p>
+    <p class="project-prev">← <br/><a href="/projects/visual-timer/">Previous project: <br/>Custom Visual Timer</a></p>
     
 
     
-    <p class="project-next">→<br /><a href="/projects/cravings/">Cravings Interpreter</a> </p>
+    <p class="project-next"> →<br/><a href="/projects/sas-donate/">Next project: <br/>Helping animal lovers complete their donations</a></p>
+
+    
     
   </nav>
 </section>
+
+
+
+<script src="/js/section-nav.js"></script>
+
   </main>
 
   <button class="back-to-top" aria-label="Back to top">
@@ -164,30 +186,21 @@
   </button>
 
   <footer>
-	<div class="footer-content">
-		<div class="footer-cta">
-		<img src="/images/logo/Logo-icon_1080x1080.svg" alt="" width="23">
-		<p>Thanks for stopping by!<br>Like what you see, or just want to chat?</p>
-		<a href="/contact/" class="button button-secondary">Let's connect! <span class="arrow" aria-hidden="true">&rarr;</span></a>
-		</div>
-		
-		<div class="footer-nav">
-		<nav aria-label="Footer navigation">
-			<ul>
-			<li><a href="/" >Home</a></li>
-			<li><a href="/projects/" >Projects</a></li>
-			<li><a href="/about/" >About</a></li>
-			<li><a href="/contact/" >Contact</a></li>
-			</ul>
-		</nav>
-		</div>
-	</div>
-	
 	<div class="footer-bottom">
+		<img src="/images/logo/Logo-icon_1080x1080.svg" alt="" width="23">
 		<p>© Tunan Pan 2026. Coded from scratch with love (and some frustration), so if you run into any bugs or accessibility issues, please do let me know! You can also directly <a href="https://github.com/tunan-pan/tunan-pan.github.io/issues" target="_blank" >submit issues on Github</a>.</p>
 	</div>
 </footer>
-
+  
+<script>
+  if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+    document.querySelectorAll('video[autoplay]').forEach(v => {
+      v.autoplay = false;
+      v.pause();
+      v.currentTime = 0;
+    });
+  }
+</script>
   
 
   <script src="/js/mobile-menu.js"></script>

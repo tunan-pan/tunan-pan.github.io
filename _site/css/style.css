@@ -1366,6 +1366,9 @@ PROJECTS SECTION
   .tab-note p {
     font-size: 0.8rem;
   }
+  .projects-intro {
+    max-width: 80%;
+  }
 }
 
 
@@ -2261,6 +2264,7 @@ Individual project pages
 .project-role ul,
 .project-deliverables ul {
   padding-left: 20px;
+  line-height: 130%;
 }
 
 .project-role li::marker,
