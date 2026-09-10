@@ -2574,11 +2574,11 @@ span.arrow-ext  {
 }
 
 .download-link::before {
-  background-image: url('/images/a11y/icon-download.png');
+  background-image: url('/a11y-toolkit/images/icon-download.png');
 }
 
 .copy-link::before {
-  background-image: url('/images/a11y/icon-copy.png');
+  background-image: url('/a11y-toolkit/images/icon-copy.png');
 }
 
 .a11y-download-row a:hover {
