@@ -777,13 +777,13 @@ footer
 
 footer {
   background-color: var(--color-darkgrey);
-  padding: 50px var(--page-padding-sides);
+  padding: 10px var(--page-padding-sides) 50px;
 
 }
 
 /* Bottom copyright section */
 .footer-bottom {
-  max-width: 1200px;
+  max-width: 600px;
   margin: 0 auto;
   padding: 30px 0 0;
   font-size: 0.75rem;
@@ -1323,7 +1323,7 @@ PROJECTS SECTION
   display: none;
   background-color: var(--color-projects-bg);
   padding: 120px var(--page-padding-sides) 0;
-  box-shadow: 0 -4px 12px rgba(0, 0, 0, 0.04);
+  box-shadow: 0 -4px 12px rgba(0, 0, 0, 0.04); /* 0 4px 10px 12px rgba(0, 0, 0, 0.04)*/
   position: relative;
   z-index: 2; /* Above white background, below active tab */
   width: 100%;
@@ -2433,4 +2433,178 @@ iframe {
 .back-to-projects {
   text-align: center;
   margin: 40px;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+/* --------------------------------------------------------------------
+--------------------------------------------------------------------
+Accessibility Toolkit styles
+--------------------------------------------------------------------
+---------------------------------------------------------------------*/
+
+.a11y-toolkit-body {
+  background-color: #faf2fc; /*#FFF6F6;*/
+}
+
+
+.a11y-site-header {
+  position: fixed;
+  top: 10px;
+  right: 10px;
+  z-index: 999;
+  background-color: #fff;
+  height: 24px;
+  border-radius: 999px;
+  padding: 2px 10px 0;
+}
+
+.a11y-header-container .a11y-logo img {
+  width: 10px;
+}
+
+.a11y-header-container span {
+  font-family: "LexendExa", sans-serif;
+  font-size: 0.8rem;
+  text-transform: uppercase;
+  font-weight: normal;
+  padding-left: 2px;
+}
+
+.a11y-header-container a {
+  text-decoration: none;
+  color: #333;
+}
+.a11y-site-header:has(.a11y-header-container a:hover) {
+  box-shadow: var(--shadow-light);
+  top: 9px;
+}
+
+span.arrow-ext  {
+  font-family: "InclusiveSans";
+  font-size: 1rem;
+  padding-left: 5px;
+}
+
+
+.a11y-intro {
+  max-width: 1000px;
+  margin: -50px auto 0;
+  text-wrap-style: balance;
+  text-align: center;
+}
+
+.projects-grid--a11y {
+  grid-template-columns: repeat(3, 1fr);
+}
+
+
+.projects-grid--a11y h2 {
+  margin: unset!important;
+  font-size: 1.6rem;
+  text-wrap-style: auto;
+  padding-top: 10px;
+}
+
+
+.projects-grid--a11y .project-card {
+  display: flex;
+  flex-direction: column;
+  height: 100%; /* fills the stretched grid row */
+}
+
+.projects-grid--a11y .project-card__thumb {
+  border-bottom: 1px solid var(--color-lightgrey);
+}
+
+.projects-grid--a11y .project-card__body {
+  display: flex;
+  flex-direction: column;
+  flex: 1; /* takes up remaining space after the thumb */
+}
+
+.projects-grid--a11y p {
+  margin-bottom: 28px;
+}
+
+.a11y-download-row:first-of-type {
+  margin-top: auto; /* pushes this row — and everything after it — to the bottom */
+}
+
+.a11y-download-row {
+  border-top: 1px solid var(--color-lightgrey);
+  padding: 10px 0 0 0;
+  gap: 10px;
+  margin-top: 8px;
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+}
+
+.download-link, .copy-link {
+  font-weight: bold;
+}
+.download-link::before, .copy-link::before {
+  content: '';
+  background-size: 16px;
+  padding: 1px 10px;
+  background-repeat: no-repeat;
+  margin: 2px 5px 0 0;
+}
+
+.download-link::before {
+  background-image: url('/images/a11y/icon-download.png');
+}
+
+.copy-link::before {
+  background-image: url('/images/a11y/icon-copy.png');
+}
+
+.a11y-download-row a:hover {
+  color: var(--color-orange);
+}
+
+.projects-grid--a11y .project-card:has(a:hover), .project-card:has(a:focus-visible) {
+  box-shadow: none!important;
+}
+
+
+@media (prefers-reduced-motion: no-preference) {
+  .projects-grid--a11y .project-card:has(a:hover), .project-card:has(a:focus-visible) {
+    transform: none!important;
+  }
+}
+
+
+
+@media (max-width: 1000px) {
+  .projects-grid--a11y {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 700px) {
+  .projects-grid--a11y {
+    grid-template-columns: 1fr;
+  }
+}
+
+
+.a11y-footer {
+  border: 2px solid #333;
+  border-radius: 10px;
+  padding: 20px 40px;
+  font-size: 1.2rem;
+  max-width: 850px;
+  margin: 30px auto;
+  line-height: 150%;
 }
