@@ -16,3 +16,7 @@ Work in Strapi locally
 Run npm run fetch-data when ready to build
 Images in markdown will render properly
 Deploy to GitHub Pages
+
+
+Eleventy automatically builds files to _site, but the file/folder needs to be added to .eleventy.js (e.g. eleventyConfig.addPassthroughCopy("CNAME");)
+After updating, use npm run build

@@ -21,6 +21,7 @@ function slugify(text) {
     eleventyConfig.addPassthroughCopy("images");
     eleventyConfig.addPassthroughCopy("js");
     eleventyConfig.addPassthroughCopy("sandbox");
+    eleventyConfig.addPassthroughCopy("a11y-toolkit");
     eleventyConfig.addPassthroughCopy("favicon.ico");
     eleventyConfig.addPassthroughCopy("favicon-16x16.png");
     eleventyConfig.addPassthroughCopy("favicon-32x32.png");
