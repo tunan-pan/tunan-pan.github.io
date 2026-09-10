@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-DVHK7K0FLZ"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+
+    gtag('config', 'G-DVHK7K0FLZ');
+  </script>
+
+
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Tunan Pan is a Seattled-based designer focused on social impact and accessible, human-centered digital experiences. View selected case studies and design work.">
+  <title>Tunan Pan | Designer</title>
+  <link rel="stylesheet" href="/css/style.css">
+  <link rel="icon" href="/favicon.ico" type="image/x-icon">
+  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+  <link rel="manifest" href="/site.webmanifest">
+
+  <!-- Essential Open Graph tags -->
+  <meta property="og:title" content="Tunan Pan | Designer">
+  <meta property="og:description" content="Tunan Pan is a Seattled-based designer focused on social impact and accessible, human-centered digital experiences. View selected case studies and design work.">
+  <meta property="og:image" content="https://tunan.art/images/seo-preview-rect.png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="627">
+  <meta property="og:image:type" content="image/png">
+  <meta name="author" content="Tunan Pan">
+
+  <meta property="og:url" content="https://tunan.art/">
+  <meta property="og:type" content="website">
+
+  <!-- Twitter Card tags (for better Twitter display) -->
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="Tunan Pan | Designer">
+  <meta name="twitter:description" content="Tunan Pan is a Seattled-based designer focused on social impact and accessible, human-centered digital experiences. View selected case studies and design work.">
+  <meta name="twitter:image" content="https://tunan.art/images/seo-preview-rect.png">
+    
+</head>
+<body class="{% if page.url == '/about/' %}about-page{% elif page.url == '/' %}home-page{% elif page.url == '/contact/' %}contact-page{% elif page.url == '/projects/' %}projects-page{% endif %}">
+
+  {% include 'header.njk' %}
+
+  <main>
+  {{ content | safe }}
+  </main>
+
+  <button class="back-to-top" aria-label="Back to top">
+    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-chevron-up" viewBox="0 0 16 16">
+      <path fill-rule="evenodd" d="M7.646 4.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1-.708.708L8 5.707l-5.646 5.647a.5.5 0 0 1-.708-.708z"/>
+    </svg>
+  </button>
+
+  {% include 'footer.njk' %}
+  
+<script>
+  if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+    document.querySelectorAll('video[autoplay]').forEach(v => {
+      v.autoplay = false;
+      v.pause();
+      v.currentTime = 0;
+    });
+  }
+</script>
+  
+
+  <script src="/js/mobile-menu.js"></script>
+
+  <script src="/js/sticky-header.js"></script>
+  
+  <script src="/js/back-to-top.js"></script>
+
+  <script src="/js/fade-in.js"></script>
+
+</body>
+</html>
