@@ -2456,7 +2456,6 @@ Accessibility Toolkit styles
   background-color: #faf2fc; /*#FFF6F6;*/
 }
 
-
 .a11y-site-header {
   position: fixed;
   top: 10px;
@@ -2495,26 +2494,38 @@ span.arrow-ext  {
   padding-left: 5px;
 }
 
-
 .a11y-intro {
-  max-width: 1000px;
-  margin: -50px auto 0;
+  max-width: 1100px;
+  margin: -50px auto 80px;
   text-wrap-style: balance;
   text-align: center;
+}
+
+.a11y-intro p {
+  font-size: 1.2rem;
+  line-height: 170%;
+  margin-bottom: 30px;
+}
+
+.a11y-intro h1 {
+  font-weight: 900;
+}
+
+.intro-subheading {
+  font-size: 2.3rem!important; 
+  line-height: 140%!important;
+  margin: 0 0 60px!important;
 }
 
 .projects-grid--a11y {
   grid-template-columns: repeat(3, 1fr);
 }
 
-
 .projects-grid--a11y h2 {
   margin: unset!important;
-  font-size: 1.6rem;
+  font-size: 1.8rem;
   text-wrap-style: auto;
-  padding-top: 10px;
 }
-
 
 .projects-grid--a11y .project-card {
   display: flex;
@@ -2524,6 +2535,7 @@ span.arrow-ext  {
 
 .projects-grid--a11y .project-card__thumb {
   border-bottom: 1px solid var(--color-lightgrey);
+  margin-bottom: 10px;
 }
 
 .projects-grid--a11y .project-card__body {
@@ -2533,7 +2545,7 @@ span.arrow-ext  {
 }
 
 .projects-grid--a11y p {
-  margin-bottom: 28px;
+  margin-bottom: 0;
 }
 
 .a11y-download-row:first-of-type {
@@ -2598,13 +2610,87 @@ span.arrow-ext  {
   }
 }
 
+.a11y-note {
+  max-width: 750px;
+  margin: 10px auto;
+  text-align: center;
+}
 
 .a11y-footer {
   border: 2px solid #333;
   border-radius: 10px;
-  padding: 20px 40px;
+  padding: 30px 40px;
   font-size: 1.2rem;
-  max-width: 850px;
+  max-width: 900px;
   margin: 30px auto;
   line-height: 150%;
+}
+
+.a11y-footer h2 {
+  font-size: 1.5rem;
+  margin-bottom: 0px;
+}
+
+
+
+.copy-url {
+  position: relative;
+  background: none;
+  border: none;
+  padding: 0;
+  margin: 0;
+  font: inherit;
+  color: inherit;
+  cursor: pointer;
+  text-decoration: underline;
+  text-underline-offset: 2px;
+  color: var(--color-black);
+  font-weight: bold;
+  
+}
+.copy-url:hover {
+  color: var(--color-orange);
+}
+.copy-url:focus-visible {
+  outline: 2px solid currentColor;
+  outline-offset: 2px;
+}
+
+.tooltip {
+  position: absolute;
+  bottom: 100%;
+  left: 50%;
+  transform: translateX(-50%) translateY(-4px);
+  background: #222;
+  color: #fff;
+  font-family: "Lexend";
+  font-weight: 300;
+  font-size: 0.9rem;
+  letter-spacing: 5%;
+  line-height: 1.2;
+  padding: 4px 8px;
+  border-radius: 99px;
+  white-space: nowrap;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.15s ease;
+}
+
+/* show on hover or keyboard focus */
+.copy-url:hover .tooltip,
+.copy-url:focus-visible .tooltip {
+  opacity: 1;
+}
+
+/* screen-reader-only utility, in case you don't already have one */
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
 }
