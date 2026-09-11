@@ -1847,6 +1847,7 @@ ABOUT SECTION
   z-index: -1;
 }
 
+
 @media (prefers-reduced-motion: no-preference) {
 
   .photo-stack:hover .about-image:last-child,
