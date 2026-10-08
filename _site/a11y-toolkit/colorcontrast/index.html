@@ -1,12 +1,44 @@
+
 <!doctype html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Accessible Color Palette Builder</title>
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,600&family=Inter:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-DVHK7K0FLZ"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+
+    gtag('config', 'G-DVHK7K0FLZ');
+  </script>
+
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Make informed color palette decisions and easily find color combinations and shades that meet WCAG contrast requirements.">
+  <title>Accessible Color Palette Builder | by Tunan Pan</title>
+  <link rel="stylesheet" href="/css/style.css">
+  <link rel="icon" href="/favicon.ico" type="image/x-icon">
+  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+  <link rel="manifest" href="/site.webmanifest">
+
+  <!-- Essential Open Graph tags -->
+  <meta property="og:title" content="PDF Accessibility Toolkit for Graphic Designers | by Tunan Pan">
+  <meta property="og:description" content="Make informed color palette decisions and easily find color combinations and shades that meet WCAG contrast requirements.">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="627">
+  <meta property="og:image:type" content="image/png">
+  <meta name="author" content="Tunan Pan">
+
+  <meta property="og:url" content="https://tunan.art/a11y-toolkit">
+  <meta property="og:type" content="website">
+
+  <!-- Twitter Card tags (for better Twitter display) -->
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="Accessible Color Palette Builder | by Tunan Pan">
+  <meta name="twitter:description" content="Make informed color palette decisions and easily find color combinations and shades that meet WCAG contrast requirements.">
+
 <style>
   :root{
     --paper: #F0EFEA;
@@ -25,7 +57,7 @@
   body{
     background: var(--paper);
     color: var(--ink);
-    font-family: 'Inter', system-ui, sans-serif;
+    font-family: 'InclusiveSans', system-ui, sans-serif;
     line-height: 1.45;
     -webkit-font-smoothing: antialiased;
   }
@@ -35,25 +67,25 @@
     gap: 28px;
     align-items: flex-start;
     margin: 0 auto;
-    padding: 24px 32px 96px;
+    padding: 24px 32px 20px;
   }
 
   h1{
-    font-family: 'Fraunces', serif;
+    font-family: 'Lexend', serif;
     font-weight: 600;
     font-size: 22px;
     margin: 0 0 8px;
     letter-spacing: -0.01em;
   }
 
-  h2{ font-family: 'Fraunces', serif; font-weight: 600; font-size: 17px; margin: 0; }
+  h2{ font-family: 'Lexend', serif; font-weight: 600; font-size: 17px; margin: 0 0 14px; }
   h3{ margin: 0; }
 
   .text-btn{
     background: none;
     border: none;
     color: var(--ink-soft);
-    font-family: 'Inter', sans-serif;
+    font-family: 'InclusiveSans', sans-serif;
     font-size: 12px;
     cursor: pointer;
     padding: 4px 6px;
@@ -120,7 +152,7 @@
   .cvd-buttons{ display: flex; flex-wrap: wrap; gap: 4px; min-width: 0; }
   .cvd-btn{
     flex: 0 0 48px; width: 48px; border: 1px solid var(--line); background: #fff; border-radius: var(--radius);
-    padding: 6px 0; font-size: 11px; color: var(--ink-soft); cursor: pointer; font-family: 'Inter', sans-serif;
+    padding: 6px 0; font-size: 11px; color: var(--ink-soft); cursor: pointer; font-family: 'Lexend', sans-serif;
     white-space: nowrap; text-align: center;
   }
   .cvd-btn[aria-checked="true"]{ background: var(--accent); border-color: var(--accent); color: #fff; }
@@ -137,6 +169,9 @@
     .palette-io{ align-items: center; }
     .cvd-control{ flex-direction: row; flex-wrap: wrap; align-items: center; flex: 0 1 auto; min-width: 0; align-self: stretch; width: auto; }
     .cvd-buttons{ flex: 0 1 auto; }
+    /* Forces its own full-width row when open, between whichever of palette-io/cvd-control
+       land above and below it, rather than squeezing into the row alongside them. */
+    #paste-panel{ flex: 1 1 100%; }
   }
 
   .pin-panel{
@@ -252,13 +287,13 @@
 
   .name-input{
     width: 100%; border: none; border-bottom: 1px solid transparent; background: transparent;
-    font-family: 'Inter', sans-serif; font-weight: 500; font-size: 13.5px; padding: 1px 0; color: var(--ink); display: block;
+    font-family: 'Lexend', sans-serif; font-weight: 500; font-size: 13.5px; padding: 1px 0; color: var(--ink); display: block;
   }
   .name-input:hover, .name-input:focus{ border-bottom-color: var(--line); }
   .name-input:focus-visible{ outline: 2px solid var(--focus); outline-offset: 2px; }
 
   .hex-input{
-    font-family: 'IBM Plex Mono', monospace; font-size: 12px; width: 100%; padding: 1px 0;
+    font-family: 'InclusiveSans', monospace; font-size: 12px; width: 100%; padding: 1px 0;
     border: none; border-bottom: 1px solid transparent; background: transparent; color: var(--ink-soft); margin-top: 1px;
   }
   .hex-input:hover, .hex-input:focus{ border-bottom-color: var(--line); }
@@ -287,7 +322,7 @@
   .slider-row:last-child{ margin-bottom: 0; }
   .slider-row .row-top{ display: flex; justify-content: space-between; align-items: baseline; }
   .slider-row label{ font-size: 11.5px; color: var(--ink-soft); }
-  .slider-value{ font-family: 'IBM Plex Mono', monospace; font-size: 11.5px; color: var(--ink-soft); }
+  .slider-value{ font-family: 'InclusiveSans', sans-serif; font-size: 11.5px; color: var(--ink-soft); }
 
   input[type="range"]{ width: 100%; margin: 3px 0 0; accent-color: var(--accent); }
   input[type="range"]:focus-visible{ outline: 2px solid var(--focus); outline-offset: 3px; }
@@ -308,28 +343,31 @@
 
   /* ---------- Content ---------- */
 
-  .content{ flex: 1; min-width: 0; will-change: filter; }
-
-  .page-footer{
-    margin-top: 32px; padding-top: 16px; border-top: 1px solid var(--line);
-    font-size: 12px; color: var(--ink-soft); text-align: center;
+  .content{ 
+    flex: 1; min-width: 0; will-change: filter; 
   }
-  .page-footer a{ color: var(--accent); }
 
-  .mobile-tabs{ display: none; }
-  @media (max-width: 900px){
-    .mobile-tabs{
-      display: flex; gap: 4px; margin-bottom: 20px; border-bottom: 1px solid var(--line); position: sticky; top: 0;
-      background: var(--paper); z-index: 15; padding-top: 4px;
-    }
-    .mobile-tab{
-      background: none; border: none; border-bottom: 2px solid transparent; padding: 10px 6px; margin-bottom: -1px;
-      font-size: 14px; font-family: 'Fraunces', serif; font-weight: 600; color: var(--ink-soft); cursor: pointer;
-    }
-    .mobile-tab[aria-selected="true"]{ color: var(--ink); border-bottom-color: var(--accent); }
-    .mobile-tab:focus-visible{ outline: 2px solid var(--focus); outline-offset: 2px; }
-    #grid-section.tab-hidden, #ramp-section.tab-hidden{ display: none; }
+  .page-footer {
+    margin: 32px 0 0; padding: 16px 0 5px; border-top: 1px solid var(--line);
+    background-color: var(--paper);
+    font-size: 11px;
+    text-align: left;
+    position: relative;
+    bottom: 0!important;
   }
+
+  .content-tabs{
+    display: flex; gap: 4px; margin-bottom: 20px; border-bottom: 1px solid var(--line); position: sticky; top: 0;
+    background: var(--paper); z-index: 15; padding-top: 4px;
+  }
+  .content-tab{
+    background: none; border: none; border-bottom: 2px solid transparent; padding: 10px 12px; margin-bottom: -1px;
+    font-size: 14px; font-family: 'Lexend', sans-serif; font-weight: 600; color: var(--ink-soft); cursor: pointer;
+  }
+  .content-tab[aria-selected="true"]{ color: var(--ink); border-bottom-color: var(--accent); }
+  .content-tab:focus-visible{ outline: 2px solid var(--focus); outline-offset: 2px; }
+  #grid-section.tab-hidden, #ramp-section.tab-hidden{ display: none; }
+  [role="tabpanel"]:focus-visible{ outline: 2px solid var(--focus); outline-offset: 2px; }
   .content section{ margin-bottom: 56px; }
   .section-intro{ color: var(--ink-soft); font-size: 14px; margin: 8px 0 20px; }
 
@@ -344,11 +382,11 @@
   .tier-segmented{ display: flex; border: 1px solid var(--line); border-radius: 8px; overflow: hidden; }
   .tier-seg{
     border: none; border-right: 1px solid var(--line); background: #fff; padding: 7px 14px;
-    display: flex; flex-direction: column; align-items: center; gap: 2px; cursor: pointer; font-family: 'Inter', sans-serif;
+    display: flex; flex-direction: column; align-items: center; gap: 2px; cursor: pointer; font-family: 'Lexend', sans-serif;
   }
   .tier-seg:last-child{ border-right: none; }
   .tier-seg-name{ font-size: 12px; color: var(--ink-soft); white-space: nowrap; }
-  .tier-seg-ratio{ font-size: 9.5px; color: var(--ink-soft); opacity: 0.7; font-family: 'IBM Plex Mono', monospace; }
+  .tier-seg-ratio{ font-size: 10px; color: var(--ink-soft); opacity: 0.7; font-family: 'InclusiveSans', monospace; }
   .tier-seg.filled{ background: var(--accent); }
   .tier-seg.filled .tier-seg-name{ color: #fff; font-weight: 600; }
   .tier-seg.filled .tier-seg-ratio{ color: #fff; opacity: 0.85; }
@@ -372,7 +410,7 @@
   .legend .pass-circle{ width: 13px; height: 13px; }
 
   .level-row{ display: flex; align-items: center; gap: 6px; width: 100%; }
-  .level-label{ font-family: 'Inter', sans-serif; font-size: 11px; }
+  .level-label{ font-family: 'Lexend', sans-serif; font-size: 11px; }
   .level-row-lg .level-label{ font-size: 14px; font-weight: 500; }
 
   /* ---------- Grid ---------- */
@@ -388,7 +426,7 @@
   .contrast-grid th.col-head, .contrast-grid th.row-head{ background: var(--card); padding: 10px 8px; font-weight: 500; font-size: 13px; min-width: 108px; }
   .head-chip{ display: flex; align-items: center; gap: 7px; justify-content: center; flex-wrap: wrap; }
   .swatch-dot{ width: 13px; height: 13px; border-radius: 50%; border: 1px solid rgba(0,0,0,0.15); flex: none; }
-  .head-hex{ font-family: 'IBM Plex Mono', monospace; font-size: 11px; color: var(--ink-soft); }
+  .head-hex{ font-family: 'InclusiveSans', sans-serif; font-size: 11px; color: var(--ink-soft); }
 
   td.cell{ min-width: 138px; min-height: 108px; }
   td.cell.diag, td.cell.filtered{ background: transparent; }
@@ -411,8 +449,8 @@
   .fail-icon svg{ width: 100%; height: 100%; display: block; }
   .info-row-lg .fail-icon{ width: 19px; height: 19px; }
 
-  .level-label{ font-family: 'Inter', sans-serif; font-size: 11px; color: var(--ink); }
-  .ratio-value-sm{ font-family: 'IBM Plex Mono', monospace; font-size: 10px; color: var(--ink-soft); margin-top: 1px; }
+  .level-label{ font-family: 'Lexend', sans-serif; font-size: 11px; color: var(--ink); }
+  .ratio-value-sm{ font-family: 'InclusiveSans', sans-serif; font-size: 10px; color: var(--ink-soft); margin-top: 1px; }
 
   /* ---------- Lightness ramps ---------- */
 
@@ -421,7 +459,7 @@
   .ramp-column-head{ display: flex; flex-direction: column; align-items: center; gap: 4px; margin-bottom: 10px; text-align: center; }
   .ramp-column-head .name{ font-size: 12.5px; font-weight: 500; }
 
-  .ramp-steps{ display: flex; flex-direction: column; gap: 1px; }
+  .ramp-steps{ display: flex; flex-direction: column; gap: 2px; }
 
   .ramp-step-wrap{ display: flex; flex-direction: row; align-items: center; gap: 4px; }
   .original-marker-slot{ width: 10px; flex: none; text-align: center; font-size: 11px; color: var(--ink); line-height: 1; }
@@ -432,9 +470,9 @@
     font: inherit; cursor: pointer; padding: 3px;
   }
   .ramp-step:focus-visible{ outline: 2px solid var(--focus); outline-offset: 2px; }
-  .ramp-step.is-original{ border-width: 3px; border-color: var(--ink); }
-  .ramp-step .hex{ font-family: 'IBM Plex Mono', monospace; font-size: 10px; }
-  .ramp-step .status-row{ display: flex; align-items: center; gap: 3px; font-size: 9.5px; font-family: 'Inter', sans-serif; }
+  .ramp-step.is-original{ outline: 2px solid var(--ink); }
+  .ramp-step .hex{ font-family: 'InclusiveSans', sans-serif; font-size: 10px; }
+  .ramp-step .status-row{ display: flex; align-items: center; gap: 3px; font-size: 9.5px; font-family: 'Lexend', sans-serif; }
   .ramp-step .status-row .level-icon{ width: 11px; height: 11px; }
 
   @media (prefers-reduced-motion: reduce){ * { transition: none !important; } }
@@ -485,7 +523,7 @@
     <div id="pin-panel-spacer" style="display:none;"></div>
     <div class="pin-panel" id="pin-panel">
       <div class="sidebar-row-heading">
-        <h2>Colors</h2>
+        <h2>Color Palette</h2>
         <div class="sidebar-heading-actions">
           <button type="button" class="icon-btn pin-btn" id="pin-btn" aria-pressed="false" aria-label="Pin colors panel while scrolling"></button>
           <button type="button" class="text-btn" id="collapse-all-btn">Collapse all</button>
@@ -507,24 +545,24 @@
           <button type="button" class="add-btn" id="paste-palette-btn"><span class="btn-icon" id="paste-palette-icon"></span>Paste palette</button>
         </div>
 
+        <div id="paste-panel" style="display:none;">
+          <textarea id="paste-textarea" placeholder="Paste hex codes here, separated by commas, spaces, or new lines. This will replace the existing colors." style="width:100%; min-height:60px; font-family:'InclusiveSans',sans-serif; font-size:11.5px; padding:6px; border:1px solid var(--line); border-radius:var(--radius); background:#fff; color:var(--ink);"></textarea>
+          <div id="paste-error" style="color:#A8402C; font-size:11px; margin-top:4px; display:none;"></div>
+          <div style="display:flex; gap:6px; margin-top:6px;">
+            <button type="button" class="add-btn" id="paste-import-btn">Import</button>
+            <button type="button" class="text-btn" id="paste-cancel-btn">Cancel</button>
+          </div>
+        </div>
+
         <div class="cvd-control">
           <span class="cvd-label">Simulate color vision</span>
           <div class="cvd-buttons" role="radiogroup" aria-label="Simulate color vision">
             <button type="button" class="cvd-btn" role="radio" aria-checked="true" data-cvd="none" data-tip="No simulation: colors are shown as they are.">None</button>
             <button type="button" class="cvd-btn" role="radio" aria-checked="false" data-cvd="protanopia" data-tip="Protanopia (red-blind): reds look darker and are easily confused with greens and browns.">Protan</button>
-            <button type="button" class="cvd-btn" role="radio" aria-checked="false" data-cvd="deuteranopia" data-tip="Deuteranopia (green-blind): reds and greens look alike. The most common type.">Deutan</button>
-            <button type="button" class="cvd-btn" role="radio" aria-checked="false" data-cvd="tritanopia" data-tip="Tritanopia (blue-blind): blues and yellows are hard to tell apart. Rare.">Tritan</button>
-            <button type="button" class="cvd-btn" role="radio" aria-checked="false" data-cvd="achromatopsia" data-tip="Achromatopsia (no color vision): everything appears in shades of gray. Very rare.">Mono</button>
+            <button type="button" class="cvd-btn" role="radio" aria-checked="false" data-cvd="deuteranopia" data-tip="Deuteranopia (green-blind): reds and greens look alike.">Deutan</button>
+            <button type="button" class="cvd-btn" role="radio" aria-checked="false" data-cvd="tritanopia" data-tip="Tritanopia (blue-blind): blues and yellows are hard to tell apart.">Tritan</button>
+            <button type="button" class="cvd-btn" role="radio" aria-checked="false" data-cvd="achromatopsia" data-tip="Achromatopsia (no color vision): everything appears in shades of gray.">Mono</button>
           </div>
-        </div>
-      </div>
-
-      <div id="paste-panel" style="display:none;">
-        <textarea id="paste-textarea" placeholder="Paste hex codes here, separated by commas, spaces, or new lines" style="width:100%; min-height:60px; font-family:'IBM Plex Mono',monospace; font-size:11.5px; padding:6px; border:1px solid var(--line); border-radius:var(--radius); background:#fff; color:var(--ink);"></textarea>
-        <div id="paste-error" style="color:#A8402C; font-size:11px; margin-top:4px; display:none;"></div>
-        <div style="display:flex; gap:6px; margin-top:6px;">
-          <button type="button" class="add-btn" id="paste-import-btn">Import</button>
-          <button type="button" class="text-btn" id="paste-cancel-btn">Cancel</button>
         </div>
       </div>
     </div>
@@ -533,13 +571,13 @@
 
   <div class="content">
 
-    <div class="mobile-tabs" role="tablist" aria-label="Grid or ramps view">
-      <button type="button" class="mobile-tab" role="tab" aria-selected="true" data-target="grid-section">Contrast grid</button>
-      <button type="button" class="mobile-tab" role="tab" aria-selected="false" data-target="ramp-section">Lightness ramps</button>
+    <div class="content-tabs" role="tablist" aria-label="Grid or ramps view">
+      <button type="button" id="grid-tab" class="content-tab" role="tab" aria-selected="true" aria-controls="grid-section" data-target="grid-section">Contrast grid</button>
+      <button type="button" id="ramp-tab" class="content-tab" role="tab" aria-selected="false" aria-controls="ramp-section" data-target="ramp-section">Lightness ramps</button>
     </div>
 
-    <section id="grid-section" aria-labelledby="grid-heading">
-      <h2 id="grid-heading" style="margin-bottom:8px;">Contrast grid</h2>
+    <section id="grid-section" role="tabpanel" aria-labelledby="grid-tab" tabindex="0">
+      <h2 id="grid-heading" class="visually-hidden">Contrast grid</h2>
       <p class="section-intro" style="margin-top:0;">A check means that pairing passes; a cross means it fails. Each cell also shows the exact ratio.</p>
 
       <div class="grid-controls">
@@ -576,17 +614,20 @@
       </div>
     </section>
 
-    <section id="ramp-section" aria-labelledby="ramp-heading">
-      <h2 id="ramp-heading">Lightness ramps</h2>
+    <section id="ramp-section" role="tabpanel" aria-labelledby="ramp-tab" tabindex="0" class="tab-hidden">
+      <h2 id="ramp-heading" class="visually-hidden">Lightness ramps</h2>
       <p class="section-intro">
-        Each column is one color stepped through lightness values, including its current lightness (marked with an arrow and a thicker border). Click any step to copy its hex.
+        Each column is one color stepped through lightness values, including its current lightness (marked with an arrow and border). Click any step to copy its hex.
       </p>
       <div class="ramp-columns" id="ramp-target"></div>
     </section>
 
     <footer class="page-footer">
-      Part of the <a href="https://example.com/accessibility-toolkit" target="_blank" rel="noopener">[Your Site Name] accessibility toolkit</a> — replace this link.
+      <p>Found a bug or have an idea? <a href="https://github.com/tunan-pan/tunan-pan.github.io/issues/new?title=%5BPalette%20Builder%5D%20" target="_blank" >Submit an issue on Github</a> | Part of the <a href="../" target="_blank">Accessibility Toolkit by Tunan Pan</a>
     </footer>
+
+    
+
 
   </div>
 </div>
@@ -1115,20 +1156,32 @@
   document.addEventListener('keydown', (e) => { if (e.key === 'Escape') hideCvdTip(0); });
   window.addEventListener('scroll', () => hideCvdTip(0), { passive: true });
 
-  /* ---------------- Mobile tabs (grid / ramps) ---------------- */
+  /* ---------------- Content tabs (grid / ramps) ---------------- */
 
-  const mobileTabs = Array.from(document.querySelectorAll('.mobile-tab'));
+  const contentTabs = Array.from(document.querySelectorAll('.content-tab'));
   const gridSection = document.getElementById('grid-section');
   const rampSection = document.getElementById('ramp-section');
 
-  function setMobileTab(targetId){
-    mobileTabs.forEach(t => t.setAttribute('aria-selected', String(t.dataset.target === targetId)));
+  function setActiveTab(targetId){
+    contentTabs.forEach(t => t.setAttribute('aria-selected', String(t.dataset.target === targetId)));
     gridSection.classList.toggle('tab-hidden', targetId !== 'grid-section');
     rampSection.classList.toggle('tab-hidden', targetId !== 'ramp-section');
   }
 
-  mobileTabs.forEach(tab => tab.addEventListener('click', () => setMobileTab(tab.dataset.target)));
-  setMobileTab('grid-section');
+  contentTabs.forEach(tab => tab.addEventListener('click', () => setActiveTab(tab.dataset.target)));
+
+  // Arrow-key roving between tabs, per the standard ARIA tabs pattern
+  contentTabs.forEach((tab, i) => {
+    tab.addEventListener('keydown', (e) => {
+      if (e.key !== 'ArrowRight' && e.key !== 'ArrowLeft') return;
+      e.preventDefault();
+      const next = contentTabs[(i + (e.key === 'ArrowRight' ? 1 : -1) + contentTabs.length) % contentTabs.length];
+      next.focus();
+      setActiveTab(next.dataset.target);
+    });
+  });
+
+  setActiveTab('grid-section');
 
   /* ---------------- Fixed sidebar positioning (desktop) ---------------- */
 
