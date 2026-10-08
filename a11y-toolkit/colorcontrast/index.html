@@ -1,0 +1,1438 @@
+
+<!doctype html>
+<html lang="en">
+<head>
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-DVHK7K0FLZ"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+
+    gtag('config', 'G-DVHK7K0FLZ');
+  </script>
+
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Make informed color palette decisions and easily find color combinations and shades that meet WCAG contrast requirements.">
+  <title>Accessible Color Palette Builder | by Tunan Pan</title>
+  <link rel="stylesheet" href="/css/style.css">
+  <link rel="icon" href="/favicon.ico" type="image/x-icon">
+  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+  <link rel="manifest" href="/site.webmanifest">
+
+  <!-- Essential Open Graph tags -->
+  <meta property="og:title" content="PDF Accessibility Toolkit for Graphic Designers | by Tunan Pan">
+  <meta property="og:description" content="Make informed color palette decisions and easily find color combinations and shades that meet WCAG contrast requirements.">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="627">
+  <meta property="og:image:type" content="image/png">
+  <meta name="author" content="Tunan Pan">
+
+  <meta property="og:url" content="https://tunan.art/a11y-toolkit">
+  <meta property="og:type" content="website">
+
+  <!-- Twitter Card tags (for better Twitter display) -->
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="Accessible Color Palette Builder | by Tunan Pan">
+  <meta name="twitter:description" content="Make informed color palette decisions and easily find color combinations and shades that meet WCAG contrast requirements.">
+
+<style>
+  :root{
+    --paper: #F0EFEA;
+    --ink: #17181C;
+    --ink-soft: #55575E;
+    --line: #D8D5CC;
+    --card: #FAF9F6;
+    --accent: #6B3FA0;
+    --focus: #2B4C9B;
+    --radius: 3px;
+  }
+
+  * { box-sizing: border-box; }
+  html, body{ margin: 0; }
+
+  body{
+    background: var(--paper);
+    color: var(--ink);
+    font-family: 'InclusiveSans', system-ui, sans-serif;
+    line-height: 1.45;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  .layout{
+    display: flex;
+    gap: 28px;
+    align-items: flex-start;
+    margin: 0 auto;
+    padding: 24px 32px 20px;
+  }
+
+  h1{
+    font-family: 'Lexend', serif;
+    font-weight: 600;
+    font-size: 22px;
+    margin: 0 0 8px;
+    letter-spacing: -0.01em;
+  }
+
+  h2{ font-family: 'Lexend', serif; font-weight: 600; font-size: 17px; margin: 0 0 14px; }
+  h3{ margin: 0; }
+
+  .text-btn{
+    background: none;
+    border: none;
+    color: var(--ink-soft);
+    font-family: 'InclusiveSans', sans-serif;
+    font-size: 12px;
+    cursor: pointer;
+    padding: 4px 6px;
+    border-radius: var(--radius);
+    white-space: nowrap;
+  }
+  .text-btn:hover{ color: var(--accent); }
+  .text-btn:focus-visible{ outline: 2px solid var(--focus); outline-offset: 1px; }
+
+  /* ---------- Sidebar / fixed panel ---------- */
+
+  .sidebar-spacer{ flex: 0 0 300px; max-width: 300px; transition: flex-basis 0.2s, max-width 0.2s; }
+  @media (max-width: 900px){ .sidebar-spacer{ display: none; } }
+  .sidebar-spacer.collapsed{ flex-basis: 0; max-width: 0; }
+
+  .sidebar-collapse-btn{
+    display: none; position: fixed; top: 50%; transform: translateY(-50%);
+    width: 18px; height: 46px; border: 1px solid var(--line); border-left: none; background: var(--card);
+    border-radius: 0 6px 6px 0; cursor: pointer; z-index: 30; align-items: center; justify-content: center;
+    color: var(--ink-soft); padding: 0; transition: left 0.2s;
+  }
+  .sidebar-collapse-btn::before{
+    content: ''; display: block; width: 7px; height: 7px; border-right: 1.5px solid currentColor; border-bottom: 1.5px solid currentColor;
+    transform: rotate(135deg); transition: transform 0.2s;
+  }
+  .sidebar-collapse-btn.collapsed::before{ transform: rotate(-45deg); }
+  .sidebar-collapse-btn:hover{ color: var(--accent); }
+  .sidebar-collapse-btn:focus-visible{ outline: 2px solid var(--focus); outline-offset: 2px; }
+  @media (min-width: 901px){ .sidebar-collapse-btn{ display: flex; } }
+
+  .sidebar{
+    flex: 0 0 300px;
+    max-width: 300px;
+    position: fixed;
+    top: 24px;
+    width: 300px;
+    height: calc(100vh - 48px);
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    transition: transform 0.2s, opacity 0.2s;
+    border-right: 1px solid var(--line);
+    padding-right: 20px;
+  }
+  .sidebar.collapsed{ transform: translateX(-320px); opacity: 0; pointer-events: none; }
+
+  @media (max-width: 900px){
+    .layout{ flex-direction: column; align-items: stretch; }
+    .sidebar{ position: static; max-width: none; width: 100%; height: auto; left: auto !important; flex: 1 1 auto; border-right: none; padding-right: 0; }
+    .content{ width: 100%; min-width: 0; }
+  }
+
+  .sidebar-intro{ flex: none; }
+  .intro{ color: var(--ink-soft); font-size: 13px; margin: 0 0 10px; }
+
+  .sidebar-bottom-controls{ display: flex; flex-direction: column; gap: 10px; flex: none; }
+  #paste-panel{ flex: none; }
+
+  .cvd-control{
+    display: flex; flex-direction: column; gap: 6px; border: 1px solid var(--line); border-radius: 6px; padding: 8px 10px;
+    align-self: flex-start; width: fit-content;
+  }
+  .cvd-label{ font-size: 11px; color: var(--ink-soft); white-space: nowrap; }
+  .cvd-buttons{ display: flex; flex-wrap: wrap; gap: 4px; min-width: 0; }
+  .cvd-btn{
+    flex: 0 0 48px; width: 48px; border: 1px solid var(--line); background: #fff; border-radius: var(--radius);
+    padding: 6px 0; font-size: 11px; color: var(--ink-soft); cursor: pointer; font-family: 'Lexend', sans-serif;
+    white-space: nowrap; text-align: center;
+  }
+  .cvd-btn[aria-checked="true"]{ background: var(--accent); border-color: var(--accent); color: #fff; }
+  .cvd-btn:focus-visible{ outline: 2px solid var(--focus); outline-offset: 1px; }
+
+  .cvd-tooltip{
+    position: fixed; z-index: 70; max-width: 240px; background: var(--ink); color: #fff; font-size: 12px; line-height: 1.4;
+    padding: 6px 9px; border-radius: 4px; opacity: 0; visibility: hidden; transition: opacity 0.12s, visibility 0.12s;
+  }
+  .cvd-tooltip.visible{ opacity: 1; visibility: visible; }
+
+  @media (max-width: 900px){
+    .sidebar-bottom-controls{ flex-direction: row; flex-wrap: wrap; align-items: stretch; gap: 10px; }
+    .palette-io{ align-items: center; }
+    .cvd-control{ flex-direction: row; flex-wrap: wrap; align-items: center; flex: 0 1 auto; min-width: 0; align-self: stretch; width: auto; }
+    .cvd-buttons{ flex: 0 1 auto; }
+    /* Forces its own full-width row when open, between whichever of palette-io/cvd-control
+       land above and below it, rather than squeezing into the row alongside them. */
+    #paste-panel{ flex: 1 1 100%; }
+  }
+
+  .pin-panel{
+    flex: 1;
+    min-height: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    overflow: hidden;
+  }
+  @media (max-width: 900px){
+    .pin-panel{ flex: none; overflow: visible; }
+    /* "stuck" = pinned AND scrolled past its natural spot; it stays in normal flow until then */
+    .pin-panel.stuck{
+      position: fixed;
+      top: 0; left: 0; right: 0;
+      z-index: 25;
+      background: var(--paper);
+      padding: 10px 32px 12px;
+      box-shadow: 0 6px 14px -8px rgba(0,0,0,0.2);
+    }
+  }
+  /* The placeholder that holds the panel's space while it's stuck only ever applies to the stacked layout */
+  @media (min-width: 901px){ #pin-panel-spacer{ display: none !important; } }
+
+  .sidebar-row-heading{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 6px;
+    flex: none;
+    flex-wrap: wrap;
+  }
+
+  .sidebar-heading-actions{ display: flex; align-items: center; gap: 2px; }
+
+  .icon-btn.pin-btn{ display: none; }
+  @media (max-width: 900px){ .icon-btn.pin-btn{ display: flex; } }
+  .pin-btn[aria-pressed="true"]{ background: var(--accent); border-color: var(--accent); color: #fff; }
+  .pin-btn svg{ width: 12px; height: 12px; }
+
+  .add-btn{
+    display: flex;
+    align-items: center;
+    gap: 4px;
+    border: 1px solid var(--line);
+    background: #fff;
+    border-radius: var(--radius);
+    font-size: 12px;
+    padding: 5px 9px;
+    color: var(--ink);
+    cursor: pointer;
+  }
+  .add-btn:hover{ border-color: var(--accent); color: var(--accent); }
+  .add-btn:focus-visible{ outline: 2px solid var(--focus); outline-offset: 1px; }
+
+  .rack-scroll-wrap{ position: relative; flex: 1; min-height: 0; overflow: hidden; }
+  @media (max-width: 900px){ .rack-scroll-wrap{ flex: none; } }
+
+  .rack{
+    height: 100%;
+    min-height: 0;
+    overflow-y: auto;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    padding-right: 4px;
+  }
+  @media (max-width: 900px){
+    .rack{ flex-direction: row; overflow-x: auto; overflow-y: visible; height: auto; -webkit-overflow-scrolling: touch; }
+  }
+
+  .scroll-fade{ position: absolute; pointer-events: none; opacity: 0; transition: opacity 0.15s; z-index: 2; }
+  .scroll-fade.visible{ opacity: 1; }
+  .scroll-fade.top{ top: 0; left: 0; right: 4px; height: 24px; background: linear-gradient(to bottom, var(--paper), transparent); }
+  .scroll-fade.bottom{ bottom: 0; left: 0; right: 4px; height: 24px; background: linear-gradient(to top, var(--paper), transparent); }
+  .scroll-fade.left{ top: 0; bottom: 0; left: 0; width: 24px; background: linear-gradient(to right, var(--paper), transparent); }
+  .scroll-fade.right{ top: 0; bottom: 0; right: 0; width: 24px; background: linear-gradient(to left, var(--paper), transparent); }
+
+  .math-note{ color: var(--ink-soft); font-size: 11px; margin: 0 0 6px; line-height: 1.5; }
+  .palette-io{ display: flex; gap: 6px; }
+  .palette-io .add-btn{ font-size: 11.5px; padding: 5px 8px; }
+  .btn-icon{ width: 12px; height: 12px; display: inline-flex; flex: none; }
+  .btn-icon svg{ width: 100%; height: 100%; display: block; }
+
+  /* ---------- Color cards ---------- */
+
+  .color-card{ background: var(--card); border: 1px solid var(--line); border-radius: var(--radius); padding: 10px 12px; position: relative; flex: none; }
+  @media (max-width: 900px){ .color-card{ width: 220px; } }
+  .color-card.dragging{ opacity: 0.4; }
+
+  .card-top{ display: flex; align-items: flex-start; gap: 9px; }
+
+  .grip{ color: var(--ink-soft); font-size: 15px; line-height: 1; padding-top: 5px; flex: none; user-select: none; cursor: grab; }
+  .grip:active{ cursor: grabbing; }
+  .grip:focus-visible{ outline: 2px solid var(--focus); outline-offset: 2px; border-radius: 2px; }
+
+  button.swatch{
+    all: unset;
+    box-sizing: border-box;
+    width: 34px; height: 34px;
+    border-radius: 50%;
+    border: 1px solid rgba(0,0,0,0.15);
+    cursor: pointer;
+    margin-top: 2px;
+    flex: none;
+    display: block;
+  }
+  button.swatch:hover{ border-color: rgba(0,0,0,0.35); }
+  button.swatch:focus-visible{ outline: 2px solid var(--focus); outline-offset: 2px; }
+
+  .card-top-right{ flex: 1; min-width: 0; }
+
+  .name-input{
+    width: 100%; border: none; border-bottom: 1px solid transparent; background: transparent;
+    font-family: 'Lexend', sans-serif; font-weight: 500; font-size: 13.5px; padding: 1px 0; color: var(--ink); display: block;
+  }
+  .name-input:hover, .name-input:focus{ border-bottom-color: var(--line); }
+  .name-input:focus-visible{ outline: 2px solid var(--focus); outline-offset: 2px; }
+
+  .hex-input{
+    font-family: 'InclusiveSans', monospace; font-size: 12px; width: 100%; padding: 1px 0;
+    border: none; border-bottom: 1px solid transparent; background: transparent; color: var(--ink-soft); margin-top: 1px;
+  }
+  .hex-input:hover, .hex-input:focus{ border-bottom-color: var(--line); }
+  .hex-input:focus-visible{ outline: 2px solid var(--focus); outline-offset: 1px; }
+
+  .card-actions{ display: flex; gap: 3px; flex: none; }
+
+  .icon-btn{
+    width: 22px; height: 22px; border: 1px solid var(--line); background: #fff; border-radius: 50%;
+    font-size: 12px; line-height: 1; color: var(--ink-soft); cursor: pointer; display: flex; align-items: center; justify-content: center; padding: 0;
+  }
+  .icon-btn:hover{ border-color: var(--accent); color: var(--accent); }
+  .icon-btn:focus-visible{ outline: 2px solid var(--focus); outline-offset: 2px; }
+  .icon-btn.remove-btn:hover{ background: var(--ink); color: #fff; border-color: var(--ink); }
+  .icon-btn.remove-btn:disabled{ opacity: 0.3; cursor: not-allowed; }
+  .icon-btn.remove-btn:disabled:hover{ background: #fff; color: var(--ink-soft); border-color: var(--line); }
+
+  .collapse-btn svg{ transition: transform 0.15s; width: 10px; height: 10px; }
+  .color-card.collapsed .collapse-btn svg{ transform: rotate(-90deg); }
+  @media (prefers-reduced-motion: reduce){ .collapse-btn svg{ transition: none; } }
+
+  .slider-section{ margin-top: 8px; }
+  .color-card.collapsed .slider-section{ display: none; }
+
+  .slider-row{ margin-bottom: 7px; }
+  .slider-row:last-child{ margin-bottom: 0; }
+  .slider-row .row-top{ display: flex; justify-content: space-between; align-items: baseline; }
+  .slider-row label{ font-size: 11.5px; color: var(--ink-soft); }
+  .slider-value{ font-family: 'InclusiveSans', sans-serif; font-size: 11.5px; color: var(--ink-soft); }
+
+  input[type="range"]{ width: 100%; margin: 3px 0 0; accent-color: var(--accent); }
+  input[type="range"]:focus-visible{ outline: 2px solid var(--focus); outline-offset: 3px; }
+
+  /* gradient strips on hue/saturation/lightness sliders */
+  .gradient-slider{
+    -webkit-appearance: none; appearance: none;
+    height: 12px; border-radius: 6px; margin-top: 4px;
+  }
+  .gradient-slider::-webkit-slider-runnable-track{ background: transparent; height: 12px; border-radius: 6px; }
+  .gradient-slider::-webkit-slider-thumb{
+    -webkit-appearance: none; width: 13px; height: 13px; border-radius: 50%;
+    background: #fff; border: 2px solid var(--ink); margin-top: 0; cursor: pointer;
+  }
+  .gradient-slider::-moz-range-track{ background: transparent; height: 12px; border-radius: 6px; }
+  .gradient-slider::-moz-range-thumb{ width: 13px; height: 13px; border-radius: 50%; background: #fff; border: 2px solid var(--ink); cursor: pointer; }
+  .hue-slider{ background: linear-gradient(to right, #ff0000, #ffff00, #00ff00, #00ffff, #0000ff, #ff00ff, #ff0000); }
+
+  /* ---------- Content ---------- */
+
+  .content{ 
+    flex: 1; min-width: 0; will-change: filter; 
+  }
+
+  .page-footer {
+    margin: 32px 0 0; padding: 16px 0 5px; border-top: 1px solid var(--line);
+    background-color: var(--paper);
+    font-size: 11px;
+    text-align: left;
+    position: relative;
+    bottom: 0!important;
+  }
+
+  .content-tabs{
+    display: flex; gap: 4px; margin-bottom: 20px; border-bottom: 1px solid var(--line); position: sticky; top: 0;
+    background: var(--paper); z-index: 15; padding-top: 4px;
+  }
+  .content-tab{
+    background: none; border: none; border-bottom: 2px solid transparent; padding: 10px 12px; margin-bottom: -1px;
+    font-size: 14px; font-family: 'Lexend', sans-serif; font-weight: 600; color: var(--ink-soft); cursor: pointer;
+  }
+  .content-tab[aria-selected="true"]{ color: var(--ink); border-bottom-color: var(--accent); }
+  .content-tab:focus-visible{ outline: 2px solid var(--focus); outline-offset: 2px; }
+  #grid-section.tab-hidden, #ramp-section.tab-hidden{ display: none; }
+  [role="tabpanel"]:focus-visible{ outline: 2px solid var(--focus); outline-offset: 2px; }
+  .content section{ margin-bottom: 56px; }
+  .section-intro{ color: var(--ink-soft); font-size: 14px; margin: 8px 0 20px; }
+
+  .grid-controls{ display: flex; flex-direction: column; gap: 12px; margin-bottom: 20px; }
+  .controls-row{ display: flex; align-items: center; gap: 16px; flex-wrap: wrap; }
+
+  .switch-label{ display: flex; align-items: center; gap: 8px; font-size: 14px; color: var(--ink-soft); cursor: pointer; }
+
+  .filter-group-label{ font-size: 13px; color: var(--ink-soft); }
+
+  .tier-pills-group{ display: flex; align-items: center; gap: 10px; flex-wrap: wrap; }
+  .tier-segmented{ display: flex; border: 1px solid var(--line); border-radius: 8px; overflow: hidden; }
+  .tier-seg{
+    border: none; border-right: 1px solid var(--line); background: #fff; padding: 7px 14px;
+    display: flex; flex-direction: column; align-items: center; gap: 2px; cursor: pointer; font-family: 'Lexend', sans-serif;
+  }
+  .tier-seg:last-child{ border-right: none; }
+  .tier-seg-name{ font-size: 12px; color: var(--ink-soft); white-space: nowrap; }
+  .tier-seg-ratio{ font-size: 10px; color: var(--ink-soft); opacity: 0.7; font-family: 'InclusiveSans', monospace; }
+  .tier-seg.filled{ background: var(--accent); }
+  .tier-seg.filled .tier-seg-name{ color: #fff; font-weight: 600; }
+  .tier-seg.filled .tier-seg-ratio{ color: #fff; opacity: 0.85; }
+  .tier-seg:focus-visible{ outline: 2px solid var(--focus); outline-offset: -2px; position: relative; z-index: 1; }
+
+  .legend{ display: flex; gap: 16px; font-size: 12px; color: var(--ink-soft); }
+  .legend .level-row{ width: auto; justify-content: flex-start; }
+  .legend .pass-circle-fixed{ width: 13px; height: 13px; }
+  .legend .fail-icon{ width: 13px; height: 13px; }
+
+  /* ---------- Icons ---------- */
+
+  .level-icon{ width: 15px; height: 15px; flex: none; display: inline-flex; }
+  .level-icon svg{ width: 100%; height: 100%; display: block; }
+  .legend .level-icon{ width: 13px; height: 13px; color: var(--ink-soft); }
+  .level-row-lg .level-icon{ width: 19px; height: 19px; }
+
+  .pass-circle{ width: 15px; height: 15px; border-radius: 50%; display: inline-flex; align-items: center; justify-content: center; flex: none; }
+  .pass-circle svg{ width: 60%; height: 60%; display: block; }
+  .level-row-lg .pass-circle{ width: 19px; height: 19px; }
+  .legend .pass-circle{ width: 13px; height: 13px; }
+
+  .level-row{ display: flex; align-items: center; gap: 6px; width: 100%; }
+  .level-label{ font-family: 'Lexend', sans-serif; font-size: 11px; }
+  .level-row-lg .level-label{ font-size: 14px; font-weight: 500; }
+
+  /* ---------- Grid ---------- */
+
+  .grid-wrap{ overflow-x: auto; border: 1px solid var(--line); border-radius: var(--radius); background: var(--card); width: fit-content; max-width: 100%; }
+  table.contrast-grid{ border-collapse: collapse; width: auto; background: repeating-linear-gradient(45deg, var(--line) 0, var(--line) 1px, transparent 1px, transparent 8px); }
+  .contrast-grid th, .contrast-grid td{ border: 1px solid var(--line); padding: 0; text-align: center; vertical-align: middle; }
+  .contrast-grid th.corner{ background: var(--card); min-width: 120px; padding: 0; }
+  .corner-label{ position: relative; width: 100%; height: 100%; min-height: 76px; }
+  .corner-diag{ position: absolute; inset: 0; pointer-events: none; width: 100%; height: 100%; display: block; }
+  .corner-text-label{ position: absolute; top: 8px; right: 10px; font-size: 10.5px; color: var(--ink-soft); }
+  .corner-bg-label{ position: absolute; bottom: 8px; left: 10px; font-size: 10.5px; color: var(--ink-soft); }
+  .contrast-grid th.col-head, .contrast-grid th.row-head{ background: var(--card); padding: 10px 8px; font-weight: 500; font-size: 13px; min-width: 108px; }
+  .head-chip{ display: flex; align-items: center; gap: 7px; justify-content: center; flex-wrap: wrap; }
+  .swatch-dot{ width: 13px; height: 13px; border-radius: 50%; border: 1px solid rgba(0,0,0,0.15); flex: none; }
+  .head-hex{ font-family: 'InclusiveSans', sans-serif; font-size: 11px; color: var(--ink-soft); }
+
+  td.cell{ min-width: 138px; min-height: 108px; }
+  td.cell.diag, td.cell.filtered{ background: transparent; }
+
+  .cell-split{ display: flex; flex-direction: column; height: 100%; min-height: 108px; padding: 10px; gap: 8px; }
+  .cell-preview{ flex: 1; min-height: 44px; display: flex; align-items: center; padding: 0 2px; }
+  .cell-preview .sample{ font-family: 'Fraunces', serif; font-size: 16px; }
+
+  .cell-info{ background: var(--card); border-radius: 4px; padding: 7px 10px 8px; display: flex; flex-direction: column; gap: 3px; text-align: left; }
+
+  .info-row{ display: flex; align-items: center; gap: 6px; }
+  .info-row-fail .level-label{ color: var(--ink-soft); }
+  .info-row-lg .level-label{ font-size: 14px; font-weight: 500; }
+
+  .pass-circle-fixed{ width: 15px; height: 15px; border-radius: 50%; background: #2f8f5b; display: inline-flex; align-items: center; justify-content: center; flex: none; }
+  .pass-circle-fixed svg{ width: 60%; height: 60%; display: block; }
+  .info-row-lg .pass-circle-fixed{ width: 19px; height: 19px; }
+
+  .fail-icon{ width: 15px; height: 15px; color: var(--ink-soft); flex: none; display: inline-flex; }
+  .fail-icon svg{ width: 100%; height: 100%; display: block; }
+  .info-row-lg .fail-icon{ width: 19px; height: 19px; }
+
+  .level-label{ font-family: 'Lexend', sans-serif; font-size: 11px; color: var(--ink); }
+  .ratio-value-sm{ font-family: 'InclusiveSans', sans-serif; font-size: 10px; color: var(--ink-soft); margin-top: 1px; }
+
+  /* ---------- Lightness ramps ---------- */
+
+  .ramp-columns{ display: flex; gap: 26px; overflow-x: auto; padding-bottom: 10px; }
+  .ramp-column{ flex: none; display: flex; flex-direction: column; align-items: center; width: 100px; }
+  .ramp-column-head{ display: flex; flex-direction: column; align-items: center; gap: 4px; margin-bottom: 10px; text-align: center; }
+  .ramp-column-head .name{ font-size: 12.5px; font-weight: 500; }
+
+  .ramp-steps{ display: flex; flex-direction: column; gap: 2px; }
+
+  .ramp-step-wrap{ display: flex; flex-direction: row; align-items: center; gap: 4px; }
+  .original-marker-slot{ width: 10px; flex: none; text-align: center; font-size: 11px; color: var(--ink); line-height: 1; }
+
+  .ramp-step{
+    width: 84px; height: 48px; border: 1px solid var(--line); border-radius: var(--radius);
+    display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 2px;
+    font: inherit; cursor: pointer; padding: 3px;
+  }
+  .ramp-step:focus-visible{ outline: 2px solid var(--focus); outline-offset: 2px; }
+  .ramp-step.is-original{ outline: 2px solid var(--ink); }
+  .ramp-step .hex{ font-family: 'InclusiveSans', sans-serif; font-size: 10px; }
+  .ramp-step .status-row{ display: flex; align-items: center; gap: 3px; font-size: 9.5px; font-family: 'Lexend', sans-serif; }
+  .ramp-step .status-row .level-icon{ width: 11px; height: 11px; }
+
+  @media (prefers-reduced-motion: reduce){ * { transition: none !important; } }
+
+  .visually-hidden{ position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; }
+
+  .copy-toast{
+    position: fixed; transform: translate(-50%, -100%); background: var(--ink); color: #fff; font-size: 12px;
+    padding: 5px 9px; border-radius: 4px; opacity: 0; pointer-events: none; transition: opacity 0.15s; z-index: 60; white-space: nowrap;
+    display: flex; align-items: center; gap: 5px;
+  }
+  .copy-toast.visible{ opacity: 1; }
+  .toast-icon{ width: 11px; height: 11px; flex: none; display: inline-flex; }
+  .toast-icon svg{ width: 100%; height: 100%; display: block; }
+</style>
+</head>
+<body>
+
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <defs>
+    <filter id="cvd-protanopia" color-interpolation-filters="sRGB">
+      <feColorMatrix type="matrix" values="0.567 0.433 0 0 0  0.558 0.442 0 0 0  0 0.242 0.758 0 0  0 0 0 1 0" />
+    </filter>
+    <filter id="cvd-deuteranopia" color-interpolation-filters="sRGB">
+      <feColorMatrix type="matrix" values="0.625 0.375 0 0 0  0.7 0.3 0 0 0  0 0.3 0.7 0 0  0 0 0 1 0" />
+    </filter>
+    <filter id="cvd-tritanopia" color-interpolation-filters="sRGB">
+      <feColorMatrix type="matrix" values="0.95 0.05 0 0 0  0 0.433 0.567 0 0  0 0.475 0.525 0 0  0 0 0 1 0" />
+    </filter>
+    <filter id="cvd-achromatopsia" color-interpolation-filters="sRGB">
+      <feColorMatrix type="matrix" values="0.299 0.587 0.114 0 0  0.299 0.587 0.114 0 0  0.299 0.587 0.114 0 0  0 0 0 1 0" />
+    </filter>
+  </defs>
+</svg>
+
+<div class="layout">
+  <div class="sidebar-spacer" aria-hidden="true"></div>
+
+  <button type="button" class="sidebar-collapse-btn" id="sidebar-collapse-btn" aria-label="Collapse colors panel" aria-expanded="true"></button>
+
+  <aside class="sidebar" id="sidebar">
+
+    <div class="sidebar-intro">
+      <h1>Accessible Color Palette Builder</h1>
+      <p class="intro">Make informed color palette decisions — adjust colors and instantly see which combinations meet WCAG contrast requirements.</p>
+    </div>
+
+    <div id="pin-panel-spacer" style="display:none;"></div>
+    <div class="pin-panel" id="pin-panel">
+      <div class="sidebar-row-heading">
+        <h2>Color Palette</h2>
+        <div class="sidebar-heading-actions">
+          <button type="button" class="icon-btn pin-btn" id="pin-btn" aria-pressed="false" aria-label="Pin colors panel while scrolling"></button>
+          <button type="button" class="text-btn" id="collapse-all-btn">Collapse all</button>
+          <button type="button" class="add-btn" id="add-color-btn">+ Add</button>
+        </div>
+      </div>
+
+      <div class="rack-scroll-wrap">
+        <div class="rack" id="rack"></div>
+        <div class="scroll-fade top" id="fade-top" aria-hidden="true"></div>
+        <div class="scroll-fade bottom" id="fade-bottom" aria-hidden="true"></div>
+        <div class="scroll-fade left" id="fade-left" aria-hidden="true"></div>
+        <div class="scroll-fade right" id="fade-right" aria-hidden="true"></div>
+      </div>
+
+      <div class="sidebar-bottom-controls">
+        <div class="palette-io">
+          <button type="button" class="add-btn" id="copy-palette-btn"><span class="btn-icon" id="copy-palette-icon"></span>Copy palette</button>
+          <button type="button" class="add-btn" id="paste-palette-btn"><span class="btn-icon" id="paste-palette-icon"></span>Paste palette</button>
+        </div>
+
+        <div id="paste-panel" style="display:none;">
+          <textarea id="paste-textarea" placeholder="Paste hex codes here, separated by commas, spaces, or new lines. This will replace the existing colors." style="width:100%; min-height:60px; font-family:'InclusiveSans',sans-serif; font-size:11.5px; padding:6px; border:1px solid var(--line); border-radius:var(--radius); background:#fff; color:var(--ink);"></textarea>
+          <div id="paste-error" style="color:#A8402C; font-size:11px; margin-top:4px; display:none;"></div>
+          <div style="display:flex; gap:6px; margin-top:6px;">
+            <button type="button" class="add-btn" id="paste-import-btn">Import</button>
+            <button type="button" class="text-btn" id="paste-cancel-btn">Cancel</button>
+          </div>
+        </div>
+
+        <div class="cvd-control">
+          <span class="cvd-label">Simulate color vision</span>
+          <div class="cvd-buttons" role="radiogroup" aria-label="Simulate color vision">
+            <button type="button" class="cvd-btn" role="radio" aria-checked="true" data-cvd="none" data-tip="No simulation: colors are shown as they are.">None</button>
+            <button type="button" class="cvd-btn" role="radio" aria-checked="false" data-cvd="protanopia" data-tip="Protanopia (red-blind): reds look darker and are easily confused with greens and browns.">Protan</button>
+            <button type="button" class="cvd-btn" role="radio" aria-checked="false" data-cvd="deuteranopia" data-tip="Deuteranopia (green-blind): reds and greens look alike.">Deutan</button>
+            <button type="button" class="cvd-btn" role="radio" aria-checked="false" data-cvd="tritanopia" data-tip="Tritanopia (blue-blind): blues and yellows are hard to tell apart.">Tritan</button>
+            <button type="button" class="cvd-btn" role="radio" aria-checked="false" data-cvd="achromatopsia" data-tip="Achromatopsia (no color vision): everything appears in shades of gray.">Mono</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </aside>
+
+  <div class="content">
+
+    <div class="content-tabs" role="tablist" aria-label="Grid or ramps view">
+      <button type="button" id="grid-tab" class="content-tab" role="tab" aria-selected="true" aria-controls="grid-section" data-target="grid-section">Contrast grid</button>
+      <button type="button" id="ramp-tab" class="content-tab" role="tab" aria-selected="false" aria-controls="ramp-section" data-target="ramp-section">Lightness ramps</button>
+    </div>
+
+    <section id="grid-section" role="tabpanel" aria-labelledby="grid-tab" tabindex="0">
+      <h2 id="grid-heading" class="visually-hidden">Contrast grid</h2>
+      <p class="section-intro" style="margin-top:0;">A check means that pairing passes; a cross means it fails. Each cell also shows the exact ratio.</p>
+
+      <div class="grid-controls">
+        <div class="controls-row" style="justify-content:flex-start; flex-wrap:wrap;">
+          <div class="tier-pills-group" role="radiogroup" aria-label="Minimum contrast level to show">
+            <span class="filter-group-label">Meets at least:</span>
+            <div class="tier-segmented">
+              <button type="button" class="tier-seg" role="radio" aria-checked="true" data-tier="0">
+                <span class="tier-seg-name">All</span>
+                <span class="tier-seg-ratio">any</span>
+              </button>
+              <button type="button" class="tier-seg" role="radio" aria-checked="false" data-tier="1">
+                <span class="tier-seg-name">AA large text</span>
+                <span class="tier-seg-ratio">&ge;3:1</span>
+              </button>
+              <button type="button" class="tier-seg" role="radio" aria-checked="false" data-tier="2">
+                <span class="tier-seg-name">AA text / AAA large text</span>
+                <span class="tier-seg-ratio">&ge;4.5:1</span>
+              </button>
+              <button type="button" class="tier-seg" role="radio" aria-checked="false" data-tier="3">
+                <span class="tier-seg-name">AAA text</span>
+                <span class="tier-seg-ratio">&ge;7:1</span>
+              </button>
+            </div>
+            <span id="tier-summary" class="filter-group-label" aria-live="polite"></span>
+          </div>
+
+          <button type="button" class="text-btn" id="breakdown-toggle-btn" aria-pressed="false" style="border:1px solid var(--line); border-radius:var(--radius); padding:5px 10px; flex:none;">Show level detail</button>
+        </div>
+      </div>
+
+      <div class="grid-wrap">
+        <div id="grid-target"></div>
+      </div>
+    </section>
+
+    <section id="ramp-section" role="tabpanel" aria-labelledby="ramp-tab" tabindex="0" class="tab-hidden">
+      <h2 id="ramp-heading" class="visually-hidden">Lightness ramps</h2>
+      <p class="section-intro">
+        Each column is one color stepped through lightness values, including its current lightness (marked with an arrow and border). Click any step to copy its hex.
+      </p>
+      <div class="ramp-columns" id="ramp-target"></div>
+    </section>
+
+    <footer class="page-footer">
+      <p>Found a bug or have an idea? <a href="https://github.com/tunan-pan/tunan-pan.github.io/issues/new?title=%5BPalette%20Builder%5D%20" target="_blank" >Submit an issue on Github</a> | Part of the <a href="../" target="_blank">Accessibility Toolkit by Tunan Pan</a>
+    </footer>
+
+    
+
+
+  </div>
+</div>
+
+<div id="copy-status" class="visually-hidden" role="status" aria-live="polite"></div>
+
+<script>
+(function(){
+
+  /* ---------------- Icons ---------------- */
+
+  const ICON_CHEVRON = '<svg viewBox="0 0 12 12" fill="none"><path d="M3 4.5L6 7.5L9 4.5" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/></svg>';
+  const ICON_CHECK = '<svg viewBox="0 0 16 16" fill="none"><path d="M3 8.3L6.3 11.6L13 4.7" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>';
+  const ICON_CROSS = '<svg viewBox="0 0 16 16" fill="none"><path d="M4 4L12 12M12 4L4 12" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg>';
+  const ICON_PIN = '<svg viewBox="0 0 16 16" fill="none"><path d="M8 1.6c-1.7 0-3.1 1.3-3.1 3 0 1.2.6 2.6 1.4 3.9L5 12.4h6L9.7 8.5c.8-1.3 1.4-2.7 1.4-3.9 0-1.7-1.4-3-3.1-3z" stroke="currentColor" stroke-width="1.2" stroke-linejoin="round"/><path d="M8 12.4v2.2" stroke="currentColor" stroke-width="1.2" stroke-linecap="round"/></svg>';
+  const ICON_COPY_SM = '<svg viewBox="0 0 14 14" fill="none"><rect x="4.5" y="4.5" width="8" height="8" rx="1" stroke="currentColor" stroke-width="1.2"/><path d="M2 9.5V2.5C2 1.9 2.4 1.5 3 1.5H9.5" stroke="currentColor" stroke-width="1.2"/></svg>';
+  const ICON_PASTE_SM = '<svg viewBox="0 0 14 14" fill="none"><rect x="3" y="2.5" width="8" height="10" rx="1" stroke="currentColor" stroke-width="1.2"/><path d="M5.3 2.5V1.8c0-.4.3-.7.7-.7h2c.4 0 .7.3.7.7v.7" stroke="currentColor" stroke-width="1.2"/><path d="M5 8.2L6.6 9.8L9.3 6.6" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"/></svg>';
+
+  document.getElementById('pin-btn').innerHTML = ICON_PIN;
+  document.getElementById('copy-palette-icon').innerHTML = ICON_COPY_SM;
+  document.getElementById('paste-palette-icon').innerHTML = ICON_PASTE_SM;
+
+  /* ---------------- Color math ---------------- */
+
+  function hslToRgb(h, s, l){
+    s /= 100; l /= 100;
+    const k = n => (n + h / 30) % 12;
+    const a = s * Math.min(l, 1 - l);
+    const f = n => l - a * Math.max(-1, Math.min(k(n) - 3, Math.min(9 - k(n), 1)));
+    return [Math.round(f(0) * 255), Math.round(f(8) * 255), Math.round(f(4) * 255)];
+  }
+  function rgbToHex(r, g, b){ return '#' + [r, g, b].map(v => v.toString(16).padStart(2, '0')).join(''); }
+  function hslToHex(h, s, l){ const [r, g, b] = hslToRgb(h, s, l); return rgbToHex(r, g, b); }
+  function hexToRgb(hex){
+    hex = hex.replace('#', '');
+    if (hex.length === 3) hex = hex.split('').map(c => c + c).join('');
+    const num = parseInt(hex, 16);
+    return [(num >> 16) & 255, (num >> 8) & 255, num & 255];
+  }
+  function rgbToHsl(r, g, b){
+    r /= 255; g /= 255; b /= 255;
+    const max = Math.max(r, g, b), min = Math.min(r, g, b);
+    let h, s, l = (max + min) / 2;
+    const d = max - min;
+    if (d === 0){ h = 0; s = 0; }
+    else {
+      s = d / (1 - Math.abs(2 * l - 1));
+      switch (max){
+        case r: h = 60 * (((g - b) / d) % 6); break;
+        case g: h = 60 * ((b - r) / d + 2); break;
+        case b: h = 60 * ((r - g) / d + 4); break;
+      }
+    }
+    if (h < 0) h += 360;
+    return [Math.round(h), Math.round(s * 100), Math.round(l * 100)];
+  }
+  function relLuminance(r, g, b){
+    const chan = v => { v /= 255; return v <= 0.03928 ? v / 12.92 : Math.pow((v + 0.055) / 1.055, 2.4); };
+    return 0.2126 * chan(r) + 0.7152 * chan(g) + 0.0722 * chan(b);
+  }
+  function contrastRatio(hexA, hexB){
+    const [r1, g1, b1] = hexToRgb(hexA);
+    const [r2, g2, b2] = hexToRgb(hexB);
+    const l1 = relLuminance(r1, g1, b1);
+    const l2 = relLuminance(r2, g2, b2);
+    const lighter = Math.max(l1, l2), darker = Math.min(l1, l2);
+    return (lighter + 0.05) / (darker + 0.05);
+  }
+
+  function isValidHex(val){ return /^#?[0-9a-fA-F]{3}$|^#?[0-9a-fA-F]{6}$/.test(val); }
+
+  /* ---------------- Clipboard ---------------- */
+
+  const copyStatus = document.getElementById('copy-status');
+  let toastTimeout;
+  function announce(msg){ copyStatus.textContent = msg; }
+
+  function showToast(msg, anchorEl, opts){
+    opts = opts || {};
+    let toast = document.getElementById('copy-toast');
+    if (!toast){
+      toast = document.createElement('div');
+      toast.id = 'copy-toast';
+      toast.className = 'copy-toast';
+      document.body.appendChild(toast);
+    }
+    const rect = anchorEl.getBoundingClientRect();
+    toast.style.left = (rect.left + rect.width / 2) + 'px';
+    toast.style.top = (rect.top - 6) + 'px';
+    toast.innerHTML = (opts.icon ? `<span class="toast-icon">${opts.icon}</span>` : '') + msg;
+    toast.classList.add('visible');
+    clearTimeout(toastTimeout);
+    toastTimeout = setTimeout(() => toast.classList.remove('visible'), opts.duration || 1800);
+  }
+
+  function fallbackCopy(text){
+    const ta = document.createElement('textarea');
+    ta.value = text;
+    ta.style.position = 'fixed'; ta.style.left = '-9999px'; ta.style.top = '0';
+    document.body.appendChild(ta);
+    ta.focus(); ta.select();
+    let ok = false;
+    try { ok = document.execCommand('copy'); } catch (e){ ok = false; }
+    document.body.removeChild(ta);
+    return ok;
+  }
+
+  function copyToClipboard(text, anchorEl){
+    function succeed(){ showToast('Copied', anchorEl); announce('Copied ' + text + ' to clipboard'); }
+    function fail(){ showToast('Could not copy', anchorEl); announce('Could not copy to clipboard'); }
+    if (window.isSecureContext && navigator.clipboard && navigator.clipboard.writeText){
+      navigator.clipboard.writeText(text).then(succeed).catch(() => { if (fallbackCopy(text)) succeed(); else fail(); });
+    } else {
+      if (fallbackCopy(text)) succeed(); else fail();
+    }
+  }
+
+  /* ---------------- Palette persistence (URL hash) ---------------- */
+
+  let hashTimeout;
+  function serializePalette(){
+    return colors.map(c => encodeURIComponent(c.name || '') + '~' + hslToHex(c.h, c.s, c.l)).join(',');
+  }
+  function updateHash(){
+    try { history.replaceState(null, '', '#p=' + serializePalette()); } catch (e){}
+  }
+  function scheduleHashUpdate(){ clearTimeout(hashTimeout); hashTimeout = setTimeout(updateHash, 200); }
+
+  function parseHashOnLoad(){
+    const m = location.hash.match(/^#p=(.+)$/);
+    if (!m) return null;
+    try {
+      const parts = m[1].split(',').filter(Boolean);
+      const parsed = parts.map(p => {
+        const [namePart, hexPart] = p.split('~');
+        const [r, g, b] = hexToRgb(hexPart);
+        const [h, s, l] = rgbToHsl(r, g, b);
+        return makeColor(h, s, l, decodeURIComponent(namePart || ''));
+      });
+      return parsed.length >= 2 ? parsed : null;
+    } catch (e){ return null; }
+  }
+
+  /* ---------------- State ---------------- */
+
+  let nextId = 1;
+  function makeColor(h, s, l, name, collapsed){ return { id: nextId++, h, s, l, name, collapsed: collapsed !== false }; }
+
+  let colors = parseHashOnLoad() || [
+    makeColor(210, 70, 45, 'Primary'),
+    makeColor(340, 60, 50, 'Secondary'),
+    makeColor(40, 80, 55, 'Accent'),
+    makeColor(0, 0, 15, 'Ink'),
+    makeColor(0, 0, 95, 'Paper')
+  ];
+
+  const MIN_COLORS = 2;
+  let dragSrcId = null;
+
+  /* ---------------- Rack rendering ---------------- */
+
+  const rack = document.getElementById('rack');
+
+  function toggleCollapse(c, cardEl){
+    c.collapsed = !c.collapsed;
+    cardEl.classList.toggle('collapsed', c.collapsed);
+    const btn = cardEl.querySelector('.collapse-btn');
+    const sw = cardEl.querySelector('button.swatch');
+    btn.setAttribute('aria-expanded', String(!c.collapsed));
+    btn.setAttribute('aria-label', (c.collapsed ? 'Expand' : 'Collapse') + ' sliders');
+    sw.setAttribute('aria-expanded', String(!c.collapsed));
+    syncCollapseAllLabel();
+  }
+
+  function syncCollapseAllLabel(){
+    const allExpanded = colors.length > 0 && colors.every(c => !c.collapsed);
+    document.getElementById('collapse-all-btn').textContent = allExpanded ? 'Collapse all' : 'Expand all';
+  }
+
+  function renderRack(){
+    rack.innerHTML = '';
+    colors.forEach(c => {
+      const hex = hslToHex(c.h, c.s, c.l);
+      const card = document.createElement('div');
+      card.className = 'color-card' + (c.collapsed ? ' collapsed' : '');
+      card.dataset.colorId = c.id;
+      card.setAttribute('draggable', 'false');
+
+      card.innerHTML = `
+        <div class="card-top">
+          <span class="grip" tabindex="0" role="button" aria-label="Reorder ${c.name || 'this color'}. Use arrow keys to move it, or drag by mouse." title="Drag to reorder, or focus and use arrow keys">&#8942;&#8942;</span>
+          <button type="button" class="swatch" data-role="swatch" style="background:${hex}" aria-label="Toggle sliders for ${c.name || 'this color'}" aria-expanded="${!c.collapsed}"></button>
+          <div class="card-top-right">
+            <input class="name-input" type="text" value="${c.name || ''}" placeholder="Name this color" aria-label="Name for this color">
+            <input class="hex-input" data-role="hex-input" type="text" value="${hex}" maxlength="7" aria-label="Hex value">
+          </div>
+          <div class="card-actions">
+            <button type="button" class="icon-btn collapse-btn" aria-label="${c.collapsed ? 'Expand' : 'Collapse'} sliders" aria-expanded="${!c.collapsed}">${ICON_CHEVRON}</button>
+            <button type="button" class="icon-btn remove-btn" aria-label="Remove ${c.name || 'color'}" ${colors.length <= MIN_COLORS ? 'disabled' : ''}>&times;</button>
+          </div>
+        </div>
+        <div class="slider-section">
+          <div class="slider-row">
+            <div class="row-top"><label for="h-${c.id}">Hue</label><span class="slider-value" data-role="h-value">${c.h}&deg;</span></div>
+            <input type="range" class="gradient-slider hue-slider" id="h-${c.id}" min="0" max="360" value="${c.h}" aria-label="Hue">
+          </div>
+          <div class="slider-row">
+            <div class="row-top"><label for="s-${c.id}">Saturation</label><span class="slider-value" data-role="s-value">${c.s}%</span></div>
+            <input type="range" class="gradient-slider" id="s-${c.id}" min="0" max="100" value="${c.s}" aria-label="Saturation">
+          </div>
+          <div class="slider-row">
+            <div class="row-top"><label for="l-${c.id}">Lightness</label><span class="slider-value" data-role="l-value">${c.l}%</span></div>
+            <input type="range" class="gradient-slider" id="l-${c.id}" min="0" max="100" value="${c.l}" aria-label="Lightness">
+          </div>
+        </div>
+      `;
+
+      card.querySelector('.remove-btn').addEventListener('click', () => {
+        if (colors.length <= MIN_COLORS) return;
+        colors = colors.filter(x => x.id !== c.id);
+        renderAll();
+      });
+
+      card.querySelector('.collapse-btn').addEventListener('click', () => toggleCollapse(c, card));
+      card.querySelector('button.swatch').addEventListener('click', () => toggleCollapse(c, card));
+
+      card.querySelector('.name-input').addEventListener('input', e => {
+        c.name = e.target.value;
+        renderGrid(); renderRamps(); scheduleHashUpdate();
+      });
+
+      ['h', 's', 'l'].forEach(axis => {
+        card.querySelector(`#${axis}-${c.id}`).addEventListener('input', e => {
+          c[axis] = Number(e.target.value);
+          syncCardDisplay(c, card);
+          renderGrid(); renderRamps(); scheduleHashUpdate();
+        });
+      });
+
+      card.querySelector('.hex-input').addEventListener('change', e => {
+        const val = e.target.value.trim();
+        if (isValidHex(val)){
+          const clean = val.startsWith('#') ? val : '#' + val;
+          const [r, g, b] = hexToRgb(clean);
+          const [h, s, l] = rgbToHsl(r, g, b);
+          c.h = h; c.s = s; c.l = l;
+          renderRack(); renderGrid(); renderRamps(); scheduleHashUpdate();
+        } else {
+          e.target.value = hslToHex(c.h, c.s, c.l);
+        }
+      });
+
+      const gripEl = card.querySelector('.grip');
+      gripEl.addEventListener('mousedown', () => card.setAttribute('draggable', 'true'));
+      gripEl.addEventListener('keydown', (e) => {
+        const isRow = getComputedStyle(rack).flexDirection === 'row';
+        const prevKey = isRow ? 'ArrowLeft' : 'ArrowUp';
+        const nextKey = isRow ? 'ArrowRight' : 'ArrowDown';
+        if (e.key !== prevKey && e.key !== nextKey) return;
+        e.preventDefault();
+        const fromIdx = colors.findIndex(x => x.id === c.id);
+        const toIdx = e.key === prevKey ? fromIdx - 1 : fromIdx + 1;
+        if (toIdx < 0 || toIdx >= colors.length) return;
+        const [moved] = colors.splice(fromIdx, 1);
+        colors.splice(toIdx, 0, moved);
+        renderAll();
+        const movedGrip = rack.querySelector(`[data-color-id="${c.id}"] .grip`);
+        if (movedGrip) movedGrip.focus();
+        announce(`${c.name || 'Color'} moved to position ${toIdx + 1} of ${colors.length}`);
+      });
+      card.addEventListener('dragstart', () => { dragSrcId = c.id; card.classList.add('dragging'); });
+      card.addEventListener('dragend', () => {
+        card.classList.remove('dragging');
+        card.setAttribute('draggable', 'false');
+        rack.querySelectorAll('.color-card').forEach(el => el.style.boxShadow = '');
+      });
+      card.addEventListener('dragover', e => {
+        e.preventDefault();
+        const rect = card.getBoundingClientRect();
+        const isRow = getComputedStyle(rack).flexDirection === 'row';
+        const insertBefore = isRow ? (e.clientX < rect.left + rect.width / 2) : (e.clientY < rect.top + rect.height / 2);
+        card.dataset.insertBefore = String(insertBefore);
+        card.style.boxShadow = isRow
+          ? (insertBefore ? '-3px 0 0 0 var(--accent)' : '3px 0 0 0 var(--accent)')
+          : (insertBefore ? '0 -3px 0 0 var(--accent)' : '0 3px 0 0 var(--accent)');
+      });
+      card.addEventListener('dragleave', () => { card.style.boxShadow = ''; });
+      card.addEventListener('drop', e => {
+        e.preventDefault();
+        const insertBefore = card.dataset.insertBefore === 'true';
+        card.style.boxShadow = '';
+        if (dragSrcId === null || dragSrcId === c.id) return;
+        const fromIdx = colors.findIndex(x => x.id === dragSrcId);
+        const [moved] = colors.splice(fromIdx, 1);
+        let toIdx = colors.findIndex(x => x.id === c.id);
+        const insertIdx = insertBefore ? toIdx : toIdx + 1;
+        colors.splice(insertIdx, 0, moved);
+        dragSrcId = null;
+        renderAll();
+      });
+
+      rack.appendChild(card);
+      syncSliderGradients(c, card);
+    });
+
+    updateScrollFades();
+    syncCollapseAllLabel();
+  }
+
+  function syncCardDisplay(c, cardEl){
+    const hex = hslToHex(c.h, c.s, c.l);
+    cardEl.querySelector('[data-role="swatch"]').style.background = hex;
+    cardEl.querySelector('[data-role="hex-input"]').value = hex;
+    cardEl.querySelector('[data-role="h-value"]').innerHTML = c.h + '&deg;';
+    cardEl.querySelector('[data-role="s-value"]').textContent = c.s + '%';
+    cardEl.querySelector('[data-role="l-value"]').textContent = c.l + '%';
+    syncSliderGradients(c, cardEl);
+  }
+
+  function syncSliderGradients(c, cardEl){
+    const satEl = cardEl.querySelector(`#s-${c.id}`);
+    if (satEl) satEl.style.background = `linear-gradient(to right, hsl(${c.h},0%,50%), hsl(${c.h},100%,50%))`;
+    const lightEl = cardEl.querySelector(`#l-${c.id}`);
+    if (lightEl) lightEl.style.background = `linear-gradient(to right, #000000, hsl(${c.h},${c.s}%,50%), #ffffff)`;
+  }
+
+  document.getElementById('add-color-btn').addEventListener('click', () => {
+    const last = colors[colors.length - 1];
+    const newColor = last ? makeColor(last.h, last.s, last.l, (last.name || 'Color') + ' copy', false) : makeColor(200, 50, 50, 'Color 1', false);
+    colors.push(newColor);
+    renderAll();
+    const newCard = rack.querySelector(`[data-color-id="${newColor.id}"]`);
+    if (newCard){
+      const reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+      newCard.scrollIntoView({ behavior: reduce ? 'auto' : 'smooth', block: 'nearest', inline: 'nearest' });
+      const hexInput = newCard.querySelector('[data-role="hex-input"]');
+      if (hexInput){ hexInput.focus(); hexInput.select(); }
+    }
+  });
+
+  document.getElementById('collapse-all-btn').addEventListener('click', () => {
+    const shouldCollapse = colors.every(c => !c.collapsed);
+    colors.forEach(c => c.collapsed = shouldCollapse);
+    renderRack();
+  });
+
+  /* ---------------- Pinning the colors panel (stacked/mobile layout only) ---------------- */
+
+  const pinPanel = document.getElementById('pin-panel');
+  const pinSpacer = document.getElementById('pin-panel-spacer');
+  const pinBtn = document.getElementById('pin-btn');
+  let pinnedMode = false;   // the user has turned pinning on
+  let isStuck = false;      // ...and the panel has scrolled far enough that it's locked to the top now
+
+  function isStackedLayout(){ return window.innerWidth <= 900; }
+
+  // The spacer stands in for the panel while it's fixed to the top, so the page doesn't jump.
+  // Its height is the panel's content height, minus the extra padding the stuck style adds.
+  function syncSpacerHeight(){
+    const cs = getComputedStyle(pinPanel);
+    const pad = (parseFloat(cs.paddingTop) || 0) + (parseFloat(cs.paddingBottom) || 0);
+    pinSpacer.style.height = Math.max(0, pinPanel.getBoundingClientRect().height - pad) + 'px';
+  }
+
+  function setStuck(stuck){
+    if (stuck === isStuck) return;
+    if (stuck){
+      syncSpacerHeight();               // measure while it's still in normal flow
+      pinSpacer.style.display = 'block';
+      pinPanel.classList.add('stuck');
+    } else {
+      pinPanel.classList.remove('stuck');
+      pinSpacer.style.display = 'none';
+      pinSpacer.style.height = '0';
+    }
+    isStuck = stuck;
+  }
+
+  // Stays in normal flow (so the title and intro are readable) until it would scroll off the top.
+  function updateStuck(){
+    if (!pinnedMode || !isStackedLayout()){ setStuck(false); return; }
+    const anchor = isStuck ? pinSpacer : pinPanel;   // the spacer marks the natural position while stuck
+    setStuck(anchor.getBoundingClientRect().top <= 0);
+  }
+
+  pinBtn.addEventListener('click', () => {
+    pinnedMode = !pinnedMode;
+    pinBtn.setAttribute('aria-pressed', String(pinnedMode));
+    pinBtn.setAttribute('aria-label', pinnedMode ? 'Unpin colors panel' : 'Pin colors panel while scrolling');
+    updateStuck();
+  });
+
+  window.addEventListener('scroll', updateStuck, { passive: true });
+  window.addEventListener('resize', updateStuck);
+  if ('ResizeObserver' in window){
+    // Keep the placeholder the right size if the panel's content changes height while stuck (e.g. collapsing cards)
+    new ResizeObserver(() => { if (isStuck) syncSpacerHeight(); }).observe(pinPanel);
+  }
+
+  /* ---------------- Copy / paste whole palette ---------------- */
+
+  document.getElementById('copy-palette-btn').addEventListener('click', (e) => {
+    const list = colors.map(c => hslToHex(c.h, c.s, c.l)).join(', ');
+    copyToClipboard(list, e.currentTarget);
+  });
+
+  document.getElementById('paste-palette-btn').addEventListener('click', () => {
+    const panel = document.getElementById('paste-panel');
+    const isOpen = panel.style.display !== 'none';
+    panel.style.display = isOpen ? 'none' : 'block';
+    if (!isOpen){
+      const textarea = document.getElementById('paste-textarea');
+      textarea.focus();
+      const reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+      panel.scrollIntoView({ behavior: reduce ? 'auto' : 'smooth', block: 'center' });
+    }
+  });
+
+  document.getElementById('paste-cancel-btn').addEventListener('click', () => {
+    document.getElementById('paste-panel').style.display = 'none';
+    document.getElementById('paste-textarea').value = '';
+    document.getElementById('paste-error').style.display = 'none';
+  });
+
+  document.getElementById('paste-import-btn').addEventListener('click', (e) => {
+    const textarea = document.getElementById('paste-textarea');
+    const errorEl = document.getElementById('paste-error');
+    const input = textarea.value;
+    const matches = input.match(/#?[0-9a-fA-F]{6}\b|#[0-9a-fA-F]{3}\b/g);
+    if (!matches || matches.length < MIN_COLORS){
+      errorEl.textContent = 'Could not find at least 2 valid hex codes in that text.';
+      errorEl.style.display = 'block';
+      return;
+    }
+    colors = matches.map((hex, i) => {
+      const clean = hex.startsWith('#') ? hex : '#' + hex;
+      const [r, g, b] = hexToRgb(clean);
+      const [h, s, l] = rgbToHsl(r, g, b);
+      return makeColor(h, s, l, 'Color ' + (i + 1));
+    });
+    textarea.value = '';
+    errorEl.style.display = 'none';
+    document.getElementById('paste-panel').style.display = 'none';
+    // Anchor to the always-visible toggle button, not the Import button itself —
+    // that one just got hidden along with the rest of the panel.
+    showToast(`Imported ${colors.length} colors`, document.getElementById('paste-palette-btn'), { icon: ICON_CHECK.replace('currentColor', '#ffffff'), duration: 3200 });
+    announce(`Palette imported with ${colors.length} colors`);
+    renderAll();
+  });
+
+  /* ---------------- Color vision simulation ---------------- */
+
+  const cvdBtns = Array.from(document.querySelectorAll('.cvd-btn'));
+
+  // The filter goes on the sidebar's CONTENTS (intro + colors panel) and the main content,
+  // never on the #sidebar element itself. Any element with a filter becomes the reference frame
+  // for position:fixed descendants, and the pinned colors panel is fixed — so filtering the whole
+  // sidebar made "pinned to the screen" silently become "pinned to the sidebar", which scrolls away.
+  const cvdTargets = [
+    document.querySelector('.sidebar-intro'),
+    document.getElementById('pin-panel'),
+    document.querySelector('.content')
+  ];
+
+  cvdBtns.forEach(btn => {
+    btn.addEventListener('click', () => {
+      const mode = btn.dataset.cvd;
+      const val = mode === 'none' ? '' : `url(#cvd-${mode})`;
+      cvdBtns.forEach(b => b.setAttribute('aria-checked', String(b === btn)));
+      cvdTargets.forEach(el => {
+        el.style.filter = val;
+        // Force a reflow so mobile browsers repaint complex nested content (like the big table)
+        // immediately rather than leaving it stale until some unrelated repaint trigger.
+        void el.offsetHeight;
+      });
+    });
+  });
+
+  /* ---------------- Color vision tooltips ---------------- */
+
+  // Native title="" tooltips only show after ~1s of perfectly still hovering, and never on keyboard
+  // focus or touch. This one shows straight away on hover AND focus, can be dismissed with Escape,
+  // and stays open if the pointer moves onto it (WCAG 1.4.13). The same text is also exposed to
+  // screen readers via aria-describedby.
+  const cvdTip = document.createElement('div');
+  cvdTip.className = 'cvd-tooltip';
+  cvdTip.id = 'cvd-tooltip';
+  cvdTip.setAttribute('role', 'tooltip');
+  document.body.appendChild(cvdTip);
+  let cvdTipTimer;
+
+  function showCvdTip(btn){
+    clearTimeout(cvdTipTimer);
+    cvdTip.textContent = btn.dataset.tip;
+    cvdTip.classList.add('visible');
+    const r = btn.getBoundingClientRect();
+    const w = cvdTip.offsetWidth, h = cvdTip.offsetHeight;
+    const left = Math.max(8, Math.min(r.left + r.width / 2 - w / 2, window.innerWidth - w - 8));
+    let top = r.top - h - 6;
+    if (top < 8) top = r.bottom + 6;   // no room above: show below instead
+    cvdTip.style.left = left + 'px';
+    cvdTip.style.top = top + 'px';
+  }
+  function hideCvdTip(delay){
+    clearTimeout(cvdTipTimer);
+    cvdTipTimer = setTimeout(() => cvdTip.classList.remove('visible'), delay || 0);
+  }
+
+  const cvdControlEl = document.querySelector('.cvd-control');
+  cvdBtns.forEach(btn => {
+    const descId = 'cvd-desc-' + btn.dataset.cvd;
+    const desc = document.createElement('span');
+    desc.id = descId;
+    desc.className = 'visually-hidden';
+    desc.textContent = btn.dataset.tip;
+    cvdControlEl.appendChild(desc);
+    btn.setAttribute('aria-describedby', descId);
+
+    btn.addEventListener('mouseenter', () => showCvdTip(btn));
+    btn.addEventListener('focus', () => showCvdTip(btn));
+    btn.addEventListener('mouseleave', () => hideCvdTip(150));
+    btn.addEventListener('blur', () => hideCvdTip(0));
+  });
+  cvdTip.addEventListener('mouseenter', () => clearTimeout(cvdTipTimer));
+  cvdTip.addEventListener('mouseleave', () => hideCvdTip(0));
+  document.addEventListener('keydown', (e) => { if (e.key === 'Escape') hideCvdTip(0); });
+  window.addEventListener('scroll', () => hideCvdTip(0), { passive: true });
+
+  /* ---------------- Content tabs (grid / ramps) ---------------- */
+
+  const contentTabs = Array.from(document.querySelectorAll('.content-tab'));
+  const gridSection = document.getElementById('grid-section');
+  const rampSection = document.getElementById('ramp-section');
+
+  function setActiveTab(targetId){
+    contentTabs.forEach(t => t.setAttribute('aria-selected', String(t.dataset.target === targetId)));
+    gridSection.classList.toggle('tab-hidden', targetId !== 'grid-section');
+    rampSection.classList.toggle('tab-hidden', targetId !== 'ramp-section');
+  }
+
+  contentTabs.forEach(tab => tab.addEventListener('click', () => setActiveTab(tab.dataset.target)));
+
+  // Arrow-key roving between tabs, per the standard ARIA tabs pattern
+  contentTabs.forEach((tab, i) => {
+    tab.addEventListener('keydown', (e) => {
+      if (e.key !== 'ArrowRight' && e.key !== 'ArrowLeft') return;
+      e.preventDefault();
+      const next = contentTabs[(i + (e.key === 'ArrowRight' ? 1 : -1) + contentTabs.length) % contentTabs.length];
+      next.focus();
+      setActiveTab(next.dataset.target);
+    });
+  });
+
+  setActiveTab('grid-section');
+
+  /* ---------------- Fixed sidebar positioning (desktop) ---------------- */
+
+  const sidebarEl = document.getElementById('sidebar');
+  const spacerEl = document.querySelector('.sidebar-spacer');
+  const collapseBtn = document.getElementById('sidebar-collapse-btn');
+  const layoutEl = document.querySelector('.layout');
+  let sidebarCollapsed = false;
+
+  // Compute from the .layout box (stable) rather than the spacer (which is mid-transition
+  // when this runs), so the button never grabs a half-finished width.
+  function positionSidebar(){
+    if (window.innerWidth > 900){
+      const layoutRect = layoutEl.getBoundingClientRect();
+      const layoutStyle = getComputedStyle(layoutEl);
+      const leftPad = parseFloat(layoutStyle.paddingLeft) || 0;
+      const sidebarLeft = layoutRect.left + leftPad;
+      sidebarEl.style.left = sidebarLeft + 'px';
+      // Flush to the true screen edge when collapsed, rather than sitting in the gap
+      // where the sidebar used to start — reads as "fully retracted" instead of floating.
+      collapseBtn.style.left = (sidebarCollapsed ? '0px' : (sidebarLeft + 300) + 'px');
+    } else {
+      sidebarEl.style.left = '';
+      collapseBtn.style.left = '';
+    }
+  }
+
+  function updateSidebarCollapse(){
+    sidebarEl.classList.toggle('collapsed', sidebarCollapsed);
+    spacerEl.classList.toggle('collapsed', sidebarCollapsed);
+    collapseBtn.classList.toggle('collapsed', sidebarCollapsed);
+    collapseBtn.setAttribute('aria-expanded', String(!sidebarCollapsed));
+    collapseBtn.setAttribute('aria-label', sidebarCollapsed ? 'Expand colors panel' : 'Collapse colors panel');
+    positionSidebar();
+  }
+
+  collapseBtn.addEventListener('click', () => {
+    sidebarCollapsed = !sidebarCollapsed;
+    updateSidebarCollapse();
+  });
+
+  window.addEventListener('resize', positionSidebar);
+  window.addEventListener('load', positionSidebar);
+
+  /* ---------------- Scroll fade indicators ---------------- */
+
+  function updateScrollFades(){
+    const isRow = getComputedStyle(rack).flexDirection === 'row';
+    const top = document.getElementById('fade-top');
+    const bottom = document.getElementById('fade-bottom');
+    const left = document.getElementById('fade-left');
+    const right = document.getElementById('fade-right');
+
+    if (isRow){
+      top.style.display = 'none'; bottom.style.display = 'none';
+      left.style.display = 'block'; right.style.display = 'block';
+      left.classList.toggle('visible', rack.scrollLeft > 2);
+      right.classList.toggle('visible', rack.scrollLeft + rack.clientWidth < rack.scrollWidth - 2);
+    } else {
+      left.style.display = 'none'; right.style.display = 'none';
+      top.style.display = 'block'; bottom.style.display = 'block';
+      top.classList.toggle('visible', rack.scrollTop > 2);
+      bottom.classList.toggle('visible', rack.scrollTop + rack.clientHeight < rack.scrollHeight - 2);
+    }
+  }
+  rack.addEventListener('scroll', updateScrollFades);
+  window.addEventListener('resize', updateScrollFades);
+
+  /* ---------------- Grid rendering ---------------- */
+
+  const gridTarget = document.getElementById('grid-target');
+  const breakdownToggleBtn = document.getElementById('breakdown-toggle-btn');
+  let showBreakdownState = false;
+  breakdownToggleBtn.addEventListener('click', () => {
+    showBreakdownState = !showBreakdownState;
+    breakdownToggleBtn.textContent = showBreakdownState ? 'Hide level detail' : 'Show level detail';
+    breakdownToggleBtn.setAttribute('aria-pressed', String(showBreakdownState));
+    breakdownToggleBtn.style.color = showBreakdownState ? 'var(--accent)' : '';
+    breakdownToggleBtn.style.borderColor = showBreakdownState ? 'var(--accent)' : '';
+    renderGrid();
+  });
+  const RATIO_TIERS = [
+    { threshold: null, name: 'All', filterActive: false },
+    { threshold: 3, name: 'AA large text', filterActive: true },
+    { threshold: 4.5, name: 'AA text / AAA large text', filterActive: true },
+    { threshold: 7, name: 'AAA text', filterActive: true }
+  ];
+
+  function infoRow(passing, label, big){
+    if (passing){
+      return `<div class="info-row${big ? ' info-row-lg' : ''}">
+        <span class="pass-circle-fixed${big ? '' : ''}">${ICON_CHECK.replace('currentColor', '#ffffff')}</span>
+        <span class="level-label">${label}</span>
+      </div>`;
+    }
+    return `<div class="info-row info-row-fail${big ? ' info-row-lg' : ''}">
+      <span class="level-icon fail-icon">${ICON_CROSS}</span>
+      <span class="level-label">${label}</span>
+    </div>`;
+  }
+
+  const tierPills = Array.from(document.querySelectorAll('.tier-seg'));
+  const tierSummary = document.getElementById('tier-summary');
+
+  let activeTierIndex = 0;
+
+  function updateTierVisual(){
+    tierPills.forEach((el, i) => {
+      el.setAttribute('aria-checked', String(i === activeTierIndex));
+      el.classList.toggle('filled', i <= activeTierIndex);
+    });
+  }
+  updateTierVisual();
+
+  tierPills.forEach((btn, i) => {
+    btn.addEventListener('click', () => {
+      activeTierIndex = i;
+      updateTierVisual();
+      renderGrid();
+    });
+  });
+
+  function passesFilter(ratio){
+    const tier = RATIO_TIERS[activeTierIndex];
+    if (!tier.filterActive) return true;
+    return ratio >= tier.threshold;
+  }
+
+  function renderGrid(){
+    const showBreakdown = showBreakdownState;
+    let shownCount = 0, totalCount = 0;
+
+    let html = '<table class="contrast-grid">';
+    html += `<tr><th class="corner" scope="col">
+      <div class="corner-label">
+        <span class="corner-diag" aria-hidden="true"><svg viewBox="0 0 100 100" preserveAspectRatio="none" width="100%" height="100%"><line x1="0" y1="0" x2="100" y2="100" stroke="var(--line)" stroke-width="1" vector-effect="non-scaling-stroke"/></svg></span>
+        <span class="corner-text-label">Text</span>
+        <span class="corner-bg-label">Background</span>
+      </div>
+    </th>`;
+    colors.forEach(c => {
+      const hex = hslToHex(c.h, c.s, c.l);
+      html += `<th class="col-head" scope="col"><div class="head-chip"><span class="swatch-dot" style="background:${hex}"></span><span>${c.name || 'Color'}</span></div><div class="head-hex">${hex}</div></th>`;
+    });
+    html += '</tr>';
+
+    colors.forEach((rowColor, ri) => {
+      const rowHex = hslToHex(rowColor.h, rowColor.s, rowColor.l);
+      html += `<tr><th class="row-head" scope="row"><div class="head-chip"><span class="swatch-dot" style="background:${rowHex}"></span><span>${rowColor.name || 'Color'}</span></div><div class="head-hex">${rowHex}</div></th>`;
+
+      colors.forEach((colColor, ci) => {
+        if (ri === ci){ html += '<td class="cell diag" aria-hidden="true"></td>'; return; }
+        const colHex = hslToHex(colColor.h, colColor.s, colColor.l);
+        const ratio = contrastRatio(rowHex, colHex);
+        const passesAAA = ratio >= 7;
+        totalCount++;
+
+        if (!passesFilter(ratio)){
+          html += `<td class="cell filtered" title="Hidden by filter — ${ratio.toFixed(2)}:1"><span class="visually-hidden">Hidden: does not meet the selected filter (${ratio.toFixed(2)}:1)</span></td>`;
+          return;
+        }
+        shownCount++;
+
+        let inner = `<div class="cell-split" style="background:${rowHex}">
+          <div class="cell-preview"><span class="sample" style="color:${colHex}">Text</span></div>
+          <div class="cell-info">`;
+        inner += infoRow(ratio >= 4.5, 'AA text', true);
+        if (showBreakdown){
+          inner += infoRow(ratio >= 3, 'AA large text', false);
+          inner += infoRow(passesAAA, 'AAA text', false);
+          inner += infoRow(ratio >= 4.5, 'AAA large text', false);
+        }
+        inner += `<span class="ratio-value-sm">${ratio.toFixed(2)}:1</span></div></div>`;
+
+        html += `<td class="cell" title="${rowColor.name || 'Background'} background, ${colColor.name || 'text'} text: ${ratio.toFixed(2)}:1">${inner}</td>`;
+      });
+
+      html += '</tr>';
+    });
+
+    html += '</table>';
+    gridTarget.innerHTML = html;
+    tierSummary.textContent = RATIO_TIERS[activeTierIndex].filterActive ? `Showing ${shownCount} of ${totalCount} combinations` : '';
+    scheduleHashUpdate();
+  }
+
+  /* ---------------- Lightness ramps ---------------- */
+
+  const rampTarget = document.getElementById('ramp-target');
+
+  function buildRampLightnesses(currentL){
+    const stops = [5, 15, 25, 35, 45, 55, 65, 75, 85, 95];
+    let closestIdx = 0, closestDist = Infinity;
+    stops.forEach((s, i) => { const d = Math.abs(s - currentL); if (d < closestDist){ closestDist = d; closestIdx = i; } });
+    const result = stops.slice();
+    result[closestIdx] = currentL;
+    return Array.from(new Set(result)).sort((a, b) => a - b);
+  }
+
+  function renderRamps(){
+    rampTarget.innerHTML = '';
+    colors.forEach(c => {
+      const baseHex = hslToHex(c.h, c.s, c.l);
+      const column = document.createElement('div');
+      column.className = 'ramp-column';
+
+      const lightnesses = buildRampLightnesses(c.l);
+
+      const stepsHtml = lightnesses.map(l => {
+        const hex = hslToHex(c.h, c.s, l);
+        const onWhite = contrastRatio(hex, '#ffffff');
+        const onBlack = contrastRatio(hex, '#000000');
+        const passWhite = onWhite >= 4.5;
+        const passBlack = onBlack >= 4.5;
+        const textColor = onWhite >= onBlack ? '#ffffff' : '#000000';
+        const isOriginal = l === c.l;
+        const passes = passWhite || passBlack;
+        const statusLabel = passWhite ? 'white' : (passBlack ? 'black' : 'neither');
+
+        return `
+          <div class="ramp-step-wrap">
+            <span class="original-marker-slot" aria-hidden="true">${isOriginal ? '&#9654;' : ''}</span>
+            <button type="button" class="ramp-step${isOriginal ? ' is-original' : ''}" style="background:${hex}" data-hex="${hex}" aria-label="Copy ${hex}${isOriginal ? ' — current lightness' : ''}">
+              <span class="hex" style="color:${textColor}">${hex}</span>
+              <span class="status-row" style="color:${textColor}"><span class="level-icon">${passes ? ICON_CHECK : ICON_CROSS}</span>${statusLabel}</span>
+            </button>
+          </div>
+        `;
+      }).join('');
+
+      column.innerHTML = `
+        <div class="ramp-column-head">
+          <span class="swatch-dot" style="background:${baseHex}; width:18px; height:18px;"></span>
+          <span class="name">${c.name || 'Color'}</span>
+        </div>
+        <div class="ramp-steps">${stepsHtml}</div>
+      `;
+
+      column.querySelectorAll('.ramp-step').forEach(btn => btn.addEventListener('click', () => copyToClipboard(btn.dataset.hex, btn)));
+
+      rampTarget.appendChild(column);
+    });
+  }
+
+  /* ---------------- Init ---------------- */
+
+  function renderAll(){ renderRack(); renderGrid(); renderRamps(); positionSidebar(); }
+  renderAll();
+  positionSidebar();
+
+})();
+</script>
+</body>
+</html>
