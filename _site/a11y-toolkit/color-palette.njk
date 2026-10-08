@@ -1,5 +1,5 @@
 ---
-title: Accessible Color Palette Builder
+title: Accessible Color Palette Tester
 ---
 
 <!doctype html>
@@ -17,30 +17,31 @@ title: Accessible Color Palette Builder
 
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Make informed color palette decisions and easily find color combinations and shades that meet WCAG contrast requirements.">
-  <title>Accessible Color Palette Builder | by Tunan Pan</title>
+  <meta name="description" content="Test an entire color palette for WCAG contrast, adjust colors in real time, explore alternative shades, and simulate different types of color vision.">
+  <title>Accessible Color Palette Tester | by Tunan Pan</title>
   <link rel="stylesheet" href="/css/style.css">
   <link rel="icon" href="/favicon.ico" type="image/x-icon">
   <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
   <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
   <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
   <link rel="manifest" href="/site.webmanifest">
+  <link rel="canonical" href="https://tunan.art/a11y-toolkit/colorcontrast">
 
   <!-- Essential Open Graph tags -->
-  <meta property="og:title" content="PDF Accessibility Toolkit for Graphic Designers | by Tunan Pan">
-  <meta property="og:description" content="Make informed color palette decisions and easily find color combinations and shades that meet WCAG contrast requirements.">
+  <meta property="og:title" content="Accessible Color Palette Tester | by Tunan Pan">
+  <meta property="og:description" content="Test an entire color palette for WCAG contrast, adjust colors in real time, explore alternative shades, and simulate different types of color vision.">
   <meta property="og:image:width" content="1200">
   <meta property="og:image:height" content="627">
   <meta property="og:image:type" content="image/png">
   <meta name="author" content="Tunan Pan">
 
-  <meta property="og:url" content="https://tunan.art/a11y-toolkit">
+  <meta property="og:url" content="https://tunan.art/a11y-toolkit/colorcontrast">
   <meta property="og:type" content="website">
 
   <!-- Twitter Card tags (for better Twitter display) -->
   <meta name="twitter:card" content="summary">
-  <meta name="twitter:title" content="Accessible Color Palette Builder | by Tunan Pan">
-  <meta name="twitter:description" content="Make informed color palette decisions and easily find color combinations and shades that meet WCAG contrast requirements.">
+  <meta name="twitter:title" content="Accessible Color Palette Tester | by Tunan Pan">
+  <meta name="twitter:description" content="Test an entire color palette for WCAG contrast, adjust colors in real time, explore alternative shades, and simulate different types of color vision.">
 
 <style>
   :root{
@@ -372,7 +373,7 @@ title: Accessible Color Palette Builder
   #grid-section.tab-hidden, #ramp-section.tab-hidden{ display: none; }
   [role="tabpanel"]:focus-visible{ outline: 2px solid var(--focus); outline-offset: 2px; }
   .content section{ margin-bottom: 56px; }
-  .section-intro{ color: var(--ink-soft); font-size: 14px; margin: 8px 0 20px; }
+  .section-intro{ color: var(--ink-soft); font-size: 13px; margin: 8px 0 20px; }
 
   .grid-controls{ display: flex; flex-direction: column; gap: 12px; margin-bottom: 20px; }
   .controls-row{ display: flex; align-items: center; gap: 16px; flex-wrap: wrap; }
@@ -519,8 +520,8 @@ title: Accessible Color Palette Builder
   <aside class="sidebar" id="sidebar">
 
     <div class="sidebar-intro">
-      <h1>Accessible Color Palette Builder</h1>
-      <p class="intro">Make informed color palette decisions — adjust colors and instantly see which combinations meet WCAG contrast requirements.</p>
+      <h1>Accessible Color Palette Tester</h1>
+      <p class="intro">Explore and test entire color palettes for accessibility. Adjust colors in real time, check every color combination for WCAG contrast requirements, explore alternative lightness values, and simulate different types of color vision.</p>
     </div>
 
     <div id="pin-panel-spacer" style="display:none;"></div>
@@ -576,17 +577,17 @@ title: Accessible Color Palette Builder
 
     <div class="content-tabs" role="tablist" aria-label="Grid or ramps view">
       <button type="button" id="grid-tab" class="content-tab" role="tab" aria-selected="true" aria-controls="grid-section" data-target="grid-section">Contrast grid</button>
-      <button type="button" id="ramp-tab" class="content-tab" role="tab" aria-selected="false" aria-controls="ramp-section" data-target="ramp-section">Lightness ramps</button>
+      <button type="button" id="ramp-tab" class="content-tab" role="tab" aria-selected="false" aria-controls="ramp-section" data-target="ramp-section">Lightness variations</button>
     </div>
 
     <section id="grid-section" role="tabpanel" aria-labelledby="grid-tab" tabindex="0">
       <h2 id="grid-heading" class="visually-hidden">Contrast grid</h2>
-      <p class="section-intro" style="margin-top:0;">A check means that pairing passes; a cross means it fails. Each cell also shows the exact ratio.</p>
+      <p class="section-intro" style="margin-top:0;">A check means the pairing meets the shown WCAG contrast level; a cross means it doesn't. Each cell shows the exact contrast ratio.</p>
 
       <div class="grid-controls">
         <div class="controls-row" style="justify-content:flex-start; flex-wrap:wrap;">
           <div class="tier-pills-group" role="radiogroup" aria-label="Minimum contrast level to show">
-            <span class="filter-group-label">Meets at least:</span>
+            <span class="filter-group-label">Filter for contrast threshold:</span>
             <div class="tier-segmented">
               <button type="button" class="tier-seg" role="radio" aria-checked="true" data-tier="0">
                 <span class="tier-seg-name">All</span>
@@ -620,13 +621,13 @@ title: Accessible Color Palette Builder
     <section id="ramp-section" role="tabpanel" aria-labelledby="ramp-tab" tabindex="0" class="tab-hidden">
       <h2 id="ramp-heading" class="visually-hidden">Lightness ramps</h2>
       <p class="section-intro">
-        Each column is one color stepped through lightness values, including its current lightness (marked with an arrow and border). Click any step to copy its hex.
+        Each column shows a range of lightness values for that color, including its current lightness (marked with an arrow and border). Click any step to copy its hex.
       </p>
       <div class="ramp-columns" id="ramp-target"></div>
     </section>
 
     <footer class="page-footer">
-      <p>Found a bug or have an idea? <a href="https://github.com/tunan-pan/tunan-pan.github.io/issues/new?title=%5BPalette%20Builder%5D%20" target="_blank" >Submit an issue on Github</a> | Part of the <a href="../" target="_blank">Accessibility Toolkit by Tunan Pan</a>
+      <p>Found a bug or have a suggestion? <a href="https://github.com/tunan-pan/tunan-pan.github.io/issues/new?title=%5BPalette%20Builder%5D%20" target="_blank" >Submit an issue on Github</a> | Part of the <a href="../" target="_blank">Accessibility Toolkit by Tunan Pan</a>
     </footer>
 
     
